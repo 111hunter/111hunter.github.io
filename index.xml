@@ -12,12 +12,15 @@
     
     
     <item>
-      <title>Blog</title>
+      <title>关于js闭包写法的演进过程</title>
       <link>https://111hunter.github.io/post/blog/</link>
       <pubDate>Mon, 07 Oct 2019 18:27:34 +0800</pubDate>
       
       <guid>https://111hunter.github.io/post/blog/</guid>
-      <description>hello world 第一篇个人博客</description>
+      <description>首先来理解闭包，闭包是为了实现变量的私有化问题，有如下例子： 我们想要用一个counter记录add函数的执行次数。
+function add() { var counter = 0; //局部变量 counter++; console.log(&amp;quot;counter = &amp;quot; + counter); } add(); // counter = 1 add(); // counter = 1  由于counter是局部变量，每次我们执行add()函数，都是输出 counter = 1; 我们想要执行函数时改变counter的值，一种可行的办法是：
+var counter = 0; //全局变量，谁都可以访问，修改 function add() { counter++; console.log(&amp;quot;counter = &amp;quot; + counter); } add(); // counter = 1 add(); // counter = 2  但是这样会带来问题，由于counter是全局变量，我们可能会在函数外不小心改变了counter的值， 比如在函数外写了一句counter = -100；就打乱了我们原来的计数，显然我们并不希望在函数外任意地改变counter的值。 我们可以这样写：
+function add() { var counter = 1; //局部变量 console.</description>
     </item>
     
   </channel>
