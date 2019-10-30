@@ -156,7 +156,7 @@
     sizes="(max-width: 800px) 36px, 128px">
   </amp-img>
   
-    <h2 class="title"><a href="https://111hunter.github.io" title="My New Hugo Site">My New Hugo Site</a></h2>
+    <h2 class="title"><a href="https://111hunter.github.io/" title="My New Hugo Site">My New Hugo Site</a></h2>
   
   <p class="subtitle"></p>
   <button class="menu-toggle" type="button" on="tap:sidebar.open">
@@ -221,6 +221,33 @@
     </header>
     
     
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog01/" title="es6学习笔记" class="entry-link">es6学习笔记</a></h3>
+  </header>
+
+  <p class="entry-summary">es6学习笔记: 1.用let和const声明变量
+var 函数作用域function scope,不在函数内时作用域是全局的 let, const 块级作用域block scope,作用域是{}内
+eg.执行以下语句判断区别：
+for (var i = 0; i &lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) } for (let i = 0; i &lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) }  let, const不能重复声明变量值 let声明的变量是可以重新赋值的, const声明的变量只能修改引用类型的属性值 变量提升：let, count有变量提升,未声明先使用存在临时性死区(Temporal dead zone),详见mdn
+2.箭头函数：
+特点：简明的语法,隐式返回(省去return关键字),匿名函数 this:普通函数this是动态绑定的
+const Jelly = { name: &#39;Jelly&#39;, hobbies: [&#39;Coding&#39;, &#39;Sleeping&#39;, &#39;Reading&#39;], printHobbies: function () { // console.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Oct 30, 2019</span> 3 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog01%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=es6%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog01%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
       
         <article class="entry-single">
   
