@@ -209,8 +209,80 @@
   <section class="main entry-list">
     
     
-      <p>There's nothing here.<br>Create an interesting post with the command:</p>
-      <p><code>$ hugo new post/hello-world.md</code></p>
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog02/" title="Node.js搭建博客后台, 不使用框架" class="entry-link">Node.js搭建博客后台, 不使用框架</a></h3>
+  </header>
+
+  <p class="entry-summary">源码地址
+Node.js 处理 get，post 请求 const http = require(&#39;http&#39;) const querystring = require(&#39;querystring&#39;) const server = http.createServer((req, res) =&gt; { const method = req.method const url = req.url const path = url.split(&#39;?&#39;)[0] //重点：split(&#39;?&#39;[0])语法弄清楚 const query = querystring.parse(url.split(&#39;?&#39;)[1]) //设置返回值格式为 JSON res.setHeader(&#39;Content-type&#39;, &#39;application/json&#39;) //返回的数据 const resData = { method, url, path, query } //返回 if (method === &#39;GET&#39;) { res.end( JSON.stringify(req.query) ) } if (req.method === &#39;POST&#39;){ let postData = &#39;&#39; //res.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Nov 22, 2019</span> 3 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog02%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2%e5%90%8e%e5%8f%b0%2c%20%e4%b8%8d%e4%bd%bf%e7%94%a8%e6%a1%86%e6%9e%b6&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog02%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog01/" title="es6学习笔记" class="entry-link">es6学习笔记</a></h3>
+  </header>
+
+  <p class="entry-summary">es6学习笔记: 1.用let和const声明变量
+var 函数作用域function scope,不在函数内时作用域是全局的 let, const 块级作用域block scope,作用域是{}内
+eg.执行以下语句判断区别：
+for (var i = 0; i &lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) } for (let i = 0; i &lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) }  let, const不能重复声明变量值 let声明的变量是可以重新赋值的, const声明的变量只能修改引用类型的属性值 变量提升：let, count有变量提升,未声明先使用存在临时性死区(Temporal dead zone),详见mdn
+2.箭头函数：
+特点：简明的语法,隐式返回(省去return关键字),匿名函数 this:普通函数this是动态绑定的
+const Jelly = { name: &#39;Jelly&#39;, hobbies: [&#39;Coding&#39;, &#39;Sleeping&#39;, &#39;Reading&#39;], printHobbies: function () { // console.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Oct 30, 2019</span> 3 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog01%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=es6%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog01%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog/" title="关于js闭包写法的演进过程" class="entry-link">关于js闭包写法的演进过程</a></h3>
+  </header>
+
+  <p class="entry-summary">首先来理解闭包，闭包是为了实现变量的私有化问题，有如下例子： 我们想要用一个counter记录add函数的执行次数。
+function add() { var counter = 0; //局部变量 counter&#43;&#43;; console.log(&#34;counter = &#34; &#43; counter); } add(); // counter = 1 add(); // counter = 1  由于counter是局部变量，每次我们执行add()函数，都是输出 counter = 1; 我们想要执行函数时改变counter的值，一种可行的办法是：
+var counter = 0; //全局变量，谁都可以访问，修改 function add() { counter&#43;&#43;; console.log(&#34;counter = &#34; &#43; counter); } add(); // counter = 1 add(); // counter = 2  但是这样会带来问题，由于counter是全局变量，我们可能会在函数外不小心改变了counter的值， 比如在函数外写了一句counter = -100；就打乱了我们原来的计数，显然我们并不希望在函数外任意地改变counter的值。 我们可以这样写：
+function add() { var counter = 1; //局部变量 console.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Oct 7, 2019</span> 1 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e5%85%b3%e4%ba%8ejs%e9%97%ad%e5%8c%85%e5%86%99%e6%b3%95%e7%9a%84%e6%bc%94%e8%bf%9b%e8%bf%87%e7%a8%8b&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
     
     
   </section>
