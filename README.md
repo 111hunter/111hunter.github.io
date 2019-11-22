@@ -3,7 +3,9 @@
 参数说明：
 
   --theme 选项可以指定主题。也可用-t
+  
   --watch 选项可以在修改文件后自动刷新浏览器。也可用-w
+  
   --buildDrafts 包括标记为草稿（draft）的内容。也可以用-D
 
 1 . 切到 hugo 文件夹下的 myblog:
