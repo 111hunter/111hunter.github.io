@@ -24,10 +24,12 @@
 
 4 . 生成HTML静态页面：
 
+在生成静态页面时将 draft=true 改为 draft=false 或者注释掉，因为 hugo 编译会跳过草稿文件。
+
 ` $ hugo --theme=hugo-lamp --baseUrl="https://111hunter.github.io/"`
 
-该指令执行成功会在 public/post 文件夹下生成 first 文件夹，其中包含html文件
+该指令执行成功会在 public/post 文件夹下生成 first 文件夹，其中包含html文件。
 
-5 . 上传github
+5 . 上传github：
 
 ` $ cd public & git add -A `
