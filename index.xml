@@ -6,37 +6,9 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Oct 2019 20:59:36 +0800</lastBuildDate>
     
 	<atom:link href="https://111hunter.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>es6学习笔记</title>
-      <link>https://111hunter.github.io/post/blog01/</link>
-      <pubDate>Wed, 30 Oct 2019 20:59:36 +0800</pubDate>
-      
-      <guid>https://111hunter.github.io/post/blog01/</guid>
-      <description>es6学习笔记: 1.用let和const声明变量
-var 函数作用域function scope,不在函数内时作用域是全局的 let, const 块级作用域block scope,作用域是{}内
-eg.执行以下语句判断区别：
-for (var i = 0; i &amp;lt; 10; i++) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) } for (let i = 0; i &amp;lt; 10; i++) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) }  let, const不能重复声明变量值 let声明的变量是可以重新赋值的, const声明的变量只能修改引用类型的属性值 变量提升：let, count有变量提升,未声明先使用存在临时性死区(Temporal dead zone),详见mdn
-2.箭头函数：
-特点：简明的语法,隐式返回(省去return关键字),匿名函数 this:普通函数this是动态绑定的
-const Jelly = { name: &#39;Jelly&#39;, hobbies: [&#39;Coding&#39;, &#39;Sleeping&#39;, &#39;Reading&#39;], printHobbies: function () { // console.</description>
-    </item>
-    
-    <item>
-      <title>关于js闭包写法的演进过程</title>
-      <link>https://111hunter.github.io/post/blog/</link>
-      <pubDate>Mon, 07 Oct 2019 18:27:34 +0800</pubDate>
-      
-      <guid>https://111hunter.github.io/post/blog/</guid>
-      <description>首先来理解闭包，闭包是为了实现变量的私有化问题，有如下例子： 我们想要用一个counter记录add函数的执行次数。
-function add() { var counter = 0; //局部变量 counter++; console.log(&amp;quot;counter = &amp;quot; + counter); } add(); // counter = 1 add(); // counter = 1  由于counter是局部变量，每次我们执行add()函数，都是输出 counter = 1; 我们想要执行函数时改变counter的值，一种可行的办法是：
-var counter = 0; //全局变量，谁都可以访问，修改 function add() { counter++; console.log(&amp;quot;counter = &amp;quot; + counter); } add(); // counter = 1 add(); // counter = 2  但是这样会带来问题，由于counter是全局变量，我们可能会在函数外不小心改变了counter的值， 比如在函数外写了一句counter = -100；就打乱了我们原来的计数，显然我们并不希望在函数外任意地改变counter的值。 我们可以这样写：
-function add() { var counter = 1; //局部变量 console.</description>
-    </item>
     
   </channel>
 </rss>
