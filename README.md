@@ -29,3 +29,5 @@
 该指令执行成功会在 public/post 文件夹下生成 first 文件夹，其中包含html文件
 
 5 . 上传github
+
+` $ cd public & git add -A `
