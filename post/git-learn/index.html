@@ -347,9 +347,7 @@ $ git config --unset --global user.name 取消 user.name 配置
 
 <p><code>git log --oneline</code> 查看提交日志 id, 添加 bootstrap 的 id 为 981eb52</p>
 
-<p><code>git revert 981eb52</code> 撤销对 bootstrap 的提交，查看工作区文件夹发现 index.html 对</p>
-
-<p>bootstrap 的引入消失了</p>
+<p><code>git revert 981eb52</code> 撤销对 bootstrap 的提交，查看工作区文件夹发现 index.html 对 bootstrap 的引入消失了</p>
 
 <p>每次 git commit 后 HEAD 都会指向最后一次提交，用 git reset 可以帮助回到某次提交时的状态，有 3 个可选配置参数: &ndash;mixed, &ndash;soft, &ndash;hard</p>
 
