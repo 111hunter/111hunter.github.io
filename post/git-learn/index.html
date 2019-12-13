@@ -10,24 +10,42 @@
     
 
     
-    <title>My New Hugo Site</title>
+    <title>git 快速上手指南</title>
 
     
     
 
 
 
-
+  
   
   <meta name="author" content="" />
-  <meta name="description" content="" />
+  <meta name="description" content="git 仓库图解
+ 1. 使用帮助 $ git help 可以查看 git 常用命令
+$ git help -a 可以查看 git 所有命令，F 或者 空格 向下查看命令，B 向上查看命令，Q 退出 git-cli
+$ git help add help后接一个指令可以查看该指令的详细用法
+2. git 配置分为三个范围 system, global, 项目 范围 一般选择global进行配置 $ git config --global user.name &#39;111hunter&#39;
+$ git config --list 查看当前配置信息
+$ git config --unset --global user.name 取消 user.name 配置
+配置文件是当前用户主目录 $ cat ~/.gitconfig
+3. git 项目文件的 curd $ mkdir movietalk &amp;amp; cd movietalk 新建文件夹">
 
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@gohugoio" />
-  <meta name="twitter:title" content="My New Hugo Site" />
-  <meta name="twitter:description" content="" />
-  <meta name="twitter:image" content="https://111hunter.github.io/img/avatar.jpg" />
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="git 快速上手指南" />
+    <meta name="twitter:description" content="git 仓库图解
+ 1. 使用帮助 $ git help 可以查看 git 常用命令
+$ git help -a 可以查看 git 所有命令，F 或者 空格 向下查看命令，B 向上查看命令，Q 退出 git-cli
+$ git help add help后接一个指令可以查看该指令的详细用法
+2. git 配置分为三个范围 system, global, 项目 范围 一般选择global进行配置 $ git config --global user.name &#39;111hunter&#39;
+$ git config --list 查看当前配置信息
+$ git config --unset --global user.name 取消 user.name 配置
+配置文件是当前用户主目录 $ cat ~/.gitconfig
+3. git 项目文件的 curd $ mkdir movietalk &amp;amp; cd movietalk 新建文件夹" />
+    <meta name="twitter:image" content="https://111hunter.github.io/img/avatar.jpg" />
+  
 
 
 
@@ -35,7 +53,7 @@
 <meta name="generator" content="Hugo 0.58.3" />
 
 
-<link rel="canonical" href="https://111hunter.github.io/">
+<link rel="canonical" href="https://111hunter.github.io/post/git-learn/">
 <link rel="alternative" href="/index.xml" title="My New Hugo Site" type="application/atom+xml">
 
 
@@ -148,7 +166,7 @@
     sizes="(max-width: 800px) 36px, 128px">
   </amp-img>
   
-    <h1 class="title"><a href="https://111hunter.github.io/" title="My New Hugo Site">My New Hugo Site</a></h1>
+    <h2 class="title"><a href="https://111hunter.github.io/" title="My New Hugo Site">My New Hugo Site</a></h2>
   
   <p class="subtitle"></p>
   <button class="menu-toggle" type="button" on="tap:sidebar.open">
@@ -206,114 +224,272 @@
 </amp-sidebar>
 
     
-  <section class="main entry-list">
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">git 快速上手指南</h1>
+      <p class="entry-meta"><span class="entry-time">Dec 13, 2019</span> 4 min read</p>
+    </header>
     
-    
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/git-learn/" title="git 快速上手指南" class="entry-link">git 快速上手指南</a></h3>
-  </header>
 
-  <p class="entry-summary">git 仓库图解
- 1. 使用帮助 $ git help 可以查看 git 常用命令
-$ git help -a 可以查看 git 所有命令，F 或者 空格 向下查看命令，B 向上查看命令，Q 退出 git-cli
-$ git help add help后接一个指令可以查看该指令的详细用法
-2. git 配置分为三个范围 system, global, 项目 范围 一般选择global进行配置 $ git config --global user.name &#39;111hunter&#39;
-$ git config --list 查看当前配置信息
-$ git config --unset --global user.name 取消 user.name 配置
-配置文件是当前用户主目录 $ cat ~/.gitconfig
-3. git 项目文件的 curd $ mkdir movietalk &amp; cd movietalk 新建文件夹</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Dec 13, 2019</span> 4 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=git%20%e5%bf%ab%e9%80%9f%e4%b8%8a%e6%89%8b%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
+    <article class="post-content">
+
+<!-- # git 快速上手指南 -->
+
+<p>git 仓库图解</p>
+
+<div align=center><img src="../resources/_gen/images/git1.png" width="80%" alt="仓库图解"></div>
+
+<h2 id="1-使用帮助">1. 使用帮助</h2>
+
+<p><code>$ git help</code> 可以查看 git 常用命令</p>
+
+<p><code>$ git help -a</code> 可以查看 git 所有命令，F 或者 空格 向下查看命令，B 向上查看命令，Q 退出 git-cli</p>
+
+<p><code>$ git help add</code>  help后接一个指令可以查看该指令的详细用法</p>
+
+<h2 id="2-git-配置分为三个范围-system-global-项目-范围">2. git 配置分为三个范围 system, global, 项目 范围</h2>
+
+<p>一般选择global进行配置 <code>$ git config --global user.name '111hunter'</code></p>
+
+<p><code>$ git config --list</code> 查看当前配置信息</p>
+
+<p><code>$ git config --unset --global user.name</code> 取消 user.name 配置</p>
+
+<p>配置文件是当前用户主目录 <code>$ cat ~/.gitconfig</code></p>
+
+<h2 id="3-git-项目文件的-curd">3. git 项目文件的 curd</h2>
+
+<p><code>$ mkdir movietalk &amp; cd movietalk</code> 新建文件夹</p>
+
+<p><code>$ git init</code> 初始化项目</p>
+
+<p><code>$ cd .git &amp; ls -a</code> config 目录就是项目级别的配置</p>
+
+<p><code>$ cd .. &amp; touch index.html</code> 新建文件</p>
+
+<p><code>$ vim index.html</code> 编辑文件后保存</p>
+
+<p><code>$ git add .</code> 提交所有文件到暂存区</p>
+
+<p><code>$ git commit -m &quot;first commit&quot;</code> 暂存区文件提交仓库区</p>
+
+<p><code>$ git log</code> 查看提交日志信息</p>
+
+<p><code>$ vim index.html</code> 将index.html中 charset=&ldquo;UTF-8&rdquo; 改为 charset=&ldquo;GBK&rdquo;</p>
+
+<p><code>$ git status</code> 查看文件状态</p>
+
+<p><code>$ git diff index.html</code> 查看暂存区文件与本地工作区的对比</p>
+
+<p><code>$ git diff --staged</code> 查看仓库区与暂存区对比，此时一致</p>
+
+<p><code>$ git add .</code> 然后 <code>$ git diff index.html</code> 此时没有区别了，因为已将文件提交暂存区</p>
+
+<p><code>$ vim index.html</code> 再次修改，在文件中新增适应移动端的 meta 标签</p>
+
+<p><code>$ git diff --staged</code> 查看仓库区与暂存区对比</p>
+
+<p><code>$ git commit -m &quot;修改了charset属性&quot;</code> 暂存区提交仓库</p>
+
+<p><code>$ git diff --staged</code> 此时暂存区与仓库一致</p>
+
+<p><code>$ git log</code> 查看提交日志信息, 此时有两条提交信息</p>
+
+<p><code>$ git status</code> 查看文件状态</p>
+
+<p><code>$ git add . &amp; git commit -m &quot;新增meta标签&quot;</code> 工作区文件提交到仓库</p>
+
+<ul>
+<li>#### 重命名 git 已经跟踪的文件</li>
+</ul>
+
+<p><code>$ touch style.css &amp; vim style.css</code> 新建css文件</p>
+
+<p><code>$ mv style.css theme.css</code> 修改文件名</p>
+
+<p><code>$ git status</code> 查看文件状态</p>
+
+<p><code>$ git rm style.css &amp; git add theme.css</code> 就能修改文件名字</p>
+
+<p><code>$ git commit -m &quot;mv style.css theme.css&quot;</code> 上传仓库区</p>
+
+<ul>
+<li>#### git 移动文件</li>
+</ul>
+
+<p><code>$ git mv theme.css aha.css</code> 移动文件，重命名</p>
+
+<p><code>$ mkdir css &amp; git status</code> git 不会跟踪空文件</p>
+
+<p><code>$ git mv aha.css /css</code> 移动文件</p>
+
+<p><code>$ git commit -m &quot;move aha.css&quot;</code> 上传仓库区</p>
+
+<ul>
+<li>#### git 删除文件与恢复</li>
+</ul>
+
+<p><code>$ git rm index.html</code> 从工作区与暂存区中删除index.html</p>
+
+<p><code>$ git checkout HEAD -- index.html</code> HEAD 指针指向最近一次提交， &ndash; 表示当前分支，将</p>
+
+<p>index.html恢复到当前 commit 的状态</p>
+
+<p><code>$ git rm index.html &amp; git commit -m &quot;删除了index.html&quot;</code> 从工作区与暂存区中删除</p>
+
+<p>index.html, 并提交仓库</p>
+
+<p><code>$ git checkout &quot;HEAD^&quot; -- index.html</code> 恢复到上一次提交，windows cmd 中 ^ 会被当做换</p>
+
+<p>行处理，需要加上引号</p>
+
+<ul>
+<li>#### git 恢复某个操作状态</li>
+</ul>
+
+<p>在 css 文件夹引入 bootstrap</p>
+
+<p><code>vim index.html</code> 在 index.html 中引入 bootstrap</p>
+
+<p><code>git commit -am &quot;增加了bootstrap&quot;</code> 提交仓库</p>
+
+<p>新建 js 文件夹并引入 jquery</p>
+
+<p><code>vim index.html</code> 在 index.html 中引入 jquery</p>
+
+<p><code>git commit -am &quot;增加了jquery&quot;</code> 提交仓库</p>
+
+<p><code>git log --oneline</code> 查看提交日志 id, 添加 bootstrap 的 id 为 981eb52</p>
+
+<p><code>git revert 981eb52</code> 撤销对 bootstrap 的提交，查看工作区文件夹发现 index.html 对</p>
+
+<p>bootstrap 的引入消失了</p>
+
+<ul>
+<li>每次 git commit 后 HEAD 都会指向最后一次提交，用 git reset 可以帮助回到某次提交时的</li>
+</ul>
+
+<p>状态，有 3 个可选配置参数: &ndash;mixed, &ndash;soft, &ndash;hard</p>
+
+<ul>
+<li>&ndash;soft 软重置，不会修改任何文件状态。该参数用于git commit后，又要恢复还没commit的场景，重新审查代码，然后再推上去覆盖之后的提交。</li>
+</ul>
+
+<p><code>$ git log --oneline</code> 查看添加 jquery 的 id 为 e9ae8b5，Revert &ldquo;添加了bootstrap&rdquo;</p>
+
+<p>的 id 为 3e3da01</p>
+
+<p><code>$ git reset --soft e9ae8b5</code> 回到提交 jquey 的 commit ，但是不会对文件做任何操作</p>
+
+<p><code>$ git status</code> 会提示 撤销 bootstrap 时的消息</p>
+
+<ul>
+<li>默认是 &ndash;mixed, 只影响暂存区文件状态</li>
+</ul>
+
+<p><code>$ git reset --mixed e9ae8b5 &amp; git status</code> 发现 bootstrap 已经不在暂存区了</p>
+
+<ul>
+<li>&ndash;hard 会直接重置暂存区和工作区文件到指定 id 状态，用 git reset &ndash;hard 可直接在不</li>
+</ul>
+
+<p>同提交状态切换。</p>
+
+<p><code>$ git reset --hard e9ae8b5 &amp; git log --oneline</code> 查看工作区文件发现 bootstrap又回</p>
+
+<p>来了</p>
+
+<p><code>$ git reset --hard 3e3da01 &amp; git log --oneline</code> 文件又到了最后一次提交时的状态</p>
+
+<h2 id="4-git-项目分支">4. git 项目分支</h2>
+
+<p><code>$ git branch testing &amp; git checkout testing</code> 新建并切换分支，此时对文件的修改只影</p>
+
+<p>响 branch 分支</p>
+
+<p><code>$ vim index.html</code> 在 index.html 中引入 link 标签</p>
+
+<p><code>$ git commit -am &quot;添加link标签&quot;</code> 提交仓库区</p>
+
+<p><code>$ git checkout master</code> 切换回 master 分支，查看工作区文件发现对文件的修改没有了</p>
+
+<p><code>$ git diff master..testing index.html</code> 查看分支间的文件对比</p>
+
+<p><code>$ git merge testing</code> 分支合并</p>
+
+<p><code>$ git diff master..testing</code> 没有不同，已经合并了分支</p>
+
+<ul>
+<li>#### 解决分支合并冲突</li>
+</ul>
+
+<p><code>$ vim index.html</code> 修改 document 为 Movietalk</p>
+
+<p><code>$ git commit -am &quot;修改标题为Movietalk&quot;</code> 提交仓库区</p>
+
+<p><code>$ git checkout testing &amp; vim index.html</code> 切换分支，修改 document 为 Movie-talk</p>
+
+<p><code>$ git commit -am &quot;修改标题为Movie-talk&quot;</code> 提交仓库区</p>
+
+<p><code>$ git merge master</code> 产生冲突。git 发现冲突，查看文件会有提示，编辑保留其中一个</p>
+
+<p>document 修改</p>
+
+<p><code>$ git commit -am &quot;解决冲突&quot;</code> 提交</p>
+
+<p><code>$ git log --oneline --all -10 --graph</code> 查看所有分支提交信息</p>
+
+<ul>
+<li>#### git stash 命令可以将当前的工作状态保存到git栈</li>
+</ul>
+
+<p><code>$ touch human.txt &amp; git commit -am &quot;add human.txt&quot;</code> 新建空文件</p>
+
+<p><code>$ vim human.txt</code> 加入任意内容</p>
+
+<p><code>$ git status</code> 查看修改，不提交</p>
+
+<p><code>$ git stash save &quot;修改了human.txt&quot;</code> 保存工作进度，查看文件 human.txt 又变成了空文件</p>
+
+<p><code>$ git stash list</code> 查看工作进度</p>
+
+<p><code>$ git stash show -p stash@{0}</code> 以补丁的方式查看工作进度与工作目录的区别</p>
+
+<p><code>$ git stash apply stash@{0}</code> 切换到之前的工作进度，发现对 human.txt 的修改又生效了</p>
+
+<p><code>$ git stash pop</code> 切换栈顶工作状态</p>
+
+<p><code>$ git stash drop stash@{0}</code> 删除工作状态</p>
+
+<ul>
+<li>## 5. git 远程仓库</li>
+</ul>
+
+<p>新建远程仓库后请清空仓库不要保留任何文件</p>
+
+<p><code>$ git remote add origin https://gitee.com/hunter_111/movietalk.git</code> 关联远程仓库</p>
+
+<p><code>$ git remote -v</code> 查看是否关联, fetch 远程用来提取，push 远程用来推送</p>
+
+<p><code>$ git push -u origin master</code> 推送到远程分支，并跟踪远程分支变化</p>
+
+<p><code>$ git push origin testing</code> 推送远程分支，不跟踪变化</p>
+
+<ul>
+<li>更多细节请参考学习：<a href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰的 git 教程</a></li>
+</ul>
 </article>
-
+    <footer class="post-footer">
       
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog02/" title="Node.js搭建博客后台, 不使用框架" class="entry-link">Node.js搭建博客后台, 不使用框架</a></h3>
-  </header>
-
-  <p class="entry-summary">源码地址
-Node.js 处理 get，post 请求 const http = require(&#39;http&#39;) const querystring = require(&#39;querystring&#39;) const server = http.createServer((req, res) =&gt; { const method = req.method const url = req.url const path = url.split(&#39;?&#39;)[0] //重点：split(&#39;?&#39;[0])语法弄清楚 const query = querystring.parse(url.split(&#39;?&#39;)[1]) //设置返回值格式为 JSON res.setHeader(&#39;Content-type&#39;, &#39;application/json&#39;) //返回的数据 const resData = { method, url, path, query } //返回 if (method === &#39;GET&#39;) { res.end( JSON.stringify(req.query) ) } if (req.method === &#39;POST&#39;){ let postData = &#39;&#39; //res.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Nov 22, 2019</span> 3 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog02%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2%e5%90%8e%e5%8f%b0%2c%20%e4%b8%8d%e4%bd%bf%e7%94%a8%e6%a1%86%e6%9e%b6&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog02%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog01/" title="es6学习笔记" class="entry-link">es6学习笔记</a></h3>
-  </header>
-
-  <p class="entry-summary">es6学习笔记: 1.用let和const声明变量
-var 函数作用域function scope,不在函数内时作用域是全局的 let, const 块级作用域block scope,作用域是{}内
-eg.执行以下语句判断区别：
-for (var i = 0; i &lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) } for (let i = 0; i &lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) }  let, const不能重复声明变量值 let声明的变量是可以重新赋值的, const声明的变量只能修改引用类型的属性值 变量提升：let, count有变量提升,未声明先使用存在临时性死区(Temporal dead zone),详见mdn
-2.箭头函数：
-特点：简明的语法,隐式返回(省去return关键字),匿名函数 this:普通函数this是动态绑定的
-const Jelly = { name: &#39;Jelly&#39;, hobbies: [&#39;Coding&#39;, &#39;Sleeping&#39;, &#39;Reading&#39;], printHobbies: function () { // console.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 30, 2019</span> 3 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog01%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=es6%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog01%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog/" title="关于js闭包写法的演进过程" class="entry-link">关于js闭包写法的演进过程</a></h3>
-  </header>
-
-  <p class="entry-summary">首先来理解闭包，闭包是为了实现变量的私有化问题，有如下例子： 我们想要用一个counter记录add函数的执行次数。
-function add() { var counter = 0; //局部变量 counter&#43;&#43;; console.log(&#34;counter = &#34; &#43; counter); } add(); // counter = 1 add(); // counter = 1  由于counter是局部变量，每次我们执行add()函数，都是输出 counter = 1; 我们想要执行函数时改变counter的值，一种可行的办法是：
-var counter = 0; //全局变量，谁都可以访问，修改 function add() { counter&#43;&#43;; console.log(&#34;counter = &#34; &#43; counter); } add(); // counter = 1 add(); // counter = 2  但是这样会带来问题，由于counter是全局变量，我们可能会在函数外不小心改变了counter的值， 比如在函数外写了一句counter = -100；就打乱了我们原来的计数，显然我们并不希望在函数外任意地改变counter的值。 我们可以这样写：
-function add() { var counter = 1; //局部变量 console.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 7, 2019</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e5%85%b3%e4%ba%8ejs%e9%97%ad%e5%8c%85%e5%86%99%e6%b3%95%e7%9a%84%e6%bc%94%e8%bf%9b%e8%bf%87%e7%a8%8b&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-    
-    
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f" title="Share on Facebook">
+          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+        </a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=git%20%e5%bf%ab%e9%80%9f%e4%b8%8a%e6%89%8b%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f" title="Share on Twitter">
+          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+        </a>
+      </div>
+    </footer>
   </section>
 
     <footer class="footer">

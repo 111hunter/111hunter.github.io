@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://111hunter.github.io/</loc>
-    <lastmod>2019-11-22T19:34:41+08:00</lastmod>
+    <loc>https://111hunter.github.io/post/git-learn/</loc>
+    <lastmod>2019-12-13T15:48:16+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://111hunter.github.io/post/blog02/</loc>
-    <lastmod>2019-11-22T19:34:41+08:00</lastmod>
+    <loc>https://111hunter.github.io/</loc>
+    <lastmod>2019-12-13T15:48:16+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://111hunter.github.io/post/</loc>
+    <lastmod>2019-12-13T15:48:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://111hunter.github.io/post/blog02/</loc>
     <lastmod>2019-11-22T19:34:41+08:00</lastmod>
   </url>
   
