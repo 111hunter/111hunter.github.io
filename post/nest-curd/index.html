@@ -23,13 +23,14 @@
   <meta name="description" content="参考资料: DI(依赖注入)：https://zhuanlan.zhihu.com/p/60995312
 NestJS 官方文档：https://docs.nestjs.cn
 TypeORM 官方文档：https://typeorm.io/#/
-1.新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
+传统 MVC 架构：
+ NestJs 架构：
+ 随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。Nest 的分层借鉴自 Spring，更细化。我们应该要了解整个 Nest 框架的三层结构，Nest 和传统的 MVC 框架的区别在于它更注重于后端部分（控制器、服务与数据）的架构，视图层相对比较独立，完全可以由用户自定义配置。
+新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
 $ nest new nest-curd 新建 nest.js 项目, 选择 yarn 作为开发工具
 $ nest g mo photo 建立 PhotoModule
 $ nest g co photo 建立 PhotoController
-$ nest g s photo 建立 PhotoService
-$ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安装这些库
-在 typeORM 中数据库的表对应的就是一个类，通过定义一个类来创建实体。实体（Entity）是一个映射到数据库表的类 (类似于 mongoose 中的 Schema 映射到 MongoDB 的 collection)，通过@Entity()来标记。在photo文件夹中新建 photo.">
+$ nest g s photo 建立 PhotoService">
 
   
   
@@ -39,13 +40,14 @@ $ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安�
     <meta name="twitter:description" content="参考资料: DI(依赖注入)：https://zhuanlan.zhihu.com/p/60995312
 NestJS 官方文档：https://docs.nestjs.cn
 TypeORM 官方文档：https://typeorm.io/#/
-1.新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
+传统 MVC 架构：
+ NestJs 架构：
+ 随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。Nest 的分层借鉴自 Spring，更细化。我们应该要了解整个 Nest 框架的三层结构，Nest 和传统的 MVC 框架的区别在于它更注重于后端部分（控制器、服务与数据）的架构，视图层相对比较独立，完全可以由用户自定义配置。
+新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
 $ nest new nest-curd 新建 nest.js 项目, 选择 yarn 作为开发工具
 $ nest g mo photo 建立 PhotoModule
 $ nest g co photo 建立 PhotoController
-$ nest g s photo 建立 PhotoService
-$ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安装这些库
-在 typeORM 中数据库的表对应的就是一个类，通过定义一个类来创建实体。实体（Entity）是一个映射到数据库表的类 (类似于 mongoose 中的 Schema 映射到 MongoDB 的 collection)，通过@Entity()来标记。在photo文件夹中新建 photo." />
+$ nest g s photo 建立 PhotoService" />
     <meta name="twitter:image" content="https://111hunter.github.io/img/avatar.jpg" />
   
 
@@ -229,7 +231,7 @@ $ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安�
   <section class="main post-detail">
     <header class="post-header">
       <h1 class="post-title">NestJS &#43; TypeORM 实现 curd 示例</h1>
-      <p class="entry-meta"><span class="entry-time">Feb 1, 2020</span> 3 min read</p>
+      <p class="entry-meta"><span class="entry-time">Feb 1, 2020</span> 4 min read</p>
     </header>
     
 
@@ -243,7 +245,17 @@ $ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安�
 
 <p>TypeORM 官方文档：<a href="https://typeorm.io/#/">https://typeorm.io/#/</a></p>
 
-<h3 id="1-新建-nest-js-项目">1.新建 nest.js 项目</h3>
+<p>传统 MVC 架构：</p>
+
+<div align=center><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/mvc.png" width="40%" alt="仓库图解"></div>
+
+<p>NestJs 架构：</p>
+
+<div align=center><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/nest.png" width="40%" alt="仓库图解"></div>
+
+<p>随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。Nest 的分层借鉴自 Spring，更细化。我们应该要了解整个 Nest 框架的三层结构，Nest 和传统的 MVC 框架的区别在于它更注重于后端部分（控制器、服务与数据）的架构，视图层相对比较独立，完全可以由用户自定义配置。</p>
+
+<h3 id="新建-nest-js-项目">新建 nest.js 项目</h3>
 
 <p><code>$ npm install -g @nest/cli</code> 全局安装 nest 脚手架</p>
 
