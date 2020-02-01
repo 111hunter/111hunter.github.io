@@ -19,7 +19,7 @@
 
   
   
-  <meta name="author" content="" />
+  <meta name="author" content="Huy Nguyen" />
   <meta name="description" content="首先来理解闭包，闭包是为了实现变量的私有化问题，有如下例子： 我们想要用一个counter记录add函数的执行次数。
 function add() { var counter = 0; //局部变量 counter&#43;&#43;; console.log(&amp;quot;counter = &amp;quot; &#43; counter); } add(); // counter = 1 add(); // counter = 1  由于counter是局部变量，每次我们执行add()函数，都是输出 counter = 1; 我们想要执行函数时改变counter的值，一种可行的办法是：
 var counter = 0; //全局变量，谁都可以访问，修改 function add() { counter&#43;&#43;; console.log(&amp;quot;counter = &amp;quot; &#43; counter); } add(); // counter = 1 add(); // counter = 2  但是这样会带来问题，由于counter是全局变量，我们可能会在函数外不小心改变了counter的值， 比如在函数外写了一句counter = -100；就打乱了我们原来的计数，显然我们并不希望在函数外任意地改变counter的值。 我们可以这样写：
@@ -44,7 +44,7 @@ function add() { var counter = 1; //局部变量 console." />
 
 
 <link rel="canonical" href="https://111hunter.github.io/post/blog/">
-<link rel="alternative" href="/index.xml" title="My New Hugo Site" type="application/atom+xml">
+<link rel="alternative" href="/index.xml" title="My Hugo Site(主页)" type="application/atom+xml">
 
 
 <meta name="renderer" content="webkit" />
@@ -148,17 +148,17 @@ function add() { var counter = 1; //局部变量 console." />
 </svg>
 
     <header class="header">
-  <amp-img alt="My New Hugo Site"
+  <amp-img alt="My Hugo Site(主页)"
     width="128px"
     height="128px"
     class="logo"
-    src=""
+    src="/img/true.jpg"
     sizes="(max-width: 800px) 36px, 128px">
   </amp-img>
   
-    <h2 class="title"><a href="https://111hunter.github.io/" title="My New Hugo Site">My New Hugo Site</a></h2>
+    <h2 class="title"><a href="https://111hunter.github.io/" title="My Hugo Site(主页)">My Hugo Site(主页)</a></h2>
   
-  <p class="subtitle"></p>
+  <p class="subtitle">Light responsive AMP theme</p>
   <button class="menu-toggle" type="button" on="tap:sidebar.open">
     <span class="icon icon-menu"></span>
   </button>
@@ -322,7 +322,7 @@ plus1(); // counter = 2
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2020 My New Hugo Site</p>
+  <p>Copyright © 2018-2020 My Hugo Site(主页)</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 
