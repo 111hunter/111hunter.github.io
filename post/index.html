@@ -225,6 +225,36 @@
         <article class="entry-single">
   
   <header class="entry-header">
+    <h3 class="entry-title"><a href="https://111hunter.github.io/post/nest-curd/" title="NestJS &#43; TypeORM 实现 curd 示例" class="entry-link">NestJS &#43; TypeORM 实现 curd 示例</a></h3>
+  </header>
+
+  <p class="entry-summary">参考资料: DI(依赖注入)：https://zhuanlan.zhihu.com/p/60995312
+NestJS 官方文档：https://docs.nestjs.cn
+TypeORM 官方文档：https://typeorm.io/#/
+1.新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
+$ nest new nest-curd 新建 nest.js 项目, 选择 yarn 作为开发工具
+$ nest g mo photo 建立 PhotoModule
+$ nest g co photo 建立 PhotoController
+$ nest g s photo 建立 PhotoService
+$ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安装这些库
+在 typeORM 中数据库的表对应的就是一个类，通过定义一个类来创建实体。实体（Entity）是一个映射到数据库表的类 (类似于 mongoose 中的 Schema 映射到 MongoDB 的 collection)，通过@Entity()来标记。在photo文件夹中新建 photo.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Feb 1, 2020</span> 3 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-curd%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=NestJS%20%2b%20TypeORM%20%e5%ae%9e%e7%8e%b0%20curd%20%e7%a4%ba%e4%be%8b&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-curd%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
     <h3 class="entry-title"><a href="https://111hunter.github.io/post/git-learn/" title="git 快速上手指南" class="entry-link">git 快速上手指南</a></h3>
   </header>
 
@@ -329,7 +359,7 @@ function add() { var counter = 1; //局部变量 console.</p>
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2019 My New Hugo Site</p>
+  <p>Copyright © 2018-2020 My New Hugo Site</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 

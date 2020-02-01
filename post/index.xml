@@ -6,10 +6,28 @@
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Dec 2019 15:48:16 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Feb 2020 14:06:31 +0800</lastBuildDate>
     
 	<atom:link href="https://111hunter.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NestJS &#43; TypeORM 实现 curd 示例</title>
+      <link>https://111hunter.github.io/post/nest-curd/</link>
+      <pubDate>Sat, 01 Feb 2020 14:06:31 +0800</pubDate>
+      
+      <guid>https://111hunter.github.io/post/nest-curd/</guid>
+      <description>参考资料: DI(依赖注入)：https://zhuanlan.zhihu.com/p/60995312
+NestJS 官方文档：https://docs.nestjs.cn
+TypeORM 官方文档：https://typeorm.io/#/
+1.新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
+$ nest new nest-curd 新建 nest.js 项目, 选择 yarn 作为开发工具
+$ nest g mo photo 建立 PhotoModule
+$ nest g co photo 建立 PhotoController
+$ nest g s photo 建立 PhotoService
+$ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安装这些库
+在 typeORM 中数据库的表对应的就是一个类，通过定义一个类来创建实体。实体（Entity）是一个映射到数据库表的类 (类似于 mongoose 中的 Schema 映射到 MongoDB 的 collection)，通过@Entity()来标记。在photo文件夹中新建 photo.</description>
+    </item>
     
     <item>
       <title>git 快速上手指南</title>

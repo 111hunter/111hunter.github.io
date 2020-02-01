@@ -10,7 +10,7 @@
     
 
     
-    <title>关于js闭包写法的演进过程</title>
+    <title>NestJS &#43; TypeORM 实现 curd 示例</title>
 
     
     
@@ -20,20 +20,32 @@
   
   
   <meta name="author" content="" />
-  <meta name="description" content="首先来理解闭包，闭包是为了实现变量的私有化问题，有如下例子： 我们想要用一个counter记录add函数的执行次数。
-function add() { var counter = 0; //局部变量 counter&#43;&#43;; console.log(&amp;quot;counter = &amp;quot; &#43; counter); } add(); // counter = 1 add(); // counter = 1  由于counter是局部变量，每次我们执行add()函数，都是输出 counter = 1; 我们想要执行函数时改变counter的值，一种可行的办法是：
-var counter = 0; //全局变量，谁都可以访问，修改 function add() { counter&#43;&#43;; console.log(&amp;quot;counter = &amp;quot; &#43; counter); } add(); // counter = 1 add(); // counter = 2  但是这样会带来问题，由于counter是全局变量，我们可能会在函数外不小心改变了counter的值， 比如在函数外写了一句counter = -100；就打乱了我们原来的计数，显然我们并不希望在函数外任意地改变counter的值。 我们可以这样写：
-function add() { var counter = 1; //局部变量 console.">
+  <meta name="description" content="参考资料: DI(依赖注入)：https://zhuanlan.zhihu.com/p/60995312
+NestJS 官方文档：https://docs.nestjs.cn
+TypeORM 官方文档：https://typeorm.io/#/
+1.新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
+$ nest new nest-curd 新建 nest.js 项目, 选择 yarn 作为开发工具
+$ nest g mo photo 建立 PhotoModule
+$ nest g co photo 建立 PhotoController
+$ nest g s photo 建立 PhotoService
+$ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安装这些库
+在 typeORM 中数据库的表对应的就是一个类，通过定义一个类来创建实体。实体（Entity）是一个映射到数据库表的类 (类似于 mongoose 中的 Schema 映射到 MongoDB 的 collection)，通过@Entity()来标记。在photo文件夹中新建 photo.">
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gohugoio" />
-    <meta name="twitter:title" content="关于js闭包写法的演进过程" />
-    <meta name="twitter:description" content="首先来理解闭包，闭包是为了实现变量的私有化问题，有如下例子： 我们想要用一个counter记录add函数的执行次数。
-function add() { var counter = 0; //局部变量 counter&#43;&#43;; console.log(&amp;quot;counter = &amp;quot; &#43; counter); } add(); // counter = 1 add(); // counter = 1  由于counter是局部变量，每次我们执行add()函数，都是输出 counter = 1; 我们想要执行函数时改变counter的值，一种可行的办法是：
-var counter = 0; //全局变量，谁都可以访问，修改 function add() { counter&#43;&#43;; console.log(&amp;quot;counter = &amp;quot; &#43; counter); } add(); // counter = 1 add(); // counter = 2  但是这样会带来问题，由于counter是全局变量，我们可能会在函数外不小心改变了counter的值， 比如在函数外写了一句counter = -100；就打乱了我们原来的计数，显然我们并不希望在函数外任意地改变counter的值。 我们可以这样写：
-function add() { var counter = 1; //局部变量 console." />
+    <meta name="twitter:title" content="NestJS &#43; TypeORM 实现 curd 示例" />
+    <meta name="twitter:description" content="参考资料: DI(依赖注入)：https://zhuanlan.zhihu.com/p/60995312
+NestJS 官方文档：https://docs.nestjs.cn
+TypeORM 官方文档：https://typeorm.io/#/
+1.新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
+$ nest new nest-curd 新建 nest.js 项目, 选择 yarn 作为开发工具
+$ nest g mo photo 建立 PhotoModule
+$ nest g co photo 建立 PhotoController
+$ nest g s photo 建立 PhotoService
+$ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安装这些库
+在 typeORM 中数据库的表对应的就是一个类，通过定义一个类来创建实体。实体（Entity）是一个映射到数据库表的类 (类似于 mongoose 中的 Schema 映射到 MongoDB 的 collection)，通过@Entity()来标记。在photo文件夹中新建 photo." />
     <meta name="twitter:image" content="https://111hunter.github.io/img/avatar.jpg" />
   
 
@@ -43,7 +55,7 @@ function add() { var counter = 1; //局部变量 console." />
 <meta name="generator" content="Hugo 0.58.3" />
 
 
-<link rel="canonical" href="https://111hunter.github.io/post/blog/">
+<link rel="canonical" href="https://111hunter.github.io/post/nest-curd/">
 <link rel="alternative" href="/index.xml" title="My New Hugo Site" type="application/atom+xml">
 
 
@@ -216,105 +228,307 @@ function add() { var counter = 1; //局部变量 console." />
     
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">关于js闭包写法的演进过程</h1>
-      <p class="entry-meta"><span class="entry-time">Oct 7, 2019</span> 1 min read</p>
+      <h1 class="post-title">NestJS &#43; TypeORM 实现 curd 示例</h1>
+      <p class="entry-meta"><span class="entry-time">Feb 1, 2020</span> 3 min read</p>
     </header>
     
 
-    <article class="post-content"><p>首先来理解闭包，闭包是为了实现变量的私有化问题，有如下例子：
-<br>我们想要用一个counter记录add函数的执行次数。</p>
+    <article class="post-content">
 
-<pre><code>function add() {
-	var counter = 0;  //局部变量
-	counter++;
-	console.log(&quot;counter = &quot; + counter);
+<h4 id="参考资料">参考资料:</h4>
+
+<p>DI(依赖注入)：<a href="https://zhuanlan.zhihu.com/p/60995312">https://zhuanlan.zhihu.com/p/60995312</a></p>
+
+<p>NestJS 官方文档：<a href="https://docs.nestjs.cn">https://docs.nestjs.cn</a></p>
+
+<p>TypeORM 官方文档：<a href="https://typeorm.io/#/">https://typeorm.io/#/</a></p>
+
+<h3 id="1-新建-nest-js-项目">1.新建 nest.js 项目</h3>
+
+<p><code>$ npm install -g @nest/cli</code> 全局安装 nest 脚手架</p>
+
+<p><code>$ nest new nest-curd</code> 新建 nest.js 项目, 选择 yarn 作为开发工具</p>
+
+<p><code>$ nest g mo photo</code> 建立 PhotoModule</p>
+
+<p><code>$ nest g co photo</code> 建立 PhotoController</p>
+
+<p><code>$ nest g s photo</code> 建立 PhotoService</p>
+
+<p><code>$ yarn add @nestjs/typeorm typeorm mysql</code> 需要使用 typeorm, mysql 需要安装这些库</p>
+
+<p>在 typeORM 中数据库的表对应的就是一个类，通过定义一个类来创建实体。实体（Entity）是一个映射到数据库表的类 (类似于 mongoose 中的 Schema 映射到 MongoDB 的 collection)，通过@Entity()来标记。在photo文件夹中新建 photo.entity.ts:</p>
+
+<pre><code>// photo.entity.ts
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+
+@Entity('photo')
+export class PhotoEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column({ length: 500 })
+  name: string;
+
+  @Column('text')
+  description: string;
+
+  @Column()
+  filename: string;
+
+  @Column('int')
+  views: number;
+
+  @Column()
+  isPublished: boolean;
 }
 
-add(); // counter = 1
-add(); // counter = 1
 </code></pre>
 
-<p>由于counter是局部变量，每次我们执行add()函数，都是输出 counter = 1;
-我们想要执行函数时改变counter的值，一种可行的办法是：</p>
+<p>在 app.module.ts 中的 import 数组中配置数据库连接，可以配置多个数据库连接。</p>
 
-<pre><code>var counter = 0;    //全局变量，谁都可以访问，修改
-function add() {
-	counter++;
-	console.log(&quot;counter = &quot; + counter);
+<pre><code>TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: '123456',
+      database: 'test',
+      entities: [PhotoEntity],
+      synchronize: true,
+    })
+</code></pre>
+
+<p>然后在 photo.mudule.ts 中 import 数组中注册要本模块使用的数据库。这样，我们就可以使用 @InjectRepository() 装饰器将 PhotoRepository 注入到 PhotoService 中</p>
+
+<p><code>
+imports: [TypeOrmModule.forFeature([PhotoEntity])]
+</code></p>
+
+<p>数据传输对象简称 DTO(Data Transfer Object)，是一组需要跨进程或网络边界传输的聚合数据的简单容器。它不应该包含业务逻辑，并将其行为限制为诸如内部一致性检查和基本验证之类的活动。class-validator 可以很方便地验证前端传过来的参数。</p>
+
+<pre><code>// photo.dto.ts
+import { IsString, IsInt, IsBoolean } from 'class-validator';
+
+export class PhotoDto {
+
+    @IsInt()
+    readonly id: number;
+
+    @IsString()
+    readonly name: string;
+
+    @IsString()
+    readonly description: string;
+
+    @IsString()
+    readonly filename: string;
+
+    @IsInt()
+    readonly views: number;
+
+    @IsBoolean()
+    readonly isPublished: boolean;
 }
-add(); // counter = 1
-add(); // counter = 2
 </code></pre>
 
-<p>但是这样会带来问题，由于counter是全局变量，我们可能会在函数外不小心改变了counter的值，
-比如在函数外写了一句counter = -100；就打乱了我们原来的计数，显然我们并不希望在函数外任意地改变counter的值。
-我们可以这样写：</p>
+<p>将 PhotoRepository 注入到 PhotoService 中, 写数据库操作的 curd 代码:</p>
 
-<pre><code>function add() {
-	var counter = 1; //局部变量
-        console.log(&quot;counter = &quot; + counter);
-	plus = function() { //全局函数
-		counter++; 
-		console.log(&quot;counter = &quot; + counter);
-	}
+<pre><code>@Injectable()
+export class PhotoService {
+  constructor(
+    @InjectRepository(PhotoEntity)
+    private readonly photoRepository: Repository&lt;PhotoEntity&gt;,
+  ) { }
+
+  async findAll(): Promise&lt;PhotoEntity[]&gt; {
+    return this.photoRepository.find();
+  }
+
+  async create(photoDto: PhotoDto): Promise&lt;PhotoEntity&gt; {
+    return await this.photoRepository.save(photoDto)
+  }
+
+  async delete(id: number) {
+    return await this.photoRepository.delete(id)
+  }
+
+  async update(photoDto: PhotoDto) {
+    return await this.photoRepository.update(photoDto.id, photoDto)
+  }
+
+  async findOne(id: number): Promise&lt;PhotoEntity&gt; {
+    return await this.photoRepository.findOne(id)
+  }
+}
+</code></pre>
+
+<p>将 PhotoService 注入到 PhotoController 中, 写 api 路由:</p>
+
+<pre><code>@Controller('photo')
+export class PhotoController {
+  constructor(private readonly photoService: PhotoService) { }
+
+  @Get()
+  findAll(): Promise&lt;PhotoEntity[]&gt; {
+    return this.photoService.findAll();
+  }
+
+  @Post('create')
+  create(@Body() PhotoDto: PhotoDto): Promise&lt;PhotoEntity&gt; {
+    return this.photoService.create(PhotoDto)
+  }
+
+  @Delete('delete/:id')
+  delete(@Param('id') id: number) {
+    return this.photoService.delete(id)
+  }
+
+  @Put('update/:id')
+  update(@Param('id') id: number, @Body() PhotoDto: PhotoDto) {
+    return this.photoService.update(PhotoDto)
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: number): Promise&lt;PhotoEntity&gt; {
+    return this.photoService.findOne(id)
+  }
+}
+</code></pre>
+
+<p>接下来在 main.ts 中配置 swagger, 方便我们测试 api</p>
+
+<pre><code>  const app = await NestFactory.create(AppModule);
+
+  const options = new DocumentBuilder()
+    .setTitle('photo example')
+    .setDescription('The photo API description')
+    .setVersion('0.0.1')
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('docs', app, document);
+
+  await app.listen(3000);
+</code></pre>
+
+<p><code>$ npm run start</code> 启动 nest 项目, 访问 <a href="http://localhost:3000/docs">http://localhost:3000/docs</a> ，到这里基本的 curd 操作已经实现，此时，NestJS框架的<font color="#dd0000">三层结构</font>已有体现。接下来再完善项目。<br>
+我们在 PhotoController 的路由请求参数中传入了 DTO, 做了直接的参数校验。传入类型不符合要求时，会直接报错。DTO 中的class-validator 还需要配合 pipe 才能完成校验功能。新建一个 pipe 捕获异常。<code>$ nest g pi section/validation</code></p>
+
+<pre><code>@Injectable()
+export class ValidationPipe implements PipeTransform&lt;any&gt; {
+  async transform(value, metadata: ArgumentMetadata) {
+    const { metatype } = metadata
+    if (!metatype || !this.toValidate(metatype)) {
+      return value
+    }
+    const object = plainToClass(metatype, value)
+    const errors = await validate(object)
+    if (errors.length &gt; 0) {
+      const errorMessage = _.values(errors[0].constraints)[0]
+      throw new BadRequestException(errorMessage)
+    }
+    return value
+  }
+
+  private toValidate(metatype): boolean {
+    const types = [String, Boolean, Number, Array, Object]
+    return !types.find(type =&gt; metatype === type)
+  }
+}
+</code></pre>
+
+<p>有了这一层 pipe 帮助我们校验参数，有效地降低了类的复杂度，提高了可读性和可维护性。我们还可以对正确的请求，异常的请求进行包装，假设返回的格式是这样的：</p>
+
+<pre><code># 请求失败
+{
+    status: 1,
+    message: string,
 }
 
-add(); //counter = 1 counter初始化
-plus(); //counter = 2
-</code></pre>
-
-<p>这样我们就无法在函数外任意改变counter了，进一步的写法是：</p>
-
-<pre><code>function add() {
-    var counter = 1; //局部变量
-    console.log(&quot;counter = &quot; + counter);
-	var plus = function() { //局部函数
-		counter++; 
-		console.log(&quot;counter = &quot; + counter);
-	};
-	return plus;
+# 请求成功
+{
+    status: 0,
+    message: '请求成功',
+    data: any
 }
-var plus1 = add(); // counter = 1
-plus1();           // counter = 2
 </code></pre>
 
-<p>plus函数名有些多余，add可以简化为立即执行函数。</p>
+<p>可以利用 AOP 的思想去做这件事。全局捕获错误的切片层去处理所有的 exception，如果是一个成功的请求，需要把这个返回结果通过一个切片层包装一下。
+在 NestJs 中，Exception Filter 是最后捕获 exception的机会。我们把它作为处理全局错误的切片层。<code>$ nest g f section/errors</code></p>
 
-<pre><code>var plus1 = (function add() {
-	var counter = 0; //局部变量
-	return function() { //全局函数
-		counter++; 
-		console.log(&quot;counter = &quot; + counter);
-	};
-})();
+<pre><code>@Catch()
+export class ExceptionsFilter implements ExceptionFilter {
+  async catch(exception, host: ArgumentsHost) {
+    const ctx = host.switchToHttp()
+    const response = ctx.getResponse()
+    const request = ctx.getRequest()
 
-plus1(); // counter = 1
-plus1(); // counter = 2
+    let message = exception.message
+    let isDeepestMessage = false
+    while (!isDeepestMessage) {
+      isDeepestMessage = !message.message
+      message = isDeepestMessage ? message : message.message
+    }
+
+    const errorResponse = {
+      message: message || '请求失败',
+      status: 1,
+    }
+
+    const status = exception instanceof HttpException ?
+      exception.getStatus() :
+      HttpStatus.INTERNAL_SERVER_ERROR
+
+    response.status(status)
+    response.header('Content-Type', 'application/json; charset=utf-8')
+    response.send(errorResponse)
+  }
+}
 </code></pre>
 
-<p>发现add函数名也可以去掉了，简化为匿名函数，如下就是闭包的一般写法：</p>
+<p>而 Interceptor 则负责对成功请求结果进行包装：<code>$ new g in section/transform</code></p>
 
-<pre><code>var plus1 = (function() {
-	var counter = 0; //局部变量
-	return function() { 
-		counter++; 
-		console.log(&quot;counter = &quot; + counter);
-	};
-})();
+<pre><code>interface Response&lt;T&gt; {
+  data: T
+}
 
-plus1(); // counter = 1
-plus1(); // counter = 2
+@Injectable()
+export class TransformInterceptor&lt;T&gt;
+  implements NestInterceptor&lt;T, Response&lt;T&gt;&gt; {
+  intercept(
+    context: ExecutionContext,
+    next: CallHandler,
+  ): Observable&lt;Response&lt;T&gt;&gt; {
+    return next.handle().pipe(
+      map(rawData =&gt; {
+        return {
+          data: rawData,
+          status: 0,
+          message: '请求成功',
+        }
+      }
+      )
+    )
+  }
+}
 </code></pre>
 
-<p>闭包实现了变量私有化，局部变量的本质，全局变量的生命周期。</p>
+<p>将 Interceptor, Exception Filter 和 Pipe 定义在全局范围内:</p>
+
+<pre><code>  app.useGlobalFilters(new ExceptionsFilter());
+  app.useGlobalInterceptors(new TransformInterceptor());
+  app.useGlobalPipes(new ValidationPipe());
+</code></pre>
+
+<p><code>$ npm run start</code>,打开 <a href="http://localhost:3000/docs">http://localhost:3000/docs</a>, 测试 api 结果正如我们预期的那样。</p>
 </article>
     <footer class="post-footer">
       
       <div class="sharing">
-        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog%2f" title="Share on Facebook">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-curd%2f" title="Share on Facebook">
           <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
         </a>
-        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e5%85%b3%e4%ba%8ejs%e9%97%ad%e5%8c%85%e5%86%99%e6%b3%95%e7%9a%84%e6%bc%94%e8%bf%9b%e8%bf%87%e7%a8%8b&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog%2f" title="Share on Twitter">
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=NestJS%20%2b%20TypeORM%20%e5%ae%9e%e7%8e%b0%20curd%20%e7%a4%ba%e4%be%8b&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-curd%2f" title="Share on Twitter">
           <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
         </a>
       </div>
