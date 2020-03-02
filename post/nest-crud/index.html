@@ -436,6 +436,7 @@ New,monospace;text-align:center}.error-emoji{color:#444;font-size:3rem}.error-te
 <p>在 typeORM 中数据库的表对应的就是一个类，通过定义一个类来创建实体。实体（Entity）是一个映射到数据库表的类 (类似于 mongoose 中的 Schema 映射到 MongoDB 的 collection)，通过@Entity()来标记。在photo文件夹中新建 photo.entity.ts:</p>
 
 <pre><code>// photo.entity.ts
+
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('photo')
@@ -484,6 +485,7 @@ imports: [TypeOrmModule.forFeature([PhotoEntity])]
 <p>数据传输对象简称 DTO(Data Transfer Object)，是一组需要跨进程或网络边界传输的聚合数据的简单容器。它不应该包含业务逻辑，并将其行为限制为诸如内部一致性检查和基本验证之类的活动。class-validator 可以很方便地验证前端传过来的参数。</p>
 
 <pre><code>// photo.dto.ts
+
 import { IsString, IsInt, IsBoolean } from 'class-validator';
 
 export class PhotoDto {
