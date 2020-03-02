@@ -20,9 +20,11 @@
   
   
   <meta name="author" content="Huy Nguyen" />
-  <meta name="description" content="什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。 注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。 什么是ngrx？ngrx = rxjs &#43; rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。
-先上官网流程图一张，一图胜千言。
-没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口，而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。其实，在软件开发中，一切看似的复杂往往是为了简单。 下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。 redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。
+  <meta name="description" content="参考资料: NgRx 英文官网：https://ngrx.io
+github 上一个例子：https://github.com/angulardeveloper-io/ngrx-store-app
+什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。 什么是ngrx？ngrx = rxjs &#43; rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。 注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。 先上官网流程图一张，一图胜千言。
+angular 有无 ngrx 的架构对比：
+  没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口，而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。其实，在软件开发中，一切看似的复杂往往是为了简单。 下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。 redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。
 Store 简单的理解就是前端状态的数据库，它有一个基本原则: 是&amp;rdquo;唯一的、状态不可修改&amp;rdquo;的树。
 Action 可以理解为状态变化的信号，当状态发生变化时，通过 Action 显性定义状态变化。 可配合 store-devtools 使用。
 Reducer 它是前端数据状态映射成的 Store 数据库中的表，接收旧状态，返回新状态。它是一个纯函数, 需要通过 Action 告知能够进行的状态变化。
@@ -33,9 +35,11 @@ Effects 我们在进行一些 Action 时需要发送 http 请求，DOM 操作, �
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
     <meta name="twitter:title" content="通过 ngrx 体验前端状态管理" />
-    <meta name="twitter:description" content="什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。 注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。 什么是ngrx？ngrx = rxjs &#43; rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。
-先上官网流程图一张，一图胜千言。
-没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口，而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。其实，在软件开发中，一切看似的复杂往往是为了简单。 下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。 redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。
+    <meta name="twitter:description" content="参考资料: NgRx 英文官网：https://ngrx.io
+github 上一个例子：https://github.com/angulardeveloper-io/ngrx-store-app
+什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。 什么是ngrx？ngrx = rxjs &#43; rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。 注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。 先上官网流程图一张，一图胜千言。
+angular 有无 ngrx 的架构对比：
+  没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口，而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。其实，在软件开发中，一切看似的复杂往往是为了简单。 下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。 redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。
 Store 简单的理解就是前端状态的数据库，它有一个基本原则: 是&amp;rdquo;唯一的、状态不可修改&amp;rdquo;的树。
 Action 可以理解为状态变化的信号，当状态发生变化时，通过 Action 显性定义状态变化。 可配合 store-devtools 使用。
 Reducer 它是前端数据状态映射成的 Store 数据库中的表，接收旧状态，返回新状态。它是一个纯函数, 需要通过 Action 告知能够进行的状态变化。
@@ -393,16 +397,27 @@ New,monospace;text-align:center}.error-emoji{color:#444;font-size:3rem}.error-te
 
     <article class="post-content">
 
-<p>什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。
-为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。
-注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。
-什么是ngrx？ngrx = rxjs + rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。</p>
+<h4 id="参考资料">参考资料:</h4>
 
-<p>先上官网流程图一张，一图胜千言。</p>
+<p>NgRx 英文官网：<a href="https://ngrx.io">https://ngrx.io</a></p>
+
+<p>github 上一个例子：<a href="https://github.com/angulardeveloper-io/ngrx-store-app">https://github.com/angulardeveloper-io/ngrx-store-app</a></p>
+
+<p>什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。
+<br>为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。
+<br>什么是ngrx？ngrx = rxjs + rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。
+<br>注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。
+<br>先上官网流程图一张，一图胜千言。</p>
+
+<p>angular 有无 ngrx 的架构对比：</p>
+
+<div align=center><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/angular-mvvm.png" width="25%" alt="angular-mvvm"></div>
+
+<div align=center><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/ngrx.png" width="80%" alt="ngrx"></div>
 
 <p>没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口，而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。其实，在软件开发中，一切看似的复杂往往是为了简单。
-下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。
-redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。</p>
+<br>下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。
+<br>redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。</p>
 
 <h2 id="store">Store</h2>
 
@@ -434,13 +449,14 @@ redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的�
 
 <h2 id="整体流程">整体流程</h2>
 
-<p>当我们 component 中的 state 需要改变时，发出 Action 信号, Reducer 根据 Action 的信号选择更新 state, Store 收到 state 的变化，通过 selector 得到
-状态切片选择性地更新 compont 中的 state。 有些过程无法在这个流程中实现，例如从后端 api 获取数据，于是我们在发出 Action 时，套上 Effects 钩子函数，在钩子函数中调用 service 取得后端数据。</p>
+<p>当我们 component 中的 state 需要改变时，发出 Action 信号, Reducer 根据 Action 的信号选择更新 state, Store 收到 state 的变化，通过 selector 得到状态切片选择性地更新 compont 中的 state。 有些过程无法在这个流程中实现，例如从后端 api 获取数据，于是我们在发出 Action 时，套上 Effects 钩子函数，在钩子函数中调用 service 取得后端数据。</p>
 
-<p>下面是使用各个 api 的例子：
-现在我们需要管理 customer 的状态, customer 定义如下：</p>
+<p>下面是使用各个 api 的例子, 关于如何注册各个模块，官网有详细说明，不在赘述。
+<br>现在我们需要管理 customer 的状态, customer 定义如下：</p>
 
-<pre><code>export interface Customer {
+<pre><code>//customer.model.ts
+
+export interface Customer {
   id?: number;
   name: string;
   phone: string;
@@ -449,11 +465,35 @@ redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的�
 }
 </code></pre>
 
-<p>用 json.server 做服务器，创建 db.json 写入两个 customer: John Doe, Mary Johnson。我们要做的是管理监视页面加载 customer 的过程。coustom 有三种加载状态：加载中，加载成功，加载失败。</p>
+<p>用 json.server 做服务器，创建 db.json 写入两个 customer：</p>
 
-<p>先定义 customer 的状态, loading, loaded, error, 实现 EntityState 接口性能优化，方便管理：</p>
+<pre><code>{
+  &quot;customers&quot;: [
+    {
+      &quot;name&quot;: &quot;John Doe&quot;,
+      &quot;phone&quot;: &quot;910928392098&quot;,
+      &quot;address&quot;: &quot;123 Sun Street&quot;,
+      &quot;membership&quot;: &quot;Platinum&quot;,
+      &quot;id&quot;: 1
+    },
+    {
+      &quot;name&quot;: &quot;Mary Johnson&quot;,
+      &quot;phone&quot;: &quot;808937482734&quot;,
+      &quot;address&quot;: &quot;893 Main Voulevard&quot;,
+      &quot;membership&quot;: &quot;Pro&quot;,
+      &quot;id&quot;: 2
+    }
+  ]
+}
 
-<pre><code>import { EntityState, EntityAdapter, createEntityAdapter } from &quot;@ngrx/entity&quot;;
+</code></pre>
+
+<p>我们要做的是管理监视页面加载 customer 的过程。coustom 有三种加载状态：加载中，加载成功，加载失败。
+<br>先定义 customer 的状态, loading, loaded, error, 实现 EntityState 接口性能优化，方便管理：</p>
+
+<pre><code>//customer.entity.ts
+
+import { EntityState, EntityAdapter, createEntityAdapter } from &quot;@ngrx/entity&quot;;
 import * as fromRoot from &quot;../../state/app-state&quot;;
 import { Customer } from &quot;../customer.model&quot;;
 
@@ -476,8 +516,9 @@ export const customerAdapter: EntityAdapter&lt;Customer&gt; = createEntityAdapte
 
 <p>接着实现 Action, Action 要实现两个属性 payload? 和 type，发出 Action 的方法是 dispatch:</p>
 
-<pre><code>import { Action } from &quot;@ngrx/store&quot;;
+<pre><code>//customer.action.ts
 
+import { Action } from &quot;@ngrx/store&quot;;
 import { Customer } from &quot;../customer.model&quot;;
 
 export enum CustomerActionTypes {
@@ -507,7 +548,9 @@ export type Action = LoadCustomers | LoadCustomersSuccess | LoadCustomersFail;
 
 <p>要从 json-server 中获取数据，我们必须实现 Effects, 调用 service:</p>
 
-<pre><code>import { Injectable } from &quot;@angular/core&quot;;
+<pre><code>//customer.effects.ts
+
+import { Injectable } from &quot;@angular/core&quot;;
 
 import { Actions, Effect, ofType } from &quot;@ngrx/effects&quot;;
 import { Action } from &quot;@ngrx/store&quot;;
@@ -547,7 +590,9 @@ export class CustomerEffect {
 
 <p>接着实现 Reducer，其中的 state 显示在 store-devtools 工具中：</p>
 
-<pre><code>import * as customerActions from &quot;./customer.action&quot;;
+<pre><code>//customer.reducer.ts
+
+import * as customerActions from &quot;./customer.action&quot;;
 import { CustomerState, customerAdapter } from &quot;.&quot;;
 
 export const defaultCustomer: CustomerState = {
@@ -598,7 +643,9 @@ export function customerReducer(
 
 <p>按照流程，新的数据需要在 selector 中获取：</p>
 
-<pre><code>import { createFeatureSelector, createSelector } from &quot;@ngrx/store&quot;;
+<pre><code>//customer.selector.ts
+
+import { createFeatureSelector, createSelector } from &quot;@ngrx/store&quot;;
 import { CustomerState, customerAdapter } from &quot;./customer.entity&quot;;
 
 const selectFeatureState = createFeatureSelector&lt;CustomerState&gt;(
@@ -628,7 +675,9 @@ export const selectError = createSelector(
 
 <p>接着在我们的 component 中完成整个流程:</p>
 
-<pre><code>import { Component, OnInit } from &quot;@angular/core&quot;;
+<pre><code>//customer-list.component.ts
+
+import { Component, OnInit } from &quot;@angular/core&quot;;
 
 import { Store, select } from &quot;@ngrx/store&quot;;
 import { Observable } from &quot;rxjs&quot;;
@@ -658,7 +707,9 @@ export class CustomerListComponent implements OnInit {
 
 <p>注意此时获取的数据 customers 是 observable 对象，在 html 中需要使用 (customers$ |async) 的格式得到在 json-server 中写入的对象。</p>
 
-<pre><code>    &lt;tr *ngFor=&quot;let customer of (customers$ |async)&quot;&gt;
+<pre><code>//customer-list.component.html
+
+    &lt;tr *ngFor=&quot;let customer of (customers$ |async)&quot;&gt;
       &lt;th scope=&quot;row&quot;&gt;{{customer.name}}&lt;/th&gt;
       &lt;td&gt;{{customer.phone}}&lt;/td&gt;
       &lt;td&gt;{{customer.address}}&lt;/td&gt;
@@ -672,6 +723,8 @@ export class CustomerListComponent implements OnInit {
       &lt;/th&gt;
     &lt;/tr&gt;
 </code></pre>
+
+<p>当然，在 rudex-devtools 中观察调试我们能够了解到更多的技术细节。</p>
 </article>
     <footer class="post-footer">
       
