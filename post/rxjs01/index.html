@@ -10,24 +10,48 @@
     
 
     
-    <title>Hugo Blog Title (SEO Version)</title>
+    <title>RxJS 初步探索(01) - Observable 的简单创建</title>
 
     
     
 
 
 
-
+  
   
   <meta name="author" content="Huy Nguyen" />
-  <meta name="description" content="A light responsive Hugo AMP theme for blogger" />
+  <meta name="description" content="ReactiveX 结合了 观察者模式、迭代器模式 和 使用集合的函数式编程，以满足以一种理想方式来管理事件序列所需要的一切。
+ 在 RxJS 中用来解决异步事件管理的的基本概念是：
+ Observable (可观察对象): 表示一个概念，这个概念是一个可调用的未来值或事件的集合。
+ Observer (观察者): 一个回调函数的集合，它知道如何去监听由 Observable 提供的值。
+ Subscription (订阅): 表示 Observable 的执行，主要用于取消 Observable 的执行。
+ Operators (操作符): 采用函数式编程风格的纯函数 (pure function)，使用像 map、filter、concat、flatMap 等这样的操作符来处理集合。
+ Subject (主体): 相当于 EventEmitter，并且是将值或事件多路推送给多个 Observer 的唯一方式。
+ Schedulers (调度器): 用来控制并发并且是中央集权的调度员，允许我们在发生计算时进行协调，例如 setTimeout 或 requestAnimationFrame 或其他。
+  以上文字来自 RxJS 中文文档，是 RxJS 的核心概念。
+下面来学习创建 Observable 对象以加深对一些概念的理解。 本文将生成 observable 的操作符分为以下四类：
+ 转换操作符：from，fromEvent，fromPromise，of
+ 创建操作符：create, range">
 
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@twitter_username" />
-  <meta name="twitter:title" content="Hugo Blog Title (SEO Version)" />
-  <meta name="twitter:description" content="A light responsive Hugo AMP theme for blogger" />
-  <meta name="twitter:image" content="https://111hunter.github.io/img/avatar.jpg" />
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@twitter_username" />
+    <meta name="twitter:title" content="RxJS 初步探索(01) - Observable 的简单创建" />
+    <meta name="twitter:description" content="ReactiveX 结合了 观察者模式、迭代器模式 和 使用集合的函数式编程，以满足以一种理想方式来管理事件序列所需要的一切。
+ 在 RxJS 中用来解决异步事件管理的的基本概念是：
+ Observable (可观察对象): 表示一个概念，这个概念是一个可调用的未来值或事件的集合。
+ Observer (观察者): 一个回调函数的集合，它知道如何去监听由 Observable 提供的值。
+ Subscription (订阅): 表示 Observable 的执行，主要用于取消 Observable 的执行。
+ Operators (操作符): 采用函数式编程风格的纯函数 (pure function)，使用像 map、filter、concat、flatMap 等这样的操作符来处理集合。
+ Subject (主体): 相当于 EventEmitter，并且是将值或事件多路推送给多个 Observer 的唯一方式。
+ Schedulers (调度器): 用来控制并发并且是中央集权的调度员，允许我们在发生计算时进行协调，例如 setTimeout 或 requestAnimationFrame 或其他。
+  以上文字来自 RxJS 中文文档，是 RxJS 的核心概念。
+下面来学习创建 Observable 对象以加深对一些概念的理解。 本文将生成 observable 的操作符分为以下四类：
+ 转换操作符：from，fromEvent，fromPromise，of
+ 创建操作符：create, range" />
+    <meta name="twitter:image" content="https://111hunter.github.io/img/avatar.jpg" />
+  
 
 
 
@@ -35,7 +59,7 @@
 <meta name="generator" content="Hugo 0.58.3" />
 
 
-<link rel="canonical" href="https://111hunter.github.io/">
+<link rel="canonical" href="https://111hunter.github.io/post/rxjs01/">
 <link rel="alternative" href="/index.xml" title="Hugo Site (主页)" type="application/atom+xml">
 
 
@@ -258,7 +282,7 @@ New,monospace;text-align:center}.error-emoji{color:#444;font-size:3rem}.error-te
     sizes="(max-width: 800px) 36px, 128px">
   </amp-img>
   
-  <h1 class="title"><a href="https://111hunter.github.io/" title="Hugo Site (主页)">Hugo Site (主页)</a></h1>
+  <h2 class="title"><a href="https://111hunter.github.io/" title="Hugo Site (主页)">Hugo Site (主页)</a></h2>
   
   <p class="subtitle">1.01 ^ 365 = 37.8 || 0.99 ^ 365 = 0.02</p>
   <button class="menu-toggle" type="button" on="tap:sidebar.open">
@@ -370,201 +394,366 @@ New,monospace;text-align:center}.error-emoji{color:#444;font-size:3rem}.error-te
 </amp-sidebar>
 
     
-  <section class="main entry-list">
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">RxJS 初步探索(01) - Observable 的简单创建</h1>
+      <p class="entry-meta"><span class="entry-time">Mar 13, 2020</span> 4 min read</p>
+    </header>
     
-    
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/rxjs01/" title="RxJS 初步探索(01) - Observable 的简单创建" class="entry-link">RxJS 初步探索(01) - Observable 的简单创建</a></h3>
-  </header>
 
-  <p class="entry-summary">ReactiveX 结合了 观察者模式、迭代器模式 和 使用集合的函数式编程，以满足以一种理想方式来管理事件序列所需要的一切。
- 在 RxJS 中用来解决异步事件管理的的基本概念是：
- Observable (可观察对象): 表示一个概念，这个概念是一个可调用的未来值或事件的集合。
- Observer (观察者): 一个回调函数的集合，它知道如何去监听由 Observable 提供的值。
- Subscription (订阅): 表示 Observable 的执行，主要用于取消 Observable 的执行。
- Operators (操作符): 采用函数式编程风格的纯函数 (pure function)，使用像 map、filter、concat、flatMap 等这样的操作符来处理集合。
- Subject (主体): 相当于 EventEmitter，并且是将值或事件多路推送给多个 Observer 的唯一方式。
- Schedulers (调度器): 用来控制并发并且是中央集权的调度员，允许我们在发生计算时进行协调，例如 setTimeout 或 requestAnimationFrame 或其他。
-  以上文字来自 RxJS 中文文档，是 RxJS 的核心概念。
-下面来学习创建 Observable 对象以加深对一些概念的理解。 本文将生成 observable 的操作符分为以下四类：
- 转换操作符：from，fromEvent，fromPromise，of
- 创建操作符：create, range</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 13, 2020</span> 4 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2frxjs01%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=RxJS%20%e5%88%9d%e6%ad%a5%e6%8e%a2%e7%b4%a2%2801%29%20-%20Observable%20%e7%9a%84%e7%ae%80%e5%8d%95%e5%88%9b%e5%bb%ba&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2frxjs01%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
+    <article class="post-content">
+
+<blockquote>
+<p>ReactiveX 结合了 <strong>观察者模式</strong>、<strong>迭代器模式</strong> 和 <strong>使用集合的函数式编程</strong>，以满足以一种理想方式来管理事件序列所需要的一切。</p>
+</blockquote>
+
+<p>在 RxJS 中用来解决异步事件管理的的基本概念是：</p>
+
+<ul>
+<li><p>Observable (可观察对象): 表示一个概念，这个概念是一个可调用的未来值或事件的集合。</p></li>
+
+<li><p>Observer (观察者): 一个回调函数的集合，它知道如何去监听由 Observable 提供的值。</p></li>
+
+<li><p>Subscription (订阅): 表示 Observable 的执行，主要用于取消 Observable 的执行。</p></li>
+
+<li><p>Operators (操作符): 采用函数式编程风格的纯函数 (pure function)，使用像 map、filter、concat、flatMap 等这样的操作符来处理集合。</p></li>
+
+<li><p>Subject (主体): 相当于 EventEmitter，并且是将值或事件多路推送给多个 Observer 的唯一方式。</p></li>
+
+<li><p>Schedulers (调度器): 用来控制并发并且是中央集权的调度员，允许我们在发生计算时进行协调，例如 setTimeout 或 requestAnimationFrame 或其他。</p></li>
+</ul>
+
+<p>以上文字来自 RxJS 中文文档，是 RxJS 的核心概念。</p>
+
+<p>下面来学习创建 Observable 对象以加深对一些概念的理解。
+本文将生成 observable 的操作符分为以下四类：</p>
+
+<ul>
+<li><p>转换操作符：from，fromEvent，fromPromise，of</p></li>
+
+<li><p>创建操作符：create, range</p></li>
+
+<li><p>时间操作符：interval, timer</p></li>
+
+<li><p>特殊操作符：empty, never, throw</p></li>
+</ul>
+
+<h4 id="0-项目初始化">0. 项目初始化</h4>
+
+<p>我们使用 webpack 作为项目构建工具。使用 Babel 编译我们的代码。这是我们的项目依赖：</p>
+
+<pre><code>&quot;devDependencies&quot;: {
+    &quot;@babel/core&quot;: &quot;^7.8.7&quot;,
+    &quot;@babel/preset-env&quot;: &quot;^7.8.7&quot;,
+    &quot;babel-loader&quot;: &quot;^8.0.6&quot;,
+    &quot;webpack&quot;: &quot;^4.42.0&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;jquery&quot;: &quot;^3.1.0&quot;,
+    &quot;rxjs&quot;: &quot;^5.0.0-beta.12&quot;
+  }
+</code></pre>
+
+<p>webpack 配置文件 webpack.config.js:</p>
+
+<pre><code>module.exports = {
+	entry: './src/app.js',
+	output: {
+		path: __dirname + '/dist',
+		filename: 'app.bundle.js'
+	},
+	module: {
+		rules: [
+			{
+				test: /\.m?js$/,
+				exclude: /(node_modules|bower_components)/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env']
+					}
+				}
+			}
+		]
+	}
+}
+</code></pre>
+
+<p>新建文件夹src, 在里面新建文件 app.js, 我们在 app.js 中引入 jquery 和 RxJS。</p>
+
+<pre><code>import $ from 'jquery';
+import Rx from 'rxjs/Rx';
+
+console.log('Code Running...');
+</code></pre>
+
+<p>在 html 文件中引入编译后的 js 文件。</p>
+
+<pre><code>&lt;body&gt;
+	&lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
+	&lt;div id=&quot;output&quot;&gt;&lt;/div&gt;
+	&lt;ul&gt;
+		&lt;li id=&quot;name&quot;&gt;&lt;/li&gt;
+		&lt;li id=&quot;artist&quot;&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;script src=&quot;./dist/app.bundle.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>执行 <code>webpack --watch --mode development</code>，实时监视文件变化，并重新编译代码。
+打开浏览器控制台没有任何报错，并输出 &ldquo;Code Running&hellip;&rdquo; 说明我们的项目构建成功。
+高版本的 chrome 可能出现 DevTools failed to parse SourceMap，在控制台的setting中取消 Enable JavaScript source maps 这一项即可。</p>
+
+<h3 id="转换操作符">转换操作符</h3>
+
+<h4 id="1-observable-from">1. Observable.from()</h4>
+
+<p>Observable.from() 将 <strong>可迭代对象</strong> 转化为 observables 序列, 传入数据集合。</p>
+
+<pre><code>// from array
+const numbers = [1, 2, 3, 4, 5];
+const numbers$ = Rx.Observable.from(numbers);
+numbers$.subscribe(
+    v =&gt; console.log(v),
+    err =&gt; console.log(err),
+    () =&gt; console.log('complete')
+);
+
+// from string
+const str = 'hello world'
+const str$ = Rx.Observable.from(str);
+str$.subscribe(
+    v =&gt; console.log(v),
+    err =&gt; console.log(err),
+    () =&gt; console.log('complete')
+);
+
+// from array of objects
+const posts = [
+    { title: 'post 1', body: 'body 1' },
+    { title: 'post 2', body: 'body 2' },
+    { title: 'post 3', body: 'body 3' }
+];
+const posts$ = Rx.Observable.from(posts);
+posts$.subscribe(
+    v =&gt; console.log(v),
+    err =&gt; console.log(err),
+    () =&gt; console.log('complete')
+);
+
+// from set
+const set = new Set(['hello', 123, { title: 'my title' }])
+const set$ = Rx.Observable.from(set);
+set$.subscribe(
+    v =&gt; console.log(v),
+    err =&gt; console.log(err),
+    () =&gt; console.log('complete')
+);
+
+// from map
+const map = new Map([[1, 2], [3, 4], [5, 6]])
+const map$ = Rx.Observable.from(map);
+map$.subscribe(
+    v =&gt; console.log(v),
+    err =&gt; console.log(err),
+    () =&gt; console.log('complete')
+);
+</code></pre>
+
+<h4 id="2-observable-fromevent">2. Observable.fromEvent()</h4>
+
+<p>Observable.fromEvent() 将 <strong>事件</strong> 转化为 observables 序列, 传入两个参数：页面元素 和 事件名称。从事件中创建的 observable 对象是持续不断产生的，不会输出 &ldquo;completed&rdquo;。</p>
+
+<p>转化键盘事件:</p>
+
+<pre><code>const input = $('#input');
+const output = $('#output');
+const inputStream$ = Rx.Observable.fromEvent(input, 'keyup');
+
+inputStream$.subscribe(
+    e =&gt; {
+        console.log(e.target.value);
+        output.text(e.target.value);
+    },
+    err =&gt; console.log(err),
+    () =&gt; console.log('completed')
+);
+</code></pre>
+
+<p>转化鼠标事件:</p>
+
+<pre><code>const moveStream$ = Rx.Observable.fromEvent(document, 'mousemove');
+
+moveStream$.subscribe(
+    e =&gt; {
+        console.log(e.type);
+        output.html('&lt;h1&gt;X: ' + e.clientX + ' Y: ' + e.clientY + '&lt;/h1&gt;');
+    },
+    err =&gt; console.log('err'),
+    () =&gt; console.log('completed')
+);
+</code></pre>
+
+<h4 id="3-observable-frompromise">3. Observable.fromPromise()</h4>
+
+<p>Observable.fromPromise() 将 promise 转化为 observables 序列, 传入 promise。</p>
+
+<pre><code>const myPromise = new Promise((resolve, reject) =&gt; {
+    console.log('creating promise');
+    setTimeout(() =&gt; {
+        resolve('hello from promise');
+    }, 500);
+});
+
+const myPromiseSource$ = Rx.Observable.fromPromise(myPromise);
+myPromiseSource$.subscribe(x =&gt; console.log(x));
+</code></pre>
+
+<p>结合之前定义的 inputStream$ 嵌套使用：</p>
+
+<pre><code>function getSong(username) {
+    return $.ajax({
+        type: 'GET',
+        url: `https://autumnfish.cn/search?keywords=` + username,
+    }).promise();
+}
+
+const song = $('#input')
+const inputStream$ = Rx.Observable.fromEvent(song, 'keyup')
+inputStream$.subscribe(e =&gt; {
+    Rx.Observable.fromPromise(getSong(e.target.value))
+        .subscribe(x =&gt; {
+            $('#name').text('Song: ' + x.result.songs[0].name)
+            console.log(x.result.songs[0].name)
+            $('#artist').text('Artist: ' + x.result.songs[0].artists[0].name)
+        });
+}
+);
+</code></pre>
+
+<h4 id="4-observable-of">4. Observable.of()</h4>
+
+<p>of 操作符接收1个或多个参数。转换为 Observable 对象。</p>
+
+<pre><code>const stream$ = Rx.Observable.of(1, 2, 3, 'hello');
+stream$.subscribe(
+    v =&gt; console.log(v),
+    err =&gt; console.log(err),
+    complete =&gt; console.log('complete')
+);
+</code></pre>
+
+<h3 id="创建操作符">创建操作符</h3>
+
+<h4 id="1-observable-create">1. Observable.create()</h4>
+
+<p>Rx.Observable.create 是 Observable <strong>构造函数</strong> 的别名，它接收一个以 observer 作为参数的回调函数。这个回调函数会定义 observable 将会如何发送值给 observer。observer是什么？observer就是我们之前传入 subscribe() 的参数，是一个有三个回调函数的对象。</p>
+
+<pre><code>const source$ = new Rx.Observable.create(
+    observer =&gt; {
+        observer.next('hello')
+        observer.next('another hello')
+        setTimeout(() =&gt; {
+            observer.next('next hello')
+            observer.complete();
+        }, 2000);
+    }
+);
+
+const observer1 = {
+    next: v =&gt; console.log(v + '1'),
+    error: err =&gt; console.log(err),
+    complete: () =&gt; console.log('complete')
+}
+
+source$.subscribe(observer1);
+</code></pre>
+
+<p>observable 是数据流的生产者，决定数据怎么给。observer 是数据流的消费者，决定数据怎么用。observable 是老板，observer 是顾客。
+observable.subscribe()会实例化一个Subscription对象。Subscription表示Observable 的执行，可以被清理。这个对象最常用的方法是unsubscribe方法。</p>
+
+<h4 id="2-observable-range">2. Observable.range()</h4>
+
+<p>接收两个数字参数产生有序序列，一个是开始序列数字。一个是序列个数。</p>
+
+<pre><code>const rangeSource$ = Rx.Observable.range(6, 5)
+rangeSource$.subscribe(
+    v =&gt; console.log(v),
+    err =&gt; console.log(err),
+    complete =&gt; console.log('complete')
+)
+</code></pre>
+
+<h3 id="时间操作符">时间操作符</h3>
+
+<h4 id="observable-interval-和-observable-timer">Observable.interval 和 Observable.timer</h4>
+
+<p>从零开始产生数字，interval的参数是数字产生的间隔时间，timer 多了个开始延迟时间作为第一个参数。</p>
+
+<pre><code>const intervalSource$ = Rx.Observable.interval(1000).take(5)
+intervalSource$.subscribe(
+    v =&gt; console.log(v),
+    err =&gt; console.log(err),
+    complete =&gt; console.log('complete')
+)
+
+const timerSource$ = Rx.Observable.timer(2000, 1000).take(5)
+timerSource$.subscribe(
+    v =&gt; console.log(v),
+    err =&gt; console.log(err),
+    complete =&gt; console.log('complete')
+)
+</code></pre>
+
+<h3 id="特殊操作符">特殊操作符</h3>
+
+<h4 id="observable-empty-observable-never-observable-throw">Observable.empty(), Observable.never(), Observable.throw()</h4>
+
+<p>Observable.empty 创建的 Observable 开始就结束，Observable.never 创建的 Observable 不会结束，Observable.throw 抛出异常不会结束。</p>
+
+<pre><code>const emptySource$ = Rx.Observable.empty()
+emptySource$.subscribe(
+    v =&gt; console.log(v),
+    err =&gt; console.log(err),
+    complete =&gt; console.log('complete')
+)
+
+const neverSource$ = Rx.Observable.never()
+neverSource$.subscribe(
+    v =&gt; console.log(v),
+    err =&gt; console.log(err),
+    complete =&gt; console.log('complete')
+)
+
+const errorSource$ = Rx.Observable.throw('err')
+errorSource$.subscribe(
+    v =&gt; console.log(v),
+    err =&gt; console.log('Throw Error: ' + err),
+    complete =&gt; console.log('complete')
+)
+</code></pre>
+
+<h4 id="参考资料">参考资料:</h4>
+
+<p>RxJS Ultimate 中文版：<a href="https://rxjs-cn.github.io/RxJS-Ultimate-CN/">https://rxjs-cn.github.io/RxJS-Ultimate-CN/</a></p>
+
+<p>30 天精通 RxJS：<a href="https://ithelp.ithome.com.tw/users/20103367/ironman/1199">https://ithelp.ithome.com.tw/users/20103367/ironman/1199</a></p>
+
+<p>RxJS 中文文档：<a href="https://cn.rx.js.org/manual/index.html">https://cn.rx.js.org/manual/index.html</a></p>
+
+<p><a href="https://gitee.com/hildakik/rxjs01">源码地址</a></p>
 </article>
-
+    <footer class="post-footer">
       
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/ngrx/" title="通过 NgRx 体验前端状态管理" class="entry-link">通过 NgRx 体验前端状态管理</a></h3>
-  </header>
-
-  <p class="entry-summary">什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。 什么是ngrx？ngrx = rxjs &#43; rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。 注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。 先上官网流程图一张，一图胜千言。
-angular 有无 ngrx 的架构对比：
-  没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口，而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。其实，在软件开发中，一切看似的复杂往往是为了简单。 下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。 redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。
-Store 简单的理解就是前端状态的数据库，它有一个基本原则: 是”唯一的、状态不可修改”的树。
-Action 可以理解为状态变化的信号，当状态发生变化时，通过 Action 显性定义状态变化。 可配合 store-devtools 使用。
-Reducer 它是前端数据状态映射成的 Store 数据库中的表，接收旧状态，返回新状态。它是一个纯函数, 需要通过 Action 告知能够进行的状态变化。
-Effects 我们在进行一些 Action 时需要发送 http 请求，DOM 操作, 读写文件等。redux 状态管理只关心视图层的状态变化, 不会解决这些的需求。因此 ngrx 扩展了 Effects, 其实它是一个钩子函数。这大概就是示意图中虚线的含义。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 2, 2020</span> 4 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fngrx%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e9%80%9a%e8%bf%87%20NgRx%20%e4%bd%93%e9%aa%8c%e5%89%8d%e7%ab%af%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fngrx%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/nest-crud/" title="NestJS &#43; TypeORM 实现 crud 示例" class="entry-link">NestJS &#43; TypeORM 实现 crud 示例</a></h3>
-  </header>
-
-  <p class="entry-summary">传统 MVC 架构：
- NestJs 架构：
- 随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。Nest 的分层借鉴自 Spring，更细化。我们应该要了解整个 Nest 框架的三层结构，Nest 和传统的 MVC 框架的区别在于它更注重于后端部分（控制器、服务与数据）的架构，视图层相对比较独立，完全可以由用户自定义配置。
-新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
-$ nest new nest-crud 新建 nest.js 项目, 选择 yarn 作为开发工具
-$ nest g mo photo 建立 PhotoModule
-$ nest g co photo 建立 PhotoController
-$ nest g s photo 建立 PhotoService
-$ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安装这些库</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Feb 1, 2020</span> 4 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-crud%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=NestJS%20%2b%20TypeORM%20%e5%ae%9e%e7%8e%b0%20crud%20%e7%a4%ba%e4%be%8b&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-crud%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/git-learn/" title="git 快速上手指南" class="entry-link">git 快速上手指南</a></h3>
-  </header>
-
-  <p class="entry-summary">git 仓库图解
- 1. 使用帮助 $ git help 可以查看 git 常用命令
-$ git help -a 可以查看 git 所有命令，F 或者 空格 向下查看命令，B 向上查看命令，Q 退出 git-cli
-$ git help add help后接一个指令可以查看该指令的详细用法
-2. git 配置分为三个范围 system, global, 项目 范围 一般选择global进行配置 $ git config --global user.name &#39;111hunter&#39;
-$ git config --list 查看当前配置信息
-$ git config --unset --global user.name 取消 user.name 配置
-配置文件是当前用户主目录 $ cat ~/.gitconfig
-3. git 项目文件的 crud $ mkdir movietalk &amp; cd movietalk 新建文件夹</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Dec 13, 2019</span> 3 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=git%20%e5%bf%ab%e9%80%9f%e4%b8%8a%e6%89%8b%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog02/" title="Node.js搭建博客后台, 不使用框架" class="entry-link">Node.js搭建博客后台, 不使用框架</a></h3>
-  </header>
-
-  <p class="entry-summary">Node.js 处理 get，post 请求 const http = require(&#39;http&#39;) const querystring = require(&#39;querystring&#39;) const server = http.createServer((req, res) =&gt; { const method = req.method const url = req.url const path = url.split(&#39;?&#39;)[0] //重点：split(&#39;?&#39;[0])语法弄清楚 const query = querystring.parse(url.split(&#39;?&#39;)[1]) //设置返回值格式为 JSON res.setHeader(&#39;Content-type&#39;, &#39;application/json&#39;) //返回的数据 const resData = { method, url, path, query } //返回 if (method === &#39;GET&#39;) { res.end( JSON.stringify(req.query) ) } if (req.method === &#39;POST&#39;){ let postData = &#39;&#39; //res.on(&#39;data&#39;)指每次发送的数据 //chunk 逐步接收数据 req绑定一个data方法 chunk是变量 req.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Nov 22, 2019</span> 3 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog02%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2%e5%90%8e%e5%8f%b0%2c%20%e4%b8%8d%e4%bd%bf%e7%94%a8%e6%a1%86%e6%9e%b6&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog02%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog01/" title="es6学习笔记" class="entry-link">es6学习笔记</a></h3>
-  </header>
-
-  <p class="entry-summary">es6学习笔记: 1.用let和const声明变量
-var 函数作用域function scope,不在函数内时作用域是全局的 let, const 块级作用域block scope,作用域是{}内
-eg.执行以下语句判断区别：
-for (var i = 0; i &lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) } for (let i = 0; i &lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) }  let, const不能重复声明变量值 let声明的变量是可以重新赋值的, const声明的变量只能修改引用类型的属性值 变量提升：let, count有变量提升,未声明先使用存在临时性死区(Temporal dead zone),详见mdn
-2.箭头函数：
-特点：简明的语法,隐式返回(省去return关键字),匿名函数 this:普通函数this是动态绑定的
-const Jelly = { name: &#39;Jelly&#39;, hobbies: [&#39;Coding&#39;, &#39;Sleeping&#39;, &#39;Reading&#39;], printHobbies: function () { // console.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 30, 2019</span> 3 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog01%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=es6%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog01%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog/" title="关于js闭包写法的演进过程" class="entry-link">关于js闭包写法的演进过程</a></h3>
-  </header>
-
-  <p class="entry-summary">首先来理解闭包，闭包是为了实现变量的私有化问题，有如下例子： 我们想要用一个counter记录add函数的执行次数。
-function add() { var counter = 0; //局部变量 counter&#43;&#43;; console.log(&#34;counter = &#34; &#43; counter); } add(); // counter = 1 add(); // counter = 1  由于counter是局部变量，每次我们执行add()函数，都是输出 counter = 1; 我们想要执行函数时改变counter的值，一种可行的办法是：
-var counter = 0; //全局变量，谁都可以访问，修改 function add() { counter&#43;&#43;; console.log(&#34;counter = &#34; &#43; counter); } add(); // counter = 1 add(); // counter = 2  但是这样会带来问题，由于counter是全局变量，我们可能会在函数外不小心改变了counter的值， 比如在函数外写了一句counter = -100；就打乱了我们原来的计数，显然我们并不希望在函数外任意地改变counter的值。 我们可以这样写：
-function add() { var counter = 1; //局部变量 console.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 7, 2019</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e5%85%b3%e4%ba%8ejs%e9%97%ad%e5%8c%85%e5%86%99%e6%b3%95%e7%9a%84%e6%bc%94%e8%bf%9b%e8%bf%87%e7%a8%8b&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-    
-    
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2frxjs01%2f" title="Share on Facebook">
+          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+        </a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=RxJS%20%e5%88%9d%e6%ad%a5%e6%8e%a2%e7%b4%a2%2801%29%20-%20Observable%20%e7%9a%84%e7%ae%80%e5%8d%95%e5%88%9b%e5%bb%ba&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2frxjs01%2f" title="Share on Twitter">
+          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+        </a>
+      </div>
+    </footer>
   </section>
 
     <footer class="footer">

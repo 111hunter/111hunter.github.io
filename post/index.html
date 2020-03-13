@@ -401,12 +401,42 @@ New,monospace;text-align:center}.error-emoji{color:#444;font-size:3rem}.error-te
         <article class="entry-single">
   
   <header class="entry-header">
+    <h3 class="entry-title"><a href="https://111hunter.github.io/post/rxjs01/" title="RxJS 初步探索(01) - Observable 的简单创建" class="entry-link">RxJS 初步探索(01) - Observable 的简单创建</a></h3>
+  </header>
+
+  <p class="entry-summary">ReactiveX 结合了 观察者模式、迭代器模式 和 使用集合的函数式编程，以满足以一种理想方式来管理事件序列所需要的一切。
+ 在 RxJS 中用来解决异步事件管理的的基本概念是：
+ Observable (可观察对象): 表示一个概念，这个概念是一个可调用的未来值或事件的集合。
+ Observer (观察者): 一个回调函数的集合，它知道如何去监听由 Observable 提供的值。
+ Subscription (订阅): 表示 Observable 的执行，主要用于取消 Observable 的执行。
+ Operators (操作符): 采用函数式编程风格的纯函数 (pure function)，使用像 map、filter、concat、flatMap 等这样的操作符来处理集合。
+ Subject (主体): 相当于 EventEmitter，并且是将值或事件多路推送给多个 Observer 的唯一方式。
+ Schedulers (调度器): 用来控制并发并且是中央集权的调度员，允许我们在发生计算时进行协调，例如 setTimeout 或 requestAnimationFrame 或其他。
+  以上文字来自 RxJS 中文文档，是 RxJS 的核心概念。
+下面来学习创建 Observable 对象以加深对一些概念的理解。 本文将生成 observable 的操作符分为以下四类：
+ 转换操作符：from，fromEvent，fromPromise，of
+ 创建操作符：create, range</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Mar 13, 2020</span> 4 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2frxjs01%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=RxJS%20%e5%88%9d%e6%ad%a5%e6%8e%a2%e7%b4%a2%2801%29%20-%20Observable%20%e7%9a%84%e7%ae%80%e5%8d%95%e5%88%9b%e5%bb%ba&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2frxjs01%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
     <h3 class="entry-title"><a href="https://111hunter.github.io/post/ngrx/" title="通过 NgRx 体验前端状态管理" class="entry-link">通过 NgRx 体验前端状态管理</a></h3>
   </header>
 
-  <p class="entry-summary">参考资料: NgRx 英文官网：https://ngrx.io
-github 上一个例子：https://github.com/angulardeveloper-io/ngrx-store-app
-什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。 什么是ngrx？ngrx = rxjs &#43; rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。 注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。 先上官网流程图一张，一图胜千言。
+  <p class="entry-summary">什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。 什么是ngrx？ngrx = rxjs &#43; rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。 注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。 先上官网流程图一张，一图胜千言。
 angular 有无 ngrx 的架构对比：
   没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口，而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。其实，在软件开发中，一切看似的复杂往往是为了简单。 下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。 redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。
 Store 简单的理解就是前端状态的数据库，它有一个基本原则: 是”唯一的、状态不可修改”的树。
@@ -433,17 +463,15 @@ Effects 我们在进行一些 Action 时需要发送 http 请求，DOM 操作, �
     <h3 class="entry-title"><a href="https://111hunter.github.io/post/nest-crud/" title="NestJS &#43; TypeORM 实现 crud 示例" class="entry-link">NestJS &#43; TypeORM 实现 crud 示例</a></h3>
   </header>
 
-  <p class="entry-summary">参考资料: DI(依赖注入)：https://zhuanlan.zhihu.com/p/60995312
-NestJS 官方文档：https://docs.nestjs.cn
-TypeORM 官方文档：https://typeorm.io/#/
-传统 MVC 架构：
+  <p class="entry-summary">传统 MVC 架构：
  NestJs 架构：
  随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。Nest 的分层借鉴自 Spring，更细化。我们应该要了解整个 Nest 框架的三层结构，Nest 和传统的 MVC 框架的区别在于它更注重于后端部分（控制器、服务与数据）的架构，视图层相对比较独立，完全可以由用户自定义配置。
 新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
 $ nest new nest-crud 新建 nest.js 项目, 选择 yarn 作为开发工具
 $ nest g mo photo 建立 PhotoModule
 $ nest g co photo 建立 PhotoController
-$ nest g s photo 建立 PhotoService</p>
+$ nest g s photo 建立 PhotoService
+$ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安装这些库</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Feb 1, 2020</span> 4 min read</p>
     <div class="sharing">
