@@ -1,25 +1,26 @@
 <!doctype html>
 <html ⚡ lang="en-us">
-  <head>
-    <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 
-    
-    
+<head>
+  <meta charset="utf-8" />
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 
-    
-    <title>通过 NgRx 体验前端状态管理</title>
+  
+  
 
-    
-    
+  
+  <title>通过 NgRx 体验前端状态管理</title>
+
+  
+  
 
 
 
   
   
-  <meta name="author" content="Huy Nguyen" />
+  <meta name="author" content="111hunter" />
   <meta name="description" content="什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。 什么是ngrx？ngrx = rxjs &#43; rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。 注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。 先上官网流程图一张，一图胜千言。
 angular 有无 ngrx 的架构对比：
   没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口，而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。其实，在软件开发中，一切看似的复杂往往是为了简单。 下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。 redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。
@@ -80,18 +81,16 @@ dotted;text-decoration:underline
 dotted}b,strong{font-weight:inherit;font-weight:bolder}code,kbd,samp{font-family:monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html
 [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px
 dotted ButtonText}fieldset{padding:.35em .75em
-.625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}[hidden],template{display:none}body{font-size:18px;font-weight:300;line-height:1.618;font-family:Roboto,sans-serif;color:#777;background:#fff;text-rendering:optimizeLegibility;-webkit-overflow-scrolling:touch}a{color:#3f9adc;text-decoration:none;font-weight:600}a:focus,a:hover{opacity:.7;outline:none}amp-img{margin:0
-auto;box-shadow:2px 20px 40px 10px rgba(0,0,0,.15)}button:hover{cursor:pointer}.main{margin-left:20rem;padding:1rem
+.625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}[hidden],template{display:none}body{font-size:16.6667px;font-weight:300;line-height:1.618;font-family:Roboto,sans-serif;color:#161209;background:#fff;text-rendering:optimizeLegibility;-webkit-overflow-scrolling:touch}a{color:#3f9adc;text-decoration:none;font-weight:600}a:focus,a:hover{opacity:.7;outline:none}amp-img{margin:0
+auto;box-shadow:2px 20px 40px 10px rgba(0,0,0,.15)}button:hover{cursor:pointer}.main{margin-left:19rem;padding:1rem
 2rem;max-width:100%;min-height:100vh;box-sizing:border-box}@media screen and (max-width:1440px){.main{width:calc(100% -
-20rem)}}@media (min-width:800px) and (max-width:960px){.main{margin-left:15rem;width:calc(100% - 15rem)}}@media screen
+19rem)}}@media (min-width:800px) and (max-width:960px){.main{margin-left:15rem;width:calc(100% - 15rem)}}@media screen
 and (max-width:800px){.main{margin-left:0;padding:0 1rem
 1rem;width:100%;min-height:0;border-left:none;border-right:none;border-top:1px solid #ddd;border-bottom:1px solid
 #ddd}}.footer{display:none}@media screen and
-(max-width:800px){.footer{display:block;padding:1rem;font-size:.8rem;text-align:center;font-family:Roboto
-Mono,Menlo,Monaco,Consolas,Courier
-New,monospace}}.icon{font-style:normal;text-decoration:inherit;width:1em;height:1em;font-variant:normal;text-transform:none;line-height:1em}.icon,.share{display:inline-block;text-align:center}.share{font-weight:400;margin-left:.2rem;border:none;outline:none;color:#fff;width:30px;height:30px;border-radius:50%}.share-twitter{background-color:#55acee}.share-twitter-icon{margin:5px
+(max-width:800px){.footer{display:block;padding:1rem;font-size:.8rem;text-align:center;font-family:Roboto,sans-serif}}.icon{font-style:normal;text-decoration:inherit;width:1em;height:1em;font-variant:normal;text-transform:none;line-height:1em}.icon,.share{display:inline-block;text-align:center}.share{font-weight:400;margin-left:.2rem;border:none;outline:none;color:#fff;width:30px;height:30px;border-radius:50%}.share-twitter{background-color:#55acee}.share-twitter-icon{margin:5px
 0 0
-1px}.share-facebook{background-color:#3b5998}.header{position:fixed;left:0;top:0;bottom:0;width:20rem;padding:1rem;box-sizing:border-box;text-align:center;background-color:#3f0767}@media
+1px}.share-facebook{background-color:#3b5998}.header{position:fixed;left:0;top:0;bottom:0;width:19rem;padding:1rem;box-sizing:border-box;text-align:center;background-color:#3f0767}@media
 screen and (max-width:800px){.header{width:100%;position:relative}}@media (min-width:800px) and
 (max-width:960px){.header{width:15rem}}.logo{margin-top:3rem;border-radius:20%;border:4px solid #fff;transition:all .5s
 ease-out}.logo:hover{border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,.3)}@media screen and
@@ -113,13 +112,12 @@ screen and
 0 2px 0 rgba(137,146,177,.15),0 3px 10px 0 rgba(137,146,177,.1);border-radius:5px}.entry-single:hover{box-shadow:0 1px
 15px 0 rgba(137,146,177,.15),0 10px 20px 0 rgba(137,146,177,.15)}.entry-cover{max-width:100%;border-radius:5px 5px 0
 0;-o-object-fit:cover;object-fit:cover;box-shadow:none}.entry-title{margin:0;padding:20px 30px
-0}.entry-link{font-size:1.5rem;font-weight:600;color:#262626}.entry-summary{padding:0
+0}.entry-link{font-size:1.3333rem;font-weight:600;color:#262626}.entry-summary{padding:0
 30px;text-align:justify;max-height:4rem;overflow:hidden}.entry-footer{margin:0 30px;padding:10px 0;border-top:1px solid
-#ddd;display:flex;justify-content:space-between}.entry-meta{margin:0;font-size:.8rem;letter-spacing:1px;text-transform:uppercase}.entry-time{color:#444}.entry-time:after{content:"";border-right:1px
-solid #ddd;margin:0 8px 0
-10px}.pagination{display:flex;justify-content:flex-start}.pagination-btn{color:#777;padding:.8rem;background-color:#fff;border:1px
+#ddd;display:flex;justify-content:space-between}.entry-meta{margin:0;font-size:.8rem;letter-spacing:1px;text-transform:uppercase}.post-author{color:#00b3ff}.entry-time{color:#00bcd4}.reading-time{color:#0f0f0f}.post-views{color:#00b3ff}
+.pagination{display:flex;justify-content:flex-start}.pagination-btn{color:#161209;padding:.8rem;background-color:#fff;border:1px
 solid
-#ddd;font-size:.8rem;text-transform:uppercase;border-radius:5px}.pagination-btn:focus,.pagination-btn:hover{color:#fff;background-color:#6aac0e;border-color:#6aac0e}.pagination-next{margin-left:auto}.post-header:after{display:block;content:"";border-bottom-width:3px;border-bottom-style:solid;width:60px;padding-top:10px;border-bottom-color:#6aac0e}.post-title{font-size:2rem;color:#262626;line-height:1.5;margin-top:1.5rem;margin-bottom:.5rem}.post-footer{margin:1rem
+#ddd;font-size:.8rem;text-transform:uppercase;border-radius:5px}.pagination-btn:focus,.pagination-btn:hover{color:#fff;background-color:#6aac0e;border-color:#6aac0e}.pagination-next{margin-left:auto}.post-header:after{display:block;content:"";border-bottom-width:3px;border-bottom-style:solid;width:60px;padding-top:10px;border-bottom-color:#6aac0e}.post-title{font-size:1.75rem;color:#262626;line-height:1.5;margin-top:1.5rem;margin-bottom:.5rem}.post-footer{margin:1rem
 0;line-height:1.8}.post-tags{margin-top:0;margin-bottom:1rem;padding-left:0}.post-tag{display:inline-block;margin:0
 .5rem 0 0;border-radius:3px;padding:5px
 10px;background:#f2f2f2;font-size:.8rem}.post-tag:hover{background:#ddd;box-shadow:0 1px 15px 0 rgba(137,146,177,.15),0
@@ -130,23 +128,23 @@ h2{margin-top:1.75rem;margin-bottom:.75rem;font-size:1.5rem}.post-content
 h3{margin-top:1.5rem;margin-bottom:.5rem;font-size:1.25rem}.post-content
 h4{margin-top:1.25rem;margin-bottom:.25rem;font-size:1rem}.post-content h5,.post-content
 h6{margin-top:1rem;margin-bottom:0;font-size:.8rem}.post-content li+li{margin-top:.5rem}.post-content
-em{color:#777;font-style:italic}.post-content strong{color:#444}.post-content
-del{color:#777;text-decoration:line-through}.post-content ins{color:#444;text-decoration:underline}.post-content
+em{color:#161209;font-style:italic}.post-content strong{color:#444}.post-content
+del{color:#161209;text-decoration:line-through}.post-content ins{color:#444;text-decoration:underline}.post-content
 hr{position:relative;margin:2rem auto;border-top:1px dashed #ddd;border-bottom:none}.post-content hr:before{content:"sep
 line";position:absolute;top:-12px;left:calc(50% - 40px);padding:0
-.5rem;background-color:#fff;color:#ddd;font-size:.8rem;font-family:Roboto Mono,Menlo,Monaco,Consolas,Courier
-New,monospace}.post-content p{margin-top:1.5rem;margin-bottom:1.5rem;text-align:justify}.post-content
+.5rem;background-color:#fff;color:#ddd;font-size:.8rem;font-family:Roboto,sans-serif}.post-content
+p{margin-top:1.5rem;margin-bottom:1.5rem;text-align:justify}.post-content
 blockquote{background-color:#f2f2f2;border-left:5px solid #ddd;padding:.5rem 1rem;margin:2rem 0}.post-content blockquote
 p{margin-top:.5rem;margin-bottom:.5rem}.post-content blockquote
-cite{margin-top:1.5rem;color:#777;font-size:.9rem}.post-content code,.post-content
-tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:.9em;background-color:#ddd;font-family:Roboto
-Mono,Menlo,Monaco,Consolas,Courier New,monospace}.post-content code:after,.post-content code:before,.post-content
+cite{margin-top:1.5rem;color:#161209;font-size:.9rem}.post-content code,.post-content
+tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:.9em;background-color:#ddd;font-family:Roboto,sans-serif}.post-content
+code:after,.post-content code:before,.post-content
 tt:after,.post-content tt:before{letter-spacing:-.2em;content:"\00a0"}.post-content
 kbd{display:inline-block;padding:.25em;background-color:#f2f2f2;border:1px solid
 #ddd;border-bottom-color:#ddd;border-radius:3px;box-shadow:inset 0 -1px 0
-rgba(0,0,0,.05);font-size:.8em;line-height:1.25;font-family:Roboto Mono,Menlo,Monaco,Consolas,Courier
-New,monospace;color:#777}.post-content pre{margin:2rem
-auto;padding:1rem;overflow-x:auto;border-radius:3px;font-size:.9rem;line-height:1.618;white-space:pre;word-wrap:normal;word-break:normal;background:#ddd;color:#777}.post-content
+rgba(0,0,0,.05);font-size:.8em;line-height:1.25;font-family:Roboto,sans-serif;color:#161209}.post-content
+pre{margin:2rem
+auto;padding:1rem;overflow-x:auto;border-radius:3px;font-size:.9rem;line-height:1.618;white-space:pre;word-wrap:normal;word-break:normal;background:#ddd;color:#161209}.post-content
 pre code{font-size:.9rem;background-color:transparent}.post-content pre code:after,.post-content pre
 code:before{content:none}.post-content sub,.post-content sup{font-size:.8rem}.post-content sub a,.post-content sub
 a:focus,.post-content sub a:hover,.post-content sup a,.post-content sup a:focus,.post-content sup
@@ -164,17 +162,18 @@ rgba(0,0,0,.15)}@media screen and (max-width:800px){.post-content figure img{box
 figcaption h4{color:#ddd;font-size:.9rem;text-align:center}table{background-color:#f2f2f2;color:#444;margin:2rem
 auto;width:100%;border-collapse:collapse;border-radius:5px}table td,table th{border:1px solid #ddd;border-width:0 0
 1px;padding:.5em .75em;vertical-align:center}table th{color:#444}table tr:hover{background-color:#ddd}table thead
-td,table thead th{border-width:0 0 2px;color:#777}table tfoot td,table tfoot th{border-width:2px 0 0;color:#777}table
+td,table thead th{border-width:0 0 2px;color:#161209}table tfoot td,table tfoot th{border-width:2px 0
+0;color:#161209}table
 tbody tr:last-child td,table tbody tr:last-child th{border-bottom-width:0}table tr:first-child
 th:first-child{border-top-left-radius:5px}table tr:first-child th:last-child{border-top-right-radius:5px}table
 tr:last-child td:first-child{border-bottom-left-radius:5px}table tr:last-child
-td:last-child{border-bottom-right-radius:5px}.not-found{margin:5rem auto 0;font-family:Roboto
-Mono,Menlo,Monaco,Consolas,Courier
-New,monospace;text-align:center}.error-emoji{color:#444;font-size:3rem}.error-text{font-size:1.25rem}.error-link{margin-top:2rem;font-size:1rem;color:#6aac0e}</style>
+td:last-child{border-bottom-right-radius:5px}.not-found{margin:5rem auto
+0;font-family:Roboto,sans-serif;text-align:center}.error-emoji{color:#444;font-size:3rem}.error-text{font-size:1.25rem}.error-link{margin-top:2rem;font-size:1rem;color:#6aac0e}</style>
 
-  </head>
-  <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="icon-menu" viewBox="0 0 640 640">
     <path d="M0 96h640v64h-640v-64zM0 288h640v64h-640v-64zM0 480h640v64h-640v-64z" />
   </symbol>
@@ -267,7 +266,7 @@ New,monospace;text-align:center}.error-emoji{color:#444;font-size:3rem}.error-te
       d="M2.204 14.049c-.06.276-.091.56-.091.847 0 3.443 4.402 6.249 9.814 6.249 5.41 0 9.812-2.804 9.812-6.249 0-.274-.029-.546-.082-.809l-.015-.032c-.021-.055-.029-.11-.029-.165-.302-1.175-1.117-2.241-2.296-3.103-.045-.016-.088-.039-.126-.07-.026-.02-.045-.042-.067-.064-1.792-1.234-4.356-2.008-7.196-2.008-2.815 0-5.354.759-7.146 1.971-.014.018-.029.033-.049.049-.039.033-.084.06-.13.075-1.206.862-2.042 1.937-2.354 3.123 0 .058-.014.114-.037.171l-.008.015zm9.773 5.441c-1.794 0-3.057-.389-3.863-1.197-.173-.174-.173-.457 0-.632.176-.165.46-.165.635 0 .63.629 1.685.943 3.228.943 1.542 0 2.591-.3 3.219-.929.165-.164.45-.164.629 0 .165.18.165.465 0 .645-.809.808-2.065 1.198-3.862 1.198l.014-.028zm-3.606-7.573c-.914 0-1.677.765-1.677 1.677 0 .91.763 1.65 1.677 1.65s1.651-.74 1.651-1.65c0-.912-.739-1.677-1.651-1.677zm7.233 0c-.914 0-1.678.765-1.678 1.677 0 .91.764 1.65 1.678 1.65s1.651-.74 1.651-1.65c0-.912-.739-1.677-1.651-1.677zm4.548-1.595c1.037.833 1.8 1.821 2.189 2.904.45-.336.719-.864.719-1.449 0-1.002-.815-1.816-1.818-1.816-.399 0-.778.129-1.09.363v-.002zM2.711 9.963c-1.003 0-1.817.816-1.817 1.818 0 .543.239 1.048.644 1.389.401-1.079 1.172-2.053 2.213-2.876-.302-.21-.663-.329-1.039-.329v-.002zm9.217 12.079c-5.906 0-10.709-3.205-10.709-7.142 0-.275.023-.544.068-.809C.494 13.598 0 12.729 0 11.777c0-1.496 1.227-2.713 2.725-2.713.674 0 1.303.246 1.797.682 1.856-1.191 4.357-1.941 7.112-1.992l1.812-5.524.404.095s.016 0 .016.002l4.223.993c.344-.798 1.138-1.36 2.065-1.36 1.229 0 2.231 1.004 2.231 2.234 0 1.232-1.003 2.234-2.231 2.234s-2.23-1.004-2.23-2.23l-3.851-.912-1.467 4.477c2.65.105 5.047.854 6.844 2.021.494-.464 1.144-.719 1.833-.719 1.498 0 2.718 1.213 2.718 2.711 0 .987-.54 1.886-1.378 2.365.029.255.059.494.059.749-.015 3.938-4.806 7.143-10.72 7.143l-.034.009zm8.179-19.187c-.74 0-1.34.599-1.34 1.338 0 .738.6 1.34 1.34 1.34.732 0 1.33-.6 1.33-1.334 0-.733-.598-1.332-1.347-1.332l.017-.012z" />
   </symbol>
 </svg>
-    <header class="header">
+  <header class="header">
   <amp-img alt="Hugo Site (主页)" width="128px" height="128px" class="logo" src="/img/true.jpg"
     sizes="(max-width: 800px) 36px, 128px">
   </amp-img>
@@ -367,7 +366,7 @@ New,monospace;text-align:center}.error-emoji{color:#444;font-size:3rem}.error-te
 </ul>
 
 </header>
-    <amp-sidebar id="sidebar" class="sidebar" layout="nodisplay" side="right">
+  <amp-sidebar id="sidebar" class="sidebar" layout="nodisplay" side="right">
   <ul class="sidebar-list">
     <li class="sidebar-menu"><button class="sidebar-icon" on="tap:sidebar.close">X</button></li>
     
@@ -383,15 +382,26 @@ New,monospace;text-align:center}.error-emoji{color:#444;font-size:3rem}.error-te
   </ul>
 </amp-sidebar>
 
-    
-  <section class="main post-detail">
-    <header class="post-header">
-      <h1 class="post-title">通过 NgRx 体验前端状态管理</h1>
-      <p class="entry-meta"><span class="entry-time">Mar 2, 2020</span> 4 min read</p>
-    </header>
-    
+  
+<section class="main post-detail">
+  <header class="post-header">
+    <h1 class="post-title">通过 NgRx 体验前端状态管理</h1>
+    <p class="entry-meta">
+      <span>write by: </span>
+      <span class="post-author">111hunter</span>
+      <span> | </span>
+      <span class="entry-time">Mar 2, 2020</span>
+      <span> | </span>
+      
+      <span id="/post/ngrx/" class="leancloud_visitors" data-flag-title="通过 NgRx 体验前端状态管理">
+        <span class="post-meta-item-text">views: </span>
+        <span class="leancloud-visitors-count post-views"></span>
+      </span>
+    </p>
+  </header>
+  
 
-    <article class="post-content">
+  <article class="post-content">
 
 <p>什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。
 <br>为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。
@@ -726,28 +736,51 @@ export class CustomerListComponent implements OnInit {
 
 <p><a href="https://gitee.com/hildakik/ngrx-demo">源码地址</a></p>
 </article>
-    <footer class="post-footer">
-      
-      <div class="sharing">
-        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fngrx%2f" title="Share on Facebook">
-          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-        </a>
-        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e9%80%9a%e8%bf%87%20NgRx%20%e4%bd%93%e9%aa%8c%e5%89%8d%e7%ab%af%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fngrx%2f" title="Share on Twitter">
-          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-        </a>
-      </div>
-    </footer>
-  </section>
+  <div class="post-comment">
+    
+    <div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-    <footer class="footer">
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz',
+        appKey: 'gK3L6a7r80578qujBez4FH6C',
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mm',
+        placeholder: '欢迎留言和转载！',
+        visitor: 'true'
+    });
+</script>
+  </div>
+  <footer class="post-footer">
+    
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fngrx%2f"
+        title="Share on Facebook">
+        <svg class="icon icon-facebook" fill="currentColor">
+          <use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank"
+        href="https://twitter.com/intent/tweet/?text=%e9%80%9a%e8%bf%87%20NgRx%20%e4%bd%93%e9%aa%8c%e5%89%8d%e7%ab%af%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fngrx%2f" title="Share on Twitter">
+        <svg class="icon icon-twitter" fill="currentColor">
+          <use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</section>
+
+  <footer class="footer">
   <p>Copyright © 2018-2020 Hugo Site (主页)</p>
-  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a
+      href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 
 
 
 
+</body>
 
-
-  </body>
 </html>
