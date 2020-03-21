@@ -6,10 +6,20 @@
     <description>Recent content on 111hunter.blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Mar 2020 11:50:32 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2020 17:59:51 +0800</lastBuildDate>
     
 	<atom:link href="https://111hunter.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用 Spring Boot 和 Vue.js 写一个全栈应用</title>
+      <link>https://111hunter.github.io/post/spring-vue/</link>
+      <pubDate>Sat, 21 Mar 2020 17:59:51 +0800</pubDate>
+      
+      <guid>https://111hunter.github.io/post/spring-vue/</guid>
+      <description>后端接口 到 https://start.spring.io/ 去生成和下载 spring 应用，Group 填写 com.jpa，Artifact 填写 spring-jpa-demo， 其他默认选择就好，点击 Generate 就会生成并下载名压缩包，将压缩包解压，并在编辑器中打开。 我们使用 jpa 作为我们的 orm, 连接 mysql 数据库，因此在 pom.xml 中加入以下依赖。
+I. 数据库连接 	&amp;lt;!-- jpa driver --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-data-jpa&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- spring web driver --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- MySQL database driver --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- Skip test plugin --&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-surefire-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.22.2&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;skipTests&amp;gt;true&amp;lt;/skipTests&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt;  编写数据库连接文件 application.properties，它在 resources 文件夹中。</description>
+    </item>
     
     <item>
       <title>RxJS 初步探索(01) - Observable 的简单创建</title>
