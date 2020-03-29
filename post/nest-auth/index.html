@@ -15,19 +15,7 @@
   
 
   
-  <title>
-  
-    
-    
-      
-    
-      
-    
-      
-    
-  
-   | Hugo Blog Title (SEO Version)
-</title>
+  <title>NestJS &#43; Passport 实现鉴权认证</title>
 
   
   
@@ -37,14 +25,20 @@
   
   
   <meta name="author" content="111hunter" />
-  <meta name="description" content="">
+  <meta name="description" content="建立用户表，密码散列 要实现鉴权认证，首先需要一张 user 表。上一次我们用 NestJS 和 Typeorm 做了最基本的 crud 操作, 这次我们用 NestJS 和 node 中最流行的身份验证库 Passport 来完成鉴权认证。为了方便，我们直接沿用上次的代码库。
+创建 user module: $ nest g mo user
+然后在 user 文件夹新建 user.entity.ts, 其中我们做了密码散列:
+import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from &#39;typeorm&#39; import * as bcrypt from &#39;bcryptjs&#39;; @Entity(&#39;user&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number @Column({ length: 20 }) username: string @Column({ length: 255 }) password: string @BeforeInsert() async hashPassword() { this.">
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Posts" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="NestJS &#43; Passport 实现鉴权认证" />
+    <meta name="twitter:description" content="建立用户表，密码散列 要实现鉴权认证，首先需要一张 user 表。上一次我们用 NestJS 和 Typeorm 做了最基本的 crud 操作, 这次我们用 NestJS 和 node 中最流行的身份验证库 Passport 来完成鉴权认证。为了方便，我们直接沿用上次的代码库。
+创建 user module: $ nest g mo user
+然后在 user 文件夹新建 user.entity.ts, 其中我们做了密码散列:
+import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from &#39;typeorm&#39; import * as bcrypt from &#39;bcryptjs&#39;; @Entity(&#39;user&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number @Column({ length: 20 }) username: string @Column({ length: 255 }) password: string @BeforeInsert() async hashPassword() { this." />
     <meta name="twitter:image" content="https://111hunter.github.io/img/avatar.jpg" />
   
 
@@ -54,7 +48,7 @@
 <meta name="generator" content="Hugo 0.58.3" />
 
 
-<link rel="canonical" href="https://111hunter.github.io/post/">
+<link rel="canonical" href="https://111hunter.github.io/post/nest-auth/">
 <link rel="alternative" href="/index.xml" title="111hunter.blog" type="application/atom+xml">
 
 
@@ -390,303 +384,426 @@ td:last-child{border-bottom-right-radius:5px}.not-found{margin:5rem auto
 </amp-sidebar>
 
   
-  <section class="main entry-list">
-    <header class="list-header">
+<section class="main post-detail">
+  <header class="post-header">
+    <h1 class="post-title">NestJS &#43; Passport 实现鉴权认证</h1>
+    <p class="entry-meta">
+      <span>write by: </span>
+      <span class="post-author">111hunter</span>
+      <span> | </span>
+      <span class="entry-time">Mar 29, 2020</span>
+      <span> | </span>
       
-      
-        
-      
-        
-      
-        
-      
-    </header>
-    
-    
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/nest-auth/" title="NestJS &#43; Passport 实现鉴权认证" class="entry-link">NestJS &#43; Passport 实现鉴权认证</a></h3>
-  </header>
-
-  <p class="entry-summary">建立用户表，密码散列 要实现鉴权认证，首先需要一张 user 表。上一次我们用 NestJS 和 Typeorm 做了最基本的 crud 操作, 这次我们用 NestJS 和 node 中最流行的身份验证库 Passport 来完成鉴权认证。为了方便，我们直接沿用上次的代码库。
-创建 user module: $ nest g mo user
-然后在 user 文件夹新建 user.entity.ts, 其中我们做了密码散列:
-import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from &#39;typeorm&#39; import * as bcrypt from &#39;bcryptjs&#39;; @Entity(&#39;user&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number @Column({ length: 20 }) username: string @Column({ length: 255 }) password: string @BeforeInsert() async hashPassword() { this.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 29, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 5 分钟</span>
+      <span id="/post/nest-auth/" class="leancloud_visitors" data-flag-title="NestJS &#43; Passport 实现鉴权认证">
+        <span class="post-meta-item-text">views: </span>
+        <span class="leancloud-visitors-count post-views"></span>
+      </span>
     </p>
+  </header>
+  
+
+  <article class="post-content">
+
+<h3 id="建立用户表-密码散列">建立用户表，密码散列</h3>
+
+<p>要实现鉴权认证，首先需要一张 user 表。上一次我们用 NestJS 和 Typeorm 做了最基本的 crud 操作, 这次我们用 NestJS 和 node 中最流行的身份验证库 Passport 来完成鉴权认证。为了方便，我们直接沿用上次的代码库。</p>
+
+<p>创建 user module: <code>$ nest g mo user</code></p>
+
+<p>然后在 user 文件夹新建 user.entity.ts, 其中我们做了密码散列:</p>
+
+<pre><code>import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import * as bcrypt from 'bcryptjs';
+
+@Entity('user')
+export class UserEntity {
+    @PrimaryGeneratedColumn()
+    id: number
+
+    @Column({ length: 20 })
+    username: string
+
+    @Column({ length: 255 })
+    password: string
+
+    @BeforeInsert()
+    async hashPassword() {
+        this.password = await bcrypt.hash(this.password, 10);
+    }
+}
+</code></pre>
+
+<p>在 user.module.ts 中注册 user 表：<code>TypeOrmModule.forFeature([UserEntity])</code></p>
+
+<p>上一次我们直接在 module 中写了数据库连接配置，其实更常见的做法是写一个数据库配置文件。可以用环境变量设置数据库连接，这是 typeorm 数据库连接配置的<a href="https://typeorm.io/#/using-ormconfig/using-environment-variables">参考地址</a>。在文件夹建立一个 .env 文件：</p>
+
+<pre><code>  # App
+JWT_SECRET = 'ThisIsASecretKey'
+
+# Database
+TYPEORM_CONNECTION = mysql
+TYPEORM_HOST = localhost
+TYPEORM_USERNAME = root
+TYPEORM_PASSWORD = 123456
+TYPEORM_DATABASE = test
+TYPEORM_PORT = 3306
+TYPEORM_SYNCHRONIZE = true
+TYPEORM_LOGGING = true
+TYPEORM_ENTITIES = dist/**/*.entity.js
+
+</code></pre>
+
+<p>其中写了数据库配置和自定义的 jwt 密匙，关于如何生成 jwt 格式的字符串, 可以看<a href="https://www.footmark.info/programming-language/nodejs/nodejs-restful-webapi-oauth2-jwt/#fm-chapter-2-1">这篇文章</a>, 本文只讲如何使用它来做用户登录验证。</p>
+
+<p>在 app.module.ts 的imports数组中修改数据库为注册：<code>TypeOrmModule.forRoot()</code>，然后写入 UserModule。测试一下我们的数据库连接情况：<code>$ npm run start</code>, 控制台打印了 sql 语句，说明我们的连接配置是对的。查看数据库会发现新增加了 user 表。</p>
+
+<p>在 user 文件夹新建 user.dto.ts：</p>
+
+<pre><code>import { IsString } from 'class-validator'
+import { ApiProperty } from '@nestjs/swagger';
+
+export class UserDto {
+
+    @ApiProperty()
+    @IsString()
+    readonly username: string;
+
+    @ApiProperty()
+    @IsString()
+    readonly password: string;
+}
+</code></pre>
+
+<p>然后创建 user service：<code>$ nest g s user</code>，注意在 createUser 方法中一定要先 <strong>实例化</strong> user, 再返回创建的对象。否则 user.entity.ts 中的 @BeforeInsert() 装饰的方法不会执行，密码就不会取散列后的值。</p>
+
+<pre><code>import { Injectable } from '@nestjs/common'
+import { InjectRepository } from '@nestjs/typeorm'
+import { UserEntity } from './user.entity'
+import { Repository } from 'typeorm'
+import { UserDto } from './user.dto'
+
+@Injectable()
+export class UserService {
+    constructor(
+        @InjectRepository(UserEntity)
+        private readonly userRepository: Repository&lt;UserEntity&gt;,
+    ) { }
+
+    async createUser(userDto: UserDto) {
+        // const user = Object.assign(new UserEntity(), userDto)
+        const user = this.userRepository.create(userDto);
+        return await this.userRepository.save(user);
+    }
+
+    async findUsername(username: string) {
+        return this.userRepository.findOne({ where: { username } })
+    }
+
+    async findAll(): Promise&lt;UserEntity[]&gt; {
+        return await this.userRepository.find();
+    }
+}
+
+
+</code></pre>
+
+<h3 id="实现本地认证策略">实现本地认证策略</h3>
+
+<p>实现本地认证策略需要先安装以下依赖：</p>
+
+<pre><code>yarn add @nestjs/passport passport passport-local
+yarn add -D @types/passport-local
+</code></pre>
+
+<p>说明一下，这一步不是必须的。其实本地认证就是做用户名和密码的核对，我们自己去实现也不算麻烦。但是为了和 NestJS 官网教程保持一致，我们也这样做。
+创建 auth module: <code>$ nest g mo auth</code>，在 auth 目录下创建一个 local.strategy.ts 文件：</p>
+
+<pre><code>import { Injectable, UnauthorizedException } from '@nestjs/common'
+import { PassportStrategy } from '@nestjs/passport'
+import { Strategy } from 'passport-local'
+import { AuthService } from './auth.service'
+
+
+@Injectable()
+export class LocalStrategy extends PassportStrategy(Strategy) {
+    constructor(private readonly authService: AuthService) {
+        super()
+    }
+
+    async validate(username: string, password: string) {
+        const user = await this.authService.validateUser(username, password)
+        if (!user) {
+            throw new UnauthorizedException()
+        }
+        return user
+    }
+}
+
+</code></pre>
+
+<p>使用 @nestjs/passport ，你需要继承 PassportStrategy 类来配置 passport 策略。通过调用子类中的 super() 方法传递策略选项，通过在子类中实现 validate() 方法，可以提供verify回调。Passport 定义的 <strong>所有策略</strong> 都是将validate() 方法执行的结果作为 user 属性存储在当前  <strong>HTTP Request 对象</strong> 上,你也可以自定义此属性的名称。上面文件中的 validateUser 方法需要在 auth.service.ts 自己实现，因为框架不清楚你定义的密码散列方式。</p>
+
+<pre><code>//auth.service.ts
+
+...
+
+    async validateUser(username: string, pass: string): Promise&lt;any&gt; {
+        const user = await this.userService.findUsername(username);
+        console.log('-----------Login-----------')
+        if (user &amp;&amp; bcrypt.compareSync(pass, user.password)) {
+            return user;
+        }
+        return null;
+    }
+</code></pre>
+
+<h3 id="实现注册登录功能">实现注册登录功能</h3>
+
+<p>创建 auth controller: <code>$ nest g co auth</code>，路由功能：</p>
+
+<pre><code>import { UserDto } from './../user/user.dto';
+import { Body, Controller, Get, Post, UseGuards, Res, Request } from '@nestjs/common'
+import { AuthGuard } from '@nestjs/passport'
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger'
+import { AuthService } from 'src/auth/auth.service'
+
+@ApiBearerAuth()
+@ApiTags('Auth')
+@Controller('auth')
+export class AuthController {
+    constructor(
+        private readonly authService: AuthService,
+    ) { }
+
+    @UseGuards(AuthGuard('jwt'))
+    @Get('users')
+    async findAll(@Request() req): Promise&lt;any[]&gt; {
+        console.log('--------------Auth--Success---------------')
+        console.log(req.user);
+        return await this.authService.findAll();
+    }
+
+    @Post('signUp')
+    async register(@Body() req: UserDto, @Res() res) {
+        const result = await this.authService.register(req);
+        res.status(result.statusCode).send(result);
+    }
+
+    @UseGuards(AuthGuard('local'))
+    @Post('signIn')
+    async login(@Body() @Request() req: UserDto, @Res() res) {
+        console.log('----------Login--Success-----------')
+        console.log(req);
+        const result = await this.authService.login(req);
+        res.status(result.statusCode).send(result);
+    }
+}
+</code></pre>
+
+<p>注意其中的 @UseGuards(AuthGuard(&lsquo;local&rsquo;)) 装饰器，因为我们写了 local.strategy.ts文件，其中继承了 PassportStrategy 类，并实现了 validate 方法。@nestjs/passport 就会为我们实现一个 AuthGuard，我们直接在需要验证的路由前使用就好。@UseGuards(AuthGuard(&lsquo;jwt&rsquo;)) 是我们接下来要讲的 JWT 认证策略。</p>
+
+<p>再补充完整 auth.service.ts 文件：</p>
+
+<pre><code>// auth.service.ts
+
+import { BadRequestException, Injectable, Body, Request } from '@nestjs/common'
+import { UserService } from '../user/user.service'
+import { JwtService } from '@nestjs/jwt'
+import * as bcrypt from 'bcryptjs';
+
+@Injectable()
+export class AuthService {
+
+    constructor(
+        private readonly userService: UserService,
+        private readonly jwtService: JwtService,
+    ) { }
+
+    async findAll(): Promise&lt;any[]&gt; {
+        return await this.userService.findAll();
+    }
+
+    async validateUser(username: string, pass: string): Promise&lt;any&gt; {
+        const user = await this.userService.findUsername(username);
+        console.log('-----------Login-----------')
+        if (user &amp;&amp; bcrypt.compareSync(pass, user.password)) {
+            return user;
+        }
+        return null;
+    }
+
+    async register(user: any) {
+        let userData: any;
+        userData = await this.userService.findUsername(user.username);
+        if (userData) {
+            return { statusCode: 400, message: 'This username aleady exists' };
+        }
+        await this.userService.createUser(user);
+        userData = await this.userService.findUsername(user.username);
+        return {
+            username: userData.username,
+            statusCode: 201
+        };
+    }
+
+    async login(user: any) {
+        return this.userService.findUsername(user.username).then((userData) =&gt; {
+            const Token = this.createToken(userData);
+            return {
+                username: userData.username,
+                access_token: Token,
+                statusCode: 200
+            }
+        });
+    }
+
+    createToken(user: any) {
+        const payload = { username: user.username, sub: user.id };
+        return this.jwtService.sign(payload);
+    }
+}
+
+</code></pre>
+
+<h3 id="实现-jwt-认证策略">实现 JWT 认证策略</h3>
+
+<p>实现了用户注册登录后，我们需要保护 API，限制有的路由地址需要用户登录后才能访问，有的路由地址需要管理员登录后才能访问。我们这里只实现需要普通用户登录后才能访问的路由。</p>
+
+<p>什么是Token？</p>
+
+<ul>
+<li>前后端分离模式下，Token 是我们验证用户登录的常用方式。Token是服务端生成的一串字符串，以作客户端进行请求的一个令牌，当第一次登录后，服务器会生成一个Token并将此Token，返回给客户端，以后客户端只需带上这个Token前来请求数据即可，无需再次带上用户名和密码。</li>
+</ul>
+
+<p>为什么要使用Token？</p>
+
+<ul>
+<li>在很多项目案例中，需要实现账户的功能，客户端所有的功能都基于用户已登陆的前提下才可以使用。这就要求每次客户端向服务器请求数据时都要验证账户是否正确，如果正确则按正常方式返回数据，如果错误则进行拦截并返回错误信息。但是当客户端频繁向服务器请求数据的话，每次服务器都要频繁地查询数据库。而Token正是为了 <strong><em>减轻服务器的压力，减少频繁的查询数据库，使服务器更加健壮</em></strong>。并取代传统使用session的方法来进行验证。</li>
+</ul>
+
+<p>在 Nest.js 中使用 jwt(json web token), 我们需要安装以下依赖：</p>
+
+<pre><code>yarn add @nestjs/jwt passport-jwt
+yarn add -D @types/passport-jwt
+</code></pre>
+
+<p>我们在 auth.service.ts 中已经实现了生成 jwt 字符串的方法，在用户登录路由中就会调用，并返回 jwt 字符串：</p>
+
+<pre><code>    createToken(user: any) {
+        const payload = { username: user.username, sub: user.id };
+        return this.jwtService.sign(payload);
+    }
+</code></pre>
+
+<blockquote>
+<p>注意：上面 sign 的参数 payload 是可逆加密的，拿到 token 后是可以解密成明文内容的，所以这部分不要放敏感信息。</p>
+</blockquote>
+
+<p>我们已经创建了 jwt 字符串作为请求令牌，那么服务端如何根据 jwt 字符串的内容，找到用户信息？
+我们就需要实现 jwt 认证策略，在 auth 文件夹下新建 jwt.strategy.ts 文件：</p>
+
+<pre><code>import { Injectable } from '@nestjs/common'
+import { PassportStrategy } from '@nestjs/passport'
+import { ExtractJwt, Strategy } from 'passport-jwt'
+import { JWT_SECRET } from 'config'
+
+@Injectable()
+export class JwtStrategy extends PassportStrategy(Strategy) {
+    constructor() {
+        super({
+            jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+            ignoreExpiration: false,
+            secretOrKey: JWT_SECRET,
+        })
+    }
+
+    async validate(payload: any) {
+        return { userId: payload.sub, username: payload.username };
+    }
+}
+</code></pre>
+
+<p>解释一下，对于 JWT 策略，Passport 首先验证 JWT 的签名并解码为 JSON 格式内容。仅在 @nestjs/passport 模块验证令牌有效后，才调用 validate() 方法。该方法将解码后的 JSON 作为其单个参数继续传递。否则。将阻止请求，抛出 401 Unauthorized 的异常。</p>
+
+<p>现在来看我们的auth.controller.ts，可以将 validate() 返回值输出到控制台：</p>
+
+<pre><code>// auth.controller.ts
+
+    @UseGuards(AuthGuard('jwt'))
+    @Get('users')
+    async findAll(@Request() req): Promise&lt;any[]&gt; {
+        console.log('--------------Auth--Success---------------')
+        console.log(req.user);
+        return await this.authService.findAll();
+    }
+</code></pre>
+
+<p>最后这是我们的 auth.module.ts，其中注册了 jwt 字符串过期时间，我们在 auth.service.ts 中注入了 UserService，记得导入 UserModule。</p>
+
+<pre><code>// auth.module.ts
+ 
+@Module({
+    imports: [
+        PassportModule,
+        JwtModule.register({
+            secret: JWT_SECRET,
+            signOptions: { expiresIn: '3600s' },
+        }),
+        UserModule,
+    ],
+    controllers: [AuthController],
+    providers: [AuthService, LocalStrategy, JwtStrategy],
+    exports: [AuthService],
+})
+export class AuthModule { }
+
+</code></pre>
+
+<h4 id="参考资料">参考资料:</h4>
+
+<p>Nest.JS 官方文档：<a href="https://docs.nestjs.com/techniques/authentication">https://docs.nestjs.com/techniques/authentication</a></p>
+
+<p>Typeorm 官方文档：<a href="https://typeorm.io/#/using-ormconfig/using-environment-variables">https://typeorm.io/#/using-ormconfig/using-environment-variables</a></p>
+
+<p>Node.js JWT 范例：<a href="https://www.footmark.info/programming-language/nodejs/nodejs-restful-webapi-oauth2-jwt/#fm-chapter-2-1">https://www.footmark.info/programming-language/nodejs/nodejs-restful-webapi-oauth2-jwt/#fm-chapter-2-1</a></p>
+
+<p><a href="https://github.com/111hunter/nest-crud">源码地址</a></p>
+</article>
+  <div class="post-comment">
+    
+    <div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz',
+        appKey: 'gK3L6a7r80578qujBez4FH6C',
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mm',
+        placeholder: '欢迎留言和转载！',
+        visitor: 'true'
+    });
+</script>
+  </div>
+  <footer class="post-footer">
+    
     <div class="sharing">
       <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-auth%2f"
         title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
+        <svg class="icon icon-facebook" fill="currentColor">
           <use xlink:href="#icon-facebook" /></svg>
       </a>
       <a class="share share-twitter" target="_blank"
         href="https://twitter.com/intent/tweet/?text=NestJS%20%2b%20Passport%20%e5%ae%9e%e7%8e%b0%e9%89%b4%e6%9d%83%e8%ae%a4%e8%af%81&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-auth%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
+        <svg class="icon icon-twitter" fill="currentColor">
           <use xlink:href="#icon-twitter" /></svg>
       </a>
     </div>
   </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/spring-vue/" title="用 Spring Boot 和 Vue.js 写一个全栈应用" class="entry-link">用 Spring Boot 和 Vue.js 写一个全栈应用</a></h3>
-  </header>
-
-  <p class="entry-summary">后端接口 到 https://start.spring.io/ 去生成和下载 spring 应用，Group 填写 com.jpa，Artifact 填写 spring-jpa-demo， 其他默认选择就好，点击 Generate 就会生成并下载名压缩包，将压缩包解压，并在编辑器中打开。 我们使用 jpa 作为我们的 orm, 连接 mysql 数据库，因此在 pom.xml 中加入以下依赖。
-I. 数据库连接 	&lt;!-- jpa driver --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt; &lt;/dependency&gt; &lt;!-- spring web driver --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;/dependency&gt; &lt;!-- MySQL database driver --&gt; &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;/dependency&gt; &lt;!-- Skip test plugin --&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt; &lt;version&gt;2.22.2&lt;/version&gt; &lt;configuration&gt; &lt;skipTests&gt;true&lt;/skipTests&gt; &lt;/configuration&gt; &lt;/plugin&gt;  编写数据库连接文件 application.properties，它在 resources 文件夹中。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 21, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 8 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fspring-vue%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=%e7%94%a8%20Spring%20Boot%20%e5%92%8c%20Vue.js%20%e5%86%99%e4%b8%80%e4%b8%aa%e5%85%a8%e6%a0%88%e5%ba%94%e7%94%a8&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fspring-vue%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/rxjs01/" title="RxJS 初步探索(01) - Observable 的简单创建" class="entry-link">RxJS 初步探索(01) - Observable 的简单创建</a></h3>
-  </header>
-
-  <p class="entry-summary">ReactiveX 结合了 观察者模式、迭代器模式 和 使用集合的函数式编程，以满足以一种理想方式来管理事件序列所需要的一切。
- 在 RxJS 中用来解决异步事件管理的的基本概念是：
- Observable (可观察对象): 表示一个概念，这个概念是一个可调用的未来值或事件的集合。
- Observer (观察者): 一个回调函数的集合，它知道如何去监听由 Observable 提供的值。
- Subscription (订阅): 表示 Observable 的执行，主要用于取消 Observable 的执行。
- Operators (操作符): 采用函数式编程风格的纯函数 (pure function)，使用像 map、filter、concat、flatMap 等这样的操作符来处理集合。
- Subject (主体): 相当于 EventEmitter，并且是将值或事件多路推送给多个 Observer 的唯一方式。
- Schedulers (调度器): 用来控制并发并且是中央集权的调度员，允许我们在发生计算时进行协调，例如 setTimeout 或 requestAnimationFrame 或其他。
-  以上文字来自 RxJS 中文文档，是 RxJS 的核心概念。
-下面来学习创建 Observable 对象以加深对一些概念的理解。 本文将生成 observable 的操作符分为以下四类：
- 转换操作符：from，fromEvent，fromPromise，of
- 创建操作符：create, range</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 13, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 4 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2frxjs01%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=RxJS%20%e5%88%9d%e6%ad%a5%e6%8e%a2%e7%b4%a2%2801%29%20-%20Observable%20%e7%9a%84%e7%ae%80%e5%8d%95%e5%88%9b%e5%bb%ba&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2frxjs01%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/ngrx/" title="通过 NgRx 体验前端状态管理" class="entry-link">通过 NgRx 体验前端状态管理</a></h3>
-  </header>
-
-  <p class="entry-summary">什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。 什么是ngrx？ngrx = rxjs &#43; rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。 注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。 先上官网流程图一张，一图胜千言。
-angular 有无 ngrx 的架构对比：
-  没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口，而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。其实，在软件开发中，一切看似的复杂往往是为了简单。 下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。 redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。
-Store 简单的理解就是前端状态的数据库，它有一个基本原则: 是”唯一的、状态不可修改”的树。
-Action 可以理解为状态变化的信号，当状态发生变化时，通过 Action 显性定义状态变化。 可配合 store-devtools 使用。
-Reducer 它是前端数据状态映射成的 Store 数据库中的表，接收旧状态，返回新状态。它是一个纯函数, 需要通过 Action 告知能够进行的状态变化。
-Effects 我们在进行一些 Action 时需要发送 http 请求，DOM 操作, 读写文件等。redux 状态管理只关心视图层的状态变化, 不会解决这些的需求。因此 ngrx 扩展了 Effects, 其实它是一个钩子函数。这大概就是示意图中虚线的含义。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 2, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 4 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fngrx%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=%e9%80%9a%e8%bf%87%20NgRx%20%e4%bd%93%e9%aa%8c%e5%89%8d%e7%ab%af%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fngrx%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/nest-crud/" title="NestJS &#43; TypeORM 实现 crud 示例" class="entry-link">NestJS &#43; TypeORM 实现 crud 示例</a></h3>
-  </header>
-
-  <p class="entry-summary">传统 MVC 架构：
- NestJs 架构：
- 随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。Nest 的分层借鉴自 Spring，更细化。我们应该要了解整个 Nest 框架的三层结构，Nest 和传统的 MVC 框架的区别在于它更注重于后端部分（控制器、服务与数据）的架构，视图层相对比较独立，完全可以由用户自定义配置。
-新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
-$ nest new nest-crud 新建 nest.js 项目, 选择 yarn 作为开发工具
-$ nest g mo photo 建立 PhotoModule
-$ nest g co photo 建立 PhotoController
-$ nest g s photo 建立 PhotoService
-$ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安装这些库</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Feb 1, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 4 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-crud%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=NestJS%20%2b%20TypeORM%20%e5%ae%9e%e7%8e%b0%20crud%20%e7%a4%ba%e4%be%8b&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-crud%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/git-learn/" title="git 快速上手指南" class="entry-link">git 快速上手指南</a></h3>
-  </header>
-
-  <p class="entry-summary">git 仓库图解
- 1. 使用帮助 $ git help 可以查看 git 常用命令
-$ git help -a 可以查看 git 所有命令，F 或者 空格 向下查看命令，B 向上查看命令，Q 退出 git-cli
-$ git help add help后接一个指令可以查看该指令的详细用法
-2. git 配置分为三个范围 system, global, 项目 范围 一般选择global进行配置 $ git config --global user.name &#39;111hunter&#39;
-$ git config --list 查看当前配置信息
-$ git config --unset --global user.name 取消 user.name 配置
-配置文件是当前用户主目录 $ cat ~/.gitconfig
-3. git 项目文件的 crud $ mkdir movietalk &amp; cd movietalk 新建文件夹</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Dec 13, 2019</span><span> | </span><span
-        class="reading-time">阅读时长 3 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=git%20%e5%bf%ab%e9%80%9f%e4%b8%8a%e6%89%8b%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog02/" title="Node.js搭建博客后台, 不使用框架" class="entry-link">Node.js搭建博客后台, 不使用框架</a></h3>
-  </header>
-
-  <p class="entry-summary">Node.js 处理 get，post 请求 const http = require(&#39;http&#39;) const querystring = require(&#39;querystring&#39;) const server = http.createServer((req, res) =&gt; { const method = req.method const url = req.url const path = url.split(&#39;?&#39;)[0] //重点：split(&#39;?&#39;[0])语法弄清楚 const query = querystring.parse(url.split(&#39;?&#39;)[1]) //设置返回值格式为 JSON res.setHeader(&#39;Content-type&#39;, &#39;application/json&#39;) //返回的数据 const resData = { method, url, path, query } //返回 if (method === &#39;GET&#39;) { res.end( JSON.stringify(req.query) ) } if (req.method === &#39;POST&#39;){ let postData = &#39;&#39; //res.on(&#39;data&#39;)指每次发送的数据 //chunk 逐步接收数据 req绑定一个data方法 chunk是变量 req.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Nov 22, 2019</span><span> | </span><span
-        class="reading-time">阅读时长 3 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog02%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=Node.js%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2%e5%90%8e%e5%8f%b0%2c%20%e4%b8%8d%e4%bd%bf%e7%94%a8%e6%a1%86%e6%9e%b6&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog02%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog01/" title="es6学习笔记" class="entry-link">es6学习笔记</a></h3>
-  </header>
-
-  <p class="entry-summary">es6学习笔记: 1.用let和const声明变量
-var 函数作用域function scope,不在函数内时作用域是全局的 let, const 块级作用域block scope,作用域是{}内
-eg.执行以下语句判断区别：
-for (var i = 0; i &lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) } for (let i = 0; i &lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) }  let, const不能重复声明变量值 let声明的变量是可以重新赋值的, const声明的变量只能修改引用类型的属性值 变量提升：let, count有变量提升,未声明先使用存在临时性死区(Temporal dead zone),详见mdn
-2.箭头函数：
-特点：简明的语法,隐式返回(省去return关键字),匿名函数 this:普通函数this是动态绑定的
-const Jelly = { name: &#39;Jelly&#39;, hobbies: [&#39;Coding&#39;, &#39;Sleeping&#39;, &#39;Reading&#39;], printHobbies: function () { // console.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 30, 2019</span><span> | </span><span
-        class="reading-time">阅读时长 3 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog01%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=es6%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog01%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/blog/" title="关于js闭包写法的演进过程" class="entry-link">关于js闭包写法的演进过程</a></h3>
-  </header>
-
-  <p class="entry-summary">首先来理解闭包，闭包是为了实现变量的私有化问题，有如下例子： 我们想要用一个counter记录add函数的执行次数。
-function add() { var counter = 0; //局部变量 counter&#43;&#43;; console.log(&#34;counter = &#34; &#43; counter); } add(); // counter = 1 add(); // counter = 1  由于counter是局部变量，每次我们执行add()函数，都是输出 counter = 1; 我们想要执行函数时改变counter的值，一种可行的办法是：
-var counter = 0; //全局变量，谁都可以访问，修改 function add() { counter&#43;&#43;; console.log(&#34;counter = &#34; &#43; counter); } add(); // counter = 1 add(); // counter = 2  但是这样会带来问题，由于counter是全局变量，我们可能会在函数外不小心改变了counter的值， 比如在函数外写了一句counter = -100；就打乱了我们原来的计数，显然我们并不希望在函数外任意地改变counter的值。 我们可以这样写：
-function add() { var counter = 1; //局部变量 console.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 7, 2019</span><span> | </span><span
-        class="reading-time">阅读时长 1 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fblog%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=%e5%85%b3%e4%ba%8ejs%e9%97%ad%e5%8c%85%e5%86%99%e6%b3%95%e7%9a%84%e6%bc%94%e8%bf%9b%e8%bf%87%e7%a8%8b&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fblog%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-    
-    
-  </section>
+</section>
 
   <footer class="footer">
   <p>Copyright © 2018-2020 111hunter.blog</p>

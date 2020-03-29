@@ -6,10 +6,22 @@
     <description>Recent content on 111hunter.blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Mar 2020 17:59:51 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 10:24:40 +0800</lastBuildDate>
     
 	<atom:link href="https://111hunter.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NestJS &#43; Passport 实现鉴权认证</title>
+      <link>https://111hunter.github.io/post/nest-auth/</link>
+      <pubDate>Sun, 29 Mar 2020 10:24:40 +0800</pubDate>
+      
+      <guid>https://111hunter.github.io/post/nest-auth/</guid>
+      <description>建立用户表，密码散列 要实现鉴权认证，首先需要一张 user 表。上一次我们用 NestJS 和 Typeorm 做了最基本的 crud 操作, 这次我们用 NestJS 和 node 中最流行的身份验证库 Passport 来完成鉴权认证。为了方便，我们直接沿用上次的代码库。
+创建 user module: $ nest g mo user
+然后在 user 文件夹新建 user.entity.ts, 其中我们做了密码散列:
+import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from &#39;typeorm&#39; import * as bcrypt from &#39;bcryptjs&#39;; @Entity(&#39;user&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number @Column({ length: 20 }) username: string @Column({ length: 255 }) password: string @BeforeInsert() async hashPassword() { this.</description>
+    </item>
     
     <item>
       <title>用 Spring Boot 和 Vue.js 写一个全栈应用</title>
