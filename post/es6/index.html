@@ -15,24 +15,38 @@
   
 
   
-  <title>Hugo Blog Title (SEO Version)</title>
+  <title>es6 学习笔记</title>
 
   
   
 
 
 
-
+  
   
   <meta name="author" content="111hunter" />
-  <meta name="description" content="A light responsive Hugo AMP theme for blogger" />
+  <meta name="description" content="es6 学习笔记: 1.用let和const声明变量
+var 函数作用域function scope,不在函数内时作用域是全局的 let, const 块级作用域block scope,作用域是{}内
+eg.执行以下语句判断区别：
+for (var i = 0; i &amp;lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) } for (let i = 0; i &amp;lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) }  let, const不能重复声明变量值 let声明的变量是可以重新赋值的, const声明的变量只能修改引用类型的属性值 变量提升：let, count有变量提升,未声明先使用存在临时性死区(Temporal dead zone),详见mdn
+2.箭头函数：
+特点：简明的语法,隐式返回(省去return关键字),匿名函数 this:普通函数this是动态绑定的
+const Jelly = { name: &#39;Jelly&#39;, hobbies: [&#39;Coding&#39;, &#39;Sleeping&#39;, &#39;Reading&#39;], printHobbies: function () { // console.">
 
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@twitter_username" />
-  <meta name="twitter:title" content="Hugo Blog Title (SEO Version)" />
-  <meta name="twitter:description" content="A light responsive Hugo AMP theme for blogger" />
-  <meta name="twitter:image" content="https://111hunter.github.io/img/avatar.jpg" />
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@twitter_username" />
+    <meta name="twitter:title" content="es6 学习笔记" />
+    <meta name="twitter:description" content="es6 学习笔记: 1.用let和const声明变量
+var 函数作用域function scope,不在函数内时作用域是全局的 let, const 块级作用域block scope,作用域是{}内
+eg.执行以下语句判断区别：
+for (var i = 0; i &amp;lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) } for (let i = 0; i &amp;lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) }  let, const不能重复声明变量值 let声明的变量是可以重新赋值的, const声明的变量只能修改引用类型的属性值 变量提升：let, count有变量提升,未声明先使用存在临时性死区(Temporal dead zone),详见mdn
+2.箭头函数：
+特点：简明的语法,隐式返回(省去return关键字),匿名函数 this:普通函数this是动态绑定的
+const Jelly = { name: &#39;Jelly&#39;, hobbies: [&#39;Coding&#39;, &#39;Sleeping&#39;, &#39;Reading&#39;], printHobbies: function () { // console." />
+    <meta name="twitter:image" content="https://111hunter.github.io/img/avatar.jpg" />
+  
 
 
 
@@ -40,7 +54,7 @@
 <meta name="generator" content="Hugo 0.58.3" />
 
 
-<link rel="canonical" href="https://111hunter.github.io/">
+<link rel="canonical" href="https://111hunter.github.io/post/es6/">
 <link rel="alternative" href="/index.xml" title="111hunter.blog" type="application/atom+xml">
 
 
@@ -264,7 +278,7 @@ td:last-child{border-bottom-right-radius:5px}.not-found{margin:5rem auto
     sizes="(max-width: 800px) 3rem, 128px">
   </amp-img>
   
-  <h1 class="title"><a href="https://111hunter.github.io/" title="111hunter.blog">111hunter.blog</a></h1>
+  <h2 class="title"><a href="https://111hunter.github.io/" title="111hunter.blog">111hunter.blog</a></h2>
   
   <p class="subtitle">1.01 ^ 365 = 37.8 || 0.99 ^ 365 = 0.02</p>
   <button class="menu-toggle" type="button" on="tap:sidebar.open">
@@ -376,293 +390,339 @@ td:last-child{border-bottom-right-radius:5px}.not-found{margin:5rem auto
 </amp-sidebar>
 
   
-  <section class="main entry-list">
+<section class="main post-detail">
+  <header class="post-header">
+    <h1 class="post-title">es6 学习笔记</h1>
+    <p class="entry-meta">
+      <span>write by: </span>
+      <span class="post-author">111hunter</span>
+      <span> | </span>
+      <span class="entry-time">Oct 30, 2019</span>
+      <span> | </span>
+      
+      <span id="/post/es6/" class="leancloud_visitors" data-flag-title="es6 学习笔记">
+        <span class="post-meta-item-text">views: </span>
+        <span class="leancloud-visitors-count post-views"></span>
+      </span>
+    </p>
+  </header>
+  
+
+  <article class="post-content">
+
+<h4 id="es6-学习笔记">es6 学习笔记:</h4>
+
+<p>1.用let和const声明变量</p>
+
+<p>var 函数作用域function scope,不在函数内时作用域是全局的
+let, const 块级作用域block scope,作用域是{}内</p>
+
+<p>eg.执行以下语句判断区别：</p>
+
+<pre><code>for (var i = 0; i &lt; 10; i++) {
+    console.log(i);
+    setTimeout(function () {
+        console.log(`i:${i}`);
+    }, 1000)
+}
+
+for (let i = 0; i &lt; 10; i++) {
+    console.log(i);
+    setTimeout(function () {
+        console.log(`i:${i}`);
+    }, 1000)
+}
+</code></pre>
+
+<p>let, const不能重复声明变量值
+<br>let声明的变量是可以重新赋值的, const声明的变量只能修改引用类型的属性值
+<br>变量提升：let, count有变量提升,未声明先使用存在临时性死区(Temporal dead zone),详见mdn</p>
+
+<p>2.箭头函数：</p>
+
+<p>特点：简明的语法,隐式返回(省去return关键字),匿名函数
+this:普通函数this是动态绑定的</p>
+
+<pre><code>const Jelly = {
+        name: 'Jelly',
+        hobbies: ['Coding', 'Sleeping', 'Reading'],
+        printHobbies: function () {
+            // console.log(this);
+            this.hobbies.map(function (hobby) {
+                // console.log(this);
+                console.log(`${this.name} loves ${hobby}`);
+            })
+        }
+    }
+Jelly.printHobbies();   
+</code></pre>
+
+<p>map中的回调函数是一个独立的函数,不作为对象的方法,并且没有通过call bind apply
+来改变里面的this，this指向window,严格模式下指向undefined</p>
+
+<pre><code>const Jelly = {
+    name: 'Jelly',
+    hobbies: ['Coding', 'Sleeping', 'Reading'],
+    printHobbies: function () {
+        // console.log(this);
+        var self = this;
+        this.hobbies.map(function (hobby) {
+            // console.log(this);
+            console.log(`${self.name} loves ${hobby}`);
+        })
+    }
+}
+Jelly.printHobbies();
+</code></pre>
+
+<p>箭头函数的this值继承父作用域,是词法作用域,定义的时候就指向明确,且不会绑定this：</p>
+
+<pre><code>const Jelly = {
+    name: 'Jelly',
+    hobbies: ['Coding', 'Sleeping', 'Reading'],
+    printHobbies: function () {
+        // console.log(this);
+        this.hobbies.map(hobby =&gt; {
+            // console.log(this);
+            console.log(`${this.name} loves ${hobby}`);
+        })
+    }
+}
+Jelly.printHobbies();
+</code></pre>
+
+<p>命名函数在递归,事件绑定时有用,在箭头函数中使用：</p>
+
+<pre><code>const greet = name =&gt; {alert(`Hello ${name}`)}; 
+</code></pre>
+
+<p>箭头函数不适用的情况：
+<br>(1).需要使用this慎用<br>(2).需要使用arguments(箭头函数没有arguments)</p>
+
+<p>3.模板字符串: `${ }`
+<br>模板字符串中的换行和空格都是会被保留的。
+<br>模板字符串可嵌套,支持三元表达式。
+<br>标签模板字符串,是一个函数的调用。</p>
+
+<pre><code>alert`Hello world!`;
+// 等价于alert('Hello world!');
+</code></pre>
+
+<p>4.解构赋值:
+<br>针对<strong>数组</strong>或者<strong>对象</strong>进行模式匹配,然后对其中的变量进行赋值。
+<br>是对赋值运算符的扩展,方便提取对象属性值,可嵌套可忽略。</p>
+
+<pre><code>let [a, b, c, d, e] = 'hello';
+
+let obj = {p: ['hello', {y: 'world'}] };
+let {p: [x, { y }] } = obj;
+// x = 'hello'
+// y = 'world'
+let obj = {p: ['hello', {y: 'world'}] };
+let {p: [x, {  }] } = obj;
+// x = 'hello'
+</code></pre>
+
+<p>5.计算属性：[ ]</p>
+
+<pre><code>const keys = ['name', 'age', 'birthday']
+const values = ['jelly', 18, '2016-01']
+const Laravist = {
+    [keys.shift()]: values.shift(),
+    [keys.shift()]: values.shift(),
+    [keys.shift()]: values.shift(),
+}
+console.log(Laravist);
+</code></pre>
+
+<p>6.Symbol：ES6引入了一种新的原始数据类型表示独一无二的值,最大的用法是用来定义对象的唯一属性名。
+用于生成唯一标识符避免命名冲突,可作为私有属性在对象内部使用,不能for循环遍历</p>
+
+<pre><code>const classRoom = {
+    [Symbol('lily')]: { grade: 60, gender: 'female' },
+    [Symbol('nina')]: { grade: 70, gender: 'female' },
+    [Symbol('nina')]: { grade: 90, gender: 'female' },
+}
+const syms = Object.getOwnPropertySymbols(classRoom).map(sym =&gt; classRoom[sym]);
+console.log(syms);
+</code></pre>
+
+<p>7.剩余参数：</p>
+
+<pre><code>const player = ['jelly', 123, 2.4, 3.6, 1.7]
+const [name, id, ...scores] = player;
+console.log(name, id, scores)
+</code></pre>
+
+<p>扩展运算符可以将可遍历对象元素扩展成新的参数序列,而不用改变原来的对象</p>
+
+<pre><code>const younger = ['aaa', 'bbb', 'ccc'];
+const older = ['xxx', 'yyy', 'zzz'];
+const members = [...younger, 'ddd', ...older];
+const newmembers = members
+</code></pre>
+
+<p>8.Promise用于避免回调地狱：</p>
+
+<pre><code>const p = new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+        reject(Error('Laravist isn\'t awesome!'));
+    }, 2000);
+})
+p.then(data =&gt; { console.log(data) })
+    .catch(err =&gt; { console.error(err) });
+</code></pre>
+
+<p>await操作符用于等待一个Promise对象,它只能在异步函数async function内部使用。
+<br>await针对所跟不同表达式的处理方式：
+<br>Promise对象：await 会暂停执行,等待Promise对象resolve,然后恢复async函数的执行并返回解析值。
+<br>非Promise对象：直接返回对应的值。</p>
+
+<pre><code>function testAwait(x) {
+    return new Promise(resolve =&gt; {
+        setTimeout(() =&gt; {
+            resolve(x);
+        }, 2000);
+    });
+}
+async function helloAsync() {
+    var x = await testAwait(&quot;hello world&quot;);
+    console.log(x);
+}
+helloAsync();
+</code></pre>
+
+<p>9.class 类:
+<br>class是语法糖,本质是funciton,没有变量提升
+<br>继承:</p>
+
+<pre><code>function MyArray() {
+    Array.apply(this, arguments);
+}
+const colors = new MyArray();
+colors[0] = 'red';
+console.log(colors.length);  //undefined
+colors.length = 0;
+console.log(colors[0]);      //red
+</code></pre>
+
+<p>ES5 是先新建子类的实例对象this,
+再将父类的属性添加到子类上,原生构造函数会忽略apply方法传入的this,
+父类的内部属性无法获取,导致无法继承原生的构造函数。</p>
+
+<pre><code>class MyArray extends Array {
+    constructor() {
+        super();
+        console.log(this);
+    }
+}
+const colors = new MyArray();
+colors[0] = 'red';
+console.log(colors.length);  // 1
+colors.length = 0;
+console.log(colors[0]);      // undefined
+</code></pre>
+
+<p>ES6 允许继承原生构造函数定义的子类,因为ES6是先新建父类的实例对象this,
+然后再用子类的构造函数修饰this,使得父类的素有行为都可以继承。
+ES6 可以自定义原生数据结构的子类，这是 ES5 无法做到的。</p>
+
+<h4 id="一些数据结构补充">一些数据结构补充:</h4>
+
+<p>1.新增for&hellip;of循环：
+<br>先回顾js中for循环的几种写法</p>
+
+<pre><code>const fruits = ['apple', 'banana', 'orange', 'mango'];
+for (let i = 0; i &lt; fruits.length; i++) {
+    console.log(fruits[i]);
+}
+</code></pre>
+
+<p>可读性不是很好</p>
+
+<pre><code>fruits.forEach(fruit =&gt; {
+    console.log(fruit);
+})
+</code></pre>
+
+<p>不能在循环中break或continue</p>
+
+<pre><code>for (let index in fruits) {
+        console.log(fruits[index]);
+}
+</code></pre>
+
+<p>会遍历对象上所有可枚举属性</p>
+
+<pre><code>for (let fruit of fruits) {
+    console.log(fruit);
+}
+</code></pre>
+
+<p>不会遍历数组中非数字属性,能够break或continue
+<br>应用数组解构语法</p>
+
+<pre><code>for (let [index, fruit] of fruits.entries()) {
+    console.log(`${fruit} rank in ${index + 1} in my favorite fruits`);
+}
+</code></pre>
+
+<p>for&hellip;of可以应用于可迭代对象(部署了iterator接口或提供Symbol.iterator方法的数据结构)
+<br>数组,字符串,arguments,NodeList,map.set等,但不支持对象</p>
+
+<p>2.es6新增数组方法Array.from()和Array.of()：
+<br>注意是数组原型对象上的静态方法
+<br>Array.from()用于把可迭代对象转化成数组,Array.of()传入参数生成数组</p>
+
+<p>3.Proxy与Reflect是ES6为了操作对象引入的 API 。
+<br>Proxy 可以对目标对象的读取、函数调用等操作进行拦截,然后进行操作处理。它不直接操作对象,而是像代理模式,通过对象的代理对象进行操作。
+<br>ES6中将Object的一些明显属于语言内部的方法移植到了Reflect对象上。</p>
+
+<p>4.迭代器与生成器
+<br>Iterator是ES6引入的一种新的遍历机制,通过一个键为Symbol.iterator的方法来实现。
+<br>Generator函数:在function后面,函数名之前有个*,函数内部有yield表达式。</p>
+
+<p>5.Map与Set
+<br>Object的键只能是字符串或者Symbols, Map的键可以是任意值,Map中的键值是有序的(FIFO原则),Map的键值对个数可以从size属性获取。
+<br>Set对象允许你存储任何类型的唯一值,NaN与NaN是不恒等的,但是在Set中只能存一个。</p>
+
+<p>转载请注明原文出处：<a href="https://111hunter.github.io/post/es6/">https://111hunter.github.io/post/es6/</a></p>
+</article>
+  <div class="post-comment">
     
+    <div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz',
+        appKey: 'gK3L6a7r80578qujBez4FH6C',
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mm',
+        placeholder: '欢迎留言和转载！',
+        visitor: 'true'
+    });
+</script>
+  </div>
+  <footer class="post-footer">
     
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/nest-auth/" title="NestJS &#43; Passport 实现鉴权认证" class="entry-link">NestJS &#43; Passport 实现鉴权认证</a></h3>
-  </header>
-
-  <p class="entry-summary">建立用户表，密码散列 要实现鉴权认证，首先需要一张 user 表。上一次我们用 NestJS 和 Typeorm 做了最基本的 crud 操作, 这次我们用 NestJS 和 node 中最流行的身份验证库 Passport 来完成鉴权认证。为了方便，我们直接沿用上次的代码库。
-创建 user module: $ nest g mo user
-然后在 user 文件夹新建 user.entity.ts, 其中我们做了密码散列:
-import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from &#39;typeorm&#39; import * as bcrypt from &#39;bcryptjs&#39;; @Entity(&#39;user&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number @Column({ length: 20 }) username: string @Column({ length: 255 }) password: string @BeforeInsert() async hashPassword() { this.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 29, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 5 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-auth%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=NestJS%20%2b%20Passport%20%e5%ae%9e%e7%8e%b0%e9%89%b4%e6%9d%83%e8%ae%a4%e8%af%81&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-auth%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/spring-vue/" title="用 Spring Boot 和 Vue.js 写一个全栈应用" class="entry-link">用 Spring Boot 和 Vue.js 写一个全栈应用</a></h3>
-  </header>
-
-  <p class="entry-summary">后端接口 到 https://start.spring.io/ 去生成和下载 spring 应用，Group 填写 com.jpa，Artifact 填写 spring-jpa-demo， 其他默认选择就好，点击 Generate 就会生成并下载名压缩包，将压缩包解压，并在编辑器中打开。 我们使用 jpa 作为我们的 orm, 连接 mysql 数据库，因此在 pom.xml 中加入以下依赖。
-	&lt;!-- jpa driver --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt; &lt;/dependency&gt; &lt;!-- spring web driver --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;/dependency&gt; &lt;!-- MySQL database driver --&gt; &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;/dependency&gt; &lt;!-- Skip test plugin --&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt; &lt;version&gt;2.22.2&lt;/version&gt; &lt;configuration&gt; &lt;skipTests&gt;true&lt;/skipTests&gt; &lt;/configuration&gt; &lt;/plugin&gt;  I. 数据库连接 编写数据库连接文件 application.properties，它在 resources 文件夹中。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 21, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 8 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fspring-vue%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=%e7%94%a8%20Spring%20Boot%20%e5%92%8c%20Vue.js%20%e5%86%99%e4%b8%80%e4%b8%aa%e5%85%a8%e6%a0%88%e5%ba%94%e7%94%a8&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fspring-vue%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/rxjs01/" title="RxJS 初步探索(01) - Observable 的简单创建" class="entry-link">RxJS 初步探索(01) - Observable 的简单创建</a></h3>
-  </header>
-
-  <p class="entry-summary">ReactiveX 结合了 观察者模式、迭代器模式 和 使用集合的函数式编程，以满足以一种理想方式来管理事件序列所需要的一切。
- 在 RxJS 中用来解决异步事件管理的的基本概念是：
- Observable (可观察对象): 表示一个概念，这个概念是一个可调用的未来值或事件的集合。
- Observer (观察者): 一个回调函数的集合，它知道如何去监听由 Observable 提供的值。
- Subscription (订阅): 表示 Observable 的执行，主要用于取消 Observable 的执行。
- Operators (操作符): 采用函数式编程风格的纯函数 (pure function)，使用像 map、filter、concat、flatMap 等这样的操作符来处理集合。
- Subject (主体): 相当于 EventEmitter，并且是将值或事件多路推送给多个 Observer 的唯一方式。
- Schedulers (调度器): 用来控制并发并且是中央集权的调度员，允许我们在发生计算时进行协调，例如 setTimeout 或 requestAnimationFrame 或其他。
-  以上文字来自 RxJS 中文文档，是 RxJS 的核心概念。
-下面来学习创建 Observable 对象以加深对一些概念的理解。 本文将生成 observable 的操作符分为以下四类：
- 转换操作符：from，fromEvent，fromPromise，of
- 创建操作符：create, range</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 13, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 4 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2frxjs01%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=RxJS%20%e5%88%9d%e6%ad%a5%e6%8e%a2%e7%b4%a2%2801%29%20-%20Observable%20%e7%9a%84%e7%ae%80%e5%8d%95%e5%88%9b%e5%bb%ba&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2frxjs01%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/ngrx/" title="通过 NgRx 体验前端状态管理" class="entry-link">通过 NgRx 体验前端状态管理</a></h3>
-  </header>
-
-  <p class="entry-summary">什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。 什么是ngrx？ngrx = rxjs &#43; rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。 注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。 先上官网流程图一张，一图胜千言。
-angular 有无 ngrx 的架构对比：
-  没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口，而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。其实，在软件开发中，一切看似的复杂往往是为了简单。 下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。 redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。
-Store 简单的理解就是前端状态的数据库，它有一个基本原则: 是”唯一的、状态不可修改”的树。
-Action 可以理解为状态变化的信号，当状态发生变化时，通过 Action 显性定义状态变化。 可配合 store-devtools 使用。
-Reducer 它是前端数据状态映射成的 Store 数据库中的表，接收旧状态，返回新状态。它是一个纯函数, 需要通过 Action 告知能够进行的状态变化。
-Effects 我们在进行一些 Action 时需要发送 http 请求，DOM 操作, 读写文件等。redux 状态管理只关心视图层的状态变化, 不会解决这些的需求。因此 ngrx 扩展了 Effects, 其实它是一个钩子函数。这大概就是示意图中虚线的含义。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 2, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 4 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fngrx%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=%e9%80%9a%e8%bf%87%20NgRx%20%e4%bd%93%e9%aa%8c%e5%89%8d%e7%ab%af%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fngrx%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/nest-crud/" title="NestJS &#43; TypeORM 实现 crud 示例" class="entry-link">NestJS &#43; TypeORM 实现 crud 示例</a></h3>
-  </header>
-
-  <p class="entry-summary">传统 MVC 架构：
- NestJs 架构：
- 随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。Nest 的分层借鉴自 Spring，更细化。我们应该要了解整个 Nest 框架的三层结构，Nest 和传统的 MVC 框架的区别在于它更注重于后端部分（控制器、服务与数据）的架构，视图层相对比较独立，完全可以由用户自定义配置。
-新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
-$ nest new nest-crud 新建 nest.js 项目, 选择 yarn 作为开发工具
-$ nest g mo photo 建立 PhotoModule
-$ nest g co photo 建立 PhotoController
-$ nest g s photo 建立 PhotoService
-$ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安装这些库</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Feb 1, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 4 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-crud%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=NestJS%20%2b%20TypeORM%20%e5%ae%9e%e7%8e%b0%20crud%20%e7%a4%ba%e4%be%8b&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-crud%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/git-learn/" title="git 快速上手指南" class="entry-link">git 快速上手指南</a></h3>
-  </header>
-
-  <p class="entry-summary">git 仓库图解
- 1. 使用帮助 $ git help 可以查看 git 常用命令
-$ git help -a 可以查看 git 所有命令，F 或者 空格 向下查看命令，B 向上查看命令，Q 退出 git-cli
-$ git help add help后接一个指令可以查看该指令的详细用法
-2. git 配置分为三个范围 system, global, 项目 范围 一般选择global进行配置 $ git config --global user.name &#39;111hunter&#39;
-$ git config --list 查看当前配置信息
-$ git config --unset --global user.name 取消 user.name 配置
-配置文件是当前用户主目录 $ cat ~/.gitconfig
-3. git 项目文件的 crud $ mkdir movietalk &amp; cd movietalk 新建文件夹</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Dec 13, 2019</span><span> | </span><span
-        class="reading-time">阅读时长 3 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=git%20%e5%bf%ab%e9%80%9f%e4%b8%8a%e6%89%8b%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/node01/" title="Node.js 搭建博客后台, 不使用框架" class="entry-link">Node.js 搭建博客后台, 不使用框架</a></h3>
-  </header>
-
-  <p class="entry-summary">Node.js 处理 get，post 请求 const http = require(&#39;http&#39;) const querystring = require(&#39;querystring&#39;) const server = http.createServer((req, res) =&gt; { const method = req.method const url = req.url const path = url.split(&#39;?&#39;)[0] //重点：split(&#39;?&#39;[0])语法弄清楚 const query = querystring.parse(url.split(&#39;?&#39;)[1]) //设置返回值格式为 JSON res.setHeader(&#39;Content-type&#39;, &#39;application/json&#39;) //返回的数据 const resData = { method, url, path, query } //返回 if (method === &#39;GET&#39;) { res.end( JSON.stringify(req.query) ) } if (req.method === &#39;POST&#39;){ let postData = &#39;&#39; //res.on(&#39;data&#39;)指每次发送的数据 //chunk 逐步接收数据 req绑定一个data方法 chunk是变量 req.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Nov 22, 2019</span><span> | </span><span
-        class="reading-time">阅读时长 3 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fnode01%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=Node.js%20%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2%e5%90%8e%e5%8f%b0%2c%20%e4%b8%8d%e4%bd%bf%e7%94%a8%e6%a1%86%e6%9e%b6&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fnode01%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/es6/" title="es6 学习笔记" class="entry-link">es6 学习笔记</a></h3>
-  </header>
-
-  <p class="entry-summary">es6 学习笔记: 1.用let和const声明变量
-var 函数作用域function scope,不在函数内时作用域是全局的 let, const 块级作用域block scope,作用域是{}内
-eg.执行以下语句判断区别：
-for (var i = 0; i &lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) } for (let i = 0; i &lt; 10; i&#43;&#43;) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) }  let, const不能重复声明变量值 let声明的变量是可以重新赋值的, const声明的变量只能修改引用类型的属性值 变量提升：let, count有变量提升,未声明先使用存在临时性死区(Temporal dead zone),详见mdn
-2.箭头函数：
-特点：简明的语法,隐式返回(省去return关键字),匿名函数 this:普通函数this是动态绑定的
-const Jelly = { name: &#39;Jelly&#39;, hobbies: [&#39;Coding&#39;, &#39;Sleeping&#39;, &#39;Reading&#39;], printHobbies: function () { // console.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 30, 2019</span><span> | </span><span
-        class="reading-time">阅读时长 3 分钟</span>
-    </p>
     <div class="sharing">
       <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fes6%2f"
         title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
+        <svg class="icon icon-facebook" fill="currentColor">
           <use xlink:href="#icon-facebook" /></svg>
       </a>
       <a class="share share-twitter" target="_blank"
         href="https://twitter.com/intent/tweet/?text=es6%20%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fes6%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
+        <svg class="icon icon-twitter" fill="currentColor">
           <use xlink:href="#icon-twitter" /></svg>
       </a>
     </div>
   </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/js01/" title="关于 js 闭包写法的演进过程" class="entry-link">关于 js 闭包写法的演进过程</a></h3>
-  </header>
-
-  <p class="entry-summary">首先来理解闭包，闭包是为了实现变量的私有化问题，有如下例子： 我们想要用一个counter记录add函数的执行次数。
-function add() { var counter = 0; //局部变量 counter&#43;&#43;; console.log(&#34;counter = &#34; &#43; counter); } add(); // counter = 1 add(); // counter = 1  由于counter是局部变量，每次我们执行add()函数，都是输出 counter = 1; 我们想要执行函数时改变counter的值，一种可行的办法是：
-var counter = 0; //全局变量，谁都可以访问，修改 function add() { counter&#43;&#43;; console.log(&#34;counter = &#34; &#43; counter); } add(); // counter = 1 add(); // counter = 2  但是这样会带来问题，由于counter是全局变量，我们可能会在函数外不小心改变了counter的值， 比如在函数外写了一句counter = -100；就打乱了我们原来的计数，显然我们并不希望在函数外任意地改变counter的值。 我们可以这样写：
-function add() { var counter = 1; //局部变量 console.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 7, 2019</span><span> | </span><span
-        class="reading-time">阅读时长 1 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fjs01%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=%e5%85%b3%e4%ba%8e%20js%20%e9%97%ad%e5%8c%85%e5%86%99%e6%b3%95%e7%9a%84%e6%bc%94%e8%bf%9b%e8%bf%87%e7%a8%8b&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fjs01%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-    
-    
-  </section>
+</section>
 
   <footer class="footer">
   <p>Copyright © 2018-2020 111hunter.blog</p>
