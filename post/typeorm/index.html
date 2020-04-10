@@ -15,19 +15,7 @@
   
 
   
-  <title>
-  
-    
-    
-      
-    
-      
-    
-      
-    
-  
-   | Hugo Blog Title (SEO Version)
-</title>
+  <title>Typeorm 的基本使用</title>
 
   
   
@@ -37,14 +25,22 @@
   
   
   <meta name="author" content="111hunter" />
-  <meta name="description" content="">
+  <meta name="description" content="本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。 以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBuilder。
+建表 typeorm 建表时，将 @Entity() 装饰的 class 映射为数据表，entity 中 @PrimaryColumn() 装饰的属性作为表的主键, @PrimaryGeneratedColumn() 表示自动生成主键, @Column() 装饰属性作为表的属性。
+@Entity() export class Photo { @PrimaryGeneratedColumn() id: number; @Column({length: 100}) name: string; @Column(&amp;quot;text&amp;quot;) description: string; @Column() views: number; @Column() isPublished: boolean; }  数据库中的列类型是根据你使用的属性类型推断的，例如: number 将被转换为 integer，string 将转换为 varchar，boolean 转换为 bool 等。下面我们从实际的例子出发探索如何用 typeorm 建一对一、一对多、多对多的关系。
+一对一 用户 user 和用户档案 profile 是一对一关系，一个用户只有一份档案。
+@Entity(&#39;users&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number; @Column() username: string; @OneToOne(type =&amp;gt; ProfileEntity, profile =&amp;gt; profile.">
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Posts" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="Typeorm 的基本使用" />
+    <meta name="twitter:description" content="本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。 以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBuilder。
+建表 typeorm 建表时，将 @Entity() 装饰的 class 映射为数据表，entity 中 @PrimaryColumn() 装饰的属性作为表的主键, @PrimaryGeneratedColumn() 表示自动生成主键, @Column() 装饰属性作为表的属性。
+@Entity() export class Photo { @PrimaryGeneratedColumn() id: number; @Column({length: 100}) name: string; @Column(&amp;quot;text&amp;quot;) description: string; @Column() views: number; @Column() isPublished: boolean; }  数据库中的列类型是根据你使用的属性类型推断的，例如: number 将被转换为 integer，string 将转换为 varchar，boolean 转换为 bool 等。下面我们从实际的例子出发探索如何用 typeorm 建一对一、一对多、多对多的关系。
+一对一 用户 user 和用户档案 profile 是一对一关系，一个用户只有一份档案。
+@Entity(&#39;users&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number; @Column() username: string; @OneToOne(type =&amp;gt; ProfileEntity, profile =&amp;gt; profile." />
     <meta name="twitter:image" content="https://111hunter.github.io/img/avatar.jpg" />
   
 
@@ -54,7 +50,7 @@
 <meta name="generator" content="Hugo 0.58.3" />
 
 
-<link rel="canonical" href="https://111hunter.github.io/post/">
+<link rel="canonical" href="https://111hunter.github.io/post/typeorm/">
 <link rel="alternative" href="/index.xml" title="111hunter.blog" type="application/atom+xml">
 
 
@@ -407,253 +403,330 @@ td:last-child{border-bottom-right-radius:5px}.not-found{margin:5rem auto
 </amp-sidebar>
 
   
-  <section class="main entry-list">
-    <header class="list-header">
+<section class="main post-detail">
+  <header class="post-header">
+    <h1 class="post-title">Typeorm 的基本使用</h1>
+    <p class="entry-meta">
+      <span>write by: </span>
+      <span class="post-author">111hunter</span>
+      <span> | </span>
+      <span class="entry-time">Apr 10, 2020</span>
+      <span> | </span>
       
-      
-        
-      
-        
-      
-        
-      
-    </header>
-    
-    
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/typeorm/" title="Typeorm 的基本使用" class="entry-link">Typeorm 的基本使用</a></h3>
-  </header>
-
-  <p class="entry-summary">本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。 以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBuilder。
-建表 typeorm 建表时，将 @Entity() 装饰的 class 映射为数据表，entity 中 @PrimaryColumn() 装饰的属性作为表的主键, @PrimaryGeneratedColumn() 表示自动生成主键, @Column() 装饰属性作为表的属性。
-@Entity() export class Photo { @PrimaryGeneratedColumn() id: number; @Column({length: 100}) name: string; @Column(&#34;text&#34;) description: string; @Column() views: number; @Column() isPublished: boolean; }  数据库中的列类型是根据你使用的属性类型推断的，例如: number 将被转换为 integer，string 将转换为 varchar，boolean 转换为 bool 等。下面我们从实际的例子出发探索如何用 typeorm 建一对一、一对多、多对多的关系。
-一对一 用户 user 和用户档案 profile 是一对一关系，一个用户只有一份档案。
-@Entity(&#39;users&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number; @Column() username: string; @OneToOne(type =&gt; ProfileEntity, profile =&gt; profile.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Apr 10, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 3 分钟</span>
+      <span id="/post/typeorm/" class="leancloud_visitors" data-flag-title="Typeorm 的基本使用">
+        <span class="post-meta-item-text">views: </span>
+        <span class="leancloud-visitors-count post-views"></span>
+      </span>
     </p>
+  </header>
+  
+
+  <article class="post-content">
+
+<p>本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。
+<br>以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBuilder。</p>
+
+<h3 id="建表">建表</h3>
+
+<p>typeorm 建表时，将 @Entity() 装饰的 class 映射为数据表，entity 中 @PrimaryColumn() 装饰的属性作为表的主键, @PrimaryGeneratedColumn() 表示自动生成主键, @Column() 装饰属性作为表的属性。</p>
+
+<pre><code>@Entity()
+export class Photo {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column({length: 100})
+  name: string;
+
+  @Column(&quot;text&quot;)
+  description: string;
+
+  @Column()
+  views: number;
+
+  @Column()
+  isPublished: boolean;
+}
+</code></pre>
+
+<p>数据库中的列类型是根据你使用的属性类型推断的，例如: number 将被转换为 integer，string 将转换为 varchar，boolean 转换为 bool 等。下面我们从实际的例子出发探索如何用 typeorm 建一对一、一对多、多对多的关系。</p>
+
+<h3 id="一对一">一对一</h3>
+
+<p>用户 user 和用户档案 profile 是一对一关系，一个用户只有一份档案。</p>
+
+<pre><code>@Entity('users')
+export class UserEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  username: string;
+
+  @OneToOne(type =&gt; ProfileEntity, profile =&gt; profile.user)
+  @JoinColumn()
+  profile: ProfileEntity;
+}
+</code></pre>
+
+<blockquote>
+<p>注：profile 是 ProfileEntity 类型的，在数据库中存储的类型却是 profile.id 的类型。</p>
+</blockquote>
+
+<p>@OneToOne 中需要指明对方 entity 的类型，指明对方 entity 的外键。@JoinColumn 必须在且只在关系的一侧的外键上。</p>
+
+<pre><code>@Entity('profiles')
+export class ProfileEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  gender: string;
+
+  @Column()
+  photo: string;
+  @OneToOne(type =&gt; UserEntity, user =&gt; user.profile)
+  user: UserEntity;
+}
+</code></pre>
+
+<p>这将生成以下数据表：</p>
+
+<pre><code>+-------------+--------------+----------------------------+
+|                          users                          |
++-------------+--------------+----------------------------+
+| id          | int(11)      | PRIMARY KEY AUTO_INCREMENT |
+| username    | varchar(255) |                            |
+| profileId   | int(11)      | FOREIGN KEY                |
++-------------+--------------+----------------------------+
+
++-------------+--------------+----------------------------+
+|                        profiles                         |
++-------------+--------------+----------------------------+
+| id          | int(11)      | PRIMARY KEY AUTO_INCREMENT |
+| gender      | varchar(255) |                            |
+| photo       | varchar(255) |                            |
++-------------+--------------+----------------------------+
+</code></pre>
+
+<h3 id="一对多">一对多</h3>
+
+<p>用户 user 与用户发布的文章 article 是一对多关系，一个用户可发布多篇文章。</p>
+
+<pre><code>@Entity('users')
+export class UserEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  username: string;
+
+  @OneToMany(type =&gt; ArticleEntity, article =&gt; article.author)
+  articles: ArticleEntity[];
+}
+</code></pre>
+
+<p>@OneToMany，@ManyToOne 中需要指明对方的 entity 类型，指明对方 entity 的外键。</p>
+
+<pre><code>@Entity('articles')
+export class ArticleEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  title: string;
+
+  @ManyToOne(type =&gt; UserEntity, user =&gt; user.articles)
+  author: UserEntity;
+}
+</code></pre>
+
+<p>typeorm 在处理 “一对多”关系时将“一”的主键作为“多”的外键 (即 @ManyToOne 装饰的属性)，建表时有最少的数据表操作代价，避免数据冗余，提高效率。这会生成以下表：</p>
+
+<pre><code>+-------------+--------------+----------------------------+
+|                        articles                         |
++-------------+--------------+----------------------------+
+| id          | int(11)      | PRIMARY KEY AUTO_INCREMENT |
+| title       | varchar(255) |                            |
+| authorId    | int(11)      |                            |
++-------------+--------------+----------------------------+
+
++-------------+--------------+----------------------------+
+|                          users                          |
++-------------+--------------+----------------------------+
+| id          | int(11)      | PRIMARY KEY AUTO_INCREMENT |
+| username    | varchar(255) |                            |
++-------------+--------------+----------------------------+
+</code></pre>
+
+<h3 id="多对多">多对多</h3>
+
+<p>用户 user 对文章 article 的喜欢 favorite 是多对多关系。一个用户可对多篇文章标记喜欢，一篇文章可被多个用户标记喜欢。</p>
+
+<pre><code>@Entity('users')
+export class UserEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  username: string;
+
+  @ManyToMany(type =&gt; ArticleEntity, article =&gt; article.favoritedBy)
+  favorites: ArticleEntity[];
+}
+</code></pre>
+
+<p>@OneToMany 中需要指明对方的 entity 类型，指明对方 entity 的外键。@JoinTable 必须在且只在关系的一侧的外键上。</p>
+
+<pre><code>@Entity('articles')
+export class ArticleEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  title: string;
+
+  @ManyToMany(type =&gt; UserEntity, user =&gt; user.favorites)
+  @JoinTable()
+  favoritedBy: UserEntity[];
+}
+</code></pre>
+
+<p>typeorm 的处理方式是将多对多关系转化为两个一对多关系:</p>
+
+<ul>
+<li>用户 user 与 喜欢 favorites 一对多。</li>
+<li>文章 article 与被喜欢 favoritedBy 一对多。</li>
+</ul>
+
+<p>多对多关系需要采用中间表的方式处理，这是为了避免笛卡尔积的出现。这会生成以下表：</p>
+
+<pre><code>+-------------+--------------+----------------------------+
+|                          users                          |
++-------------+--------------+----------------------------+
+| id          | int(11)      | PRIMARY KEY AUTO_INCREMENT |
+| username    | varchar(255) |                            |
++-------------+--------------+----------------------------+
+
++-------------+--------------+----------------------------+
+|                        articles                         |
++-------------+--------------+----------------------------+
+| id          | int(11)      | PRIMARY KEY AUTO_INCREMENT |
+| title       | varchar(255) |                            |
++-------------+--------------+----------------------------+
+
++-------------+--------------+----------------------------+
+|              articles_favorited_by_users                |
++-------------+--------------+----------------------------+
+| articlesId  | int(11)      | PRIMARY KEY FOREIGN KEY    |
+| usersId     | int(11)      | PRIMARY KEY FOREIGN KEY    |
++-------------+--------------+----------------------------+
+</code></pre>
+
+<h3 id="增删改查">增删改查</h3>
+
+<p>创建好一对一，一对多，多对多的实体 entity 后，我们如何做增删改查呢？单个实体的 crud 可参考我的这一篇<a href="https://111hunter.github.io/post/nest-crud/">文章</a>。而关联后的实体对象会作为该实体对象的一个属性, 直接对属性进行操作即可。如下是文章被用户喜欢的实现:</p>
+
+<pre><code>
+async favoriteArticle(slug: string, user: UserEntity) {
+    const article = await this.articleRepo.findOne({ where: { slug }});
+    article.favoritedBy.push(user);
+    await article.save();
+    return article;
+}
+
+</code></pre>
+
+<p>crud 操作中查询操作是我们最常遇到的，下面讲如何查询，typeorm 支持两种查询方式：Find 选项 和 QueryBuilder。</p>
+
+<h4 id="find-选项">Find 选项</h4>
+
+<p>在 Nest.JS 中，对具体实体的管理（insert, update, delete, load 等)我们使用的是 Repository。对应的查找方法是：Repository.find(FindOptions)。
+使用 find 查询只能获得一种类型的结果：entities。</p>
+
+<p>find 选项的完整例子如下：</p>
+
+<pre><code>userRepository.find({
+    select: [&quot;username&quot;],
+    relations: [&quot;profile&quot;, &quot;article&quot;，&quot;article.favoritedBy&quot;],
+    where: {
+        username: &quot;Timber&quot;,
+    },
+    order: {
+        id: &quot;DESC&quot;
+    },
+    skip: 5,
+    take: 10,
+    cache: true
+});
+</code></pre>
+
+<p>直接使用 find 是不会查出关联的对象的，要查询的关联对象需要添加到 relations 数组中。
+<br>除了 relations 以外，其他选项等同于原生 sql 操作, order 等同于 order by, skip 等同于 offset, take 等同于 limit, cache 是查询缓存。细节请参考 <a href="https://typeorm.io/#/find-options">Find 选项</a>。</p>
+
+<p>这种查询有个局限就是只能查询到关联对象的整个实体或主键。而不能 select 关联实体的其他属性。因此更复杂的查询我们需要使用 QueryBuilder。</p>
+
+<h4 id="querybuilder">QueryBuilder</h4>
+
+<p>使用QueryBuilder 查询可以获得两种类型的结果：entities 或原始数据。
+要获取entities，请使用getOne和getMany。
+要获取原始数据，请使用getRawOne和getRawMany。
+它能够很方便的帮我们构造出 sql 语句，addSelect() 可以获取关联对象上的其他属性。</p>
+
+<pre><code>if (query.author) {
+    const article = await getRepository(ArticleEntity)
+        .createQueryBuilder('article')
+        .select(&quot;article.id&quot;, 'id')
+        .addSelect('favoritedBy.username', 'name')
+        .leftJoin('article.favoritedBy', 'favoritedBy')
+        .where(&quot;favoritedBy.username = :name&quot;, { name: query.author })
+        .getRawMany();
+}
+</code></pre>
+
+<p>获取生成的 sql 语句可以在 getRawMany() 前获取 getSql() 或打印 printSql() 生成的sql语句。细节请参考 <a href="https://typeorm.io/#/select-query-builder">Query Builder</a>。</p>
+
+<p>转载请注明原文出处：<a href="https://111hunter.github.io/post/typeorm/">https://111hunter.github.io/post/typeorm/</a></p>
+
+<h4 id="参考资料">参考资料:</h4>
+
+<p>Typeorm 官方文档：<a href="https://typeorm.io/#/">https://typeorm.io/#/</a></p>
+</article>
+  <div class="post-comment">
+    
+    <div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz',
+        appKey: 'gK3L6a7r80578qujBez4FH6C',
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mm',
+        placeholder: '欢迎留言和转载！',
+        visitor: 'true'
+    });
+</script>
+  </div>
+  <footer class="post-footer">
+    
     <div class="sharing">
       <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2ftypeorm%2f"
         title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
+        <svg class="icon icon-facebook" fill="currentColor">
           <use xlink:href="#icon-facebook" /></svg>
       </a>
       <a class="share share-twitter" target="_blank"
         href="https://twitter.com/intent/tweet/?text=Typeorm%20%e7%9a%84%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2ftypeorm%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
+        <svg class="icon icon-twitter" fill="currentColor">
           <use xlink:href="#icon-twitter" /></svg>
       </a>
     </div>
   </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/nest-auth/" title="NestJS &#43; Passport 实现鉴权认证" class="entry-link">NestJS &#43; Passport 实现鉴权认证</a></h3>
-  </header>
-
-  <p class="entry-summary">建立用户表，密码散列 要实现鉴权认证，首先需要一张 user 表。上一次我们用 NestJS 和 Typeorm 做了最基本的 crud 操作, 这次我们用 NestJS 和 node 中最流行的身份验证库 Passport 来完成鉴权认证。为了方便，我们直接沿用上次的代码库。
-创建 user module: $ nest g mo user
-然后在 user 文件夹新建 user.entity.ts, 其中我们做了密码散列:
-import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from &#39;typeorm&#39; import * as bcrypt from &#39;bcryptjs&#39;; @Entity(&#39;user&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number @Column({ length: 20 }) username: string @Column({ length: 255 }) password: string @BeforeInsert() async hashPassword() { this.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 29, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 5 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-auth%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=NestJS%20%2b%20Passport%20%e5%ae%9e%e7%8e%b0%e9%89%b4%e6%9d%83%e8%ae%a4%e8%af%81&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-auth%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/spring-vue/" title="用 Spring Boot 和 Vue.js 写一个全栈应用" class="entry-link">用 Spring Boot 和 Vue.js 写一个全栈应用</a></h3>
-  </header>
-
-  <p class="entry-summary">后端接口 到 https://start.spring.io/ 去生成和下载 spring 应用，Group 填写 com.jpa，Artifact 填写 spring-jpa-demo， 其他默认选择就好，点击 Generate 就会生成并下载名压缩包，将压缩包解压，并在编辑器中打开。 我们使用 jpa 作为我们的 orm, 连接 mysql 数据库，因此在 pom.xml 中加入以下依赖。
-	&lt;!-- jpa driver --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt; &lt;/dependency&gt; &lt;!-- spring web driver --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;/dependency&gt; &lt;!-- MySQL database driver --&gt; &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;/dependency&gt; &lt;!-- Skip test plugin --&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt; &lt;version&gt;2.22.2&lt;/version&gt; &lt;configuration&gt; &lt;skipTests&gt;true&lt;/skipTests&gt; &lt;/configuration&gt; &lt;/plugin&gt;  I. 数据库连接 编写数据库连接文件 application.properties，它在 resources 文件夹中。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 21, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 8 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fspring-vue%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=%e7%94%a8%20Spring%20Boot%20%e5%92%8c%20Vue.js%20%e5%86%99%e4%b8%80%e4%b8%aa%e5%85%a8%e6%a0%88%e5%ba%94%e7%94%a8&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fspring-vue%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/rxjs01/" title="RxJS 初步探索(01) - Observable 的简单创建" class="entry-link">RxJS 初步探索(01) - Observable 的简单创建</a></h3>
-  </header>
-
-  <p class="entry-summary">ReactiveX 结合了 观察者模式、迭代器模式 和 使用集合的函数式编程，以满足以一种理想方式来管理事件序列所需要的一切。
- 在 RxJS 中用来解决异步事件管理的的基本概念是：
- Observable (可观察对象): 表示一个概念，这个概念是一个可调用的未来值或事件的集合。
- Observer (观察者): 一个回调函数的集合，它知道如何去监听由 Observable 提供的值。
- Subscription (订阅): 表示 Observable 的执行，主要用于取消 Observable 的执行。
- Operators (操作符): 采用函数式编程风格的纯函数 (pure function)，使用像 map、filter、concat、flatMap 等这样的操作符来处理集合。
- Subject (主体): 相当于 EventEmitter，并且是将值或事件多路推送给多个 Observer 的唯一方式。
- Schedulers (调度器): 用来控制并发并且是中央集权的调度员，允许我们在发生计算时进行协调，例如 setTimeout 或 requestAnimationFrame 或其他。
-  以上文字来自 RxJS 中文文档，是 RxJS 的核心概念。
-下面来学习创建 Observable 对象以加深对一些概念的理解。 本文将生成 observable 的操作符分为以下四类：
- 转换操作符：from，fromEvent，fromPromise，of
- 创建操作符：create, range</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 13, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 4 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2frxjs01%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=RxJS%20%e5%88%9d%e6%ad%a5%e6%8e%a2%e7%b4%a2%2801%29%20-%20Observable%20%e7%9a%84%e7%ae%80%e5%8d%95%e5%88%9b%e5%bb%ba&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2frxjs01%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/ngrx/" title="通过 NgRx 体验前端状态管理" class="entry-link">通过 NgRx 体验前端状态管理</a></h3>
-  </header>
-
-  <p class="entry-summary">什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。 什么是ngrx？ngrx = rxjs &#43; rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。 注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。 先上官网流程图一张，一图胜千言。
-angular 有无 ngrx 的架构对比：
-  没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口，而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。其实，在软件开发中，一切看似的复杂往往是为了简单。 下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。 redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。
-Store 简单的理解就是前端状态的数据库，它有一个基本原则: 是”唯一的、状态不可修改”的树。
-Action 可以理解为状态变化的信号，当状态发生变化时，通过 Action 显性定义状态变化。 可配合 store-devtools 使用。
-Reducer 它是前端数据状态映射成的 Store 数据库中的表，接收旧状态，返回新状态。它是一个纯函数, 需要通过 Action 告知能够进行的状态变化。
-Effects 我们在进行一些 Action 时需要发送 http 请求，DOM 操作, 读写文件等。redux 状态管理只关心视图层的状态变化, 不会解决这些的需求。因此 ngrx 扩展了 Effects, 其实它是一个钩子函数。这大概就是示意图中虚线的含义。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 2, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 4 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fngrx%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=%e9%80%9a%e8%bf%87%20NgRx%20%e4%bd%93%e9%aa%8c%e5%89%8d%e7%ab%af%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fngrx%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/nest-crud/" title="NestJS &#43; TypeORM 实现 crud 示例" class="entry-link">NestJS &#43; TypeORM 实现 crud 示例</a></h3>
-  </header>
-
-  <p class="entry-summary">传统 MVC 架构：
- NestJs 架构：
- 随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。Nest 的分层借鉴自 Spring，更细化。我们应该要了解整个 Nest 框架的三层结构，Nest 和传统的 MVC 框架的区别在于它更注重于后端部分（控制器、服务与数据）的架构，视图层相对比较独立，完全可以由用户自定义配置。
-新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
-$ nest new nest-crud 新建 nest.js 项目, 选择 yarn 作为开发工具
-$ nest g mo photo 建立 PhotoModule
-$ nest g co photo 建立 PhotoController
-$ nest g s photo 建立 PhotoService
-$ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安装这些库</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Feb 1, 2020</span><span> | </span><span
-        class="reading-time">阅读时长 4 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-crud%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=NestJS%20%2b%20TypeORM%20%e5%ae%9e%e7%8e%b0%20crud%20%e7%a4%ba%e4%be%8b&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fnest-crud%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/git-learn/" title="git 快速上手指南" class="entry-link">git 快速上手指南</a></h3>
-  </header>
-
-  <p class="entry-summary">git 仓库图解
- 1. 使用帮助 $ git help 可以查看 git 常用命令
-$ git help -a 可以查看 git 所有命令，F 或者 空格 向下查看命令，B 向上查看命令，Q 退出 git-cli
-$ git help add help后接一个指令可以查看该指令的详细用法
-2. git 配置分为三个范围 system, global, 项目 范围 一般选择global进行配置 $ git config --global user.name &#39;111hunter&#39;
-$ git config --list 查看当前配置信息
-$ git config --unset --global user.name 取消 user.name 配置
-配置文件是当前用户主目录 $ cat ~/.gitconfig
-3. git 项目文件的 crud $ mkdir movietalk &amp; cd movietalk 新建文件夹</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Dec 13, 2019</span><span> | </span><span
-        class="reading-time">阅读时长 3 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=git%20%e5%bf%ab%e9%80%9f%e4%b8%8a%e6%89%8b%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-    
-    
-      <nav class="pagination">
-        
-        
-          <a class="pagination-btn pagination-next" href="/post/page/2/">Older Posts →</a>
-        
-      </nav>
-    
-  </section>
+</section>
 
   <footer class="footer">
   <p>Copyright © 2018-2020 111hunter.blog</p>

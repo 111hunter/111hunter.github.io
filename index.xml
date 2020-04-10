@@ -6,10 +6,23 @@
     <description>Recent content on 111hunter.blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Mar 2020 10:24:40 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2020 14:35:05 +0800</lastBuildDate>
     
 	<atom:link href="https://111hunter.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Typeorm 的基本使用</title>
+      <link>https://111hunter.github.io/post/typeorm/</link>
+      <pubDate>Fri, 10 Apr 2020 14:35:05 +0800</pubDate>
+      
+      <guid>https://111hunter.github.io/post/typeorm/</guid>
+      <description>本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。 以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBuilder。
+建表 typeorm 建表时，将 @Entity() 装饰的 class 映射为数据表，entity 中 @PrimaryColumn() 装饰的属性作为表的主键, @PrimaryGeneratedColumn() 表示自动生成主键, @Column() 装饰属性作为表的属性。
+@Entity() export class Photo { @PrimaryGeneratedColumn() id: number; @Column({length: 100}) name: string; @Column(&amp;quot;text&amp;quot;) description: string; @Column() views: number; @Column() isPublished: boolean; }  数据库中的列类型是根据你使用的属性类型推断的，例如: number 将被转换为 integer，string 将转换为 varchar，boolean 转换为 bool 等。下面我们从实际的例子出发探索如何用 typeorm 建一对一、一对多、多对多的关系。
+一对一 用户 user 和用户档案 profile 是一对一关系，一个用户只有一份档案。
+@Entity(&#39;users&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number; @Column() username: string; @OneToOne(type =&amp;gt; ProfileEntity, profile =&amp;gt; profile.</description>
+    </item>
     
     <item>
       <title>NestJS &#43; Passport 实现鉴权认证</title>

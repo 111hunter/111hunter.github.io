@@ -91,10 +91,10 @@ ease-out}.logo:hover{border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,.3)}@medi
 #fff}}.title{font-size:1.5rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,sans-serif;font-weight:600;margin:1.5rem
 auto}@media screen and
 (max-width:800px){.title{margin:0 auto}}.title
-a:hover{color:aquamarine}.subtitle{margin-bottom:1.5rem;color:indigo;}.search{border:1px solid
-#c0c0c0;border-radius:18px;margin:0 30px
-10px;display:flex;}.search-input{flex:1;margin-left:0.5rem;background:#fafafa;border-radius:inherit;border:none}.search-button{border-radius:inherit;margin:0
-1px 2.5px;border:none;background:#fafafa}.menu{display:none}@media
+a:hover{color:aquamarine}.subtitle{margin-bottom:1.5rem;color:indigo;}.search{box-shadow:0 1px 6px 0 rgba(32, 33, 36,
+.28);border-radius:18px;margin:0 30px
+10px;display:flex;}.search-input{flex:1;line-height:inherit;margin-left:0.75rem;background:#fafafa;border-radius:inherit;border:none;outline:none;}.search-button{border-radius:inherit;margin:0
+1px 4px;border:none;outline:none;background:#fafafa}.menu{display:none}@media
 screen
 and
 (min-width:800px){.menu{display:block}}.menu-list{list-style:none;padding:0}.menu-item{padding:1rem 0}.menu-item
@@ -400,6 +400,36 @@ td:last-child{border-bottom-right-radius:5px}.not-found{margin:5rem auto
         <article class="entry-single">
   
   <header class="entry-header">
+    <h3 class="entry-title"><a href="https://111hunter.github.io/post/typeorm/" title="Typeorm 的基本使用" class="entry-link">Typeorm 的基本使用</a></h3>
+  </header>
+
+  <p class="entry-summary">本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。 以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBuilder。
+建表 typeorm 建表时，将 @Entity() 装饰的 class 映射为数据表，entity 中 @PrimaryColumn() 装饰的属性作为表的主键, @PrimaryGeneratedColumn() 表示自动生成主键, @Column() 装饰属性作为表的属性。
+@Entity() export class Photo { @PrimaryGeneratedColumn() id: number; @Column({length: 100}) name: string; @Column(&#34;text&#34;) description: string; @Column() views: number; @Column() isPublished: boolean; }  数据库中的列类型是根据你使用的属性类型推断的，例如: number 将被转换为 integer，string 将转换为 varchar，boolean 转换为 bool 等。下面我们从实际的例子出发探索如何用 typeorm 建一对一、一对多、多对多的关系。
+一对一 用户 user 和用户档案 profile 是一对一关系，一个用户只有一份档案。
+@Entity(&#39;users&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number; @Column() username: string; @OneToOne(type =&gt; ProfileEntity, profile =&gt; profile.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Apr 10, 2020</span><span> | </span><span
+        class="reading-time">阅读时长 3 分钟</span>
+    </p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2ftypeorm%2f"
+        title="Share on Facebook">
+        <svg class="icon" fill="currentColor">
+          <use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank"
+        href="https://twitter.com/intent/tweet/?text=Typeorm%20%e7%9a%84%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2ftypeorm%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor">
+          <use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
     <h3 class="entry-title"><a href="https://111hunter.github.io/post/nest-auth/" title="NestJS &#43; Passport 实现鉴权认证" class="entry-link">NestJS &#43; Passport 实现鉴权认证</a></h3>
   </header>
 
@@ -583,32 +613,6 @@ $ git config --unset --global user.name 取消 user.name 配置
       </a>
       <a class="share share-twitter" target="_blank"
         href="https://twitter.com/intent/tweet/?text=git%20%e5%bf%ab%e9%80%9f%e4%b8%8a%e6%89%8b%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fgit-learn%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor">
-          <use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://111hunter.github.io/post/node01/" title="Node.js 搭建博客后台, 不使用框架" class="entry-link">Node.js 搭建博客后台, 不使用框架</a></h3>
-  </header>
-
-  <p class="entry-summary">Node.js 处理 get，post 请求 const http = require(&#39;http&#39;) const querystring = require(&#39;querystring&#39;) const server = http.createServer((req, res) =&gt; { const method = req.method const url = req.url const path = url.split(&#39;?&#39;)[0] //重点：split(&#39;?&#39;[0])语法弄清楚 const query = querystring.parse(url.split(&#39;?&#39;)[1]) //设置返回值格式为 JSON res.setHeader(&#39;Content-type&#39;, &#39;application/json&#39;) //返回的数据 const resData = { method, url, path, query } //返回 if (method === &#39;GET&#39;) { res.end( JSON.stringify(req.query) ) } if (req.method === &#39;POST&#39;){ let postData = &#39;&#39; //res.on(&#39;data&#39;)指每次发送的数据 //chunk 逐步接收数据 req绑定一个data方法 chunk是变量 req.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Nov 22, 2019</span><span> | </span><span
-        class="reading-time">阅读时长 3 分钟</span>
-    </p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f111hunter.github.io%2fpost%2fnode01%2f"
-        title="Share on Facebook">
-        <svg class="icon" fill="currentColor">
-          <use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=Node.js%20%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2%e5%90%8e%e5%8f%b0%2c%20%e4%b8%8d%e4%bd%bf%e7%94%a8%e6%a1%86%e6%9e%b6&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2fnode01%2f" title="Share on Twitter">
         <svg class="icon share-twitter-icon" fill="currentColor">
           <use xlink:href="#icon-twitter" /></svg>
       </a>
