@@ -15,7 +15,7 @@
   
 
   
-  <title>Typeorm 的基本使用</title>
+  <title>TypeORM 的基本使用</title>
 
   
   
@@ -35,7 +35,7 @@
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Typeorm 的基本使用" />
+    <meta name="twitter:title" content="TypeORM 的基本使用" />
     <meta name="twitter:description" content="本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。 以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBuilder。
 建表 typeorm 建表时，将 @Entity() 装饰的 class 映射为数据表，entity 中 @PrimaryColumn() 装饰的属性作为表的主键, @PrimaryGeneratedColumn() 表示自动生成主键, @Column() 装饰属性作为表的属性。
 @Entity() export class Photo { @PrimaryGeneratedColumn() id: number; @Column({length: 100}) name: string; @Column(&amp;quot;text&amp;quot;) description: string; @Column() views: number; @Column() isPublished: boolean; }  数据库中的列类型是根据你使用的属性类型推断的，例如: number 将被转换为 integer，string 将转换为 varchar，boolean 转换为 bool 等。下面我们从实际的例子出发探索如何用 typeorm 建一对一、一对多、多对多的关系。
@@ -81,7 +81,7 @@ dotted;text-decoration:underline
 dotted}b,strong{font-weight:inherit;font-weight:bolder}code,kbd,samp{font-family:monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html
 [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px
 dotted ButtonText}fieldset{padding:.35em .75em
-.625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}[hidden],template{display:none}body{font-size:14.6667px;font-weight:500;line-height:1.618;font-family:-apple-system,BlinkMacSystemFont,Roboto,sans-serif;color:#24292e;background:#fff;text-rendering:optimizeLegibility;-webkit-overflow-scrolling:touch}a{color:aqua;text-decoration:none;font-weight:600}a:focus,a:hover{color:#38b7ea;outline:none}amp-img{margin:0
+.625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}[hidden],template{display:none}body{font-size:14px;font-weight:500;line-height:1.618;font-family:-apple-system,BlinkMacSystemFont,Roboto,sans-serif;color:#24292e;background:#fff;text-rendering:optimizeLegibility;-webkit-overflow-scrolling:touch}a{color:aqua;text-decoration:none;font-weight:600}a:focus,a:hover{color:#38b7ea;outline:none}amp-img{margin:0
 auto;box-shadow:#FFF 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px, 5px 5px 15px 5px
 rgba(0,0,0,0);}button:hover{cursor:pointer}.main{margin-left:19rem;padding:1rem
 2rem;max-width:100%;min-height:100vh;box-sizing:border-box}@media screen and (max-width:1440px){.main{width:calc(100% -
@@ -117,12 +117,13 @@ screen and (min-width:800px){.menu-toggle{display:none}}.sidebar{background-colo
 screen and
 (min-width:800px){.social-list{position:absolute;bottom:10px;left:0;right:0}}.social-item{display:inline-block;margin:0
 .2rem}.social-item a{color:#000;font-weight:400}.entry-list{background-color:#fafafa}@media screen and
-(max-width:800px){.entry-list{padding-top:30px}}.entry-single{line-height:2.0;margin-bottom:22px;background-color:#fff;box-shadow:0
+(max-width:800px){.entry-list{padding-top:30px}}.entry-single{line-height:1.7;margin-bottom:22px;background-color:#fff;box-shadow:0
 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);border-radius:18px}.entry-single:hover{box-shadow:0 1px
 15px 0 rgba(137,146,177,.15),0 10px 20px 0 rgba(137,146,177,.15)}.entry-cover{max-width:100%;border-radius:5px 5px 0
 0;-o-object-fit:cover;object-fit:cover;box-shadow:none}.entry-title{margin:0;padding:20px 30px
 0}.entry-link{font-size:1.25rem;font-weight:600;color:#262626}.entry-summary{padding:0
-30px;text-align:justify;max-height:4rem;overflow:hidden}.entry-footer{margin:0 30px;padding:10px 0;border-top:1px solid
+30px;text-align:justify;max-height:3rem;overflow:hidden}.entry-footer{margin:0 30px;padding:10px 0;border-top:1px
+solid
 #ddd;display:flex;justify-content:space-between}.entry-meta{margin:0;font-size:.8rem;letter-spacing:1px;text-transform:uppercase}.post-author{color:#00b3ff}.entry-time{color:#00bcd4}.reading-time{color:#0f0f0f}.post-views{color:#00b3ff}
 .pagination{display:flex;justify-content:flex-start}.pagination-btn{color:#24292e;padding:.5rem;background-color:#fff;border:1px
 solid
@@ -405,7 +406,7 @@ td:last-child{border-bottom-right-radius:5px}.not-found{margin:5rem auto
   
 <section class="main post-detail">
   <header class="post-header">
-    <h1 class="post-title">Typeorm 的基本使用</h1>
+    <h1 class="post-title">TypeORM 的基本使用</h1>
     <p class="entry-meta">
       <span>write by: </span>
       <span class="post-author">111hunter</span>
@@ -413,7 +414,7 @@ td:last-child{border-bottom-right-radius:5px}.not-found{margin:5rem auto
       <span class="entry-time">Apr 10, 2020</span>
       <span> | </span>
       
-      <span id="/post/typeorm/" class="leancloud_visitors" data-flag-title="Typeorm 的基本使用">
+      <span id="/post/typeorm/" class="leancloud_visitors" data-flag-title="TypeORM 的基本使用">
         <span class="post-meta-item-text">views: </span>
         <span class="leancloud-visitors-count post-views"></span>
       </span>
@@ -720,7 +721,7 @@ async favoriteArticle(slug: string, user: UserEntity) {
           <use xlink:href="#icon-facebook" /></svg>
       </a>
       <a class="share share-twitter" target="_blank"
-        href="https://twitter.com/intent/tweet/?text=Typeorm%20%e7%9a%84%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2ftypeorm%2f" title="Share on Twitter">
+        href="https://twitter.com/intent/tweet/?text=TypeORM%20%e7%9a%84%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8&amp;url=https%3a%2f%2f111hunter.github.io%2fpost%2ftypeorm%2f" title="Share on Twitter">
         <svg class="icon icon-twitter" fill="currentColor">
           <use xlink:href="#icon-twitter" /></svg>
       </a>
