@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>es6 学习笔记 | 浮槎的博客</title>
+        <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="es6 学习笔记" />
+<meta property="og:description" content="ECMAScript 6(以下简称ES6)是 JavaScript 语言的下一代标准,已经在2015年6月正式发布了。Mozilla公司将在这个标准的基础上,推出 JavaScript 2.0。ECMAS" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2019-10-30-js-es6/" />
+<meta property="article:published_time" content="2019-10-30T20:59:36+08:00" />
+<meta property="article:modified_time" content="2019-10-07T18:27:34+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="es6 学习笔记"/>
+<meta name="twitter:description" content="ECMAScript 6(以下简称ES6)是 JavaScript 语言的下一代标准,已经在2015年6月正式发布了。Mozilla公司将在这个标准的基础上,推出 JavaScript 2.0。ECMAS"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="http://example.org/2019-10-30-js-es6/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://example.org/2019-10-17-js-basis/" /><link rel="next" href="http://example.org/2019-11-22-node-basis/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "es6 学习笔记",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2019-10-30-js-es6\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Javascript","wordcount":  2550 ,
+        "url": "http:\/\/example.org\/2019-10-30-js-es6\/","datePublished": "2019-10-30","dateModified": "2019-10-07","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "浮槎"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/">浮槎的博客</a>
+        </div>
+        <div class="menu">
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            <span class="menu-item">|</span><a class="menu-item"
+                href="/posts/"  rel="noopener noreffer"
+                >文章</a><a class="menu-item"
+                href="/tags/"  rel="noopener noreffer"
+                >标签</a><a class="menu-item"
+                href="/categories/"  rel="noopener noreffer"
+                >分类</a><a class="menu-item"
+                href="/about/"  rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/">浮槎的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer"
+                >文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer"
+                >标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer"
+                >分类</a><a class="menu-item" href="/about/" title="" rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script><main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">es6 学习笔记</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a>
+</span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/coding">
+                                <i class="far fa-folder fa-fw"></i>Coding
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-10-30>2019-10-30</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 2550 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 6 分钟&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#let和const">let和const</a></li>
+    <li><a href="#箭头函数">箭头函数</a></li>
+    <li><a href="#模板字符串">模板字符串</a></li>
+    <li><a href="#解构赋值">解构赋值</a></li>
+    <li><a href="#计算属性">计算属性</a></li>
+    <li><a href="#symbol">Symbol</a></li>
+    <li><a href="#剩余参数">剩余参数</a></li>
+    <li><a href="#promise">Promise</a></li>
+    <li><a href="#class">Class</a></li>
+    <li><a href="#一些补充">一些补充</a>
+      <ul>
+        <li><a href="#新增forof循环">新增for&hellip;of循环：</a></li>
+        <li><a href="#arrayfrom和arrayof">Array.from()和Array.of()</a></li>
+        <li><a href="#proxy与reflect">Proxy与Reflect</a></li>
+        <li><a href="#迭代器与生成器">迭代器与生成器</a></li>
+        <li><a href="#map与set">Map与Set</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>ECMAScript 6(以下简称ES6)是 JavaScript 语言的下一代标准,已经在2015年6月正式发布了。Mozilla公司将在这个标准的基础上,推出 JavaScript 2.0。ECMAScript 和 JavaScript 是什么关系？简单来说，ECMAScript 是 JavaScript 语言的国际标准，JavaScript 是 ECMAScript 的实现。</p>
+<h2 id="let和const">let和const</h2>
+<p>var 函数作用域function scope,不在函数内时作用域是全局的
+用let和const声明变量, let, const 块级作用域block scope,作用域是{}内</p>
+<p>eg.执行以下语句判断区别：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`i:</span><span class="si">${</span><span class="nx">i</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`i:</span><span class="si">${</span><span class="nx">i</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>let, const不能重复声明变量值</p>
+<ul>
+<li>let声明的变量是可以重新赋值的, const声明的变量只能修改引用类型的属性值</li>
+<li>变量提升：let, count有变量提升,未声明先使用存在临时性死区(Temporal dead zone),详见mdn</li>
+</ul>
+<h2 id="箭头函数">箭头函数</h2>
+<p>特点：简明的语法,隐式返回(省去return关键字),匿名函数
+this:普通函数this是动态绑定的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">Jelly</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Jelly&#39;</span><span class="p">,</span>
+        <span class="nx">hobbies</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Coding&#39;</span><span class="p">,</span> <span class="s1">&#39;Sleeping&#39;</span><span class="p">,</span> <span class="s1">&#39;Reading&#39;</span><span class="p">],</span>
+        <span class="nx">printHobbies</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// console.log(this);
+</span><span class="c1"></span>            <span class="k">this</span><span class="p">.</span><span class="nx">hobbies</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">hobby</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// console.log(this);
+</span><span class="c1"></span>                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> loves </span><span class="si">${</span><span class="nx">hobby</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+            <span class="p">})</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="nx">Jelly</span><span class="p">.</span><span class="nx">printHobbies</span><span class="p">();</span>	
+</code></pre></td></tr></table>
+</div>
+</div><p>map中的回调函数是一个独立的函数,不作为对象的方法,并且没有通过call bind apply
+来改变里面的this，this指向window,严格模式下指向undefined</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">Jelly</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Jelly&#39;</span><span class="p">,</span>
+    <span class="nx">hobbies</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Coding&#39;</span><span class="p">,</span> <span class="s1">&#39;Sleeping&#39;</span><span class="p">,</span> <span class="s1">&#39;Reading&#39;</span><span class="p">],</span>
+    <span class="nx">printHobbies</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// console.log(this);
+</span><span class="c1"></span>        <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">hobbies</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">hobby</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// console.log(this);
+</span><span class="c1"></span>            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">self</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> loves </span><span class="si">${</span><span class="nx">hobby</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">Jelly</span><span class="p">.</span><span class="nx">printHobbies</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>箭头函数的this值继承父作用域,是词法作用域,定义的时候就指向明确,且不会绑定this：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">Jelly</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Jelly&#39;</span><span class="p">,</span>
+    <span class="nx">hobbies</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Coding&#39;</span><span class="p">,</span> <span class="s1">&#39;Sleeping&#39;</span><span class="p">,</span> <span class="s1">&#39;Reading&#39;</span><span class="p">],</span>
+    <span class="nx">printHobbies</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// console.log(this);
+</span><span class="c1"></span>        <span class="k">this</span><span class="p">.</span><span class="nx">hobbies</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">hobby</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="c1">// console.log(this);
+</span><span class="c1"></span>            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> loves </span><span class="si">${</span><span class="nx">hobby</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">Jelly</span><span class="p">.</span><span class="nx">printHobbies</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>命名函数在递归,事件绑定时有用,在箭头函数中使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">greet</span> <span class="o">=</span> <span class="nx">name</span> <span class="p">=&gt;</span> <span class="p">{</span><span class="nx">alert</span><span class="p">(</span><span class="sb">`Hello </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">)};</span>	
+</code></pre></td></tr></table>
+</div>
+</div><p>箭头函数不适用的情况：</p>
+<ul>
+<li>需要使用this慎用</li>
+<li>需要使用arguments(箭头函数没有arguments)</li>
+</ul>
+<h2 id="模板字符串">模板字符串</h2>
+<ul>
+<li>模板字符串中的换行和空格都是会被保留的。</li>
+<li>模板字符串可嵌套,支持三元表达式。</li>
+<li>标签模板字符串,是一个函数的调用。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">alert</span><span class="sb">`Hello world!`</span><span class="p">;</span>
+<span class="c1">// 等价于alert(&#39;Hello world!&#39;);
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="解构赋值">解构赋值</h2>
+<ul>
+<li>针对<strong>数组</strong>或者<strong>对象</strong>进行模式匹配,然后对其中的变量进行赋值。</li>
+<li>是对赋值运算符的扩展,方便提取对象属性值,可嵌套可忽略。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">,</span> <span class="nx">e</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">p</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">y</span><span class="o">:</span> <span class="s1">&#39;world&#39;</span><span class="p">}]</span> <span class="p">};</span>
+<span class="kd">let</span> <span class="p">{</span><span class="nx">p</span><span class="o">:</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="p">{</span> <span class="nx">y</span> <span class="p">}]</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+<span class="c1">// x = &#39;hello&#39;
+</span><span class="c1">// y = &#39;world&#39;
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">p</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">y</span><span class="o">:</span> <span class="s1">&#39;world&#39;</span><span class="p">}]</span> <span class="p">};</span>
+<span class="kd">let</span> <span class="p">{</span><span class="nx">p</span><span class="o">:</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="p">{</span>  <span class="p">}]</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+<span class="c1">// x = &#39;hello&#39;
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="计算属性">计算属性</h2>
+<p>对象字面定义属性名位置的 [ ] 中可以放置任意合法表达式。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;birthday&#39;</span><span class="p">]</span>
+<span class="kr">const</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;jelly&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;2016-01&#39;</span><span class="p">]</span>
+<span class="kr">const</span> <span class="nx">Laravist</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">keys</span><span class="p">.</span><span class="nx">shift</span><span class="p">()]</span><span class="o">:</span> <span class="nx">values</span><span class="p">.</span><span class="nx">shift</span><span class="p">(),</span>
+    <span class="p">[</span><span class="nx">keys</span><span class="p">.</span><span class="nx">shift</span><span class="p">()]</span><span class="o">:</span> <span class="nx">values</span><span class="p">.</span><span class="nx">shift</span><span class="p">(),</span>
+    <span class="p">[</span><span class="nx">keys</span><span class="p">.</span><span class="nx">shift</span><span class="p">()]</span><span class="o">:</span> <span class="nx">values</span><span class="p">.</span><span class="nx">shift</span><span class="p">(),</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Laravist</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="symbol">Symbol</h2>
+<p>ES6引入了一种新的原始数据类型表示独一无二的值,最大的用法是用来定义对象的唯一属性名。
+用于生成唯一标识符避免命名冲突,可作为私有属性在对象内部使用,不能for循环遍历</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">classRoom</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;lily&#39;</span><span class="p">)]</span><span class="o">:</span> <span class="p">{</span> <span class="nx">grade</span><span class="o">:</span> <span class="mi">60</span><span class="p">,</span> <span class="nx">gender</span><span class="o">:</span> <span class="s1">&#39;female&#39;</span> <span class="p">},</span>
+    <span class="p">[</span><span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;nina&#39;</span><span class="p">)]</span><span class="o">:</span> <span class="p">{</span> <span class="nx">grade</span><span class="o">:</span> <span class="mi">70</span><span class="p">,</span> <span class="nx">gender</span><span class="o">:</span> <span class="s1">&#39;female&#39;</span> <span class="p">},</span>
+    <span class="p">[</span><span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;nina&#39;</span><span class="p">)]</span><span class="o">:</span> <span class="p">{</span> <span class="nx">grade</span><span class="o">:</span> <span class="mi">90</span><span class="p">,</span> <span class="nx">gender</span><span class="o">:</span> <span class="s1">&#39;female&#39;</span> <span class="p">},</span>
+<span class="p">}</span>
+<span class="kr">const</span> <span class="nx">syms</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">classRoom</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">sym</span> <span class="p">=&gt;</span> <span class="nx">classRoom</span><span class="p">[</span><span class="nx">sym</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">syms</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="剩余参数">剩余参数</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">player</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;jelly&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">name</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="p">...</span><span class="nx">scores</span><span class="p">]</span> <span class="o">=</span> <span class="nx">player</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">scores</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>扩展运算符可以将可遍历对象元素扩展成新的参数序列,而不用改变原来的对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">younger</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="s1">&#39;bbb&#39;</span><span class="p">,</span> <span class="s1">&#39;ccc&#39;</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">older</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;xxx&#39;</span><span class="p">,</span> <span class="s1">&#39;yyy&#39;</span><span class="p">,</span> <span class="s1">&#39;zzz&#39;</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">members</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">younger</span><span class="p">,</span> <span class="s1">&#39;ddd&#39;</span><span class="p">,</span> <span class="p">...</span><span class="nx">older</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">newmembers</span> <span class="o">=</span> <span class="nx">members</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="promise">Promise</h2>
+<p>Promise用于避免回调地狱</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">reject</span><span class="p">(</span><span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Laravist isn\&#39;t awesome!&#39;</span><span class="p">));</span>
+    <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>await操作符用于等待一个Promise对象,它只能在异步函数async function内部使用。</p>
+<p>await针对所跟不同表达式的处理方式：</p>
+<ul>
+<li>Promise对象：await 会暂停执行,等待Promise对象resolve,然后恢复async函数的执行并返回解析值。</li>
+<li>非Promise对象：直接返回对应的值。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">testAwait</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">resolve</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+        <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+<span class="nx">async</span> <span class="kd">function</span> <span class="nx">helloAsync</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">testAwait</span><span class="p">(</span><span class="s2">&#34;hello world&#34;</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">helloAsync</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="class">Class</h2>
+<ul>
+<li>class是语法糖,本质是funciton,没有变量提升</li>
+</ul>
+<p>一个继承的例子:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">MyArray</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">Array</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kr">const</span> <span class="nx">colors</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyArray</span><span class="p">();</span>
+<span class="nx">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colors</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>  <span class="c1">//undefined
+</span><span class="c1"></span><span class="nx">colors</span><span class="p">.</span><span class="nx">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>      <span class="c1">//red
+</span></code></pre></td></tr></table>
+</div>
+</div><p>ES5 是先新建子类的实例对象this,
+再将父类的属性添加到子类上,原生构造函数会忽略apply方法传入的this,
+父类的内部属性无法获取,导致无法继承原生的构造函数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">MyArray</span> <span class="kr">extends</span> <span class="nb">Array</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">();</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kr">const</span> <span class="nx">colors</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyArray</span><span class="p">();</span>
+<span class="nx">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colors</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>  <span class="c1">// 1
+</span><span class="c1"></span><span class="nx">colors</span><span class="p">.</span><span class="nx">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>      <span class="c1">// undefined
+</span></code></pre></td></tr></table>
+</div>
+</div><p>ES6 允许继承原生构造函数定义的子类,因为ES6是先新建父类的实例对象this,
+然后再用子类的构造函数修饰this,使得父类的素有行为都可以继承。
+ES6 可以自定义原生数据结构的子类，这是 ES5 无法做到的。</p>
+<h2 id="一些补充">一些补充</h2>
+<h3 id="新增forof循环">新增for&hellip;of循环：</h3>
+<p><br>先回顾js中for循环的几种写法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;mango&#39;</span><span class="p">];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">fruits</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fruits</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可读性不是很好</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">fruits</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">fruit</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fruit</span><span class="p">);</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>不能在循环中break或continue</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">fruits</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fruits</span><span class="p">[</span><span class="nx">index</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>会遍历对象上所有可枚举属性</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">fruit</span> <span class="k">of</span> <span class="nx">fruits</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fruit</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>不会遍历数组中非数字属性,能够break或continue
+<br>应用数组解构语法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">fruit</span><span class="p">]</span> <span class="k">of</span> <span class="nx">fruits</span><span class="p">.</span><span class="nx">entries</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">fruit</span><span class="si">}</span><span class="sb"> rank in </span><span class="si">${</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="sb"> in my favorite fruits`</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>for&hellip;of可以应用于可迭代对象(部署了iterator接口或提供Symbol.iterator方法的数据结构)
+<br>数组,字符串,arguments,NodeList,map.set等,但不支持对象</p>
+<h3 id="arrayfrom和arrayof">Array.from()和Array.of()</h3>
+<p>es6新增数组方法Array.from()和Array.of()：</p>
+<ul>
+<li>注意是数组原型对象上的静态方法</li>
+<li>Array.from()用于把可迭代对象转化成数组,Array.of()传入参数生成数组</li>
+</ul>
+<h3 id="proxy与reflect">Proxy与Reflect</h3>
+<p>Proxy与Reflect是ES6为了操作对象引入的 API 。</p>
+<ul>
+<li>Proxy 可以对目标对象的读取、函数调用等操作进行拦截,然后进行操作处理。它不直接操作对象,而是像代理模式,通过对象的代理对象进行操作。</li>
+<li>ES6中将Object的一些明显属于语言内部的方法移植到了Reflect对象上。</li>
+</ul>
+<h3 id="迭代器与生成器">迭代器与生成器</h3>
+<p>Iterator是ES6引入的一种新的遍历机制,通过一个键为Symbol.iterator的方法来实现。
+<br>Generator函数:在function后面,函数名之前有个*,函数内部有yield表达式。</p>
+<h3 id="map与set">Map与Set</h3>
+<p>Object的键只能是字符串或者Symbols, Map的键可以是任意值,Map中的键值是有序的(FIFO原则),Map的键值对个数可以从size属性获取。
+<br>Set对象允许你存储任何类型的唯一值,NaN与NaN是不恒等的,但是在Set中只能存一个。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2019-10-07 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2019-10-30-js-es6/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2019-10-30-js-es6/" data-title="es6 学习笔记" data-hashtags="Javascript"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2019-10-30-js-es6/" data-hashtag="Javascript"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2019-10-30-js-es6/" data-title="es6 学习笔记" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2019-10-30-js-es6/" data-title="es6 学习笔记"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/javascript">Javascript</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2019-10-17-js-basis/" class="prev" rel="prev" title="js 闭包写法的演变过程"><i class="fas fa-angle-left fa-fw"></i>js 闭包写法的演变过程</a>
+            <a href="/2019-11-22-node-basis/" class="next" rel="next" title="Node.js 搭建博客后台">Node.js 搭建博客后台<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
+</html>

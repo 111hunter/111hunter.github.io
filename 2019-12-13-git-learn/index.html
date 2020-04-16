@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>git 快速上手指南 | 浮槎的博客</title>
+        <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="git 快速上手指南" />
+<meta property="og:description" content="本文实践较多，建议跟着文章的步骤敲一遍代码以加深理解。 git 仓库图解: 1. 使用帮助 $ git help 可以查看 git 常用命令 $ git help -a 可以查看 git 所有命令，F 或者 空格 向" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2019-12-13-git-learn/" />
+<meta property="article:published_time" content="2019-12-13T15:48:16+08:00" />
+<meta property="article:modified_time" content="2019-12-13T15:48:16+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="git 快速上手指南"/>
+<meta name="twitter:description" content="本文实践较多，建议跟着文章的步骤敲一遍代码以加深理解。 git 仓库图解: 1. 使用帮助 $ git help 可以查看 git 常用命令 $ git help -a 可以查看 git 所有命令，F 或者 空格 向"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="http://example.org/2019-12-13-git-learn/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://example.org/2019-11-22-node-basis/" /><link rel="next" href="http://example.org/2020-02-01-nest-crud/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "git 快速上手指南",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2019-12-13-git-learn\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Git","wordcount":  1975 ,
+        "url": "http:\/\/example.org\/2019-12-13-git-learn\/","datePublished": "2019-12-13","dateModified": "2019-12-13","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "浮槎"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/">浮槎的博客</a>
+        </div>
+        <div class="menu">
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            <span class="menu-item">|</span><a class="menu-item"
+                href="/posts/"  rel="noopener noreffer"
+                >文章</a><a class="menu-item"
+                href="/tags/"  rel="noopener noreffer"
+                >标签</a><a class="menu-item"
+                href="/categories/"  rel="noopener noreffer"
+                >分类</a><a class="menu-item"
+                href="/about/"  rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/">浮槎的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer"
+                >文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer"
+                >标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer"
+                >分类</a><a class="menu-item" href="/about/" title="" rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script><main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">git 快速上手指南</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a>
+</span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/coding">
+                                <i class="far fa-folder fa-fw"></i>Coding
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-13>2019-12-13</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1975 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 4 分钟&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-使用帮助">1. 使用帮助</a></li>
+    <li><a href="#2-git-配置范围">2. git 配置范围</a></li>
+    <li><a href="#3-git-项目文件的-crud">3. git 项目文件的 crud</a>
+      <ul>
+        <li><a href="#重命名-git-已经跟踪的文件">重命名 git 已经跟踪的文件</a></li>
+        <li><a href="#git-移动文件">git 移动文件</a></li>
+        <li><a href="#git-删除文件与恢复">git 删除文件与恢复</a></li>
+        <li><a href="#git-恢复某个操作状态">git 恢复某个操作状态</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-git-项目分支">4. git 项目分支</a>
+      <ul>
+        <li><a href="#解决分支合并冲突">解决分支合并冲突</a></li>
+        <li><a href="#git-stash-命令可以将当前的工作状态保存到git栈">git stash 命令可以将当前的工作状态保存到git栈</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-git-远程仓库">5. git 远程仓库</a></li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>本文实践较多，建议跟着文章的步骤敲一遍代码以加深理解。</p>
+<p>git 仓库图解:</p>
+<div align=center><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/git1.png" width="80%" alt="仓库图解"></div>
+<h2 id="1-使用帮助">1. 使用帮助</h2>
+<p><code>$ git help</code> 可以查看 git 常用命令</p>
+<p><code>$ git help -a</code> 可以查看 git 所有命令，F 或者 空格 向下查看命令，B 向上查看命令，Q 退出 git-cli</p>
+<p><code>$ git help add</code>  help后接一个指令可以查看该指令的详细用法</p>
+<h2 id="2-git-配置范围">2. git 配置范围</h2>
+<p>git 配置分为三个范围 system, global 和 项目范围
+<br>一般选择global进行配置 <code>$ git config --global user.name '111hunter' </code></p>
+<p><code>$ git config --list</code> 查看当前配置信息</p>
+<p><code>$ git config --unset --global user.name</code> 取消 user.name 配置</p>
+<p>配置文件是当前用户主目录 <code>$ cat ~/.gitconfig</code></p>
+<h2 id="3-git-项目文件的-crud">3. git 项目文件的 crud</h2>
+<p><code>$ mkdir movietalk &amp;&amp; cd movietalk</code> 新建文件夹</p>
+<p><code>$ git init</code> 初始化项目</p>
+<p><code>$ cd .git &amp;&amp; ls -a</code> config 目录就是项目级别的配置</p>
+<p><code>$ cd .. &amp;&amp; touch index.html</code> 新建文件</p>
+<p><code>$ vim index.html</code> 编辑文件后保存</p>
+<p><code>$ git add .</code> 提交所有文件到暂存区</p>
+<p><code>$ git commit -m &quot;first commit&quot;</code> 暂存区文件提交仓库区</p>
+<p><code>$ git log</code> 查看提交日志信息</p>
+<p><code>$ vim index.html</code> 将index.html中 charset=&quot;UTF-8&rdquo; 改为 charset=&quot;GBK&rdquo;</p>
+<p><code>$ git status</code> 查看文件状态</p>
+<p><code>$ git diff index.html</code> 查看暂存区文件与本地工作区的对比</p>
+<p><code>$ git diff --staged</code> 查看仓库区与暂存区对比，此时一致</p>
+<p><code>$ git add .</code> 然后 <code>$ git diff index.html</code> 此时没有区别了，因为已将文件提交暂存区</p>
+<p><code>$ vim index.html</code> 再次修改，在文件中新增适应移动端的 meta 标签</p>
+<p><code>$ git diff --staged</code> 查看仓库区与暂存区对比</p>
+<p><code>$ git commit -m &quot;修改了charset属性&quot;</code> 暂存区提交仓库</p>
+<p><code>$ git diff --staged</code> 此时暂存区与仓库一致</p>
+<p><code>$ git log</code> 查看提交日志信息, 此时有两条提交信息</p>
+<p><code>$ git status</code> 查看文件状态</p>
+<p><code>$ git add . &amp;&amp; git commit -m &quot;新增meta标签&quot;</code> 工作区文件提交到仓库</p>
+<h3 id="重命名-git-已经跟踪的文件">重命名 git 已经跟踪的文件</h3>
+<p><code>$ touch style.css &amp;&amp; vim style.css</code> 新建css文件</p>
+<p><code>$ mv style.css theme.css</code> 修改文件名</p>
+<p><code>$ git status</code> 查看文件状态</p>
+<p><code>$ git rm style.css &amp;&amp; git add theme.css</code> 就能修改文件名字</p>
+<p><code>$ git commit -m &quot;mv style.css theme.css&quot;</code> 上传仓库区</p>
+<h3 id="git-移动文件">git 移动文件</h3>
+<p><code>$ git mv theme.css aha.css</code> 移动文件，重命名</p>
+<p><code>$ mkdir css &amp;&amp; git status</code> git 不会跟踪空文件</p>
+<p><code>$ git mv aha.css /css</code> 移动文件</p>
+<p><code>$ git commit -m &quot;move aha.css&quot;</code> 上传仓库区</p>
+<h3 id="git-删除文件与恢复">git 删除文件与恢复</h3>
+<p><code>$ git rm index.html</code> 从工作区与暂存区中删除index.html</p>
+<p><code>$ git checkout HEAD -- index.html</code> HEAD 指针指向最近一次提交， &ndash; 表示当前分支，将index.html恢复到当前 commit 的状态</p>
+<p><code>$ git rm index.html &amp;&amp; git commit -m &quot;删除了index.html&quot;</code> 从工作区与暂存区中删除index.html, 并提交仓库</p>
+<p><code>$ git checkout &quot;HEAD^&quot; -- index.html</code> 恢复到上一次提交，windows cmd 中 ^ 会被当做换行处理，需要加上引号</p>
+<h3 id="git-恢复某个操作状态">git 恢复某个操作状态</h3>
+<p>在 css 文件夹引入 bootstrap</p>
+<p><code>vim index.html</code> 在 index.html 中引入 bootstrap</p>
+<p><code>git commit -am &quot;增加了bootstrap&quot;</code> 提交仓库</p>
+<p>新建 js 文件夹并引入 jquery</p>
+<p><code>vim index.html</code> 在 index.html 中引入 jquery</p>
+<p><code>git commit -am &quot;增加了jquery&quot;</code> 提交仓库</p>
+<p><code>git log --oneline</code> 查看提交日志 id, 添加 bootstrap 的 id 为 981eb52</p>
+<p><code>git revert 981eb52</code> 撤销对 bootstrap 的提交，查看工作区文件夹发现 index.html 对 bootstrap 的引入消失了</p>
+<p>每次 git commit 后 HEAD 都会指向最后一次提交，用 git reset 可以帮助回到某次提交时的状态，有 3 个可选配置参数: &ndash;mixed, &ndash;soft, &ndash;hard</p>
+<ul>
+<li>&ndash;soft 软重置，不会修改任何文件状态。该参数用于git commit后，又要恢复还没commit的场景，重新审查代码，然后再推上去覆盖之后的提交。</li>
+</ul>
+<p><code>$ git log --oneline</code> 查看添加 jquery 的 id 为 e9ae8b5，Revert &ldquo;添加了bootstrap&quot;的 id 为 3e3da01</p>
+<p><code>$ git reset --soft e9ae8b5</code> 回到提交 jquey 的 commit，但是不会对文件做任何操作</p>
+<p><code>$ git status</code> 会提示 撤销 bootstrap 时的消息</p>
+<ul>
+<li>默认是 &ndash;mixed, 只影响暂存区文件状态</li>
+</ul>
+<p><code>$ git reset --mixed e9ae8b5 &amp;&amp; git status</code> 发现 bootstrap 已经不在暂存区了</p>
+<ul>
+<li>&ndash;hard 会直接重置暂存区和工作区文件到指定 id 状态，用 git reset &ndash;hard 可直接在不同提交状态切换。</li>
+</ul>
+<p><code>$ git reset --hard e9ae8b5 &amp;&amp; git log --oneline</code> 查看工作区文件发现 bootstrap又回来了</p>
+<p><code>$ git reset --hard 3e3da01 &amp;&amp; git log --oneline</code> 文件又到了最后一次提交时的状态</p>
+<h2 id="4-git-项目分支">4. git 项目分支</h2>
+<p><code>$ git branch testing &amp;&amp; git checkout testing</code> 新建并切换分支，此时对文件的修改只影响 branch 分支</p>
+<p><code>$ vim index.html</code> 在 index.html 中引入 link 标签</p>
+<p><code>$ git commit -am &quot;添加link标签&quot;</code> 提交仓库区</p>
+<p><code>$ git checkout master</code> 切换回 master 分支，查看工作区文件发现对文件的修改没有了</p>
+<p><code>$ git diff master..testing index.html</code> 查看分支间的文件对比</p>
+<p><code>$ git merge testing</code> 分支合并</p>
+<p><code>$ git diff master..testing</code> 没有不同，已经合并了分支</p>
+<h3 id="解决分支合并冲突">解决分支合并冲突</h3>
+<p><code>$ vim index.html</code> 修改 document 为 Movietalk</p>
+<p><code>$ git commit -am &quot;修改标题为Movietalk&quot;</code> 提交仓库区</p>
+<p><code>$ git checkout testing &amp;&amp; vim index.html</code> 切换分支，修改 document 为 Movie-talk</p>
+<p><code>$ git commit -am &quot;修改标题为Movie-talk&quot;</code> 提交仓库区</p>
+<p><code>$ git merge master</code> 产生冲突。git 发现冲突，查看文件会有提示，编辑保留其中一个</p>
+<p>document 修改</p>
+<p><code>$ git commit -am &quot;解决冲突&quot;</code> 提交</p>
+<p><code>$ git log --oneline --all -10 --graph</code> 查看所有分支提交信息</p>
+<h3 id="git-stash-命令可以将当前的工作状态保存到git栈">git stash 命令可以将当前的工作状态保存到git栈</h3>
+<p><code>$ touch human.txt &amp;&amp; git commit -am &quot;add human.txt&quot;</code> 新建空文件</p>
+<p><code>$ vim human.txt</code> 加入任意内容</p>
+<p><code>$ git status</code> 查看修改，不提交</p>
+<p><code>$ git stash save &quot;修改了human.txt&quot;</code> 保存工作进度，查看文件 human.txt 又变成了空文件</p>
+<p><code>$ git stash list</code> 查看工作进度</p>
+<p><code>$ git stash show -p stash@{0}</code> 以补丁的方式查看工作进度与工作目录的区别</p>
+<p><code>$ git stash apply stash@{0}</code> 切换到之前的工作进度，发现对 human.txt 的修改又生效了</p>
+<p><code>$ git stash pop</code> 切换栈顶工作状态</p>
+<p><code>$ git stash drop stash@{0}</code> 删除工作状态</p>
+<h2 id="5-git-远程仓库">5. git 远程仓库</h2>
+<p>新建远程仓库后请清空仓库，不要保留任何文件</p>
+<p><code>$ git remote add origin https://gitee.com/hunter_111/movietalk.git</code> 关联远程仓库</p>
+<p><code>$ git remote -v</code> 查看是否关联, fetch 远程用来提取，push 远程用来推送</p>
+<p><code>$ git push -u origin master</code> 推送到远程分支，并跟踪远程分支变化</p>
+<p><code>$ git push origin testing</code> 推送远程分支，不跟踪变化</p>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener noreffer">廖雪峰的 git 教程</a>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2019-12-13 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2019-12-13-git-learn/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2019-12-13-git-learn/" data-title="git 快速上手指南" data-hashtags="Git"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2019-12-13-git-learn/" data-hashtag="Git"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2019-12-13-git-learn/" data-title="git 快速上手指南" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2019-12-13-git-learn/" data-title="git 快速上手指南"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/git">Git</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2019-11-22-node-basis/" class="prev" rel="prev" title="Node.js 搭建博客后台"><i class="fas fa-angle-left fa-fw"></i>Node.js 搭建博客后台</a>
+            <a href="/2020-02-01-nest-crud/" class="next" rel="next" title="NestJS &#43; TypeORM 实现 crud 示例">NestJS &#43; TypeORM 实现 crud 示例<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
+</html>

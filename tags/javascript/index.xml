@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on 浮槎的博客</title>
+    <link>http://example.org/tags/javascript/</link>
+    <description>Recent content in Javascript on 浮槎的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 30 Oct 2019 20:59:36 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>es6 学习笔记</title>
+      <link>http://example.org/2019-10-30-js-es6/</link>
+      <pubDate>Wed, 30 Oct 2019 20:59:36 +0800</pubDate>
+      
+      <guid>http://example.org/2019-10-30-js-es6/</guid>
+      <description>ECMAScript 6(以下简称ES6)是 JavaScript 语言的下一代标准,已经在2015年6月正式发布了。Mozilla公司将在这个标准的基础上,推出 JavaScript 2.0。ECMAS</description>
+    </item>
+    
+    <item>
+      <title>js 闭包写法的演变过程</title>
+      <link>http://example.org/2019-10-17-js-basis/</link>
+      <pubDate>Mon, 07 Oct 2019 18:27:34 +0800</pubDate>
+      
+      <guid>http://example.org/2019-10-17-js-basis/</guid>
+      <description>闭包就是能够读取其他函数内部变量的函数。在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成&amp;quot;定义在</description>
+    </item>
+    
+  </channel>
+</rss>

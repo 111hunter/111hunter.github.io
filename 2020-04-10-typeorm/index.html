@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>TypeORM 的基本使用 | 浮槎的博客</title>
+        <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="TypeORM 的基本使用" />
+<meta property="og:description" content="本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。 以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBui" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2020-04-10-typeorm/" />
+<meta property="article:published_time" content="2020-04-10T14:35:05+08:00" />
+<meta property="article:modified_time" content="2020-04-10T14:35:05+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TypeORM 的基本使用"/>
+<meta name="twitter:description" content="本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。 以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBui"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="http://example.org/2020-04-10-typeorm/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://example.org/2020-03-29-nest-auth/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "TypeORM 的基本使用",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2020-04-10-typeorm\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "TypeORM","wordcount":  1927 ,
+        "url": "http:\/\/example.org\/2020-04-10-typeorm\/","datePublished": "2020-04-10","dateModified": "2020-04-10","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "浮槎"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/">浮槎的博客</a>
+        </div>
+        <div class="menu">
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            <span class="menu-item">|</span><a class="menu-item"
+                href="/posts/"  rel="noopener noreffer"
+                >文章</a><a class="menu-item"
+                href="/tags/"  rel="noopener noreffer"
+                >标签</a><a class="menu-item"
+                href="/categories/"  rel="noopener noreffer"
+                >分类</a><a class="menu-item"
+                href="/about/"  rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/">浮槎的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer"
+                >文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer"
+                >标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer"
+                >分类</a><a class="menu-item" href="/about/" title="" rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script><main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">TypeORM 的基本使用</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a>
+</span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/coding">
+                                <i class="far fa-folder fa-fw"></i>Coding
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-04-10>2020-04-10</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1927 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 4 分钟&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#建表">建表</a></li>
+    <li><a href="#一对一">一对一</a></li>
+    <li><a href="#一对多">一对多</a></li>
+    <li><a href="#多对多">多对多</a></li>
+    <li><a href="#增删改查">增删改查</a>
+      <ul>
+        <li><a href="#find-选项">Find 选项</a></li>
+        <li><a href="#querybuilder">QueryBuilder</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。
+<br>以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBuilder。</p>
+<h2 id="建表">建表</h2>
+<p>typeorm 建表时，将 @Entity() 装饰的 class 映射为数据表，entity 中 @PrimaryColumn() 装饰的属性作为表的主键, @PrimaryGeneratedColumn() 表示自动生成主键, @Column() 装饰属性作为表的属性。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">@Entity</span><span class="p">()</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">Photo</span> <span class="p">{</span>
+  <span class="kd">@PrimaryGeneratedColumn</span><span class="p">()</span>
+  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+
+  <span class="kd">@Column</span><span class="p">({</span><span class="nx">length</span>: <span class="kt">100</span><span class="p">})</span>
+  <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+
+  <span class="kd">@Column</span><span class="p">(</span><span class="s2">&#34;text&#34;</span><span class="p">)</span>
+  <span class="nx">description</span>: <span class="kt">string</span><span class="p">;</span>
+
+  <span class="kd">@Column</span><span class="p">()</span>
+  <span class="nx">views</span>: <span class="kt">number</span><span class="p">;</span>
+
+  <span class="kd">@Column</span><span class="p">()</span>
+  <span class="nx">isPublished</span>: <span class="kt">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>数据库中的列类型是根据你使用的属性类型推断的，例如: number 将被转换为 integer，string 将转换为 varchar，boolean 转换为 bool 等。下面我们从实际的例子出发探索如何用 typeorm 建一对一、一对多、多对多的关系。</p>
+<h2 id="一对一">一对一</h2>
+<p>用户 user 和用户档案 profile 是一对一关系，一个用户只有一份档案。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">@Entity</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">)</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserEntity</span> <span class="p">{</span>
+  <span class="kd">@PrimaryGeneratedColumn</span><span class="p">()</span>
+  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+
+  <span class="kd">@Column</span><span class="p">()</span>
+  <span class="nx">username</span>: <span class="kt">string</span><span class="p">;</span>
+
+  <span class="kd">@OneToOne</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">ProfileEntity</span><span class="p">,</span> <span class="nx">profile</span> <span class="o">=&gt;</span> <span class="nx">profile</span><span class="p">.</span><span class="nx">user</span><span class="p">)</span>
+  <span class="kd">@JoinColumn</span><span class="p">()</span>
+  <span class="nx">profile</span>: <span class="kt">ProfileEntity</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>注：profile 是 ProfileEntity 类型的，在数据库中存储的类型却是 profile.id 的类型。</p>
+</blockquote>
+<p>@OneToOne 中需要指明对方 entity 的类型，指明对方 entity 的外键。@JoinColumn 必须在且只在关系的一侧的外键上。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">@Entity</span><span class="p">(</span><span class="s1">&#39;profiles&#39;</span><span class="p">)</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ProfileEntity</span> <span class="p">{</span>
+  <span class="kd">@PrimaryGeneratedColumn</span><span class="p">()</span>
+  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+
+  <span class="kd">@Column</span><span class="p">()</span>
+  <span class="nx">gender</span>: <span class="kt">string</span><span class="p">;</span>
+
+  <span class="kd">@Column</span><span class="p">()</span>
+  <span class="nx">photo</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="kd">@OneToOne</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">UserEntity</span><span class="p">,</span> <span class="nx">user</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">profile</span><span class="p">)</span>
+  <span class="nx">user</span>: <span class="kt">UserEntity</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这将生成以下数据表：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">+-------------+--------------+----------------------------+
+<span class="p">|</span>                          users                          <span class="p">|</span>
++-------------+--------------+----------------------------+
+<span class="p">|</span> id          <span class="p">|</span> int<span class="o">(</span>11<span class="o">)</span>      <span class="p">|</span> PRIMARY KEY AUTO_INCREMENT <span class="p">|</span>
+<span class="p">|</span> username    <span class="p">|</span> varchar<span class="o">(</span>255<span class="o">)</span> <span class="p">|</span>                            <span class="p">|</span>
+<span class="p">|</span> profileId   <span class="p">|</span> int<span class="o">(</span>11<span class="o">)</span>      <span class="p">|</span> FOREIGN KEY                <span class="p">|</span>
++-------------+--------------+----------------------------+
+
++-------------+--------------+----------------------------+
+<span class="p">|</span>                        profiles                         <span class="p">|</span>
++-------------+--------------+----------------------------+
+<span class="p">|</span> id          <span class="p">|</span> int<span class="o">(</span>11<span class="o">)</span>      <span class="p">|</span> PRIMARY KEY AUTO_INCREMENT <span class="p">|</span>
+<span class="p">|</span> gender      <span class="p">|</span> varchar<span class="o">(</span>255<span class="o">)</span> <span class="p">|</span>                            <span class="p">|</span>
+<span class="p">|</span> photo       <span class="p">|</span> varchar<span class="o">(</span>255<span class="o">)</span> <span class="p">|</span>                            <span class="p">|</span>
++-------------+--------------+----------------------------+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="一对多">一对多</h2>
+<p>用户 user 与用户发布的文章 article 是一对多关系，一个用户可发布多篇文章。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">@Entity</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">)</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserEntity</span> <span class="p">{</span>
+  <span class="kd">@PrimaryGeneratedColumn</span><span class="p">()</span>
+  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+
+  <span class="kd">@Column</span><span class="p">()</span>
+  <span class="nx">username</span>: <span class="kt">string</span><span class="p">;</span>
+
+  <span class="kd">@OneToMany</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">ArticleEntity</span><span class="p">,</span> <span class="nx">article</span> <span class="o">=&gt;</span> <span class="nx">article</span><span class="p">.</span><span class="nx">author</span><span class="p">)</span>
+  <span class="nx">articles</span>: <span class="kt">ArticleEntity</span><span class="p">[];</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>@OneToMany，@ManyToOne 中需要指明对方的 entity 类型，指明对方 entity 的外键。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">@Entity</span><span class="p">(</span><span class="s1">&#39;articles&#39;</span><span class="p">)</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ArticleEntity</span> <span class="p">{</span>
+  <span class="kd">@PrimaryGeneratedColumn</span><span class="p">()</span>
+  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+
+  <span class="kd">@Column</span><span class="p">()</span>
+  <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>
+
+  <span class="kd">@ManyToOne</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">UserEntity</span><span class="p">,</span> <span class="nx">user</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">articles</span><span class="p">)</span>
+  <span class="nx">author</span>: <span class="kt">UserEntity</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>typeorm 在处理 “一对多”关系时将“一”的主键作为“多”的外键 (即 @ManyToOne 装饰的属性)，建表时有最少的数据表操作代价，避免数据冗余，提高效率。这会生成以下表：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">+-------------+--------------+----------------------------+
+<span class="p">|</span>                        articles                         <span class="p">|</span>
++-------------+--------------+----------------------------+
+<span class="p">|</span> id          <span class="p">|</span> int<span class="o">(</span>11<span class="o">)</span>      <span class="p">|</span> PRIMARY KEY AUTO_INCREMENT <span class="p">|</span>
+<span class="p">|</span> title       <span class="p">|</span> varchar<span class="o">(</span>255<span class="o">)</span> <span class="p">|</span>                            <span class="p">|</span>
+<span class="p">|</span> authorId    <span class="p">|</span> int<span class="o">(</span>11<span class="o">)</span>      <span class="p">|</span>                            <span class="p">|</span>
++-------------+--------------+----------------------------+
+
++-------------+--------------+----------------------------+
+<span class="p">|</span>                          users                          <span class="p">|</span>
++-------------+--------------+----------------------------+
+<span class="p">|</span> id          <span class="p">|</span> int<span class="o">(</span>11<span class="o">)</span>      <span class="p">|</span> PRIMARY KEY AUTO_INCREMENT <span class="p">|</span>
+<span class="p">|</span> username    <span class="p">|</span> varchar<span class="o">(</span>255<span class="o">)</span> <span class="p">|</span>                            <span class="p">|</span>
++-------------+--------------+----------------------------+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="多对多">多对多</h2>
+<p>用户 user 对文章 article 的喜欢 favorite 是多对多关系。一个用户可对多篇文章标记喜欢，一篇文章可被多个用户标记喜欢。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">@Entity</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">)</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserEntity</span> <span class="p">{</span>
+  <span class="kd">@PrimaryGeneratedColumn</span><span class="p">()</span>
+  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+
+  <span class="kd">@Column</span><span class="p">()</span>
+  <span class="nx">username</span>: <span class="kt">string</span><span class="p">;</span>
+
+  <span class="kd">@ManyToMany</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">ArticleEntity</span><span class="p">,</span> <span class="nx">article</span> <span class="o">=&gt;</span> <span class="nx">article</span><span class="p">.</span><span class="nx">favoritedBy</span><span class="p">)</span>
+  <span class="nx">favorites</span>: <span class="kt">ArticleEntity</span><span class="p">[];</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>@OneToMany 中需要指明对方的 entity 类型，指明对方 entity 的外键。@JoinTable 必须在且只在关系的一侧的外键上。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">@Entity</span><span class="p">(</span><span class="s1">&#39;articles&#39;</span><span class="p">)</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ArticleEntity</span> <span class="p">{</span>
+  <span class="kd">@PrimaryGeneratedColumn</span><span class="p">()</span>
+  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+
+  <span class="kd">@Column</span><span class="p">()</span>
+  <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>
+
+  <span class="kd">@ManyToMany</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">UserEntity</span><span class="p">,</span> <span class="nx">user</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">favorites</span><span class="p">)</span>
+  <span class="kd">@JoinTable</span><span class="p">()</span>
+  <span class="nx">favoritedBy</span>: <span class="kt">UserEntity</span><span class="p">[];</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>typeorm 的处理方式是将多对多关系转化为两个一对多关系:</p>
+<ul>
+<li>用户 user 与 喜欢 favorites 一对多。</li>
+<li>文章 article 与被喜欢 favoritedBy 一对多。</li>
+</ul>
+<p>多对多关系需要采用中间表的方式处理，这是为了避免笛卡尔积的出现。这会生成以下表：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">+-------------+--------------+----------------------------+
+<span class="p">|</span>                          users                          <span class="p">|</span>
++-------------+--------------+----------------------------+
+<span class="p">|</span> id          <span class="p">|</span> int<span class="o">(</span>11<span class="o">)</span>      <span class="p">|</span> PRIMARY KEY AUTO_INCREMENT <span class="p">|</span>
+<span class="p">|</span> username    <span class="p">|</span> varchar<span class="o">(</span>255<span class="o">)</span> <span class="p">|</span>                            <span class="p">|</span>
++-------------+--------------+----------------------------+
+
++-------------+--------------+----------------------------+
+<span class="p">|</span>                        articles                         <span class="p">|</span>
++-------------+--------------+----------------------------+
+<span class="p">|</span> id          <span class="p">|</span> int<span class="o">(</span>11<span class="o">)</span>      <span class="p">|</span> PRIMARY KEY AUTO_INCREMENT <span class="p">|</span>
+<span class="p">|</span> title       <span class="p">|</span> varchar<span class="o">(</span>255<span class="o">)</span> <span class="p">|</span>                            <span class="p">|</span>
++-------------+--------------+----------------------------+
+
++-------------+--------------+----------------------------+
+<span class="p">|</span>              articles_favorited_by_users                <span class="p">|</span>
++-------------+--------------+----------------------------+
+<span class="p">|</span> articlesId  <span class="p">|</span> int<span class="o">(</span>11<span class="o">)</span>      <span class="p">|</span> PRIMARY KEY FOREIGN KEY    <span class="p">|</span>
+<span class="p">|</span> usersId     <span class="p">|</span> int<span class="o">(</span>11<span class="o">)</span>      <span class="p">|</span> PRIMARY KEY FOREIGN KEY    <span class="p">|</span>
++-------------+--------------+----------------------------+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="增删改查">增删改查</h2>
+<p>创建好一对一，一对多，多对多的实体 entity 后，我们如何做增删改查呢？单个实体的 crud 可参考我的这一篇<a href="https://111hunter.github.io/post/nest-crud/" target="_blank" rel="noopener noreffer">文章</a>
+。而关联后的实体对象会作为该实体对象的一个属性, 直接对属性进行操作即可。如下是文章被用户喜欢的实现:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="nx">async</span> <span class="nx">favoriteArticle</span><span class="p">(</span><span class="nx">slug</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">user</span>: <span class="kt">UserEntity</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">article</span> <span class="o">=</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">articleRepo</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">where</span><span class="o">:</span> <span class="p">{</span> <span class="nx">slug</span> <span class="p">}});</span>
+    <span class="nx">article</span><span class="p">.</span><span class="nx">favoritedBy</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+    <span class="nx">await</span> <span class="nx">article</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">article</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>crud 操作中查询操作是我们最常遇到的，下面讲如何查询，typeorm 支持两种查询方式：Find 选项 和 QueryBuilder。</p>
+<h3 id="find-选项">Find 选项</h3>
+<p>在 Nest.JS 中，对具体实体的管理（insert, update, delete, load 等)我们使用的是 Repository。对应的查找方法是：Repository.find(FindOptions)。
+使用 find 查询只能获得一种类型的结果：entities。</p>
+<p>find 选项的完整例子如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="nx">userRepository</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span>
+    <span class="nx">select</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">],</span>
+    <span class="nx">relations</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;profile&#34;</span><span class="p">,</span> <span class="s2">&#34;article&#34;</span><span class="err">，</span><span class="s2">&#34;article.favoritedBy&#34;</span><span class="p">],</span>
+    <span class="nx">where</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">username</span><span class="o">:</span> <span class="s2">&#34;Timber&#34;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="nx">order</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&#34;DESC&#34;</span>
+    <span class="p">},</span>
+    <span class="nx">skip</span>: <span class="kt">5</span><span class="p">,</span>
+    <span class="nx">take</span>: <span class="kt">10</span><span class="p">,</span>
+    <span class="nx">cache</span>: <span class="kt">true</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>直接使用 find 是不会查出关联的对象的，要查询的关联对象需要添加到 relations 数组中。
+<br>除了 relations 以外，其他选项等同于原生 sql 操作, order 等同于 order by, skip 等同于 offset, take 等同于 limit, cache 是查询缓存。细节请参考 <a href="https://typeorm.io/#/find-options" target="_blank" rel="noopener noreffer">Find 选项</a>
+。</p>
+<p>这种查询有个局限就是只能查询到关联对象的整个实体或主键。而不能 select 关联实体的其他属性。因此更复杂的查询我们需要使用 QueryBuilder。</p>
+<h3 id="querybuilder">QueryBuilder</h3>
+<p>使用QueryBuilder 查询可以获得两种类型的结果：entities 或原始数据。
+要获取entities，请使用getOne和getMany。
+要获取原始数据，请使用getRawOne和getRawMany。
+它能够很方便的帮我们构造出 sql 语句，addSelect() 可以获取关联对象上的其他属性。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="k">if</span> <span class="p">(</span><span class="nx">query</span><span class="p">.</span><span class="nx">author</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">article</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">getRepository</span><span class="p">(</span><span class="nx">ArticleEntity</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">createQueryBuilder</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&#34;article.id&#34;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">addSelect</span><span class="p">(</span><span class="s1">&#39;favoritedBy.username&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">leftJoin</span><span class="p">(</span><span class="s1">&#39;article.favoritedBy&#39;</span><span class="p">,</span> <span class="s1">&#39;favoritedBy&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="s2">&#34;favoritedBy.username = :name&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">name</span>: <span class="kt">query.author</span> <span class="p">})</span>
+        <span class="p">.</span><span class="nx">getRawMany</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>获取生成的 sql 语句可以在 getRawMany() 前获取 getSql() 或打印 printSql() 生成的sql语句。细节请参考 <a href="https://typeorm.io/#/select-query-builder" target="_blank" rel="noopener noreffer">Query Builder</a>
+。</p>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://typeorm.io/#/" target="_blank" rel="noopener noreffer">Typeorm 官方文档</a>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-04-10 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2020-04-10-typeorm/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-04-10-typeorm/" data-title="TypeORM 的基本使用" data-hashtags="TypeORM"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-04-10-typeorm/" data-hashtag="TypeORM"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-04-10-typeorm/" data-title="TypeORM 的基本使用" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-04-10-typeorm/" data-title="TypeORM 的基本使用"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/typeorm">TypeORM</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020-03-29-nest-auth/" class="prev" rel="prev" title="NestJS &#43; Passport 实现鉴权认证"><i class="fas fa-angle-left fa-fw"></i>NestJS &#43; Passport 实现鉴权认证</a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
+</html>

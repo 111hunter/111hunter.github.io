@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nest on 浮槎的博客</title>
+    <link>http://example.org/tags/nest/</link>
+    <description>Recent content in Nest on 浮槎的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 29 Mar 2020 10:24:40 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/nest/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NestJS &#43; Passport 实现鉴权认证</title>
+      <link>http://example.org/2020-03-29-nest-auth/</link>
+      <pubDate>Sun, 29 Mar 2020 10:24:40 +0800</pubDate>
+      
+      <guid>http://example.org/2020-03-29-nest-auth/</guid>
+      <description>鉴权(authentication)是指验证用户是否拥有访问系统的权利。传统的鉴权是通过密码来验证的。这种方式的前提是，每个获得密码的用户都</description>
+    </item>
+    
+    <item>
+      <title>NestJS &#43; TypeORM 实现 crud 示例</title>
+      <link>http://example.org/2020-02-01-nest-crud/</link>
+      <pubDate>Sat, 01 Feb 2020 14:06:31 +0800</pubDate>
+      
+      <guid>http://example.org/2020-02-01-nest-crud/</guid>
+      <description>随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。 传统 MVC 与 NestJS 架构对比： Nest(Nest.js) 的分层借鉴自 Spring，更细化。我们应该要了解整个</description>
+    </item>
+    
+  </channel>
+</rss>

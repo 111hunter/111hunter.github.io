@@ -1,154 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>111hunter.blog</title>
-    <link>https://111hunter.github.io/</link>
-    <description>Recent content on 111hunter.blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 10 Apr 2020 14:35:05 +0800</lastBuildDate>
-    
-	<atom:link href="https://111hunter.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>TypeORM 的基本使用</title>
-      <link>https://111hunter.github.io/post/typeorm/</link>
-      <pubDate>Fri, 10 Apr 2020 14:35:05 +0800</pubDate>
-      
-      <guid>https://111hunter.github.io/post/typeorm/</guid>
-      <description>本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。 以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBuilder。
-建表 typeorm 建表时，将 @Entity() 装饰的 class 映射为数据表，entity 中 @PrimaryColumn() 装饰的属性作为表的主键, @PrimaryGeneratedColumn() 表示自动生成主键, @Column() 装饰属性作为表的属性。
-@Entity() export class Photo { @PrimaryGeneratedColumn() id: number; @Column({length: 100}) name: string; @Column(&amp;quot;text&amp;quot;) description: string; @Column() views: number; @Column() isPublished: boolean; }  数据库中的列类型是根据你使用的属性类型推断的，例如: number 将被转换为 integer，string 将转换为 varchar，boolean 转换为 bool 等。下面我们从实际的例子出发探索如何用 typeorm 建一对一、一对多、多对多的关系。
-一对一 用户 user 和用户档案 profile 是一对一关系，一个用户只有一份档案。
-@Entity(&#39;users&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number; @Column() username: string; @OneToOne(type =&amp;gt; ProfileEntity, profile =&amp;gt; profile.</description>
-    </item>
-    
-    <item>
-      <title>NestJS &#43; Passport 实现鉴权认证</title>
-      <link>https://111hunter.github.io/post/nest-auth/</link>
-      <pubDate>Sun, 29 Mar 2020 10:24:40 +0800</pubDate>
-      
-      <guid>https://111hunter.github.io/post/nest-auth/</guid>
-      <description>建立用户表，密码散列 要实现鉴权认证，首先需要一张 user 表。上一次我们用 NestJS 和 Typeorm 做了最基本的 crud 操作, 这次我们用 NestJS 和 node 中最流行的身份验证库 Passport 来完成鉴权认证。为了方便，我们直接沿用上次的代码库。
-创建 user module: $ nest g mo user
-然后在 user 文件夹新建 user.entity.ts, 其中我们做了密码散列:
-import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from &#39;typeorm&#39; import * as bcrypt from &#39;bcryptjs&#39;; @Entity(&#39;user&#39;) export class UserEntity { @PrimaryGeneratedColumn() id: number @Column({ length: 20 }) username: string @Column({ length: 255 }) password: string @BeforeInsert() async hashPassword() { this.</description>
-    </item>
-    
-    <item>
-      <title>用 Spring Boot 和 Vue.js 写一个全栈应用</title>
-      <link>https://111hunter.github.io/post/spring-vue/</link>
-      <pubDate>Sat, 21 Mar 2020 17:59:51 +0800</pubDate>
-      
-      <guid>https://111hunter.github.io/post/spring-vue/</guid>
-      <description>后端接口 到 https://start.spring.io/ 去生成和下载 spring 应用，Group 填写 com.jpa，Artifact 填写 spring-jpa-demo， 其他默认选择就好，点击 Generate 就会生成并下载名压缩包，将压缩包解压，并在编辑器中打开。 我们使用 jpa 作为我们的 orm, 连接 mysql 数据库，因此在 pom.xml 中加入以下依赖。
-	&amp;lt;!-- jpa driver --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-data-jpa&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- spring web driver --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- MySQL database driver --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- Skip test plugin --&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-surefire-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.22.2&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;skipTests&amp;gt;true&amp;lt;/skipTests&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt;  I. 数据库连接 编写数据库连接文件 application.properties，它在 resources 文件夹中。</description>
-    </item>
-    
-    <item>
-      <title>RxJS 初步探索(01) - Observable 的简单创建</title>
-      <link>https://111hunter.github.io/post/rxjs01/</link>
-      <pubDate>Fri, 13 Mar 2020 11:50:32 +0800</pubDate>
-      
-      <guid>https://111hunter.github.io/post/rxjs01/</guid>
-      <description>ReactiveX 结合了 观察者模式、迭代器模式 和 使用集合的函数式编程，以满足以一种理想方式来管理事件序列所需要的一切。
- 在 RxJS 中用来解决异步事件管理的的基本概念是：
- Observable (可观察对象): 表示一个概念，这个概念是一个可调用的未来值或事件的集合。
- Observer (观察者): 一个回调函数的集合，它知道如何去监听由 Observable 提供的值。
- Subscription (订阅): 表示 Observable 的执行，主要用于取消 Observable 的执行。
- Operators (操作符): 采用函数式编程风格的纯函数 (pure function)，使用像 map、filter、concat、flatMap 等这样的操作符来处理集合。
- Subject (主体): 相当于 EventEmitter，并且是将值或事件多路推送给多个 Observer 的唯一方式。
- Schedulers (调度器): 用来控制并发并且是中央集权的调度员，允许我们在发生计算时进行协调，例如 setTimeout 或 requestAnimationFrame 或其他。
-  以上文字来自 RxJS 中文文档，是 RxJS 的核心概念。
-下面来学习创建 Observable 对象以加深对一些概念的理解。 本文将生成 observable 的操作符分为以下四类：
- 转换操作符：from，fromEvent，fromPromise，of
- 创建操作符：create, range</description>
-    </item>
-    
-    <item>
-      <title>通过 NgRx 体验前端状态管理</title>
-      <link>https://111hunter.github.io/post/ngrx/</link>
-      <pubDate>Mon, 02 Mar 2020 17:09:36 +0800</pubDate>
-      
-      <guid>https://111hunter.github.io/post/ngrx/</guid>
-      <description>什么是前端状态？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是状态变化。 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在各个 component, service 中，这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。 什么是ngrx？ngrx = rxjs + rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。 注意：状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。 先上官网流程图一张，一图胜千言。
-angular 有无 ngrx 的架构对比：
-  -- 没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口，而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。其实，在软件开发中，一切看似的复杂往往是为了简单。 下面，我们对 ngrx 的各种新概念进行介绍，以下内容仅是个人理解。 redux 中核心概念只有三个: Store, Action, Reducer，其他是 ngrx 的扩展。
-Store 简单的理解就是前端状态的数据库，它有一个基本原则: 是&amp;rdquo;唯一的、状态不可修改&amp;rdquo;的树。
-Action 可以理解为状态变化的信号，当状态发生变化时，通过 Action 显性定义状态变化。 可配合 store-devtools 使用。
-Reducer 它是前端数据状态映射成的 Store 数据库中的表，接收旧状态，返回新状态。它是一个纯函数, 需要通过 Action 告知能够进行的状态变化。
-Effects 我们在进行一些 Action 时需要发送 http 请求，DOM 操作, 读写文件等。redux 状态管理只关心视图层的状态变化, 不会解决这些的需求。因此 ngrx 扩展了 Effects, 其实它是一个钩子函数。这大概就是示意图中虚线的含义。</description>
-    </item>
-    
-    <item>
-      <title>NestJS &#43; TypeORM 实现 crud 示例</title>
-      <link>https://111hunter.github.io/post/nest-crud/</link>
-      <pubDate>Sat, 01 Feb 2020 14:06:31 +0800</pubDate>
-      
-      <guid>https://111hunter.github.io/post/nest-crud/</guid>
-      <description>传统 MVC 与 NestJS 架构对比：
- 随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。Nest 的分层借鉴自 Spring，更细化。我们应该要了解整个 Nest 框架的三层结构，Nest 和传统的 MVC 框架的区别在于它更注重于后端部分（控制器、服务与数据）的架构，视图层相对比较独立，完全可以由用户自定义配置。
-新建 nest.js 项目 $ npm install -g @nest/cli 全局安装 nest 脚手架
-$ nest new nest-crud 新建 nest.js 项目, 选择 yarn 作为开发工具
-$ nest g mo photo 建立 PhotoModule
-$ nest g co photo 建立 PhotoController
-$ nest g s photo 建立 PhotoService
-$ yarn add @nestjs/typeorm typeorm mysql 需要使用 typeorm, mysql 需要安装这些库</description>
-    </item>
-    
-    <item>
-      <title>git 快速上手指南</title>
-      <link>https://111hunter.github.io/post/git-learn/</link>
-      <pubDate>Fri, 13 Dec 2019 15:48:16 +0800</pubDate>
-      
-      <guid>https://111hunter.github.io/post/git-learn/</guid>
-      <description>git 仓库图解
- 1. 使用帮助 $ git help 可以查看 git 常用命令
-$ git help -a 可以查看 git 所有命令，F 或者 空格 向下查看命令，B 向上查看命令，Q 退出 git-cli
-$ git help add help后接一个指令可以查看该指令的详细用法
-2. git 配置分为三个范围 system, global, 项目 范围 一般选择global进行配置 $ git config --global user.name &#39;111hunter&#39;
-$ git config --list 查看当前配置信息
-$ git config --unset --global user.name 取消 user.name 配置
-配置文件是当前用户主目录 $ cat ~/.gitconfig
-3. git 项目文件的 crud $ mkdir movietalk &amp;amp; cd movietalk 新建文件夹</description>
-    </item>
-    
-    <item>
-      <title>Node.js 搭建博客后台, 不使用框架</title>
-      <link>https://111hunter.github.io/post/node01/</link>
-      <pubDate>Fri, 22 Nov 2019 19:34:41 +0800</pubDate>
-      
-      <guid>https://111hunter.github.io/post/node01/</guid>
-      <description>Node.js 处理 get，post 请求 const http = require(&#39;http&#39;) const querystring = require(&#39;querystring&#39;) const server = http.createServer((req, res) =&amp;gt; { const method = req.method const url = req.url const path = url.split(&#39;?&#39;)[0] //重点：split(&#39;?&#39;[0])语法弄清楚 const query = querystring.parse(url.split(&#39;?&#39;)[1]) //设置返回值格式为 JSON res.setHeader(&#39;Content-type&#39;, &#39;application/json&#39;) //返回的数据 const resData = { method, url, path, query } //返回 if (method === &#39;GET&#39;) { res.end( JSON.stringify(req.query) ) } if (req.method === &#39;POST&#39;){ let postData = &#39;&#39; //res.on(&#39;data&#39;)指每次发送的数据 //chunk 逐步接收数据 req绑定一个data方法 chunk是变量 req.</description>
-    </item>
-    
-    <item>
-      <title>es6 学习笔记</title>
-      <link>https://111hunter.github.io/post/es6/</link>
-      <pubDate>Wed, 30 Oct 2019 20:59:36 +0800</pubDate>
-      
-      <guid>https://111hunter.github.io/post/es6/</guid>
-      <description>es6 学习笔记: 1.用let和const声明变量
-var 函数作用域function scope,不在函数内时作用域是全局的 let, const 块级作用域block scope,作用域是{}内
-eg.执行以下语句判断区别：
-for (var i = 0; i &amp;lt; 10; i++) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) } for (let i = 0; i &amp;lt; 10; i++) { console.log(i); setTimeout(function () { console.log(`i:${i}`); }, 1000) }  let, const不能重复声明变量值 let声明的变量是可以重新赋值的, const声明的变量只能修改引用类型的属性值 变量提升：let, count有变量提升,未声明先使用存在临时性死区(Temporal dead zone),详见mdn
-2.箭头函数：
-特点：简明的语法,隐式返回(省去return关键字),匿名函数 this:普通函数this是动态绑定的
-const Jelly = { name: &#39;Jelly&#39;, hobbies: [&#39;Coding&#39;, &#39;Sleeping&#39;, &#39;Reading&#39;], printHobbies: function () { // console.</description>
-    </item>
-    
-    <item>
-      <title>关于 js 闭包写法的演进过程</title>
-      <link>https://111hunter.github.io/post/js01/</link>
-      <pubDate>Mon, 07 Oct 2019 18:27:34 +0800</pubDate>
-      
-      <guid>https://111hunter.github.io/post/js01/</guid>
-      <description>首先来理解闭包，闭包是为了实现变量的私有化问题，有如下例子： 我们想要用一个counter记录add函数的执行次数。
-function add() { var counter = 0; //局部变量 counter++; console.log(&amp;quot;counter = &amp;quot; + counter); } add(); // counter = 1 add(); // counter = 1  由于counter是局部变量，每次我们执行add()函数，都是输出 counter = 1; 我们想要执行函数时改变counter的值，一种可行的办法是：
-var counter = 0; //全局变量，谁都可以访问，修改 function add() { counter++; console.log(&amp;quot;counter = &amp;quot; + counter); } add(); // counter = 1 add(); // counter = 2  但是这样会带来问题，由于counter是全局变量，我们可能会在函数外不小心改变了counter的值， 比如在函数外写了一句counter = -100；就打乱了我们原来的计数，显然我们并不希望在函数外任意地改变counter的值。 我们可以这样写：
-function add() { var counter = 1; //局部变量 console.</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>浮槎的博客 | 浮槎的博客</title>
+        <link>http://example.org/</link>
+        <description>浮槎的博客 | 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 02 Aug 2019 11:04:49 &#43;0800</lastBuildDate><atom:link href="http://example.org/" rel="self" type="application/rss+xml" /><item>
+                <title>Posts</title>
+                <link>http://example.org/posts/</link>
+                <pubDate>Fri, 10 Apr 2020 14:35:05 &#43;0800</pubDate><guid>http://example.org/posts/</guid>
+                <description></description>
+            </item><item>
+                <title>关于</title>
+                <link>http://example.org/about/</link>
+                <pubDate>Fri, 02 Aug 2019 11:04:49 &#43;0800</pubDate><guid>http://example.org/about/</guid>
+                <description>&lt;h2 id=&#34;关于网站&#34;&gt;关于网站&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;个人博客，记录所学所思&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;关于我&#34;&gt;关于我&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;:(fas fa-id-card): 平淡无奇大学生。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;:(fas fa-music): 喜欢编程，音乐和阅读。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;:(fas fa-notes-medical): 拖延症患者。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;:(fas fa-burn): 一个被生活推着走的人，幻想有一天能够掌握自己的生活。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;关于版权&#34;&gt;关于版权&lt;/h2&gt;
+&lt;p&gt;本站所有原创文章均受 &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;创作共享 署名-非商业性 4.0 许可协议 / CC BY-NC 4.0&lt;/a&gt;
+ 保护。任何个人及媒体在转载本站原创内容（包含文字、自制图像、摄影作品）时请遵守以下版权要求：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;注明转载&lt;/li&gt;
+&lt;li&gt;注明来源为本站首页网址，或所转内容在本站的完整网址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本站图片，除原创作品之外，多数来自互联网。此类图片的原版权所有者可在任何时候、以任何理由要求本站停止使用有关图片，联系方式见本站首页。&lt;/p&gt;
+</description>
+            </item></channel>
 </rss>
