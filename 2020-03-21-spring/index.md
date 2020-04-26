@@ -58,7 +58,7 @@ server.port = 8034
 
 这是我们的 src 文件夹结构，接下来的文件都会在 src 中编写。
 
-<div align=center><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/spring-dir.png" width="80%" alt="仓库图解"></div>
+<div align=center><img src="/img/spring-dir.png" width="80%" alt="仓库图解"></div>
 
 在 entity文件夹中新建文件 Notes.java，这是我们的数据表映射。
 
@@ -761,8 +761,8 @@ export default new Router({
 浏览器打开 http://localhost:8080
 
 pc端展示：
-<div align=center><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/vue-pc.png" width="80%" alt="仓库图解"></div>
+<div align=center><img src="/img/vue-pc.png" width="80%" alt="仓库图解"></div>
 移动端展示：
-<div align=center><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/vue-mobile.png" width="25%" alt="仓库图解"></div>
+<div align=center><img src="/img/vue-mobile.png" width="25%" alt="仓库图解"></div>
 
 附：[源码地址](https://github.com/111hunter/notes-app)

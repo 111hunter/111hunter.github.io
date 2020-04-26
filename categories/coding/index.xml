@@ -6,10 +6,19 @@
     <description>Recent content in coding on 浮槎的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 10 Apr 2020 14:35:05 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2020 22:27:41 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/categories/coding/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>全栈开发：用 NgRx 和 Nest 写一个 todolist</title>
+      <link>http://example.org/2020-04-25-typescript-fullstack/</link>
+      <pubDate>Sat, 25 Apr 2020 22:27:41 +0800</pubDate>
+      
+      <guid>http://example.org/2020-04-25-typescript-fullstack/</guid>
+      <description>本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。如果你对状态管理以及权限验证没有概念，可以自行百度或者看我之前写过的文章。 后</description>
+    </item>
     
     <item>
       <title>TypeORM 的基本使用</title>
@@ -71,7 +80,7 @@
       <pubDate>Fri, 13 Dec 2019 15:48:16 +0800</pubDate>
       
       <guid>http://example.org/2019-12-13-git-learn/</guid>
-      <description>本文实践较多，建议跟着文章的步骤敲一遍代码以加深理解。 git 仓库图解: 1. 使用帮助 $ git help 可以查看 git 常用命令 $ git help -a 可以查看 git 所有命令，F 或者 空格 向</description>
+      <description>本文实践较多，建议跟着文章的步骤敲一遍代码以加深理解。 1. 使用帮助 $ git help 可以查看 git 常用命令 $ git help -a 可以查看 git 所有命令，F 或者 空格 向下查看命令，</description>
     </item>
     
     <item>

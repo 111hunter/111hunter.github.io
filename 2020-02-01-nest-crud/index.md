@@ -5,7 +5,7 @@
 
 传统 MVC 与 NestJS 架构对比：
 
-<div style="display: flex; justify-content: space-evenly; align-items: center;"><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/mvc.png" style="width:30%;" alt="仓库图解"><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/nest.png" style="width:30%;" alt="仓库图解"></div>
+<div style="display: flex; justify-content: space-evenly; align-items: center;"><img src="/img/mvc.png" style="width:30%;"><img src="/img/nest.png" style="width:30%;"></div>
 
 Nest(Nest.js) 的分层借鉴自 Spring，更细化。我们应该要了解整个 Nest 框架的三层结构，Nest 和传统的 MVC 框架的区别在于它更注重于后端部分（控制器、服务与数据）的架构，视图层相对比较独立，完全可以由用户自定义配置。
 

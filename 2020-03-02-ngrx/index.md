@@ -5,13 +5,14 @@
 
 为什么要进行状态管理？通常来说前端中的状态是状态碎片，存在余各个组件中。这种碎片化的状态给开发团队带来的维护上的麻烦。为了规范开发流程，我们需要对状态进行集中统一管理。什么是ngrx？ngrx = rxjs + rudux。rudux是前端开发中主流状态管理库，不依赖平台。ngrx 相当于 rudux 在 angular 中的使用扩充。
 
-> 状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。
+{{< admonition >}}
+状态管理不是前端应用必须使用的，它让简单程序变复杂，让复杂程序变简单。
+{{< /admonition >}}
 
 angular 有无 ngrx 的架构对比：
 
-<div style="display: flex; justify-content: space-evenly; align-items: flex-end;"><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/angular-mvvm.png" style="width:19.5%;" alt="angular-mvvm"><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/ngrx.png" style="width:65%;" alt="ngrx"></div>
+<div style="display: flex; justify-content: space-evenly; align-items: flex-end;"><img src="/img/angular.png" style="width:19.5%;" alt="angular-mvvm"><img src="/img/ngrx.png" style="width:65%;" alt="ngrx"></div>
 
-<!-- <div align=center><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/ngrx.png" width="80%" alt="ngrx"></div> -->
 
 没有状态管理前，构建 angular 程序我们仅需要 component, service, 以及后端数据 api 接口。而添加了状态管理后，我们的程序多出不少新的概念，状态管理将我们的应用复杂化了吗？对于复杂应用来说，是简化了。在软件开发中，一切看似的复杂往往是为了简单。其实状态管理这个概念类似于后端的数据库。
 
@@ -21,7 +22,7 @@ angular 有无 ngrx 的架构对比：
 简单的理解就是前端状态的数据库，它有一个基本原则: 是"唯一的、状态不可修改"的树。
 
 ## Action
-可以理解为状态变化的信号，当状态发生变化时，通过 Action 显性定义状态变化。 可配合 store-devtools 使用。
+可以理解为状态变化的信号，当状态发生变化时，通过 Action 显性定义状态变化，传递状态发生变化的数据。可配合 store-devtools 使用。
 
 ## Reducer
 它是前端数据状态映射成的 Store 数据库中的表，接收旧状态，返回新状态。它是一个纯函数, 需要通过 Action 告知能够进行的状态变化。

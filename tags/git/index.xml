@@ -17,7 +17,7 @@
       <pubDate>Fri, 13 Dec 2019 15:48:16 +0800</pubDate>
       
       <guid>http://example.org/2019-12-13-git-learn/</guid>
-      <description>本文实践较多，建议跟着文章的步骤敲一遍代码以加深理解。 git 仓库图解: 1. 使用帮助 $ git help 可以查看 git 常用命令 $ git help -a 可以查看 git 所有命令，F 或者 空格 向</description>
+      <description>本文实践较多，建议跟着文章的步骤敲一遍代码以加深理解。 1. 使用帮助 $ git help 可以查看 git 常用命令 $ git help -a 可以查看 git 所有命令，F 或者 空格 向下查看命令，</description>
     </item>
     
   </channel>

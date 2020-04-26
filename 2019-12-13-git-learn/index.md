@@ -3,9 +3,7 @@
 
 本文实践较多，建议跟着文章的步骤敲一遍代码以加深理解。
 
-git 仓库图解:
-
-<div align=center><img src="https://raw.githubusercontent.com/111hunter/111hunter.github.io/master/post/resources/_gen/images/git1.png" width="80%" alt="仓库图解"></div>
+<div align=center><img src="/img/git.png" width="100%"></div>
 
 ## 1. 使用帮助
 

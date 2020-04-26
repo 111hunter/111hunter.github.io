@@ -48,8 +48,9 @@ export class UserEntity {
   profile: ProfileEntity;
 }
 ```
-
-> 注：profile 是 ProfileEntity 类型的，在数据库中存储的类型却是 profile.id 的类型。
+{{< admonition >}}
+profile 是 ProfileEntity 类型的，在数据库中存储的类型却是 profile.id 的类型。
+{{< /admonition >}}
 
 @OneToOne 中需要指明对方 entity 的类型，指明对方 entity 的外键。@JoinColumn 必须在且只在关系的一侧的外键上。
 

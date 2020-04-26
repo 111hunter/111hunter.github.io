@@ -2,10 +2,13 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/categories/</loc><lastmod>2020-04-10T14:35:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/categories/coding/</loc><lastmod>2020-04-10T14:35:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/posts/</loc><lastmod>2020-04-10T14:35:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/tags/</loc><lastmod>2020-04-10T14:35:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/tags/angular/</loc><lastmod>2020-04-25T22:27:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/categories/</loc><lastmod>2020-04-25T22:27:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/categories/coding/</loc><lastmod>2020-04-25T22:27:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/posts/</loc><lastmod>2020-04-25T22:27:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/tags/rx/</loc><lastmod>2020-04-25T22:27:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/tags/</loc><lastmod>2020-04-25T22:27:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/2020-04-25-typescript-fullstack/</loc><lastmod>2020-04-25T22:27:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/tags/typeorm/</loc><lastmod>2020-04-10T14:35:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-04-10-typeorm/</loc><lastmod>2020-04-10T14:35:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/tags/nest/</loc><lastmod>2020-03-29T10:24:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -14,8 +17,6 @@
             <loc>http://example.org/tags/spring/</loc><lastmod>2020-03-21T17:59:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/tags/vue.js/</loc><lastmod>2020-03-21T17:59:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-03-21-spring/</loc><lastmod>2020-03-21T17:59:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/tags/angular/</loc><lastmod>2020-03-13T11:50:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/tags/rx/</loc><lastmod>2020-03-13T11:50:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-03-13-rxjs-01/</loc><lastmod>2020-03-13T11:50:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-03-02-ngrx/</loc><lastmod>2020-03-02T17:09:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-02-01-nest-crud/</loc><lastmod>2020-02-01T14:06:31&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
