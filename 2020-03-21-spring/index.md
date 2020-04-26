@@ -178,11 +178,11 @@ public interface NotesDao extends JpaRepository<Notes, String> {
 
 五步实现完整的数据增删改查和接口测试：
 
-- 1. 实现 Conctroller 路由处理
-- 2. 实现 Service 数据库操作
-- 3. 实现 Exception 异常捕获
-- 4. 实现 Cors 跨域配置
-- 5. 实现 Swagger 文档配置
+- 1.实现 Conctroller 路由处理
+- 2.实现 Service 数据库操作
+- 3.实现 Exception 异常捕获
+- 4.实现 Cors 跨域配置
+- 5.实现 Swagger 文档配置
 
 下面是详细步骤和代码示例：
 

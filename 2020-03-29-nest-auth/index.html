@@ -37,7 +37,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Nest, Passport","wordcount":  2938 ,
+            },"genre": "posts","keywords": "Nest, Passport","wordcount":  2937 ,
         "url": "http:\/\/example.org\/2020-03-29-nest-auth\/","datePublished": "2020-03-29","dateModified": "2020-03-29","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -109,8 +109,10 @@
                                 <i class="far fa-folder fa-fw"></i>Coding
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-29>2020-03-29</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 2938 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>预计阅读 6 分钟&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>约 2937 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 6 分钟&nbsp;<span id="/2020-03-29-nest-auth/" class="leancloud_visitors" data-flag-title="NestJS &#43; Passport 实现鉴权认证">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
         </div><div class="toc" id="toc-auto">
                 <h2 class="toc-title">目录</h2>
                 <div class="toc-content" id="toc-content-auto"></div>
@@ -134,7 +136,8 @@
                 </details>
             </div><div class="content" id="content"><p>鉴权(authentication)是指验证用户是否拥有访问系统的权利。传统的鉴权是通过密码来验证的。这种方式的前提是，每个获得密码的用户都已经被授权。</p>
 <h2 id="建立用户表密码散列">建立用户表，密码散列</h2>
-<p>要实现鉴权认证，首先需要一张 user 表。上一次我们用 NestJS 和 Typeorm 做了最基本的 crud 操作, 这次我们用 NestJS 和 node 中最流行的身份验证库 Passport 来完成鉴权认证。为了方便，我们直接沿用上次的代码库。</p>
+<p>要实现鉴权认证，首先需要一张 user 表。上一次我们用 NestJS 和 Typeorm 做了最基本的 crud 操作, 这次我们用 NestJS 和 node 中最流行的身份验证库 Passport 来完成鉴权认证。为了方便，我们直接沿用上次的<a href="https://github.com/111hunter/nest-crud" target="_blank" rel="noopener noreffer">代码库</a>
+。</p>
 <p>创建 user module: <code>$ nest g mo user </code></p>
 <p>然后在 user 文件夹新建 user.entity.ts, 其中我们做了密码散列:</p>
 <div class="highlight"><div class="chroma">
@@ -650,9 +653,10 @@ yarn add -D @types/passport-jwt
     <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><blockquote>
-<p>注意：上面 sign 的参数 payload 是可逆加密的，拿到 token 后是可以解密成明文内容的，所以这部分不要放敏感信息。</p>
-</blockquote>
+</div><div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>注意</p>
+            <div class="admonition-content">上面 sign 的参数 payload 是可逆加密的，拿到 token 后是可以解密成明文内容的，所以这部分不要放敏感信息。</div>
+        </div>
 <p>我们已经创建了 jwt 字符串作为请求令牌，那么服务端如何根据 jwt 字符串的内容，找到用户信息？
 我们就需要实现 jwt 认证策略，在 auth 文件夹下新建 jwt.strategy.ts 文件：</p>
 <div class="highlight"><div class="chroma">
@@ -791,7 +795,7 @@ yarn add -D @types/passport-jwt
                             <a class="link-to-markdown" href="/2020-03-29-nest-auth/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证" data-hashtags="Nest,Passport"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-03-29-nest-auth/" data-hashtag="Nest"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证" data-hashtags="Nest,Passport"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-03-29-nest-auth/" data-hashtag="Nest"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -806,7 +810,17 @@ yarn add -D @types/passport-jwt
     <div class="post-nav"><a href="/2020-03-21-spring/" class="prev" rel="prev" title="用 Spring Boot 和 Vue.js 写一个全栈应用"><i class="fas fa-angle-left fa-fw"></i>用 Spring Boot 和 Vue.js 写一个全栈应用</a>
             <a href="/2020-04-10-typeorm/" class="next" rel="next" title="TypeORM 的基本使用">TypeORM 的基本使用<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
-<div class="comment"></div>
+<div class="comment"><div id="valine"></div><script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                new Valine({
+                    el: '#valine',
+                    appId: 'GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz',
+                    appKey: 'gK3L6a7r80578qujBez4FH6C',placeholder: '欢迎留言和转载！',avatar: 'mm',pageSize: 10,lang: 'en',visitor: true,recordIP: true,});
+            });
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
+        </noscript></div>
     </article></div>
             </main><footer class="footer">
     <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
@@ -839,5 +853,5 @@ yarn add -D @types/passport-jwt
                 strict: false,
             });
         });
-    </script><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
+    </script><link rel="stylesheet" href="/lib/valine/valine.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/valine/Valine.min.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
 </html>

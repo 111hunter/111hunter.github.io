@@ -4,7 +4,7 @@
 
 ## 建立用户表，密码散列
 
-要实现鉴权认证，首先需要一张 user 表。上一次我们用 NestJS 和 Typeorm 做了最基本的 crud 操作, 这次我们用 NestJS 和 node 中最流行的身份验证库 Passport 来完成鉴权认证。为了方便，我们直接沿用上次的代码库。
+要实现鉴权认证，首先需要一张 user 表。上一次我们用 NestJS 和 Typeorm 做了最基本的 crud 操作, 这次我们用 NestJS 和 node 中最流行的身份验证库 Passport 来完成鉴权认证。为了方便，我们直接沿用上次的[代码库](https://github.com/111hunter/nest-crud)。
 
 创建 user module: `$ nest g mo user `
 
@@ -293,7 +293,9 @@ yarn add -D @types/passport-jwt
         return this.jwtService.sign(payload);
     }
 ```
-> 注意：上面 sign 的参数 payload 是可逆加密的，拿到 token 后是可以解密成明文内容的，所以这部分不要放敏感信息。
+{{< admonition >}}
+上面 sign 的参数 payload 是可逆加密的，拿到 token 后是可以解密成明文内容的，所以这部分不要放敏感信息。
+{{< /admonition >}}
 
 我们已经创建了 jwt 字符串作为请求令牌，那么服务端如何根据 jwt 字符串的内容，找到用户信息？
 我们就需要实现 jwt 认证策略，在 auth 文件夹下新建 jwt.strategy.ts 文件：

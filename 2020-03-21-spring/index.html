@@ -37,7 +37,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Spring, Vue.js","wordcount":  3012 ,
+            },"genre": "posts","keywords": "Spring, Vue.js","wordcount":  3022 ,
         "url": "http:\/\/example.org\/2020-03-21-spring\/","datePublished": "2020-03-21","dateModified": "2020-03-21","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -109,8 +109,10 @@
                                 <i class="far fa-folder fa-fw"></i>Coding
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-21>2020-03-21</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 3012 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>预计阅读 7 分钟&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>约 3022 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 7 分钟&nbsp;<span id="/2020-03-21-spring/" class="leancloud_visitors" data-flag-title="用 Spring Boot 和 Vue.js 写一个全栈应用">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
         </div><div class="toc" id="toc-auto">
                 <h2 class="toc-title">目录</h2>
                 <div class="toc-content" id="toc-content-auto"></div>
@@ -462,31 +464,11 @@ server.port = 8034
 <h3 id="ii-增删改查">II. 增删改查</h3>
 <p>五步实现完整的数据增删改查和接口测试：</p>
 <ul>
-<li>
-<ol>
-<li>实现 Conctroller 路由处理</li>
-</ol>
-</li>
-<li>
-<ol start="2">
-<li>实现 Service 数据库操作</li>
-</ol>
-</li>
-<li>
-<ol start="3">
-<li>实现 Exception 异常捕获</li>
-</ol>
-</li>
-<li>
-<ol start="4">
-<li>实现 Cors 跨域配置</li>
-</ol>
-</li>
-<li>
-<ol start="5">
-<li>实现 Swagger 文档配置</li>
-</ol>
-</li>
+<li>1.实现 Conctroller 路由处理</li>
+<li>2.实现 Service 数据库操作</li>
+<li>3.实现 Exception 异常捕获</li>
+<li>4.实现 Cors 跨域配置</li>
+<li>5.实现 Swagger 文档配置</li>
 </ul>
 <p>下面是详细步骤和代码示例：</p>
 <ul>
@@ -1577,7 +1559,7 @@ server.port = 8034
                             <a class="link-to-markdown" href="/2020-03-21-spring/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-03-21-spring/" data-title="用 Spring Boot 和 Vue.js 写一个全栈应用" data-hashtags="Spring,Vue.js"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-03-21-spring/" data-hashtag="Spring"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-03-21-spring/" data-title="用 Spring Boot 和 Vue.js 写一个全栈应用" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-03-21-spring/" data-title="用 Spring Boot 和 Vue.js 写一个全栈应用"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-03-21-spring/" data-title="用 Spring Boot 和 Vue.js 写一个全栈应用" data-hashtags="Spring,Vue.js"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-03-21-spring/" data-hashtag="Spring"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-03-21-spring/" data-title="用 Spring Boot 和 Vue.js 写一个全栈应用"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-03-21-spring/" data-title="用 Spring Boot 和 Vue.js 写一个全栈应用"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -1592,7 +1574,17 @@ server.port = 8034
     <div class="post-nav"><a href="/2020-03-13-rxjs-01/" class="prev" rel="prev" title="RxJS 初步探索 - Observable 的简单创建"><i class="fas fa-angle-left fa-fw"></i>RxJS 初步探索 - Observable 的简单创建</a>
             <a href="/2020-03-29-nest-auth/" class="next" rel="next" title="NestJS &#43; Passport 实现鉴权认证">NestJS &#43; Passport 实现鉴权认证<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
-<div class="comment"></div>
+<div class="comment"><div id="valine"></div><script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                new Valine({
+                    el: '#valine',
+                    appId: 'GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz',
+                    appKey: 'gK3L6a7r80578qujBez4FH6C',placeholder: '欢迎留言和转载！',avatar: 'mm',pageSize: 10,lang: 'en',visitor: true,recordIP: true,});
+            });
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
+        </noscript></div>
     </article></div>
             </main><footer class="footer">
     <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
@@ -1625,5 +1617,5 @@ server.port = 8034
                 strict: false,
             });
         });
-    </script><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
+    </script><link rel="stylesheet" href="/lib/valine/valine.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/valine/Valine.min.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
 </html>
