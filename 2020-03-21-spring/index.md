@@ -43,7 +43,7 @@
 ```
 ## use create when running the app for the first time
 ## then change to "update" which just updates the schema when necessary
-spring.datasource.url=jdbc:mysql://localhost:3306/notesapi?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+spring.datasource.url=jdbc:mysql://localhost:3306/notesapi?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
 spring.datasource.username=root
 spring.datasource.password=root
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
@@ -355,20 +355,41 @@ public class CorsConfig implements WebMvcConfigurer {
 ```java
 package com.jpa.springjpademo.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
-public class CorsConfig implements WebMvcConfigurer {
+@EnableSwagger2
+public class SwaggerConfig {
 
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**").allowedOrigins("*").allowedMethods("GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS")
-                .allowCredentials(true).maxAge(3600).allowedHeaders("*");
+    @Bean
+    public Docket productApi() {
+        return new Docket(DocumentationType.SWAGGER_2).select()
+                .apis(RequestHandlerSelectors.basePackage("com.jpa.springjpademo")).apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any()).build().apiInfo(apiInfo());
     }
+
+    private ApiInfo apiInfo() {
+        Contact contact = new Contact("111hunter", "https://111hunter.github.io", "");
+        return new ApiInfoBuilder().title("Spring Boot Restful Api Demo").description("Spring Boot Restful Api Demo")
+                .version("0.0.1").license("Apache 2.0").licenseUrl("http://www.apache.org/licenses/LICENSE-2.0")
+                .contact(contact).build();
+    }
+
 }
 ```
+
+编写完后端代码，启动服务： ` $ mvn spring-boot:run `
+
+浏览器打开 http://localhost:8034/swagger-ui.html
 
 ## 前端界面
 
@@ -752,13 +773,12 @@ export default new Router({
   ]
 });
 ```
-## 成果展示
 
-先到 spring-jpa-demo 文件夹启动后端服务： ` $ mvn spring-boot:run `
-
-再到 blog-frontend 文件夹启动前端服务： `$ npm run serve `
+编写完前端代码，启动服务： `$ npm run serve `
 
 浏览器打开 http://localhost:8080
+
+## 成果展示
 
 pc端展示：
 <div align=center><img src="/img/vue-pc.png" width="80%" alt="仓库图解"></div>

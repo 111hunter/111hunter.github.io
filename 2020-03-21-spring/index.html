@@ -37,7 +37,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Spring, Vue.js","wordcount":  3022 ,
+            },"genre": "posts","keywords": "Spring, Vue.js","wordcount":  3081 ,
         "url": "http:\/\/example.org\/2020-03-21-spring\/","datePublished": "2020-03-21","dateModified": "2020-03-21","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -109,7 +109,7 @@
                                 <i class="far fa-folder fa-fw"></i>Coding
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-21>2020-03-21</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 3022 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 3081 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 7 分钟&nbsp;<span id="/2020-03-21-spring/" class="leancloud_visitors" data-flag-title="用 Spring Boot 和 Vue.js 写一个全栈应用">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -227,7 +227,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">## use create when running the app for the first time
 ## then change to &#34;update&#34; which just updates the schema when necessary
-spring.datasource.url=jdbc:mysql://localhost:3306/notesapi?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;useLegacyDatetimeCode=false
+spring.datasource.url=jdbc:mysql://localhost:3306/notesapi?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC
 spring.datasource.username=root
 spring.datasource.password=root
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
@@ -815,26 +815,62 @@ server.port = 8034
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.jpa.springjpademo.config</span><span class="o">;</span>
 
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.CorsRegistry</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.WebMvcConfigurer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">springfox.documentation.builders.ApiInfoBuilder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">springfox.documentation.builders.PathSelectors</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">springfox.documentation.builders.RequestHandlerSelectors</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">springfox.documentation.service.ApiInfo</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">springfox.documentation.service.Contact</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">springfox.documentation.spi.DocumentationType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">springfox.documentation.spring.web.plugins.Docket</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">springfox.documentation.swagger2.annotations.EnableSwagger2</span><span class="o">;</span>
 
 <span class="nd">@Configuration</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CorsConfig</span> <span class="kd">implements</span> <span class="n">WebMvcConfigurer</span> <span class="o">{</span>
+<span class="nd">@EnableSwagger2</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SwaggerConfig</span> <span class="o">{</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addCorsMappings</span><span class="o">(</span><span class="n">CorsRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">registry</span><span class="o">.</span><span class="na">addMapping</span><span class="o">(</span><span class="s">&#34;/**&#34;</span><span class="o">).</span><span class="na">allowedOrigins</span><span class="o">(</span><span class="s">&#34;*&#34;</span><span class="o">).</span><span class="na">allowedMethods</span><span class="o">(</span><span class="s">&#34;GET&#34;</span><span class="o">,</span> <span class="s">&#34;HEAD&#34;</span><span class="o">,</span> <span class="s">&#34;POST&#34;</span><span class="o">,</span> <span class="s">&#34;PUT&#34;</span><span class="o">,</span> <span class="s">&#34;DELETE&#34;</span><span class="o">,</span> <span class="s">&#34;OPTIONS&#34;</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">allowCredentials</span><span class="o">(</span><span class="kc">true</span><span class="o">).</span><span class="na">maxAge</span><span class="o">(</span><span class="n">3600</span><span class="o">).</span><span class="na">allowedHeaders</span><span class="o">(</span><span class="s">&#34;*&#34;</span><span class="o">);</span>
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">Docket</span> <span class="nf">productApi</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Docket</span><span class="o">(</span><span class="n">DocumentationType</span><span class="o">.</span><span class="na">SWAGGER_2</span><span class="o">).</span><span class="na">select</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">apis</span><span class="o">(</span><span class="n">RequestHandlerSelectors</span><span class="o">.</span><span class="na">basePackage</span><span class="o">(</span><span class="s">&#34;com.jpa.springjpademo&#34;</span><span class="o">)).</span><span class="na">apis</span><span class="o">(</span><span class="n">RequestHandlerSelectors</span><span class="o">.</span><span class="na">any</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">paths</span><span class="o">(</span><span class="n">PathSelectors</span><span class="o">.</span><span class="na">any</span><span class="o">()).</span><span class="na">build</span><span class="o">().</span><span class="na">apiInfo</span><span class="o">(</span><span class="n">apiInfo</span><span class="o">());</span>
     <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="n">ApiInfo</span> <span class="nf">apiInfo</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">Contact</span> <span class="n">contact</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Contact</span><span class="o">(</span><span class="s">&#34;111hunter&#34;</span><span class="o">,</span> <span class="s">&#34;https://111hunter.github.io&#34;</span><span class="o">,</span> <span class="s">&#34;&#34;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">ApiInfoBuilder</span><span class="o">().</span><span class="na">title</span><span class="o">(</span><span class="s">&#34;Spring Boot Restful Api Demo&#34;</span><span class="o">).</span><span class="na">description</span><span class="o">(</span><span class="s">&#34;Spring Boot Restful Api Demo&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">version</span><span class="o">(</span><span class="s">&#34;0.0.1&#34;</span><span class="o">).</span><span class="na">license</span><span class="o">(</span><span class="s">&#34;Apache 2.0&#34;</span><span class="o">).</span><span class="na">licenseUrl</span><span class="o">(</span><span class="s">&#34;http://www.apache.org/licenses/LICENSE-2.0&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">contact</span><span class="o">(</span><span class="n">contact</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+    <span class="o">}</span>
+
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="前端界面">前端界面</h2>
+</div><p>编写完后端代码，启动服务： <code>$ mvn spring-boot:run</code></p>
+<p>浏览器打开 http://localhost:8034/swagger-ui.html</p>
+<h2 id="前端界面">前端界面</h2>
 <h3 id="i-初始化配置">I. 初始化配置</h3>
 <p>先安装好 Vue/cli 工具: <code>$ npm install -g @vue/cli</code></p>
 <p>安装完成后生成 Vue 项目: <code>$ vue create blog-frontend</code></p>
@@ -1536,10 +1572,9 @@ server.port = 8034
 <span class="p">});</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="成果展示">成果展示</h2>
-<p>先到 spring-jpa-demo 文件夹启动后端服务： <code>$ mvn spring-boot:run</code></p>
-<p>再到 blog-frontend 文件夹启动前端服务： <code>$ npm run serve </code></p>
+</div><p>编写完前端代码，启动服务： <code>$ npm run serve </code></p>
 <p>浏览器打开 http://localhost:8080</p>
+<h2 id="成果展示">成果展示</h2>
 <p>pc端展示：</p>
 <div align=center><img src="/img/vue-pc.png" width="80%" alt="仓库图解"></div>
 移动端展示：
