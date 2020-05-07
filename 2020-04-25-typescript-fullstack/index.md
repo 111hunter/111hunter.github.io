@@ -573,6 +573,8 @@ this.store.dispatch(UserActions.login({ user }));
 
 对于 angular, 简单的数据状态，我们可以直接定义在 service 中，通过 DI(依赖注入) 的方式能够很方便地作用到不同的 component 中。这是 angular 比其他前端框架优秀的地方之一。
 
+附：[源码地址](https://github.com/111hunter/ngrx-auth-todo)
+
 **参考资料**
 
  - [NgRx 官方文档](https://ngrx.io/)

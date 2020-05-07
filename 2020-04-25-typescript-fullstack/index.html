@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://example.org/2020-04-10-typeorm/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://example.org/2020-04-10-typeorm/" /><link rel="next" href="http://example.org/2020-05-07-react-hook/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -37,7 +37,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Angular, Rx","wordcount":  4101 ,
+            },"genre": "posts","keywords": "Angular, Rx","wordcount":  4107 ,
         "url": "http:\/\/example.org\/2020-04-25-typescript-fullstack\/","datePublished": "2020-04-25","dateModified": "2020-04-25","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -109,7 +109,7 @@
                                 <i class="far fa-folder fa-fw"></i>Coding
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-04-25>2020-04-25</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 4101 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 4107 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 9 分钟&nbsp;<span id="/2020-04-25-typescript-fullstack/" class="leancloud_visitors" data-flag-title="全栈开发：用 NgRx 和 Nest 写一个 todolist">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -1131,6 +1131,8 @@
 <h3 id="思考">思考</h3>
 <p>看到这里，你会发现，我们绕了一圈做了一件简单的事。但你可以想象，前端框架的组件化开发方式，组件之间的通信基本都是单向数据流，要是没有状态管理，父子组件还好，相隔很远的组件，只能通过一级一级向上传，再一级一级向下传，会更加麻烦。</p>
 <p>对于 angular, 简单的数据状态，我们可以直接定义在 service 中，通过 DI(依赖注入) 的方式能够很方便地作用到不同的 component 中。这是 angular 比其他前端框架优秀的地方之一。</p>
+<p>附：<a href="https://github.com/111hunter/ngrx-auth-todo" target="_blank" rel="noopener noreffer">源码地址</a>
+</p>
 <p><strong>参考资料</strong></p>
 <ul>
 <li><a href="https://ngrx.io/" target="_blank" rel="noopener noreffer">NgRx 官方文档</a>
@@ -1163,7 +1165,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/2020-04-10-typeorm/" class="prev" rel="prev" title="TypeORM 的基本使用"><i class="fas fa-angle-left fa-fw"></i>TypeORM 的基本使用</a></div>
+    <div class="post-nav"><a href="/2020-04-10-typeorm/" class="prev" rel="prev" title="TypeORM 的基本使用"><i class="fas fa-angle-left fa-fw"></i>TypeORM 的基本使用</a>
+            <a href="/2020-05-07-react-hook/" class="next" rel="next" title="Context &#43; Hooks：函数组件状态管理新方案">Context &#43; Hooks：函数组件状态管理新方案<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div class="comment"><div id="valine"></div><script>
             document.addEventListener("DOMContentLoaded", function(event) {

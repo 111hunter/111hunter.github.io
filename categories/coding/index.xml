@@ -6,10 +6,19 @@
     <description>Recent content in coding on 浮槎的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 25 Apr 2020 22:27:41 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2020 16:46:30 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/categories/coding/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Context &#43; Hooks：函数组件状态管理新方案</title>
+      <link>http://example.org/2020-05-07-react-hook/</link>
+      <pubDate>Thu, 07 May 2020 16:46:30 +0800</pubDate>
+      
+      <guid>http://example.org/2020-05-07-react-hook/</guid>
+      <description>React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 React 组件分为两类，class 组件和函数</description>
+    </item>
     
     <item>
       <title>全栈开发：用 NgRx 和 Nest 写一个 todolist</title>
