@@ -408,7 +408,9 @@ export const useCounter = () => {
 ```
 写reducer, 去掉 initialState, 我们已经写在了 useReducer 里, 原因是：
 
-> React 不使用 state = initialState 这一由 Redux 推广开来的参数约定。有时候初始值依赖于 props，因此需要在调用 Hook 时指定。
+{{< admonition >}}
+React 不使用 state = initialState 这一由 Redux 推广开来的参数约定。有时候初始值依赖于 props，因此需要在调用 Hook 时指定。
+{{< /admonition >}}
 
 ```js
 // reducer.js

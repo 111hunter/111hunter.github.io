@@ -37,7 +37,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "React","wordcount":  3242 ,
+            },"genre": "posts","keywords": "React","wordcount":  3244 ,
         "url": "http:\/\/example.org\/2020-05-07-react-hook\/","datePublished": "2020-05-07","dateModified": "2020-05-07","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -109,7 +109,7 @@
                                 <i class="far fa-folder fa-fw"></i>Coding
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-05-07>2020-05-07</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 3242 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 3244 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 7 分钟&nbsp;<span id="/2020-05-07-react-hook/" class="leancloud_visitors" data-flag-title="Context &#43; Hooks：函数组件状态管理新方案">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -890,9 +890,10 @@ OK, 我们的简版 React-redux 就做好了。</p>
 </code></pre></td></tr></table>
 </div>
 </div><p>写reducer, 去掉 initialState, 我们已经写在了 useReducer 里, 原因是：</p>
-<blockquote>
-<p>React 不使用 state = initialState 这一由 Redux 推广开来的参数约定。有时候初始值依赖于 props，因此需要在调用 Hook 时指定。</p>
-</blockquote>
+<div class="admonition note">
+            <p class="admonition-title"><i class="icon fas fa-pencil-alt"></i>注意</p>
+            <div class="admonition-content">React 不使用 state = initialState 这一由 Redux 推广开来的参数约定。有时候初始值依赖于 props，因此需要在调用 Hook 时指定。</div>
+        </div>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
