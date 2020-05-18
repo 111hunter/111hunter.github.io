@@ -6,10 +6,19 @@
     <description>Recent content in React on 浮槎的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 07 May 2020 16:46:30 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 May 2020 00:18:30 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/tags/react/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>写一个可拖拽的 Trello</title>
+      <link>http://example.org/2020-05-18-trello/</link>
+      <pubDate>Mon, 18 May 2020 00:18:30 +0800</pubDate>
+      
+      <guid>http://example.org/2020-05-18-trello/</guid>
+      <description>本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间</description>
+    </item>
     
     <item>
       <title>Context &#43; Hooks：函数组件状态管理新方案</title>

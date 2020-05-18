@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>写一个可拖拽的 Trello | 浮槎的博客</title>
+        <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="写一个可拖拽的 Trello" />
+<meta property="og:description" content="本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2020-05-18-trello/" />
+<meta property="article:published_time" content="2020-05-18T00:18:30+08:00" />
+<meta property="article:modified_time" content="2020-05-18T00:18:30+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="写一个可拖拽的 Trello"/>
+<meta name="twitter:description" content="本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="http://example.org/2020-05-18-trello/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://example.org/2020-05-07-react-hook/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "写一个可拖拽的 Trello",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2020-05-18-trello\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "React","wordcount":  1735 ,
+        "url": "http:\/\/example.org\/2020-05-18-trello\/","datePublished": "2020-05-18","dateModified": "2020-05-18","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "浮槎"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/">浮槎的博客</a>
+        </div>
+        <div class="menu">
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            <span class="menu-item">|</span><a class="menu-item"
+                href="/posts/"  rel="noopener noreffer"
+                >文章</a><a class="menu-item"
+                href="/tags/"  rel="noopener noreffer"
+                >标签</a><a class="menu-item"
+                href="/categories/"  rel="noopener noreffer"
+                >分类</a><a class="menu-item"
+                href="/about/"  rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/">浮槎的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer"
+                >文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer"
+                >标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer"
+                >分类</a><a class="menu-item" href="/about/" title="" rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script><main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">写一个可拖拽的 Trello</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a>
+</span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/coding">
+                                <i class="far fa-folder fa-fw"></i>Coding
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-05-18>2020-05-18</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1735 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 4 分钟&nbsp;<span id="/2020-05-18-trello/" class="leancloud_visitors" data-flag-title="写一个可拖拽的 Trello">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#拖拽库的使用">拖拽库的使用</a></li>
+    <li><a href="#状态管理">状态管理</a></li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间拖放。</p>
+<div align=center><img src="/img/trello.png" width="100%"></div>
+<h2 id="拖拽库的使用">拖拽库的使用</h2>
+<p>react-beautiful-dnd 这个库使用 render-props 完成组件逻辑复用。react-beautiful-dnd 有 3 个主要组件：DragDropContext，Droppable和Draggable。这三者的关系如下：</p>
+<div align=center><img src="/img/react-beautiful-dnd.png" width="50%"></div>
+<p>DragDropContext 表示一个全局拖拽上下文。Droppable 表示可以被拖入的容器，Draggable 是可被拖放的组件。
+DragDropContext 提供了以下三个钩子：</p>
+<ul>
+<li>onDragStart 拖动开始时执行。</li>
+<li>onDragUpdate 拖动过程中的执行。</li>
+<li>onDragEnd 拖拽结束时执行，且 onDragEnd 必须设定。</li>
+</ul>
+<p>我们需要在 Board 组件内建立可拖动范围，则需要这样写：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//Board.js
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">Board</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+
+    <span class="c1">// onDragEnd 需实现
+</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">onDragEnd</span> <span class="o">=</span> <span class="nx">result</span> <span class="p">=&gt;</span> <span class="p">{};</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+       <span class="o">&lt;</span><span class="nx">DragDropContext</span> <span class="nx">onDragEnd</span><span class="o">=</span><span class="p">{</span><span class="nx">onDragEnd</span><span class="p">}</span><span class="o">&gt;</span>
+           <span class="p">...</span>
+       <span class="o">&lt;</span><span class="err">/DragDropContext&gt;</span>
+   <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Droppable：</p>
+<ul>
+<li>Droppable 必须设定 droppableId</li>
+<li>Droppable 使用 render-props 意味着内部须使用一个函数，该函数接收参数 provided 对象, 然后将参数 provided 的属性传递给封装后的可拖放的容器组件</li>
+</ul>
+<p>将 Board 组件建立成可拖放的容器组件，像这样写：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//Board.js
+</span><span class="c1"></span>
+<span class="c1">// 需嵌套在 DragDropContext 内
+</span><span class="c1">// 包裹 List 的容器，List 在 Board 容器内横向拖动
+</span><span class="c1"></span><span class="o">&lt;</span><span class="nx">Droppable</span> <span class="nx">droppableId</span><span class="o">=</span><span class="s1">&#39;all-lists&#39;</span> <span class="nx">direction</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span> <span class="nx">type</span><span class="o">=</span><span class="s1">&#39;list&#39;</span><span class="o">&gt;</span>
+<span class="p">{</span> <span class="nx">provided</span> <span class="p">=&gt;</span> <span class="p">(</span>
+    <span class="c1">// 封装后的可拖放的容器组件
+</span><span class="c1"></span>    <span class="o">&lt;</span><span class="nx">ListContainer</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">innerRef</span><span class="p">}</span>
+    <span class="p">{...</span><span class="nx">provided</span><span class="p">.</span><span class="nx">droppableProps</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="c1">// 遍历所有的 list，将列表数据传递给每个列表
+</span><span class="c1"></span>    <span class="p">{</span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">lists</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">key</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+        <span class="kr">const</span> <span class="nx">listCards</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nx">list</span><span class="p">.</span><span class="nx">cards</span> <span class="o">:</span> <span class="p">[];</span>
+        <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">List</span>
+            <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+            <span class="nx">id</span><span class="o">=</span><span class="p">{</span><span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+            <span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="nx">list</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span>
+            <span class="nx">cards</span><span class="o">=</span><span class="p">{</span><span class="nx">listCards</span><span class="p">}</span>
+            <span class="nx">index</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span>
+        <span class="o">/&gt;</span>
+        <span class="p">);</span>
+    <span class="p">})}</span>
+    <span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">placeholder</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="err">/ListContainer&gt;</span>
+<span class="p">)}</span>
+<span class="o">&lt;</span><span class="err">/Droppable&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Draggable：</p>
+<ul>
+<li>Draggable 必须设定 draggableId，index(由父组件传入)</li>
+<li>Draggable 与 Droppable 一样是 render-props，接收 provided 对象，返回值是封装后的可拖放组件</li>
+</ul>
+<p>将 List 组件建立成可拖放组件，像这样写：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//List.js
+</span><span class="c1"></span>
+<span class="c1">// 设置每个 List 都是可拖动的
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">List</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">cards</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">index</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">Draggable</span> <span class="nx">draggableId</span><span class="o">=</span><span class="p">{</span><span class="nx">id</span><span class="p">}</span> <span class="nx">index</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span> <span class="nx">provided</span>  <span class="p">=&gt;</span> <span class="p">(</span>
+            <span class="c1">// 封装后的可拖放组件
+</span><span class="c1"></span>            <span class="o">&lt;</span><span class="nx">ListContainer</span> 
+            <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">innerRef</span><span class="p">}</span>
+            <span class="p">{...</span><span class="nx">provided</span><span class="p">.</span><span class="nx">draggableProps</span><span class="p">}</span>
+            <span class="c1">// dragHandleProps 绑定的组件 ListContainer 可拖动
+</span><span class="c1"></span>            <span class="p">{...</span><span class="nx">provided</span><span class="p">.</span><span class="nx">dragHandleProps</span><span class="p">}</span><span class="o">&gt;</span> 
+                    <span class="p">...</span>
+            <span class="o">&lt;</span><span class="err">/ListContainer&gt;</span>
+        <span class="p">)}</span>
+        <span class="o">&lt;</span><span class="err">/Draggable&gt;</span>
+    <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>同理设置 Card 组件可在 List 组件内部拖动，先要将 List 内部封装成可拖放的容器，像这样写:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//List.js
+</span><span class="c1"></span>
+<span class="c1">// 需嵌套在 List 组件返回的 ListContainer 内
+</span><span class="c1">// 包裹 Card 的容器，Card 在 List 容器内可拖放
+</span><span class="c1"></span><span class="o">&lt;</span><span class="nx">Droppable</span> <span class="nx">droppableId</span><span class="o">=</span><span class="p">{</span><span class="nx">id</span><span class="p">}</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;card&#34;</span><span class="o">&gt;</span>
+<span class="p">{</span><span class="nx">provided</span> <span class="p">=&gt;</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">CardContainer</span> 
+    <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">innerRef</span><span class="p">}</span>
+    <span class="p">{...</span><span class="nx">provided</span><span class="p">.</span><span class="nx">droppableProps</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="c1">// 遍历每个 List 中所有的卡片，将卡片数据传给每张卡片
+</span><span class="c1"></span>        <span class="p">{</span><span class="nx">cards</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">card</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">Card</span>
+            <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">card</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+            <span class="nx">id</span><span class="o">=</span><span class="p">{</span><span class="nx">card</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+            <span class="nx">text</span><span class="o">=</span><span class="p">{</span><span class="nx">card</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span>
+            <span class="nx">listId</span><span class="o">=</span><span class="p">{</span><span class="nx">id</span><span class="p">}</span>
+            <span class="nx">index</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span>
+            <span class="o">/&gt;</span>
+    <span class="p">))}</span>
+    <span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">placeholder</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="err">/CardContainer&gt;</span>
+<span class="p">)}</span>
+<span class="o">&lt;</span><span class="err">/Droppable&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>将 Card 组件封装成可拖放组件，像这样写:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//Card.js
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">Card</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">text</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">listId</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="p">...</span>
+     <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">Draggable</span> <span class="nx">draggableId</span><span class="o">=</span><span class="p">{</span><span class="nx">id</span><span class="p">}</span> <span class="nx">index</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">provided</span> <span class="p">=&gt;</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">CardContainer</span>
+            <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;card&#39;</span>
+            <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">innerRef</span><span class="p">}</span>
+            <span class="p">{...</span><span class="nx">provided</span><span class="p">.</span><span class="nx">draggableProps</span><span class="p">}</span>
+            <span class="c1">// dragHandleProps 绑定的组件 CardContainer 可拖动
+</span><span class="c1"></span>            <span class="p">{...</span><span class="nx">provided</span><span class="p">.</span><span class="nx">dragHandleProps</span><span class="p">}</span><span class="o">&gt;</span>
+           <span class="o">&lt;</span><span class="err">/CardContainer&gt;</span>
+        <span class="p">)}</span>
+      <span class="o">&lt;</span><span class="err">/Draggable&gt;</span>
+     <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="状态管理">状态管理</h2>
+<p>初始化列表数据:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// morkData.js
+</span><span class="c1"></span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">uuid</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;uuidv4&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">getCard</span> <span class="o">=</span> <span class="nx">text</span> <span class="p">=&gt;</span> <span class="p">({</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nx">uuid</span><span class="p">(),</span>
+    <span class="nx">text</span>
+<span class="p">});</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">ListState</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="nx">uuid</span><span class="p">(),</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;To Do&#39;</span><span class="p">,</span>
+        <span class="nx">cards</span><span class="o">:</span> <span class="p">[</span>
+            <span class="nx">getCard</span><span class="p">(</span><span class="s1">&#39;To do task&#39;</span><span class="p">),</span>
+            <span class="nx">getCard</span><span class="p">(</span><span class="s1">&#39;TO FILTER: To do task&#39;</span><span class="p">),</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="nx">uuid</span><span class="p">(),</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Doing&#39;</span><span class="p">,</span>
+        <span class="nx">cards</span><span class="o">:</span> <span class="p">[</span>
+            <span class="nx">getCard</span><span class="p">(</span><span class="s1">&#39;Doing task&#39;</span><span class="p">),</span>
+            <span class="nx">getCard</span><span class="p">(</span><span class="s1">&#39;TO FILTER: Doing task&#39;</span><span class="p">),</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="nx">uuid</span><span class="p">(),</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Done&#39;</span><span class="p">,</span>
+        <span class="nx">cards</span><span class="o">:</span> <span class="p">[</span>
+            <span class="nx">getCard</span><span class="p">(</span><span class="s1">&#39;Done task&#39;</span><span class="p">),</span>
+            <span class="nx">getCard</span><span class="p">(</span><span class="s1">&#39;TO FILTER: Done task&#39;</span><span class="p">),</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+<span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>记录状态变更用 DragDropContext 上的钩子函数 onDragEnd，onDragEnd 接收一个 result 对象，result 记录了拖拽过程中的状态变化，result 结构如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//action.js
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">draggableId</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// 移动的组件 id
+</span><span class="c1"></span>  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span>
+  <span class="nx">source</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">droppableId</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// 移动前所在的容器 id
+</span><span class="c1"></span>    <span class="nx">index</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> 	<span class="c1">// 组件在移动前的容器内的位置
+</span><span class="c1"></span>  <span class="p">},</span>
+  <span class="nx">destination</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">droppableId</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="c1">// 移动后所在的容器 id
+</span><span class="c1"></span>    <span class="nx">index</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>	<span class="c1">// 组件在移动后的容器内的位置
+</span><span class="c1"></span>  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们需要写拖放组件后的状态变化逻辑，因为我们的列表数据中的 cards 数组发生了变化，但我们还没有把新的状态渲染到 list 组件中，拖放组件后需要重新排序：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//reducer.js
+</span><span class="c1"></span>
+  <span class="kr">const</span> <span class="nx">onDragEnd</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">destination</span><span class="p">,</span> <span class="nx">source</span><span class="p">,</span> <span class="nx">draggableId</span><span class="p">,</span> <span class="nx">type</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">destination</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">dispatch</span><span class="p">(</span>
+        <span class="nx">sort</span><span class="p">(</span>
+          <span class="nx">source</span><span class="p">.</span><span class="nx">droppableId</span><span class="p">,</span> 
+          <span class="nx">destination</span><span class="p">.</span><span class="nx">droppableId</span><span class="p">,</span>
+          <span class="nx">source</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span>
+          <span class="nx">destination</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span>
+          <span class="nx">draggableId</span><span class="p">,</span>
+          <span class="nx">type</span>
+        <span class="p">)</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>action 用 payload 传递接收到的数据：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">sort</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="nx">droppableIdStart</span><span class="p">,</span> 
+  <span class="nx">droppableIdEnd</span><span class="p">,</span> 
+  <span class="nx">droppableIndexStart</span><span class="p">,</span> 
+  <span class="nx">droppableIndexEnd</span><span class="p">,</span>  
+  <span class="nx">draggableId</span><span class="p">,</span>
+  <span class="nx">type</span>
+<span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="nx">CONSTANTS</span><span class="p">.</span><span class="nx">DRAGGED</span><span class="p">,</span> <span class="c1">// 动作是拖放，可能是列表，也可能是卡片
+</span><span class="c1"></span>    <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">droppableIdStart</span><span class="p">,</span> <span class="c1">//开始时所在的 containerId
+</span><span class="c1"></span>      <span class="nx">droppableIdEnd</span><span class="p">,</span> <span class="c1">//结束时所在的 containerId
+</span><span class="c1"></span>      <span class="nx">droppableIndexStart</span><span class="p">,</span> <span class="c1">//结束时所在的 containerId
+</span><span class="c1"></span>      <span class="nx">droppableIndexEnd</span><span class="p">,</span> <span class="c1">//结束时所在的 container 里的 index
+</span><span class="c1"></span>      <span class="nx">draggableId</span><span class="p">,</span>  <span class="c1">// 移动的组件 id
+</span><span class="c1"></span>      <span class="nx">type</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>reducer 实现状态变化逻辑并返回新状态：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js">    <span class="k">case</span> <span class="nx">CONSTANTS</span><span class="p">.</span><span class="nx">DRAGGED</span><span class="o">:</span> <span class="p">{</span> <span class="c1">// 当完成拖放动作时 
+</span><span class="c1"></span>      <span class="kr">const</span> <span class="p">{</span>
+        <span class="nx">droppableIdStart</span><span class="p">,</span> 
+        <span class="nx">droppableIdEnd</span><span class="p">,</span>   
+        <span class="nx">droppableIndexStart</span><span class="p">,</span> 
+        <span class="nx">droppableIndexEnd</span><span class="p">,</span>  
+        <span class="nx">type</span>
+      <span class="p">}</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
+
+      <span class="kr">const</span> <span class="nx">newState</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">state</span><span class="p">];</span>
+	  <span class="c1">// 如果移动的是列表
+</span><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">===</span> <span class="s1">&#39;list&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">newState</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexStart</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="nx">newState</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexEnd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">...</span><span class="nx">list</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Drag list&#39;</span><span class="p">,</span> <span class="nx">newState</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">newState</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c1">// 在一个列表中移动卡片次序
+</span><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="nx">droppableIdStart</span> <span class="o">===</span> <span class="nx">droppableIdEnd</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">list</span> <span class="p">=&gt;</span> <span class="nx">droppableIdStart</span> <span class="o">===</span> <span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+        <span class="kr">const</span> <span class="nx">card</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexStart</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="nx">list</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexEnd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">...</span><span class="nx">card</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+	  <span class="c1">// 在不同列表之间移动卡片
+</span><span class="c1"></span>        <span class="kr">const</span> <span class="nx">startList</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">list</span> <span class="p">=&gt;</span> <span class="nx">droppableIdStart</span> <span class="o">===</span> <span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+        <span class="kr">const</span> <span class="nx">endList</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">list</span> <span class="p">=&gt;</span> <span class="nx">droppableIdEnd</span> <span class="o">===</span> <span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+
+        <span class="kr">const</span> <span class="nx">card</span> <span class="o">=</span> <span class="nx">startList</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexStart</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="nx">endList</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexEnd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">...</span><span class="nx">card</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Drag card&#39;</span><span class="p">,</span> <span class="nx">newState</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">newState</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这样就实现了移动列表和移动卡片的状态变化逻辑，剩下的列表和卡片的增删改查的状态变化逻辑的实现就比较容易了。</p>
+<p>附：<a href="https://github.com/111hunter/simple-trello" target="_blank" rel="noopener noreffer">源码地址</a>
+</p>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://andyyou.github.io/2019/06/04/react-beautiful-dnd-quick-note/" target="_blank" rel="noopener noreffer">React Beautiful Dnd 快速使用筆記</a>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-05-18 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2020-05-18-trello/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-05-18-trello/" data-title="写一个可拖拽的 Trello" data-hashtags="React"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-05-18-trello/" data-hashtag="React"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-05-18-trello/" data-title="写一个可拖拽的 Trello"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-05-18-trello/" data-title="写一个可拖拽的 Trello"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/react">React</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020-05-07-react-hook/" class="prev" rel="prev" title="Context &#43; Hooks：函数组件状态管理新方案"><i class="fas fa-angle-left fa-fw"></i>Context &#43; Hooks：函数组件状态管理新方案</a></div>
+</div>
+<div class="comment"><div id="valine"></div><script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                new Valine({
+                    el: '#valine',
+                    appId: 'GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz',
+                    appKey: 'gK3L6a7r80578qujBez4FH6C',placeholder: '欢迎留言和转载！',avatar: 'mm',pageSize: 10,lang: 'en',visitor: true,recordIP: true,});
+            });
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
+        </noscript></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/valine/valine.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/valine/Valine.min.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
+</html>
