@@ -37,7 +37,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "React","wordcount":  1735 ,
+            },"genre": "posts","keywords": "React","wordcount":  1738 ,
         "url": "http:\/\/example.org\/2020-05-18-trello\/","datePublished": "2020-05-18","dateModified": "2020-05-18","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -109,7 +109,7 @@
                                 <i class="far fa-folder fa-fw"></i>Coding
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-05-18>2020-05-18</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 1735 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1738 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 4 分钟&nbsp;<span id="/2020-05-18-trello/" class="leancloud_visitors" data-flag-title="写一个可拖拽的 Trello">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -484,13 +484,9 @@ DragDropContext 提供了以下三个钩子：</p>
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//action.js
-</span><span class="c1"></span>
-<span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">{</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">draggableId</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// 移动的组件 id
 </span><span class="c1"></span>  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span>
   <span class="nx">source</span><span class="o">:</span> <span class="p">{</span>
@@ -525,9 +521,9 @@ DragDropContext 提供了以下三个钩子：</p>
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//reducer.js
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//Board.js
 </span><span class="c1"></span>
-  <span class="kr">const</span> <span class="nx">onDragEnd</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">destination</span><span class="p">,</span> <span class="nx">source</span><span class="p">,</span> <span class="nx">draggableId</span><span class="p">,</span> <span class="nx">type</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">onDragEnd</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">draggableId</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">source</span><span class="p">,</span> <span class="nx">destination</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">destination</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">dispatch</span><span class="p">(</span>
         <span class="nx">sort</span><span class="p">(</span>
@@ -567,9 +563,13 @@ DragDropContext 提供了以下三个钩子：</p>
 </span><span class="lnt">19
 </span><span class="lnt">20
 </span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">sort</span> <span class="o">=</span> <span class="p">(</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//action.js
+</span><span class="c1"></span>
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">sort</span> <span class="o">=</span> <span class="p">(</span>
   <span class="nx">droppableIdStart</span><span class="p">,</span> 
   <span class="nx">droppableIdEnd</span><span class="p">,</span> 
   <span class="nx">droppableIndexStart</span><span class="p">,</span> 
@@ -628,41 +628,45 @@ DragDropContext 提供了以下三个钩子：</p>
 </span><span class="lnt">31
 </span><span class="lnt">32
 </span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js">    <span class="k">case</span> <span class="nx">CONSTANTS</span><span class="p">.</span><span class="nx">DRAGGED</span><span class="o">:</span> <span class="p">{</span> <span class="c1">// 当完成拖放动作时 
-</span><span class="c1"></span>      <span class="kr">const</span> <span class="p">{</span>
-        <span class="nx">droppableIdStart</span><span class="p">,</span> 
-        <span class="nx">droppableIdEnd</span><span class="p">,</span>   
-        <span class="nx">droppableIndexStart</span><span class="p">,</span> 
-        <span class="nx">droppableIndexEnd</span><span class="p">,</span>  
-        <span class="nx">type</span>
-      <span class="p">}</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//reducer.js
+</span><span class="c1"></span>
+<span class="k">case</span> <span class="nx">CONSTANTS</span><span class="p">.</span><span class="nx">DRAGGED</span><span class="o">:</span> <span class="p">{</span> <span class="c1">// 当完成拖放动作时 
+</span><span class="c1"></span>    <span class="kr">const</span> <span class="p">{</span>
+    <span class="nx">droppableIdStart</span><span class="p">,</span> 
+    <span class="nx">droppableIdEnd</span><span class="p">,</span>   
+    <span class="nx">droppableIndexStart</span><span class="p">,</span> 
+    <span class="nx">droppableIndexEnd</span><span class="p">,</span>  
+    <span class="nx">type</span>
+    <span class="p">}</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
 
-      <span class="kr">const</span> <span class="nx">newState</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">state</span><span class="p">];</span>
-	  <span class="c1">// 如果移动的是列表
-</span><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">===</span> <span class="s1">&#39;list&#39;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">newState</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexStart</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-        <span class="nx">newState</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexEnd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">...</span><span class="nx">list</span><span class="p">);</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Drag list&#39;</span><span class="p">,</span> <span class="nx">newState</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nx">newState</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="c1">// 在一个列表中移动卡片次序
-</span><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="nx">droppableIdStart</span> <span class="o">===</span> <span class="nx">droppableIdEnd</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">list</span> <span class="p">=&gt;</span> <span class="nx">droppableIdStart</span> <span class="o">===</span> <span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-        <span class="kr">const</span> <span class="nx">card</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexStart</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-        <span class="nx">list</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexEnd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">...</span><span class="nx">card</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-	  <span class="c1">// 在不同列表之间移动卡片
-</span><span class="c1"></span>        <span class="kr">const</span> <span class="nx">startList</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">list</span> <span class="p">=&gt;</span> <span class="nx">droppableIdStart</span> <span class="o">===</span> <span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-        <span class="kr">const</span> <span class="nx">endList</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">list</span> <span class="p">=&gt;</span> <span class="nx">droppableIdEnd</span> <span class="o">===</span> <span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-
-        <span class="kr">const</span> <span class="nx">card</span> <span class="o">=</span> <span class="nx">startList</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexStart</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-        <span class="nx">endList</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexEnd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">...</span><span class="nx">card</span><span class="p">);</span>
-      <span class="p">}</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Drag card&#39;</span><span class="p">,</span> <span class="nx">newState</span><span class="p">);</span>
-      <span class="k">return</span> <span class="nx">newState</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">newState</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">state</span><span class="p">];</span>
+    <span class="c1">// 如果移动的是列表
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">===</span> <span class="s1">&#39;list&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">newState</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexStart</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="nx">newState</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexEnd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">...</span><span class="nx">list</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Drag list&#39;</span><span class="p">,</span> <span class="nx">newState</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">newState</span><span class="p">;</span>
     <span class="p">}</span>
+    <span class="c1">// 在一个列表中移动卡片次序
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">droppableIdStart</span> <span class="o">===</span> <span class="nx">droppableIdEnd</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">list</span> <span class="p">=&gt;</span> <span class="nx">droppableIdStart</span> <span class="o">===</span> <span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">card</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexStart</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="nx">list</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexEnd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">...</span><span class="nx">card</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// 在不同列表之间移动卡片
+</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">startList</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">list</span> <span class="p">=&gt;</span> <span class="nx">droppableIdStart</span> <span class="o">===</span> <span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">endList</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">list</span> <span class="p">=&gt;</span> <span class="nx">droppableIdEnd</span> <span class="o">===</span> <span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+
+    <span class="kr">const</span> <span class="nx">card</span> <span class="o">=</span> <span class="nx">startList</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexStart</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="nx">endList</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexEnd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">...</span><span class="nx">card</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Drag card&#39;</span><span class="p">,</span> <span class="nx">newState</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">newState</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>这样就实现了移动列表和移动卡片的状态变化逻辑，剩下的列表和卡片的增删改查的状态变化逻辑的实现就比较容易了。</p>

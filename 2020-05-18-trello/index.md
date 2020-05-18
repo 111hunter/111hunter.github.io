@@ -186,8 +186,6 @@ export const ListState = [
 ```
 记录状态变更用 DragDropContext 上的钩子函数 onDragEnd，onDragEnd 接收一个 result 对象，result 记录了拖拽过程中的状态变化，result 结构如下：
 ```js
-//action.js
-
 const result = {
   draggableId: 1, // 移动的组件 id
   type: 'list',
@@ -203,9 +201,9 @@ const result = {
 ```
 我们需要写拖放组件后的状态变化逻辑，因为我们的列表数据中的 cards 数组发生了变化，但我们还没有把新的状态渲染到 list 组件中，拖放组件后需要重新排序：
 ```js
-//reducer.js
+//Board.js
 
-  const onDragEnd = ({ destination, source, draggableId, type }) => {
+  const onDragEnd = ({ draggableId, type, source, destination }) => {
     if (destination) {
       dispatch(
         sort(
@@ -222,6 +220,8 @@ const result = {
 ```
 action 用 payload 传递接收到的数据：
 ```js
+//action.js
+
 export const sort = (
   droppableIdStart, 
   droppableIdEnd, 
@@ -246,39 +246,41 @@ export const sort = (
 ```
 reducer 实现状态变化逻辑并返回新状态：
 ```js
-    case CONSTANTS.DRAGGED: { // 当完成拖放动作时 
-      const {
-        droppableIdStart, 
-        droppableIdEnd,   
-        droppableIndexStart, 
-        droppableIndexEnd,  
-        type
-      } = action.payload;
+//reducer.js
 
-      const newState = [...state];
-	  // 如果移动的是列表
-      if (type === 'list') {
-        const list = newState.splice(droppableIndexStart, 1);
-        newState.splice(droppableIndexEnd, 0, ...list);
-        console.log('Drag list', newState);
-        return newState;
-      }
-      // 在一个列表中移动卡片次序
-      if (droppableIdStart === droppableIdEnd) {
-        const list = state.find(list => droppableIdStart === list.id);
-        const card = list.cards.splice(droppableIndexStart, 1);
-        list.cards.splice(droppableIndexEnd, 0, ...card);
-      } else {
-	  // 在不同列表之间移动卡片
-        const startList = state.find(list => droppableIdStart === list.id);
-        const endList = state.find(list => droppableIdEnd === list.id);
+case CONSTANTS.DRAGGED: { // 当完成拖放动作时 
+    const {
+    droppableIdStart, 
+    droppableIdEnd,   
+    droppableIndexStart, 
+    droppableIndexEnd,  
+    type
+    } = action.payload;
 
-        const card = startList.cards.splice(droppableIndexStart, 1);
-        endList.cards.splice(droppableIndexEnd, 0, ...card);
-      }
-      console.log('Drag card', newState);
-      return newState;
+    const newState = [...state];
+    // 如果移动的是列表
+    if (type === 'list') {
+    const list = newState.splice(droppableIndexStart, 1);
+    newState.splice(droppableIndexEnd, 0, ...list);
+    console.log('Drag list', newState);
+    return newState;
     }
+    // 在一个列表中移动卡片次序
+    if (droppableIdStart === droppableIdEnd) {
+    const list = state.find(list => droppableIdStart === list.id);
+    const card = list.cards.splice(droppableIndexStart, 1);
+    list.cards.splice(droppableIndexEnd, 0, ...card);
+    } else {
+    // 在不同列表之间移动卡片
+    const startList = state.find(list => droppableIdStart === list.id);
+    const endList = state.find(list => droppableIdEnd === list.id);
+
+    const card = startList.cards.splice(droppableIndexStart, 1);
+    endList.cards.splice(droppableIndexEnd, 0, ...card);
+    }
+    console.log('Drag card', newState);
+    return newState;
+}
 ```
 这样就实现了移动列表和移动卡片的状态变化逻辑，剩下的列表和卡片的增删改查的状态变化逻辑的实现就比较容易了。
 
