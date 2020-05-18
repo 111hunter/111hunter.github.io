@@ -37,7 +37,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "React","wordcount":  1738 ,
+            },"genre": "posts","keywords": "React","wordcount":  1757 ,
         "url": "http:\/\/example.org\/2020-05-18-trello\/","datePublished": "2020-05-18","dateModified": "2020-05-18","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -109,7 +109,7 @@
                                 <i class="far fa-folder fa-fw"></i>Coding
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-05-18>2020-05-18</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 1738 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1757 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 4 分钟&nbsp;<span id="/2020-05-18-trello/" class="leancloud_visitors" data-flag-title="写一个可拖拽的 Trello">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -500,7 +500,7 @@ DragDropContext 提供了以下三个钩子：</p>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>我们需要写拖放组件后的状态变化逻辑，因为我们的列表数据中的 cards 数组发生了变化，但我们还没有把新的状态渲染到 list 组件中，拖放组件后需要重新排序：</p>
+</div><p>我们需要写拖放组件后的状态变化逻辑，因为我们的列表数据中的 cards 数组发生了变化，但我们还没有把新的状态渲染到 list 组件中，拖放组件后需要重新排序，现在去实现在 Board 组件中定义的 onDragEnd 钩子函数：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
