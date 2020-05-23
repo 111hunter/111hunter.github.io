@@ -1,7 +1,7 @@
 # 写一个可拖拽的 Trello
 
 
-本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间拖放。
+本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间拖放。左上方的搜索框能够搜索筛选卡片，右上方的按钮能够实现撤销回退功能。
 
 <div align=center><img src="/img/trello.png" width="100%"></div>
 
@@ -20,7 +20,7 @@ DragDropContext 提供了以下三个钩子：
  
 我们需要在 Board 组件内建立可拖动范围，则需要这样写：
  ```js
- //Board.js
+ // components/Board.js
 
  const Board = () => {
 
@@ -40,7 +40,7 @@ Droppable：
 
 将 Board 组件建立成可拖放的容器组件，像这样写：
 ```js
-//Board.js
+// components/Board.js
 
 // 需嵌套在 DragDropContext 内
 // 包裹 List 的容器，List 在 Board 容器内横向拖动
@@ -49,7 +49,7 @@ Droppable：
     // 封装后的可拖放的容器组件
     <ListContainer ref={provided.innerRef}
     {...provided.droppableProps}>
-    // 遍历所有的 list，将列表数据传递给每个列表
+    // 遍历所有的列表，将列表数据传递给每个列表
     {Object.keys(lists).map((key, index) => {
         const list = lists[key];
         const listCards = list.cards.length > 0 ? list.cards : [];
@@ -75,7 +75,7 @@ Draggable：
 
 将 List 组件建立成可拖放组件，像这样写：
 ```js
-//List.js
+// components/List.js
 
 // 设置每个 List 都是可拖动的
 const List = ({ id, title, cards = [], index }) => {
@@ -99,7 +99,7 @@ const List = ({ id, title, cards = [], index }) => {
 
 同理设置 Card 组件可在 List 组件内部拖动，先要将 List 内部封装成可拖放的容器，像这样写:
 ```js
-//List.js
+// components/List.js
 
 // 需嵌套在 List 组件返回的 ListContainer 内
 // 包裹 Card 的容器，Card 在 List 容器内可拖放
@@ -125,7 +125,7 @@ const List = ({ id, title, cards = [], index }) => {
 ```
 将 Card 组件封装成可拖放组件，像这样写:
 ```js
-//Card.js
+// components/Card.js
 
 const Card = ({ id, text, index, listId }) => {
     ...
@@ -201,7 +201,7 @@ const result = {
 ```
 我们需要写拖放组件后的状态变化逻辑，因为我们的列表数据中的 cards 数组发生了变化，但我们还没有把新的状态渲染到 list 组件中，拖放组件后需要重新排序，现在去实现在 Board 组件中定义的 onDragEnd 钩子函数：
 ```js
-//Board.js
+// components/Board.js
 
   const onDragEnd = ({ draggableId, type, source, destination }) => {
     if (destination) {
@@ -220,7 +220,11 @@ const result = {
 ```
 action 用 payload 传递接收到的数据：
 ```js
-//action.js
+// actions/listActions.js
+
+import { CONSTANTS } from '.';
+
+...
 
 export const sort = (
   droppableIdStart, 
@@ -233,10 +237,10 @@ export const sort = (
   return {
     type: CONSTANTS.DRAGGED, // 动作是拖放，可能是列表，也可能是卡片
     payload: {
-      droppableIdStart, //开始时所在的 containerId
-      droppableIdEnd, //结束时所在的 containerId
-      droppableIndexStart, //结束时所在的 containerId
-      droppableIndexEnd, //结束时所在的 container 里的 index
+      droppableIdStart, //开始时所在的 container id
+      droppableIdEnd, //结束时所在的 container id
+      droppableIndexStart, //开始所在 container 里的索引
+      droppableIndexEnd, //结束时所在的 container 里的索引
       draggableId,  // 移动的组件 id
       type
     }
@@ -244,45 +248,186 @@ export const sort = (
 };
 
 ```
-reducer 实现状态变化逻辑并返回新状态：
+reducer 实现状态变化逻辑并返回新状态，始终**用新状态替换原来的状态**，不要直接在原来的对象上操作，因为我们将会对每个状态做记录，这有利于我们实现撤销回退功能。
 ```js
-//reducer.js
+// reducers/listReducer.js
 
-case CONSTANTS.DRAGGED: { // 当完成拖放动作时 
-    const {
-    droppableIdStart, 
-    droppableIdEnd,   
-    droppableIndexStart, 
-    droppableIndexEnd,  
+case CONSTANTS.DRAGGED: {  // 当完成拖放动作时
+  const {
+    droppableIdStart,
+    droppableIdEnd,  
+    droppableIndexStart,
+    droppableIndexEnd,
     type
-    } = action.payload;
+  } = action.payload;
 
-    const newState = [...state];
-    // 如果移动的是列表
-    if (type === 'list') {
-    const list = newState.splice(droppableIndexStart, 1);
-    newState.splice(droppableIndexEnd, 0, ...list);
+  const newState = [...state];                  //深拷贝不改变原列表
+  if (type === 'list') {
+    const moveList = newState.splice(droppableIndexStart, 1);
+    newState.splice(droppableIndexEnd, 0, ...moveList);
     console.log('Drag list', newState);
     return newState;
-    }
-    // 在一个列表中移动卡片次序
-    if (droppableIdStart === droppableIdEnd) {
-    const list = state.find(list => droppableIdStart === list.id);
-    const card = list.cards.splice(droppableIndexStart, 1);
-    list.cards.splice(droppableIndexEnd, 0, ...card);
-    } else {
-    // 在不同列表之间移动卡片
-    const startList = state.find(list => droppableIdStart === list.id);
-    const endList = state.find(list => droppableIdEnd === list.id);
+  }
 
-    const card = startList.cards.splice(droppableIndexStart, 1);
-    endList.cards.splice(droppableIndexEnd, 0, ...card);
-    }
-    console.log('Drag card', newState);
-    return newState;
+  const sourceListIndex = newState.findIndex(list => droppableIdStart === list.id);
+  const sourceList = newState[sourceListIndex];
+  const sourceCards = [...sourceList.cards];    //深拷贝不改变原数组
+  const moveCard = sourceCards.splice(droppableIndexStart, 1);
+
+  if (droppableIdStart !== droppableIdEnd) {    //不同列之间移动卡片
+    const destinationListIndex = newState.findIndex(list => droppableIdEnd === list.id);
+    const destinationList = newState[destinationListIndex];
+    const destinationCards = [...destinationList.cards];
+    destinationCards.splice(droppableIndexEnd, 0, ...moveCard);
+    newState[destinationListIndex] = {
+      ...newState[destinationListIndex],
+      cards: destinationCards
+    };
+  } else {                                      //同列中改变卡片次序
+    sourceCards.splice(droppableIndexEnd, 0, ...moveCard);
+  }
+  newState[sourceListIndex] = {
+    ...newState[sourceListIndex],
+    cards: sourceCards
+  };
+  console.log('Drag card', newState);
+  return newState;
 }
 ```
 这样就实现了移动列表和移动卡片的状态变化逻辑，剩下的列表和卡片的增删改查的状态变化逻辑的实现就比较容易了。
+
+## 搜索卡片
+
+在界面上实现卡片的搜索功能，实际上就是实现筛选卡片功能。我们已经在每个 List 组件中遍历其中的 Card，筛选功能就是每个 List 组件根据搜索框的输入内容选择性的遍历 Card，修改 List 组件如下：
+```js
+// components/List.js
+
+...
+
+<Droppable droppableId={String(id)} type="card">
+{(provided, snapshot) => (
+  <CardListContainer ref={provided.innerRef}
+	isDraggingOver={snapshot.isDraggingOver}
+	{...provided.droppableProps}>
+	// 筛选出每个 List 中符合搜索条件的 cards
+	{getFilteredCards(cards, searchText).map((card, index) => (
+	  <Card
+		key={card.id}
+		id={card.id}
+		text={card.text}
+		listId={id}
+		index={index}
+	  />
+	))}
+	{provided.placeholder}
+  </CardListContainer>
+)}
+</Droppable>
+```
+实现其中的 getFilteredCards 方法：
+```js
+const getFilteredCards = (cards, searchText) => {
+  if (searchText) {
+    console.log(searchText);
+    return cards.filter(card => card.text.toLowerCase().includes(searchText.toLowerCase()));
+  }
+  return cards;
+};
+```
+## 撤销回退功能
+
+我实现撤销回退功能的方法是自定义一个钩子函数，监听 reducer 的变化并做记录，原本创建 store 时需要导出的 reducer 如下：
+
+```js
+// reducers/index.js
+
+const rootReducer = combineReducers({
+  lists: listReducer,
+  ...
+});
+
+export default rootReducer;
+```
+combineReducers 接收值为 reducer 的对象作为参数，我们只要实现一个返回值为 reducer 的钩子函数就行：
+```js
+const rootReducer = combineReducers({
+  board: stateEnhancer(listReducer),
+  ...
+});
+
+export default rootReducer;
+```
+board 对应的值是将 listReducer 封装后的新 reducer，这样每次调用 listReducer 时也会调用 stateEnhancer，因为函数的参数发生了变化，函数就会重新执行。
+
+```js
+// reducers/stateEnhancer.js
+
+import { CONSTANTS } from '../actions';
+
+const stateEnhancer = reducer => {
+  const initialState = {
+    previousStates: [],
+    currentState: reducer(undefined, {}), // currentState 取 reducer 的返回值
+    futureStates: []
+  };
+
+  // 调用 reducer 时就会调用 stateEnhancer, 并返回封装后的 reducer
+  return (state = initialState, action) => {
+    // console.log(state.currentState);
+    const { previousStates, currentState, futureStates } = state;
+    switch (action.type) {
+      case CONSTANTS.UNDO_ACTION:
+        const previous = previousStates[previousStates.length - 1];
+        const newPreviousStates = previousStates.slice(0, previousStates.length - 1);
+        return {
+          previousStates: newPreviousStates,
+          currentState: previous,
+          futureStates: [currentState, ...futureStates]
+        };
+      case CONSTANTS.REDO_ACTION:
+        const next = futureStates[0];
+        const newFutureStates = futureStates.slice(1);
+        return {
+          previousStates: [...previousStates, currentState],
+          currentState: next,
+          futureStates: newFutureStates
+        };
+      default:
+        const newCurrentState = reducer(currentState, action);
+        if (currentState === newCurrentState) {   //初始化列表
+          console.log('init');
+          return state;
+        }
+        if (currentState) {                      // 列表变化时
+          console.log('list change');
+          return {
+            previousStates: [...(previousStates || []), currentState],
+            currentState: newCurrentState,
+            futureStates: []
+          };
+        }
+        return {                   // 防止 currentState 为 null
+          previousStates: [...(previousStates || [])],
+          currentState: newCurrentState,
+          futureStates: []
+        };
+    }
+  };
+};
+
+export default stateEnhancer;
+
+```
+我们用了三个数组记录 listReducer 的变化，按下撤销或者回退功能按钮时，就能在不同的 listReducer 之间切换。并且我们可以根据 previousStates， futureStates 是否为空来判断撤销，回退按钮是否可用：
+```jsx
+<DoBtn onClick={undo} disabled={previousStates.length === 0} className='btn'>
+  <i className="fas fa-undo"></i>
+</DoBtn>
+<DoBtn onClick={redo} disabled={futureStates.length === 0} className='btn' >
+  <i className="fas fa-redo"></i>
+</DoBtn>
+```
+
 
 附：[源码地址](https://github.com/111hunter/simple-trello)
 
