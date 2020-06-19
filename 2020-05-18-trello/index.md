@@ -336,7 +336,7 @@ const getFilteredCards = (cards, searchText) => {
 ```
 ## 撤销回退功能
 
-我实现撤销回退功能的方法是自定义一个钩子函数，监听 reducer 的变化并做记录，原本创建 store 时需要导出的 reducer 如下：
+我实现撤销回退功能的方法是自定义一个钩子函数，监听 listReducer 的变化并做记录，原本创建 store 时需要导出的 reducer 如下：
 
 ```js
 // reducers/index.js
