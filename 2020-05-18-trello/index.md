@@ -428,7 +428,6 @@ export default stateEnhancer;
 </DoBtn>
 ```
 
-
 附：[源码地址](https://github.com/111hunter/simple-trello)
 
 **参考资料**

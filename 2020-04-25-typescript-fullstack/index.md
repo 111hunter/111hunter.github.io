@@ -1,11 +1,13 @@
-# 全栈开发：用 NgRx 和 Nest 写一个 todolist
+# 用 NgRx 和 Nest 写一个全栈 todolist
 
 
 本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。如果你对状态管理以及权限验证没有概念，可以自行百度或者看我之前写过的文章。
 
 ## 后端开发
 
-后端开发使用 Nest.js 框架，本次实践是重前端的，因此后端会做得简单一些。后端是在上一次鉴权认证的代码做部分修改。如果有不懂的代码，可以参考之前的[文章](https://111hunter.github.io/2020-03-29-nest-auth/)。此部分的讲解略过。
+后端开发使用 Nest.js 框架，本次实践是重前端的，因此后端会做得简单一些。后端是在上一次鉴权认证的代码做部分修改。如果有不懂的代码，可以参考之前的[文章](https://111hunter.github.io/2020-03-29-nest-auth/)。此部分的讲解略过。这是后端部分生成的 swagger 接口文档:
+
+<div align=center><img src="/img/app-docs.png" width="80%"></div>
 
 ## 前端开发
 

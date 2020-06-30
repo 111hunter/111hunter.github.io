@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>antd &#43; ts 的简单 demo | 浮槎的博客</title>
+        <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="antd &#43; ts 的简单 demo" />
+<meta property="og:description" content="这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2020-06-30-antd/" />
+<meta property="article:published_time" content="2020-06-30T00:15:00+08:00" />
+<meta property="article:modified_time" content="2020-06-30T00:15:00+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="antd &#43; ts 的简单 demo"/>
+<meta name="twitter:description" content="这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="http://example.org/2020-06-30-antd/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://example.org/2020-06-18-forum/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "antd \x2b ts 的简单 demo",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2020-06-30-antd\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "React","wordcount":  1711 ,
+        "url": "http:\/\/example.org\/2020-06-30-antd\/","datePublished": "2020-06-30","dateModified": "2020-06-30","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "浮槎"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/">浮槎的博客</a>
+        </div>
+        <div class="menu">
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            <span class="menu-item">|</span><a class="menu-item"
+                href="/posts/"  rel="noopener noreffer"
+                >文章</a><a class="menu-item"
+                href="/tags/"  rel="noopener noreffer"
+                >标签</a><a class="menu-item"
+                href="/categories/"  rel="noopener noreffer"
+                >分类</a><a class="menu-item"
+                href="/about/"  rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/">浮槎的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer"
+                >文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer"
+                >标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer"
+                >分类</a><a class="menu-item" href="/about/" title="" rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script><main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">antd &#43; ts 的简单 demo</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a>
+</span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/coding">
+                                <i class="far fa-folder fa-fw"></i>Coding
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-06-30>2020-06-30</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1711 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 4 分钟&nbsp;<span id="/2020-06-30-antd/" class="leancloud_visitors" data-flag-title="antd &#43; ts 的简单 demo">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#定义数据模型">定义数据模型</a></li>
+    <li><a href="#状态提升">状态提升</a></li>
+    <li><a href="#列表的增删改查">列表的增删改查</a></li>
+    <li><a href="#实现搜索功能">实现搜索功能</a></li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码中暂时还没有实现数据持久化，状态管理等，只是把页面上能够看到的功能实现了。后续我将尝试其他的数据流管理方案。</p>
+<p>页面长这样，响应 pc 端，移动端:</p>
+<div style="display: flex; justify-content: space-evenly; align-items: center;"><img src="/img/antd-pc.png" style="width:58%;"><img src="/img/antd-mo.png" style="width:28%;"></div>
+<p>页面上有一个搜索框，过滤列表项。点击添加按钮，弹出会话框，添加列表数据。下面是三个标签选项，点击不同的标签显示不同的列表内容。列表中每一项中的三个图标分别实现的是编辑数据，修改完成状态和删除这一项的功能。</p>
+<p>这个 todolist 实例只实现了 Todo，ModalForm(对话框)，TodoList(标签选项下的列表) 组件。ModalForm，TodoList 是 Todo 的子组件。这三个组件就足够完成上述的功能了。</p>
+<h2 id="定义数据模型">定义数据模型</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">ITodo</span> <span class="p">{</span>
+    <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+    <span class="nx">text</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">done</span>: <span class="kt">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="状态提升">状态提升</h2>
+<p>由于没有引入 redux 状态管理库，为了方便组件间的数据传递，一个比较好的做法是将多个组件需要共享的状态提升到它们最近的父组件上(状态提升)。这里的父组件是 Todo 组件。</p>
+<p>需要共享的状态有：</p>
+<ul>
+<li>1.编辑 TodoList 组件中的 todo 时，需要让对话框显示(showModal)</li>
+<li>2.编辑 TodoList 组件中的 todo 时，弹出的对话框需要获得 todo.id(todoId)</li>
+<li>3.根据弹出对话框的位置，决定对话框的标题(modalTitle)</li>
+</ul>
+<p>先在 Todo 组件中定义需要共享的数据字段：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// Todo.ts
+</span><span class="c1"></span><span class="kr">const</span> <span class="p">[</span><span class="nx">showModal</span><span class="p">,</span> <span class="nx">setShowModal</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">todoId</span><span class="p">,</span> <span class="nx">setTodoId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> 
+<span class="kr">const</span> <span class="p">[</span><span class="nx">modalTitle</span><span class="p">,</span> <span class="nx">setModalTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>弹出的对话框可能是添加或编辑 todo：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">ModalType</span> <span class="p">{</span>
+    <span class="nx">Edit</span> <span class="o">=</span> <span class="s1">&#39;EDIT&#39;</span><span class="p">,</span>
+    <span class="nx">Add</span> <span class="o">=</span> <span class="s1">&#39;ADD&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>根据弹出对话框的位置决定对话框标题:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// Todo.ts
+</span><span class="c1"></span>
+    <span class="kr">const</span> <span class="nx">onShowModal</span> <span class="o">=</span> <span class="p">(</span><span class="nx">type</span>: <span class="kt">ModalType</span><span class="p">,</span> <span class="nx">id?</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">===</span> <span class="nx">ModalType</span><span class="p">.</span><span class="nx">Add</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">setModalTitle</span><span class="p">(</span><span class="s1">&#39;添加任务&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">===</span> <span class="nx">ModalType</span><span class="p">.</span><span class="nx">Edit</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">setModalTitle</span><span class="p">(</span><span class="s1">&#39;编辑任务&#39;</span><span class="p">);</span>
+            <span class="nx">setTodoId</span><span class="p">(</span><span class="nx">id</span><span class="o">!</span><span class="p">);</span> <span class="c1">//记录 TodoList 组件传递的 todoId
+</span><span class="c1"></span>        <span class="p">}</span>
+        <span class="nx">setShowModal</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果是在 Todo 组件的添加按钮:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">//Todo.ts
+</span><span class="c1"></span>
+<span class="o">&lt;</span><span class="nx">Button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;primary&#34;</span>
+    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">newTodo</span><span class="p">}</span>
+    <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">onShowModal</span><span class="p">(</span><span class="nx">ModalType</span><span class="p">.</span><span class="nx">Add</span><span class="p">)}</span><span class="o">&gt;</span>
+    <span class="err">添加</span>
+    <span class="o">&lt;</span><span class="err">/Button&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在 Todo 组件点击添加按钮时，显示对话框组件，提交表单时用内部实现的 itemId 作为 todo.id：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// ModalForm.ts
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">ModalForm</span>: <span class="kt">FC</span><span class="o">&lt;</span><span class="nx">IModalFormProps</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">visible</span><span class="p">,</span> <span class="nx">onClose</span><span class="p">,</span> <span class="nx">addTodo</span><span class="p">,</span> <span class="nx">modalTitle</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+    <span class="kr">const</span> <span class="p">[</span><span class="nx">itemId</span><span class="p">,</span> <span class="nx">setItemId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="p">[</span><span class="nx">form</span><span class="p">]</span> <span class="o">=</span> <span class="nx">Form</span><span class="p">.</span><span class="nx">useForm</span><span class="p">();</span>
+
+    <span class="kr">const</span> <span class="nx">onFinish</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">text</span>: <span class="kt">string</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">getFieldValue</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">).</span><span class="nx">trim</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">modalTitle</span> <span class="o">===</span> <span class="s1">&#39;添加任务&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">addTodo</span><span class="p">(</span><span class="nx">itemId</span><span class="p">,</span> <span class="nx">text</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+            <span class="nx">setItemId</span><span class="p">(</span><span class="nx">itemId</span> <span class="o">=&gt;</span> <span class="nx">itemId</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nx">form</span><span class="p">.</span><span class="nx">setFieldsValue</span><span class="p">({</span> <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span> <span class="p">});</span>
+        <span class="nx">onClose</span><span class="p">();</span>
+    <span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在 ts 中需要用 interface 声明父组件传过来的 props 的类型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// ModalForm.ts
+</span><span class="c1"></span>
+<span class="kr">interface</span> <span class="nx">IModalFormProps</span> <span class="p">{</span>
+    <span class="nx">visible</span>: <span class="kt">boolean</span><span class="p">;</span>
+    <span class="nx">modalTitle</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">onClose</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+    <span class="nx">addTodo</span><span class="o">:</span> <span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">text</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">flag</span>: <span class="kt">boolean</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果是在 TodoList 中的编辑按钮：Todo 组件将 onShowModal 方法传递给 TodoList 子组件，TodoList 就能让对话框组件显示并传递 todoId 给 Todo 组件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// TodoList.ts
+</span><span class="c1"></span>
+<span class="o">&lt;</span><span class="nx">EditOutlined</span>
+    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">icon</span><span class="p">}</span>
+    <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">onShowModal</span><span class="p">(</span><span class="nx">ModalType</span><span class="p">.</span><span class="nx">Edit</span><span class="p">,</span> <span class="nx">todo</span><span class="p">.</span><span class="nx">id</span><span class="p">)}</span>
+<span class="err">/&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在弹出编辑对话框之前，Todo 组件将已经获取到 todoId 传递给对话框组件:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// Todo.ts
+</span><span class="c1"></span>
+<span class="o">&lt;</span><span class="nx">ModalForm</span>
+    <span class="nx">modalTitle</span><span class="o">=</span><span class="p">{</span><span class="nx">modalTitle</span><span class="p">}</span>
+    <span class="nx">todoId</span><span class="o">=</span><span class="p">{</span><span class="nx">todoId</span><span class="p">}</span>
+    <span class="nx">visible</span><span class="o">=</span><span class="p">{</span><span class="nx">showModal</span><span class="p">}</span>
+    <span class="nx">onClose</span><span class="o">=</span><span class="p">{</span><span class="nx">onClose</span><span class="p">}</span>
+    <span class="nx">addTodo</span><span class="o">=</span><span class="p">{</span><span class="nx">addTodo</span><span class="p">}</span>
+    <span class="nx">updateText</span><span class="o">=</span><span class="p">{</span><span class="nx">updateText</span><span class="p">}</span>
+<span class="err">/&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>得到 todoId 就能在对话框提交时更新 todo 了，对话框组件中完善提交表单方法:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// ModalForm.ts
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="p">{</span> <span class="nx">visible</span><span class="p">,</span> <span class="nx">onClose</span><span class="p">,</span> <span class="nx">addTodo</span><span class="p">,</span> <span class="nx">modalTitle</span><span class="p">,</span> <span class="nx">todoId</span><span class="p">,</span> <span class="nx">updateText</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">onFinish</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">text</span>: <span class="kt">string</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">getFieldValue</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">).</span><span class="nx">trim</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">modalTitle</span> <span class="o">===</span> <span class="s1">&#39;添加任务&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">addTodo</span><span class="p">(</span><span class="nx">itemId</span><span class="p">,</span> <span class="nx">text</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+        <span class="nx">setItemId</span><span class="p">(</span><span class="nx">itemId</span> <span class="o">=&gt;</span> <span class="nx">itemId</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">modalTitle</span> <span class="o">===</span> <span class="s1">&#39;编辑任务&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">updateText</span><span class="p">(</span><span class="nx">todoId</span><span class="p">,</span> <span class="nx">text</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">form</span><span class="p">.</span><span class="nx">setFieldsValue</span><span class="p">({</span> <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span> <span class="p">});</span>
+    <span class="nx">onClose</span><span class="p">();</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="列表的增删改查">列表的增删改查</h2>
+<p>先在 Todo 组件中定义列表数据状态：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">//Todo.ts
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">lists</span><span class="p">,</span> <span class="nx">setlists</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="nx">ITodo</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">([]);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>接下来实现列表的增删改查：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// Todo.ts
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">addTodo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">text</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">done</span>: <span class="kt">boolean</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="kr">const</span> <span class="nx">Item</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">text</span><span class="p">,</span> <span class="nx">done</span> <span class="p">};</span>
+	<span class="nx">setlists</span><span class="p">([</span><span class="nx">Item</span><span class="p">,</span> <span class="p">...</span><span class="nx">lists</span><span class="p">]);</span>
+	<span class="nx">message</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s1">&#39;新增成功&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">deleteTodo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="kr">const</span> <span class="nx">newlists</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span><span class="p">)</span>
+	<span class="nx">setlists</span><span class="p">([...</span><span class="nx">newlists</span><span class="p">]);</span>
+	<span class="nx">message</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s1">&#39;删除成功&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">toggleDone</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="kr">const</span> <span class="nx">newlists</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span>
+		<span class="nx">i</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span>
+			<span class="o">?</span> <span class="p">{</span>
+				<span class="p">...</span><span class="nx">i</span><span class="p">,</span>
+				<span class="nx">done</span><span class="o">:</span> <span class="o">!</span><span class="nx">i</span><span class="p">.</span><span class="nx">done</span>
+			<span class="p">}</span>
+			<span class="o">:</span> <span class="nx">i</span>
+	<span class="p">)</span>
+	<span class="nx">setlists</span><span class="p">([...</span><span class="nx">newlists</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">updateText</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">text</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="kr">const</span> <span class="nx">newlists</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span>
+		<span class="nx">i</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span>
+			<span class="o">?</span> <span class="p">{</span>
+				<span class="p">...</span><span class="nx">i</span><span class="p">,</span>
+				<span class="nx">text</span>
+			<span class="p">}</span>
+			<span class="o">:</span> <span class="nx">i</span>
+	<span class="p">)</span>
+	<span class="nx">setlists</span><span class="p">([...</span><span class="nx">newlists</span><span class="p">]);</span>
+	<span class="nx">message</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s1">&#39;编辑成功&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>代办项，已完成，清单三个标签过滤列表：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// Todo.ts
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">todoList</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">item</span><span class="p">.</span><span class="nx">done</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">doneList</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">done</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="实现搜索功能">实现搜索功能</h2>
+<p>先在 Todo 组件中定义搜索数据状态：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">//Todo.ts
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">searchText</span><span class="p">,</span> <span class="nx">setSearchText</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>实现按搜索字段过滤数据的方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// Todo.ts 
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">getFilter</span> <span class="o">=</span> <span class="p">(</span><span class="nx">lists</span>: <span class="kt">ITodo</span><span class="p">[],</span> <span class="nx">searchText</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">searchText</span><span class="p">.</span><span class="nx">trim</span><span class="p">()</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">todo</span> <span class="o">=&gt;</span> <span class="nx">todo</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">searchText</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()));</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">lists</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Todo 组件将列表数据先用 getFilter 方法过滤再传递给 TodoList 子组件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">//Todo.ts
+</span><span class="c1"></span>
+<span class="o">&lt;</span><span class="nx">Tabs</span> <span class="nx">defaultActiveKey</span><span class="o">=</span><span class="s2">&#34;1&#34;</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;large&#34;</span><span class="p">}</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="nx">TabPane</span> <span class="nx">tab</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">Badge</span> <span class="nx">status</span><span class="o">=</span><span class="s2">&#34;warning&#34;</span> <span class="nx">text</span><span class="o">=</span><span class="s2">&#34;待办项&#34;</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&#34;1&#34;</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">TodoList</span>
+			<span class="nx">lists</span><span class="o">=</span><span class="p">{</span><span class="nx">getFilter</span><span class="p">(</span><span class="nx">todoList</span><span class="p">,</span> <span class="nx">searchText</span><span class="p">)}</span>
+			<span class="nx">updateText</span><span class="o">=</span><span class="p">{</span><span class="nx">updateText</span><span class="p">}</span>
+			<span class="nx">toggleDone</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleDone</span><span class="p">}</span>
+			<span class="nx">deleteTodo</span><span class="o">=</span><span class="p">{</span><span class="nx">deleteTodo</span><span class="p">}</span>
+			<span class="nx">onShowModal</span><span class="o">=</span><span class="p">{</span><span class="nx">onShowModal</span><span class="p">}</span><span class="o">/&gt;</span>
+	<span class="o">&lt;</span><span class="err">/TabPane&gt;</span>
+<span class="o">&lt;</span><span class="err">/Tabs&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>上面是待办项列表的数据传递，如果是已完成或清单组件，只需将 getFilter 的第一个参数替换为 doneList 或 lists。</p>
+<p>附：<a href="https://github.com/111hunter/antd-todo-ts" target="_blank" rel="noopener noreffer">源码地址</a>
+</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-06-30 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2020-06-30-antd/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-06-30-antd/" data-title="antd &#43; ts 的简单 demo" data-hashtags="React"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-06-30-antd/" data-hashtag="React"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-06-30-antd/" data-title="antd &#43; ts 的简单 demo"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-06-30-antd/" data-title="antd &#43; ts 的简单 demo"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/react">React</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020-06-18-forum/" class="prev" rel="prev" title="MyBatis-Plus 实现论坛 Api"><i class="fas fa-angle-left fa-fw"></i>MyBatis-Plus 实现论坛 Api</a></div>
+</div>
+<div class="comment"><div id="valine"></div><script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                new Valine({
+                    el: '#valine',
+                    appId: 'GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz',
+                    appKey: 'gK3L6a7r80578qujBez4FH6C',placeholder: '欢迎留言和转载！',avatar: 'mm',pageSize: 10,lang: 'en',visitor: true,recordIP: true,});
+            });
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
+        </noscript></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/valine/valine.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/valine/Valine.min.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
+</html>

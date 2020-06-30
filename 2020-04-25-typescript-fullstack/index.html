@@ -5,15 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>全栈开发：用 NgRx 和 Nest 写一个 todolist | 浮槎的博客</title>
-        <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="全栈开发：用 NgRx 和 Nest 写一个 todolist" />
+        <title>用 NgRx 和 Nest 写一个全栈 todolist | 浮槎的博客</title>
+        <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="用 NgRx 和 Nest 写一个全栈 todolist" />
 <meta property="og:description" content="本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。如果你对状态管理以及权限验证没有概念，可以自行百度或者看我之前写过的文章。 后" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2020-04-25-typescript-fullstack/" />
 <meta property="article:published_time" content="2020-04-25T22:27:41+08:00" />
 <meta property="article:modified_time" content="2020-04-25T22:27:41+08:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="全栈开发：用 NgRx 和 Nest 写一个 todolist"/>
+<meta name="twitter:title" content="用 NgRx 和 Nest 写一个全栈 todolist"/>
 <meta name="twitter:description" content="本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。如果你对状态管理以及权限验证没有概念，可以自行百度或者看我之前写过的文章。 后"/>
 <meta name="theme-color" content="#ffffff">
 <meta name="msapplication-TileColor" content="#da532c">
@@ -27,7 +27,7 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "全栈开发：用 NgRx 和 Nest 写一个 todolist",
+        "headline": "用 NgRx 和 Nest 写一个全栈 todolist",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -37,7 +37,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Angular, Rx","wordcount":  4107 ,
+            },"genre": "posts","keywords": "Angular, Rx","wordcount":  4122 ,
         "url": "http:\/\/example.org\/2020-04-25-typescript-fullstack\/","datePublished": "2020-04-25","dateModified": "2020-04-25","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -102,15 +102,15 @@
     window.desktopHeaderMode = "fixed";
     window.mobileHeaderMode = "auto";
 </script><main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">全栈开发：用 NgRx 和 Nest 写一个 todolist</h1><div class="post-meta">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">用 NgRx 和 Nest 写一个全栈 todolist</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a>
 </span>&nbsp;
                     <span class="post-category">收录于<a href="/categories/coding">
                                 <i class="far fa-folder fa-fw"></i>Coding
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-04-25>2020-04-25</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 4107 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>预计阅读 9 分钟&nbsp;<span id="/2020-04-25-typescript-fullstack/" class="leancloud_visitors" data-flag-title="全栈开发：用 NgRx 和 Nest 写一个 todolist">
+                <i class="fas fa-pencil-alt fa-fw"></i>约 4122 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 9 分钟&nbsp;<span id="/2020-04-25-typescript-fullstack/" class="leancloud_visitors" data-flag-title="用 NgRx 和 Nest 写一个全栈 todolist">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="toc" id="toc-auto">
@@ -166,7 +166,8 @@
             </div><div class="content" id="content"><p>本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。如果你对状态管理以及权限验证没有概念，可以自行百度或者看我之前写过的文章。</p>
 <h2 id="后端开发">后端开发</h2>
 <p>后端开发使用 Nest.js 框架，本次实践是重前端的，因此后端会做得简单一些。后端是在上一次鉴权认证的代码做部分修改。如果有不懂的代码，可以参考之前的<a href="https://111hunter.github.io/2020-03-29-nest-auth/" target="_blank" rel="noopener noreffer">文章</a>
-。此部分的讲解略过。</p>
+。此部分的讲解略过。这是后端部分生成的 swagger 接口文档:</p>
+<div align=center><img src="/img/app-docs.png" width="80%"></div>
 <h2 id="前端开发">前端开发</h2>
 <p>前端使用 Angular 框架。为什么使用 Angular? 以下几点是我选择它的原因：</p>
 <ul>
@@ -1153,7 +1154,7 @@
                             <a class="link-to-markdown" href="/2020-04-25-typescript-fullstack/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-04-25-typescript-fullstack/" data-title="全栈开发：用 NgRx 和 Nest 写一个 todolist" data-hashtags="Angular,Rx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-04-25-typescript-fullstack/" data-hashtag="Angular"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-04-25-typescript-fullstack/" data-title="全栈开发：用 NgRx 和 Nest 写一个 todolist"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-04-25-typescript-fullstack/" data-title="全栈开发：用 NgRx 和 Nest 写一个 todolist"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-04-25-typescript-fullstack/" data-title="用 NgRx 和 Nest 写一个全栈 todolist" data-hashtags="Angular,Rx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-04-25-typescript-fullstack/" data-hashtag="Angular"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-04-25-typescript-fullstack/" data-title="用 NgRx 和 Nest 写一个全栈 todolist"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-04-25-typescript-fullstack/" data-title="用 NgRx 和 Nest 写一个全栈 todolist"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>

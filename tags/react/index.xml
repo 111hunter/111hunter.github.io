@@ -6,10 +6,19 @@
     <description>Recent content in React on 浮槎的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 18 May 2020 00:18:30 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 00:15:00 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/tags/react/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>antd &#43; ts 的简单 demo</title>
+      <link>http://example.org/2020-06-30-antd/</link>
+      <pubDate>Tue, 30 Jun 2020 00:15:00 +0800</pubDate>
+      
+      <guid>http://example.org/2020-06-30-antd/</guid>
+      <description>这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码</description>
+    </item>
     
     <item>
       <title>写一个可拖拽的 Trello</title>
