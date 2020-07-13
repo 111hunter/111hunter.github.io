@@ -37,7 +37,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Node.js","wordcount":  781 ,
+            },"genre": "posts","keywords": "Node.js","wordcount":  778 ,
         "url": "http:\/\/example.org\/2020-07-13-rbac0\/","datePublished": "2020-07-13","dateModified": "2020-07-13","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -109,7 +109,7 @@
                                 <i class="far fa-folder fa-fw"></i>Coding
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-07-13>2020-07-13</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 781 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 778 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;<span id="/2020-07-13-rbac0/" class="leancloud_visitors" data-flag-title="RBAC0 权限设计实例">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -172,8 +172,9 @@
 <p>User 访问 admin 页面：</p>
 <div align=center><img src="/img/rbac-!admin.png" width="90%"></div>
 <p>User, Admin 访问 mod 页面, Moderator 访问 admin 页面的显示结果同理。</p>
-<p>当同一个用户同时具有 User, Moderator, Admin 角色时，就有了所有页面的访问权力。</p>
-<p>根据用户角色，决定页面的数据展示，这样就实现了 RBAC0 的基本模型。</p>
+<p>当一个用户同时具有 User, Moderator, Admin 角色时，就有了所有页面的访问权力。</p>
+<div align=center><img src="/img/rbac-root.png" width="90%"></div>
+<p>根据用户角色来决定页面的数据，这样就实现了 RBAC0 的基本模型。</p>
 <p><strong>参考资料</strong></p>
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/73414693" target="_blank" rel="noopener noreffer">可能是史上最全的权限系统设计</a>

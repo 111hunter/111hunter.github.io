@@ -47,9 +47,11 @@ User 访问 admin 页面：
 
 User, Admin 访问 mod 页面, Moderator 访问 admin 页面的显示结果同理。
 
-当同一个用户同时具有 User, Moderator, Admin 角色时，就有了所有页面的访问权力。 
+当一个用户同时具有 User, Moderator, Admin 角色时，就有了所有页面的访问权力。
 
-根据用户角色，决定页面的数据展示，这样就实现了 RBAC0 的基本模型。
+<div align=center><img src="/img/rbac-root.png" width="90%"></div>
+
+根据用户角色来决定页面的数据，这样就实现了 RBAC0 的基本模型。
 
 **参考资料**
 
