@@ -1,4 +1,4 @@
-# Context + Hooks：函数组件状态管理新方案
+# Context + Hooks：状态管理新方案
 
 
 React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。

@@ -5,15 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Context &#43; Hooks：函数组件状态管理新方案 | 浮槎的博客</title>
-        <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="Context &#43; Hooks：函数组件状态管理新方案" />
+        <title>Context &#43; Hooks：状态管理新方案 | 浮槎的博客</title>
+        <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="Context &#43; Hooks：状态管理新方案" />
 <meta property="og:description" content="React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 React 组件分为两类，class 组件和函数" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2020-05-07-react-hook/" />
 <meta property="article:published_time" content="2020-05-07T16:46:30+08:00" />
 <meta property="article:modified_time" content="2020-05-07T16:46:30+08:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Context &#43; Hooks：函数组件状态管理新方案"/>
+<meta name="twitter:title" content="Context &#43; Hooks：状态管理新方案"/>
 <meta name="twitter:description" content="React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 React 组件分为两类，class 组件和函数"/>
 <meta name="theme-color" content="#ffffff">
 <meta name="msapplication-TileColor" content="#da532c">
@@ -27,7 +27,7 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Context \x2b Hooks：函数组件状态管理新方案",
+        "headline": "Context \x2b Hooks：状态管理新方案",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -102,7 +102,7 @@
     window.desktopHeaderMode = "fixed";
     window.mobileHeaderMode = "auto";
 </script><main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Context &#43; Hooks：函数组件状态管理新方案</h1><div class="post-meta">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Context &#43; Hooks：状态管理新方案</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a>
 </span>&nbsp;
                     <span class="post-category">收录于<a href="/categories/coding">
@@ -110,7 +110,7 @@
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-05-07>2020-05-07</time>&nbsp;
                 <i class="fas fa-pencil-alt fa-fw"></i>约 3244 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>预计阅读 7 分钟&nbsp;<span id="/2020-05-07-react-hook/" class="leancloud_visitors" data-flag-title="Context &#43; Hooks：函数组件状态管理新方案">
+                <i class="far fa-clock fa-fw"></i>预计阅读 7 分钟&nbsp;<span id="/2020-05-07-react-hook/" class="leancloud_visitors" data-flag-title="Context &#43; Hooks：状态管理新方案">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="toc" id="toc-auto">
@@ -1042,7 +1042,7 @@ OK, 我们的简版 React-redux 就做好了。</p>
                             <a class="link-to-markdown" href="/2020-05-07-react-hook/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-05-07-react-hook/" data-title="Context &#43; Hooks：函数组件状态管理新方案" data-hashtags="React"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-05-07-react-hook/" data-hashtag="React"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-05-07-react-hook/" data-title="Context &#43; Hooks：函数组件状态管理新方案"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-05-07-react-hook/" data-title="Context &#43; Hooks：函数组件状态管理新方案"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-05-07-react-hook/" data-title="Context &#43; Hooks：状态管理新方案" data-hashtags="React"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-05-07-react-hook/" data-hashtag="React"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-05-07-react-hook/" data-title="Context &#43; Hooks：状态管理新方案"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-05-07-react-hook/" data-title="Context &#43; Hooks：状态管理新方案"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
