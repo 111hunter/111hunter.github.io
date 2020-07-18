@@ -6,10 +6,19 @@
     <description>Recent content in Javascript on 浮槎的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 30 Oct 2019 20:59:36 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Nov 2019 22:37:34 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>js 扫雷小游戏</title>
+      <link>http://example.org/2019-11-08-js-saolei/</link>
+      <pubDate>Fri, 08 Nov 2019 22:37:34 +0800</pubDate>
+      
+      <guid>http://example.org/2019-11-08-js-saolei/</guid>
+      <description>扫雷是一款大众类的益智小游戏,于1992年发行。游戏目标是在最短的时间内根据点击格子出现的数字找出所有非雷格子,同时避免踩雷,踩到一个雷即全</description>
+    </item>
     
     <item>
       <title>es6 学习笔记</title>
