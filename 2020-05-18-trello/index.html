@@ -37,7 +37,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "React","wordcount":  2654 ,
+            },"genre": "posts","keywords": "React","wordcount":  2714 ,
         "url": "http:\/\/example.org\/2020-05-18-trello\/","datePublished": "2020-05-18","dateModified": "2020-05-18","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -109,7 +109,7 @@
                                 <i class="far fa-folder fa-fw"></i>Coding
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-05-18>2020-05-18</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 2654 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 2714 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 6 分钟&nbsp;<span id="/2020-05-18-trello/" class="leancloud_visitors" data-flag-title="写一个可拖拽的 Trello">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -130,11 +130,11 @@
     <li><a href="#拖拽库的使用">拖拽库的使用</a></li>
     <li><a href="#状态管理">状态管理</a></li>
     <li><a href="#搜索卡片">搜索卡片</a></li>
-    <li><a href="#撤销回退功能">撤销回退功能</a></li>
+    <li><a href="#撤销重做功能">撤销重做功能</a></li>
   </ul>
 </nav></div>
                 </details>
-            </div><div class="content" id="content"><p>本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间拖放。左上方的搜索框能够搜索筛选卡片，右上方的按钮能够实现撤销回退功能。</p>
+            </div><div class="content" id="content"><p>本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间拖放。左上方的搜索框能够搜索筛选卡片，右上方的按钮能够实现撤销重做功能。</p>
 <div align=center><img src="/img/trello.png" width="100%"></div>
 <h2 id="拖拽库的使用">拖拽库的使用</h2>
 <p>react-beautiful-dnd 这个库使用 render-props 完成组件逻辑复用。react-beautiful-dnd 有 3 个主要组件：DragDropContext，Droppable和Draggable。这三者的关系如下：</p>
@@ -602,7 +602,7 @@ DragDropContext 提供了以下三个钩子：</p>
 
 </code></pre></td></tr></table>
 </div>
-</div><p>reducer 实现状态变化逻辑并返回新状态，始终<strong>用新状态替换原来的状态</strong>，不要直接在原来的对象上操作，因为我们将会对每个状态做记录，这有利于我们实现撤销回退功能。</p>
+</div><p>reducer 实现状态变化逻辑并返回新状态，始终<strong>用新状态替换原来的状态</strong>，不要直接在原来的对象上操作，因为我们将会对每个状态做记录，这有利于我们实现撤销重做功能。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -771,8 +771,11 @@ DragDropContext 提供了以下三个钩子：</p>
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="撤销回退功能">撤销回退功能</h2>
-<p>我实现撤销回退功能的方法是自定义一个钩子函数，监听 listReducer 的变化并做记录，原本创建 store 时需要导出的 reducer 如下：</p>
+</div><h2 id="撤销重做功能">撤销重做功能</h2>
+<p>实现撤销重做功能可用 <a href="https://github.com/omnidan/redux-undo" target="_blank" rel="noopener noreffer">redux-undo</a>
+ 这个库，自己实现也不复杂，下面就自己实现:</p>
+<p>实现方法是自定义一个接收 reducer 为参数，返回新 reducer 的函数(reducer enhancer)，监听 listReducer 的变化并做记录。实现思路来自 <a href="https://www.redux.org.cn/docs/recipes/ImplementingUndoHistory.html" target="_blank" rel="noopener noreffer">redux 官方文档</a>
+。原本创建 store 时需要导出的 reducer 如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -795,7 +798,7 @@ DragDropContext 提供了以下三个钩子：</p>
 <span class="kr">export</span> <span class="k">default</span> <span class="nx">rootReducer</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>combineReducers 接收值为 reducer 的对象作为参数，我们只要实现一个返回值为 reducer 的钩子函数就行：</p>
+</div><p>combineReducers 接收值为 reducer 的函数作为参数，我们只要实现一个返回值为 reducer 的函数(reducer enhancer)就行：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -867,13 +870,6 @@ DragDropContext 提供了以下三个钩子：</p>
 </span><span class="lnt">48
 </span><span class="lnt">49
 </span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// reducers/stateEnhancer.js
@@ -914,16 +910,9 @@ DragDropContext 提供了以下三个钩子：</p>
 </span><span class="c1"></span>          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">);</span>
           <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
         <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">currentState</span><span class="p">)</span> <span class="p">{</span>                      <span class="c1">// 列表变化时
-</span><span class="c1"></span>          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;list change&#39;</span><span class="p">);</span>
-          <span class="k">return</span> <span class="p">{</span>
-            <span class="nx">previousStates</span><span class="o">:</span> <span class="p">[...(</span><span class="nx">previousStates</span> <span class="o">||</span> <span class="p">[]),</span> <span class="nx">currentState</span><span class="p">],</span>
-            <span class="nx">currentState</span><span class="o">:</span> <span class="nx">newCurrentState</span><span class="p">,</span>
-            <span class="nx">futureStates</span><span class="o">:</span> <span class="p">[]</span>
-          <span class="p">};</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="p">{</span>                   <span class="c1">// 防止 currentState 为 null
-</span><span class="c1"></span>          <span class="nx">previousStates</span><span class="o">:</span> <span class="p">[...(</span><span class="nx">previousStates</span> <span class="o">||</span> <span class="p">[])],</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;list change&#39;</span><span class="p">);</span>              <span class="c1">// 列表变化时
+</span><span class="c1"></span>        <span class="k">return</span> <span class="p">{</span>
+          <span class="nx">previousStates</span><span class="o">:</span> <span class="p">[...(</span><span class="nx">previousStates</span> <span class="o">||</span> <span class="p">[]),</span> <span class="nx">currentState</span><span class="p">],</span>
           <span class="nx">currentState</span><span class="o">:</span> <span class="nx">newCurrentState</span><span class="p">,</span>
           <span class="nx">futureStates</span><span class="o">:</span> <span class="p">[]</span>
         <span class="p">};</span>
@@ -935,7 +924,7 @@ DragDropContext 提供了以下三个钩子：</p>
 
 </code></pre></td></tr></table>
 </div>
-</div><p>我们用了三个数组记录 listReducer 的变化，按下撤销或者回退功能按钮时，就能在不同的 listReducer 之间切换。并且我们可以根据 previousStates， futureStates 是否为空来判断撤销，回退按钮是否可用：</p>
+</div><p>我们用了三个数组记录 listReducer 的变化，按下撤销或者重做功能按钮时，就能在不同的 listReducer 之间切换。并且我们可以根据 previousStates， futureStates 是否为空来判断撤销，重做按钮是否可用：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -959,6 +948,8 @@ DragDropContext 提供了以下三个钩子：</p>
 <p><strong>参考资料</strong></p>
 <ul>
 <li><a href="https://andyyou.github.io/2019/06/04/react-beautiful-dnd-quick-note/" target="_blank" rel="noopener noreffer">React Beautiful Dnd 快速使用筆記</a>
+</li>
+<li><a href="https://www.redux.org.cn/docs/recipes/ImplementingUndoHistory.html" target="_blank" rel="noopener noreffer">redux 文档 - 实现撤销历史</a>
 </li>
 </ul>
 </div><div class="post-footer" id="post-footer">

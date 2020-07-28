@@ -129,9 +129,9 @@
   <ul>
     <li><a href="#1-使用帮助">1. 使用帮助</a></li>
     <li><a href="#2-git-配置范围">2. git 配置范围</a></li>
-    <li><a href="#3-git-项目文件的-crud">3. git 项目文件的 crud</a>
+    <li><a href="#3-git-项目文件">3. git 项目文件</a>
       <ul>
-        <li><a href="#重命名-git-已经跟踪的文件">重命名 git 已经跟踪的文件</a></li>
+        <li><a href="#重命名-git-已跟踪文件">重命名 git 已跟踪文件</a></li>
         <li><a href="#git-移动文件">git 移动文件</a></li>
         <li><a href="#git-删除文件与恢复">git 删除文件与恢复</a></li>
         <li><a href="#git-恢复某个操作状态">git 恢复某个操作状态</a></li>
@@ -140,7 +140,7 @@
     <li><a href="#4-git-项目分支">4. git 项目分支</a>
       <ul>
         <li><a href="#解决分支合并冲突">解决分支合并冲突</a></li>
-        <li><a href="#git-stash-命令可以将当前的工作状态保存到git栈">git stash 命令可以将当前的工作状态保存到git栈</a></li>
+        <li><a href="#保存当前工作状态">保存当前工作状态</a></li>
       </ul>
     </li>
     <li><a href="#5-git-远程仓库">5. git 远程仓库</a></li>
@@ -159,7 +159,7 @@
 <p><code>$ git config --list</code> 查看当前配置信息</p>
 <p><code>$ git config --unset --global user.name</code> 取消 user.name 配置</p>
 <p>配置文件是当前用户主目录 <code>$ cat ~/.gitconfig</code></p>
-<h2 id="3-git-项目文件的-crud">3. git 项目文件的 crud</h2>
+<h2 id="3-git-项目文件">3. git 项目文件</h2>
 <p><code>$ mkdir movietalk &amp;&amp; cd movietalk</code> 新建文件夹</p>
 <p><code>$ git init</code> 初始化项目</p>
 <p><code>$ cd .git &amp;&amp; ls -a</code> config 目录就是项目级别的配置</p>
@@ -180,7 +180,7 @@
 <p><code>$ git log</code> 查看提交日志信息, 此时有两条提交信息</p>
 <p><code>$ git status</code> 查看文件状态</p>
 <p><code>$ git add . &amp;&amp; git commit -m &quot;新增meta标签&quot;</code> 工作区文件提交到仓库</p>
-<h3 id="重命名-git-已经跟踪的文件">重命名 git 已经跟踪的文件</h3>
+<h3 id="重命名-git-已跟踪文件">重命名 git 已跟踪文件</h3>
 <p><code>$ touch style.css &amp;&amp; vim style.css</code> 新建css文件</p>
 <p><code>$ mv style.css theme.css</code> 修改文件名</p>
 <p><code>$ git status</code> 查看文件状态</p>
@@ -238,7 +238,8 @@
 <p>document 修改</p>
 <p><code>$ git commit -am &quot;解决冲突&quot;</code> 提交</p>
 <p><code>$ git log --oneline --all -10 --graph</code> 查看所有分支提交信息</p>
-<h3 id="git-stash-命令可以将当前的工作状态保存到git栈">git stash 命令可以将当前的工作状态保存到git栈</h3>
+<h3 id="保存当前工作状态">保存当前工作状态</h3>
+<p>git stash 指令能够保存当前工作状态到 git 栈</p>
 <p><code>$ touch human.txt &amp;&amp; git commit -am &quot;add human.txt&quot;</code> 新建空文件</p>
 <p><code>$ vim human.txt</code> 加入任意内容</p>
 <p><code>$ git status</code> 查看修改，不提交</p>

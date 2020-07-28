@@ -24,7 +24,7 @@ git 配置分为三个范围 system, global 和 项目范围
 
 配置文件是当前用户主目录 `$ cat ~/.gitconfig`
 
-## 3. git 项目文件的 crud
+## 3. git 项目文件
 
 `$ mkdir movietalk && cd movietalk` 新建文件夹
 
@@ -66,7 +66,7 @@ git 配置分为三个范围 system, global 和 项目范围
 
 `$ git add . && git commit -m "新增meta标签"` 工作区文件提交到仓库
 
-### 重命名 git 已经跟踪的文件
+### 重命名 git 已跟踪文件
 
 `$ touch style.css && vim style.css` 新建css文件
 
@@ -170,7 +170,9 @@ git 配置分为三个范围 system, global 和 项目范围
 
  `$ git log --oneline --all -10 --graph` 查看所有分支提交信息
 
-### git stash 命令可以将当前的工作状态保存到git栈
+### 保存当前工作状态
+
+git stash 指令能够保存当前工作状态到 git 栈
 
 `$ touch human.txt && git commit -am "add human.txt"` 新建空文件
 

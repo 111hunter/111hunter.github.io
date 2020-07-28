@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recoil on 浮槎的博客</title>
+    <link>http://example.org/tags/recoil/</link>
+    <description>Recent content in Recoil on 浮槎的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 27 Jul 2020 22:26:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/recoil/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recoil 基础</title>
+      <link>http://example.org/2020-07-27-recoil/</link>
+      <pubDate>Mon, 27 Jul 2020 22:26:00 +0800</pubDate>
+      
+      <guid>http://example.org/2020-07-27-recoil/</guid>
+      <description>最近，Facebook 官方开源了一个状态管理库 Recoil，我们来学习一下。Recoil 是基于 Immutable 的数据流管理方案，这是它值得学习的重要原因。</description>
+    </item>
+    
+  </channel>
+</rss>

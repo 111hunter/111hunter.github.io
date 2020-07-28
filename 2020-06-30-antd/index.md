@@ -261,7 +261,9 @@ Todo 组件将列表数据先用 getFilter 方法过滤再传递给 TodoList 子
 </Tabs>
 ```
 
-上面是待办项列表的数据传递，如果是已完成或清单组件，只需将 getFilter 的第一个参数替换为 doneList 或 lists。
+上面是待办项列表的数据传递，如果是已完成或清单组件，只需将 getFilter 的第一个参数替换为 doneList 或 lists，所有功能就完成了。
+
+续：发现了一个状态管理库 [Easy Peasy](https://easy-peasy.now.sh/), 个人感觉比 redux 简洁。这里有一个 [todolist](https://codesandbox.io/s/easypeasyreact-jpdd2) 例子。
 
 附：[源码地址](https://github.com/111hunter/antd-todo-ts)
 

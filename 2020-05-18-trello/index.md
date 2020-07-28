@@ -1,7 +1,7 @@
 # 写一个可拖拽的 Trello
 
 
-本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间拖放。左上方的搜索框能够搜索筛选卡片，右上方的按钮能够实现撤销回退功能。
+本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间拖放。左上方的搜索框能够搜索筛选卡片，右上方的按钮能够实现撤销重做功能。
 
 <div align=center><img src="/img/trello.png" width="100%"></div>
 
@@ -248,7 +248,7 @@ export const sort = (
 };
 
 ```
-reducer 实现状态变化逻辑并返回新状态，始终**用新状态替换原来的状态**，不要直接在原来的对象上操作，因为我们将会对每个状态做记录，这有利于我们实现撤销回退功能。
+reducer 实现状态变化逻辑并返回新状态，始终**用新状态替换原来的状态**，不要直接在原来的对象上操作，因为我们将会对每个状态做记录，这有利于我们实现撤销重做功能。
 ```js
 // reducers/listReducer.js
 
@@ -334,9 +334,11 @@ const getFilteredCards = (cards, searchText) => {
   return cards;
 };
 ```
-## 撤销回退功能
+## 撤销重做功能
 
-我实现撤销回退功能的方法是自定义一个钩子函数，监听 listReducer 的变化并做记录，原本创建 store 时需要导出的 reducer 如下：
+实现撤销重做功能可用 [redux-undo](https://github.com/omnidan/redux-undo) 这个库，自己实现也不复杂，下面就自己实现: 
+
+实现方法是自定义一个接收 reducer 为参数，返回新 reducer 的函数(reducer enhancer)，监听 listReducer 的变化并做记录。实现思路来自 [redux 官方文档](https://www.redux.org.cn/docs/recipes/ImplementingUndoHistory.html)。原本创建 store 时需要导出的 reducer 如下：
 
 ```js
 // reducers/index.js
@@ -348,7 +350,9 @@ const rootReducer = combineReducers({
 
 export default rootReducer;
 ```
-combineReducers 接收值为 reducer 的对象作为参数，我们只要实现一个返回值为 reducer 的钩子函数就行：
+
+combineReducers 接收值为 reducer 的函数作为参数，我们只要实现一个返回值为 reducer 的函数(reducer enhancer)就行：
+
 ```js
 const rootReducer = combineReducers({
   board: stateEnhancer(listReducer),
@@ -357,6 +361,7 @@ const rootReducer = combineReducers({
 
 export default rootReducer;
 ```
+
 board 对应的值是将 listReducer 封装后的新 reducer，这样每次调用 listReducer 时也会调用 stateEnhancer，因为函数的参数发生了变化，函数就会重新执行。
 
 ```js
@@ -398,16 +403,9 @@ const stateEnhancer = reducer => {
           console.log('init');
           return state;
         }
-        if (currentState) {                      // 列表变化时
-          console.log('list change');
-          return {
-            previousStates: [...(previousStates || []), currentState],
-            currentState: newCurrentState,
-            futureStates: []
-          };
-        }
-        return {                   // 防止 currentState 为 null
-          previousStates: [...(previousStates || [])],
+        console.log('list change');              // 列表变化时
+        return {
+          previousStates: [...(previousStates || []), currentState],
           currentState: newCurrentState,
           futureStates: []
         };
@@ -418,7 +416,9 @@ const stateEnhancer = reducer => {
 export default stateEnhancer;
 
 ```
-我们用了三个数组记录 listReducer 的变化，按下撤销或者回退功能按钮时，就能在不同的 listReducer 之间切换。并且我们可以根据 previousStates， futureStates 是否为空来判断撤销，回退按钮是否可用：
+
+我们用了三个数组记录 listReducer 的变化，按下撤销或者重做功能按钮时，就能在不同的 listReducer 之间切换。并且我们可以根据 previousStates， futureStates 是否为空来判断撤销，重做按钮是否可用：
+
 ```jsx
 <DoBtn onClick={undo} disabled={previousStates.length === 0} className='btn'>
   <i className="fas fa-undo"></i>
@@ -433,3 +433,4 @@ export default stateEnhancer;
 **参考资料**
 
 - [React Beautiful Dnd 快速使用筆記](https://andyyou.github.io/2019/06/04/react-beautiful-dnd-quick-note/)
+- [redux 文档 - 实现撤销历史](https://www.redux.org.cn/docs/recipes/ImplementingUndoHistory.html)
