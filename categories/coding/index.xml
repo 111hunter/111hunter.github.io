@@ -6,10 +6,19 @@
     <description>Recent content in coding on 浮槎的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 27 Jul 2020 22:26:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2020 10:51:00 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/categories/coding/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>基于 Socket.IO 的实时聊天室</title>
+      <link>http://example.org/2020-08-11-websocket/</link>
+      <pubDate>Tue, 11 Aug 2020 10:51:00 +0800</pubDate>
+      
+      <guid>http://example.org/2020-08-11-websocket/</guid>
+      <description>WebSocket 是一种服务端和客户端之间的双向通信协议，和 HTTP 一样是基于 TCP 协议的应用层协议，并且 WebSocket 在握手阶段依赖于 HTTP 连接。 WebSocket 广泛应用于多用户实时交流，服务端</description>
+    </item>
     
     <item>
       <title>Recoil 基础</title>
