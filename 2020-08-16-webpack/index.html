@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Webpack 概念梳理 | 浮槎的博客</title>
+        <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="Webpack 概念梳理" />
+<meta property="og:description" content="Webpack 是一个前端构建工具，前端构建工具的作用就是把开发环境的代码转化成运行环境代码。一般来说，开发环境的代码是为了更好的阅读，而运行环境的代码则" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2020-08-16-webpack/" />
+<meta property="article:published_time" content="2020-08-16T19:51:00+08:00" />
+<meta property="article:modified_time" content="2020-08-16T19:51:00+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Webpack 概念梳理"/>
+<meta name="twitter:description" content="Webpack 是一个前端构建工具，前端构建工具的作用就是把开发环境的代码转化成运行环境代码。一般来说，开发环境的代码是为了更好的阅读，而运行环境的代码则"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="http://example.org/2020-08-16-webpack/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://example.org/2020-08-11-websocket/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Webpack 概念梳理",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2020-08-16-webpack\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Webpack","wordcount":  2048 ,
+        "url": "http:\/\/example.org\/2020-08-16-webpack\/","datePublished": "2020-08-16","dateModified": "2020-08-16","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "浮槎"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/">浮槎的博客</a>
+        </div>
+        <div class="menu">
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            <span class="menu-item">|</span><a class="menu-item"
+                href="/posts/"  rel="noopener noreffer"
+                >文章</a><a class="menu-item"
+                href="/tags/"  rel="noopener noreffer"
+                >标签</a><a class="menu-item"
+                href="/categories/"  rel="noopener noreffer"
+                >分类</a><a class="menu-item"
+                href="/about/"  rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/">浮槎的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer"
+                >文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer"
+                >标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer"
+                >分类</a><a class="menu-item" href="/about/" title="" rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script><main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Webpack 概念梳理</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a>
+</span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/coding">
+                                <i class="far fa-folder fa-fw"></i>Coding
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-08-16>2020-08-16</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 2048 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 5 分钟&nbsp;<span id="/2020-08-16-webpack/" class="leancloud_visitors" data-flag-title="Webpack 概念梳理">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#应用场景">应用场景</a></li>
+    <li><a href="#核心概念">核心概念</a>
+      <ul>
+        <li><a href="#entry">Entry</a></li>
+        <li><a href="#output">Output</a></li>
+        <li><a href="#module">Module</a></li>
+        <li><a href="#chunk">Chunk</a></li>
+        <li><a href="#loader">Loader</a></li>
+        <li><a href="#plugin">Plugin</a></li>
+      </ul>
+    </li>
+    <li><a href="#构建流程">构建流程</a></li>
+    <li><a href="#配置入门">配置入门</a></li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>Webpack 是一个前端构建工具，前端构建工具的作用就是把开发环境的代码转化成运行环境代码。一般来说，开发环境的代码是为了更好的阅读，而运行环境的代码则是为了能够更快地执行。因此开发环境和运行环境的代码形式也不相同。比如，开发环境的代码，要通过混淆压缩后才能放在线上运行，这样代码体积更小，但对代码执行不会有任何影响。</p>
+<!-- <div align=center><img src="/img/webpack.png" width="90%"></div> -->
+<h2 id="应用场景">应用场景</h2>
+<p>一般的构建工具可以处理但不限于以下场景：</p>
+<ul>
+<li>代码压缩</li>
+</ul>
+<p>将 JS、CSS 代码混淆压缩，让代码体积更小，加载更快。</p>
+<ul>
+<li>语法编译</li>
+</ul>
+<p>编写CSS时使用 Less、Sass，编写 JS 时使用 ES6、TypeScript 等，这些标准目前都无法被浏览器兼容，因此需要构建工具编译，例如使用 Babel 编译 ES6 语法。</p>
+<ul>
+<li>模块化处理</li>
+</ul>
+<p>CSS 和 JS 的模块化语法，目前无法被浏览器兼容。因此开发环境可以使用既定的模块化语法，但是需要构建工具将模块化语法编译为浏览器可识别形式。例如使用 Webpack、Rollup 等处理 JS 模块化。</p>
+<p>使用 webpack，构建的前端项目是高度可配置的(替换 react，vue 默认 cli 工具)。</p>
+<h2 id="核心概念">核心概念</h2>
+<p>以下概念提取自 webpack 的官方文档，学习更多细节请参阅<a href="https://www.webpackjs.com/" target="_blank" rel="noopener noreffer">官方文档</a>
+。</p>
+<h3 id="entry">Entry</h3>
+<p>入口起点(entry point)指示 webpack 应该使用哪个模块,来作为构建其内部依赖图的开始。</p>
+<p>进入入口起点后, webpack 会找出有哪些模块和库是入口起点(直接和间接)依赖的。</p>
+<p>每个依赖项随即被处理,最后输出到称之为 bundles 的内存文件中。</p>
+<h3 id="output">Output</h3>
+<p>output 属性指定 webpack 在哪里输出它所创建的 bundles,以及如何命名这些文件,默认值为 ./dist。</p>
+<p>基本上,整个应用程序结构,都会被编译到你指定的输出路径的文件夹中。</p>
+<h3 id="module">Module</h3>
+<p>模块,在 Webpack 里一切皆模块,一个模块对应着一个文件。Webpack 会从配置的 Entry 开始递归找出所有依赖的模块。</p>
+<h3 id="chunk">Chunk</h3>
+<p>代码块,一个 Chunk 由多个模块组合而成,用于代码合并与分割。</p>
+<h3 id="loader">Loader</h3>
+<p>loader 让 webpack 能够去处理那些非 JS 文件(webpack 自身只理解 JS)。</p>
+<p>loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块,然后你就可以利用 webpack 的打包能力,对它们进行处理。</p>
+<p>本质上,webpack loader 将所有类型的文件,转换为应用程序的依赖图(和最终的 bundle)可以直接引用的模块。</p>
+<h3 id="plugin">Plugin</h3>
+<p>loader 被用于转换某些类型的模块,而插件则可以用于执行范围更广的任务。</p>
+<p>插件的范围包括,从打包优化和压缩,一直到重新定义环境中的变量。插件接口功能极其强大,可以用来处理各种各样的任务。</p>
+<h2 id="构建流程">构建流程</h2>
+<p>Webpack 在启动后，会从 Entry 开始，递归解析 Entry 依赖的所有 Module，每找到一个 Module，就会根据 Module.rules 里配置的 Loader 规则进行相应的转换处理，对 Module 进行转换后，再解析出当前 Module 依赖的Module，这些 Module 会以 Entry 为单位进行分组，即为一个 Chunk。因此一个 Chunk 就是一个 Entry 及其所有依赖的 Module 合并的结果。最后 Webpack 会将所有的 Chunk 转换成文件输出 Output。在整个构建流程中，Webpack 会在恰当的时机执行 Plugin 里定义的逻辑，从而完成 Plugin 插件的优化任务。</p>
+<p>简单的解释就是这样，详细构建流程请看这篇<a href="https://juejin.im/post/6844904038543130637" target="_blank" rel="noopener noreffer">文章</a>
+。</p>
+<h2 id="配置入门">配置入门</h2>
+<p>下面以一个配置一个 react 开发环境为例，学习 webpack 的基本配置方法。</p>
+<p>新建文件夹 webpack-demo，终端进入文件夹执行 <code>npm init</code> 初始化项目。</p>
+<p>安装 react: <code>yarn add react react-dom</code></p>
+<p>安装 webpack: <code>yarn add webpack webpack-cli webpack-dev-server -D</code></p>
+<ul>
+<li>webpack-cli 提供了一组用于运行和设置 webpack 的命令</li>
+<li>Webpack-dev-server 提供 http 服务，实时重载(hot模式)，cors 配置，端口配置等</li>
+</ul>
+<p>安装 babel: <code> yarn add @babel/core @babel/preset-react @babel/preset-env babel-loader -D</code></p>
+<ul>
+<li>@babel/core 是核心依赖项</li>
+<li>@babel/preset-react 添加对 JSX 支持</li>
+<li>@babel/preset-env 添加对 ES6 的支持</li>
+<li>babel-loader 使用 Babel 和 webpack 转换 react 代码为 JS</li>
+</ul>
+<p>安装 CSS Loaders: <code>yarn add css-loader style-loader -D</code></p>
+<ul>
+<li>css-loader 从收集 CSS 并将 CSS 转化为字符串</li>
+<li>style-loader 将从 css-loader 中获得的字符串嵌入在 html 中的 style 标签中</li>
+</ul>
+<p>安装插件: <code>yarn add html-webpack-plugin -D</code></p>
+<ul>
+<li>html-webpack-plugin 用于将生成的 output 文件嵌入到指定 html 文件</li>
+</ul>
+<p>准备文件: 在根文件夹下创建 src 和 dist 文件夹，在 src 文件夹下创建 main.js，app.js，index.css，
+在 dist 文件夹下创建 index.html。</p>
+<p>创建 webpack.config.js，这是默认的 webpack 配置文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//webpack.config.js
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;html-webpack-plugin&#39;</span><span class="p">);</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./src/main.js&#39;</span><span class="p">,</span>
+    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">path</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;/dist&#39;</span><span class="p">),</span>
+        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;bundle.js&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">devServer</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">port</span><span class="o">:</span> <span class="mi">8080</span>
+    <span class="p">},</span>
+    <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">rules</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.jsx?$/</span><span class="p">,</span>
+                <span class="nx">exclude</span><span class="o">:</span> <span class="sr">/node_modules/</span><span class="p">,</span>
+                <span class="nx">loader</span><span class="o">:</span> <span class="s1">&#39;babel-loader&#39;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.css$/</span><span class="p">,</span>
+                <span class="nx">use</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;style-loader&#39;</span><span class="p">,</span> <span class="s1">&#39;css-loader&#39;</span><span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+        <span class="k">new</span> <span class="nx">HtmlWebpackPlugin</span><span class="p">({</span>
+            <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;./dist/index.html&#39;</span>
+        <span class="p">})</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>&ldquo;entry&rdquo;: 这是入口 js，webpack将从此处开始打包。</li>
+<li>&ldquo;output&rdquo;: 打包的文件将位于 &ldquo;/dist/bundle.js&rdquo;。</li>
+<li>&ldquo;devServer&rdquo;: 它定义了 weback-dev-server 的配置，开发服务器的默认端口是8080。</li>
+<li>模块规则-这些是转译规则：
+<ul>
+<li>&ldquo;test&rdquo;: 正则表达式，指定哪种文件需要通过 loader 转译。</li>
+<li>&ldquo;exclude&rdquo;: 指定 loader 应忽略的文件。</li>
+<li>&ldquo;use&rdquo;: 应用 loader 的数组，<strong>注意是从右往左加载 loader</strong>。</li>
+</ul>
+</li>
+</ul>
+<p>babel 转译的配置文件 .babelrc：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">{
+    &#34;presets&#34;:[&#34;@babel/preset-env&#34;, &#34;@babel/preset-react&#34;]
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>在 package.json 中添加脚本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&#34;start&#34;: &#34;webpack-dev-server --mode development --open --hot&#34;,
+&#34;build&#34;: &#34;webpack --mode production&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>将创建的空文件补充完整：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!-- dist/index.html --&gt;</span>
+
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>React Web<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;root&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- html-webpack-plugin 插件生成如下标签
+</span><span class="c">    &lt;script src=&#39;bundle.js&#39;&gt;&lt;/script&gt; --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// src/main.js
+</span><span class="c1"></span>
+<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">ReactDOM</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">App</span> <span class="nx">from</span> <span class="s1">&#39;./App.js&#39;</span><span class="p">;</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// src/app.js 
+</span><span class="c1"></span>
+<span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="s1">&#39;./index.css&#39;</span><span class="p">;</span>
+<span class="kr">class</span> <span class="nx">App</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="o">!!&lt;</span><span class="err">/h1&gt;</span>
+                <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Welcome</span> <span class="nx">to</span> <span class="nx">your</span> <span class="nx">React</span> <span class="nx">App</span><span class="p">..</span><span class="o">!&lt;</span><span class="err">/h2&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="c">/* src/index.css */</span>
+
+<span class="o">*</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>运行代码: <code>yarn start</code>，打包文件: <code>yarn run build</code>，动手试试吧！</p>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://www.webpackjs.com/" target="_blank" rel="noopener noreffer">webpack 官方文档</a>
+</li>
+<li><a href="https://juejin.im/post/6844904038543130637" target="_blank" rel="noopener noreffer">webpack打包原理? 看完这篇你就懂了!</a>
+</li>
+<li><a href="https://juejin.im/post/6844903858179670030" target="_blank" rel="noopener noreffer">实现一个简单的Webpack</a>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-08-16 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2020-08-16-webpack/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-08-16-webpack/" data-title="Webpack 概念梳理" data-hashtags="Webpack"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-08-16-webpack/" data-hashtag="Webpack"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-08-16-webpack/" data-title="Webpack 概念梳理"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-08-16-webpack/" data-title="Webpack 概念梳理"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/webpack">Webpack</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020-08-11-websocket/" class="prev" rel="prev" title="基于 Socket.IO 的实时聊天室"><i class="fas fa-angle-left fa-fw"></i>基于 Socket.IO 的实时聊天室</a></div>
+</div>
+<div class="comment"><div id="valine"></div><script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                new Valine({
+                    el: '#valine',
+                    appId: 'GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz',
+                    appKey: 'gK3L6a7r80578qujBez4FH6C',placeholder: '欢迎留言和转载！',avatar: 'mm',pageSize: 10,lang: 'en',visitor: true,recordIP: true,});
+            });
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
+        </noscript></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/valine/valine.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/valine/Valine.min.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
+</html>
