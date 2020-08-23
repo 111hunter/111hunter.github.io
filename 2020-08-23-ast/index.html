@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>入门 AST 抽象语法树 | 浮槎的博客</title>
+        <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="入门 AST 抽象语法树" />
+<meta property="og:description" content="如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2020-08-23-ast/" />
+<meta property="article:published_time" content="2020-08-23T00:30:00+08:00" />
+<meta property="article:modified_time" content="2020-08-23T00:30:00+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="入门 AST 抽象语法树"/>
+<meta name="twitter:description" content="如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="http://example.org/2020-08-23-ast/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://example.org/2020-08-16-webpack/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "入门 AST 抽象语法树",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2020-08-23-ast\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "AST","wordcount":  1571 ,
+        "url": "http:\/\/example.org\/2020-08-23-ast\/","datePublished": "2020-08-23","dateModified": "2020-08-23","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "浮槎"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/">浮槎的博客</a>
+        </div>
+        <div class="menu">
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            <span class="menu-item">|</span><a class="menu-item"
+                href="/posts/"  rel="noopener noreffer"
+                >文章</a><a class="menu-item"
+                href="/tags/"  rel="noopener noreffer"
+                >标签</a><a class="menu-item"
+                href="/categories/"  rel="noopener noreffer"
+                >分类</a><a class="menu-item"
+                href="/about/"  rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/">浮槎的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer"
+                >文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer"
+                >标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer"
+                >分类</a><a class="menu-item" href="/about/" title="" rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script><main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">入门 AST 抽象语法树</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a>
+</span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/coding">
+                                <i class="far fa-folder fa-fw"></i>Coding
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-08-23>2020-08-23</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1571 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 4 分钟&nbsp;<span id="/2020-08-23-ast/" class="leancloud_visitors" data-flag-title="入门 AST 抽象语法树">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#js-编译流程">JS 编译流程</a>
+      <ul>
+        <li><a href="#词法分析">词法分析</a></li>
+        <li><a href="#语法分析">语法分析</a></li>
+      </ul>
+    </li>
+    <li><a href="#ast-节点规范">AST 节点规范</a>
+      <ul>
+        <li><a href="#programs-根节点">Programs 根节点</a></li>
+        <li><a href="#patterns-模式">Patterns 模式</a></li>
+        <li><a href="#expression-表达式">Expression 表达式</a></li>
+        <li><a href="#identifier-标识符">Identifier 标识符</a></li>
+        <li><a href="#literal-字面量">Literal 字面量</a></li>
+        <li><a href="#statement-语句">Statement 语句</a></li>
+        <li><a href="#declaration-声明">Declaration 声明</a></li>
+      </ul>
+    </li>
+    <li><a href="#ast-的运用">AST 的运用</a></li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、Prettier 等功能的实现，都是建立在 AST 的基础之上的。</p>
+<h2 id="js-编译流程">JS 编译流程</h2>
+<p>首先是 JS 引擎读取 JS 文件中的字符流，然后通过 <strong>词法分析</strong> 生成 tokens，之后再通过 <strong>语法分析</strong> 生成 AST，最终 JS 引擎将 AST 编译成字节码或机器码，然后再运行。</p>
+<h3 id="词法分析">词法分析</h3>
+<p>词法分析，也称为扫描(scanner)，简单来说就是调用 next() 方法，一个一个字母的来读取字符，然后与定义好的 JavaScript 关键字符做比较，生成对应的 Token。Token 是 JS 代码在语法含义上不可分割的最小单元。除此之外，还会过滤掉源程序中的注释和空白字符(换行符、空格、制表符等)。</p>
+<p>最终，整个代码被分割进一个 tokens 的数组中。如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">href</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>经过词法分析生成类似这样的 tokens：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Keyword&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;const&#34;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Identifier&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;href&#34;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Punctuator&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;=&#34;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;String&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;&#39;https://github.com/&#39;&#34;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="语法分析">语法分析</h3>
+<p>语法分析会将词法分析出来的 tokens 转化成有语法含义的 AST 结构。同时，验证语法，如果语法有错，抛出语法错误。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Program&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;body&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;VariableDeclaration&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;declarations&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;VariableDeclarator&#34;</span><span class="p">,</span>
+          <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Identifier&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;href&#34;</span>
+          <span class="p">},</span>
+          <span class="nt">&#34;init&#34;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Literal&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;https://github.com/&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;raw&#34;</span><span class="p">:</span> <span class="s2">&#34;&#39;https://github.com/&#39;&#34;</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&#34;kind&#34;</span><span class="p">:</span> <span class="s2">&#34;const&#34;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&#34;sourceType&#34;</span><span class="p">:</span> <span class="s2">&#34;script&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://esprima.org/demo/parse.html?code=const%20href%20%3D%20%27https%3A%2F%2Fgithub.com%2F%27" target="_blank" rel="noopener noreffer">这里</a>
+ 可以看到代码的转换。<a href="https://mp.weixin.qq.com/s/qTPhYD8PXpeAxwmdlUmdEA" target="_blank" rel="noopener noreffer">这里</a>
+ 有 tokens 和 AST 的简单 JS 实现。</p>
+<h2 id="ast-节点规范">AST 节点规范</h2>
+<p>业界已经有很多成熟的解析库，常用的库都集成在 <a href="https://astexplorer.net/" target="_blank" rel="noopener noreffer">AST Explorer</a>
+ 中，可以实现代码与符合 <a href="https://github.com/estree/estree" target="_blank" rel="noopener noreffer">The ESTree Spec</a>
+ 的 AST 之间的相互转换。下面对规范里的 ES5 的 API 做简要说明。</p>
+<p>ESTree AST 中每个节点都要实现以下的 Node 接口，loc 字段表示相关代码的位置信息：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Node</span> <span class="p">{</span>
+    <span class="nx">type</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">loc?</span>: <span class="kt">SourceLocation</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">SourceLocation</span> <span class="p">{</span>
+    <span class="nx">source</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nx">start</span>: <span class="kt">Position</span><span class="p">;</span>
+    <span class="nx">end</span>: <span class="kt">Position</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Position</span> <span class="p">{</span>
+    <span class="nx">line</span>: <span class="kt">number</span><span class="p">;</span> <span class="c1">// &gt;= 1
+</span><span class="c1"></span>    <span class="nx">column</span>: <span class="kt">number</span><span class="p">;</span> <span class="c1">// &gt;= 0
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="programs-根节点">Programs 根节点</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Program</span> <span class="o">&lt;:</span> <span class="nx">Node</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;Program&#34;</span><span class="p">;</span>
+    <span class="nx">body</span><span class="o">:</span> <span class="p">[</span> <span class="nx">Statement</span> <span class="p">];</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>AST 的顶部， body 包含了多个 Statement(语句)节点。</p>
+<h3 id="patterns-模式">Patterns 模式</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Pattern</span> <span class="o">&lt;:</span> <span class="nx">Node</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在 ES6 的解构赋值中有意义，如 <code>let {name} = user</code>，其中<code>{name}</code>部分为 ObjectPattern, 对于 ES5，唯一的子类是 Identifier</p>
+<h3 id="expression-表达式">Expression 表达式</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Expression</span> <span class="o">&lt;:</span> <span class="nx">Node</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>表达式，子类很多，有二元表达式(n*n)、函数表达式(var fun = function(){})、数组表达式(var arr = [])、对象表达式(var obj = {})、赋值表达式( a=1)等。</p>
+<h3 id="identifier-标识符">Identifier 标识符</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Identifier</span> <span class="o">&lt;:</span> <span class="nx">Expression</span><span class="p">,</span> <span class="nx">Pattern</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;Identifier&#34;</span><span class="p">;</span>
+    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>写代码时自定义的名称，如变量名，函数名，属性名等。</p>
+<h3 id="literal-字面量">Literal 字面量</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Literal</span> <span class="o">&lt;:</span> <span class="nx">Expression</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;Literal&#34;</span><span class="p">;</span>
+    <span class="nx">value</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kr">boolean</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">|</span> <span class="kt">number</span> <span class="o">|</span> <span class="nb">RegExp</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>从 value 的类型可以看出，字面量就是值，他的类型有字符串，布尔，数值，null 和正则。</p>
+<h3 id="statement-语句">Statement 语句</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Statement</span> <span class="o">&lt;:</span> <span class="nx">Node</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>语句，子类有很多， 块语句、 if/switch语句、 return语句、 for/while语句、 with语句等。</p>
+<h3 id="declaration-声明">Declaration 声明</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Declaration</span> <span class="o">&lt;:</span> <span class="nx">Statement</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>声明，子类主要有变量申明、函数声明。</p>
+<p>ES6，7，8，&hellip; 的更多类型补充可以看这一篇 <a href="https://vincentstudio.info/2020/05/27/056_Javascript_ast/" target="_blank" rel="noopener noreffer">文章</a>
+。</p>
+<h2 id="ast-的运用">AST 的运用</h2>
+<p>将原代码转化为 AST，修改 AST，再重新转化为新代码就能完成代码转译。Babel 将最新语法的 JS 代码转化为 ES5 的原理就是这样的。</p>
+<div align=center><img src="/img/ast.png" width="90%"></div>
+<p>Babel 操作 AST 会用到以下工具包：</p>
+<ul>
+<li>@babel/parser 用于将代码转换为 AST</li>
+<li>@babel/traverse 用于对 AST 的遍历，包括节点增删改查、作用域等处理</li>
+<li>@babel/generator 用于将 AST 转换成代码</li>
+<li>@babel/types 用于 AST 节点操作的 Lodash 式工具库,各节点构造、验证等</li>
+</ul>
+<p>更多api详见 <a href="https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md" target="_blank" rel="noopener noreffer">Babel手册</a>
+。</p>
+<p>下面是用一个例子讲述具体操作步骤：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">fn</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们需要把以上代码转换成下面这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">fn</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">,</span><span class="s2">&#34;world&#34;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>首先将两份代码在 <a href="https://astexplorer.net/" target="_blank" rel="noopener noreffer">AST Explorer</a>
+ 中打开。选择 @babel/parser 为解析器，右边的有选项隐藏不需要的属性。对比两颗 AST 发现差异是 kind 和 arguments，因此代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;@babel/parser&#34;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">traverse</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;@babel/traverse&#34;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">generate</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;@babel/generator&#34;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;@babel/types&#34;</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">sourceCode</span> <span class="o">=</span> <span class="sb">`
+</span><span class="sb">var obj = {
+</span><span class="sb">    fn(){
+</span><span class="sb">      console.log(&#34;hello&#34;)
+</span><span class="sb">    }
+</span><span class="sb">  }
+</span><span class="sb">`</span>
+<span class="kd">let</span> <span class="nx">ast</span> <span class="o">=</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">sourceCode</span><span class="p">);</span>
+<span class="nx">traverse</span><span class="p">(</span><span class="nx">ast</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">VariableDeclaration</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="p">{</span> <span class="nx">kind</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">node</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">kind</span> <span class="o">===</span> <span class="s2">&#34;var&#34;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">kind</span> <span class="o">=</span> <span class="s2">&#34;const&#34;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">CallExpression</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="p">{</span> <span class="nx">callee</span><span class="p">,</span> <span class="nx">arguments</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">node</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">isMemberExpression</span><span class="p">(</span><span class="nx">callee</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">callee</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s2">&#34;console&#34;</span> <span class="o">&amp;&amp;</span> <span class="nx">callee</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s2">&#34;log&#34;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">arguments</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">stringLiteral</span><span class="p">(</span><span class="s2">&#34;world&#34;</span><span class="p">))</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">generate</span><span class="p">(</span><span class="nx">ast</span><span class="p">).</span><span class="nx">code</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://mp.weixin.qq.com/s/Fz9H5dscj5Oy__daecAYvg" target="_blank" rel="noopener noreffer">这里</a>
+ 还有更多例子。</p>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/qTPhYD8PXpeAxwmdlUmdEA" target="_blank" rel="noopener noreffer">JS之 执行过程</a>
+</li>
+<li><a href="https://vincentstudio.info/2020/05/27/056_Javascript_ast/" target="_blank" rel="noopener noreffer">JS 语法树学习</a>
+</li>
+<li><a href="https://mp.weixin.qq.com/s/Fz9H5dscj5Oy__daecAYvg" target="_blank" rel="noopener noreffer">Javascript抽象语法树</a>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-08-23 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2020-08-23-ast/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-08-23-ast/" data-title="入门 AST 抽象语法树" data-hashtags="AST"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-08-23-ast/" data-hashtag="AST"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-08-23-ast/" data-title="入门 AST 抽象语法树"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-08-23-ast/" data-title="入门 AST 抽象语法树"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ast">AST</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020-08-16-webpack/" class="prev" rel="prev" title="Webpack 概念梳理"><i class="fas fa-angle-left fa-fw"></i>Webpack 概念梳理</a></div>
+</div>
+<div class="comment"><div id="valine"></div><script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                new Valine({
+                    el: '#valine',
+                    appId: 'GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz',
+                    appKey: 'gK3L6a7r80578qujBez4FH6C',placeholder: '欢迎留言和转载！',avatar: 'mm',pageSize: 10,lang: 'en',visitor: true,recordIP: true,});
+            });
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
+        </noscript></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/valine/valine.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/valine/Valine.min.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
+</html>
