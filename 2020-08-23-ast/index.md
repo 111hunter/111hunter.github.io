@@ -195,7 +195,7 @@ const obj = {
 }
 ```
 
-首先将两份代码在 [AST Explorer](https://astexplorer.net/) 中打开。选择 @babel/parser 为解析器，右边的有选项隐藏不需要的属性。对比两颗 AST 发现差异是 kind 和 arguments，因此代码如下：
+将两份代码在 [AST Explorer](https://astexplorer.net/) 中打开。选择 @babel/parser 为解析器，右边有选项隐藏不需要的属性。对比两颗 AST 发现差异是 kind 和 arguments，因此代码如下：
 
 ```js
 const parser = require("@babel/parser");

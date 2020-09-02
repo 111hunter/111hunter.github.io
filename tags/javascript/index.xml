@@ -6,13 +6,31 @@
     <description>Recent content in Javascript on 浮槎的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 08 Nov 2019 22:37:34 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 08:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://example.org/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>js 扫雷小游戏</title>
+      <title>浅析 JS 函数式编程</title>
+      <link>http://example.org/2020-09-02-js-functional/</link>
+      <pubDate>Wed, 02 Sep 2020 08:30:00 +0800</pubDate>
+      
+      <guid>http://example.org/2020-09-02-js-functional/</guid>
+      <description>在计算机科学中，函数式编程 是一种编程范式，其中通过应用和组合函数来构造程序。它是一种声明式编程范式，其中函数定义是每个返回一个值的表达式树，</description>
+    </item>
+    
+    <item>
+      <title>入门 AST 抽象语法树</title>
+      <link>http://example.org/2020-08-23-ast/</link>
+      <pubDate>Sun, 23 Aug 2020 00:30:00 +0800</pubDate>
+      
+      <guid>http://example.org/2020-08-23-ast/</guid>
+      <description>如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、</description>
+    </item>
+    
+    <item>
+      <title>JS 扫雷小游戏</title>
       <link>http://example.org/2019-11-08-js-saolei/</link>
       <pubDate>Fri, 08 Nov 2019 22:37:34 +0800</pubDate>
       
@@ -21,7 +39,7 @@
     </item>
     
     <item>
-      <title>es6 学习笔记</title>
+      <title>ES6 学习笔记</title>
       <link>http://example.org/2019-10-30-js-es6/</link>
       <pubDate>Wed, 30 Oct 2019 20:59:36 +0800</pubDate>
       
@@ -30,7 +48,7 @@
     </item>
     
     <item>
-      <title>js 闭包写法的演变过程</title>
+      <title>JS 闭包写法的演变过程</title>
       <link>http://example.org/2019-10-17-js-basis/</link>
       <pubDate>Mon, 07 Oct 2019 18:27:34 +0800</pubDate>
       

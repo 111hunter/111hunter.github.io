@@ -1,4 +1,4 @@
-# antd + ts 的简单 demo
+# antd + TS 的简单 demo
 
 
 这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码中暂时还没有实现数据持久化，状态管理等，只是把页面上能够看到的功能实现了。后续我将尝试其他的数据流管理方案。

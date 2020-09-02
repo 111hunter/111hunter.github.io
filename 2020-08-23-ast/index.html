@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://example.org/2020-08-16-webpack/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://example.org/2020-08-16-webpack/" /><link rel="next" href="http://example.org/2020-09-02-js-functional/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -37,7 +37,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "AST","wordcount":  1571 ,
+            },"genre": "posts","keywords": "AST, Javascript","wordcount":  1568 ,
         "url": "http:\/\/example.org\/2020-08-23-ast\/","datePublished": "2020-08-23","dateModified": "2020-08-23","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -109,7 +109,7 @@
                                 <i class="far fa-folder fa-fw"></i>Coding
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-08-23>2020-08-23</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 1571 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1568 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 4 分钟&nbsp;<span id="/2020-08-23-ast/" class="leancloud_visitors" data-flag-title="入门 AST 抽象语法树">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -441,8 +441,8 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>首先将两份代码在 <a href="https://astexplorer.net/" target="_blank" rel="noopener noreffer">AST Explorer</a>
- 中打开。选择 @babel/parser 为解析器，右边的有选项隐藏不需要的属性。对比两颗 AST 发现差异是 kind 和 arguments，因此代码如下：</p>
+</div><p>将两份代码在 <a href="https://astexplorer.net/" target="_blank" rel="noopener noreffer">AST Explorer</a>
+ 中打开。选择 @babel/parser 为解析器，右边有选项隐藏不需要的属性。对比两颗 AST 发现差异是 kind 和 arguments，因此代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -531,19 +531,20 @@
                             <a class="link-to-markdown" href="/2020-08-23-ast/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-08-23-ast/" data-title="入门 AST 抽象语法树" data-hashtags="AST"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-08-23-ast/" data-hashtag="AST"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-08-23-ast/" data-title="入门 AST 抽象语法树"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-08-23-ast/" data-title="入门 AST 抽象语法树"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-08-23-ast/" data-title="入门 AST 抽象语法树" data-hashtags="AST,Javascript"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-08-23-ast/" data-hashtag="AST"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-08-23-ast/" data-title="入门 AST 抽象语法树"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-08-23-ast/" data-title="入门 AST 抽象语法树"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ast">AST</a></section>
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ast">AST</a>,&nbsp;<a href="/tags/javascript">Javascript</a></section>
         <section>
             <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/2020-08-16-webpack/" class="prev" rel="prev" title="Webpack 概念梳理"><i class="fas fa-angle-left fa-fw"></i>Webpack 概念梳理</a></div>
+    <div class="post-nav"><a href="/2020-08-16-webpack/" class="prev" rel="prev" title="Webpack 概念梳理"><i class="fas fa-angle-left fa-fw"></i>Webpack 概念梳理</a>
+            <a href="/2020-09-02-js-functional/" class="next" rel="next" title="浅析 JS 函数式编程">浅析 JS 函数式编程<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div class="comment"><div id="valine"></div><script>
             document.addEventListener("DOMContentLoaded", function(event) {
