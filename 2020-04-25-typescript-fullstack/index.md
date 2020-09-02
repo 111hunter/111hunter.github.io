@@ -1,7 +1,7 @@
 # 用 NgRx 和 Nest 写一个全栈 todolist
 
 
-本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。如果你对状态管理以及权限验证没有概念，可以自行百度或者看我之前写过的文章。
+本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。
 
 ## 后端开发
 
@@ -24,7 +24,7 @@
 - 2.HMR(hot module replacement) 体验太差。
 - 3.报错信息简直了。
 
-尽管在国内太冷门，不过我仍然看好 Angular 的发展，因为我认为 Angular 是软件工程。
+尽管在国内太冷门，不过我仍然看好 Angular 的发展。
 
 ### 组件开发
 
@@ -405,21 +405,21 @@ export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [
 ```
 #### 理解状态管理
 
-写本篇文章的目的之一是将状态管理实践验证。之前我有说前端的状态管理相当于后端的数据库。接下来我将一步一步的验证这个说法。我只说用户状态，不说 todolist 状态，因为在代码中是相似的。
+写本篇文章的目的之一是将状态管理实践验证。之前我有说前端的状态管理相当于后端的数据库。接下来我将一步一步的验证这个说法。下面以用户状态来讲解。
 
 定义初始状态类似于数据库的创建，action 是 store 数据的来源入口，从NgRx官网示意图中我们可以看到它可以来自用户操作(component)，也可以来自网络请求(effects)，reducer 类似于数据表，那 adapter, selector, effects 又分别是什么呢？
 
 <div align=center><img src="/img/ngrx.png" width="80%"></div>
 
-是这样的，按照 Redux 的约定，reducer 必须是纯函数，只接收旧状态，只返回新状态。为什么 reducer 是纯函数？其实很好理解，我们对数据表做操作时，我们实际上是对数据表中的列做操作，而 adapter 就是 reducer 中的列，我们对数据的增删改查就是对 adapter 的增删改查。selector 就类似于 sql 中的 select 语句。而 effects 负责传递数据，和一些 DOM 操作，当我们使用 NgRx 这套流程时，我们在 component 中需要做的唯一事情就是 dispatch action, 额外的事情就交给 effects 来做，这也是一种组件解耦和的方式。
+按照 Redux 的约定，reducer 必须是纯函数，只接收旧状态，只返回新状态。我们操作数据表时，实际上是对数据表中的列做操作，而 adapter 就是 reducer 中的列，对数据的增删改查就是对 adapter 的增删改查。selector 类似于 sql 中的 select 语句。而 effects 负责传递数据，和一些 DOM 操作，使用 NgRx 这套流程时，在 component 中需要做的唯一事情就是 dispatch action, 额外的事情就交给 effects 来做。
 
-如果你不懂我说的是什么，下面给出代码实例，可以结合代码来理解这段话。
+下面给出代码实例，可以结合代码来理解这段话。
 
 ### 代码实例
 
 #### 初始化 reducer 表
 
-按照 ngrx 官网上的做法，初始状态(initialState)是定义在 reducer 中的，但这里可能我们 todolist 的状态很多，有必要将其解耦出来，user.state.ts:
+初始状态(initialState)是定义在 reducer 中的，user.state.ts:
 
 ```ts
 import { EntityState, createEntityAdapter } from '@ngrx/entity';

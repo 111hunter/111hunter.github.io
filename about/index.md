@@ -7,8 +7,6 @@
 
 ## 关于我
 
-- :(fas fa-id-card): 平淡无奇大学生。
-
 - :(fas fa-music): 喜欢编程，音乐和阅读。
 
 - :(fas fa-notes-medical): 拖延症患者。

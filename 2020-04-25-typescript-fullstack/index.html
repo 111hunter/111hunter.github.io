@@ -7,14 +7,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>用 NgRx 和 Nest 写一个全栈 todolist | 浮槎的博客</title>
         <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="用 NgRx 和 Nest 写一个全栈 todolist" />
-<meta property="og:description" content="本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。如果你对状态管理以及权限验证没有概念，可以自行百度或者看我之前写过的文章。 后" />
+<meta property="og:description" content="本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。 后端开发 后端开发使用 Nest.js 框架，本次实践是重前端的，因此后端会做得简单一些。后端" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2020-04-25-typescript-fullstack/" />
 <meta property="article:published_time" content="2020-04-25T22:27:41+08:00" />
 <meta property="article:modified_time" content="2020-04-25T22:27:41+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用 NgRx 和 Nest 写一个全栈 todolist"/>
-<meta name="twitter:description" content="本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。如果你对状态管理以及权限验证没有概念，可以自行百度或者看我之前写过的文章。 后"/>
+<meta name="twitter:description" content="本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。 后端开发 后端开发使用 Nest.js 框架，本次实践是重前端的，因此后端会做得简单一些。后端"/>
 <meta name="theme-color" content="#ffffff">
 <meta name="msapplication-TileColor" content="#da532c">
 <link rel="canonical" href="http://example.org/2020-04-25-typescript-fullstack/" />
@@ -37,7 +37,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Angular, Rx","wordcount":  4122 ,
+            },"genre": "posts","keywords": "Angular, Rx","wordcount":  3966 ,
         "url": "http:\/\/example.org\/2020-04-25-typescript-fullstack\/","datePublished": "2020-04-25","dateModified": "2020-04-25","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -109,8 +109,8 @@
                                 <i class="far fa-folder fa-fw"></i>Coding
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-04-25>2020-04-25</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 4122 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>预计阅读 9 分钟&nbsp;<span id="/2020-04-25-typescript-fullstack/" class="leancloud_visitors" data-flag-title="用 NgRx 和 Nest 写一个全栈 todolist">
+                <i class="fas fa-pencil-alt fa-fw"></i>约 3966 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 8 分钟&nbsp;<span id="/2020-04-25-typescript-fullstack/" class="leancloud_visitors" data-flag-title="用 NgRx 和 Nest 写一个全栈 todolist">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="toc" id="toc-auto">
@@ -163,7 +163,7 @@
   </ul>
 </nav></div>
                 </details>
-            </div><div class="content" id="content"><p>本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。如果你对状态管理以及权限验证没有概念，可以自行百度或者看我之前写过的文章。</p>
+            </div><div class="content" id="content"><p>本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。</p>
 <h2 id="后端开发">后端开发</h2>
 <p>后端开发使用 Nest.js 框架，本次实践是重前端的，因此后端会做得简单一些。后端是在上一次鉴权认证的代码做部分修改。如果有不懂的代码，可以参考之前的<a href="https://111hunter.github.io/2020-03-29-nest-auth/" target="_blank" rel="noopener noreffer">文章</a>
 。此部分的讲解略过。这是后端部分生成的 swagger 接口文档:</p>
@@ -182,7 +182,7 @@
 <li>2.HMR(hot module replacement) 体验太差。</li>
 <li>3.报错信息简直了。</li>
 </ul>
-<p>尽管在国内太冷门，不过我仍然看好 Angular 的发展，因为我认为 Angular 是软件工程。</p>
+<p>尽管在国内太冷门，不过我仍然看好 Angular 的发展。</p>
 <h3 id="组件开发">组件开发</h3>
 <h4 id="导入-ui-组件库">导入 UI 组件库</h4>
 <p>在样式开发方面，我们使用 angular 官方提供的 Material UI。用一个 MaterialModule，导出我们需要用到的所有样式组件。</p>
@@ -859,14 +859,14 @@
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="理解状态管理">理解状态管理</h4>
-<p>写本篇文章的目的之一是将状态管理实践验证。之前我有说前端的状态管理相当于后端的数据库。接下来我将一步一步的验证这个说法。我只说用户状态，不说 todolist 状态，因为在代码中是相似的。</p>
+<p>写本篇文章的目的之一是将状态管理实践验证。之前我有说前端的状态管理相当于后端的数据库。接下来我将一步一步的验证这个说法。下面以用户状态来讲解。</p>
 <p>定义初始状态类似于数据库的创建，action 是 store 数据的来源入口，从NgRx官网示意图中我们可以看到它可以来自用户操作(component)，也可以来自网络请求(effects)，reducer 类似于数据表，那 adapter, selector, effects 又分别是什么呢？</p>
 <div align=center><img src="/img/ngrx.png" width="80%"></div>
-<p>是这样的，按照 Redux 的约定，reducer 必须是纯函数，只接收旧状态，只返回新状态。为什么 reducer 是纯函数？其实很好理解，我们对数据表做操作时，我们实际上是对数据表中的列做操作，而 adapter 就是 reducer 中的列，我们对数据的增删改查就是对 adapter 的增删改查。selector 就类似于 sql 中的 select 语句。而 effects 负责传递数据，和一些 DOM 操作，当我们使用 NgRx 这套流程时，我们在 component 中需要做的唯一事情就是 dispatch action, 额外的事情就交给 effects 来做，这也是一种组件解耦和的方式。</p>
-<p>如果你不懂我说的是什么，下面给出代码实例，可以结合代码来理解这段话。</p>
+<p>按照 Redux 的约定，reducer 必须是纯函数，只接收旧状态，只返回新状态。我们操作数据表时，实际上是对数据表中的列做操作，而 adapter 就是 reducer 中的列，对数据的增删改查就是对 adapter 的增删改查。selector 类似于 sql 中的 select 语句。而 effects 负责传递数据，和一些 DOM 操作，使用 NgRx 这套流程时，在 component 中需要做的唯一事情就是 dispatch action, 额外的事情就交给 effects 来做。</p>
+<p>下面给出代码实例，可以结合代码来理解这段话。</p>
 <h3 id="代码实例">代码实例</h3>
 <h4 id="初始化-reducer-表">初始化 reducer 表</h4>
-<p>按照 ngrx 官网上的做法，初始状态(initialState)是定义在 reducer 中的，但这里可能我们 todolist 的状态很多，有必要将其解耦出来，user.state.ts:</p>
+<p>初始状态(initialState)是定义在 reducer 中的，user.state.ts:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
