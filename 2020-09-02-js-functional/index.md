@@ -321,4 +321,4 @@ composeFn('ttsy');  // YSTT OLLEH
 **参考资料**
 
 - [维基百科](https://www.wikipedia.org/)
-- [JavaScript函数式编程入门经典](https://juejin.im/post/6844903837715660814#heading-25)
+- [JavaScript函数式编程入门经典](https://juejin.im/post/6844903837715660814)

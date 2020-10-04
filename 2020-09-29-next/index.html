@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Next.js 概览 | 浮槎的博客</title>
+        <meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="Next.js 概览" />
+<meta property="og:description" content="我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2020-09-29-next/" />
+<meta property="article:published_time" content="2020-09-29T23:30:00+08:00" />
+<meta property="article:modified_time" content="2020-09-29T23:30:00+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Next.js 概览"/>
+<meta name="twitter:description" content="我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="http://example.org/2020-09-29-next/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://example.org/2020-09-02-js-functional/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Next.js 概览",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2020-09-29-next\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Next.js, React","wordcount":  2598 ,
+        "url": "http:\/\/example.org\/2020-09-29-next\/","datePublished": "2020-09-29","dateModified": "2020-09-29","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "浮槎"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/">浮槎的博客</a>
+        </div>
+        <div class="menu">
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            <span class="menu-item">|</span><a class="menu-item"
+                href="/posts/"  rel="noopener noreffer"
+                >文章</a><a class="menu-item"
+                href="/tags/"  rel="noopener noreffer"
+                >标签</a><a class="menu-item"
+                href="/categories/"  rel="noopener noreffer"
+                >分类</a><a class="menu-item"
+                href="/about/"  rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/">浮槎的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer"
+                >文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer"
+                >标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer"
+                >分类</a><a class="menu-item" href="/about/" title="" rel="noopener noreffer"
+                >关于</a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script><main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Next.js 概览</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a>
+</span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/coding">
+                                <i class="far fa-folder fa-fw"></i>Coding
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-09-29>2020-09-29</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 2598 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 6 分钟&nbsp;<span id="/2020-09-29-next/" class="leancloud_visitors" data-flag-title="Next.js 概览">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#路由系统">路由系统</a></li>
+    <li><a href="#路由跳转">路由跳转</a>
+      <ul>
+        <li><a href="#nextlink">next/link</a></li>
+        <li><a href="#nextrouter">next/router</a></li>
+        <li><a href="#路由传参">路由传参</a></li>
+      </ul>
+    </li>
+    <li><a href="#获取数据">获取数据</a>
+      <ul>
+        <li><a href="#getserversideprops">getServerSideProps</a></li>
+        <li><a href="#getstaticprops">getStaticProps</a></li>
+        <li><a href="#getstaticpaths">getStaticPaths</a></li>
+      </ul>
+    </li>
+    <li><a href="#其他功能">其他功能</a>
+      <ul>
+        <li><a href="#自定义配置">自定义配置</a></li>
+        <li><a href="#自定义构建">自定义构建</a></li>
+        <li><a href="#api-路由">api 路由</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next.js 是 React 的同构框架，它的页面由 React 组件构成。</p>
+<h2 id="路由系统">路由系统</h2>
+<p>Next.js 的路由系统基于文件路径自动映射，一般约定在根目录的 pages 文件夹内：</p>
+<ul>
+<li>
+<p><code>pages/index.js</code> &ndash;&gt; <code>/</code></p>
+</li>
+<li>
+<p><code>pages/about.js</code> &ndash;&gt; <code>/about</code></p>
+</li>
+<li>
+<p><code>pages/blog/[slug].js</code> &ndash;&gt; <code>/blog/:slug</code>( slug 是动态生成的)</p>
+</li>
+<li>
+<p><code>pages/post/[...all].js</code>&ndash;&gt; <code>/post/*</code>(匹配 <code>/post</code>,<code>/post/a</code>,<code>/post/a/b</code> 等)</p>
+</li>
+</ul>
+<p>Next.js 创建的是多页应用，pages 内的每个文件都是单个页面。Next.js 中用形如 <code>[params]</code> 文件(文件夹)表示动态路由页面。</p>
+<h2 id="路由跳转">路由跳转</h2>
+<p>Next.js 中路由跳转方式有两种，使用的 api 分别是 <code>next/link</code> 和 <code>next/router</code>。</p>
+<h3 id="nextlink">next/link</h3>
+<p>从 <code>next/link</code> 导入的 <code>&lt;Link&gt;</code> 是 React 组件，可接收以下属性:</p>
+<ul>
+<li><code>href</code> 是导航到的路径，是页面跳转的必需属性，href 可以是字符串或者对象</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="p">&lt;</span><span class="nt">Link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/about?name=jackylin&#34;</span><span class="p">&gt;</span>
+<span class="c1">//这里 href 有两层 {}, github page 无法识别语法，只能写为一层了
+</span><span class="c1"></span><span class="p">&lt;</span><span class="nt">Link</span> <span class="na">href</span><span class="o">=</span><span class="p">{</span> <span class="nx">pathname</span><span class="o">:</span> <span class="s2">&#34;/about&#34;</span><span class="p">,</span> <span class="nx">query</span><span class="o">:</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;jackylin&#34;</span> <span class="p">},}&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>as</code> 是浏览器 url 栏显示的路径，当 <code>href</code> 中包含动态页面 (<code>[param]</code>) 时使用</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">pids</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id1&#39;</span><span class="p">,</span> <span class="s1">&#39;id2&#39;</span><span class="p">,</span> <span class="s1">&#39;id3&#39;</span><span class="p">]</span>
+<span class="p">{</span>
+<span class="nx">pids</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">pid</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">Link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;/post/[pid]&#39;</span> <span class="na">as</span><span class="o">=</span><span class="p">{</span><span class="sb">`/post/</span><span class="si">${</span><span class="nx">pid</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#39;index&#39;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span><span class="p">&gt;</span><span class="nx">Post</span> <span class="p">{</span><span class="nx">pid</span><span class="p">}&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+<span class="p">))}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p><code>passHref</code> 将 <code>&lt;Link&gt;</code> 的 <code>href</code> 传递给子项，当子项是包装 <code>&lt;a&gt;</code> 的组件时，此属性必需</p>
+</li>
+<li>
+<p><code>prefetch</code> 预加载，将页面提前加载到本地缓存</p>
+</li>
+</ul>
+<p>官方文档还有一些其他 <a href="https://nextjs.org/docs/api-reference/next/link" target="_blank" rel="noopener noreffer">属性</a>
+ 和用法示例，需要注意的是 <code>&lt;Link&gt;</code> 只能有一个子项。</p>
+<h3 id="nextrouter">next/router</h3>
+<p>相较于 <code>next/link</code>，<code>next/router</code> 能自定义配置复杂的路由跳转。<code>next/router</code> 提供如下 api：</p>
+<ul>
+<li>
+<p><code>useRouter</code> 是 React hook，只能用于函数组件</p>
+</li>
+<li>
+<p><code>withRouter</code> 是高阶组件，可用于类组件和函数组件</p>
+</li>
+</ul>
+<p>他们的实例对象 router 具有以下的属性，方法，事件等。</p>
+<p>属性：<code>pathname</code> 是文件名，<code>query</code> 是查询参数，<code>asPath</code> 是浏览器中显示的路径。</p>
+<p>方法：<code>router.push(url, as, options)</code> 是路由跳转方法，跳转的页面路径(url)必需。url 可以是字符串形式，也可以是对象形式。在需路由跳转的元素上绑定点击事件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">ReadPost</span><span class="p">({</span> <span class="nx">post</span> <span class="p">})</span> <span class="p">{</span>
+  
+  <span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">()</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">span</span>
+      <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+          <span class="nx">pathname</span><span class="o">:</span> <span class="s1">&#39;/post/[pid]&#39;</span><span class="p">,</span>
+          <span class="nx">query</span><span class="o">:</span> <span class="p">{</span> <span class="nx">pid</span><span class="o">:</span> <span class="nx">post</span><span class="p">.</span><span class="nx">id</span> <span class="p">},</span>
+        <span class="p">})</span>
+      <span class="p">}}</span>
+    <span class="p">&gt;</span>
+      <span class="nx">查看文章</span>
+    <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>对比前面讲的 <code>&lt;Link&gt;</code> 组件，能看出 <code>&lt;Link&gt;</code> 组件其实是封装了 router，点击事件等。</p>
+<p>事件：Next.js 在路由跳转的生命周期内置了一些的钩子事件，若我们有监听路由变化的需求，可订阅这些钩子事件来实现需求。具体用法请参阅 <a href="https://nextjs.org/docs/api-reference/next/router#routerevents" target="_blank" rel="noopener noreffer">官方文档</a>
+。</p>
+<h3 id="路由传参">路由传参</h3>
+<p>Next.js 支持查询字符串格式的参数传递，参数以字符串或者对象的格式传递: <code>&lt;Link&gt;</code> 的 <code>href</code> 属性或者 <code>router.push</code> 中的 url。参数的接收可以用 <code>useRouter</code> 或 <code>withRouter</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// router 直接读取参数
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">Post</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">();</span>
+  <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">文章编号</span><span class="err">：</span><span class="p">{</span><span class="nx">router</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">pid</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">Post</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">//使用 withRouter 接收参数时，router 作为组件参数
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">Post</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">router</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">文章编号</span><span class="err">：</span><span class="p">{</span><span class="nx">router</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">pid</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">withRouter</span><span class="p">(</span><span class="nx">Post</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="获取数据">获取数据</h2>
+<p>Next.js 中获取数据的方法有 <code>getServerSideProps</code>，<code>getStaticProps</code> 和 <code>getStaticPaths</code>。还有一个 <code>getInitialProps</code>，官方文档已不推荐使用。这些方法都是服务端的异步方法，只能在 pages 文件夹内使用。</p>
+<p>Next.js 有两种预渲染形式：</p>
+<ul>
+<li>
+<p>服务端渲染(SSR)：html 在每次访问路由时都会重新生成。对应的数据获取方法：<code>getServerSideProps</code>。由于“服务端渲染”比“静态生成”慢，因此常用于数据频繁更新的页面。</p>
+</li>
+<li>
+<p>静态生成(SSG)：html 是在构建时生成的，并且会在每次请求时重用。对应的数据获取方法： <code>getStaticProps</code> 和 <code>getStaticPaths</code>。这对于可以在用户请求之前就预渲染的页面非常有用，可以将其与客户端渲染结合使用以引入其他数据。</p>
+</li>
+</ul>
+<p>Next.js 引入了自动静态优化的功能，就是说如果页面中没有使用 SSR 方法，Next.js 在 build 阶段就会生成 html，访问页面路由直接返回生成的 html，以此来提升性能。</p>
+<p>选择 SSR 还是 SSG？</p>
+<ul>
+<li>
+<p>如果页面内容真动态(例如来源数据库且经常变化)，使用 SSR。</p>
+</li>
+<li>
+<p>如果是静态页面或者伪动态(来源数据库但是不变化)，使用 SSG。</p>
+</li>
+</ul>
+<h3 id="getserversideprops">getServerSideProps</h3>
+<p>在数据频繁更新的页面使用，每次访问路由时都会调用。<code>getServerSideProps</code> 方法是升级了 9.3 之前的 <code>getInitialProps</code> 方法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">Blog</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">data</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">title</span><span class="o">:</span> <span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">title</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">}</span>
+
+<span class="c1">// 在每次页面请求时才会运行，在构建时不运行。
+</span><span class="c1"></span><span class="kr">export</span> <span class="nx">async</span> <span class="kd">function</span> <span class="nx">getServerSideProps</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://jsonplaceholder.typicode.com/todos/1&#39;</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+
+  <span class="k">return</span> <span class="p">{</span> <span class="nx">props</span><span class="o">:</span> <span class="p">{</span><span class="nx">data</span><span class="p">}</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">Blog</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="getstaticprops">getStaticProps</h3>
+<p>页面内容取决于外部数据时使用。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// posts 依赖外部数据
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">Blog</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">posts</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">title</span><span class="o">:</span> <span class="p">{</span><span class="nx">posts</span><span class="p">.</span><span class="nx">title</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">}</span>
+
+<span class="c1">// 此函数只在构建时被调用一次，后面不会再次调用
+</span><span class="c1"></span><span class="kr">export</span> <span class="nx">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="c1">// 调用外部 API 获取内容
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://jsonplaceholder.typicode.com/todos/1&#39;</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+
+  <span class="c1">// 在构建时将接收到 `posts` 参数
+</span><span class="c1"></span>  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">posts</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">Blog</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="getstaticpaths">getStaticPaths</h3>
+<p>页面路径取决于外部数据时使用，结合 getStaticProps 使用。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">Post</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">post</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">文章id</span><span class="o">:</span> <span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="p">},</span> <span class="nx">文章标题</span><span class="o">:</span> <span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// 此函数只在构建时被调用一次，后面不会再次调用
+</span><span class="c1"></span><span class="kr">export</span> <span class="nx">async</span> <span class="kd">function</span> <span class="nx">getStaticPaths</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 取全部文章数据
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://jsonplaceholder.typicode.com/todos&#39;</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+  <span class="kr">const</span> <span class="nx">paths</span> <span class="o">=</span> <span class="nx">posts</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">post</span> <span class="p">=&gt;</span> <span class="sb">`/posts/</span><span class="si">${</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+  <span class="c1">// fallback为 false，表示不在 getStaticPaths 的路径是 404 页面。
+</span><span class="c1"></span>  <span class="k">return</span> <span class="p">{</span> <span class="nx">paths</span><span class="p">,</span> <span class="nx">fallback</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// params 来自 paths: [{ params: { ... } }]
+</span><span class="c1"></span><span class="kr">export</span> <span class="nx">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">({</span> <span class="nx">params</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="c1">// 取具体文章数据
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="sb">`https://jsonplaceholder.typicode.com/todos/</span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="nx">post</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="nx">props</span><span class="o">:</span> <span class="p">{</span> <span class="nx">post</span> <span class="p">}</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">Post</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>api 的更多细节用法请阅读 <a href="https://nextjs.org/docs/basic-features/data-fetching" target="_blank" rel="noopener noreffer">官方文档</a>
+。</p>
+<h2 id="其他功能">其他功能</h2>
+<h3 id="自定义配置">自定义配置</h3>
+<p>Next.js 在 pages 文件夹内的默认配置文件有 <code>_app.js</code>,<code>_document.js</code>,<code>404.js</code> 等。</p>
+<p>以 <code>_app.js</code> 为例，它的功能是初始化当前路由的页面组件，接口如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="cm">/**
+</span><span class="cm"> * Component 是当前路由的页面组件，每次路由切换时，Component 都会更新
+</span><span class="cm"> * pageProps 是初始属性，该初始属性由某个数据获取方法预先加载到你的页面中，否则它将是一个空对象
+</span><span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">MyApp</span><span class="p">({</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">pageProps</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">Component</span> <span class="p">{</span><span class="na">...pageProps</span><span class="p">}</span> <span class="p">/&gt;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">MyApp</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>比如我们要使用 recoil 进行状态管理，所有页面组件都应该为 <code>&lt;RecoilRoot&gt;</code> 的子组件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="p">{</span> <span class="nx">RecoilRoot</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;recoil&#39;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">MyApp</span><span class="p">({</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">pageProps</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">RecoilRoot</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">Component</span> <span class="p">{</span><span class="na">...pageProps</span><span class="p">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">RecoilRoot</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>其他配置文件的作用请阅读 <a href="https://nextjs.org/docs/advanced-features/custom-document" target="_blank" rel="noopener noreffer">官方文档</a>
+。</p>
+<h3 id="自定义构建">自定义构建</h3>
+<p>Next.js 根目录 next.config.js 可配置项目构建。例如扩展默认 webpack 配置，接口如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">webpack</span><span class="o">:</span> <span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="p">{</span> <span class="nx">buildId</span><span class="p">,</span> <span class="nx">dev</span><span class="p">,</span> <span class="nx">isServer</span><span class="p">,</span> <span class="nx">defaultLoaders</span><span class="p">,</span> <span class="nx">webpack</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Note: we provide webpack above so you should not `require` it
+</span><span class="c1"></span>    <span class="nx">config</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">IgnorePlugin</span><span class="p">(</span><span class="sr">/\/__tests__\//</span><span class="p">))</span>
+    <span class="c1">// Important: return the modified config
+</span><span class="c1"></span>    <span class="k">return</span> <span class="nx">config</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>例如在 Next.js 默认的 babel 配置中添加一个 loader：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// https://github.com/vercel/next.js/tree/canary/packages/next-mdx
+</span><span class="c1"></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">webpack</span><span class="o">:</span> <span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">config</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">rules</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+      <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.mdx/</span><span class="p">,</span>
+      <span class="nx">use</span><span class="o">:</span> <span class="p">[</span>
+        <span class="nx">options</span><span class="p">.</span><span class="nx">defaultLoaders</span><span class="p">.</span><span class="nx">babel</span><span class="p">,</span>
+        <span class="p">{</span>
+          <span class="nx">loader</span><span class="o">:</span> <span class="s1">&#39;@mdx-js/loader&#39;</span><span class="p">,</span>
+          <span class="nx">options</span><span class="o">:</span> <span class="nx">pluginOptions</span><span class="p">.</span><span class="nx">options</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">],</span>
+    <span class="p">})</span>
+    <span class="k">return</span> <span class="nx">config</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="api-路由">api 路由</h3>
+<p>Next.js 提供简单的后端 api 能力，在 <code>pages/api</code> 内的文件都将映射为 <code>/api/*</code> 的后端接口。它们不会和页面一起打包。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// pages/api/post.js
+</span><span class="c1"></span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">getPosts</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;lib/posts&#39;</span>
+
+<span class="kr">const</span> <span class="nx">Posts</span> <span class="o">=</span> <span class="nx">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">getPosts</span><span class="p">()</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">=</span> <span class="mi">200</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">posts</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">Posts</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>目前 Next.js 没有提供数据库和测试相关的功能，需自行配置或与其他框架配合使用。</p>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://nextjs.org/" target="_blank" rel="noopener noreffer">Next.js 官方文档</a>
+</li>
+<li><a href="https://hicc.pro/p/UEvoioY/T622AgI" target="_blank" rel="noopener noreffer">Next.js 简明教程</a>
+</li>
+<li><a href="https://juejin.im/post/6863336367309455373" target="_blank" rel="noopener noreffer">手把手带你入门 NextJs</a>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-09-29 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2020-09-29-next/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-09-29-next/" data-title="Next.js 概览" data-hashtags="Next.js,React"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-09-29-next/" data-hashtag="Next.js"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-09-29-next/" data-title="Next.js 概览"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-09-29-next/" data-title="Next.js 概览"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/next.js">Next.js</a>,&nbsp;<a href="/tags/react">React</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020-09-02-js-functional/" class="prev" rel="prev" title="浅析 JS 函数式编程"><i class="fas fa-angle-left fa-fw"></i>浅析 JS 函数式编程</a></div>
+</div>
+<div class="comment"><div id="valine"></div><script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                new Valine({
+                    el: '#valine',
+                    appId: 'GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz',
+                    appKey: 'gK3L6a7r80578qujBez4FH6C',placeholder: '欢迎留言和转载！',avatar: 'mm',pageSize: 10,lang: 'en',visitor: true,recordIP: true,});
+            });
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
+        </noscript></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/valine/valine.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/valine/Valine.min.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
+</html>

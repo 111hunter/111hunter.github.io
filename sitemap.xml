@@ -2,11 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/categories/</loc><lastmod>2020-09-02T08:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/categories/coding/</loc><lastmod>2020-09-02T08:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/categories/</loc><lastmod>2020-09-29T23:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/categories/coding/</loc><lastmod>2020-09-29T23:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/tags/next.js/</loc><lastmod>2020-09-29T23:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/2020-09-29-next/</loc><lastmod>2020-09-29T23:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/posts/</loc><lastmod>2020-09-29T23:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/tags/react/</loc><lastmod>2020-09-29T23:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/tags/</loc><lastmod>2020-09-29T23:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/tags/javascript/</loc><lastmod>2020-09-02T08:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/posts/</loc><lastmod>2020-09-02T08:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/tags/</loc><lastmod>2020-09-02T08:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-09-02-js-functional/</loc><lastmod>2020-09-02T08:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/tags/ast/</loc><lastmod>2020-08-23T00:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-08-23-ast/</loc><lastmod>2020-08-23T00:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -19,7 +22,6 @@
             <loc>http://example.org/tags/node.js/</loc><lastmod>2020-07-13T17:45:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-07-13-rbac0/</loc><lastmod>2020-07-13T17:45:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-06-30-antd/</loc><lastmod>2020-07-23T00:15:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/tags/react/</loc><lastmod>2020-07-23T00:15:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-06-18-forum/</loc><lastmod>2020-06-18T12:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/tags/spring-boot/</loc><lastmod>2020-06-18T12:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-05-18-trello/</loc><lastmod>2020-05-18T00:18:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
