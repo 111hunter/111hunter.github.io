@@ -1,33 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Spring Boot on 浮槎的博客</title>
-    <link>http://example.org/tags/spring-boot/</link>
-    <description>Recent content in Spring Boot on 浮槎的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Thu, 18 Jun 2020 12:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="http://example.org/tags/spring-boot/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>MyBatis-Plus 实现论坛 Api</title>
-      <link>http://example.org/2020-06-18-forum/</link>
-      <pubDate>Thu, 18 Jun 2020 12:00:00 +0800</pubDate>
-      
-      <guid>http://example.org/2020-06-18-forum/</guid>
-      <description>数据分页获取 引入依赖，连接数据库 在 spring-boot 项目的根目录 pom.xml 添加依赖，相关依赖有 lombok, mybatis-plus, druid, swagger, mysql 驱动等。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26</description>
-    </item>
-    
-    <item>
-      <title>用 Spring Boot 和 Vue.js 写一个全栈应用</title>
-      <link>http://example.org/2020-03-21-spring/</link>
-      <pubDate>Sat, 21 Mar 2020 17:59:51 +0800</pubDate>
-      
-      <guid>http://example.org/2020-03-21-spring/</guid>
-      <description>本篇文章将介绍如何用 Spring boot 与 Vue.js 创建一个具有基本 crud 功能的全栈 web 应用，我们将使用 bootstrap 作为项目的 UI 库，适合 web 开发初学者阅读。 后端接口 到 https://start.spring.io/ 去生成和下载 spring</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Spring Boot - 标签 - 浮槎的博客</title>
+        <link>http://example.org/tags/spring-boot/</link>
+        <description>Spring Boot - 标签 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 18 Jun 2020 12:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/spring-boot/" rel="self" type="application/rss+xml" /><item>
+    <title>MyBatis-Plus 实现论坛 Api</title>
+    <link>http://example.org/2020-06-18-forum/</link>
+    <pubDate>Thu, 18 Jun 2020 12:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-06-18-forum/</guid>
+    <description><![CDATA[数据分页获取 引入依赖，连接数据库 在 spring-boot 项目的根目录 pom.xml 添加依赖，相关依赖有 lombok, mybatis-plus, druid, swagger, mysql 驱动等。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26]]></description>
+</item><item>
+    <title>用 Spring Boot 和 Vue.js 写一个全栈应用</title>
+    <link>http://example.org/2020-03-21-spring/</link>
+    <pubDate>Sat, 21 Mar 2020 17:59:51 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-03-21-spring/</guid>
+    <description><![CDATA[本篇文章将介绍如何用 Spring boot 与 Vue.js 创建一个具有基本 crud 功能的全栈 web 应用，我们将使用 bootstrap 作为项目的 UI 库，适合 web 开发初学者阅读。 后端接口 到 https://start.spring.io/ 去生成和下载 spring]]></description>
+</item></channel>
 </rss>

@@ -19,7 +19,8 @@ DragDropContext 提供了以下三个钩子：
 - onDragEnd 拖拽结束时执行，且 onDragEnd 必须设定。
  
 我们需要在 Board 组件内建立可拖动范围，则需要这样写：
- ```js
+ 
+ ```jsx
  // components/Board.js
 
  const Board = () => {
@@ -34,12 +35,16 @@ DragDropContext 提供了以下三个钩子：
     );
  }
 ```
+
 Droppable：
+
 - Droppable 必须设定 droppableId
+
 - Droppable 使用 render-props 意味着内部须使用一个函数，该函数接收参数 provided 对象, 然后将参数 provided 的属性传递给封装后的可拖放的容器组件
 
 将 Board 组件建立成可拖放的容器组件，像这样写：
-```js
+
+```jsx
 // components/Board.js
 
 // 需嵌套在 DragDropContext 内
@@ -74,7 +79,8 @@ Draggable：
 - Draggable 与 Droppable 一样是 render-props，接收 provided 对象，返回值是封装后的可拖放组件
 
 将 List 组件建立成可拖放组件，像这样写：
-```js
+
+```jsx
 // components/List.js
 
 // 设置每个 List 都是可拖动的
@@ -98,7 +104,8 @@ const List = ({ id, title, cards = [], index }) => {
 ```
 
 同理设置 Card 组件可在 List 组件内部拖动，先要将 List 内部封装成可拖放的容器，像这样写:
-```js
+
+```jsx
 // components/List.js
 
 // 需嵌套在 List 组件返回的 ListContainer 内
@@ -123,8 +130,10 @@ const List = ({ id, title, cards = [], index }) => {
 )}
 </Droppable>
 ```
+
 将 Card 组件封装成可拖放组件，像这样写:
-```js
+
+```jsx
 // components/Card.js
 
 const Card = ({ id, text, index, listId }) => {
@@ -144,10 +153,12 @@ const Card = ({ id, text, index, listId }) => {
      );
 }
 ```
+
 ## 状态管理
 
 初始化列表数据:
-```js
+
+```jsx
 // morkData.js
 
 import { uuid } from 'uuidv4';
@@ -184,8 +195,10 @@ export const ListState = [
     },
 ];
 ```
+
 记录状态变更用 DragDropContext 上的钩子函数 onDragEnd，onDragEnd 接收一个 result 对象，result 记录了拖拽过程中的状态变化，result 结构如下：
-```js
+
+```jsx
 const result = {
   draggableId: 1, // 移动的组件 id
   type: 'list',
@@ -199,8 +212,10 @@ const result = {
   }
 }
 ```
+
 我们需要写拖放组件后的状态变化逻辑，因为我们的列表数据中的 cards 数组发生了变化，但我们还没有把新的状态渲染到 list 组件中，拖放组件后需要重新排序，现在去实现在 Board 组件中定义的 onDragEnd 钩子函数：
-```js
+
+```jsx
 // components/Board.js
 
   const onDragEnd = ({ draggableId, type, source, destination }) => {
@@ -218,8 +233,10 @@ const result = {
     }
   };
 ```
+
 action 用 payload 传递接收到的数据：
-```js
+
+```jsx
 // actions/listActions.js
 
 import { CONSTANTS } from '.';
@@ -246,10 +263,11 @@ export const sort = (
     }
   };
 };
-
 ```
+
 reducer 实现状态变化逻辑并返回新状态，始终**用新状态替换原来的状态**，不要直接在原来的对象上操作，因为我们将会对每个状态做记录，这有利于我们实现撤销重做功能。
-```js
+
+```jsx
 // reducers/listReducer.js
 
 case CONSTANTS.DRAGGED: {  // 当完成拖放动作时
@@ -294,12 +312,14 @@ case CONSTANTS.DRAGGED: {  // 当完成拖放动作时
   return newState;
 }
 ```
+
 这样就实现了移动列表和移动卡片的状态变化逻辑，剩下的列表和卡片的增删改查的状态变化逻辑的实现就比较容易了。
 
 ## 搜索卡片
 
 在界面上实现卡片的搜索功能，实际上就是实现筛选卡片功能。我们已经在每个 List 组件中遍历其中的 Card，筛选功能就是每个 List 组件根据搜索框的输入内容选择性的遍历 Card，修改 List 组件如下：
-```js
+
+```jsx
 // components/List.js
 
 ...
@@ -324,8 +344,10 @@ case CONSTANTS.DRAGGED: {  // 当完成拖放动作时
 )}
 </Droppable>
 ```
+
 实现其中的 getFilteredCards 方法：
-```js
+
+```jsx
 const getFilteredCards = (cards, searchText) => {
   if (searchText) {
     console.log(searchText);
@@ -334,13 +356,14 @@ const getFilteredCards = (cards, searchText) => {
   return cards;
 };
 ```
+
 ## 撤销重做功能
 
 实现撤销重做功能可用 [redux-undo](https://github.com/omnidan/redux-undo) 这个库，自己实现也不复杂，下面就自己实现: 
 
 实现方法是自定义一个接收 reducer 为参数，返回新 reducer 的函数(reducer enhancer)，监听 listReducer 的变化并做记录。实现思路来自 [redux 官方文档](https://www.redux.org.cn/docs/recipes/ImplementingUndoHistory.html)。原本创建 store 时需要导出的 reducer 如下：
 
-```js
+```jsx
 // reducers/index.js
 
 const rootReducer = combineReducers({
@@ -353,7 +376,7 @@ export default rootReducer;
 
 combineReducers 接收值为 reducer 的函数作为参数，我们只要实现一个返回值为 reducer 的函数(reducer enhancer)就行：
 
-```js
+```jsx
 const rootReducer = combineReducers({
   board: stateEnhancer(listReducer),
   ...
@@ -364,7 +387,7 @@ export default rootReducer;
 
 board 对应的值是将 listReducer 封装后的新 reducer，这样每次调用 listReducer 时也会调用 stateEnhancer，因为函数的参数发生了变化，函数就会重新执行。
 
-```js
+```jsx
 // reducers/stateEnhancer.js
 
 import { CONSTANTS } from '../actions';
@@ -414,7 +437,6 @@ const stateEnhancer = reducer => {
 };
 
 export default stateEnhancer;
-
 ```
 
 我们用了三个数组记录 listReducer 的变化，按下撤销或者重做功能按钮时，就能在不同的 listReducer 之间切换。并且我们可以根据 previousStates， futureStates 是否为空来判断撤销，重做按钮是否可用：

@@ -1,24 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Passport on 浮槎的博客</title>
-    <link>http://example.org/tags/passport/</link>
-    <description>Recent content in Passport on 浮槎的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sun, 29 Mar 2020 10:24:40 +0800</lastBuildDate>
-    
-	<atom:link href="http://example.org/tags/passport/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>NestJS &#43; Passport 实现鉴权认证</title>
-      <link>http://example.org/2020-03-29-nest-auth/</link>
-      <pubDate>Sun, 29 Mar 2020 10:24:40 +0800</pubDate>
-      
-      <guid>http://example.org/2020-03-29-nest-auth/</guid>
-      <description>鉴权(authentication)是指验证用户是否拥有访问系统的权利。传统的鉴权是通过密码来验证的。这种方式的前提是，每个获得密码的用户都</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Passport - 标签 - 浮槎的博客</title>
+        <link>http://example.org/tags/passport/</link>
+        <description>Passport - 标签 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 29 Mar 2020 10:24:40 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/passport/" rel="self" type="application/rss+xml" /><item>
+    <title>NestJS &#43; Passport 实现鉴权认证</title>
+    <link>http://example.org/2020-03-29-nest-auth/</link>
+    <pubDate>Sun, 29 Mar 2020 10:24:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-03-29-nest-auth/</guid>
+    <description><![CDATA[鉴权(authentication)是指验证用户是否拥有访问系统的权利。传统的鉴权是通过密码来验证的。这种方式的前提是，每个获得密码的用户都]]></description>
+</item></channel>
 </rss>

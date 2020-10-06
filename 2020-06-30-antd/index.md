@@ -13,13 +13,14 @@
 
 ## 定义数据模型
 
-```ts
+```tsx
 export interface ITodo {
     id: number;
     text: string;
     done: boolean;
 }
 ```
+
 ## 状态提升
 
 由于没有引入 redux 状态管理库，为了方便组件间的数据传递，一个比较好的做法是将多个组件需要共享的状态提升到它们最近的父组件上(状态提升)。这里的父组件是 Todo 组件。
@@ -27,22 +28,23 @@ export interface ITodo {
 需要共享的状态有：
 
 - 1.编辑 TodoList 组件中的 todo 时，需要让对话框显示(showModal) 
+
 - 2.编辑 TodoList 组件中的 todo 时，弹出的对话框需要获得 todo.id(todoId)
+
 - 3.根据弹出对话框的位置，决定对话框的标题(modalTitle)
 
 先在 Todo 组件中定义需要共享的数据字段：
 
-```ts
+```tsx
 // Todo.ts
 const [showModal, setShowModal] = useState(false);
 const [todoId, setTodoId] = useState(1); 
 const [modalTitle, setModalTitle] = useState('');
-
 ```
 
 弹出的对话框可能是添加或编辑 todo：
 
-```ts
+```tsx
 export enum ModalType {
     Edit = 'EDIT',
     Add = 'ADD',
@@ -50,36 +52,36 @@ export enum ModalType {
 ```
 根据弹出对话框的位置决定对话框标题:
 
-```ts
+```tsx
 // Todo.ts
 
-    const onShowModal = (type: ModalType, id?: number) => {
-        if (type === ModalType.Add) {
-            setModalTitle('添加任务');
-        }
-        if (type === ModalType.Edit) {
-            setModalTitle('编辑任务');
-            setTodoId(id!); //记录 TodoList 组件传递的 todoId
-        }
-        setShowModal(true);
-    };
+const onShowModal = (type: ModalType, id?: number) => {
+    if (type === ModalType.Add) {
+        setModalTitle('添加任务');
+    }
+    if (type === ModalType.Edit) {
+        setModalTitle('编辑任务');
+        setTodoId(id!); //记录 TodoList 组件传递的 todoId
+    }
+    setShowModal(true);
+};
 ```
 
 如果是在 Todo 组件的添加按钮:
 
-```ts
+```tsx
 //Todo.ts
 
 <Button type="primary"
     className={styles.newTodo}
     onClick={() => onShowModal(ModalType.Add)}>
     添加
-    </Button>
+</Button>
 ```
 
 在 Todo 组件点击添加按钮时，显示对话框组件，提交表单时用内部实现的 itemId 作为 todo.id：
 
-```ts
+```tsx
 // ModalForm.ts
 
 const ModalForm: FC<IModalFormProps> = (props) => {
@@ -102,7 +104,7 @@ const ModalForm: FC<IModalFormProps> = (props) => {
 
 在 ts 中需要用 interface 声明父组件传过来的 props 的类型。
 
-```ts
+```tsx
 // ModalForm.ts
 
 interface IModalFormProps {
@@ -115,7 +117,7 @@ interface IModalFormProps {
 
 如果是在 TodoList 中的编辑按钮：Todo 组件将 onShowModal 方法传递给 TodoList 子组件，TodoList 就能让对话框组件显示并传递 todoId 给 Todo 组件：
 
-```ts
+```tsx
 // TodoList.ts
 
 <EditOutlined
@@ -126,7 +128,7 @@ interface IModalFormProps {
 
 在弹出编辑对话框之前，Todo 组件将已经获取到 todoId 传递给对话框组件:
 
-```ts
+```tsx
 // Todo.ts
 
 <ModalForm
@@ -141,7 +143,7 @@ interface IModalFormProps {
 
 得到 todoId 就能在对话框提交时更新 todo 了，对话框组件中完善提交表单方法: 
 
-```ts
+```tsx
 // ModalForm.ts
 
 const { visible, onClose, addTodo, modalTitle, todoId, updateText } = props;
@@ -160,12 +162,11 @@ const onFinish = () => {
 };
 ```
 
-
 ## 列表的增删改查
 
 先在 Todo 组件中定义列表数据状态：
 
-```ts
+```tsx
 //Todo.ts
 
 const [lists, setlists] = useState<ITodo[]>([]);
@@ -173,8 +174,7 @@ const [lists, setlists] = useState<ITodo[]>([]);
 
 接下来实现列表的增删改查：
 
-
-```ts
+```tsx
 // Todo.ts
 
 const addTodo = (id: number, text: string, done: boolean) => {
@@ -214,18 +214,21 @@ const updateText = (id: number, text: string) => {
 	message.success('编辑成功');
 }
 ```
+
 代办项，已完成，清单三个标签过滤列表：
-```ts
+
+```tsx
 // Todo.ts
 
 const todoList = lists.filter(item => !item.done);
 const doneList = lists.filter(item => item.done);
 ```
+
 ## 实现搜索功能
 
 先在 Todo 组件中定义搜索数据状态：
 
-```ts
+```tsx
 //Todo.ts
 
 const [searchText, setSearchText] = useState('');
@@ -233,7 +236,7 @@ const [searchText, setSearchText] = useState('');
 
 实现按搜索字段过滤数据的方法：
 
-```ts
+```tsx
 // Todo.ts 
 
 const getFilter = (lists: ITodo[], searchText: string) => {
@@ -246,7 +249,7 @@ const getFilter = (lists: ITodo[], searchText: string) => {
 
 Todo 组件将列表数据先用 getFilter 方法过滤再传递给 TodoList 子组件：
 
-```ts
+```tsx
 //Todo.ts
 
 <Tabs defaultActiveKey="1" size={"large"}>

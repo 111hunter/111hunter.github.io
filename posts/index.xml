@@ -1,222 +1,77 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on 浮槎的博客</title>
-    <link>http://example.org/posts/</link>
-    <description>Recent content in Posts on 浮槎的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Tue, 29 Sep 2020 23:30:00 +0800</lastBuildDate>
-    
-	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Next.js 概览</title>
-      <link>http://example.org/2020-09-29-next/</link>
-      <pubDate>Tue, 29 Sep 2020 23:30:00 +0800</pubDate>
-      
-      <guid>http://example.org/2020-09-29-next/</guid>
-      <description>我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next</description>
-    </item>
-    
-    <item>
-      <title>浅析 JS 函数式编程</title>
-      <link>http://example.org/2020-09-02-js-functional/</link>
-      <pubDate>Wed, 02 Sep 2020 08:30:00 +0800</pubDate>
-      
-      <guid>http://example.org/2020-09-02-js-functional/</guid>
-      <description>在计算机科学中，函数式编程 是一种编程范式，其中通过应用和组合函数来构造程序。它是一种声明式编程范式，其中函数定义是每个返回一个值的表达式树，</description>
-    </item>
-    
-    <item>
-      <title>入门 AST 抽象语法树</title>
-      <link>http://example.org/2020-08-23-ast/</link>
-      <pubDate>Sun, 23 Aug 2020 00:30:00 +0800</pubDate>
-      
-      <guid>http://example.org/2020-08-23-ast/</guid>
-      <description>如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、</description>
-    </item>
-    
-    <item>
-      <title>Webpack 概念梳理</title>
-      <link>http://example.org/2020-08-16-webpack/</link>
-      <pubDate>Sun, 16 Aug 2020 19:51:00 +0800</pubDate>
-      
-      <guid>http://example.org/2020-08-16-webpack/</guid>
-      <description>Webpack 是一个前端构建工具，前端构建工具的作用就是把开发环境的代码转化成运行环境代码。一般来说，开发环境的代码是为了更好的阅读，而运行环境的代码则</description>
-    </item>
-    
-    <item>
-      <title>基于 Socket.IO 的实时聊天室</title>
-      <link>http://example.org/2020-08-11-websocket/</link>
-      <pubDate>Tue, 11 Aug 2020 10:51:00 +0800</pubDate>
-      
-      <guid>http://example.org/2020-08-11-websocket/</guid>
-      <description>WebSocket 是一种服务端和客户端之间的双向通信协议，和 HTTP 一样是基于 TCP 协议的应用层协议，并且 WebSocket 在握手阶段依赖于 HTTP 连接。 WebSocket 广泛应用于多用户实时交流，服务端</description>
-    </item>
-    
-    <item>
-      <title>Recoil 基础</title>
-      <link>http://example.org/2020-07-27-recoil/</link>
-      <pubDate>Mon, 27 Jul 2020 22:26:00 +0800</pubDate>
-      
-      <guid>http://example.org/2020-07-27-recoil/</guid>
-      <description>最近，Facebook 官方开源了一个状态管理库 Recoil，我们来学习一下。Recoil 是基于 Immutable 的数据流管理方案，这是它值得学习的重要原因。</description>
-    </item>
-    
-    <item>
-      <title>RBAC0 权限设计实例</title>
-      <link>http://example.org/2020-07-13-rbac0/</link>
-      <pubDate>Mon, 13 Jul 2020 17:45:00 +0800</pubDate>
-      
-      <guid>http://example.org/2020-07-13-rbac0/</guid>
-      <description>权限管理是所有后台系统的都会涉及的一个重要组成部分，主要目的是对不同的人访问资源进行权限的控制，避免因权限控制缺失或操作不当引发的风险问题，</description>
-    </item>
-    
-    <item>
-      <title>antd &#43; TS 的简单 demo</title>
-      <link>http://example.org/2020-06-30-antd/</link>
-      <pubDate>Tue, 30 Jun 2020 00:15:00 +0800</pubDate>
-      
-      <guid>http://example.org/2020-06-30-antd/</guid>
-      <description>这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码</description>
-    </item>
-    
-    <item>
-      <title>MyBatis-Plus 实现论坛 Api</title>
-      <link>http://example.org/2020-06-18-forum/</link>
-      <pubDate>Thu, 18 Jun 2020 12:00:00 +0800</pubDate>
-      
-      <guid>http://example.org/2020-06-18-forum/</guid>
-      <description>数据分页获取 引入依赖，连接数据库 在 spring-boot 项目的根目录 pom.xml 添加依赖，相关依赖有 lombok, mybatis-plus, druid, swagger, mysql 驱动等。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26</description>
-    </item>
-    
-    <item>
-      <title>写一个可拖拽的 Trello</title>
-      <link>http://example.org/2020-05-18-trello/</link>
-      <pubDate>Mon, 18 May 2020 00:18:30 +0800</pubDate>
-      
-      <guid>http://example.org/2020-05-18-trello/</guid>
-      <description>本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间</description>
-    </item>
-    
-    <item>
-      <title>Context &#43; Hooks：状态管理新方案</title>
-      <link>http://example.org/2020-05-07-react-hook/</link>
-      <pubDate>Thu, 07 May 2020 16:46:30 +0800</pubDate>
-      
-      <guid>http://example.org/2020-05-07-react-hook/</guid>
-      <description>React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 React 组件分为两类，class 组件和函数</description>
-    </item>
-    
-    <item>
-      <title>用 NgRx 和 Nest 写一个全栈 todolist</title>
-      <link>http://example.org/2020-04-25-typescript-fullstack/</link>
-      <pubDate>Sat, 25 Apr 2020 22:27:41 +0800</pubDate>
-      
-      <guid>http://example.org/2020-04-25-typescript-fullstack/</guid>
-      <description>本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。 后端开发 后端开发使用 Nest.js 框架，本次实践是重前端的，因此后端会做得简单一些。后端</description>
-    </item>
-    
-    <item>
-      <title>TypeORM 的基本使用</title>
-      <link>http://example.org/2020-04-10-typeorm/</link>
-      <pubDate>Fri, 10 Apr 2020 14:35:05 +0800</pubDate>
-      
-      <guid>http://example.org/2020-04-10-typeorm/</guid>
-      <description>本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。 以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBui</description>
-    </item>
-    
-    <item>
-      <title>NestJS &#43; Passport 实现鉴权认证</title>
-      <link>http://example.org/2020-03-29-nest-auth/</link>
-      <pubDate>Sun, 29 Mar 2020 10:24:40 +0800</pubDate>
-      
-      <guid>http://example.org/2020-03-29-nest-auth/</guid>
-      <description>鉴权(authentication)是指验证用户是否拥有访问系统的权利。传统的鉴权是通过密码来验证的。这种方式的前提是，每个获得密码的用户都</description>
-    </item>
-    
-    <item>
-      <title>用 Spring Boot 和 Vue.js 写一个全栈应用</title>
-      <link>http://example.org/2020-03-21-spring/</link>
-      <pubDate>Sat, 21 Mar 2020 17:59:51 +0800</pubDate>
-      
-      <guid>http://example.org/2020-03-21-spring/</guid>
-      <description>本篇文章将介绍如何用 Spring boot 与 Vue.js 创建一个具有基本 crud 功能的全栈 web 应用，我们将使用 bootstrap 作为项目的 UI 库，适合 web 开发初学者阅读。 后端接口 到 https://start.spring.io/ 去生成和下载 spring</description>
-    </item>
-    
-    <item>
-      <title>初探 RxJS - Observable 的简单创建</title>
-      <link>http://example.org/2020-03-13-rxjs-01/</link>
-      <pubDate>Fri, 13 Mar 2020 11:50:32 +0800</pubDate>
-      
-      <guid>http://example.org/2020-03-13-rxjs-01/</guid>
-      <description>ReactiveX 结合了 观察者模式、迭代器模式 和 使用集合的函数式编程，以满足以一种理想方式来管理事件序列所需要的一切。 在 RxJS 中用来解决异步事件管理的的基本概念</description>
-    </item>
-    
-    <item>
-      <title>通过 NgRx 体验前端状态管理</title>
-      <link>http://example.org/2020-03-02-ngrx/</link>
-      <pubDate>Mon, 02 Mar 2020 17:09:36 +0800</pubDate>
-      
-      <guid>http://example.org/2020-03-02-ngrx/</guid>
-      <description>前端中的状态指什么？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是</description>
-    </item>
-    
-    <item>
-      <title>NestJS &#43; TypeORM 实现 crud 示例</title>
-      <link>http://example.org/2020-02-01-nest-crud/</link>
-      <pubDate>Sat, 01 Feb 2020 14:06:31 +0800</pubDate>
-      
-      <guid>http://example.org/2020-02-01-nest-crud/</guid>
-      <description>随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。 传统 MVC 与 NestJS 架构对比： Nest(Nest.js) 的分层借鉴自 Spring，更细化。我们应该要了解整个</description>
-    </item>
-    
-    <item>
-      <title>git 快速上手指南</title>
-      <link>http://example.org/2019-12-13-git-learn/</link>
-      <pubDate>Fri, 13 Dec 2019 15:48:16 +0800</pubDate>
-      
-      <guid>http://example.org/2019-12-13-git-learn/</guid>
-      <description>本文实践较多，建议跟着文章的步骤敲一遍代码以加深理解。 1. 使用帮助 $ git help 可以查看 git 常用命令 $ git help -a 可以查看 git 所有命令，F 或者 空格 向下查看命令，</description>
-    </item>
-    
-    <item>
-      <title>Node.js 搭建博客后台</title>
-      <link>http://example.org/2019-11-22-node-basis/</link>
-      <pubDate>Fri, 22 Nov 2019 19:34:41 +0800</pubDate>
-      
-      <guid>http://example.org/2019-11-22-node-basis/</guid>
-      <description>本次实践将不使用框架，尝试直接使用 Node.js 处理 http 请求，连接数据库，创建 api 接口。以及介绍一些 web 开发相关的常识。 搭建开发环境 使用 nodemon 监测文件变化，自动重</description>
-    </item>
-    
-    <item>
-      <title>JS 扫雷小游戏</title>
-      <link>http://example.org/2019-11-08-js-saolei/</link>
-      <pubDate>Fri, 08 Nov 2019 22:37:34 +0800</pubDate>
-      
-      <guid>http://example.org/2019-11-08-js-saolei/</guid>
-      <description>扫雷是一款大众类的益智小游戏,于1992年发行。游戏目标是在最短的时间内根据点击格子出现的数字找出所有非雷格子,同时避免踩雷,踩到一个雷即全</description>
-    </item>
-    
-    <item>
-      <title>ES6 学习笔记</title>
-      <link>http://example.org/2019-10-30-js-es6/</link>
-      <pubDate>Wed, 30 Oct 2019 20:59:36 +0800</pubDate>
-      
-      <guid>http://example.org/2019-10-30-js-es6/</guid>
-      <description>ECMAScript 6(以下简称ES6)是 JavaScript 语言的下一代标准,已经在2015年6月正式发布了。Mozilla公司将在这个标准的基础上,推出 JavaScript 2.0。ECMAS</description>
-    </item>
-    
-    <item>
-      <title>JS 闭包写法的演变过程</title>
-      <link>http://example.org/2019-10-17-js-basis/</link>
-      <pubDate>Mon, 07 Oct 2019 18:27:34 +0800</pubDate>
-      
-      <guid>http://example.org/2019-10-17-js-basis/</guid>
-      <description>闭包就是能够读取其他函数内部变量的函数。在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成&amp;quot;定义在</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有文章 - 浮槎的博客</title>
+        <link>http://example.org/posts/</link>
+        <description>所有文章 | 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 29 Sep 2020 23:30:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Next.js 概览</title>
+    <link>http://example.org/2020-09-29-next/</link>
+    <pubDate>Tue, 29 Sep 2020 23:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-09-29-next/</guid>
+    <description><![CDATA[我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next]]></description>
+</item><item>
+    <title>浅析 JS 函数式编程</title>
+    <link>http://example.org/2020-09-02-js-functional/</link>
+    <pubDate>Wed, 02 Sep 2020 08:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-09-02-js-functional/</guid>
+    <description><![CDATA[在计算机科学中，函数式编程是一种编程范式，其中通过应用和组合函数来构造程序。它是一种声明式编程范式，其中函数定义是每个返回一个值的表达式树，]]></description>
+</item><item>
+    <title>入门 AST 抽象语法树</title>
+    <link>http://example.org/2020-08-23-ast/</link>
+    <pubDate>Sun, 23 Aug 2020 00:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-08-23-ast/</guid>
+    <description><![CDATA[如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、]]></description>
+</item><item>
+    <title>Webpack 概念梳理</title>
+    <link>http://example.org/2020-08-16-webpack/</link>
+    <pubDate>Sun, 16 Aug 2020 19:51:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-08-16-webpack/</guid>
+    <description><![CDATA[Webpack 是一个前端构建工具，前端构建工具的作用就是把开发环境的代码转化成运行环境代码。一般来说，开发环境的代码是为了更好的阅读，而运行环境的代码则]]></description>
+</item><item>
+    <title>基于 Socket.IO 的实时聊天室</title>
+    <link>http://example.org/2020-08-11-websocket/</link>
+    <pubDate>Tue, 11 Aug 2020 10:51:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-08-11-websocket/</guid>
+    <description><![CDATA[WebSocket 是一种服务端和客户端之间的双向通信协议，和 HTTP 一样是基于 TCP 协议的应用层协议，并且 WebSocket 在握手阶段依赖于 HTTP 连接。 WebSocket 广泛应用于多用户实时交流，服务端]]></description>
+</item><item>
+    <title>Recoil 基础</title>
+    <link>http://example.org/2020-07-27-recoil/</link>
+    <pubDate>Mon, 27 Jul 2020 22:26:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-07-27-recoil/</guid>
+    <description><![CDATA[最近，Facebook 官方开源了一个状态管理库 Recoil，我们来学习一下。Recoil 是基于 Immutable 的数据流管理方案，这是它值得学习的重要原因。]]></description>
+</item><item>
+    <title>RBAC0 权限设计实例</title>
+    <link>http://example.org/2020-07-13-rbac0/</link>
+    <pubDate>Mon, 13 Jul 2020 17:45:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-07-13-rbac0/</guid>
+    <description><![CDATA[权限管理是所有后台系统的都会涉及的一个重要组成部分，主要目的是对不同的人访问资源进行权限的控制，避免因权限控制缺失或操作不当引发的风险问题，]]></description>
+</item><item>
+    <title>antd &#43; TS 的简单 demo</title>
+    <link>http://example.org/2020-06-30-antd/</link>
+    <pubDate>Tue, 30 Jun 2020 00:15:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-06-30-antd/</guid>
+    <description><![CDATA[这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码]]></description>
+</item><item>
+    <title>MyBatis-Plus 实现论坛 Api</title>
+    <link>http://example.org/2020-06-18-forum/</link>
+    <pubDate>Thu, 18 Jun 2020 12:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-06-18-forum/</guid>
+    <description><![CDATA[数据分页获取 引入依赖，连接数据库 在 spring-boot 项目的根目录 pom.xml 添加依赖，相关依赖有 lombok, mybatis-plus, druid, swagger, mysql 驱动等。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26]]></description>
+</item><item>
+    <title>写一个可拖拽的 Trello</title>
+    <link>http://example.org/2020-05-18-trello/</link>
+    <pubDate>Mon, 18 May 2020 00:18:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-05-18-trello/</guid>
+    <description><![CDATA[本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间]]></description>
+</item></channel>
 </rss>

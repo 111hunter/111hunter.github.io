@@ -12,7 +12,7 @@ React 组件分为两类，class 组件和函数组件。hooks 的出现让函�
 具有 render prop 的组件接受一个函数，该函数返回一个 React 元素并调用它(回调函数)而不是实现自己的渲染逻辑。
 react官网示例：
 
-```js
+```jsx
 class Cat extends React.Component {
   render() {
     const mouse = this.props.mouse;
@@ -60,8 +60,10 @@ class MouseTracker extends React.Component {
   }
 }
 ```
+
 注意 Mouse 组件中的 this.props.render 是绑定在标签模板上的render(外部传入)。这样就实现了鼠标位置状态的共享, Cat 组件能够根据鼠标位置动态移动 cat 图片。这个示例实现了 react 组件的理想状态：**有状态的组件无渲染，有渲染的组件无状态。** 因为 Cat 组件只是一个渲染模板，它也可以替换成如下的函数组件:
-```js
+
+```jsx
 const Cat = (props) => {
     const mouse = this.props.mouse;
     return (
@@ -70,18 +72,20 @@ const Cat = (props) => {
   }
 }
 ```
+
 UI与状态分离，便于逻辑的复用。
 
 ### 高阶组件(HOC)
 
 高阶组件是参数为组件，返回值为新组件的函数，高阶组件是函数。
 
-```js
+```jsx
 const EnhancedComponent = higherOrderComponent(WrappedComponent);
 ```
 
 示例：
-```js
+
+```jsx
 function high(WrappedComponent){
   return class extends React.Component{
     constructor(){
@@ -132,7 +136,7 @@ Hooks 可以让你在函数组件中使用状态(state)以及其他的 React 特
 
 Hook 是 React 中的一类特殊的 JavaScript 函数。自定义名为 useFriendStatus 的 hook，它通过调用 useState 和 useEffect 来订阅一个好友的在线状态。
 
-```js
+```jsx
 import React, { useState, useEffect } from 'react';
 
 function useFriendStatus(friendID) {
@@ -152,9 +156,11 @@ function useFriendStatus(friendID) {
   return isOnline;
 }
 ```
+
 自定义 Hook 更像是一种约定而不是功能。如果函数的名字以 “use” 开头并调用其他 Hook，我们就说这是一个自定义 Hook。
 现在我们可以在下面两个组件中使用它：
-```js
+
+```jsx
 function FriendStatus(props) {
   const isOnline = useFriendStatus(props.friend.id);
 
@@ -165,7 +171,7 @@ function FriendStatus(props) {
 }
 ```
 
-```js
+```jsx
 function FriendListItem(props) {
   const isOnline = useFriendStatus(props.friend.id);
 
@@ -176,6 +182,7 @@ function FriendListItem(props) {
   );
 }
 ```
+
 这两个组件的 state 是完全独立的，Hook 是一种复用状态逻辑的方式，它不复用 state 本身。传入不同的 props，得到的 state 也不同。同样是实现了 UI 与状态分离，便于逻辑的复用。
 
 但是使用 Hook 会有几个额外的规则：
@@ -192,9 +199,11 @@ function FriendListItem(props) {
 ### class 组件的状态管理
 
 class 组件的状态管理，通常方案是使用第三方库 Redux，结合 React-Redux 使用：
+
 ```bash
 $ npm i redux react-redux -S
 ```
+
 Redux 流程图
 
 <div align=center><img src="/img/redux.png" width="75%"></div>
@@ -202,7 +211,8 @@ Redux 流程图
 当 UI 的 state 变化时，组件 dispatch 发送 action 信号, reducer 接收来自 action 的信号更新 state, 然后 store 将新的 state 传递给组件，重新渲染 UI。
 
 先创建 store，接收 reducer 为参数:
-```js
+
+```jsx
 import { createStore } from 'redux'
 import reducer from './reducer'
 
@@ -211,8 +221,10 @@ const store = createStore(reducer)
 
 export default store;
 ```
+
 再写 action，写 action 之前先了解一下 connect 函数
-```js
+
+```jsx
 // React Redux 的 `connect` 函数
 const connect(mapStateToProps, mapDispatchToProps)(Component);
 ```
@@ -223,8 +235,10 @@ const higherOrderComponent = connect(mapStateToProps, mapDispatchToProps);
 //再得到新包装的组件 EnhancedComponent
 const EnhancedComponent = higherOrderComponent(Component);
 ```
+
 action 就是 dispatch 中的参数。
-```js
+
+```jsx
 // connect.js
 import { connect } from 'react-redux'
 
@@ -242,8 +256,10 @@ const mapDispatchToProps = (dispatch) => {
 //封装了一个高阶组件，注意高阶组件是函数
 export default connect(mapStateToProps, mapDispatchToProps)
 ```
+
 最后写 reducer，接收 action 更新 state:
-```js
+
+```jsx
 const initialState = { count: 0, message: "" }
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -266,10 +282,13 @@ const reducer = (state = initialState, action) => {
             return state;
     }
 }
+
 export default reducer;
 ```
+
 创建一个组件测试计数器:
-```js
+
+```jsx
 import React, { Component } from 'react'
 import connect from './connect'
 
@@ -295,7 +314,8 @@ export default connect(Count)
 ```
 
 根组件注册 store，并导入 count 组件：
-```js
+
+```jsx
 import React from 'react'
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
@@ -315,7 +335,7 @@ ReactDOM.render(<App />, rootElement)
 ```
 此时启动项目你发现已经能够计数了，但是我们并没有直接操作 store 啊，其实是 connect 帮我们做了这件事，可以看一下精简版的 connect 源码：
 
-```js
+```jsx
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -366,7 +386,8 @@ export default connect;
 
 实际上 React 已经为我们实现了相应的 hooks, 我们需要做的只是将这些 hooks 灵活的组合在一起。就能够实现状态管理了，还是以实现计数器的为例。
 实现一个 React-redux 中的 store 只需以下代码：
-```js
+
+```jsx
 //store.js
 import React, { createContext, useContext, useReducer } from 'react';
 import reducer from './reducer';
@@ -375,7 +396,6 @@ const initialState = { count: 0, message: "" };
 
 export const StoreProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-
     return (
         <StoreContext.Provider value={{ state, dispatch }}>
             {children}
@@ -388,10 +408,12 @@ export const useStore = () => useContext(StoreContext);
 useReducer 是 useState 的替代方案。它接收一个形如 (state, action) => newState 的 reducer，以及初始状态 initialState，返回值是当前的 state 以及与其配套的 dispatch 方法。
 
 useContext 的参数必须是 context 对象，让你能够读取 context 的值以及订阅 context 的变化。调用了 useContext 的组件会在 context 值变化时重新渲染。你仍然需要在上层组件树中使用 <MyContext.Provider> 来为下层组件提供 context。
+
 OK, 我们的简版 React-redux 就做好了。
 
 写 action, 我们的状态数据从 useCounter 里获取:
-```js
+
+```jsx
 //storeApi.js
 import { useStore } from "./store";
 
@@ -406,13 +428,14 @@ export const useCounter = () => {
     }
 }
 ```
+
 写reducer, 去掉 initialState, 我们已经写在了 useReducer 里, 原因是：
 
 {{< admonition >}}
 React 不使用 state = initialState 这一由 Redux 推广开来的参数约定。有时候初始值依赖于 props，因此需要在调用 Hook 时指定。
 {{< /admonition >}}
 
-```js
+```jsx
 // reducer.js
 const reducer = (state, action) => {
     switch (action.type) {
@@ -435,10 +458,13 @@ const reducer = (state, action) => {
             return state;
     }
 }
+
 export default reducer;
 ```
+
 写个组件，测试一下:
-```js
+
+```jsx
 //Count.js
 import React from "react";
 import { useCounter } from "./storeApi";
@@ -457,10 +483,11 @@ export const Count = () => {
         </div>
     )
 }
-
 ```
+
 修改根组件如下：
-```js
+
+```jsx
 import React from "react";
 import ReactDOM from "react-dom";
 import { StoreProvider } from "./store";
@@ -477,4 +504,5 @@ function App() {
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
+
 启动服务，发现能够计数成功，我们的状态管理方案成功了。

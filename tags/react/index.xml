@@ -1,51 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>React on 浮槎的博客</title>
-    <link>http://example.org/tags/react/</link>
-    <description>Recent content in React on 浮槎的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Tue, 29 Sep 2020 23:30:00 +0800</lastBuildDate>
-    
-	<atom:link href="http://example.org/tags/react/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Next.js 概览</title>
-      <link>http://example.org/2020-09-29-next/</link>
-      <pubDate>Tue, 29 Sep 2020 23:30:00 +0800</pubDate>
-      
-      <guid>http://example.org/2020-09-29-next/</guid>
-      <description>我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next</description>
-    </item>
-    
-    <item>
-      <title>antd &#43; TS 的简单 demo</title>
-      <link>http://example.org/2020-06-30-antd/</link>
-      <pubDate>Tue, 30 Jun 2020 00:15:00 +0800</pubDate>
-      
-      <guid>http://example.org/2020-06-30-antd/</guid>
-      <description>这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码</description>
-    </item>
-    
-    <item>
-      <title>写一个可拖拽的 Trello</title>
-      <link>http://example.org/2020-05-18-trello/</link>
-      <pubDate>Mon, 18 May 2020 00:18:30 +0800</pubDate>
-      
-      <guid>http://example.org/2020-05-18-trello/</guid>
-      <description>本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间</description>
-    </item>
-    
-    <item>
-      <title>Context &#43; Hooks：状态管理新方案</title>
-      <link>http://example.org/2020-05-07-react-hook/</link>
-      <pubDate>Thu, 07 May 2020 16:46:30 +0800</pubDate>
-      
-      <guid>http://example.org/2020-05-07-react-hook/</guid>
-      <description>React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 React 组件分为两类，class 组件和函数</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>React - 标签 - 浮槎的博客</title>
+        <link>http://example.org/tags/react/</link>
+        <description>React - 标签 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 29 Sep 2020 23:30:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/react/" rel="self" type="application/rss+xml" /><item>
+    <title>Next.js 概览</title>
+    <link>http://example.org/2020-09-29-next/</link>
+    <pubDate>Tue, 29 Sep 2020 23:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-09-29-next/</guid>
+    <description><![CDATA[我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next]]></description>
+</item><item>
+    <title>antd &#43; TS 的简单 demo</title>
+    <link>http://example.org/2020-06-30-antd/</link>
+    <pubDate>Tue, 30 Jun 2020 00:15:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-06-30-antd/</guid>
+    <description><![CDATA[这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码]]></description>
+</item><item>
+    <title>写一个可拖拽的 Trello</title>
+    <link>http://example.org/2020-05-18-trello/</link>
+    <pubDate>Mon, 18 May 2020 00:18:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-05-18-trello/</guid>
+    <description><![CDATA[本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间]]></description>
+</item><item>
+    <title>Context &#43; Hooks：状态管理新方案</title>
+    <link>http://example.org/2020-05-07-react-hook/</link>
+    <pubDate>Thu, 07 May 2020 16:46:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-05-07-react-hook/</guid>
+    <description><![CDATA[React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 React 组件分为两类，class 组件和函数]]></description>
+</item></channel>
 </rss>
