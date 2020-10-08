@@ -6,6 +6,13 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 02 Aug 2019 11:04:49 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>实现仿 Recoil 的状态共享</title>
+    <link>http://example.org/2020-10-07-recoil-clone/</link>
+    <pubDate>Wed, 07 Oct 2020 19:40:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-10-07-recoil-clone/</guid>
+    <description><![CDATA[本文是我最近阅读一篇英文技术文章后写的小结。阅读前请注意，本文不涉及任何 Recoil 源码。仿写的代码并不是 Recoil 真正的实现方式，本文只仿造实现了 Recoil 中两个重]]></description>
+</item><item>
     <title>Next.js 概览</title>
     <link>http://example.org/2020-09-29-next/</link>
     <pubDate>Tue, 29 Sep 2020 23:30:00 &#43;0800</pubDate>
@@ -68,12 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-06-18-forum/</guid>
     <description><![CDATA[数据分页获取 引入依赖，连接数据库 在 spring-boot 项目的根目录 pom.xml 添加依赖，相关依赖有 lombok, mybatis-plus, druid, swagger, mysql 驱动等。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26]]></description>
-</item><item>
-    <title>写一个可拖拽的 Trello</title>
-    <link>http://example.org/2020-05-18-trello/</link>
-    <pubDate>Mon, 18 May 2020 00:18:30 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-05-18-trello/</guid>
-    <description><![CDATA[本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间]]></description>
 </item></channel>
 </rss>
