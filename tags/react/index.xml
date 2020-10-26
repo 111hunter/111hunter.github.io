@@ -3,7 +3,14 @@
         <title>React - 标签 - 浮槎的博客</title>
         <link>http://example.org/tags/react/</link>
         <description>React - 标签 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 07 Oct 2020 19:40:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/react/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 18 Oct 2020 22:40:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/react/" rel="self" type="application/rss+xml" /><item>
+    <title>构建自己的 mini React</title>
+    <link>http://example.org/2020-10-18-mini-react/</link>
+    <pubDate>Sun, 18 Oct 2020 22:40:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-10-18-mini-react/</guid>
+    <description><![CDATA[现在，我们遵循 React 16.8 的代码体系结构，一步一步地构建我们自己的 mini React。 基础回顾 开始之前，我们先回顾 React 是怎么将 JSX 转换成 DOM 节点的： 1 2 3 const element =]]></description>
+</item><item>
     <title>实现仿 Recoil 的状态共享</title>
     <link>http://example.org/2020-10-07-recoil-clone/</link>
     <pubDate>Wed, 07 Oct 2020 19:40:00 &#43;0800</pubDate>

@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>构建自己的 mini React - 浮槎的博客</title><meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="构建自己的 mini React" />
+<meta property="og:description" content="现在，我们遵循 React 16.8 的代码体系结构，一步一步地构建我们自己的 mini React。 基础回顾 开始之前，我们先回顾 React 是怎么将 JSX 转换成 DOM 节点的： 1 2 3 const element =" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2020-10-18-mini-react/" />
+<meta property="og:image" content="http://example.org/logo.png"/>
+<meta property="article:published_time" content="2020-10-18T22:40:00+08:00" />
+<meta property="article:modified_time" content="2020-10-18T22:40:00+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="构建自己的 mini React"/>
+<meta name="twitter:description" content="现在，我们遵循 React 16.8 的代码体系结构，一步一步地构建我们自己的 mini React。 基础回顾 开始之前，我们先回顾 React 是怎么将 JSX 转换成 DOM 节点的： 1 2 3 const element ="/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020-10-18-mini-react/" /><link rel="prev" href="http://example.org/2020-10-07-recoil-clone/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "构建自己的 mini React",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2020-10-18-mini-react\/"
+        },"genre": "posts","keywords": "React","wordcount":  3830 ,
+        "url": "http:\/\/example.org\/2020-10-18-mini-react\/","datePublished": "2020-10-18T22:40:00+08:00","dateModified": "2020-10-18T22:40:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "浮槎"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="浮槎的博客">浮槎的博客</a>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><span class="menu-item search" id="search-desktop">
+                    <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-desktop">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </span><span class="menu-item">|</span><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="浮槎的博客">浮槎的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">构建自己的 mini React</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>coding</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-18">2020-10-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3830 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/2020-10-18-mini-react/" class="leancloud_visitors" data-flag-title="构建自己的 mini React">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#基础回顾">基础回顾</a></li>
+    <li><a href="#渲染阶段">渲染阶段</a>
+      <ul>
+        <li><a href="#createelement">createElement</a></li>
+        <li><a href="#render">render</a></li>
+        <li><a href="#concurrent">Concurrent</a></li>
+        <li><a href="#fibers">Fibers</a></li>
+        <li><a href="#commit">Commit</a></li>
+      </ul>
+    </li>
+    <li><a href="#更新阶段">更新阶段</a>
+      <ul>
+        <li><a href="#reconciliation">Reconciliation</a></li>
+        <li><a href="#commit-1">Commit</a></li>
+      </ul>
+    </li>
+    <li><a href="#函数组件">函数组件</a>
+      <ul>
+        <li><a href="#commit-2">Commit</a></li>
+        <li><a href="#hooks">Hooks</a></li>
+      </ul>
+    </li>
+    <li><a href="#经验总结">经验总结</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>现在，我们遵循 React 16.8 的代码体系结构，一步一步地构建我们自己的 mini React。</p>
+<h2 id="基础回顾">基础回顾</h2>
+<p>开始之前，我们先回顾 React 是怎么将 JSX 转换成 DOM 节点的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;foo&#34;</span><span class="p">&gt;</span><span class="nx">Hello</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="kr">const</span> <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;root&#34;</span><span class="p">)</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">container</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>第一行使用 JSX 来创建元素，但 JSX 不是有效的 JS 代码。React 用 Babel 将 JSX 代码转换为原生 JS 代码。转换过程就是调用 createElement 函数，并将 JSX 的元素类型、props 属性和 childen 元素作为参数依次传入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;foo&#34;</span><span class="p">&gt;</span><span class="nx">Hello</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="c1">// Babel 调用 createElement 函数完成转换
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span>
+  <span class="s2">&#34;h1&#34;</span><span class="p">,</span>
+  <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;foo&#34;</span> <span class="p">},</span>
+  <span class="s2">&#34;Hello&#34;</span>
+<span class="p">)</span>
+<span class="c1">// createElement 根据参数生成 object
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;h1&#34;</span><span class="p">,</span>
+  <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;foo&#34;</span><span class="p">,</span>
+    <span class="nx">children</span><span class="o">:</span> <span class="s2">&#34;Hello&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这就是 React 元素的本质，包含 type 和 props 属性的对象(还有其他属性，我们只关注这两个)。现在我们就能用 element 生成 DOM 节点了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="err">​</span><span class="kr">const</span> <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;root&#34;</span><span class="p">)</span>
+<span class="err">​</span>
+<span class="kr">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span>
+<span class="nx">node</span><span class="p">[</span><span class="s2">&#34;title&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span>
+<span class="err">​</span>
+<span class="kr">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+<span class="nx">text</span><span class="p">[</span><span class="s2">&#34;nodeValue&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span>
+<span class="err">​</span>
+<span class="nx">node</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="渲染阶段">渲染阶段</h2>
+<h3 id="createelement">createElement</h3>
+<p>现在我们来实现自己的 createElement 函数。注意一个细节，JSX 叶子节点可能是基本数据类型。我们把它包装为对象，统一数据类型(React 不会包装基本类型值或创建空数组，我们这样做是为了数据判断和修改的方便)。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">createElement</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">props</span><span class="p">,</span> <span class="p">...</span><span class="nx">children</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="p">,</span>
+    <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+      <span class="p">...</span><span class="nx">props</span><span class="p">,</span>
+      <span class="nx">children</span><span class="o">:</span> <span class="nx">children</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">child</span> <span class="p">=&gt;</span>
+        <span class="k">typeof</span> <span class="nx">child</span> <span class="o">===</span> <span class="s2">&#34;object&#34;</span> <span class="o">?</span> <span class="nx">child</span> <span class="o">:</span> <span class="nx">createTextElement</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">createTextElement</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;TEXT_ELEMENT&#34;</span><span class="p">,</span>
+    <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">nodeValue</span><span class="o">:</span> <span class="nx">text</span><span class="p">,</span>
+      <span class="nx">children</span><span class="o">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="render">render</h3>
+<p>创建 DOM 节点并添加元素的 props 属性。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">render</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">container</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">dom</span> <span class="o">=</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s2">&#34;TEXT_ELEMENT&#34;</span>
+      <span class="o">?</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+      <span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
+  <span class="kr">const</span> <span class="nx">isProperty</span> <span class="o">=</span> <span class="nx">key</span> <span class="p">=&gt;</span> <span class="nx">key</span> <span class="o">!==</span> <span class="s2">&#34;children&#34;</span><span class="p">;</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">props</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isProperty</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">name</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dom</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">props</span><span class="p">[</span><span class="nx">name</span><span class="p">];</span>
+    <span class="p">});</span>
+  <span class="nx">element</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">child</span> <span class="p">=&gt;</span> <span class="nx">render</span><span class="p">(</span><span class="nx">child</span><span class="p">,</span> <span class="nx">dom</span><span class="p">));</span>
+  <span class="nx">container</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">dom</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>现在将我们的库取名 Didact，让 Babel 调用我们的库转换 JSX。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">Didact</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">createElement</span><span class="p">,</span>
+  <span class="nx">render</span>
+<span class="p">};</span>
+
+<span class="cm">/** @jsx Didact.createElement */</span>
+<span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;background: salmon&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;text-align:right&#34;</span><span class="p">&gt;</span><span class="nx">from</span> <span class="nx">Didact</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">);</span>
+<span class="kr">const</span> <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;root&#34;</span><span class="p">);</span>
+<span class="nx">Didact</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">container</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这样就实现了 JSX 的转换和渲染，在 <a href="https://codesandbox.io/s/didact-2-k6rbj" target="_blank" rel="noopener noreffer">codesandbox</a> 中试试看。</p>
+<h3 id="concurrent">Concurrent</h3>
+<p>在我们加入更多特性之前我们先对代码进行一次重构。因为递归调用存在一个问题：渲染开始就会一直阻塞主进程。如果浏览器需要处理一些高优先级的任务(像用户输入或者保持动画流畅)，需要等到所有元素渲染完成之后再进行处理，这是不好的用户体验。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">nextUnitOfWork</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="err">​</span>
+<span class="kd">function</span> <span class="nx">workLoop</span><span class="p">(</span><span class="nx">deadline</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">shouldYield</span> <span class="o">=</span> <span class="kc">false</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">nextUnitOfWork</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">shouldYield</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 迭代子任务
+</span><span class="c1"></span>    <span class="nx">nextUnitOfWork</span> <span class="o">=</span> <span class="nx">performUnitOfWork</span><span class="p">(</span>
+      <span class="nx">nextUnitOfWork</span>
+    <span class="p">)</span>
+    <span class="nx">shouldYield</span> <span class="o">=</span> <span class="nx">deadline</span><span class="p">.</span><span class="nx">timeRemaining</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">1</span>
+  <span class="p">}</span>
+  <span class="nx">requestIdleCallback</span><span class="p">(</span><span class="nx">workLoop</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="err">​</span><span class="c1">// 主进程空闲时才会调用回调函数
+</span><span class="c1"></span><span class="nx">requestIdleCallback</span><span class="p">(</span><span class="nx">workLoop</span><span class="p">)</span>
+<span class="err">​</span><span class="c1">// 执行当前子任务并返回下一个子任务
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">performUnitOfWork</span><span class="p">(</span><span class="nx">nextUnitOfWork</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>现在我们拆分整个任务为一个个小的子任务，浏览器可以在执行完每个小任务后中断渲染流程去处理其他事情。因为我们使用 <code>reqeustIdleCallback</code> 来创建一个循环任务(React 现在使用 <a href="https://github.com/facebook/react/tree/master/packages/scheduler" target="_blank" rel="noopener noreffer">scheduler</a>)，它在主进程空闲时才会执行回调函数，它为回调函数提供一个 deadline 参数，据此我们可以知晓还剩多少时间浏览器会拿回控制权。</p>
+<h3 id="fibers">Fibers</h3>
+<p>我们使用 fiber 树连接所有子任务，为每个元素创建一个 fiber，每个 fiber 对应一个子任务。假如我们渲染如下一颗元素树：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="nx">Didact</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;,</span>
+  <span class="nx">container</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>生成对应的 fiber 树：</p>
+<div align=center><img src="/img/fiber-tree.png" width="35%"></div>
+<p>在渲染中，我们将 container 创建为 root 并将其设置为 <code>nextUnitOfWork</code>。而元素的 fiber 由 <code>performUnitOfWork</code> 生成，我们将为每个 fiber 做三件事：</p>
+<ul>
+<li>1.将元素添加到 DOM 中。</li>
+<li>2.为元素的子元素创建 fiber。</li>
+<li>3.寻找下一个子任务。</li>
+</ul>
+<p>现在我们从 render 中提取出创建 DOM 节点的逻辑，稍后我们会使用它。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">createDom</span><span class="p">(</span><span class="nx">fiber</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">dom</span> <span class="o">=</span> <span class="nx">fiber</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s2">&#34;TEXT_ELEMENT&#34;</span><span class="o">?</span> 
+    <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">:</span> 
+    <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="nx">isProperty</span> <span class="o">=</span> <span class="nx">key</span> <span class="p">=&gt;</span> <span class="nx">key</span> <span class="o">!==</span> <span class="s2">&#34;children&#34;</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">props</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isProperty</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">name</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dom</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">fiber</span><span class="p">.</span><span class="nx">props</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span>
+    <span class="p">})</span>
+<span class="err">​</span>
+  <span class="k">return</span> <span class="nx">dom</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在 render 函数中，我们将 <code>nextUnitOfWork</code> 的 DOM 属性设置为 container。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">render</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">container</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">nextUnitOfWork</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">dom</span><span class="o">:</span> <span class="nx">container</span><span class="p">,</span>
+    <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">children</span><span class="o">:</span> <span class="p">[</span><span class="nx">element</span><span class="p">],</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="err">​</span>
+<span class="kd">let</span> <span class="nx">nextUnitOfWork</span> <span class="o">=</span> <span class="kc">null</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>接下来在 <code>performUnitOfWork</code> 中完成每个 fiber 的三件事。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">performUnitOfWork</span><span class="p">(</span><span class="nx">fiber</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">// 需要与父节点的 DOM 连接时才创建 DOM 节点
+</span><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span> <span class="o">=</span> <span class="nx">createDom</span><span class="p">(</span><span class="nx">fiber</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="err">​</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">parent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">fiber</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="err">​</span>   
+  <span class="c1">// 为子元素创建 newFiber，dom 属性为空
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">elements</span> <span class="o">=</span> <span class="nx">fiber</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span>
+  <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="kd">let</span> <span class="nx">prevSibling</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="err">​</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">index</span> <span class="o">&lt;</span> <span class="nx">elements</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">elements</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+<span class="err">​</span>
+    <span class="kr">const</span> <span class="nx">newFiber</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">type</span><span class="o">:</span> <span class="nx">element</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span>
+      <span class="nx">props</span><span class="o">:</span> <span class="nx">element</span><span class="p">.</span><span class="nx">props</span><span class="p">,</span>
+      <span class="nx">parent</span><span class="o">:</span> <span class="nx">fiber</span><span class="p">,</span>
+      <span class="nx">dom</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="p">}</span>
+   
+    <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">fiber</span><span class="p">.</span><span class="nx">child</span> <span class="o">=</span> <span class="nx">newFiber</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">prevSibling</span><span class="p">.</span><span class="nx">sibling</span> <span class="o">=</span> <span class="nx">newFiber</span>
+    <span class="p">}</span>
+<span class="err">​</span>
+    <span class="nx">prevSibling</span> <span class="o">=</span> <span class="nx">newFiber</span>
+    <span class="nx">index</span><span class="o">++</span>
+  <span class="p">}</span>
+  
+  <span class="c1">// 寻找下一个子任务，优先级依次是子节点、兄弟节点、叔叔节点。
+</span><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">child</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">fiber</span><span class="p">.</span><span class="nx">child</span>
+  <span class="p">}</span>
+  <span class="kd">let</span> <span class="nx">nextFiber</span> <span class="o">=</span> <span class="nx">fiber</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">nextFiber</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">nextFiber</span><span class="p">.</span><span class="nx">sibling</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">nextFiber</span><span class="p">.</span><span class="nx">sibling</span>
+    <span class="p">}</span>
+    <span class="nx">nextFiber</span> <span class="o">=</span> <span class="nx">nextFiber</span><span class="p">.</span><span class="nx">parent</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="commit">Commit</h3>
+<p>处理元素时我们每次向 DOM 添加一个新节点。但浏览器是会中断渲染过程的，这样用户会看到不完整的 UI。我们怎么避免这种情况呢？答案是重构操作 DOM 的代码。</p>
+<p>首先在删除 <code>performUnitOfWork</code> 中添加 DOM 节点的代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// if (fiber.parent) {
+</span><span class="c1">//   fiber.parent.dom.appendChild(fiber.dom)
+</span><span class="c1">// }
+</span></code></pre></td></tr></table>
+</div>
+</div><p>然后在 render 中用 wipRoot 保存 fiber root 节点。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kd">function</span> <span class="nx">render</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">container</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">wipRoot</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">dom</span><span class="o">:</span> <span class="nx">container</span><span class="p">,</span>
+    <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">children</span><span class="o">:</span> <span class="p">[</span><span class="nx">element</span><span class="p">],</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+  <span class="nx">nextUnitOfWork</span> <span class="o">=</span> <span class="nx">wipRoot</span>
+<span class="p">}</span>
+<span class="err">​</span>
+<span class="kd">let</span> <span class="nx">nextUnitOfWork</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="kd">let</span> <span class="nx">wipRoot</span> <span class="o">=</span> <span class="kc">null</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>直到本次全部元素渲染结束时，我们才将整个 fiber 树提交到 DOM 中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">commitRoot</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 将所有元素的 fiber 递归附加到 DOM 
+</span><span class="c1"></span>  <span class="nx">commitWork</span><span class="p">(</span><span class="nx">wipRoot</span><span class="p">.</span><span class="nx">child</span><span class="p">)</span>
+  <span class="nx">wipRoot</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="p">}</span>
+<span class="err">​</span>
+<span class="kd">function</span> <span class="nx">commitWork</span><span class="p">(</span><span class="nx">fiber</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">fiber</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span>
+  <span class="p">}</span>
+  <span class="kr">const</span> <span class="nx">domParent</span> <span class="o">=</span> <span class="nx">fiber</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">dom</span>
+  <span class="nx">domParent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span><span class="p">)</span>
+  <span class="nx">commitWork</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">child</span><span class="p">)</span>
+  <span class="nx">commitWork</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">sibling</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">workLoop</span><span class="p">(</span><span class="nx">deadline</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">shouldYield</span> <span class="o">=</span> <span class="kc">false</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">nextUnitOfWork</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">shouldYield</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">nextUnitOfWork</span> <span class="o">=</span> <span class="nx">performUnitOfWork</span><span class="p">(</span>
+      <span class="nx">nextUnitOfWork</span>
+    <span class="p">)</span>
+    <span class="nx">shouldYield</span> <span class="o">=</span> <span class="nx">deadline</span><span class="p">.</span><span class="nx">timeRemaining</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">1</span>
+  <span class="p">}</span> 
+<span class="err">​</span> <span class="c1">// 直到没有下一个子任务，将整个 fiber 树提交到 DOM 节点中
+</span><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">nextUnitOfWork</span> <span class="o">&amp;&amp;</span> <span class="nx">wipRoot</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">commitRoot</span><span class="p">()</span>
+  <span class="p">}</span>
+  <span class="nx">requestIdleCallback</span><span class="p">(</span><span class="nx">workLoop</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="err">​</span><span class="c1">// 主进程空闲时才会调用回调函数
+</span><span class="c1"></span><span class="nx">requestIdleCallback</span><span class="p">(</span><span class="nx">workLoop</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="更新阶段">更新阶段</h2>
+<h3 id="reconciliation">Reconciliation</h3>
+<p>到目前为止，我们只是将元素添加到了 DOM 中，但是我们怎么去更新或者删除节点呢？(diff)</p>
+<p>在每个 fiber 中添加 alternate 属性保存上一次提交到 DOM 中的 fiber。先在 wipRoot 中添加：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">commitRoot</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">commitWork</span><span class="p">(</span><span class="nx">wipRoot</span><span class="p">.</span><span class="nx">child</span><span class="p">)</span>
+  <span class="c1">// 渲染结束时存储当前的 fiber root
+</span><span class="c1"></span>  <span class="nx">currentRoot</span> <span class="o">=</span> <span class="nx">wipRoot</span>
+  <span class="nx">wipRoot</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="p">}</span>
+<span class="err">​</span>
+<span class="kd">function</span> <span class="nx">render</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">container</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">wipRoot</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">dom</span><span class="o">:</span> <span class="nx">container</span><span class="p">,</span>
+    <span class="nx">props</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">children</span><span class="o">:</span> <span class="p">[</span><span class="nx">element</span><span class="p">],</span>
+    <span class="p">},</span>
+    <span class="nx">alternate</span><span class="o">:</span> <span class="nx">currentRoot</span><span class="p">,</span>
+  <span class="p">}</span>
+  <span class="nx">nextUnitOfWork</span> <span class="o">=</span> <span class="nx">wipRoot</span>
+<span class="p">}</span>
+<span class="err">​</span>
+<span class="kd">let</span> <span class="nx">nextUnitOfWork</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="c1">// 增加 currentRoot 用于保存当前提交到 DOM 中的 fiber 树
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">currentRoot</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="kd">let</span> <span class="nx">wipRoot</span> <span class="o">=</span> <span class="kc">null</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>将 <code>performUnitOfWork</code> 中创建新 fiber 的逻辑移到 reconcileChildren 函数中，给每个子 fiber 添加 alternate 和 effectTag 属性(effectTag 属性用于 Commit 阶段)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 协调(比较和复用)当前 fiber 的所有子 fiber
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">reconcileChildren</span><span class="p">(</span><span class="nx">wipFiber</span><span class="p">,</span> <span class="nx">elements</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="kd">let</span> <span class="nx">oldFiber</span> <span class="o">=</span> <span class="nx">wipFiber</span><span class="p">.</span><span class="nx">alternate</span> <span class="o">&amp;&amp;</span> <span class="nx">wipFiber</span><span class="p">.</span><span class="nx">alternate</span><span class="p">.</span><span class="nx">child</span>
+  <span class="kd">let</span> <span class="nx">prevSibling</span> <span class="o">=</span> <span class="kc">null</span>
+  
+  <span class="k">while</span> <span class="p">(</span> <span class="nx">index</span> <span class="o">&lt;</span> <span class="nx">elements</span><span class="p">.</span><span class="nx">length</span> <span class="o">||</span> <span class="nx">oldFiber</span> <span class="o">!=</span> <span class="kc">null</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">elements</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+    <span class="kd">let</span> <span class="nx">newFiber</span> <span class="o">=</span> <span class="kc">null</span>
+    <span class="kr">const</span> <span class="nx">sameType</span> <span class="o">=</span> <span class="nx">oldFiber</span> <span class="o">&amp;&amp;</span> <span class="nx">element</span> <span class="o">&amp;&amp;</span> <span class="nx">element</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="nx">oldFiber</span><span class="p">.</span><span class="nx">type</span>
+    <span class="c1">// 需要添加新的 fiber
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">element</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">sameType</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">newFiber</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="nx">element</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span>
+        <span class="nx">props</span><span class="o">:</span> <span class="nx">element</span><span class="p">.</span><span class="nx">props</span><span class="p">,</span>
+        <span class="nx">dom</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">parent</span><span class="o">:</span> <span class="nx">wipFiber</span><span class="p">,</span>
+        <span class="nx">alternate</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> 
+        <span class="nx">effectTag</span><span class="o">:</span> <span class="s2">&#34;PLACEMENT&#34;</span><span class="p">,</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// 需要更新原来的 fiber
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">sameType</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">newFiber</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="nx">oldFiber</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span>
+        <span class="nx">props</span><span class="o">:</span> <span class="nx">element</span><span class="p">.</span><span class="nx">props</span><span class="p">,</span>
+        <span class="nx">dom</span><span class="o">:</span> <span class="nx">oldFiber</span><span class="p">.</span><span class="nx">dom</span><span class="p">,</span>
+        <span class="nx">parent</span><span class="o">:</span> <span class="nx">wipFiber</span><span class="p">,</span>
+        <span class="c1">// oldFiber 被替换时才需要用 alternate 保存
+</span><span class="c1"></span>        <span class="nx">alternate</span><span class="o">:</span> <span class="nx">oldFiber</span><span class="p">,</span> 
+        <span class="nx">effectTag</span><span class="o">:</span> <span class="s2">&#34;UPDATE&#34;</span><span class="p">,</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// 需要删除原来的 fiber
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">oldFiber</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">sameType</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">oldFiber</span><span class="p">.</span><span class="nx">effectTag</span> <span class="o">=</span> <span class="s2">&#34;DELETION&#34;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">oldFiber</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">oldFiber</span> <span class="o">=</span> <span class="nx">oldFiber</span><span class="p">.</span><span class="nx">sibling</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">wipFiber</span><span class="p">.</span><span class="nx">child</span> <span class="o">=</span> <span class="nx">newFiber</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">prevSibling</span><span class="p">.</span><span class="nx">sibling</span> <span class="o">=</span> <span class="nx">newFiber</span>
+    <span class="p">}</span>
+    <span class="nx">prevSibling</span> <span class="o">=</span> <span class="nx">newFiber</span>
+    <span class="nx">index</span><span class="o">++</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="commit-1">Commit</h3>
+<p>现在我们需要修改 commitWork 函数完成 DOM 的修改。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">commitWork</span><span class="p">(</span><span class="nx">fiber</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">fiber</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span>
+  <span class="p">}</span>
+  <span class="kr">const</span> <span class="nx">domParent</span> <span class="o">=</span> <span class="nx">fiber</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">dom</span>
+  <span class="k">if</span> <span class="p">(</span>
+    <span class="nx">fiber</span><span class="p">.</span><span class="nx">effectTag</span> <span class="o">===</span> <span class="s2">&#34;PLACEMENT&#34;</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span> <span class="o">!=</span> <span class="kc">null</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">domParent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span>
+    <span class="nx">fiber</span><span class="p">.</span><span class="nx">effectTag</span> <span class="o">===</span> <span class="s2">&#34;UPDATE&#34;</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span> <span class="o">!=</span> <span class="kc">null</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">updateDom</span><span class="p">(</span>
+      <span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span><span class="p">,</span>
+      <span class="nx">fiber</span><span class="p">.</span><span class="nx">alternate</span><span class="p">.</span><span class="nx">props</span><span class="p">,</span>
+      <span class="nx">fiber</span><span class="p">.</span><span class="nx">props</span>
+    <span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">effectTag</span> <span class="o">===</span> <span class="s2">&#34;DELETION&#34;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">domParent</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nx">commitWork</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">child</span><span class="p">)</span>
+  <span class="nx">commitWork</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">sibling</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里的 updateDom 就是用来更新 DOM 节点的属性。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">isProperty</span> <span class="o">=</span> <span class="nx">key</span> <span class="p">=&gt;</span> <span class="nx">key</span> <span class="o">!==</span> <span class="s2">&#34;children&#34;</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">isEvent</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">isEvent</span> <span class="o">=</span> <span class="nx">key</span> <span class="p">=&gt;</span> <span class="nx">key</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&#34;on&#34;</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">isNew</span> <span class="o">=</span> <span class="p">(</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">key</span> <span class="p">=&gt;</span> <span class="nx">prev</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">!==</span> <span class="nx">next</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+<span class="kr">const</span> <span class="nx">isGone</span> <span class="o">=</span> <span class="p">(</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">key</span> <span class="p">=&gt;</span> <span class="o">!</span><span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">next</span><span class="p">)</span>
+
+<span class="kd">function</span> <span class="nx">updateDom</span><span class="p">(</span><span class="nx">dom</span><span class="p">,</span> <span class="nx">prevProps</span><span class="p">,</span> <span class="nx">nextProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 删除旧的属性
+</span><span class="c1"></span>  <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isProperty</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isGone</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">nextProps</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">name</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dom</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="p">})</span>
+  <span class="c1">// 删除旧的事件监听
+</span><span class="c1"></span>  <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isEvent</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+      <span class="nx">key</span> <span class="p">=&gt;</span>
+        <span class="o">!</span><span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">nextProps</span><span class="p">)</span> <span class="o">||</span>
+        <span class="nx">isNew</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">nextProps</span><span class="p">)(</span><span class="nx">key</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">name</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">eventType</span> <span class="o">=</span> <span class="nx">name</span>
+        <span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+      <span class="nx">dom</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span>
+        <span class="nx">eventType</span><span class="p">,</span>
+        <span class="nx">prevProps</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span>
+      <span class="p">)</span>
+    <span class="p">})</span>
+  <span class="c1">// 设置新的属性
+</span><span class="c1"></span>  <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isProperty</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isNew</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">nextProps</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">name</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dom</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">nextProps</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span>
+    <span class="p">})</span>
+  <span class="c1">// 添加新的事件监听
+</span><span class="c1"></span>  <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isEvent</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isNew</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">nextProps</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">name</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">eventType</span> <span class="o">=</span> <span class="nx">name</span>
+        <span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+      <span class="nx">dom</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span>
+        <span class="nx">eventType</span><span class="p">,</span>
+        <span class="nx">nextProps</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span>
+      <span class="p">)</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在 <a href="https://codesandbox.io/s/didact-6-96533" target="_blank" rel="noopener noreffer">codesandbox</a> 中查看完整代码。</p>
+<h2 id="函数组件">函数组件</h2>
+<h3 id="commit-2">Commit</h3>
+<p>现在，我们考虑在已有代码的基础上，增加对函数组件和 Hooks 的支持。看这个函数组件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="cm">/** @jsx Didact.createElement */</span>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hi</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">}</span>
+<span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">App</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;foo&#34;</span> <span class="p">/&gt;</span>
+<span class="kr">const</span> <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;root&#34;</span><span class="p">)</span>
+<span class="nx">Didact</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">container</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果我们将 jsx 转换为 js，Babel 的解析方式会是这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">App</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">Didact</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span>
+    <span class="s2">&#34;h1&#34;</span><span class="p">,</span>
+    <span class="kc">null</span><span class="p">,</span>
+    <span class="s2">&#34;Hi &#34;</span><span class="p">,</span>
+    <span class="nx">props</span><span class="p">.</span><span class="nx">name</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// 这里虽然会调用 createElement，但并不会调用 App 获取子元素
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">Didact</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">App</span><span class="p">,</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;foo&#34;</span><span class="p">},</span> <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>观察 Babel 的解析后会发现：</p>
+<ul>
+<li>我们不能为函数 App 创建 DOM 节点，因为没有 html 标签，只能渲染它的子元素。</li>
+<li>子元素不会通过 createElement 的第三个参数传递，子元素需手动调用函数获取。</li>
+</ul>
+<p>为函数创建子 fiber 我们可以这样做：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">updateFunctionComponent</span><span class="p">(</span><span class="nx">fiber</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 由于 Babel 调用 createElement，得到的 fiber.type 就是函数名
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">children</span> <span class="o">=</span> <span class="p">[</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">props</span><span class="p">)]</span>  
+  <span class="nx">reconcileChildren</span><span class="p">(</span><span class="nx">fiber</span><span class="p">,</span> <span class="nx">children</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们需要修改 commitWork，因为函数的 fiber 没有 DOM 节点。我们要考虑如果在 fiber 树中存在无 DOM 节点的 fiber 时，如何连接 DOM：</p>
+<ul>
+<li>要找到一个 DOM 节点的父节点，我们需要找到一个包含 DOM 节点的 fiber。</li>
+<li>当需要移除一个 fiber 节点时，我们需要找到一个包含 DOM 节点的子节点。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">commitWork</span><span class="p">(</span><span class="nx">fiber</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">fiber</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span>
+  <span class="p">}</span>
+  <span class="c1">// 寻找到包含 DOM 的父节点
+</span><span class="c1"></span>  <span class="kd">let</span> <span class="nx">domParentFiber</span> <span class="o">=</span> <span class="nx">fiber</span><span class="p">.</span><span class="nx">parent</span>
+  <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="nx">domParentFiber</span><span class="p">.</span><span class="nx">dom</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">domParentFiber</span> <span class="o">=</span> <span class="nx">domParentFiber</span><span class="p">.</span><span class="nx">parent</span>
+  <span class="p">}</span>
+  <span class="kr">const</span> <span class="nx">domParent</span> <span class="o">=</span> <span class="nx">domParentFiber</span><span class="p">.</span><span class="nx">dom</span>
+<span class="err">​</span>
+  <span class="k">if</span> <span class="p">(</span>
+    <span class="nx">fiber</span><span class="p">.</span><span class="nx">effectTag</span> <span class="o">===</span> <span class="s2">&#34;PLACEMENT&#34;</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span> <span class="o">!=</span> <span class="kc">null</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">domParent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span>
+    <span class="nx">fiber</span><span class="p">.</span><span class="nx">effectTag</span> <span class="o">===</span> <span class="s2">&#34;UPDATE&#34;</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span> <span class="o">!=</span> <span class="kc">null</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">updateDom</span><span class="p">(</span>
+      <span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span><span class="p">,</span>
+      <span class="nx">fiber</span><span class="p">.</span><span class="nx">alternate</span><span class="p">.</span><span class="nx">props</span><span class="p">,</span>
+      <span class="nx">fiber</span><span class="p">.</span><span class="nx">props</span>
+    <span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">effectTag</span> <span class="o">===</span> <span class="s2">&#34;DELETION&#34;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 寻找到包含 DOM 的子节点
+</span><span class="c1"></span>    <span class="nx">commitDeletion</span><span class="p">(</span><span class="nx">fiber</span><span class="p">,</span><span class="nx">domParent</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">commitWork</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">child</span><span class="p">)</span>
+  <span class="nx">commitWork</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">sibling</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">commitDeletion</span><span class="p">(</span><span class="nx">fiber</span><span class="p">,</span> <span class="nx">domParent</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">domParent</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">dom</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">commitDeletion</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">child</span><span class="p">,</span> <span class="nx">domParent</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="hooks">Hooks</h3>
+<p>最后一步，既然我们使用了函数组件，那么就要给它加上状态。</p>
+<p>首先更新为函数创建子 fiber 的函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">wipFiber</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="kd">let</span> <span class="nx">hookIndex</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="err">​</span>
+<span class="kd">function</span> <span class="nx">updateFunctionComponent</span><span class="p">(</span><span class="nx">fiber</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">wipFiber</span> <span class="o">=</span> <span class="nx">fiber</span>
+  <span class="c1">// 记录当前 hook 的索引
+</span><span class="c1"></span>  <span class="nx">hookIndex</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="c1">// 支持在同一个组件中多次调用 useState 函数
+</span><span class="c1"></span>  <span class="nx">wipFiber</span><span class="p">.</span><span class="nx">hooks</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="kr">const</span> <span class="nx">children</span> <span class="o">=</span> <span class="p">[</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="nx">fiber</span><span class="p">.</span><span class="nx">props</span><span class="p">)]</span>
+  <span class="nx">reconcileChildren</span><span class="p">(</span><span class="nx">fiber</span><span class="p">,</span> <span class="nx">children</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后我们写自己的 useState 函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initial</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">oldHook</span> <span class="o">=</span> 
+    <span class="nx">wipFiber</span><span class="p">.</span><span class="nx">alternate</span> <span class="o">&amp;&amp;</span> 
+    <span class="nx">wipFiber</span><span class="p">.</span><span class="nx">alternate</span><span class="p">.</span><span class="nx">hooks</span> <span class="o">&amp;&amp;</span> 
+    <span class="nx">wipFiber</span><span class="p">.</span><span class="nx">alternate</span><span class="p">.</span><span class="nx">hooks</span><span class="p">[</span><span class="nx">hookIndex</span><span class="p">]</span>
+  <span class="c1">// 如果存在旧的 hook，我们从旧的 hook 中拷贝状态到新的 hook
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">hook</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="o">:</span> <span class="nx">oldHook</span> <span class="o">?</span> <span class="nx">oldHook</span><span class="p">.</span><span class="nx">state</span> <span class="o">:</span> <span class="nx">initial</span><span class="p">,</span>
+    <span class="nx">queue</span><span class="o">:</span><span class="p">[]</span>
+  <span class="p">}</span>
+  <span class="c1">// 拿到 action(更新状态的回调函数) 处理 state
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="nx">oldHook</span> <span class="o">?</span> <span class="nx">oldHook</span><span class="p">.</span><span class="nx">queue</span> <span class="o">:</span> <span class="p">[]</span>
+  <span class="nx">actions</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">action</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">hook</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="nx">action</span><span class="p">(</span><span class="nx">hook</span><span class="p">.</span><span class="nx">state</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="c1">// setState 将 action 添加到 hook 的 queue 中
+</span><span class="c1"></span><span class="err">​</span> <span class="kr">const</span> <span class="nx">setState</span> <span class="o">=</span> <span class="nx">action</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">hook</span><span class="p">.</span><span class="nx">queue</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">action</span><span class="p">)</span>
+    <span class="nx">wipRoot</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">dom</span><span class="o">:</span> <span class="nx">currentRoot</span><span class="p">.</span><span class="nx">dom</span><span class="p">,</span>
+      <span class="nx">props</span><span class="o">:</span> <span class="nx">currentRoot</span><span class="p">.</span><span class="nx">props</span><span class="p">,</span>
+      <span class="nx">alternate</span><span class="o">:</span> <span class="nx">currentRoot</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="c1">// 重新渲染这颗 fiber tree
+</span><span class="c1"></span>    <span class="nx">nextUnitOfWork</span> <span class="o">=</span> <span class="nx">wipRoot</span>
+  <span class="p">}</span>
+  <span class="nx">wipFiber</span><span class="p">.</span><span class="nx">hooks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">hook</span><span class="p">)</span>
+  <span class="nx">hookIndex</span><span class="o">++</span>
+ <span class="c1">// 返回 state 和 setState
+</span><span class="c1"></span>  <span class="k">return</span> <span class="p">[</span><span class="nx">hook</span><span class="p">.</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>就这样，我们构建出了我们自己的 mini React，在 <a href="https://codesandbox.io/s/didact-8-21ost" target="_blank" rel="noopener noreffer">codesandbox</a> 中查看完整代码。</p>
+<h2 id="经验总结">经验总结</h2>
+<p>本文的目的之一是让你更轻松地深入学习 React，这就是我们在几乎所有地方都使用与 React 相同的变量和函数名称的原因。但是我们构建的代码库并没有包含很多的 React 特性以及优化，以下是 React 与我们的实现做得不同的地方：</p>
+<ul>
+<li>我们的渲染阶段会遍历整棵树，而 React 会跳过那些没有发生改变的子树。</li>
+<li>我们会在提交阶段遍历整个树，而 React 只会保留产生影响的 fiber 节点。</li>
+<li>我们为每个 fiber 创建一个新的对象，而 React 会复用之前树上的 fiber 节点。</li>
+<li>我们在渲染阶段收到一个新的更新时，会丢弃之前的工作树，从根节点重新开始。而 React 给每一个更新标记一个过期时间戳，通过这个时间戳来决定各个更新之间的优先级。</li>
+<li>除此之外还有很多&hellip;</li>
+</ul>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://pomb.us/build-your-own-react/" target="_blank" rel="noopener noreffer">Build your own React</a></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-10-18</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2020-10-18-mini-react/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-10-18-mini-react/" data-title="构建自己的 mini React" data-hashtags="React"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-10-18-mini-react/" data-hashtag="React"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2020-10-18-mini-react/" data-title="构建自己的 mini React" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2020-10-18-mini-react/" data-title="构建自己的 mini React"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-10-18-mini-react/" data-title="构建自己的 mini React"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2020-10-18-mini-react/" data-title="构建自己的 mini React" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2020-10-18-mini-react/" data-title="构建自己的 mini React" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-10-18-mini-react/" data-title="构建自己的 mini React"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/react/">React</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020-10-07-recoil-clone/" class="prev" rel="prev" title="实现仿 Recoil 的状态共享"><i class="fas fa-angle-left fa-fw"></i>实现仿 Recoil 的状态共享</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz","appKey":"gK3L6a7r80578qujBez4FH6C","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"欢迎讨论交流","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -60,7 +60,7 @@ export class Stateful<T> {
 
 ## 自定义 hook
 
-下面是只读 hook 的实现方式。atom 和 selector 均可读，因此参数只需满足 Stateful 类型。这里注册的监听者 **updateState 巧妙地利用了函数组件的重渲染机制。**
+下面是只读 hook 的实现方式。atom 和 selector 均可读，因此参数只需满足 Stateful 类型。这里注册的监听者 **updateState 巧妙地利用了函数组件的重渲染机制**，因为 useState 的参数为引用数据类型，`{} === {}` 的值为 false，因此只要调用 updateState 函数就会重渲染组件。关于 React 组件何时会重渲染可以读这篇 [文章](https://juejin.im/post/6886766652667461646)。
  
 ```ts
 export function useCoiledValue<T>(value: Stateful<T>): T {
@@ -203,6 +203,8 @@ function App() {
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
+
+在 [codesandbox](https://codesandbox.io/s/patient-worker-ksv85) 中查看完整代码。
 
 ## 思考
 
