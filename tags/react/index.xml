@@ -3,7 +3,14 @@
         <title>React - 标签 - 浮槎的博客</title>
         <link>http://example.org/tags/react/</link>
         <description>React - 标签 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 18 Oct 2020 22:40:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/react/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 02 Nov 2020 20:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/react/" rel="self" type="application/rss+xml" /><item>
+    <title>以 useEffect 为圆心</title>
+    <link>http://example.org/2020-11-02-react-hooks/</link>
+    <pubDate>Mon, 02 Nov 2020 20:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-11-02-react-hooks/</guid>
+    <description><![CDATA[以 useEffect 为圆心，其他 Hooks 为半径，构建 React Hooks 的知识圆环。为什么会想出这样一个标题呢？Hooks 的知识点过于分散，很多朋友在读过 React 官方文档后，还是不知道]]></description>
+</item><item>
     <title>构建自己的 mini React</title>
     <link>http://example.org/2020-10-18-mini-react/</link>
     <pubDate>Sun, 18 Oct 2020 22:40:00 &#43;0800</pubDate>
@@ -40,10 +47,10 @@
     <description><![CDATA[本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间]]></description>
 </item><item>
     <title>Context &#43; Hooks：状态管理新方案</title>
-    <link>http://example.org/2020-05-07-react-hook/</link>
+    <link>http://example.org/2020-05-07-react-hooks-state/</link>
     <pubDate>Thu, 07 May 2020 16:46:30 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020-05-07-react-hook/</guid>
+    <guid>http://example.org/2020-05-07-react-hooks-state/</guid>
     <description><![CDATA[React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 React 组件分为两类，class 组件和函数]]></description>
 </item></channel>
 </rss>
