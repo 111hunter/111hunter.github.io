@@ -3,7 +3,14 @@
         <title>JavaScript - 标签 - 浮槎的博客</title>
         <link>http://example.org/tags/javascript/</link>
         <description>JavaScript - 标签 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 02 Sep 2020 08:30:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 10 Nov 2020 22:30:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+    <title>了解防抖与节流</title>
+    <link>http://example.org/2020-11-10-js-closure/</link>
+    <pubDate>Tue, 10 Nov 2020 22:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-11-10-js-closure/</guid>
+    <description><![CDATA[在前端开发的过程中，我们经常需要绑定一些持续触发的事件，如 resize、scroll、mousemove 等，然而有些时候我们并不希望在事件持]]></description>
+</item><item>
     <title>浅析 JS 函数式编程</title>
     <link>http://example.org/2020-09-02-js-functional/</link>
     <pubDate>Wed, 02 Sep 2020 08:30:00 &#43;0800</pubDate>

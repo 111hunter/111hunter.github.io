@@ -1,9 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>coding - 分类 - 浮槎的博客</title>
+        <title>Coding - 分类 - 浮槎的博客</title>
         <link>http://example.org/categories/coding/</link>
-        <description>coding - 分类 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 02 Nov 2020 20:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/coding/" rel="self" type="application/rss+xml" /><item>
+        <description>Coding - 分类 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 10 Nov 2020 22:30:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/coding/" rel="self" type="application/rss+xml" /><item>
+    <title>了解防抖与节流</title>
+    <link>http://example.org/2020-11-10-js-closure/</link>
+    <pubDate>Tue, 10 Nov 2020 22:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-11-10-js-closure/</guid>
+    <description><![CDATA[在前端开发的过程中，我们经常需要绑定一些持续触发的事件，如 resize、scroll、mousemove 等，然而有些时候我们并不希望在事件持]]></description>
+</item><item>
     <title>以 useEffect 为圆心</title>
     <link>http://example.org/2020-11-02-react-hooks/</link>
     <pubDate>Mon, 02 Nov 2020 20:00:00 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-07-27-recoil/</guid>
     <description><![CDATA[最近，Facebook 官方开源了一个状态管理库 Recoil，我们来学习一下。Recoil 是基于 Immutable 的数据流管理方案，这是它值得学习的重要原因。]]></description>
-</item><item>
-    <title>RBAC0 权限设计实例</title>
-    <link>http://example.org/2020-07-13-rbac0/</link>
-    <pubDate>Mon, 13 Jul 2020 17:45:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-07-13-rbac0/</guid>
-    <description><![CDATA[权限管理是所有后台系统的都会涉及的一个重要组成部分，主要目的是对不同的人访问资源进行权限的控制，避免因权限控制缺失或操作不当引发的风险问题，]]></description>
 </item></channel>
 </rss>
