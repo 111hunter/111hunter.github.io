@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Thinking - 分类 - 浮槎的博客</title>
+        <link>http://example.org/categories/thinking/</link>
+        <description>Thinking - 分类 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 17 Nov 2020 22:00:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+    <title>图灵机的极简实现</title>
+    <link>http://example.org/2020-11-17-brainfuck/</link>
+    <pubDate>Tue, 17 Nov 2020 22:00:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-11-17-brainfuck/</guid>
+    <description><![CDATA[图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终]]></description>
+</item><item>
+    <title>自我指涉与数理逻辑</title>
+    <link>http://example.org/2020-11-16-self-ref/</link>
+    <pubDate>Mon, 16 Nov 2020 00:27:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-11-16-self-ref/</guid>
+    <description><![CDATA[“我是谁？”，这种对指代自身的疑问每个人都会有。在自然语言和形式语言中，如果一个句子直接或间接提及自身，就称为自指(Self-referen]]></description>
+</item></channel>
+</rss>

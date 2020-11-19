@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Turing - 标签 - 浮槎的博客</title>
+        <link>http://example.org/tags/turing/</link>
+        <description>Turing - 标签 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 14 Nov 2020 11:27:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/turing/" rel="self" type="application/rss+xml" /><item>
+    <title>图灵机的极简实现</title>
+    <link>http://example.org/2020-11-14-brainfuck/</link>
+    <pubDate>Sat, 14 Nov 2020 11:27:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-11-14-brainfuck/</guid>
+    <description><![CDATA[基本思想 图灵机是一种 抽象计算模型，图灵机的构成： 一条无限长的纸带，纸带由很多个格子构成，用于输入输出信息。每个格子中包含一个来自有限字母表的]]></description>
+</item><item>
+    <title>自我指涉与停机问题</title>
+    <link>http://example.org/2020-11-13-halting/</link>
+    <pubDate>Fri, 13 Nov 2020 22:27:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-11-13-halting/</guid>
+    <description><![CDATA[自我指涉 “我是谁？”，这种对指代自身的疑问每个人都会有。在自然语言和形式语言中，如果一个句子直接或间接提及自身，就称为自指(Self-ref]]></description>
+</item></channel>
+</rss>
