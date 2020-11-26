@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Thinking - 分类 - 浮槎的博客</title>
-        <link>http://example.org/categories/thinking/</link>
-        <description>Thinking - 分类 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 26 Nov 2020 09:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+        <title>Theories - 标签 - 浮槎的博客</title>
+        <link>http://example.org/tags/theories/</link>
+        <description>Theories - 标签 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 26 Nov 2020 09:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/theories/" rel="self" type="application/rss+xml" /><item>
     <title>λ-calculus: 重新认识计算</title>
     <link>http://example.org/2020-11-26-%CE%BB-calculus/</link>
     <pubDate>Thu, 26 Nov 2020 09:50:34 &#43;0800</pubDate>

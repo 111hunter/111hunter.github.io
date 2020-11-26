@@ -72,6 +72,6 @@ Brainfuck 是一种极小化的图灵完备的程序语言，它仅由八种运�
 
 把 brainfuck 的一维数组命名为 `arr`，则开始的数组元素为 `arr[0]`，`arr[0]` 右边的数组元素为 `arr[1]`。第一句代码将 `arr[0]` 的数值递增 5 次变为 5。
 
-然后，循环执行“右移指针，递增 13 次，左移指针，递减 1 次”。当 `arr[0]` 的值最终被递减为 0 的时候，循环结束。此时 `arr[1]` 的值执行了 5 次“递增 13 次”的操作，即 65。最后指针右移至 `arr[1]`，输出它对应的 ASCII 值即为 A。[网站1](http://fatiherikli.github.io/brainfuck-visualizer/)和[网站2](https://copy.sh/brainfuck/text.html)可以试玩这门程序语言！
+然后，循环执行“右移指针，递增 13 次，左移指针，递减 1 次”。当 `arr[0]` 的值最终被递减为 0 的时候，循环结束。此时 `arr[1]` 的值执行了 5 次“递增 13 次”的操作，即 65。最后指针右移至 `arr[1]`，输出它对应的 ASCII 值即为 A。[网站1](http://fatiherikli.github.io/brainfuck-visualizer/)和[网站2](https://copy.sh/brainfuck/text.html)可以试玩这门程序语言。
 
 
