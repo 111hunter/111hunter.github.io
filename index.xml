@@ -6,12 +6,26 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 02 Aug 2019 11:04:49 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>λ-calculus: 重新认识计算</title>
+    <title>实现 λ 演算解释器</title>
+    <link>http://example.org/2020-12-13-%CE%BB-interpreter/</link>
+    <pubDate>Sun, 13 Dec 2020 09:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-12-13-%CE%BB-interpreter/</guid>
+    <description><![CDATA[如果你没有听说过 λ 演算，可以阅读我的这篇文章。如果你没有编译原理相关知识，可以阅读我的这篇文章。首先介绍调度场算法，后面的实现中会用到。 调度]]></description>
+</item><item>
+    <title>程序解释与编译</title>
+    <link>http://example.org/2020-12-10-lex-parse/</link>
+    <pubDate>Thu, 10 Dec 2020 09:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-12-10-lex-parse/</guid>
+    <description><![CDATA[程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。 前置知识 算术表达式根据运算符所在的位置可以分为三种表示方法： 前缀表达式]]></description>
+</item><item>
+    <title>λ 演算: 程序从无到有</title>
     <link>http://example.org/2020-11-26-%CE%BB-calculus/</link>
     <pubDate>Thu, 26 Nov 2020 09:50:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2020-11-26-%CE%BB-calculus/</guid>
-    <description><![CDATA[由邱奇 (Alonzo Church) 创造的 Lambda 演算(λ-calculus) 是世界上最小的程序设计语言。虽然没有数(number)，字符串(string)，布尔型(boo]]></description>
+    <description><![CDATA[由邱奇 (Alonzo Church) 创造的 λ 演算(λ-calculus) 是世界上最小的程序设计语言。虽然没有数(number)，字符串(string)，布尔型(boo]]></description>
 </item><item>
     <title>图灵机的极简实现</title>
     <link>http://example.org/2020-11-17-brainfuck/</link>
@@ -61,19 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-09-29-next/</guid>
     <description><![CDATA[我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next]]></description>
-</item><item>
-    <title>浅析 JS 函数式编程</title>
-    <link>http://example.org/2020-09-02-js-functional/</link>
-    <pubDate>Wed, 02 Sep 2020 08:30:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-09-02-js-functional/</guid>
-    <description><![CDATA[在计算机科学中，函数式编程是一种编程范式，其中通过应用和组合函数来构造程序。它是一种声明式编程范式，其中函数定义是每个返回一个值的表达式树，]]></description>
-</item><item>
-    <title>入门 AST 抽象语法树</title>
-    <link>http://example.org/2020-08-23-ast/</link>
-    <pubDate>Sun, 23 Aug 2020 00:30:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-08-23-ast/</guid>
-    <description><![CDATA[如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、]]></description>
 </item></channel>
 </rss>

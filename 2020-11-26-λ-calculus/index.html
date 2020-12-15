@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>λ-calculus: 重新认识计算 - 浮槎的博客</title><meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="λ-calculus: 重新认识计算" />
-<meta property="og:description" content="由邱奇 (Alonzo Church) 创造的 Lambda 演算(λ-calculus) 是世界上最小的程序设计语言。虽然没有数(number)，字符串(string)，布尔型(boo" />
+        <title>λ 演算: 程序从无到有 - 浮槎的博客</title><meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="λ 演算: 程序从无到有" />
+<meta property="og:description" content="由邱奇 (Alonzo Church) 创造的 λ 演算(λ-calculus) 是世界上最小的程序设计语言。虽然没有数(number)，字符串(string)，布尔型(boo" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2020-11-26-%CE%BB-calculus/" />
 <meta property="og:image" content="http://example.org/logo.png"/>
 <meta property="article:published_time" content="2020-11-26T09:50:34+08:00" />
-<meta property="article:modified_time" content="2020-11-26T09:50:34+08:00" />
+<meta property="article:modified_time" content="2020-12-09T23:50:34+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
-<meta name="twitter:title" content="λ-calculus: 重新认识计算"/>
-<meta name="twitter:description" content="由邱奇 (Alonzo Church) 创造的 Lambda 演算(λ-calculus) 是世界上最小的程序设计语言。虽然没有数(number)，字符串(string)，布尔型(boo"/>
+<meta name="twitter:title" content="λ 演算: 程序从无到有"/>
+<meta name="twitter:description" content="由邱奇 (Alonzo Church) 创造的 λ 演算(λ-calculus) 是世界上最小的程序设计语言。虽然没有数(number)，字符串(string)，布尔型(boo"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020-11-26-%CE%BB-calculus/" /><link rel="prev" href="http://example.org/2020-11-17-brainfuck/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020-11-26-%CE%BB-calculus/" /><link rel="prev" href="http://example.org/2020-11-17-brainfuck/" /><link rel="next" href="http://example.org/2020-12-10-lex-parse/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "λ-calculus: 重新认识计算",
+        "headline": "λ 演算: 程序从无到有",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-11-26-%CE%BB-calculus\/"
-        },"genre": "posts","keywords": "Theories, Lambda","wordcount":  1721 ,
-        "url": "http:\/\/example.org\/2020-11-26-%CE%BB-calculus\/","datePublished": "2020-11-26T09:50:34+08:00","dateModified": "2020-11-26T09:50:34+08:00","publisher": {
+        },"genre": "posts","keywords": "Theories, Lambda","wordcount":  2237 ,
+        "url": "http:\/\/example.org\/2020-11-26-%CE%BB-calculus\/","datePublished": "2020-11-26T09:50:34+08:00","dateModified": "2020-12-09T23:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -105,10 +105,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">λ-calculus: 重新认识计算</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">λ 演算: 程序从无到有</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/thinking/"><i class="far fa-folder fa-fw"></i>Thinking</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-26">2020-11-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1721 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/2020-11-26-%CE%BB-calculus/" class="leancloud_visitors" data-flag-title="λ-calculus: 重新认识计算">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-26">2020-11-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2237 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/2020-11-26-%CE%BB-calculus/" class="leancloud_visitors" data-flag-title="λ 演算: 程序从无到有">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -118,7 +118,7 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#lambda-演算">Lambda 演算</a>
+    <li><a href="#λ-演算">λ 演算</a>
       <ul>
         <li><a href="#变量">变量</a></li>
         <li><a href="#求值">求值</a></li>
@@ -129,8 +129,8 @@
     <li><a href="#实践">实践</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>由邱奇 (Alonzo Church) 创造的 <a href="https://en.wikipedia.org/wiki/Lambda_calculus" target="_blank" rel="noopener noreffer">Lambda 演算(λ-calculus)</a> 是世界上最小的程序设计语言。虽然没有数(number)，字符串(string)，布尔型(boolean) 或其他任何非函数(non-function) 的数据类型，但 λ-演算只用匿名单参函数就能模拟图灵机(图灵完备)。</p>
-<h2 id="lambda-演算">Lambda 演算</h2>
+            </div><div class="content" id="content"><p>由邱奇 (Alonzo Church) 创造的 <a href="https://en.wikipedia.org/wiki/Lambda_calculus" target="_blank" rel="noopener noreffer">λ 演算(λ-calculus)</a> 是世界上最小的程序设计语言。虽然没有数(number)，字符串(string)，布尔型(boolean) 或其他任何非函数(non-function) 的数据类型，但 λ 演算只用匿名单参函数就能模拟图灵机(图灵完备)。</p>
+<h2 id="λ-演算">λ 演算</h2>
 <p>λ 演算仅由 3 种元素组成：<strong>变量</strong>、<strong>函数</strong> 和 <strong>应用</strong></p>
 <div align=center><img src="/img/lambda.png" width="100%"></div>
 <p>最基本的函数是恒等函数：$ λx.x $，等同于 $ f(x) = x $，第一个 x 是函数参数，第二个是函数体。</p>
@@ -197,7 +197,7 @@
 <p>$ not = λp. p \ false \ true $</p>
 </li>
 </ul>
-<p>若要图灵完备，必然能实现无限递归。而 λ 演算中只有匿名单参函数，也就是没有函数声明，这能实现无限递归？真的能！</p>
+<p>若要图灵完备，必然能实现无限递归。而 λ 演算中只有匿名单参函数，也就是没有提前的函数声明，这能实现无限递归？真的能！</p>
 <h3 id="不动点组合子">不动点组合子</h3>
 <p><strong>不动点</strong></p>
 <p>函数 $ f $ 的不动点指的是将函数应用在输入值 x 时，会传回与输入值相同的值，使得 $ f(x) = x $。例如，0 和 1 是函数 $ f(x) = x^2 $ 的不动点。现在，假设有某个函数 Y 和任意函数 g，满足：</p>
@@ -216,64 +216,256 @@
 <p>g(Y g) = λx. (iszero x) 1 (mult x ((Y g) (pred x)))</p>
 <p>于是，Y g 就成为了递归函数：</p>
 <p>Y g = λx. (iszero x) 1 (mult x ((Y g) (pred x)))</p>
-<p>Y 能够组合一个匿名函数成为递归函数，因此被称为 Y combinator(Y组合子)。Church 编码和不动点组合子表明了程序不用其他原始数据类型就能模拟图灵机。</p>
-<h2 id="实践">实践</h2>
-<p>直接将 λ演算翻译为 JS 代码：</p>
+<p>Y 能够组合一个匿名函数成为递归函数，因此被称为 Y combinator(Y组合子)。由于 lambda 表达式是<a href="https://en.wikipedia.org/wiki/Lazy_evaluation" target="_blank" rel="noopener noreffer">惰性求值</a>，而很多编程语言例如 JS 中使用<a href="https://en.wikipedia.org/wiki/Eager_evaluation" target="_blank" rel="noopener noreffer">严格求值</a>，因此 Y组合子在 JS 中这样表示：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">mark</span> <span class="o">=</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;λ&#34;</span><span class="p">);</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">Y</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">y</span> <span class="p">=&gt;</span> <span class="nx">x</span><span class="p">(</span><span class="nx">x</span><span class="p">)(</span><span class="nx">y</span><span class="p">)))(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">y</span> <span class="p">=&gt;</span> <span class="nx">x</span><span class="p">(</span><span class="nx">x</span><span class="p">)(</span><span class="nx">y</span><span class="p">)));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Church 编码和不动点组合子表明了程序不用其他原始数据类型就能模拟图灵机。</p>
+<h2 id="实践">实践</h2>
+<p>代码实践参考了<a href="https://www.ituring.com.cn/book/1098" target="_blank" rel="noopener noreffer">计算的本质</a>一书，原文是 Ruby 代码，我把它翻译为 JS 代码了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">Y</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">y</span> <span class="p">=&gt;</span> <span class="nx">x</span><span class="p">(</span><span class="nx">x</span><span class="p">)(</span><span class="nx">y</span><span class="p">)))(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">y</span> <span class="p">=&gt;</span> <span class="nx">x</span><span class="p">(</span><span class="nx">x</span><span class="p">)(</span><span class="nx">y</span><span class="p">)));</span>
 
-<span class="kd">let</span> <span class="nx">F</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">b</span> <span class="p">=&gt;</span> <span class="nx">b</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">T</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">b</span> <span class="p">=&gt;</span> <span class="nx">a</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">F</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">b</span> <span class="p">=&gt;</span> <span class="nx">b</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">T</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">b</span> <span class="p">=&gt;</span> <span class="nx">a</span><span class="p">;</span>
 
-<span class="kd">let</span> <span class="nx">zero</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">x</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">one</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">two</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
+<span class="kr">const</span> <span class="nx">zero</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">x</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">one</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">two</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
+<span class="kr">const</span> <span class="nx">three</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">)));</span>
+<span class="kr">const</span> <span class="nx">four</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">))));</span>
+<span class="kr">const</span> <span class="nx">five</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">)))));</span>
 
-<span class="kd">let</span> <span class="nx">add</span> <span class="o">=</span> <span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">m</span><span class="p">(</span><span class="nx">f</span><span class="p">)(</span><span class="nx">n</span><span class="p">(</span><span class="nx">f</span><span class="p">)(</span><span class="nx">x</span><span class="p">));</span>
-<span class="kd">let</span> <span class="nx">succ</span> <span class="o">=</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">n</span><span class="p">(</span><span class="nx">f</span><span class="p">)(</span><span class="nx">x</span><span class="p">));</span>
-<span class="kd">let</span> <span class="nx">mult</span> <span class="o">=</span> <span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">m</span><span class="p">(</span><span class="nx">n</span><span class="p">(</span><span class="nx">f</span><span class="p">));</span>
+<span class="kr">const</span> <span class="nx">pair</span> <span class="o">=</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">y</span> <span class="p">=&gt;</span> <span class="nx">z</span> <span class="p">=&gt;</span> <span class="nx">z</span><span class="p">(</span><span class="nx">x</span><span class="p">)(</span><span class="nx">y</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">p</span> <span class="p">=&gt;</span> <span class="nx">p</span><span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">y</span> <span class="p">=&gt;</span> <span class="nx">x</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">p</span> <span class="p">=&gt;</span><span class="nx">p</span><span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">y</span> <span class="p">=&gt;</span> <span class="nx">y</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">empty</span> <span class="o">=</span> <span class="nx">pair</span><span class="p">(</span><span class="nx">T</span><span class="p">)(</span><span class="nx">T</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">ushift</span> <span class="o">=</span> <span class="nx">l</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">pair</span><span class="p">(</span><span class="nx">F</span><span class="p">)(</span><span class="nx">pair</span><span class="p">(</span><span class="nx">x</span><span class="p">)(</span><span class="nx">l</span><span class="p">));</span>
+<span class="kr">const</span> <span class="nx">is_empty</span> <span class="o">=</span> <span class="nx">left</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">first</span> <span class="o">=</span> <span class="nx">l</span> <span class="p">=&gt;</span> <span class="nx">left</span><span class="p">(</span><span class="nx">right</span><span class="p">(</span><span class="nx">l</span><span class="p">));</span>
+<span class="kr">const</span> <span class="nx">rest</span> <span class="o">=</span> <span class="nx">l</span> <span class="p">=&gt;</span> <span class="nx">right</span><span class="p">(</span><span class="nx">right</span><span class="p">(</span><span class="nx">l</span><span class="p">));</span>
 
-<span class="c1">// console.log(T(mark)(&#34;no mark&#34;));
-</span><span class="c1">// console.log(two(mark)(&#34;no mark&#34;));
-</span><span class="c1">// console.log(mult(zero)(two)(mark)(&#34;no mark&#34;));
-</span><span class="c1"></span>
-<span class="kd">let</span> <span class="nx">Y</span> <span class="o">=</span> <span class="p">(</span><span class="nx">f</span> <span class="p">=&gt;</span>
-    <span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">x</span><span class="p">(</span><span class="nx">x</span><span class="p">)(</span><span class="nx">v</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">x</span><span class="p">(</span><span class="nx">x</span><span class="p">)(</span><span class="nx">v</span><span class="p">)))</span>
+<span class="kr">const</span> <span class="nx">if_else</span> <span class="o">=</span> <span class="nx">b</span> <span class="p">=&gt;</span> <span class="nx">b</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">is_zero</span> <span class="o">=</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">F</span><span class="p">)(</span><span class="nx">T</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">is_less_or_equal</span> <span class="o">=</span> <span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">is_zero</span><span class="p">(</span><span class="nx">minus</span><span class="p">(</span><span class="nx">m</span><span class="p">)(</span><span class="nx">n</span><span class="p">));</span>
+
+<span class="kr">const</span> <span class="nx">succ</span> <span class="o">=</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">n</span><span class="p">(</span><span class="nx">f</span><span class="p">)(</span><span class="nx">x</span><span class="p">));</span>
+<span class="kr">const</span> <span class="nx">slide</span> <span class="o">=</span> <span class="nx">p</span> <span class="p">=&gt;</span> <span class="nx">pair</span><span class="p">(</span><span class="nx">right</span><span class="p">(</span><span class="nx">p</span><span class="p">))(</span><span class="nx">succ</span><span class="p">(</span><span class="nx">right</span><span class="p">(</span><span class="nx">p</span><span class="p">)));</span>
+<span class="kr">const</span> <span class="nx">pred</span> <span class="o">=</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">left</span><span class="p">(</span><span class="nx">n</span><span class="p">(</span><span class="nx">slide</span><span class="p">)(</span><span class="nx">pair</span><span class="p">(</span><span class="nx">zero</span><span class="p">)(</span><span class="nx">zero</span><span class="p">)));</span>
+
+<span class="kr">const</span> <span class="nx">plus</span> <span class="o">=</span> <span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">n</span><span class="p">(</span><span class="nx">succ</span><span class="p">)(</span><span class="nx">m</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">minus</span> <span class="o">=</span> <span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">n</span><span class="p">(</span><span class="nx">pred</span><span class="p">)(</span><span class="nx">m</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">mult</span> <span class="o">=</span> <span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">n</span><span class="p">(</span><span class="nx">plus</span><span class="p">(</span><span class="nx">m</span><span class="p">))(</span><span class="nx">zero</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">Y</span><span class="p">(</span><span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="p">=&gt;</span>
+    <span class="nx">if_else</span><span class="p">(</span><span class="nx">is_less_or_equal</span><span class="p">(</span><span class="nx">n</span><span class="p">)(</span><span class="nx">m</span><span class="p">))</span>
+        <span class="p">(</span><span class="nx">x</span><span class="p">=&gt;</span><span class="nx">succ</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">minus</span><span class="p">(</span><span class="nx">m</span><span class="p">)(</span><span class="nx">n</span><span class="p">))(</span><span class="nx">n</span><span class="p">))(</span><span class="nx">x</span><span class="p">))</span>
+        <span class="p">(</span><span class="nx">zero</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">two</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">succ</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">aa</span> <span class="o">=</span> <span class="nx">ushift</span><span class="p">(</span><span class="nx">ushift</span><span class="p">(</span><span class="nx">empty</span><span class="p">)(</span><span class="nx">a</span><span class="p">))(</span><span class="nx">a</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">ab</span> <span class="o">=</span> <span class="nx">ushift</span><span class="p">(</span><span class="nx">ushift</span><span class="p">(</span><span class="nx">empty</span><span class="p">)(</span><span class="nx">b</span><span class="p">))(</span><span class="nx">a</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">abaa</span> <span class="o">=</span> <span class="nx">ushift</span><span class="p">(</span><span class="nx">ushift</span><span class="p">(</span><span class="nx">aa</span><span class="p">)(</span><span class="nx">b</span><span class="p">))(</span><span class="nx">a</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">to_boolean</span> <span class="o">=</span> <span class="nx">p</span> <span class="p">=&gt;</span> <span class="nx">if_else</span><span class="p">(</span><span class="nx">p</span><span class="p">)(</span><span class="s1">&#39;T&#39;</span><span class="p">)(</span><span class="s1">&#39;F&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">to_char</span> <span class="o">=</span> <span class="nx">c</span> <span class="p">=&gt;</span> 
+    <span class="nx">if_else</span><span class="p">(</span><span class="nx">is_zero</span><span class="p">(</span><span class="nx">c</span><span class="p">))(</span><span class="s1">&#39;0&#39;</span><span class="p">)(</span>
+        <span class="nx">if_else</span><span class="p">(</span><span class="nx">is_zero</span><span class="p">(</span><span class="nx">pred</span><span class="p">(</span><span class="nx">c</span><span class="p">)))(</span><span class="s1">&#39;1&#39;</span><span class="p">)(</span>
+            <span class="nx">if_else</span><span class="p">(</span><span class="nx">is_zero</span><span class="p">(</span><span class="nx">two</span><span class="p">(</span><span class="nx">pred</span><span class="p">)(</span><span class="nx">c</span><span class="p">)))(</span><span class="s1">&#39;a&#39;</span><span class="p">)(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+<span class="kr">const</span> <span class="nx">fold</span> <span class="o">=</span> <span class="nx">Y</span><span class="p">(</span><span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">l</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">g</span> <span class="p">=&gt;</span> 
+    <span class="nx">if_else</span><span class="p">(</span><span class="nx">is_empty</span><span class="p">(</span><span class="nx">l</span><span class="p">))</span>
+        <span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+        <span class="p">(</span><span class="nx">y</span><span class="p">=&gt;</span><span class="nx">g</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">rest</span><span class="p">(</span><span class="nx">l</span><span class="p">))(</span><span class="nx">x</span><span class="p">)(</span><span class="nx">g</span><span class="p">))(</span><span class="nx">first</span><span class="p">(</span><span class="nx">l</span><span class="p">))(</span><span class="nx">y</span><span class="p">))</span>
+<span class="p">);</span>
+<span class="kr">const</span> <span class="nx">pushs</span> <span class="o">=</span> <span class="nx">l</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">fold</span><span class="p">(</span><span class="nx">l</span><span class="p">)(</span><span class="nx">ushift</span><span class="p">(</span><span class="nx">empty</span><span class="p">)(</span><span class="nx">x</span><span class="p">))(</span><span class="nx">ushift</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">to_digits</span> <span class="o">=</span> <span class="nx">Y</span><span class="p">(</span><span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">pushs</span><span class="p">(</span>
+    <span class="nx">if_else</span><span class="p">(</span><span class="nx">is_less_or_equal</span><span class="p">(</span><span class="nx">n</span><span class="p">)(</span><span class="nx">pred</span><span class="p">(</span><span class="nx">two</span><span class="p">)))</span>
+        <span class="p">(</span><span class="nx">empty</span><span class="p">)</span>
+        <span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">div</span><span class="p">(</span><span class="nx">n</span><span class="p">)(</span><span class="nx">two</span><span class="p">))(</span><span class="nx">x</span><span class="p">))</span>
+    <span class="p">)(</span><span class="nx">mod</span><span class="p">(</span><span class="nx">n</span><span class="p">)(</span><span class="nx">two</span><span class="p">))</span>
 <span class="p">)</span>
-<span class="kd">let</span> <span class="nx">fact</span> <span class="o">=</span> <span class="p">(</span><span class="nx">mul</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">mul</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+<span class="kr">const</span> <span class="nx">mod</span> <span class="o">=</span> <span class="nx">Y</span><span class="p">(</span><span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="p">=&gt;</span> 
+    <span class="nx">if_else</span><span class="p">(</span><span class="nx">is_less_or_equal</span><span class="p">(</span><span class="nx">n</span><span class="p">)(</span><span class="nx">m</span><span class="p">))</span>
+        <span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">minus</span><span class="p">(</span><span class="nx">m</span><span class="p">)(</span><span class="nx">n</span><span class="p">))(</span><span class="nx">n</span><span class="p">)(</span><span class="nx">x</span><span class="p">))</span>
+        <span class="p">(</span><span class="nx">m</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="kr">const</span> <span class="nx">range</span> <span class="o">=</span> <span class="nx">Y</span><span class="p">(</span><span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="p">=&gt;</span> 
+    <span class="nx">if_else</span><span class="p">(</span><span class="nx">is_less_or_equal</span><span class="p">(</span><span class="nx">m</span><span class="p">)(</span><span class="nx">n</span><span class="p">))</span>
+        <span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">ushift</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">succ</span><span class="p">(</span><span class="nx">m</span><span class="p">))(</span><span class="nx">n</span><span class="p">))(</span><span class="nx">m</span><span class="p">)(</span><span class="nx">x</span><span class="p">))</span>
+        <span class="p">(</span><span class="nx">empty</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="kr">const</span> <span class="nx">maps</span> <span class="o">=</span> <span class="nx">k</span> <span class="p">=&gt;</span> <span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">fold</span><span class="p">(</span><span class="nx">k</span><span class="p">)(</span><span class="nx">empty</span><span class="p">)(</span><span class="nx">l</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">ushift</span><span class="p">(</span><span class="nx">l</span><span class="p">)(</span><span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">)));</span>
+<span class="kr">const</span> <span class="nx">twenty</span> <span class="o">=</span> <span class="nx">mult</span><span class="p">(</span><span class="nx">four</span><span class="p">)(</span><span class="nx">five</span><span class="p">);</span>
 
-<span class="c1">// console.log(Y(fact)(5));
+<span class="kr">const</span> <span class="nx">my_list</span> <span class="o">=</span> <span class="nx">maps</span><span class="p">(</span><span class="nx">range</span><span class="p">(</span><span class="nx">one</span><span class="p">)(</span><span class="nx">twenty</span><span class="p">))(</span><span class="nx">n</span> <span class="p">=&gt;</span> 
+    <span class="nx">if_else</span><span class="p">(</span><span class="nx">is_zero</span><span class="p">(</span><span class="nx">mod</span><span class="p">(</span><span class="nx">n</span><span class="p">)(</span><span class="nx">succ</span><span class="p">(</span><span class="nx">five</span><span class="p">))))(</span><span class="nx">abaa</span><span class="p">)(</span>
+        <span class="nx">if_else</span><span class="p">(</span><span class="nx">is_zero</span><span class="p">(</span><span class="nx">mod</span><span class="p">(</span><span class="nx">n</span><span class="p">)(</span><span class="nx">three</span><span class="p">)))(</span><span class="nx">aa</span><span class="p">)(</span>
+            <span class="nx">if_else</span><span class="p">(</span><span class="nx">is_zero</span><span class="p">(</span><span class="nx">mod</span><span class="p">(</span><span class="nx">n</span><span class="p">)(</span><span class="nx">two</span><span class="p">)))(</span><span class="nx">ab</span><span class="p">)(</span><span class="nx">to_digits</span><span class="p">(</span><span class="nx">n</span><span class="p">))</span>
+        <span class="p">)</span>
+    <span class="p">)</span>        
+<span class="p">);</span>
+
+<span class="c1">// The above code only uses functions to compconste all calculations, 
+</span><span class="c1">// and the calculation result is a single-character linked list
+</span><span class="c1"></span>
+<span class="c1">// But the above code does not encode the characters related to the output format, 
+</span><span class="c1">// so use an array to store the result to change the output format
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">to_array</span> <span class="o">=</span> <span class="nx">proc</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">while</span><span class="p">(</span><span class="nx">to_boolean</span><span class="p">(</span><span class="nx">is_empty</span><span class="p">(</span><span class="nx">proc</span><span class="p">))</span><span class="o">!=</span><span class="s1">&#39;T&#39;</span><span class="p">){</span>
+        <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">first</span><span class="p">(</span><span class="nx">proc</span><span class="p">));</span>
+        <span class="nx">proc</span> <span class="o">=</span> <span class="nx">rest</span><span class="p">(</span><span class="nx">proc</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">const</span> <span class="nx">to_string</span> <span class="o">=</span> <span class="nx">s</span> <span class="p">=&gt;</span> <span class="nx">to_array</span><span class="p">(</span><span class="nx">s</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">c</span> <span class="p">=&gt;</span> <span class="nx">to_char</span><span class="p">(</span><span class="nx">c</span><span class="p">)).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">to_array</span><span class="p">(</span><span class="nx">my_list</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span><span class="p">=&gt;</span><span class="nx">to_string</span><span class="p">(</span><span class="nx">v</span><span class="p">)));</span>
+
+<span class="c1">// If you don’t use arrays, you can also use functions to simulate
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">fact</span> <span class="o">=</span> <span class="nx">Y</span><span class="p">(</span><span class="nx">f</span> <span class="p">=&gt;</span> <span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">is_zero</span><span class="p">(</span><span class="nx">n</span><span class="p">)(</span><span class="nx">one</span><span class="p">)(</span>
+    <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">mult</span><span class="p">(</span><span class="nx">n</span><span class="p">)(</span><span class="nx">f</span><span class="p">(</span><span class="nx">pred</span><span class="p">(</span><span class="nx">n</span><span class="p">)))(</span><span class="nx">x</span><span class="p">)</span>
+<span class="p">));</span>
+
+<span class="kr">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nx">s</span> <span class="p">=&gt;</span> <span class="nx">to_char</span><span class="p">(</span><span class="nx">first</span><span class="p">(</span><span class="nx">s</span><span class="p">));</span>
+<span class="kr">const</span> <span class="nx">s1</span> <span class="o">=</span> <span class="nx">to_digits</span><span class="p">(</span><span class="nx">fact</span><span class="p">(</span><span class="nx">four</span><span class="p">));</span>
+<span class="kr">const</span> <span class="nx">s2</span> <span class="o">=</span> <span class="nx">rest</span><span class="p">(</span><span class="nx">s1</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">s3</span> <span class="o">=</span> <span class="nx">rest</span><span class="p">(</span><span class="nx">s2</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">s4</span> <span class="o">=</span> <span class="nx">rest</span><span class="p">(</span><span class="nx">s3</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">s5</span> <span class="o">=</span> <span class="nx">rest</span><span class="p">(</span><span class="nx">s4</span><span class="p">);</span>
+
+<span class="c1">// console.log(arr(s1) + arr(s2) + arr(s3) + arr(s4) + arr(s5));
 </span></code></pre></td></tr></table>
 </div>
-</div><p><strong>参考资料</strong></p>
+</div><p>附：<a href="https://github.com/111hunter/process-zero-to-hero" target="_blank" rel="noopener noreffer">源码地址</a></p>
+<p><strong>参考资料</strong></p>
 <ul>
 <li><a href="http://mindhacks.cn/2006/10/15/cantor-godel-turing-an-eternal-golden-diagonal/" target="_blank" rel="noopener noreffer">康托尔、哥德尔、图灵——永恒的金色对角线</a></li>
 <li><a href="http://www.cse.unt.edu/~tarau/teaching/PL/docs/Church%20encoding.pdf" target="_blank" rel="noopener noreffer">Church encoding</a></li>
@@ -284,7 +476,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-11-26</span>
+                <span>更新于 2020-12-09</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -293,7 +485,7 @@
                             <a class="link-to-markdown" href="/2020-11-26-%CE%BB-calculus/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ-calculus: 重新认识计算" data-hashtags="Theories,Lambda"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-hashtag="Theories"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ-calculus: 重新认识计算" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ-calculus: 重新认识计算"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ-calculus: 重新认识计算"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ-calculus: 重新认识计算" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ-calculus: 重新认识计算" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ-calculus: 重新认识计算"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ 演算: 程序从无到有" data-hashtags="Theories,Lambda"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-hashtag="Theories"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ 演算: 程序从无到有" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ 演算: 程序从无到有"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ 演算: 程序从无到有"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ 演算: 程序从无到有" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ 演算: 程序从无到有" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-11-26-%CE%BB-calculus/" data-title="λ 演算: 程序从无到有"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -305,7 +497,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/2020-11-17-brainfuck/" class="prev" rel="prev" title="图灵机的极简实现"><i class="fas fa-angle-left fa-fw"></i>图灵机的极简实现</a></div>
+    <div class="post-nav"><a href="/2020-11-17-brainfuck/" class="prev" rel="prev" title="图灵机的极简实现"><i class="fas fa-angle-left fa-fw"></i>图灵机的极简实现</a>
+            <a href="/2020-12-10-lex-parse/" class="next" rel="next" title="程序解释与编译">程序解释与编译<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
