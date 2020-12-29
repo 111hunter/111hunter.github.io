@@ -6,6 +6,13 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 02 Aug 2019 11:04:49 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>IO 和 Monad</title>
+    <link>http://example.org/2020-12-28-monad/</link>
+    <pubDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-12-28-monad/</guid>
+    <description><![CDATA[学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程]]></description>
+</item><item>
     <title>实现 λ 演算解释器</title>
     <link>http://example.org/2020-12-13-%CE%BB-interpreter/</link>
     <pubDate>Sun, 13 Dec 2020 09:50:34 &#43;0800</pubDate>
@@ -68,12 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-10-07-recoil-clone/</guid>
     <description><![CDATA[本文是我最近阅读一篇英文技术文章后写的小结。阅读前请注意，本文不涉及任何 Recoil 源码。仿写的代码并不是 Recoil 真正的实现方式，本文只仿造实现了 Recoil 中两个重]]></description>
-</item><item>
-    <title>Next.js 概览</title>
-    <link>http://example.org/2020-09-29-next/</link>
-    <pubDate>Tue, 29 Sep 2020 23:30:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-09-29-next/</guid>
-    <description><![CDATA[我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next]]></description>
 </item></channel>
 </rss>

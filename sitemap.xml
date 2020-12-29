@@ -2,21 +2,23 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/tags/ast/</loc><lastmod>2020-12-13T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/categories/</loc><lastmod>2020-12-13T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/tags/lambda/</loc><lastmod>2020-12-13T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/posts/</loc><lastmod>2020-12-13T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/tags/</loc><lastmod>2020-12-13T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/categories/thinking/</loc><lastmod>2020-12-13T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/2020-12-13-%CE%BB-interpreter/</loc><lastmod>2020-12-13T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/tags/theories/</loc><lastmod>2020-12-10T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/2020-12-10-lex-parse/</loc><lastmod>2020-12-10T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/2020-11-26-%CE%BB-calculus/</loc><lastmod>2020-12-09T23:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/2020-11-17-brainfuck/</loc><lastmod>2020-11-17T22:00:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://example.org/2020-11-16-self-ref/</loc><lastmod>2020-11-16T00:27:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>http://example.org/categories/coding/</loc><lastmod>2020-11-10T22:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>http://example.org/tags/javascript/</loc><lastmod>2020-11-10T22:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>http://example.org/2020-11-10-js-closure/</loc><lastmod>2020-11-10T22:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>http://example.org/categories/</loc><lastmod>2020-12-28T17:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/tags/haskell/</loc><lastmod>2020-12-28T17:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/2020-12-28-monad/</loc><lastmod>2020-12-28T17:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/tags/lambda/</loc><lastmod>2020-12-28T17:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/posts/</loc><lastmod>2020-12-28T17:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/tags/</loc><lastmod>2020-12-28T17:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/categories/thinking/</loc><lastmod>2020-12-28T17:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/tags/ast/</loc><lastmod>2020-12-13T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://example.org/2020-12-13-%CE%BB-interpreter/</loc><lastmod>2020-12-13T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://example.org/tags/theories/</loc><lastmod>2020-12-10T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://example.org/2020-12-10-lex-parse/</loc><lastmod>2020-12-10T09:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://example.org/2020-11-26-%CE%BB-calculus/</loc><lastmod>2020-12-09T23:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://example.org/2020-11-17-brainfuck/</loc><lastmod>2020-11-17T22:00:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/2020-11-16-self-ref/</loc><lastmod>2020-11-16T00:27:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/categories/coding/</loc><lastmod>2020-11-10T22:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/tags/javascript/</loc><lastmod>2020-11-10T22:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/2020-11-10-js-closure/</loc><lastmod>2020-11-10T22:30:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/tags/react/</loc><lastmod>2020-11-02T20:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-11-02-react-hooks/</loc><lastmod>2020-11-02T20:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020-10-18-mini-react/</loc><lastmod>2020-10-18T22:40:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
