@@ -229,6 +229,9 @@ foo = do
     putStrLn contents
 ```
 
+在[这篇](https://111hunter.github.io/2020-11-26-%CE%BB-calculus/)文章中，我们用函数模拟了一阶逻辑，
+而 Monad 是函数对结构化程序的模拟。
+
 ### 补充
 
 处理值与函数的参数处于同一种上下文的情况：
@@ -254,6 +257,7 @@ Just "true"
 **参考资料**
 
 - [Your easy guide to Monads, Applicatives, & Functors](https://medium.com/@lettier/your-easy-guide-to-monads-applicatives-functors-862048d61610)
+- [关于 Monad 的学习笔记](https://juejin.cn/post/6844903438434697224)
 - [Primitive Haskell](https://www.fpcomplete.com/haskell/tutorial/primitive-haskell/)
 - [Haskell Tutorial](https://openhome.cc/Gossip/CodeData/HaskellTutorial/)
 - [hackage.haskell.org](http://hackage.haskell.org/package/base-4.8.2.0/docs/Prelude.html#t:Maybe)

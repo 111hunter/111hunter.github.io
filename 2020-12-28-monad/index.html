@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>IO 和 Monad - 浮槎的博客</title><meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="IO 和 Monad" />
+        <title>IO 和 Monad - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="IO 和 Monad" />
 <meta property="og:description" content="学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2020-12-28-monad/" />
@@ -18,9 +18,7 @@
 <meta name="twitter:title" content="IO 和 Monad"/>
 <meta name="twitter:description" content="学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程"/>
 <meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020-12-28-monad/" /><link rel="prev" href="http://example.org/2020-12-13-%CE%BB-interpreter/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020-12-28-monad/" /><link rel="prev" href="http://example.org/2020-12-13-%CE%BB-interpreter/" /><link rel="next" href="http://example.org/2021-01-08-tcp/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -29,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-12-28-monad\/"
-        },"genre": "posts","keywords": "Lambda, Haskell","wordcount":  1393 ,
+        },"genre": "posts","keywords": "Lambda, Haskell","wordcount":  1436 ,
         "url": "http:\/\/example.org\/2020-12-28-monad\/","datePublished": "2020-12-28T17:50:34+08:00","dateModified": "2020-12-28T17:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">IO 和 Monad</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/thinking/"><i class="far fa-folder fa-fw"></i>Thinking</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-28">2020-12-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1393 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-28">2020-12-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1436 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2020-12-28-monad/" class="leancloud_visitors" data-flag-title="IO 和 Monad">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -481,7 +479,9 @@
     <span class="n">putStrLn</span> <span class="n">contents</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="补充">补充</h3>
+</div><p>在<a href="https://111hunter.github.io/2020-11-26-%CE%BB-calculus/" target="_blank" rel="noopener noreffer">这篇</a>文章中，我们用函数模拟了一阶逻辑，
+而 Monad 是函数对结构化程序的模拟。</p>
+<h3 id="补充">补充</h3>
 <p>处理值与函数的参数处于同一种上下文的情况：</p>
 <ul>
 <li><code>(e(i) -&gt; o) -&gt; e(i) -&gt; e(o)</code></li>
@@ -518,6 +518,7 @@
 <p><strong>参考资料</strong></p>
 <ul>
 <li><a href="https://medium.com/@lettier/your-easy-guide-to-monads-applicatives-functors-862048d61610" target="_blank" rel="noopener noreffer">Your easy guide to Monads, Applicatives, &amp; Functors</a></li>
+<li><a href="https://juejin.cn/post/6844903438434697224" target="_blank" rel="noopener noreffer">关于 Monad 的学习笔记</a></li>
 <li><a href="https://www.fpcomplete.com/haskell/tutorial/primitive-haskell/" target="_blank" rel="noopener noreffer">Primitive Haskell</a></li>
 <li><a href="https://openhome.cc/Gossip/CodeData/HaskellTutorial/" target="_blank" rel="noopener noreffer">Haskell Tutorial</a></li>
 <li><a href="http://hackage.haskell.org/package/base-4.8.2.0/docs/Prelude.html#t:Maybe" target="_blank" rel="noopener noreffer">hackage.haskell.org</a></li>
@@ -547,14 +548,15 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/2020-12-13-%CE%BB-interpreter/" class="prev" rel="prev" title="实现 λ 演算解释器"><i class="fas fa-angle-left fa-fw"></i>实现 λ 演算解释器</a></div>
+    <div class="post-nav"><a href="/2020-12-13-%CE%BB-interpreter/" class="prev" rel="prev" title="实现 λ 演算解释器"><i class="fas fa-angle-left fa-fw"></i>实现 λ 演算解释器</a>
+            <a href="/2021-01-08-tcp/" class="next" rel="next" title="关于 TCP，我学到了什么">关于 TCP，我学到了什么<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

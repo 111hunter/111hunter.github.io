@@ -2,10 +2,17 @@
     <channel>
         <title>浮槎的博客</title>
         <link>http://example.org/</link>
-        <description>荣枯有数，得失难量。</description>
+        <description>空空如也，我叩其两端而竭焉。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 02 Aug 2019 11:04:49 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>关于 TCP，我学到了什么</title>
+    <link>http://example.org/2021-01-08-tcp/</link>
+    <pubDate>Fri, 08 Jan 2021 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-01-08-tcp/</guid>
+    <description><![CDATA[TCP 在不可靠的 IP 协议之上实现了可靠性，使得我们在开发上层应用时，不必关注网络传输的种种复杂性。可靠，指的是采用一系列技术来保障数据在发送方和接]]></description>
+</item><item>
     <title>IO 和 Monad</title>
     <link>http://example.org/2020-12-28-monad/</link>
     <pubDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</pubDate>
@@ -68,12 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-10-18-mini-react/</guid>
     <description><![CDATA[现在，我们遵循 React 16.8 的代码体系结构，一步一步地构建我们自己的 mini React。 基础回顾 开始之前，我们先回顾 React 是怎么将 JSX 转换成 DOM 节点的： 1 2 3 const element =]]></description>
-</item><item>
-    <title>实现仿 Recoil 的状态共享</title>
-    <link>http://example.org/2020-10-07-recoil-clone/</link>
-    <pubDate>Wed, 07 Oct 2020 19:40:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-10-07-recoil-clone/</guid>
-    <description><![CDATA[本文是我最近阅读一篇英文技术文章后写的小结。阅读前请注意，本文不涉及任何 Recoil 源码。仿写的代码并不是 Recoil 真正的实现方式，本文只仿造实现了 Recoil 中两个重]]></description>
 </item></channel>
 </rss>

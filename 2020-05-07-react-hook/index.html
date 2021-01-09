@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Context &#43; Hooks：状态管理新方案 - 浮槎的博客</title><meta name="Description" content="荣枯有数，得失难量。"><meta property="og:title" content="Context &#43; Hooks：状态管理新方案" />
+        <title>Context &#43; Hooks：状态管理新方案 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="Context &#43; Hooks：状态管理新方案" />
 <meta property="og:description" content="React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 React 组件分为两类，class 组件和函数" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2020-05-07-react-hook/" />
@@ -19,8 +19,7 @@
 <meta name="twitter:description" content="React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 React 组件分为两类，class 组件和函数"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020-05-07-react-hook/" /><link rel="prev" href="http://example.org/2020-04-25-typescript-fullstack/" /><link rel="next" href="http://example.org/2020-05-18-trello/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020-05-07-react-hook/" /><link rel="prev" href="http://example.org/2020-04-25-typescript-fullstack/" /><link rel="next" href="http://example.org/2020-05-18-trello/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -836,7 +835,8 @@ react官网示例：</p>
     <span class="k">return</span> <span class="p">(</span>
         <span class="p">&lt;</span><span class="nt">StoreContext</span><span class="na">.Provider</span> <span class="na">value</span><span class="o">=</span><span class="p">{{</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span> <span class="p">}}&gt;</span>
             <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-        <span class="o">&lt;</span><span class="err">/StoreContext.Provider&gt;</span>
+        <span class="o">&lt;</span><span class="err">/StoreContext.Provider&gt;
+</span>
     <span class="p">)</span>
 <span class="p">}</span>
 

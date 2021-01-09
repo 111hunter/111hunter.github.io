@@ -1,0 +1,28 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Interview - 分类 - 浮槎的博客</title>
+        <link>http://example.org/categories/interview/</link>
+        <description>Interview - 分类 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 08 Jan 2021 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/interview/" rel="self" type="application/rss+xml" /><item>
+    <title>关于 TCP，我学到了什么</title>
+    <link>http://example.org/2021-01-08-tcp/</link>
+    <pubDate>Fri, 08 Jan 2021 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-01-08-tcp/</guid>
+    <description><![CDATA[TCP 在不可靠的 IP 协议之上实现了可靠性，使得我们在开发上层应用时，不必关注网络传输的种种复杂性。可靠，指的是采用一系列技术来保障数据在发送方和接]]></description>
+</item><item>
+    <title>了解防抖与节流</title>
+    <link>http://example.org/2020-11-10-js-closure/</link>
+    <pubDate>Tue, 10 Nov 2020 22:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-11-10-js-closure/</guid>
+    <description><![CDATA[在前端开发的过程中，我们经常需要绑定一些持续触发的事件，如 resize、scroll、mousemove 等，然而有些时候我们并不希望在事件持]]></description>
+</item><item>
+    <title>Webpack 概念梳理</title>
+    <link>http://example.org/2020-08-16-webpack/</link>
+    <pubDate>Sun, 16 Aug 2020 19:51:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-08-16-webpack/</guid>
+    <description><![CDATA[Webpack 是一个前端构建工具，前端构建工具的作用就是把开发环境的代码转化成运行环境代码。一般来说，开发环境的代码是为了更好的阅读，而运行环境的代码则]]></description>
+</item></channel>
+</rss>
