@@ -11,7 +11,7 @@
     <guid>http://example.org/2020-11-10-js-closure/</guid>
     <description><![CDATA[在前端开发的过程中，我们经常需要绑定一些持续触发的事件，如 resize、scroll、mousemove 等，然而有些时候我们并不希望在事件持]]></description>
 </item><item>
-    <title>浅析 JS 函数式编程</title>
+    <title>浅析函数式编程</title>
     <link>http://example.org/2020-09-02-js-functional/</link>
     <pubDate>Wed, 02 Sep 2020 08:30:00 &#43;0800</pubDate>
     <author>作者</author>

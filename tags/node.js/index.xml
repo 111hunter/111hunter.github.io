@@ -10,12 +10,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-07-13-rbac0/</guid>
     <description><![CDATA[权限管理是所有后台系统的都会涉及的一个重要组成部分，主要目的是对不同的人访问资源进行权限的控制，避免因权限控制缺失或操作不当引发的风险问题，]]></description>
-</item><item>
-    <title>Node.js 搭建博客后台</title>
-    <link>http://example.org/2019-11-22-node-basis/</link>
-    <pubDate>Fri, 22 Nov 2019 19:34:41 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2019-11-22-node-basis/</guid>
-    <description><![CDATA[本次实践将不使用框架，尝试直接使用 Node.js 处理 http 请求，连接数据库，创建 api 接口。以及介绍一些 web 开发相关的常识。 搭建开发环境 使用 nodemon 监测文件变化，自动重]]></description>
 </item></channel>
 </rss>

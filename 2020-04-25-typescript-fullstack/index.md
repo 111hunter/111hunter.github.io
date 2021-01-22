@@ -24,8 +24,6 @@
 - 2.HMR(hot module replacement) 体验太差。
 - 3.报错信息简直了。
 
-尽管在国内太冷门，不过我仍然看好 Angular 的发展。
-
 ### 组件开发
 
 #### 导入 UI 组件库
@@ -411,7 +409,7 @@ export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [
 
 <div align=center><img src="/img/ngrx.png" width="80%"></div>
 
-按照 Redux 的约定，reducer 必须是纯函数，只接收旧状态，只返回新状态。我们操作数据表时，实际上是对数据表中的列做操作，而 adapter 就是 reducer 中的列，对数据的增删改查就是对 adapter 的增删改查。selector 类似于 sql 中的 select 语句。而 effects 负责传递数据，和一些 DOM 操作，使用 NgRx 这套流程时，在 component 中需要做的唯一事情就是 dispatch action, 额外的事情就交给 effects 来做。
+按照 Redux 的约定，reducer 必须是纯函数，接收旧状态，返回新状态。adapter 是 reducer 数据表的一行(记录)，selector 类似于 sql 中的 select 语句。而 effects 负责传递数据，和一些 DOM 操作，使用 NgRx 这套流程时，component 唯一能做的是 dispatch action, 额外的事情(副作用)就交给 effects 来做。
 
 下面给出代码实例，可以结合代码来理解这段话。
 
@@ -442,9 +440,9 @@ export const initialState: State = adapter.getInitialState({
 ```
 #### 注册 reducer 表
 
-featureName 是我们的 reducer 表名，根模块注册时，StoreModule.forRoot(featureName, reducer)。 其他模块注册时，StoreModule.forFeature(featureName, reducer), 当在其他模块注册时，仍然需要在根模块配置 StoreModule.forRoot({})。在局部注册是一种减轻服务器压力的方式。
+featureName 是我们的 reducer 表名，根模块注册时，StoreModule.forRoot(featureName, reducer)。 其他模块注册时，StoreModule.forFeature(featureName, reducer), 当在其他模块注册时，仍然需要在根模块配置 StoreModule.forRoot({})。
 
-#### action 数据来源
+#### action 数据源
 
 定义 Action 作为 store 数据来源，props 接收数据参数。
 
@@ -469,9 +467,9 @@ export const loginFailure = createAction(
 
 export const logout = createAction('[Auth Page] User Logut');
 ```
-#### effects 钩子函数
+#### effects 钩子
 
-effects 钩取相应 action(login) 后，发送网络请求，并触发新的 action(loginSuccess 或者 loginFailure)。effects 与 action 数据交互方式是双向的。
+effects 钩取相应 action(login) 后，发送网络请求，并触发新的 action(loginSuccess 或者 loginFailure)。effects 与 action 数据交互是双向的。
 
 ```ts
 @Injectable()
@@ -495,9 +493,9 @@ export class UserEffects {
   );
 }
 ```
-#### adapter 数据表列
+#### adapter 记录
 
-action 传递数据给 reducer 表, reducer 表在 loginSuccess 时就新增一列数据。
+action 传递数据给 reducer 表, reducer 表在 loginSuccess 时就增加一行记录。
 
 ```ts
 export const reducer = createReducer(
@@ -573,7 +571,7 @@ this.store.dispatch(UserActions.login({ user }));
 
 看到这里，你会发现，我们绕了一圈做了一件简单的事。但你可以想象，前端框架的组件化开发方式，组件之间的通信基本都是单向数据流，要是没有状态管理，父子组件还好，相隔很远的组件，只能通过一级一级向上传，再一级一级向下传，会更加麻烦。
 
-对于 angular, 简单的数据状态，我们可以直接定义在 service 中，通过 DI(依赖注入) 的方式能够很方便地作用到不同的 component 中。这是 angular 比其他前端框架优秀的地方之一。
+如果需要共享的状态较少，可以直接定义在 service 中，通过 DI(依赖注入) 的方式能够很方便地传递到不同的 component 中，并不需要状态管理。
 
 附：[源码地址](https://github.com/111hunter/ngrx-auth-todo)
 

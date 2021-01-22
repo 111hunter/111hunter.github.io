@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-04-25-typescript-fullstack\/"
-        },"genre": "posts","keywords": "Angular, Rx","wordcount":  3966 ,
+        },"genre": "posts","keywords": "Angular, Rx","wordcount":  3883 ,
         "url": "http:\/\/example.org\/2020-04-25-typescript-fullstack\/","datePublished": "2020-04-25T22:27:41+08:00","dateModified": "2020-04-25T22:27:41+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">用 NgRx 和 Nest 写一个全栈 todolist</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-04-25">2020-04-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3966 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-04-25">2020-04-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3883 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/2020-04-25-typescript-fullstack/" class="leancloud_visitors" data-flag-title="用 NgRx 和 Nest 写一个全栈 todolist">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -140,9 +140,9 @@
           <ul>
             <li><a href="#初始化-reducer-表">初始化 reducer 表</a></li>
             <li><a href="#注册-reducer-表">注册 reducer 表</a></li>
-            <li><a href="#action-数据来源">action 数据来源</a></li>
-            <li><a href="#effects-钩子函数">effects 钩子函数</a></li>
-            <li><a href="#adapter-数据表列">adapter 数据表列</a></li>
+            <li><a href="#action-数据源">action 数据源</a></li>
+            <li><a href="#effects-钩子">effects 钩子</a></li>
+            <li><a href="#adapter-记录">adapter 记录</a></li>
             <li><a href="#selector-状态切片">selector 状态切片</a></li>
           </ul>
         </li>
@@ -169,7 +169,6 @@
 <li>2.HMR(hot module replacement) 体验太差。</li>
 <li>3.报错信息简直了。</li>
 </ul>
-<p>尽管在国内太冷门，不过我仍然看好 Angular 的发展。</p>
 <h3 id="组件开发">组件开发</h3>
 <h4 id="导入-ui-组件库">导入 UI 组件库</h4>
 <p>在样式开发方面，我们使用 angular 官方提供的 Material UI。用一个 MaterialModule，导出我们需要用到的所有样式组件。</p>
@@ -848,7 +847,7 @@
 <p>写本篇文章的目的之一是将状态管理实践验证。之前我有说前端的状态管理相当于后端的数据库。接下来我将一步一步的验证这个说法。下面以用户状态来讲解。</p>
 <p>定义初始状态类似于数据库的创建，action 是 store 数据的来源入口，从NgRx官网示意图中我们可以看到它可以来自用户操作(component)，也可以来自网络请求(effects)，reducer 类似于数据表，那 adapter, selector, effects 又分别是什么呢？</p>
 <div align=center><img src="/img/ngrx.png" width="80%"></div>
-<p>按照 Redux 的约定，reducer 必须是纯函数，只接收旧状态，只返回新状态。我们操作数据表时，实际上是对数据表中的列做操作，而 adapter 就是 reducer 中的列，对数据的增删改查就是对 adapter 的增删改查。selector 类似于 sql 中的 select 语句。而 effects 负责传递数据，和一些 DOM 操作，使用 NgRx 这套流程时，在 component 中需要做的唯一事情就是 dispatch action, 额外的事情就交给 effects 来做。</p>
+<p>按照 Redux 的约定，reducer 必须是纯函数，接收旧状态，返回新状态。adapter 是 reducer 数据表的一行(记录)，selector 类似于 sql 中的 select 语句。而 effects 负责传递数据，和一些 DOM 操作，使用 NgRx 这套流程时，component 唯一能做的是 dispatch action, 额外的事情(副作用)就交给 effects 来做。</p>
 <p>下面给出代码实例，可以结合代码来理解这段话。</p>
 <h3 id="代码实例">代码实例</h3>
 <h4 id="初始化-reducer-表">初始化 reducer 表</h4>
@@ -894,8 +893,8 @@
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="注册-reducer-表">注册 reducer 表</h4>
-<p>featureName 是我们的 reducer 表名，根模块注册时，StoreModule.forRoot(featureName, reducer)。 其他模块注册时，StoreModule.forFeature(featureName, reducer), 当在其他模块注册时，仍然需要在根模块配置 StoreModule.forRoot({})。在局部注册是一种减轻服务器压力的方式。</p>
-<h4 id="action-数据来源">action 数据来源</h4>
+<p>featureName 是我们的 reducer 表名，根模块注册时，StoreModule.forRoot(featureName, reducer)。 其他模块注册时，StoreModule.forFeature(featureName, reducer), 当在其他模块注册时，仍然需要在根模块配置 StoreModule.forRoot({})。</p>
+<h4 id="action-数据源">action 数据源</h4>
 <p>定义 Action 作为 store 数据来源，props 接收数据参数。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -941,8 +940,8 @@
 <span class="kr">export</span> <span class="kr">const</span> <span class="nx">logout</span> <span class="o">=</span> <span class="nx">createAction</span><span class="p">(</span><span class="s1">&#39;[Auth Page] User Logut&#39;</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="effects-钩子函数">effects 钩子函数</h4>
-<p>effects 钩取相应 action(login) 后，发送网络请求，并触发新的 action(loginSuccess 或者 loginFailure)。effects 与 action 数据交互方式是双向的。</p>
+</div><h4 id="effects-钩子">effects 钩子</h4>
+<p>effects 钩取相应 action(login) 后，发送网络请求，并触发新的 action(loginSuccess 或者 loginFailure)。effects 与 action 数据交互是双向的。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -989,8 +988,8 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="adapter-数据表列">adapter 数据表列</h4>
-<p>action 传递数据给 reducer 表, reducer 表在 loginSuccess 时就新增一列数据。</p>
+</div><h4 id="adapter-记录">adapter 记录</h4>
+<p>action 传递数据给 reducer 表, reducer 表在 loginSuccess 时就增加一行记录。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -1117,7 +1116,7 @@
 <div align=center><img src="/img/app-state.png" width="100%"></div>
 <h3 id="思考">思考</h3>
 <p>看到这里，你会发现，我们绕了一圈做了一件简单的事。但你可以想象，前端框架的组件化开发方式，组件之间的通信基本都是单向数据流，要是没有状态管理，父子组件还好，相隔很远的组件，只能通过一级一级向上传，再一级一级向下传，会更加麻烦。</p>
-<p>对于 angular, 简单的数据状态，我们可以直接定义在 service 中，通过 DI(依赖注入) 的方式能够很方便地作用到不同的 component 中。这是 angular 比其他前端框架优秀的地方之一。</p>
+<p>如果需要共享的状态较少，可以直接定义在 service 中，通过 DI(依赖注入) 的方式能够很方便地传递到不同的 component 中，并不需要状态管理。</p>
 <p>附：<a href="https://github.com/111hunter/ngrx-auth-todo" target="_blank" rel="noopener noreffer">源码地址</a></p>
 <p><strong>参考资料</strong></p>
 <ul>

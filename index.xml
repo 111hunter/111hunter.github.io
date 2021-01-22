@@ -6,6 +6,13 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 02 Aug 2019 11:04:49 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>[译]元编程</title>
+    <link>http://example.org/2021-1-21-meta/</link>
+    <pubDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-1-21-meta/</guid>
+    <description><![CDATA[本文翻译自 stereobooster 的博客文章：metaprogramming，少量删改。完整内容参阅原文。 什么是元编程 不好的是，没有一个达成共识的单一定义。让我们]]></description>
+</item><item>
     <title>关于 TCP，我学到了什么</title>
     <link>http://example.org/2021-01-08-tcp/</link>
     <pubDate>Fri, 08 Jan 2021 10:50:34 &#43;0800</pubDate>
@@ -68,12 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-11-02-react-hooks/</guid>
     <description><![CDATA[以 useEffect 为圆心，其他 Hooks 为半径，构建 React Hooks 的知识圆环。为什么会想出这样一个标题呢？Hooks 的知识点过于分散，很多朋友在读过 React 官方文档后，还是不知道]]></description>
-</item><item>
-    <title>构建自己的 mini React</title>
-    <link>http://example.org/2020-10-18-mini-react/</link>
-    <pubDate>Sun, 18 Oct 2020 22:40:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-10-18-mini-react/</guid>
-    <description><![CDATA[现在，我们遵循 React 16.8 的代码体系结构，一步一步地构建我们自己的 mini React。 基础回顾 开始之前，我们先回顾 React 是怎么将 JSX 转换成 DOM 节点的： 1 2 3 const element =]]></description>
 </item></channel>
 </rss>

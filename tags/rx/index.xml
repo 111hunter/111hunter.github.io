@@ -17,12 +17,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-03-13-rxjs-01/</guid>
     <description><![CDATA[ReactiveX 结合了 观察者模式、迭代器模式 和 使用集合的函数式编程，以满足以一种理想方式来管理事件序列所需要的一切。 在 RxJS 中用来解决异步事件管理的的基本概念]]></description>
-</item><item>
-    <title>通过 NgRx 体验前端状态管理</title>
-    <link>http://example.org/2020-03-02-ngrx/</link>
-    <pubDate>Mon, 02 Mar 2020 17:09:36 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-03-02-ngrx/</guid>
-    <description><![CDATA[前端中的状态指什么？前端中的状态指的是影响 UI 变化的数据。例如用户登入退出，用户的某种操作带来的 UI 视觉变化，UI 主题的切换，甚至路由的切换也是]]></description>
 </item></channel>
 </rss>

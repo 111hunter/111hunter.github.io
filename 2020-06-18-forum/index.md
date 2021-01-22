@@ -100,8 +100,7 @@ public class Article implements Serializable {
 
 - @Data 相当于 @Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode 这5个注解的合集。
 - 存在继承,编译时有警提示，加上@EqualsAndHashCode(callSuper=false), 只比较当前的类字段。
-- @Accessors(chain = true)链式调用为真, setter方法返回当前对象
-序列化对象，便于存储，便于传输。
+- @Accessors(chain = true)链式调用为真, setter方法返回当前对象的序列化对象，便于存储，便于传输。
 
 mybatis-plus 的注解：
 
