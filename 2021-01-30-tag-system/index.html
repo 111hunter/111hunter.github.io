@@ -5,30 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>图灵机的极简实现 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="图灵机的极简实现" />
-<meta property="og:description" content="图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终" />
+        <title>一些通用计算模型 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="一些通用计算模型" />
+<meta property="og:description" content="在可计算性理论，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/2020-11-17-brainfuck/" />
+<meta property="og:url" content="http://example.org/2021-01-30-tag-system/" />
 <meta property="og:image" content="http://example.org/logo.png"/>
-<meta property="article:published_time" content="2020-11-17T22:00:34+08:00" />
-<meta property="article:modified_time" content="2020-11-17T22:00:34+08:00" />
+<meta property="article:published_time" content="2021-01-30T10:50:34+08:00" />
+<meta property="article:modified_time" content="2021-01-30T10:50:34+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
-<meta name="twitter:title" content="图灵机的极简实现"/>
-<meta name="twitter:description" content="图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终"/>
+<meta name="twitter:title" content="一些通用计算模型"/>
+<meta name="twitter:description" content="在可计算性理论，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算"/>
 <meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020-11-17-brainfuck/" /><link rel="prev" href="http://example.org/2020-11-16-self-ref/" /><link rel="next" href="http://example.org/2020-11-26-%CE%BB-calculus/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2021-01-30-tag-system/" /><link rel="prev" href="http://example.org/2021-1-21-meta/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "图灵机的极简实现",
+        "headline": "一些通用计算模型",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/example.org\/2020-11-17-brainfuck\/"
-        },"genre": "posts","keywords": "Theories","wordcount":  1301 ,
-        "url": "http:\/\/example.org\/2020-11-17-brainfuck\/","datePublished": "2020-11-17T22:00:34+08:00","dateModified": "2020-11-17T22:00:34+08:00","publisher": {
+            "@id": "http:\/\/example.org\/2021-01-30-tag-system\/"
+        },"genre": "posts","keywords": "Theories","wordcount":  1220 ,
+        "url": "http:\/\/example.org\/2021-01-30-tag-system\/","datePublished": "2021-01-30T10:50:34+08:00","dateModified": "2021-01-30T10:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -103,10 +103,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">图灵机的极简实现</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">一些通用计算模型</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/thinking/"><i class="far fa-folder fa-fw"></i>Thinking</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-17">2020-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1301 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2020-11-17-brainfuck/" class="leancloud_visitors" data-flag-title="图灵机的极简实现">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-30">2021-01-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1220 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2021-01-30-tag-system/" class="leancloud_visitors" data-flag-title="一些通用计算模型">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -116,131 +116,143 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#基本思想">基本思想</a></li>
-    <li><a href="#图灵完备">图灵完备</a></li>
-    <li><a href="#极简实现">极简实现</a></li>
+    <li><a href="#标签系统">标签系统</a></li>
+    <li><a href="#循环标签系统">循环标签系统</a></li>
+    <li><a href="#rule-110">Rule 110</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终极强大逻辑机器。</p>
-<h2 id="基本思想">基本思想</h2>
-<p>图灵的基本思想是用机器来模拟人们用纸笔进行数学运算的过程，他把这样的过程看作下列两种简单的动作：</p>
+            </div><div class="content" id="content"><blockquote>
+<p>在可计算性理论，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算」的。    &ndash; wikipedia</p>
+</blockquote>
+<p>通用计算(图灵完备)是计算能力的体现，意味着解决所有可计算问题的能力。在理论上却不难实现，可能的一个原因是计算能力是传递关系：如果 A 能模拟图灵机，而 B 能模拟 A，则 B 能模拟图灵机。</p>
+<h2 id="标签系统">标签系统</h2>
+<p>图灵机由纸带，读写头，控制规则，状态表四个部分组成。标签系统(tag system)是一个类似图灵机的计算模型，它是一套字符串的转换规则：反复在一个字符串的末尾添加部分字符并在开头处删除部分字符(控制规则)。于是，标签系统会朝着字符串的末尾“移动”(读写头)。</p>
+<p>标签系统可表示为三元组 (m, A, P)，其中：</p>
 <ul>
-<li>在纸上写上或擦除某个符号；</li>
-<li>把注意力从纸的一个位置移动到另一个位置；</li>
+<li>m 是删除数</li>
+<li>A 是有限的符号字母表(状态表)，其中有特殊的停机符号</li>
+<li>P 是添加字符的规则集合</li>
 </ul>
-<p>而在每个阶段，人要决定下一步的动作，依赖于此人当前所关注的纸上某个位置的符号和此人当前思维的状态。为了模拟人的这种运算过程，图灵构造出一台假想机器，该机器由以下几个部分组成：</p>
-<div align=center><img src="/img/turing-mach.jpg" width="80%"></div>
-<ul>
-<li>一条无限长的纸带(tape)，纸带由很多个格子构成，用于输入输出信息。每个格子中包含一个来自有限字母表的符号，字母表中有一个特殊符号表示空白。纸带上一端的格子从 0 开始编号，另一端无限延伸一直到无穷大。</li>
-<li>一个读写头(head)，读写头可以在纸带上左右移动，它能读出当前所指的格子上的符号，并能改变当前格子上的符号。</li>
-<li>一套控制规则(table)，根据当前机器状态和纸带内容来确定下一步的动作：
-<ul>
-<li>写入或擦除当前格子内容</li>
-<li>移动读写头，向左、向右、或不动</li>
-<li>保持当前状态或转移到另一状态</li>
-</ul>
-</li>
-<li>一个状态寄存器(state register)，用于保存机器状态。图灵机的状态个数有限，并且有一个特殊的状态：停机状态。</li>
-</ul>
-<h2 id="图灵完备">图灵完备</h2>
-<p>只要能模拟单带图灵机，就是图灵完备(递归可枚举)的。这意味着其计算能力与通用图灵机等同。不是图灵完备的情况:</p>
-<ul>
-<li>递归或循环有限，无法写不终止的程序(如 while(true){})</li>
-<li>不能模拟无限长纸带(没有足够的空间来完成计算)</li>
-</ul>
-<p>但图灵完备也有可能带来坏处，有些场景我们需要限制语言的表达能力，通过限制无限循环却保程序一定是可终止的。</p>
-<h2 id="极简实现">极简实现</h2>
-<p>Brainfuck 是一种极小化的图灵完备的程序语言，它仅由八种运算符构成。</p>
-<p>它的工作机制与单带图灵机高度一致，它用一个一维数组存取数据，数组元素初始化为 0。此外，有一数据指针，每一时刻都指向数组的某一元素。指针可以向左/右移动，也可以读取/修改当前值。如果你了解 C 语言，那么一看表格便明白它每个运算符的含义：</p>
-<table>
-<thead>
-<tr>
-<th align="center">Brainfuck</th>
-<th align="center">C</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><code>&gt;</code></td>
-<td align="center"><code>++ptr;</code></td>
-</tr>
-<tr>
-<td align="center"><code>&lt;</code></td>
-<td align="center"><code>--ptr;</code></td>
-</tr>
-<tr>
-<td align="center"><code>+</code></td>
-<td align="center"><code>++*ptr;</code></td>
-</tr>
-<tr>
-<td align="center"><code>-</code></td>
-<td align="center"><code>--*ptr;</code></td>
-</tr>
-<tr>
-<td align="center"><code>.</code></td>
-<td align="center"><code>putchar(*ptr);</code></td>
-</tr>
-<tr>
-<td align="center"><code>,</code></td>
-<td align="center"><code>*ptr = getchar();</code></td>
-</tr>
-<tr>
-<td align="center"><code>[</code></td>
-<td align="center"><code>while (*ptr) {</code></td>
-</tr>
-<tr>
-<td align="center"><code>]</code></td>
-<td align="center"><code>}</code></td>
-</tr>
-</tbody>
-</table>
-<p>不了解也没关系，它每个运算符的含义如下：</p>
-<ul>
-<li><code>&gt;</code> 指针右移一格</li>
-<li><code>&lt;</code> 指针左移一格</li>
-<li><code>+</code> 使指针当前格数值加一</li>
-<li><code>-</code> 使指针当前格数值减一</li>
-<li><code>.</code> 把当前格数值按 ASCII 表输出到终端</li>
-<li><code>,</code> 从终端接收一字节的数据，存储其 ASCII 数值到当前格</li>
-<li><code>[</code> 当指针当前值为 0 时，程序跳转至与之对应的 <code>]</code> 之后；否则程序正常执行</li>
-<li><code>]</code> 程序跳转回与之对应的 <code>[</code> 处</li>
-</ul>
-<p>有了这些工具，我们可以很快写出一个计算乘法的程序。因为 ASCII 表中 &lsquo;A&rsquo; 对应的值为 65，可以使用 5 * 13 算出 65 并输出得到字符 &lsquo;A&rsquo;。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">+++++
-[
-  &gt; +++++++++++++
-  &lt; -
-]
-&gt; .
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Tag system 
+    m: 2
+    A: {1,2,3,H} 
+    P:
+        1  --&gt;  3321H
+        2  --&gt;  331
+        3  --&gt;  33
+
+Computation
+    Initial word: 211
+                    1331
+                      313321H
+                        3321H33
+                          21H3333
+                            H3333331(halt).
 </code></pre></td></tr></table>
 </div>
-</div><p>把 Brainfuck 的一维数组命名为 <code>arr</code>，则开始的数组元素为 <code>arr[0]</code>，<code>arr[0]</code> 右边的数组元素为 <code>arr[1]</code>。第一句代码将 <code>arr[0]</code> 的数值递增 5 次变为 5。</p>
-<p>然后，循环执行“右移指针，递增 13 次，左移指针，递减 1 次”。当 <code>arr[0]</code> 的值最终被递减为 0 的时候，循环结束。此时 <code>arr[1]</code> 的值执行了 5 次“递增 13 次”的操作，即 65。最后指针右移至 <code>arr[1]</code>，输出它对应的 ASCII 值即为 A。</p>
-<p>结合 <a href="http://fatiherikli.github.io/brainfuck-visualizer/" target="_blank" rel="noopener noreffer">网站1</a> 和 <a href="https://copy.sh/brainfuck/text.html" target="_blank" rel="noopener noreffer">网站2</a> 思考一下这门八个字符的编程语言是怎样模拟图灵机的每个组成部分的。</p>
+</div><p>当初始全为 3 的字符串时，程序永不停机，这意味着标签系统是图灵完备的。</p>
+<h2 id="循环标签系统">循环标签系统</h2>
+<p>循环标签系统(cyclic tag system)是一类有额外限制的标签系统：</p>
+<ul>
+<li>循环标签系统的字符只有 0 和 1</li>
+<li>规则只在当前字符串以 1 开始时才生效</li>
+<li>删除数是 1</li>
+</ul>
+<p>这些约束对于支持通用计算来说过于苛刻了，作为补偿，允许循环尝试生成规则：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Cyclic tag system 
+    m: 1
+    A: {0, 1} 
+    P: 1  --&gt;  011, 10, 101
+
+Computation
+ Initial word: 1
+       P             word
+    --------       --------
+      011              1
+      10                011
+      101                11
+      011                 1101
+      10                   101011
+      101                   0101110
+      011                    101110
+      ...                      ...
+</code></pre></td></tr></table>
+</div>
+</div><p>字符串为空时，程序才会停机。而这个程序永不停机，因为 word 中一直有 1，这意味着循环标签系统也是图灵完备的。它的规则非常简单，不过它的行为却很复杂：接下来发生什么并不明显，字符串何时扩张，何时收缩？只能运行程序，然后观察它的行为。</p>
+<h2 id="rule-110">Rule 110</h2>
+<p>一维元胞自动机建立在一行无限长的格子序列上，它的规则是：</p>
+<ul>
+<li>每个格子有黑白两种状态</li>
+<li>每个格子下一刻的状态由此刻的自身状态和左右邻居的状态共同决定</li>
+</ul>
+<p>依照上述规则，有 256 种可能情况，若规定黑色为 1，白色为 0：</p>
+<div align=center><img src="/img/rule110.png" width="60%"></div>
+<p>上图对应 01101110(二进制)，这就是 Rule 110(十进制)，它也是图灵完备的，因为它被证明可以模拟循环标签系统。下面做简单解释：</p>
+<p>在元胞自动机中，有的结构会随时间做周期性地“移动”，它们被称为“滑翔机”或“飞船”：</p>
+<div align=center><img src="/img/gliders.png" width="100%"></div>
+<p>上图是 Rule 110 中已发现的所有滑翔机，以及一个滑翔机枪：每周期发射一次A 和 B 滑翔机。<a href="https://www.comunidad.escom.ipn.mx/genaro/rule110/ctsRule110.html" target="_blank" rel="noopener noreffer">这里</a>展示了用通过特定排列的滑翔机来模拟 <code>P: 1 --&gt; 11, 10</code> 的循环标签系统，这不是完成通用计算的高效方式，但对简单的细胞自动机来说这仍是一项令人印象深刻的技术成果。比起二进制的字符串，图像可能更容易让人观察计算行为的普遍规律。</p>
+<p>如果我们建立了宇宙的完整模型，是否意味着我们没有自由意志了呢？“<a href="https://en.wikipedia.org/wiki/Computational_irreducibility" target="_blank" rel="noopener noreffer">Computational irreducibility</a>” 意味着，就算你知道了一切规则，你可能也无法提前预测这些规则将会做什么 — 唯一的办法是运行这些规则看看它们到底会做出什么来。</p>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://wpmedia.wolfram.com/uploads/sites/13/2018/02/15-1-1.pdf" target="_blank" rel="noopener noreffer">Universality in Elementary Cellular Automata</a></li>
+<li><a href="https://www.comunidad.escom.ipn.mx/genaro/rule110/ctsRule110.html" target="_blank" rel="noopener noreffer">Cyclic Tag System in Rule 110 - escom</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/24950767" target="_blank" rel="noopener noreffer">复杂的极限在哪里</a></li>
+<li><a href="https://www.jasve.com/kx/82e357fd9d5f44f9f5464a57cf65b083.html" target="_blank" rel="noopener noreffer">理解混沌和决定论的关系</a></li>
+</ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-11-17</span>
+                <span>更新于 2021-01-30</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/2020-11-17-brainfuck/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/2021-01-30-tag-system/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现" data-hashtags="Theories"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-11-17-brainfuck/" data-hashtag="Theories"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型" data-hashtags="Theories"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2021-01-30-tag-system/" data-hashtag="Theories"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -252,8 +264,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/2020-11-16-self-ref/" class="prev" rel="prev" title="自我指涉与数理逻辑"><i class="fas fa-angle-left fa-fw"></i>自我指涉与数理逻辑</a>
-            <a href="/2020-11-26-%CE%BB-calculus/" class="next" rel="next" title="λ 演算: 程序从无到有">λ 演算: 程序从无到有<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/2021-1-21-meta/" class="prev" rel="prev" title="[译]元编程"><i class="fas fa-angle-left fa-fw"></i>[译]元编程</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

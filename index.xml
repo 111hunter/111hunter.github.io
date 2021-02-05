@@ -6,6 +6,13 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 02 Aug 2019 11:04:49 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>一些通用计算模型</title>
+    <link>http://example.org/2021-01-30-tag-system/</link>
+    <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-01-30-tag-system/</guid>
+    <description><![CDATA[在可计算性理论，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算]]></description>
+</item><item>
     <title>[译]元编程</title>
     <link>http://example.org/2021-1-21-meta/</link>
     <pubDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</pubDate>
@@ -68,12 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-11-10-js-closure/</guid>
     <description><![CDATA[在前端开发的过程中，我们经常需要绑定一些持续触发的事件，如 resize、scroll、mousemove 等，然而有些时候我们并不希望在事件持]]></description>
-</item><item>
-    <title>以 useEffect 为圆心</title>
-    <link>http://example.org/2020-11-02-react-hooks/</link>
-    <pubDate>Mon, 02 Nov 2020 20:00:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-11-02-react-hooks/</guid>
-    <description><![CDATA[以 useEffect 为圆心，其他 Hooks 为半径，构建 React Hooks 的知识圆环。为什么会想出这样一个标题呢？Hooks 的知识点过于分散，很多朋友在读过 React 官方文档后，还是不知道]]></description>
 </item></channel>
 </rss>
