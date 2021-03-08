@@ -30,7 +30,7 @@
     <pubDate>Thu, 26 Nov 2020 09:50:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2020-11-26-%CE%BB-calculus/</guid>
-    <description><![CDATA[由邱奇 (Alonzo Church) 创造的 λ 演算(λ-calculus) 是世界上最小的程序设计语言。虽然没有数(number)，字符串(string)，布尔型(boo]]></description>
+    <description><![CDATA[由邱奇创造的 λ 演算(λ-calculus) 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boo]]></description>
 </item><item>
     <title>图灵机的极简实现</title>
     <link>http://example.org/2020-11-17-brainfuck/</link>

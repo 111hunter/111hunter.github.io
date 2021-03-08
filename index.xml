@@ -14,13 +14,13 @@
     <description><![CDATA[在可计算性理论，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算]]></description>
 </item><item>
     <title>[译]元编程</title>
-    <link>http://example.org/2021-1-21-meta/</link>
+    <link>http://example.org/2021-01-21-metaprogram/</link>
     <pubDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2021-1-21-meta/</guid>
+    <guid>http://example.org/2021-01-21-metaprogram/</guid>
     <description><![CDATA[本文翻译自 stereobooster 的博客文章：metaprogramming，少量删改。完整内容参阅原文。 什么是元编程 不好的是，没有一个达成共识的单一定义。让我们]]></description>
 </item><item>
-    <title>关于 TCP，我学到了什么</title>
+    <title>关于 TCP, 我学到什么</title>
     <link>http://example.org/2021-01-08-tcp/</link>
     <pubDate>Fri, 08 Jan 2021 10:50:34 &#43;0800</pubDate>
     <author>作者</author>
@@ -53,7 +53,7 @@
     <pubDate>Thu, 26 Nov 2020 09:50:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2020-11-26-%CE%BB-calculus/</guid>
-    <description><![CDATA[由邱奇 (Alonzo Church) 创造的 λ 演算(λ-calculus) 是世界上最小的程序设计语言。虽然没有数(number)，字符串(string)，布尔型(boo]]></description>
+    <description><![CDATA[由邱奇创造的 λ 演算(λ-calculus) 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boo]]></description>
 </item><item>
     <title>图灵机的极简实现</title>
     <link>http://example.org/2020-11-17-brainfuck/</link>

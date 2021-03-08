@@ -5,10 +5,10 @@
         <description>Coding - 分类 - 浮槎的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/coding/" rel="self" type="application/rss+xml" /><item>
     <title>[译]元编程</title>
-    <link>http://example.org/2021-1-21-meta/</link>
+    <link>http://example.org/2021-01-21-metaprogram/</link>
     <pubDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2021-1-21-meta/</guid>
+    <guid>http://example.org/2021-01-21-metaprogram/</guid>
     <description><![CDATA[本文翻译自 stereobooster 的博客文章：metaprogramming，少量删改。完整内容参阅原文。 什么是元编程 不好的是，没有一个达成共识的单一定义。让我们]]></description>
 </item><item>
     <title>实现 λ 演算解释器</title>

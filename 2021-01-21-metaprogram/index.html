@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>[译]元编程 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="[译]元编程" />
+<meta property="og:description" content="本文翻译自 stereobooster 的博客文章：metaprogramming，少量删改。完整内容参阅原文。 什么是元编程 不好的是，没有一个达成共识的单一定义。让我们" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2021-01-21-metaprogram/" />
+<meta property="og:image" content="http://example.org/logo.png"/>
+<meta property="article:published_time" content="2021-01-21T16:50:34+08:00" />
+<meta property="article:modified_time" content="2021-01-21T16:50:34+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="[译]元编程"/>
+<meta name="twitter:description" content="本文翻译自 stereobooster 的博客文章：metaprogramming，少量删改。完整内容参阅原文。 什么是元编程 不好的是，没有一个达成共识的单一定义。让我们"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2021-01-21-metaprogram/" /><link rel="prev" href="http://example.org/2021-01-08-tcp/" /><link rel="next" href="http://example.org/2021-01-30-tag-system/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[译]元编程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2021-01-21-metaprogram\/"
+        },"genre": "posts","keywords": "Theory","wordcount":  2213 ,
+        "url": "http:\/\/example.org\/2021-01-21-metaprogram\/","datePublished": "2021-01-21T16:50:34+08:00","dateModified": "2021-01-21T16:50:34+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "浮槎"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="浮槎的博客">浮槎的博客</a>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><span class="menu-item search" id="search-desktop">
+                    <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-desktop">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </span><span class="menu-item">|</span><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="浮槎的博客">浮槎的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">[译]元编程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-21">2021-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2213 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/2021-01-21-metaprogram/" class="leancloud_visitors" data-flag-title="[译]元编程">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是元编程">什么是元编程</a></li>
+    <li><a href="#两类元编程">两类元编程</a>
+      <ul>
+        <li><a href="#动态元编程">动态元编程</a>
+          <ul>
+            <li><a href="#关于扩展语言">关于扩展语言</a></li>
+          </ul>
+        </li>
+        <li><a href="#macros宏">Macros(宏)</a>
+          <ul>
+            <li><a href="#语法扩展">语法扩展</a></li>
+            <li><a href="#dsl">DSL</a></li>
+            <li><a href="#多态性">多态性</a></li>
+            <li><a href="#dry">DRY</a></li>
+          </ul>
+        </li>
+        <li><a href="#性能">性能</a></li>
+        <li><a href="#宏和类型">宏和类型</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>本文翻译自 stereobooster 的博客文章：<a href="https://stereobooster.com/posts/metaprogramming/" target="_blank" rel="noopener noreffer">metaprogramming</a>，少量删改。完整内容参阅原文。</p>
+<h2 id="什么是元编程">什么是元编程</h2>
+<p>不好的是，没有一个达成共识的单一定义。让我们参阅一下：</p>
+<blockquote>
+<p>元编程是一种编程技术，指计算机程序具有将其他程序视为其数据的能力。 – <a href="https://en.wikipedia.org/wiki/Metaprogramming" target="_blank" rel="noopener noreffer">wikipedia</a></p>
+</blockquote>
+<blockquote>
+<p>元编程是指程序具有了解自身或操纵自身的多种方式。 – <a href="https://stackoverflow.com/questions/514644/what-exactly-is-metaprogramming" target="_blank" rel="noopener noreffer">stackoverflow 上的流行答案</a></p>
+</blockquote>
+<blockquote>
+<p>“支持元编程”意味着用户可以有效修改该语言内置语法(例如 Lisp 的宏)或扩展该语言常规语法(例如 C 的预处理程序)。 – <a href="https://rosettacode.org/wiki/Metaprogramming" target="_blank" rel="noopener noreffer">rosettacode</a></p>
+</blockquote>
+<p>没有一个很好的定义，让我们看一些例子。当人们谈论元编程时，他们可能指的是：</p>
+<ul>
+<li>macros in Lisp (1960)</li>
+<li>preprpcessor in C (1973)</li>
+<li>hygenic macros in Scheme (1986)</li>
+<li>C++ templates (1986)</li>
+<li>&ldquo;Dynamic&rdquo; metaprogramming in Smalltalk (1980) and Ruby (1995-2005?)</li>
+<li>Reflections in Java (1997)</li>
+</ul>
+<h2 id="两类元编程">两类元编程</h2>
+<p>元编程大致分为两类：</p>
+<ul>
+<li>一种是(编译时)作为源代码(例如宏，预处理器，模板)，通常称为“宏”</li>
+<li>另一种是(运行时)基于“OOP 技巧”(例如动态调度和反射)以支持其他行为，这没有名字，我把它称为“动态”</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">compile time</th>
+<th align="center">runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">macros in Lisp</td>
+<td align="center">?</td>
+<td align="center">+</td>
+</tr>
+<tr>
+<td align="center">Preprocessor, templates</td>
+<td align="center">+</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Dynamic metaprogramming</td>
+<td align="center"></td>
+<td align="center">+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="动态元编程">动态元编程</h3>
+<blockquote>
+<p>元编程是编写在运行时操纵(自身)语言结构的代码。 – <a href="https://book.douban.com/subject/7056800/" target="_blank" rel="noopener noreffer">Ruby 元编程</a></p>
+</blockquote>
+<p>元编程在 Ruby 中比在其他的动态类型语言中更常用，尤其是在 Rails 中，例如：<a href="https://guides.rubyonrails.org/routing.html#path-and-url-helpers" target="_blank" rel="noopener noreffer">Path and URL Helpers</a>。动态元编程的缺点是“事物”没有源代码：你看到了一个函数，但是你不知道它的定义位置，这破坏了“<a href="http://jamie-wong.com/2013/07/12/grep-test/" target="_blank" rel="noopener noreffer">grep test</a>”。另一个缺点是它趋向于变慢，例如，参见 <a href="https://docs.rubocop.org/rubocop-rails/cops_rails.html#railsdynamicfindby" target="_blank" rel="noopener noreffer">Rails / DynamicFindBy</a>。</p>
+<p>编程语言：</p>
+<ul>
+<li><a href="http://media.pragprog.com/titles/ppmetr/spells.pdf" target="_blank" rel="noopener noreffer">Ruby</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming" target="_blank" rel="noopener noreffer">JavaScript</a></li>
+<li><a href="https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Metaprogramming.html" target="_blank" rel="noopener noreffer">Python 2</a>, <a href="https://www.youtube.com/watch?v=sPiWg5jSoZI" target="_blank" rel="noopener noreffer">Python 3</a></li>
+</ul>
+<p>主要用法：</p>
+<ul>
+<li>消除重复代码(DRY)，例如，David Beazley 在<a href="https://www.youtube.com/watch?v=sPiWg5jSoZI" target="_blank" rel="noopener noreffer">演讲中</a>展示了很多例子。</li>
+<li>创建嵌入式领域特定语言(EDSL)，Martin Fowler 称它们为<a href="https://www.martinfowler.com/bliki/DomainSpecificLanguage.html" target="_blank" rel="noopener noreffer">内部 DSL</a>。例如，<a href="https://github.com/sass/ruby-sass" target="_blank" rel="noopener noreffer">Sass</a>(能转换为 CSS 的 Ruby EDSL)，<a href="https://haml.info/" target="_blank" rel="noopener noreffer">Haml</a>(能转换为 HTML 的 Ruby EDSL)，Active Record 查询接口(能转换为 SQL 的 Ruby EDSL)，最重要的是 Rake(替代 Make 的 Ruby EDSL)。</li>
+<li>“扩展语言”</li>
+</ul>
+<h4 id="关于扩展语言">关于扩展语言</h4>
+<p>如何扩展语言？可以添加更多关键字(扩展词法)，也可以添加更多关键字的组合规则(扩展语法)。</p>
+<p>我们很容易添加更多关键字，例如，定义新的函数、模块、变量，但并不是所有种类 &ndash; 仅限于语言语法允许使用的标识符(例如，我不能定义 <code>:?:</code>)。在 Ruby 和 Python 中，可以重载运算符(<code>+</code>,<code>-</code>,<code>&gt;</code>,<code>&lt;</code> 等)，但不能定义新的运算符。据我所知，这些语言均不允许我定义新的语法规则，例如，我无法定义自己的 <code>if/else</code> 版本。</p>
+<p>但程序员们总能找到一种方法来解决这个问题 &ndash; 可以重用现有的语法，让它看起来像是另一种语法。例如，在函数式语言中，有一个漂亮的“模式匹配”的概念。<a href="https://ocaml.org/learn/tutorials/data_types_and_matching.html" target="_blank" rel="noopener noreffer">OCaml:</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-OCaml" data-lang="OCaml"><span class="k">match</span> <span class="k">value</span> <span class="k">with</span>
+<span class="o">|</span> <span class="n">pattern</span> <span class="o">-&gt;</span> <span class="n">result</span>
+<span class="o">|</span> <span class="n">pattern</span> <span class="o">-&gt;</span> <span class="n">result</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>或是 <a href="https://www.gnu.org/software/guile/manual/html_node/Pattern-Matching.html" target="_blank" rel="noopener noreffer">Scheme:</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">l</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">hello</span> <span class="p">(</span><span class="nv">world</span><span class="p">))))</span>
+ <span class="p">(</span><span class="nv">match</span> <span class="nv">l</span>
+ <span class="p">((</span><span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+ <span class="p">(</span><span class="nf">values</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这是在 JavaScript 中的实现：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">{</span> <span class="nx">matches</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;z&#34;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">matches</span><span class="p">(</span><span class="mi">1</span><span class="p">)(</span>
+ <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s2">&#34;number 2 is the best!!!&#34;</span><span class="p">,</span>
+ <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`number </span><span class="si">${</span><span class="nx">x</span><span class="si">}</span><span class="sb"> is not that good`</span><span class="p">,</span>
+ <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s2">&#34;blaa.. dates are awful!&#34;</span>
+<span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这是一个旧语法，但如果你细心，它看起来就像 OCaml 中的模式匹配。在幕后，它使用 <code>toString</code> 检查实际的代码，因为以前没有一等公民的反射对象。另一个值得注意的技术是“链式”(例如 jQuery 和 Active Record 查询接口)。</p>
+<h3 id="macros宏">Macros(宏)</h3>
+<p>宏是一个宽泛的范畴，让我们看一下使用示例来了解这一点。</p>
+<h4 id="语法扩展">语法扩展</h4>
+<p>在 Lisp 中 <code>if/else</code> 表达式像这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="k">if</span> <span class="kt">condition</span>
+ <span class="p">(</span><span class="nf">print</span> <span class="mi">1</span><span class="p">)</span>
+ <span class="p">(</span><span class="nf">print</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>定义具有相同结构的函数很容易：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nv">my-if</span> <span class="kt">condition</span>
+ <span class="p">(</span><span class="nf">print</span> <span class="mi">1</span><span class="p">)</span>
+ <span class="p">(</span><span class="nf">print</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>关键在于，Lisp 中的函数是立即执行的。这意味着在将参数传递给函数之前，它就会执行 <code>then</code> 和 <code>else</code> 两个分支，这就是宏的作用。有了宏，就可以定义自己的 <code>if</code> 版本，像你期望的那样。</p>
+<p>另请参阅：</p>
+<ul>
+<li><a href="http://docs.idris-lang.org/en/latest/tutorial/syntax.html" target="_blank" rel="noopener noreffer">Idris Syntax Extensions</a></li>
+<li><a href="https://docs.racket-lang.org/guide/Module_Syntax.html" target="_blank" rel="noopener noreffer">Racket Module Syntax</a>, <a href="https://docs.racket-lang.org/reference/Macros.html" target="_blank" rel="noopener noreffer">Racket Macros</a></li>
+</ul>
+<h4 id="dsl">DSL</h4>
+<blockquote>
+<p>JSX 是 ECMAScript 中类似 XML 的语法扩展，没有任何定义的语义  – <a href="https://facebook.github.io/jsx/" target="_blank" rel="noopener noreffer">Draft: JSX Specification</a></p>
+</blockquote>
+<p>它本质上是一个 DSL。而负责编译它的 Babel 插件是一个预处理器。你可以使用其他的元编程技术来实现同样的结果 &ndash; 参见 <a href="https://blog.bloomca.me/2019/02/23/alternatives-to-jsx.html" target="_blank" rel="noopener noreffer">JSX 的替代方案</a>。</p>
+<h4 id="多态性">多态性</h4>
+<blockquote>
+<p>&hellip;多态语言，其中一些值和变量可能有一个以上的类型。多态函数是指其操作数(实际参数)可以有一个以上类型的函数。多态类型是指其操作可以适用于一种以上类型的值的类型。 – <a href="http://lucacardelli.name/Papers/OnUnderstanding.A4.pdf" target="_blank" rel="noopener noreffer">On Understanding Types, Data Abstraction, and Polymorphism</a></p>
+</blockquote>
+<p>令我惊讶的是:</p>
+<ul>
+<li>动态类型语言，是非常灵活的(但也很容易给自己找麻烦)。</li>
+<li>静态类型的语言，具有完全的多态性支持，如 OCaml，Haskell 等。</li>
+<li>没有多态性或在多态性上有一定限制的静态类型语言(Pascal，Go)。</li>
+</ul>
+<p>最后一类编程语言可以使用元编程来实现类似多态性的东西(&ldquo;提高灵活性&rdquo;)。在 GO 中，没有参数多态(或类型参数，或泛型)，于是人们创造了解决方法，例如，<a href="https://github.com/joeshaw/gengen" target="_blank" rel="noopener noreffer">gengen</a>(类似的解决方案 <a href="https://github.com/cheekybits/genny" target="_blank" rel="noopener noreffer">genny</a>，<a href="https://github.com/taylorchu/generic" target="_blank" rel="noopener noreffer">generic</a>，<a href="https://github.com/clipperhouse/gen" target="_blank" rel="noopener noreffer">gen</a>)。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">list</span>
+
+<span class="kn">import</span> <span class="s">&#34;github.com/joeshaw/gengen/generic&#34;</span>
+
+<span class="kd">type</span> <span class="nx">List</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">data</span> <span class="nx">generic</span><span class="p">.</span><span class="nx">T</span>
+    <span class="nx">next</span> <span class="o">*</span><span class="nx">List</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后，您需要运行预处理器：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ gengen github.com/joeshaw/gengen/examples/list string
+</code></pre></td></tr></table>
+</div>
+</div><p>你会得到类型准确的代码:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">list</span>
+
+<span class="kd">type</span> <span class="nx">List</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">data</span> <span class="kt">string</span>
+    <span class="nx">next</span> <span class="o">*</span><span class="nx">List</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>另请参阅：<a href="https://appliedgo.net/generics/" target="_blank" rel="noopener noreffer">Who needs generics? Use … instead!</a>, <a href="https://blog.golang.org/generics-next-step" target="_blank" rel="noopener noreffer">The Next Step for Generics.</a></p>
+<h4 id="dry">DRY</h4>
+<blockquote>
+<p>模板元程序员利用这种机制来提高：源代码的灵活性和运行时性能。 – <a href="https://www.youtube.com/watch?t=607&amp;v=Am2is2QCvxY&amp;feature=youtu.be" target="_blank" rel="noopener noreffer">Walter E. Brown “Modern Template Metaprogramming: A Compendium, Part I”</a></p>
+</blockquote>
+<p>在C++中，有函数重载(即一种多态)，但它会产生很多重复：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">double</span> <span class="nf">abs</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="nl">x</span> <span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">abs</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="nl">x</span> <span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>你可以编写函数模板：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span> <span class="n">abs</span><span class="p">(</span><span class="n">T</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="nl">x</span> <span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="性能">性能</h3>
+<p>通常认为，在编译时进行宏扩展可以提高性能。对我来说这很合理，但我没有很好的例子。</p>
+<p>相关：<a href="https://ziglang.org/#Compile-time-reflection-and-compile-time-code-execution" target="_blank" rel="noopener noreffer">Compile-time reflection and compile-time code execution in Zig.</a></p>
+<h3 id="宏和类型">宏和类型</h3>
+<p>Lisp(和Scheme)宏非常强大，但它们不能与静态类型检查器一起很好地工作。假设我们有确保能够终止的宏，并且能在编译时扩展(语法糖)并进行类型检查生成的代码，下一个问题是在生成的代码中报告类型错误，这也会很混乱。</p>
+<p>有多种尝试使宏与静态类型更好地配合使用，例如：</p>
+<ul>
+<li><a href="https://lexi-lambda.github.io/hackett/index.html" target="_blank" rel="noopener noreffer">Hackett</a></li>
+<li><a href="https://cs.brown.edu/~sk/Publications/Papers/Published/pk-resuarging-types/paper.pdf" target="_blank" rel="noopener noreffer">Inferring Type Rules for Syntactic Sugar</a></li>
+</ul>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://stereobooster.com/posts/metaprogramming/" target="_blank" rel="noopener noreffer">Metaprogramming</a></li>
+<li><a href="https://draveness.me/metaprogramming/" target="_blank" rel="noopener noreffer">谈元编程与表达能力</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/34106430" target="_blank" rel="noopener noreffer">Emacs之魂：宏与元编程</a></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-01-21</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2021-01-21-metaprogram/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2021-01-21-metaprogram/" data-title="[译]元编程" data-hashtags="Theory"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2021-01-21-metaprogram/" data-hashtag="Theory"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2021-01-21-metaprogram/" data-title="[译]元编程" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2021-01-21-metaprogram/" data-title="[译]元编程"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2021-01-21-metaprogram/" data-title="[译]元编程"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2021-01-21-metaprogram/" data-title="[译]元编程" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2021-01-21-metaprogram/" data-title="[译]元编程" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2021-01-21-metaprogram/" data-title="[译]元编程"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/theory/">Theory</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2021-01-08-tcp/" class="prev" rel="prev" title="关于 TCP, 我学到什么"><i class="fas fa-angle-left fa-fw"></i>关于 TCP, 我学到什么</a>
+            <a href="/2021-01-30-tag-system/" class="next" rel="next" title="一些通用计算模型">一些通用计算模型<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz","appKey":"gK3L6a7r80578qujBez4FH6C","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"欢迎讨论交流","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
