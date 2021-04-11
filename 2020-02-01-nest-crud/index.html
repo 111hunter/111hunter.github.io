@@ -8,10 +8,10 @@
         <title>NestJS &#43; TypeORM 实现 crud 示例 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="NestJS &#43; TypeORM 实现 crud 示例" />
 <meta property="og:description" content="随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。 传统 MVC 与 NestJS 架构对比： Nest(Nest.js) 的分层借鉴自 Spring，更细化。我们应该要了解整个" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/2020-02-01-nest-crud/" />
-<meta property="og:image" content="http://example.org/logo.png"/>
-<meta property="article:published_time" content="2020-02-01T14:06:31+08:00" />
-<meta property="article:modified_time" content="2020-02-01T14:06:31+08:00" />
+<meta property="og:url" content="http://example.org/2020-02-01-nest-crud/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-02-01T14:06:31&#43;08:00" />
+<meta property="article:modified_time" content="2020-02-01T14:06:31&#43;08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
@@ -164,7 +164,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// photo.entity.ts
 </span><span class="c1"></span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Column</span><span class="p">,</span> <span class="nx">Entity</span><span class="p">,</span> <span class="nx">PrimaryGeneratedColumn</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;typeorm&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Column</span><span class="p">,</span> <span class="nx">Entity</span><span class="p">,</span> <span class="nx">PrimaryGeneratedColumn</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;typeorm&#39;</span><span class="p">;</span>
 
 <span class="kd">@Entity</span><span class="p">(</span><span class="s1">&#39;photo&#39;</span><span class="p">)</span>
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">PhotoEntity</span> <span class="p">{</span>
@@ -205,7 +205,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="nx">TypeOrmModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">({</span>
-      <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;mysql&#39;</span><span class="p">,</span>
+      <span class="kr">type</span><span class="o">:</span> <span class="s1">&#39;mysql&#39;</span><span class="p">,</span>
       <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
       <span class="nx">port</span>: <span class="kt">3306</span><span class="p">,</span>
       <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
@@ -256,27 +256,27 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// photo.dto.ts
 </span><span class="c1"></span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">IsString</span><span class="p">,</span> <span class="nx">IsInt</span><span class="p">,</span> <span class="nx">IsBoolean</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;class-validator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">IsString</span><span class="p">,</span> <span class="nx">IsInt</span><span class="p">,</span> <span class="nx">IsBoolean</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;class-validator&#39;</span><span class="p">;</span>
 
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">PhotoDto</span> <span class="p">{</span>
 
     <span class="kd">@IsInt</span><span class="p">()</span>
-    <span class="nx">readonly</span> <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+    <span class="kr">readonly</span> <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
 
     <span class="kd">@IsString</span><span class="p">()</span>
-    <span class="nx">readonly</span> <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="kr">readonly</span> <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
 
     <span class="kd">@IsString</span><span class="p">()</span>
-    <span class="nx">readonly</span> <span class="nx">description</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="kr">readonly</span> <span class="nx">description</span>: <span class="kt">string</span><span class="p">;</span>
 
     <span class="kd">@IsString</span><span class="p">()</span>
-    <span class="nx">readonly</span> <span class="nx">filename</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="kr">readonly</span> <span class="nx">filename</span>: <span class="kt">string</span><span class="p">;</span>
 
     <span class="kd">@IsInt</span><span class="p">()</span>
-    <span class="nx">readonly</span> <span class="nx">views</span>: <span class="kt">number</span><span class="p">;</span>
+    <span class="kr">readonly</span> <span class="nx">views</span>: <span class="kt">number</span><span class="p">;</span>
 
     <span class="kd">@IsBoolean</span><span class="p">()</span>
-    <span class="nx">readonly</span> <span class="nx">isPublished</span>: <span class="kt">boolean</span><span class="p">;</span>
+    <span class="kr">readonly</span> <span class="nx">isPublished</span>: <span class="kt">boolean</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -317,27 +317,27 @@
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">PhotoService</span> <span class="p">{</span>
   <span class="kr">constructor</span><span class="p">(</span>
     <span class="kd">@InjectRepository</span><span class="p">(</span><span class="nx">PhotoEntity</span><span class="p">)</span>
-    <span class="kr">private</span> <span class="nx">readonly</span> <span class="nx">photoRepository</span>: <span class="kt">Repository</span><span class="o">&lt;</span><span class="nx">PhotoEntity</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">photoRepository</span>: <span class="kt">Repository</span><span class="p">&lt;</span><span class="nt">PhotoEntity</span><span class="p">&gt;,</span>
   <span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 
-  <span class="nx">async</span> <span class="nx">findAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">PhotoEntity</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kr">async</span> <span class="nx">findAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">PhotoEntity</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
   <span class="p">}</span>
 
-  <span class="nx">async</span> <span class="nx">create</span><span class="p">(</span><span class="nx">photoDto</span>: <span class="kt">PhotoDto</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">PhotoEntity</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">photoDto</span><span class="p">)</span>
+  <span class="kr">async</span> <span class="nx">create</span><span class="p">(</span><span class="nx">photoDto</span>: <span class="kt">PhotoDto</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">PhotoEntity</span><span class="p">&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">photoDto</span><span class="p">)</span>
   <span class="p">}</span>
 
-  <span class="nx">async</span> <span class="k">delete</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">photoRepository</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+  <span class="kr">async</span> <span class="k">delete</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">photoRepository</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
   <span class="p">}</span>
 
-  <span class="nx">async</span> <span class="nx">update</span><span class="p">(</span><span class="nx">photoDto</span>: <span class="kt">PhotoDto</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">photoDto</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">photoDto</span><span class="p">)</span>
+  <span class="kr">async</span> <span class="nx">update</span><span class="p">(</span><span class="nx">photoDto</span>: <span class="kt">PhotoDto</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">photoDto</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">photoDto</span><span class="p">)</span>
   <span class="p">}</span>
 
-  <span class="nx">async</span> <span class="nx">findOne</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">PhotoEntity</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+  <span class="kr">async</span> <span class="nx">findOne</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">PhotoEntity</span><span class="p">&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -378,15 +378,15 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">@Controller</span><span class="p">(</span><span class="s1">&#39;photo&#39;</span><span class="p">)</span>
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">PhotoController</span> <span class="p">{</span>
-  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">readonly</span> <span class="nx">photoService</span>: <span class="kt">PhotoService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">photoService</span>: <span class="kt">PhotoService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 
   <span class="kd">@Get</span><span class="p">()</span>
-  <span class="nx">findAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">PhotoEntity</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">findAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">PhotoEntity</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">photoService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
   <span class="p">}</span>
 
   <span class="kd">@Post</span><span class="p">(</span><span class="s1">&#39;create&#39;</span><span class="p">)</span>
-  <span class="nx">create</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="nx">PhotoDto</span>: <span class="kt">PhotoDto</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">PhotoEntity</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">create</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="nx">PhotoDto</span>: <span class="kt">PhotoDto</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">PhotoEntity</span><span class="p">&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">photoService</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">PhotoDto</span><span class="p">)</span>
   <span class="p">}</span>
 
@@ -401,7 +401,7 @@
   <span class="p">}</span>
 
   <span class="kd">@Get</span><span class="p">(</span><span class="s1">&#39;:id&#39;</span><span class="p">)</span>
-  <span class="nx">findOne</span><span class="p">(</span><span class="kd">@Param</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span> <span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">PhotoEntity</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">findOne</span><span class="p">(</span><span class="kd">@Param</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span> <span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">PhotoEntity</span><span class="p">&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">photoService</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -423,7 +423,7 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts">  <span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts">  <span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>
 
   <span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DocumentBuilder</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">setTitle</span><span class="p">(</span><span class="s1">&#39;photo example&#39;</span><span class="p">)</span>
@@ -433,7 +433,7 @@
   <span class="kr">const</span> <span class="nb">document</span> <span class="o">=</span> <span class="nx">SwaggerModule</span><span class="p">.</span><span class="nx">createDocument</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
   <span class="nx">SwaggerModule</span><span class="p">.</span><span class="nx">setup</span><span class="p">(</span><span class="s1">&#39;docs&#39;</span><span class="p">,</span> <span class="nx">app</span><span class="p">,</span> <span class="nb">document</span><span class="p">);</span>
 
-  <span class="nx">await</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+  <span class="k">await</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><code>$ npm run start</code> 启动 nest 项目, 访问 http://localhost:3000/docs ，到这里基本的 crud 操作已经实现，此时，NestJS框架的<font color="#dd0000">三层结构</font>已有体现。接下来再完善项目。</p>
@@ -465,14 +465,14 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">@Injectable</span><span class="p">()</span>
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ValidationPipe</span> <span class="kr">implements</span> <span class="nx">PipeTransform</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="nx">async</span> <span class="nx">transform</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">metadata</span>: <span class="kt">ArgumentMetadata</span><span class="p">)</span> <span class="p">{</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ValidationPipe</span> <span class="kr">implements</span> <span class="nx">PipeTransform</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;</span> <span class="p">{</span>
+  <span class="kr">async</span> <span class="nx">transform</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">metadata</span>: <span class="kt">ArgumentMetadata</span><span class="p">)</span> <span class="p">{</span>
     <span class="kr">const</span> <span class="p">{</span> <span class="nx">metatype</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">metadata</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">metatype</span> <span class="o">||</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">toValidate</span><span class="p">(</span><span class="nx">metatype</span><span class="p">))</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nx">value</span>
     <span class="p">}</span>
-    <span class="kr">const</span> <span class="nx">object</span> <span class="o">=</span> <span class="nx">plainToClass</span><span class="p">(</span><span class="nx">metatype</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
-    <span class="kr">const</span> <span class="nx">errors</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">validate</span><span class="p">(</span><span class="nx">object</span><span class="p">)</span>
+    <span class="kr">const</span> <span class="kt">object</span> <span class="o">=</span> <span class="nx">plainToClass</span><span class="p">(</span><span class="nx">metatype</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
+    <span class="kr">const</span> <span class="nx">errors</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">validate</span><span class="p">(</span><span class="kt">object</span><span class="p">)</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">errors</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
       <span class="kr">const</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">errors</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">constraints</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
       <span class="k">throw</span> <span class="k">new</span> <span class="nx">BadRequestException</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">)</span>
@@ -482,7 +482,7 @@
 
   <span class="kr">private</span> <span class="nx">toValidate</span><span class="p">(</span><span class="nx">metatype</span><span class="p">)</span><span class="o">:</span> <span class="kr">boolean</span> <span class="p">{</span>
     <span class="kr">const</span> <span class="nx">types</span> <span class="o">=</span> <span class="p">[</span><span class="nb">String</span><span class="p">,</span> <span class="nb">Boolean</span><span class="p">,</span> <span class="nb">Number</span><span class="p">,</span> <span class="nb">Array</span><span class="p">,</span> <span class="nb">Object</span><span class="p">]</span>
-    <span class="k">return</span> <span class="o">!</span><span class="nx">types</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">metatype</span> <span class="o">===</span> <span class="nx">type</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">!</span><span class="nx">types</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">metatype</span> <span class="o">===</span> <span class="kr">type</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -554,7 +554,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">@Catch</span><span class="p">()</span>
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">ExceptionsFilter</span> <span class="kr">implements</span> <span class="nx">ExceptionFilter</span> <span class="p">{</span>
-  <span class="nx">async</span> <span class="k">catch</span><span class="p">(</span><span class="nx">exception</span><span class="p">,</span> <span class="nx">host</span>: <span class="kt">ArgumentsHost</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">async</span> <span class="k">catch</span><span class="p">(</span><span class="nx">exception</span><span class="p">,</span> <span class="nx">host</span>: <span class="kt">ArgumentsHost</span><span class="p">)</span> <span class="p">{</span>
     <span class="kr">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">host</span><span class="p">.</span><span class="nx">switchToHttp</span><span class="p">()</span>
     <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">getResponse</span><span class="p">()</span>
     <span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">getRequest</span><span class="p">()</span>
@@ -610,17 +610,17 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Response</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Response</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;</span> <span class="p">{</span>
   <span class="nx">data</span>: <span class="kt">T</span>
 <span class="p">}</span>
 
 <span class="kd">@Injectable</span><span class="p">()</span>
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">TransformInterceptor</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span>
-  <span class="kr">implements</span> <span class="nx">NestInterceptor</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">Response</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">TransformInterceptor</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;</span>
+  <span class="kr">implements</span> <span class="nx">NestInterceptor</span><span class="p">&lt;</span><span class="nt">T</span><span class="err">,</span> <span class="na">Response</span><span class="err">&lt;</span><span class="na">T</span><span class="p">&gt;</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="nx">intercept</span><span class="p">(</span>
     <span class="nx">context</span>: <span class="kt">ExecutionContext</span><span class="p">,</span>
     <span class="nx">next</span>: <span class="kt">CallHandler</span><span class="p">,</span>
-  <span class="p">)</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">Response</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+  <span class="p">)</span><span class="o">:</span> <span class="nx">Observable</span><span class="p">&lt;</span><span class="nt">Response</span><span class="err">&lt;</span><span class="na">T</span><span class="p">&gt;</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">next</span><span class="p">.</span><span class="nx">handle</span><span class="p">().</span><span class="nx">pipe</span><span class="p">(</span>
       <span class="nx">map</span><span class="p">(</span><span class="nx">rawData</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">{</span>
@@ -688,7 +688,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

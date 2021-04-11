@@ -8,7 +8,7 @@
 假设我们有个需求：把下面字符串变成每个单词首字母大写。
 
 ```js
-var string = 'functional programming is great';
+const string = 'functional programming is great';
 ```
 
 ### 命令式
@@ -16,14 +16,14 @@ var string = 'functional programming is great';
 如果你没有听说过函数式编程，用传统的编程思路，很自然的写出如下 [命令式编程](https://en.wikipedia.org/wiki/Imperative_programming) 代码：
 
 ```js
-var string = 'functional programming is great';
-var arrays = string.split(' ');
-var newArray = [];
-for (var i = 0; i < arrays.length; i++){
-	var str = arrays[i].slice(0, 1).toUpperCase() + arrays[i].slice(1);
+const string = 'functional programming is great';
+let arrays = string.split(' ');
+let newArray = [];
+for (let i = 0; i < arrays.length; i++){
+	let str = arrays[i].slice(0, 1).toUpperCase() + arrays[i].slice(1);
 	newArray.push(str);
 }
-var newString = newArray.join(' ');
+const newString = newArray.join(' ');
 ```
 
 这样当然能完成任务，结果是产生了一堆临时变量。光是变量名就不好想，同时过程中掺杂了大量逻辑，一个函数需要从头读到尾才知道它具体做了什么，并且一旦出问题很难定位。
@@ -33,8 +33,8 @@ var newString = newArray.join(' ');
 [声明式编程](https://en.wikipedia.org/wiki/Declarative_programming) 被看做是形式逻辑的理论，把计算看做推导。常见的声明式编程有数据库查询(SQL语句)，正则表达式，函数式编程等。函数式编程倡导利用若干简单的执行单元让计算结果不断渐进，逐层推导复杂的运算，而不是设计一个复杂的执行过程。
 
 ```js
-var string = 'functional programming is great';
-var newString = string
+const string = 'functional programming is great';
+const newString = string
   .split(' ')
   .map(str => str.slice(0, 1).toUpperCase() + str.slice(1))
   .join(' ');
@@ -65,17 +65,17 @@ var newString = string
 
 ```js
 // 普通函数
-var signUp = function(attrs) {
-  var user = saveUser(attrs);
+const signUp = function(attrs) {
+  let user = saveUser(attrs);
   welcomeUser(user);
 };
 // 依赖 Db
-var saveUser = function(attrs) {
-    var user = Db.save(attrs);
+const saveUser = function(attrs) {
+    let user = Db.save(attrs);
     ...
 };
 // 依赖 Email
-var welcomeUser = function(user) {
+const welcomeUser = function(user) {
     Email(user, ...);
     ...
 };
@@ -85,18 +85,18 @@ var welcomeUser = function(user) {
 
 ```js
 // 纯函数
-var signUp = function(Db, Email, attrs) {
+const signUp = function(Db, Email, attrs) {
   return function() {
-    var user = saveUser(Db, attrs);
+    let user = saveUser(Db, attrs);
     welcomeUser(Email, user);
   };
 };
 
-var saveUser = function(Db, attrs) {
+const saveUser = function(Db, attrs) {
     ...
 };
 
-var welcomeUser = function(Email, user) {
+const welcomeUser = function(Email, user) {
     ...
 };
 ```
@@ -138,7 +138,7 @@ const memoize = (f) => {
   // 由于使用了闭包，所以函数执行完后 cache 不会立刻被回收
   const cache = {};
   return () => {
-    var arg_str = JSON.stringify(arguments);
+    let arg_str = JSON.stringify(arguments);
     // 利用 cache 做一个简单的缓存，当这个参数之前使用过时，我们立即返回结果就行
     cache[arg_str] = cache[arg_str] || f.apply(f, arguments);
     return cache[arg_str];
@@ -151,11 +151,11 @@ const memoize = (f) => {
 纯函数不会访问共享的内存，因此不用担心线程的执行顺序，对任何纯表达式的求值都是线程安全的。
 
 ```js
-var x = f(a);
-var y = g(b);
-var z = h(c);
+const x = f(a);
+const y = g(b);
+const z = h(c);
 // 线程安全
-var result = x + y + z;
+const result = x + y + z;
 ```
 
 前三个表达式之间没有数据依赖关系，它们的执行顺序可以颠倒，或者并行执行也互不干扰。只要它们能在分配给 result 之前执行。
@@ -231,8 +231,8 @@ cache.get('a');  // 1
 ```js
 function curryIt(fn) {
   // 参数fn函数的参数个数
-  var n = fn.length;
-  var args = [];
+  let n = fn.length;
+  let args = [];
   return function(arg) {
     args.push(arg);
     if (args.length < n) {
@@ -247,15 +247,15 @@ function add(a, b, c) {
   return [a, b, c];
 }
 // c 是内部匿名函数
-var c = curryIt(add); 
+const c = curryIt(add); 
 
 // 可以分步传参
-var c1 = c(1);        // 将 1 加入 args 中，返回 c 的引用
-var c2 = c1(2);       
-var c3 = c2(3);       // [1, 2, 3]
+const c1 = c(1);        // 将 1 加入 args 中，返回 c 的引用
+const c2 = c1(2);       
+const c3 = c2(3);       // [1, 2, 3]
 
 // 也可以直接调用
-var c3 = c(1)(2)(3);  // [1, 2, 3]
+const c3 = c(1)(2)(3);  // [1, 2, 3]
 ```
 
 可以看出，柯里化是一种函数的“预加载”技术，可以通过闭包实现对参数的缓存。
@@ -264,10 +264,10 @@ var c3 = c(1)(2)(3);  // [1, 2, 3]
 
 ```js
 // Currying  f(a)(b)(c)
-var f = a => b => c => a + b + c;
+const f = a => b => c => a + b + c;
 
 // Partial application  f(a)(b,c) 
-var f = a => (b, c) => a + b + c;
+const f = a => (b, c) => a + b + c;
 ```
 
 ### 函数组合
@@ -275,11 +275,11 @@ var f = a => (b, c) => a + b + c;
 柯里化是函数的拆解，函数组合就是多个函数组合为一个函数。compose 简单实现：
 
 ```js
-var compose = (f, g) => x => f(g(x));
+const compose = (f, g) => x => f(g(x));
 
-var g = x => x + 1;
-var f = x => x * 5;
-var fg = compose(f, g); 
+const g = x => x + 1;
+const f = x => x * 5;
+const fg = compose(f, g); 
 fg(2); // 15
 ```
 
@@ -288,7 +288,7 @@ fg(2); // 15
 ```js
 function compose(...args) {
     return function(x) {
-        var composeFun = args.reduceRight(function(first, second) {
+        let composeFun = args.reduceRight(function(first, second) {
           //从右边开始迭代，这里实际是把右边放入左边
             return second(first); 
         }, x);
@@ -296,7 +296,7 @@ function compose(...args) {
     }
 };
 // 简化为箭头函数
-var compose = (...args)=>(x)=> args.reduceRight((f,s)=>s(f),x);
+const compose = (...args)=>(x)=> args.reduceRight((f,s)=>s(f),x);
 ```
 
 现在我们可以自由组合函数：
@@ -312,7 +312,7 @@ function reverse(str){
     return str.split('').reverse().join('');
 }
 
-var composeFn=compose(reverse,toUpperCase,addHello);
+const composeFn=compose(reverse,toUpperCase,addHello);
 composeFn('ttsy');  // YSTT OLLEH
 ```
 

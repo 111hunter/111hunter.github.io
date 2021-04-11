@@ -8,10 +8,10 @@
         <title>浅析函数式编程 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="浅析函数式编程" />
 <meta property="og:description" content="在计算机科学中，函数式编程是一种编程范式，其中通过应用和组合函数来构造程序。它是一种声明式编程范式，其中函数定义是每个返回一个值的表达式树，" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/2020-09-02-js-functional/" />
-<meta property="og:image" content="http://example.org/logo.png"/>
-<meta property="article:published_time" content="2020-09-02T08:30:00+08:00" />
-<meta property="article:modified_time" content="2020-09-02T08:30:00+08:00" />
+<meta property="og:url" content="http://example.org/2020-09-02-js-functional/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-02T08:30:00&#43;08:00" />
+<meta property="article:modified_time" content="2020-09-02T08:30:00&#43;08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
@@ -151,7 +151,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">&#39;functional programming is great&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">&#39;functional programming is great&#39;</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="命令式">命令式</h3>
@@ -168,14 +168,14 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">&#39;functional programming is great&#39;</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">arrays</span> <span class="o">=</span> <span class="nx">string</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">newArray</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arrays</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-	<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">arrays</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">arrays</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">&#39;functional programming is great&#39;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">arrays</span> <span class="o">=</span> <span class="nx">string</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">newArray</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arrays</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+	<span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">arrays</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">arrays</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 	<span class="nx">newArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="kd">var</span> <span class="nx">newString</span> <span class="o">=</span> <span class="nx">newArray</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">newString</span> <span class="o">=</span> <span class="nx">newArray</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>这样当然能完成任务，结果是产生了一堆临时变量。光是变量名就不好想，同时过程中掺杂了大量逻辑，一个函数需要从头读到尾才知道它具体做了什么，并且一旦出问题很难定位。</p>
@@ -190,8 +190,8 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">&#39;functional programming is great&#39;</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">newString</span> <span class="o">=</span> <span class="nx">string</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">&#39;functional programming is great&#39;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">newString</span> <span class="o">=</span> <span class="nx">string</span>
   <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">str</span> <span class="p">=&gt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">str</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
   <span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
@@ -231,17 +231,17 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 普通函数
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">signUp</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">attrs</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">saveUser</span><span class="p">(</span><span class="nx">attrs</span><span class="p">);</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">signUp</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">attrs</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">saveUser</span><span class="p">(</span><span class="nx">attrs</span><span class="p">);</span>
   <span class="nx">welcomeUser</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="c1">// 依赖 Db
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">saveUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">attrs</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">Db</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">attrs</span><span class="p">);</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">saveUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">attrs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">Db</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">attrs</span><span class="p">);</span>
     <span class="p">...</span>
 <span class="p">};</span>
 <span class="c1">// 依赖 Email
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">welcomeUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">welcomeUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">Email</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="p">...);</span>
     <span class="p">...</span>
 <span class="p">};</span>
@@ -268,18 +268,18 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 纯函数
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">signUp</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Db</span><span class="p">,</span> <span class="nx">Email</span><span class="p">,</span> <span class="nx">attrs</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">signUp</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Db</span><span class="p">,</span> <span class="nx">Email</span><span class="p">,</span> <span class="nx">attrs</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">saveUser</span><span class="p">(</span><span class="nx">Db</span><span class="p">,</span> <span class="nx">attrs</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">saveUser</span><span class="p">(</span><span class="nx">Db</span><span class="p">,</span> <span class="nx">attrs</span><span class="p">);</span>
     <span class="nx">welcomeUser</span><span class="p">(</span><span class="nx">Email</span><span class="p">,</span> <span class="nx">user</span><span class="p">);</span>
   <span class="p">};</span>
 <span class="p">};</span>
 
-<span class="kd">var</span> <span class="nx">saveUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Db</span><span class="p">,</span> <span class="nx">attrs</span><span class="p">)</span> <span class="p">{</span>
+<span class="kr">const</span> <span class="nx">saveUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Db</span><span class="p">,</span> <span class="nx">attrs</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">};</span>
 
-<span class="kd">var</span> <span class="nx">welcomeUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Email</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+<span class="kr">const</span> <span class="nx">welcomeUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Email</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">};</span>
 </code></pre></td></tr></table>
@@ -355,7 +355,7 @@
   <span class="c1">// 由于使用了闭包，所以函数执行完后 cache 不会立刻被回收
 </span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">cache</span> <span class="o">=</span> <span class="p">{};</span>
   <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">arg_str</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">arg_str</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
     <span class="c1">// 利用 cache 做一个简单的缓存，当这个参数之前使用过时，我们立即返回结果就行
 </span><span class="c1"></span>    <span class="nx">cache</span><span class="p">[</span><span class="nx">arg_str</span><span class="p">]</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">[</span><span class="nx">arg_str</span><span class="p">]</span> <span class="o">||</span> <span class="nx">f</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
     <span class="k">return</span> <span class="nx">cache</span><span class="p">[</span><span class="nx">arg_str</span><span class="p">];</span>
@@ -374,11 +374,11 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">f</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">g</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">h</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">f</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">g</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">h</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
 <span class="c1">// 线程安全
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">z</span><span class="p">;</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">z</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>前三个表达式之间没有数据依赖关系，它们的执行顺序可以颠倒，或者并行执行也互不干扰。只要它们能在分配给 result 之前执行。</p>
@@ -514,8 +514,8 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">curryIt</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// 参数fn函数的参数个数
-</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="p">[];</span>
+</span><span class="c1"></span>  <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">args</span> <span class="o">=</span> <span class="p">[];</span>
   <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">args</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arg</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
@@ -530,15 +530,15 @@
   <span class="k">return</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">];</span>
 <span class="p">}</span>
 <span class="c1">// c 是内部匿名函数
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">curryIt</span><span class="p">(</span><span class="nx">add</span><span class="p">);</span> 
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">curryIt</span><span class="p">(</span><span class="nx">add</span><span class="p">);</span> 
 
 <span class="c1">// 可以分步传参
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">c1</span> <span class="o">=</span> <span class="nx">c</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>        <span class="c1">// 将 1 加入 args 中，返回 c 的引用
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">c2</span> <span class="o">=</span> <span class="nx">c1</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>       
-<span class="kd">var</span> <span class="nx">c3</span> <span class="o">=</span> <span class="nx">c2</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>       <span class="c1">// [1, 2, 3]
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">c1</span> <span class="o">=</span> <span class="nx">c</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>        <span class="c1">// 将 1 加入 args 中，返回 c 的引用
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">c2</span> <span class="o">=</span> <span class="nx">c1</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>       
+<span class="kr">const</span> <span class="nx">c3</span> <span class="o">=</span> <span class="nx">c2</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>       <span class="c1">// [1, 2, 3]
 </span><span class="c1"></span>
 <span class="c1">// 也可以直接调用
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">c3</span> <span class="o">=</span> <span class="nx">c</span><span class="p">(</span><span class="mi">1</span><span class="p">)(</span><span class="mi">2</span><span class="p">)(</span><span class="mi">3</span><span class="p">);</span>  <span class="c1">// [1, 2, 3]
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">c3</span> <span class="o">=</span> <span class="nx">c</span><span class="p">(</span><span class="mi">1</span><span class="p">)(</span><span class="mi">2</span><span class="p">)(</span><span class="mi">3</span><span class="p">);</span>  <span class="c1">// [1, 2, 3]
 </span></code></pre></td></tr></table>
 </div>
 </div><p>可以看出，柯里化是一种函数的“预加载”技术，可以通过闭包实现对参数的缓存。</p>
@@ -553,10 +553,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// Currying  f(a)(b)(c)
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">b</span> <span class="p">=&gt;</span> <span class="nx">c</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">;</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">b</span> <span class="p">=&gt;</span> <span class="nx">c</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">;</span>
 
 <span class="c1">// Partial application  f(a)(b,c) 
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">;</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="函数组合">函数组合</h3>
@@ -571,11 +571,11 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">compose</span> <span class="o">=</span> <span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">g</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">g</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">compose</span> <span class="o">=</span> <span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">g</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">f</span><span class="p">(</span><span class="nx">g</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
 
-<span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">fg</span> <span class="o">=</span> <span class="nx">compose</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">g</span><span class="p">);</span> 
+<span class="kr">const</span> <span class="nx">g</span> <span class="o">=</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">fg</span> <span class="o">=</span> <span class="nx">compose</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">g</span><span class="p">);</span> 
 <span class="nx">fg</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// 15
 </span></code></pre></td></tr></table>
 </div>
@@ -597,7 +597,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">compose</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">composeFun</span> <span class="o">=</span> <span class="nx">args</span><span class="p">.</span><span class="nx">reduceRight</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">composeFun</span> <span class="o">=</span> <span class="nx">args</span><span class="p">.</span><span class="nx">reduceRight</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">)</span> <span class="p">{</span>
           <span class="c1">//从右边开始迭代，这里实际是把右边放入左边
 </span><span class="c1"></span>            <span class="k">return</span> <span class="nx">second</span><span class="p">(</span><span class="nx">first</span><span class="p">);</span> 
         <span class="p">},</span> <span class="nx">x</span><span class="p">);</span>
@@ -605,7 +605,7 @@
     <span class="p">}</span>
 <span class="p">};</span>
 <span class="c1">// 简化为箭头函数
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">compose</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)=&gt;(</span><span class="nx">x</span><span class="p">)=&gt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">reduceRight</span><span class="p">((</span><span class="nx">f</span><span class="p">,</span><span class="nx">s</span><span class="p">)=&gt;</span><span class="nx">s</span><span class="p">(</span><span class="nx">f</span><span class="p">),</span><span class="nx">x</span><span class="p">);</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">compose</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)=&gt;(</span><span class="nx">x</span><span class="p">)=&gt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">reduceRight</span><span class="p">((</span><span class="nx">f</span><span class="p">,</span><span class="nx">s</span><span class="p">)=&gt;</span><span class="nx">s</span><span class="p">(</span><span class="nx">f</span><span class="p">),</span><span class="nx">x</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>现在我们可以自由组合函数：</p>
@@ -635,7 +635,7 @@
     <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">composeFn</span><span class="o">=</span><span class="nx">compose</span><span class="p">(</span><span class="nx">reverse</span><span class="p">,</span><span class="nx">toUpperCase</span><span class="p">,</span><span class="nx">addHello</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">composeFn</span><span class="o">=</span><span class="nx">compose</span><span class="p">(</span><span class="nx">reverse</span><span class="p">,</span><span class="nx">toUpperCase</span><span class="p">,</span><span class="nx">addHello</span><span class="p">);</span>
 <span class="nx">composeFn</span><span class="p">(</span><span class="s1">&#39;ttsy&#39;</span><span class="p">);</span>  <span class="c1">// YSTT OLLEH
 </span></code></pre></td></tr></table>
 </div>
@@ -677,7 +677,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

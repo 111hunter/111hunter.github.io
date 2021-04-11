@@ -8,10 +8,10 @@
         <title>TypeORM 的基本使用 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="TypeORM 的基本使用" />
 <meta property="og:description" content="本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。 以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBui" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/2020-04-10-typeorm/" />
-<meta property="og:image" content="http://example.org/logo.png"/>
-<meta property="article:published_time" content="2020-04-10T14:35:05+08:00" />
-<meta property="article:modified_time" content="2020-04-10T14:35:05+08:00" />
+<meta property="og:url" content="http://example.org/2020-04-10-typeorm/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-04-10T14:35:05&#43;08:00" />
+<meta property="article:modified_time" content="2020-04-10T14:35:05&#43;08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
@@ -199,7 +199,7 @@
   <span class="kd">@Column</span><span class="p">()</span>
   <span class="nx">username</span>: <span class="kt">string</span><span class="p">;</span>
 
-  <span class="kd">@OneToOne</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">ProfileEntity</span><span class="p">,</span> <span class="nx">profile</span> <span class="o">=&gt;</span> <span class="nx">profile</span><span class="p">.</span><span class="nx">user</span><span class="p">)</span>
+  <span class="kd">@OneToOne</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">ProfileEntity</span><span class="p">,</span> <span class="nx">profile</span> <span class="o">=&gt;</span> <span class="nx">profile</span><span class="p">.</span><span class="nx">user</span><span class="p">)</span>
   <span class="kd">@JoinColumn</span><span class="p">()</span>
   <span class="nx">profile</span>: <span class="kt">ProfileEntity</span><span class="p">;</span>
 <span class="p">}</span>
@@ -241,7 +241,7 @@
 
   <span class="kd">@Column</span><span class="p">()</span>
   <span class="nx">photo</span>: <span class="kt">string</span><span class="p">;</span>
-  <span class="kd">@OneToOne</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">UserEntity</span><span class="p">,</span> <span class="nx">user</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">profile</span><span class="p">)</span>
+  <span class="kd">@OneToOne</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">UserEntity</span><span class="p">,</span> <span class="nx">user</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">profile</span><span class="p">)</span>
   <span class="nx">user</span>: <span class="kt">UserEntity</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -308,7 +308,7 @@
   <span class="kd">@Column</span><span class="p">()</span>
   <span class="nx">username</span>: <span class="kt">string</span><span class="p">;</span>
 
-  <span class="kd">@OneToMany</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">ArticleEntity</span><span class="p">,</span> <span class="nx">article</span> <span class="o">=&gt;</span> <span class="nx">article</span><span class="p">.</span><span class="nx">author</span><span class="p">)</span>
+  <span class="kd">@OneToMany</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">ArticleEntity</span><span class="p">,</span> <span class="nx">article</span> <span class="o">=&gt;</span> <span class="nx">article</span><span class="p">.</span><span class="nx">author</span><span class="p">)</span>
   <span class="nx">articles</span>: <span class="kt">ArticleEntity</span><span class="p">[];</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -337,7 +337,7 @@
   <span class="kd">@Column</span><span class="p">()</span>
   <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>
 
-  <span class="kd">@ManyToOne</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">UserEntity</span><span class="p">,</span> <span class="nx">user</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">articles</span><span class="p">)</span>
+  <span class="kd">@ManyToOne</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">UserEntity</span><span class="p">,</span> <span class="nx">user</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">articles</span><span class="p">)</span>
   <span class="nx">author</span>: <span class="kt">UserEntity</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -402,7 +402,7 @@
   <span class="kd">@Column</span><span class="p">()</span>
   <span class="nx">username</span>: <span class="kt">string</span><span class="p">;</span>
 
-  <span class="kd">@ManyToMany</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">ArticleEntity</span><span class="p">,</span> <span class="nx">article</span> <span class="o">=&gt;</span> <span class="nx">article</span><span class="p">.</span><span class="nx">favoritedBy</span><span class="p">)</span>
+  <span class="kd">@ManyToMany</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">ArticleEntity</span><span class="p">,</span> <span class="nx">article</span> <span class="o">=&gt;</span> <span class="nx">article</span><span class="p">.</span><span class="nx">favoritedBy</span><span class="p">)</span>
   <span class="nx">favorites</span>: <span class="kt">ArticleEntity</span><span class="p">[];</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -432,7 +432,7 @@
   <span class="kd">@Column</span><span class="p">()</span>
   <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>
 
-  <span class="kd">@ManyToMany</span><span class="p">(</span><span class="nx">type</span> <span class="o">=&gt;</span> <span class="nx">UserEntity</span><span class="p">,</span> <span class="nx">user</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">favorites</span><span class="p">)</span>
+  <span class="kd">@ManyToMany</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">UserEntity</span><span class="p">,</span> <span class="nx">user</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">favorites</span><span class="p">)</span>
   <span class="kd">@JoinTable</span><span class="p">()</span>
   <span class="nx">favoritedBy</span>: <span class="kt">UserEntity</span><span class="p">[];</span>
 <span class="p">}</span>
@@ -502,10 +502,10 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="nx">async</span> <span class="nx">favoriteArticle</span><span class="p">(</span><span class="nx">slug</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">user</span>: <span class="kt">UserEntity</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">article</span> <span class="o">=</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">articleRepo</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">where</span><span class="o">:</span> <span class="p">{</span> <span class="nx">slug</span> <span class="p">}});</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">async</span> <span class="nx">favoriteArticle</span><span class="p">(</span><span class="nx">slug</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">user</span>: <span class="kt">UserEntity</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">article</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">articleRepo</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">where</span><span class="o">:</span> <span class="p">{</span> <span class="nx">slug</span> <span class="p">}});</span>
     <span class="nx">article</span><span class="p">.</span><span class="nx">favoritedBy</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
-    <span class="nx">await</span> <span class="nx">article</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+    <span class="k">await</span> <span class="nx">article</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
     <span class="k">return</span> <span class="nx">article</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -569,7 +569,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="k">if</span> <span class="p">(</span><span class="nx">query</span><span class="p">.</span><span class="nx">author</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">article</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">getRepository</span><span class="p">(</span><span class="nx">ArticleEntity</span><span class="p">)</span>
+    <span class="kr">const</span> <span class="nx">article</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getRepository</span><span class="p">(</span><span class="nx">ArticleEntity</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">createQueryBuilder</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&#34;article.id&#34;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">addSelect</span><span class="p">(</span><span class="s1">&#39;favoritedBy.username&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span>
@@ -616,7 +616,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

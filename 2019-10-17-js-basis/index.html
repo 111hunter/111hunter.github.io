@@ -8,10 +8,10 @@
         <title>JS 闭包写法的演变过程 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="JS 闭包写法的演变过程" />
 <meta property="og:description" content="闭包就是能够读取其他函数内部变量的函数。在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成&quot;定义在" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/2019-10-17-js-basis/" />
-<meta property="og:image" content="http://example.org/logo.png"/>
-<meta property="article:published_time" content="2019-10-07T18:27:34+08:00" />
-<meta property="article:modified_time" content="2019-10-07T18:27:34+08:00" />
+<meta property="og:url" content="http://example.org/2019-10-17-js-basis/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-10-07T18:27:34&#43;08:00" />
+<meta property="article:modified_time" content="2019-10-07T18:27:34&#43;08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2019-10-17-js-basis\/"
-        },"genre": "posts","keywords": "JavaScript","wordcount":  774 ,
+        },"genre": "posts","keywords": "JavaScript","wordcount":  804 ,
         "url": "http:\/\/example.org\/2019-10-17-js-basis\/","datePublished": "2019-10-07T18:27:34+08:00","dateModified": "2019-10-07T18:27:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -102,11 +102,11 @@
 <main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animated flipInX">JS 闭包写法的演变过程</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-07">2019-10-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 774 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-07">2019-10-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 804 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/2019-10-17-js-basis/" class="leancloud_visitors" data-flag-title="JS 闭包写法的演变过程">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
-        </div><div class="content" id="content"><p>闭包就是能够读取其他函数内部变量的函数。在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成&quot;定义在一个函数内部的函数&rdquo;。闭包是将函数内部和函数外部连接起来的桥梁，实现了变量的私有化问题。</p>
+        </div><div class="content" id="content"><p>闭包就是能够读取其他函数内部变量的函数。在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成&quot;定义在一个函数内部的函数&quot;。闭包是将函数内部和函数外部连接起来的桥梁，实现了变量的私有化问题。</p>
 <p>有如下例子，我们想要用一个counter记录add函数的执行次数。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -266,7 +266,7 @@
 </span><span class="c1"></span><span class="nx">plus1</span><span class="p">();</span> <span class="c1">// counter = 2
 </span></code></pre></td></tr></table>
 </div>
-</div><p>闭包实现了变量私有化，局部变量的本质，全局变量的生命周期。</p>
+</div><p>闭包实现了变量私有化，局部变量的本质，全局变量的生命周期。闭包本质是利用作用域链，即当前环境中存在指向父级作用域的引用。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -299,7 +299,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

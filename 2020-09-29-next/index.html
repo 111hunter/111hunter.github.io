@@ -8,10 +8,10 @@
         <title>Next.js 概览 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="Next.js 概览" />
 <meta property="og:description" content="我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/2020-09-29-next/" />
-<meta property="og:image" content="http://example.org/logo.png"/>
-<meta property="article:published_time" content="2020-09-29T23:30:00+08:00" />
-<meta property="article:modified_time" content="2020-09-29T23:30:00+08:00" />
+<meta property="og:url" content="http://example.org/2020-09-29-next/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-29T23:30:00&#43;08:00" />
+<meta property="article:modified_time" content="2020-09-29T23:30:00&#43;08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
@@ -358,10 +358,10 @@
 <span class="p">}</span>
 
 <span class="c1">// 在每次页面请求时才会运行，在构建时不运行。
-</span><span class="c1"></span><span class="kr">export</span> <span class="nx">async</span> <span class="kd">function</span> <span class="nx">getServerSideProps</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="kr">export</span> <span class="kr">async</span> <span class="kd">function</span> <span class="nx">getServerSideProps</span><span class="p">()</span> <span class="p">{</span>
 
-  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://jsonplaceholder.typicode.com/todos/1&#39;</span><span class="p">)</span>
-  <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://jsonplaceholder.typicode.com/todos/1&#39;</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
 
   <span class="k">return</span> <span class="p">{</span> <span class="nx">props</span><span class="o">:</span> <span class="p">{</span><span class="nx">data</span><span class="p">}</span> <span class="p">}</span>
 <span class="p">}</span>
@@ -402,11 +402,11 @@
 <span class="p">}</span>
 
 <span class="c1">// 此函数只在构建时被调用一次，后面不会再次调用
-</span><span class="c1"></span><span class="kr">export</span> <span class="nx">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="kr">export</span> <span class="kr">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">()</span> <span class="p">{</span>
 
   <span class="c1">// 调用外部 API 获取内容
-</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://jsonplaceholder.typicode.com/todos/1&#39;</span><span class="p">)</span>
-  <span class="kr">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://jsonplaceholder.typicode.com/todos/1&#39;</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
 
   <span class="c1">// 在构建时将接收到 `posts` 参数
 </span><span class="c1"></span>  <span class="k">return</span> <span class="p">{</span>
@@ -453,19 +453,19 @@
   <span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">// 此函数只在构建时被调用一次，后面不会再次调用
-</span><span class="c1"></span><span class="kr">export</span> <span class="nx">async</span> <span class="kd">function</span> <span class="nx">getStaticPaths</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="kr">export</span> <span class="kr">async</span> <span class="kd">function</span> <span class="nx">getStaticPaths</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// 取全部文章数据
-</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://jsonplaceholder.typicode.com/todos&#39;</span><span class="p">)</span>
-  <span class="kr">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://jsonplaceholder.typicode.com/todos&#39;</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
   <span class="kr">const</span> <span class="nx">paths</span> <span class="o">=</span> <span class="nx">posts</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">post</span> <span class="p">=&gt;</span> <span class="sb">`/posts/</span><span class="si">${</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
   <span class="c1">// fallback为 false，表示不在 getStaticPaths 的路径是 404 页面。
 </span><span class="c1"></span>  <span class="k">return</span> <span class="p">{</span> <span class="nx">paths</span><span class="p">,</span> <span class="nx">fallback</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}</span>
 <span class="p">}</span>
 <span class="c1">// params 来自 paths: [{ params: { ... } }]
-</span><span class="c1"></span><span class="kr">export</span> <span class="nx">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">({</span> <span class="nx">params</span> <span class="p">})</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="kr">export</span> <span class="kr">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">({</span> <span class="nx">params</span> <span class="p">})</span> <span class="p">{</span>
   <span class="c1">// 取具体文章数据
-</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="sb">`https://jsonplaceholder.typicode.com/todos/</span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
-  <span class="kr">const</span> <span class="nx">post</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="sb">`https://jsonplaceholder.typicode.com/todos/</span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="nx">post</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
   <span class="k">return</span> <span class="p">{</span> <span class="nx">props</span><span class="o">:</span> <span class="p">{</span> <span class="nx">post</span> <span class="p">}</span> <span class="p">}</span>
 <span class="p">}</span>
 <span class="kr">export</span> <span class="k">default</span> <span class="nx">Post</span>
@@ -613,8 +613,8 @@
 </span><span class="c1"></span>
 <span class="kr">import</span> <span class="p">{</span><span class="nx">getPosts</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;lib/posts&#39;</span>
 
-<span class="kr">const</span> <span class="nx">Posts</span> <span class="o">=</span> <span class="nx">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">getPosts</span><span class="p">()</span>
+<span class="kr">const</span> <span class="nx">Posts</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">getPosts</span><span class="p">()</span>
   <span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">=</span> <span class="mi">200</span>
   <span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
   <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">posts</span><span class="p">))</span>
@@ -662,7 +662,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

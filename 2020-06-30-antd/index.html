@@ -8,10 +8,10 @@
         <title>antd &#43; TS 的简单 demo - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="antd &#43; TS 的简单 demo" />
 <meta property="og:description" content="这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/2020-06-30-antd/" />
-<meta property="og:image" content="http://example.org/logo.png"/>
-<meta property="article:published_time" content="2020-06-30T00:15:00+08:00" />
-<meta property="article:modified_time" content="2020-07-23T00:15:00+08:00" />
+<meta property="og:url" content="http://example.org/2020-06-30-antd/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-30T00:15:00&#43;08:00" />
+<meta property="article:modified_time" content="2020-07-23T00:15:00&#43;08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
@@ -207,11 +207,11 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// Todo.ts
 </span><span class="c1"></span>
-<span class="kr">const</span> <span class="nx">onShowModal</span> <span class="o">=</span> <span class="p">(</span><span class="nx">type</span>: <span class="kt">ModalType</span><span class="p">,</span> <span class="nx">id?</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">===</span> <span class="nx">ModalType</span><span class="p">.</span><span class="nx">Add</span><span class="p">)</span> <span class="p">{</span>
+<span class="kr">const</span> <span class="nx">onShowModal</span> <span class="o">=</span> <span class="p">(</span><span class="kr">type</span><span class="o">:</span> <span class="nx">ModalType</span><span class="p">,</span> <span class="nx">id?</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">type</span> <span class="o">===</span> <span class="nx">ModalType</span><span class="p">.</span><span class="nx">Add</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">setModalTitle</span><span class="p">(</span><span class="s1">&#39;添加任务&#39;</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">===</span> <span class="nx">ModalType</span><span class="p">.</span><span class="nx">Edit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">type</span> <span class="o">===</span> <span class="nx">ModalType</span><span class="p">.</span><span class="nx">Edit</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">setModalTitle</span><span class="p">(</span><span class="s1">&#39;编辑任务&#39;</span><span class="p">);</span>
         <span class="nx">setTodoId</span><span class="p">(</span><span class="nx">id</span><span class="o">!</span><span class="p">);</span> <span class="c1">//记录 TodoList 组件传递的 todoId
 </span><span class="c1"></span>    <span class="p">}</span>
@@ -233,11 +233,11 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">//Todo.ts
 </span><span class="c1"></span>
-<span class="o">&lt;</span><span class="nx">Button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;primary&#34;</span>
-    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">newTodo</span><span class="p">}</span>
-    <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">onShowModal</span><span class="p">(</span><span class="nx">ModalType</span><span class="p">.</span><span class="nx">Add</span><span class="p">)}</span><span class="o">&gt;</span>
+<span class="p">&lt;</span><span class="nt">Button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;primary&#34;</span>
+    <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">newTodo</span><span class="p">}</span>
+    <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">onShowModal</span><span class="p">(</span><span class="nx">ModalType</span><span class="p">.</span><span class="nx">Add</span><span class="p">)}&gt;</span>
     <span class="err">添加</span>
-<span class="o">&lt;</span><span class="err">/Button&gt;</span>
+<span class="p">&lt;/</span><span class="nt">Button</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>在 Todo 组件点击添加按钮时，显示对话框组件，提交表单时用内部实现的 itemId 作为 todo.id：</p>
@@ -265,7 +265,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// ModalForm.ts
 </span><span class="c1"></span>
-<span class="kr">const</span> <span class="nx">ModalForm</span>: <span class="kt">FC</span><span class="o">&lt;</span><span class="nx">IModalFormProps</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="kr">const</span> <span class="nx">ModalForm</span>: <span class="kt">FC</span><span class="p">&lt;</span><span class="nt">IModalFormProps</span><span class="p">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
     <span class="kr">const</span> <span class="p">{</span> <span class="nx">visible</span><span class="p">,</span> <span class="nx">onClose</span><span class="p">,</span> <span class="nx">addTodo</span><span class="p">,</span> <span class="nx">modalTitle</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
 
@@ -319,10 +319,10 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// TodoList.ts
 </span><span class="c1"></span>
-<span class="o">&lt;</span><span class="nx">EditOutlined</span>
-    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">icon</span><span class="p">}</span>
-    <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">onShowModal</span><span class="p">(</span><span class="nx">ModalType</span><span class="p">.</span><span class="nx">Edit</span><span class="p">,</span> <span class="nx">todo</span><span class="p">.</span><span class="nx">id</span><span class="p">)}</span>
-<span class="err">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">EditOutlined</span>
+    <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">icon</span><span class="p">}</span>
+    <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">onShowModal</span><span class="p">(</span><span class="nx">ModalType</span><span class="p">.</span><span class="nx">Edit</span><span class="p">,</span> <span class="nx">todo</span><span class="p">.</span><span class="nx">id</span><span class="p">)}</span>
+<span class="p">/&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>在弹出编辑对话框之前，Todo 组件将已经获取到 todoId 传递给对话框组件:</p>
@@ -342,14 +342,14 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// Todo.ts
 </span><span class="c1"></span>
-<span class="o">&lt;</span><span class="nx">ModalForm</span>
-    <span class="nx">modalTitle</span><span class="o">=</span><span class="p">{</span><span class="nx">modalTitle</span><span class="p">}</span>
-    <span class="nx">todoId</span><span class="o">=</span><span class="p">{</span><span class="nx">todoId</span><span class="p">}</span>
-    <span class="nx">visible</span><span class="o">=</span><span class="p">{</span><span class="nx">showModal</span><span class="p">}</span>
-    <span class="nx">onClose</span><span class="o">=</span><span class="p">{</span><span class="nx">onClose</span><span class="p">}</span>
-    <span class="nx">addTodo</span><span class="o">=</span><span class="p">{</span><span class="nx">addTodo</span><span class="p">}</span>
-    <span class="nx">updateText</span><span class="o">=</span><span class="p">{</span><span class="nx">updateText</span><span class="p">}</span>
-<span class="err">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">ModalForm</span>
+    <span class="na">modalTitle</span><span class="o">=</span><span class="p">{</span><span class="nx">modalTitle</span><span class="p">}</span>
+    <span class="na">todoId</span><span class="o">=</span><span class="p">{</span><span class="nx">todoId</span><span class="p">}</span>
+    <span class="na">visible</span><span class="o">=</span><span class="p">{</span><span class="nx">showModal</span><span class="p">}</span>
+    <span class="na">onClose</span><span class="o">=</span><span class="p">{</span><span class="nx">onClose</span><span class="p">}</span>
+    <span class="na">addTodo</span><span class="o">=</span><span class="p">{</span><span class="nx">addTodo</span><span class="p">}</span>
+    <span class="na">updateText</span><span class="o">=</span><span class="p">{</span><span class="nx">updateText</span><span class="p">}</span>
+<span class="p">/&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>得到 todoId 就能在对话框提交时更新 todo 了，对话框组件中完善提交表单方法:</p>
@@ -402,7 +402,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">//Todo.ts
 </span><span class="c1"></span>
-<span class="kr">const</span> <span class="p">[</span><span class="nx">lists</span><span class="p">,</span> <span class="nx">setlists</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="nx">ITodo</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">([]);</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">lists</span><span class="p">,</span> <span class="nx">setlists</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">&lt;</span><span class="nt">ITodo</span><span class="err">[]</span><span class="p">&gt;([]);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>接下来实现列表的增删改查：</p>
@@ -559,16 +559,16 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">//Todo.ts
 </span><span class="c1"></span>
-<span class="o">&lt;</span><span class="nx">Tabs</span> <span class="nx">defaultActiveKey</span><span class="o">=</span><span class="s2">&#34;1&#34;</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;large&#34;</span><span class="p">}</span><span class="o">&gt;</span>
-	<span class="o">&lt;</span><span class="nx">TabPane</span> <span class="nx">tab</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">Badge</span> <span class="nx">status</span><span class="o">=</span><span class="s2">&#34;warning&#34;</span> <span class="nx">text</span><span class="o">=</span><span class="s2">&#34;待办项&#34;</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&#34;1&#34;</span><span class="o">&gt;</span>
-		<span class="o">&lt;</span><span class="nx">TodoList</span>
-			<span class="nx">lists</span><span class="o">=</span><span class="p">{</span><span class="nx">getFilter</span><span class="p">(</span><span class="nx">todoList</span><span class="p">,</span> <span class="nx">searchText</span><span class="p">)}</span>
-			<span class="nx">updateText</span><span class="o">=</span><span class="p">{</span><span class="nx">updateText</span><span class="p">}</span>
-			<span class="nx">toggleDone</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleDone</span><span class="p">}</span>
-			<span class="nx">deleteTodo</span><span class="o">=</span><span class="p">{</span><span class="nx">deleteTodo</span><span class="p">}</span>
-			<span class="nx">onShowModal</span><span class="o">=</span><span class="p">{</span><span class="nx">onShowModal</span><span class="p">}</span><span class="o">/&gt;</span>
-	<span class="o">&lt;</span><span class="err">/TabPane&gt;</span>
-<span class="o">&lt;</span><span class="err">/Tabs&gt;</span>
+<span class="p">&lt;</span><span class="nt">Tabs</span> <span class="na">defaultActiveKey</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="na">size</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;large&#34;</span><span class="p">}&gt;</span>
+	<span class="p">&lt;</span><span class="nt">TabPane</span> <span class="na">tab</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Badge</span> <span class="na">status</span><span class="o">=</span><span class="s">&#34;warning&#34;</span> <span class="na">text</span><span class="o">=</span><span class="s">&#34;待办项&#34;</span> <span class="p">/&gt;}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">TodoList</span>
+			<span class="na">lists</span><span class="o">=</span><span class="p">{</span><span class="nx">getFilter</span><span class="p">(</span><span class="nx">todoList</span><span class="p">,</span> <span class="nx">searchText</span><span class="p">)}</span>
+			<span class="na">updateText</span><span class="o">=</span><span class="p">{</span><span class="nx">updateText</span><span class="p">}</span>
+			<span class="na">toggleDone</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleDone</span><span class="p">}</span>
+			<span class="na">deleteTodo</span><span class="o">=</span><span class="p">{</span><span class="nx">deleteTodo</span><span class="p">}</span>
+			<span class="na">onShowModal</span><span class="o">=</span><span class="p">{</span><span class="nx">onShowModal</span><span class="p">}/&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">TabPane</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">Tabs</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>上面是待办项列表的数据传递，如果是已完成或清单组件，只需将 getFilter 的第一个参数替换为 doneList 或 lists，所有功能就完成了。</p>
@@ -606,7 +606,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

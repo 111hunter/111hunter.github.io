@@ -8,10 +8,10 @@
         <title>NestJS &#43; Passport 实现鉴权认证 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="NestJS &#43; Passport 实现鉴权认证" />
 <meta property="og:description" content="鉴权(authentication)是指验证用户是否拥有访问系统的权利。传统的鉴权是通过密码来验证的。这种方式的前提是，每个获得密码的用户都" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/2020-03-29-nest-auth/" />
-<meta property="og:image" content="http://example.org/logo.png"/>
-<meta property="article:published_time" content="2020-03-29T10:24:40+08:00" />
-<meta property="article:modified_time" content="2020-03-29T10:24:40+08:00" />
+<meta property="og:url" content="http://example.org/2020-03-29-nest-auth/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-03-29T10:24:40&#43;08:00" />
+<meta property="article:modified_time" content="2020-03-29T10:24:40&#43;08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
@@ -150,8 +150,8 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">BeforeInsert</span><span class="p">,</span> <span class="nx">Column</span><span class="p">,</span> <span class="nx">Entity</span><span class="p">,</span> <span class="nx">PrimaryGeneratedColumn</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;typeorm&#39;</span>
-<span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">bcrypt</span> <span class="nx">from</span> <span class="s1">&#39;bcryptjs&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">BeforeInsert</span><span class="p">,</span> <span class="nx">Column</span><span class="p">,</span> <span class="nx">Entity</span><span class="p">,</span> <span class="nx">PrimaryGeneratedColumn</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;typeorm&#39;</span>
+<span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">bcrypt</span> <span class="kr">from</span> <span class="s1">&#39;bcryptjs&#39;</span><span class="p">;</span>
 
 <span class="kd">@Entity</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">)</span>
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserEntity</span> <span class="p">{</span>
@@ -165,8 +165,8 @@
     <span class="nx">password</span>: <span class="kt">string</span>
 
     <span class="kd">@BeforeInsert</span><span class="p">()</span>
-    <span class="nx">async</span> <span class="nx">hashPassword() {</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">hash</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">password</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="kr">async</span> <span class="nx">hashPassword() {</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">hash</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">password</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -225,18 +225,18 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">IsString</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;class-validator&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">ApiProperty</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/swagger&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">IsString</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;class-validator&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ApiProperty</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/swagger&#39;</span><span class="p">;</span>
 
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserDto</span> <span class="p">{</span>
 
     <span class="kd">@ApiProperty</span><span class="p">()</span>
     <span class="kd">@IsString</span><span class="p">()</span>
-    <span class="nx">readonly</span> <span class="nx">username</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="kr">readonly</span> <span class="nx">username</span>: <span class="kt">string</span><span class="p">;</span>
 
     <span class="kd">@ApiProperty</span><span class="p">()</span>
     <span class="kd">@IsString</span><span class="p">()</span>
-    <span class="nx">readonly</span> <span class="nx">password</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="kr">readonly</span> <span class="nx">password</span>: <span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -272,31 +272,31 @@
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">InjectRepository</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/typeorm&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserEntity</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user.entity&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Repository</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;typeorm&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserDto</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./user.dto&#39;</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">InjectRepository</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/typeorm&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserEntity</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./user.entity&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Repository</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;typeorm&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserDto</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./user.dto&#39;</span>
 
 <span class="kd">@Injectable</span><span class="p">()</span>
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserService</span> <span class="p">{</span>
     <span class="kr">constructor</span><span class="p">(</span>
         <span class="kd">@InjectRepository</span><span class="p">(</span><span class="nx">UserEntity</span><span class="p">)</span>
-        <span class="kr">private</span> <span class="nx">readonly</span> <span class="nx">userRepository</span>: <span class="kt">Repository</span><span class="o">&lt;</span><span class="nx">UserEntity</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">userRepository</span>: <span class="kt">Repository</span><span class="p">&lt;</span><span class="nt">UserEntity</span><span class="p">&gt;,</span>
     <span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 
-    <span class="nx">async</span> <span class="nx">createUser</span><span class="p">(</span><span class="nx">userDto</span>: <span class="kt">UserDto</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">async</span> <span class="nx">createUser</span><span class="p">(</span><span class="nx">userDto</span>: <span class="kt">UserDto</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// const user = Object.assign(new UserEntity(), userDto)
 </span><span class="c1"></span>        <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">userDto</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="nx">async</span> <span class="nx">findUsername</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">async</span> <span class="nx">findUsername</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">where</span><span class="o">:</span> <span class="p">{</span> <span class="nx">username</span> <span class="p">}</span> <span class="p">})</span>
     <span class="p">}</span>
 
-    <span class="nx">async</span> <span class="nx">findAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">UserEntity</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
+    <span class="kr">async</span> <span class="nx">findAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">UserEntity</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -340,20 +340,20 @@ yarn add -D @types/passport-local
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">UnauthorizedException</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">PassportStrategy</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/passport&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Strategy</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;passport-local&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./auth.service&#39;</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">UnauthorizedException</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">PassportStrategy</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/passport&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Strategy</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;passport-local&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./auth.service&#39;</span>
 
 
 <span class="kd">@Injectable</span><span class="p">()</span>
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">LocalStrategy</span> <span class="kr">extends</span> <span class="nx">PassportStrategy</span><span class="p">(</span><span class="nx">Strategy</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">readonly</span> <span class="nx">authService</span>: <span class="kt">AuthService</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">authService</span>: <span class="kt">AuthService</span><span class="p">)</span> <span class="p">{</span>
         <span class="kr">super</span><span class="p">()</span>
     <span class="p">}</span>
 
-    <span class="nx">async</span> <span class="nx">validate</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">password</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">validateUser</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="nx">password</span><span class="p">)</span>
+    <span class="kr">async</span> <span class="nx">validate</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">password</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">validateUser</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="nx">password</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="nx">UnauthorizedException</span><span class="p">()</span>
         <span class="p">}</span>
@@ -384,8 +384,8 @@ yarn add -D @types/passport-local
 </span><span class="c1"></span>
 <span class="p">...</span>
 
-    <span class="nx">async</span> <span class="nx">validateUser</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">pass</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
+    <span class="kr">async</span> <span class="nx">validateUser</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">pass</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;-----------Login-----------&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">user</span> <span class="o">&amp;&amp;</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">compareSync</span><span class="p">(</span><span class="nx">pass</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">password</span><span class="p">))</span> <span class="p">{</span>
             <span class="k">return</span> <span class="nx">user</span><span class="p">;</span>
@@ -437,40 +437,40 @@ yarn add -D @types/passport-local
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">UserDto</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./../user/user.dto&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Body</span><span class="p">,</span> <span class="nx">Controller</span><span class="p">,</span> <span class="nx">Get</span><span class="p">,</span> <span class="nx">Post</span><span class="p">,</span> <span class="nx">UseGuards</span><span class="p">,</span> <span class="nx">Res</span><span class="p">,</span> <span class="nx">Request</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthGuard</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/passport&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">ApiTags</span><span class="p">,</span> <span class="nx">ApiBearerAuth</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/swagger&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;src/auth/auth.service&#39;</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">UserDto</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./../user/user.dto&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Body</span><span class="p">,</span> <span class="nx">Controller</span><span class="p">,</span> <span class="nx">Get</span><span class="p">,</span> <span class="nx">Post</span><span class="p">,</span> <span class="nx">UseGuards</span><span class="p">,</span> <span class="nx">Res</span><span class="p">,</span> <span class="nx">Request</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthGuard</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/passport&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ApiTags</span><span class="p">,</span> <span class="nx">ApiBearerAuth</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/swagger&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;src/auth/auth.service&#39;</span>
 
 <span class="kd">@ApiBearerAuth</span><span class="p">()</span>
 <span class="kd">@ApiTags</span><span class="p">(</span><span class="s1">&#39;Auth&#39;</span><span class="p">)</span>
 <span class="kd">@Controller</span><span class="p">(</span><span class="s1">&#39;auth&#39;</span><span class="p">)</span>
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">AuthController</span> <span class="p">{</span>
     <span class="kr">constructor</span><span class="p">(</span>
-        <span class="kr">private</span> <span class="nx">readonly</span> <span class="nx">authService</span>: <span class="kt">AuthService</span><span class="p">,</span>
+        <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">authService</span>: <span class="kt">AuthService</span><span class="p">,</span>
     <span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 
     <span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">(</span><span class="s1">&#39;jwt&#39;</span><span class="p">))</span>
     <span class="kd">@Get</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">)</span>
-    <span class="nx">async</span> <span class="nx">findAll</span><span class="p">(</span><span class="kd">@Request</span><span class="p">()</span> <span class="nx">req</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kr">async</span> <span class="nx">findAll</span><span class="p">(</span><span class="kd">@Request</span><span class="p">()</span> <span class="nx">req</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;--------------Auth--Success---------------&#39;</span><span class="p">)</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
     <span class="p">}</span>
 
     <span class="kd">@Post</span><span class="p">(</span><span class="s1">&#39;signUp&#39;</span><span class="p">)</span>
-    <span class="nx">async</span> <span class="nx">register</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="nx">req</span>: <span class="kt">UserDto</span><span class="p">,</span> <span class="kd">@Res</span><span class="p">()</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
+    <span class="kr">async</span> <span class="nx">register</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="nx">req</span>: <span class="kt">UserDto</span><span class="p">,</span> <span class="kd">@Res</span><span class="p">()</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
         <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">(</span><span class="s1">&#39;local&#39;</span><span class="p">))</span>
     <span class="kd">@Post</span><span class="p">(</span><span class="s1">&#39;signIn&#39;</span><span class="p">)</span>
-    <span class="nx">async</span> <span class="nx">login</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="kd">@Request</span><span class="p">()</span> <span class="nx">req</span>: <span class="kt">UserDto</span><span class="p">,</span> <span class="kd">@Res</span><span class="p">()</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">async</span> <span class="nx">login</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="kd">@Request</span><span class="p">()</span> <span class="nx">req</span>: <span class="kt">UserDto</span><span class="p">,</span> <span class="kd">@Res</span><span class="p">()</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;----------Login--Success-----------&#39;</span><span class="p">)</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
-        <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
+        <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
         <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -543,25 +543,25 @@ yarn add -D @types/passport-local
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// auth.service.ts
 </span><span class="c1"></span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">BadRequestException</span><span class="p">,</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Body</span><span class="p">,</span> <span class="nx">Request</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../user/user.service&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">JwtService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/jwt&#39;</span>
-<span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">bcrypt</span> <span class="nx">from</span> <span class="s1">&#39;bcryptjs&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">BadRequestException</span><span class="p">,</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Body</span><span class="p">,</span> <span class="nx">Request</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;../user/user.service&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">JwtService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/jwt&#39;</span>
+<span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">bcrypt</span> <span class="kr">from</span> <span class="s1">&#39;bcryptjs&#39;</span><span class="p">;</span>
 
 <span class="kd">@Injectable</span><span class="p">()</span>
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">AuthService</span> <span class="p">{</span>
 
     <span class="kr">constructor</span><span class="p">(</span>
-        <span class="kr">private</span> <span class="nx">readonly</span> <span class="nx">userService</span>: <span class="kt">UserService</span><span class="p">,</span>
-        <span class="kr">private</span> <span class="nx">readonly</span> <span class="nx">jwtService</span>: <span class="kt">JwtService</span><span class="p">,</span>
+        <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">userService</span>: <span class="kt">UserService</span><span class="p">,</span>
+        <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">jwtService</span>: <span class="kt">JwtService</span><span class="p">,</span>
     <span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 
-    <span class="nx">async</span> <span class="nx">findAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
+    <span class="kr">async</span> <span class="nx">findAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="nx">async</span> <span class="nx">validateUser</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">pass</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
+    <span class="kr">async</span> <span class="nx">validateUser</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">pass</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;-----------Login-----------&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">user</span> <span class="o">&amp;&amp;</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">compareSync</span><span class="p">(</span><span class="nx">pass</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">password</span><span class="p">))</span> <span class="p">{</span>
             <span class="k">return</span> <span class="nx">user</span><span class="p">;</span>
@@ -569,21 +569,21 @@ yarn add -D @types/passport-local
         <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="nx">async</span> <span class="nx">register</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">async</span> <span class="nx">register</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">let</span> <span class="nx">userData</span>: <span class="kt">any</span><span class="p">;</span>
-        <span class="nx">userData</span> <span class="o">=</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
+        <span class="nx">userData</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">userData</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="p">{</span> <span class="nx">statusCode</span>: <span class="kt">400</span><span class="p">,</span> <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;This username aleady exists&#39;</span> <span class="p">};</span>
         <span class="p">}</span>
-        <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">createUser</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
-        <span class="nx">userData</span> <span class="o">=</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
+        <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">createUser</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+        <span class="nx">userData</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="nx">username</span>: <span class="kt">userData.username</span><span class="p">,</span>
             <span class="nx">statusCode</span>: <span class="kt">201</span>
         <span class="p">};</span>
     <span class="p">}</span>
 
-    <span class="nx">async</span> <span class="nx">login</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">async</span> <span class="nx">login</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">userData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
             <span class="kr">const</span> <span class="nx">Token</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">createToken</span><span class="p">(</span><span class="nx">userData</span><span class="p">);</span>
             <span class="k">return</span> <span class="p">{</span>
@@ -671,10 +671,10 @@ yarn add -D @types/passport-jwt
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">PassportStrategy</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@nestjs/passport&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">ExtractJwt</span><span class="p">,</span> <span class="nx">Strategy</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;passport-jwt&#39;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">JWT_SECRET</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;config&#39;</span>
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">PassportStrategy</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/passport&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ExtractJwt</span><span class="p">,</span> <span class="nx">Strategy</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;passport-jwt&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">JWT_SECRET</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;config&#39;</span>
 
 <span class="kd">@Injectable</span><span class="p">()</span>
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">JwtStrategy</span> <span class="kr">extends</span> <span class="nx">PassportStrategy</span><span class="p">(</span><span class="nx">Strategy</span><span class="p">)</span> <span class="p">{</span>
@@ -686,7 +686,7 @@ yarn add -D @types/passport-jwt
         <span class="p">})</span>
     <span class="p">}</span>
 
-    <span class="nx">async</span> <span class="nx">validate</span><span class="p">(</span><span class="nx">payload</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">async</span> <span class="nx">validate</span><span class="p">(</span><span class="nx">payload</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">{</span> <span class="nx">userId</span>: <span class="kt">payload.sub</span><span class="p">,</span> <span class="nx">username</span>: <span class="kt">payload.username</span> <span class="p">};</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -711,10 +711,10 @@ yarn add -D @types/passport-jwt
 </span><span class="c1"></span>
     <span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">(</span><span class="s1">&#39;jwt&#39;</span><span class="p">))</span>
     <span class="kd">@Get</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">)</span>
-    <span class="nx">async</span> <span class="nx">findAll</span><span class="p">(</span><span class="kd">@Request</span><span class="p">()</span> <span class="nx">req</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kr">async</span> <span class="nx">findAll</span><span class="p">(</span><span class="kd">@Request</span><span class="p">()</span> <span class="nx">req</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;--------------Auth--Success---------------&#39;</span><span class="p">)</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
     <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -799,7 +799,7 @@ yarn add -D @types/passport-jwt
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

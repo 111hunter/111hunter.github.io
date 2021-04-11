@@ -8,10 +8,10 @@
         <title>Context &#43; Hooks：状态管理新方案 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="Context &#43; Hooks：状态管理新方案" />
 <meta property="og:description" content="React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 React 组件分为两类，class 组件和函数" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/2020-05-07-react-hooks-state/" />
-<meta property="og:image" content="http://example.org/logo.png"/>
-<meta property="article:published_time" content="2020-05-07T16:46:30+08:00" />
-<meta property="article:modified_time" content="2020-05-07T16:46:30+08:00" />
+<meta property="og:url" content="http://example.org/2020-05-07-react-hooks-state/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-05-07T16:46:30&#43;08:00" />
+<meta property="article:modified_time" content="2020-05-07T16:46:30&#43;08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
@@ -832,9 +832,9 @@ react官网示例：</p>
 <span class="kr">export</span> <span class="kr">const</span> <span class="nx">StoreProvider</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">children</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useReducer</span><span class="p">(</span><span class="nx">reducer</span><span class="p">,</span> <span class="nx">initialState</span><span class="p">);</span>
     <span class="k">return</span> <span class="p">(</span>
-        <span class="p">&lt;</span><span class="nt">StoreContext</span><span class="na">.Provider</span> <span class="na">value</span><span class="o">=</span><span class="p">{{</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span> <span class="p">}}&gt;</span>
+        <span class="p">&lt;</span><span class="nt">StoreContext.Provider</span> <span class="na">value</span><span class="o">=</span><span class="p">{{</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span> <span class="p">}}&gt;</span>
             <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-        <span class="o">&lt;</span><span class="err">/StoreContext.Provider&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">StoreContext.Provider</span><span class="p">&gt;</span>
     <span class="p">)</span>
 <span class="p">}</span>
 
@@ -1053,7 +1053,7 @@ react官网示例：</p>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
