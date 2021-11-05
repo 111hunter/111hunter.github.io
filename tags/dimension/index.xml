@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Dimension - 标签 - 浮槎的博客</title>
+        <link>http://example.org/tags/dimension/</link>
+        <description>Dimension - 标签 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 05 Nov 2021 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/dimension/" rel="self" type="application/rss+xml" /><item>
+    <title>多维感知能力</title>
+    <link>http://example.org/2021-11-05-dimension/</link>
+    <pubDate>Fri, 05 Nov 2021 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-11-05-dimension/</guid>
+    <description><![CDATA[亚特兰蒂斯的灾难，导致将“阿蒙提球体”封印在仙女座行星核心的封印被解除，阿蒙提球体提前向地球下降。这不仅使得地球栅格未准备好去持有球体的能量]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Blockchain - 标签 - 浮槎的博客</title>
+        <link>http://example.org/tags/blockchain/</link>
+        <description>Blockchain - 标签 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 May 2021 19:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/blockchain/" rel="self" type="application/rss+xml" /><item>
+    <title>单机版区块链</title>
+    <link>http://example.org/2021-05-25-blockchain/</link>
+    <pubDate>Tue, 25 May 2021 19:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-05-25-blockchain/</guid>
+    <description><![CDATA[区块链是一个分布式数据库，任何人都可以读取的它的区块数据。区块链是不可变的，意味着一旦将区块添加到链中，就只能在使链的其余部分无效的情况下才]]></description>
+</item></channel>
+</rss>

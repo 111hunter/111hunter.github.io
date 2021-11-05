@@ -3,7 +3,21 @@
         <title>所有文章 - 浮槎的博客</title>
         <link>http://example.org/posts/</link>
         <description>所有文章 | 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 02 May 2021 11:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 05 Nov 2021 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>多维感知能力</title>
+    <link>http://example.org/2021-11-05-dimension/</link>
+    <pubDate>Fri, 05 Nov 2021 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-11-05-dimension/</guid>
+    <description><![CDATA[亚特兰蒂斯的灾难，导致将“阿蒙提球体”封印在仙女座行星核心的封印被解除，阿蒙提球体提前向地球下降。这不仅使得地球栅格未准备好去持有球体的能量]]></description>
+</item><item>
+    <title>单机版区块链</title>
+    <link>http://example.org/2021-05-25-blockchain/</link>
+    <pubDate>Tue, 25 May 2021 19:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-05-25-blockchain/</guid>
+    <description><![CDATA[区块链是一个分布式数据库，任何人都可以读取的它的区块数据。区块链是不可变的，意味着一旦将区块添加到链中，就只能在使链的其余部分无效的情况下才]]></description>
+</item><item>
     <title>Docker 极速入门</title>
     <link>http://example.org/2021-05-02-docker/</link>
     <pubDate>Sun, 02 May 2021 11:50:34 &#43;0800</pubDate>
@@ -59,19 +73,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-11-26-%CE%BB-calculus/</guid>
     <description><![CDATA[由邱奇创造的 λ 演算(λ-calculus) 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boo]]></description>
-</item><item>
-    <title>图灵机的极简实现</title>
-    <link>http://example.org/2020-11-17-brainfuck/</link>
-    <pubDate>Tue, 17 Nov 2020 22:00:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-11-17-brainfuck/</guid>
-    <description><![CDATA[图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终]]></description>
-</item><item>
-    <title>自我指涉与数理逻辑</title>
-    <link>http://example.org/2020-11-16-self-ref/</link>
-    <pubDate>Mon, 16 Nov 2020 00:27:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-11-16-self-ref/</guid>
-    <description><![CDATA[“我是谁？”，这种对指代自身的疑问每个人都会有。在自然语言和形式语言中，如果一个句子直接或间接提及自身，就称为自指(Self-referen]]></description>
 </item></channel>
 </rss>
