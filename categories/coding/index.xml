@@ -3,7 +3,14 @@
         <title>Coding - 分类 - 浮槎的博客</title>
         <link>http://example.org/categories/coding/</link>
         <description>Coding - 分类 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/coding/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 02 May 2021 11:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/coding/" rel="self" type="application/rss+xml" /><item>
+    <title>Docker 极速入门</title>
+    <link>http://example.org/2021-05-02-docker/</link>
+    <pubDate>Sun, 02 May 2021 11:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-05-02-docker/</guid>
+    <description><![CDATA[Docker 包括三个基本概念: Image(镜像)、Container(容器)、Repository(仓库)，理解了这三个概念，就理解了 Docker 的整个生命周期]]></description>
+</item><item>
     <title>[译]元编程</title>
     <link>http://example.org/2021-01-21-metaprogram/</link>
     <pubDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-08-11-websocket/</guid>
     <description><![CDATA[WebSocket 是一种服务端和客户端之间的双向通信协议，和 HTTP 一样是基于 TCP 协议的应用层协议，并且 WebSocket 在握手阶段依赖于 HTTP 连接。 WebSocket 广泛应用于多用户实时交流，服务端]]></description>
-</item><item>
-    <title>Recoil 基础</title>
-    <link>http://example.org/2020-07-27-recoil/</link>
-    <pubDate>Mon, 27 Jul 2020 22:26:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-07-27-recoil/</guid>
-    <description><![CDATA[最近，Facebook 官方开源了一个状态管理库 Recoil，我们来学习一下。Recoil 是基于 Immutable 的数据流管理方案，这是它值得学习的重要原因。]]></description>
 </item></channel>
 </rss>

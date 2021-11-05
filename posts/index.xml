@@ -3,7 +3,14 @@
         <title>所有文章 - 浮槎的博客</title>
         <link>http://example.org/posts/</link>
         <description>所有文章 | 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 02 May 2021 11:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Docker 极速入门</title>
+    <link>http://example.org/2021-05-02-docker/</link>
+    <pubDate>Sun, 02 May 2021 11:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-05-02-docker/</guid>
+    <description><![CDATA[Docker 包括三个基本概念: Image(镜像)、Container(容器)、Repository(仓库)，理解了这三个概念，就理解了 Docker 的整个生命周期]]></description>
+</item><item>
     <title>一些通用计算模型</title>
     <link>http://example.org/2021-01-30-tag-system/</link>
     <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-11-16-self-ref/</guid>
     <description><![CDATA[“我是谁？”，这种对指代自身的疑问每个人都会有。在自然语言和形式语言中，如果一个句子直接或间接提及自身，就称为自指(Self-referen]]></description>
-</item><item>
-    <title>了解防抖与节流</title>
-    <link>http://example.org/2020-11-10-js-closure/</link>
-    <pubDate>Tue, 10 Nov 2020 22:30:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-11-10-js-closure/</guid>
-    <description><![CDATA[在前端开发的过程中，我们经常需要绑定一些持续触发的事件，如 resize、scroll、mousemove 等，然而有些时候我们并不希望在事件持]]></description>
 </item></channel>
 </rss>
