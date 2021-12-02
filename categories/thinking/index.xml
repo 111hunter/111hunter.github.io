@@ -3,12 +3,19 @@
         <title>Thinking - 分类 - 浮槎的博客</title>
         <link>http://example.org/categories/thinking/</link>
         <description>Thinking - 分类 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 30 Nov 2021 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+    <title>自我迷失</title>
+    <link>http://example.org/2021-11-30-samadhi-1/</link>
+    <pubDate>Tue, 30 Nov 2021 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-11-30-samadhi-1/</guid>
+    <description><![CDATA[你放下抗拒，并非因为你容忍了某件事，而是因为你内在的自由并不依赖于外在。 &ndash; Samadhi &ldquo;三摩地&quot;是一个古老的梵语词汇，现代词语里]]></description>
+</item><item>
     <title>一些通用计算模型</title>
-    <link>http://example.org/2021-01-30-tag-system/</link>
+    <link>http://example.org/2021-01-30-tag-system-copy/</link>
     <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2021-01-30-tag-system/</guid>
+    <guid>http://example.org/2021-01-30-tag-system-copy/</guid>
     <description><![CDATA[在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计]]></description>
 </item><item>
     <title>IO 和 Monad</title>

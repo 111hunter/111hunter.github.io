@@ -3,9 +3,16 @@
         <title>浮槎的博客</title>
         <link>http://example.org/</link>
         <description>空空如也，我叩其两端而竭焉。</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 05 Nov 2021 10:50:34 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 30 Nov 2021 10:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>自我迷失</title>
+    <link>http://example.org/2021-11-30-samadhi-1/</link>
+    <pubDate>Tue, 30 Nov 2021 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-11-30-samadhi-1/</guid>
+    <description><![CDATA[你放下抗拒，并非因为你容忍了某件事，而是因为你内在的自由并不依赖于外在。 &ndash; Samadhi &ldquo;三摩地&quot;是一个古老的梵语词汇，现代词语里]]></description>
+</item><item>
     <title>多维感知能力</title>
     <link>http://example.org/2021-11-05-dimension/</link>
     <pubDate>Fri, 05 Nov 2021 10:50:34 &#43;0800</pubDate>
@@ -28,10 +35,10 @@
     <description><![CDATA[Docker 包括三个基本概念: Image(镜像)、Container(容器)、Repository(仓库)，理解了这三个概念，就理解了 Docker 的整个生命周期]]></description>
 </item><item>
     <title>一些通用计算模型</title>
-    <link>http://example.org/2021-01-30-tag-system/</link>
+    <link>http://example.org/2021-01-30-tag-system-copy/</link>
     <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2021-01-30-tag-system/</guid>
+    <guid>http://example.org/2021-01-30-tag-system-copy/</guid>
     <description><![CDATA[在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计]]></description>
 </item><item>
     <title>[译]元编程</title>
@@ -68,12 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-12-10-lex-parse/</guid>
     <description><![CDATA[程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。 前置知识 算术表达式根据运算符所在的位置可以分为三种表示方法： 前缀表达式]]></description>
-</item><item>
-    <title>λ 演算: 程序从无到有</title>
-    <link>http://example.org/2020-11-26-%CE%BB-calculus/</link>
-    <pubDate>Thu, 26 Nov 2020 09:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-11-26-%CE%BB-calculus/</guid>
-    <description><![CDATA[由邱奇创造的 λ 演算(λ-calculus) 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boo]]></description>
 </item></channel>
 </rss>

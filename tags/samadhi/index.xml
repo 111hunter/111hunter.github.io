@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Samadhi - 标签 - 浮槎的博客</title>
+        <link>http://example.org/tags/samadhi/</link>
+        <description>Samadhi - 标签 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 30 Nov 2021 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/samadhi/" rel="self" type="application/rss+xml" /><item>
+    <title>自我迷失</title>
+    <link>http://example.org/2021-11-30-samadhi-1/</link>
+    <pubDate>Tue, 30 Nov 2021 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-11-30-samadhi-1/</guid>
+    <description><![CDATA[你放下抗拒，并非因为你容忍了某件事，而是因为你内在的自由并不依赖于外在。 &ndash; Samadhi &ldquo;三摩地&quot;是一个古老的梵语词汇，现代词语里]]></description>
+</item></channel>
+</rss>
