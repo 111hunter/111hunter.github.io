@@ -3,9 +3,16 @@
         <title>浮槎的博客</title>
         <link>http://example.org/</link>
         <description>空空如也，我叩其两端而竭焉。</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 30 Nov 2021 10:50:34 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 03 Dec 2021 10:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>非你所想</title>
+    <link>http://example.org/2021-12-03-samadhi-2/</link>
+    <pubDate>Fri, 03 Dec 2021 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-12-03-samadhi-2/</guid>
+    <description><![CDATA[镜子互相反射，而影子又再次互相反射以至无穷，一个层面的变化会导致所有层面的同时变化。 &ndash; Samadhi 从古至今，世界上最伟大的精神导师都认为人类最本质的真]]></description>
+</item><item>
     <title>自我迷失</title>
     <link>http://example.org/2021-11-30-samadhi-1/</link>
     <pubDate>Tue, 30 Nov 2021 10:50:34 &#43;0800</pubDate>
@@ -68,12 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-12-13-%CE%BB-interpreter/</guid>
     <description><![CDATA[如果你没有听说过 λ 演算，可以阅读我的这篇文章。如果你没有编译原理相关知识，可以阅读我的这篇文章。首先介绍调度场算法，后面的实现中会用到。 调度]]></description>
-</item><item>
-    <title>程序解释与编译</title>
-    <link>http://example.org/2020-12-10-lex-parse/</link>
-    <pubDate>Thu, 10 Dec 2020 09:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-12-10-lex-parse/</guid>
-    <description><![CDATA[程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。 前置知识 算术表达式根据运算符所在的位置可以分为三种表示方法： 前缀表达式]]></description>
 </item></channel>
 </rss>

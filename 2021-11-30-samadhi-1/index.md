@@ -107,5 +107,5 @@
 
 **参考资料**
 
-- [Samadhi Part 1](https://www.youtube.com/watch?v=jjcU4_pdCGs&list=PL8qL2YhfbR-ugobJLKrgMHzCauF4zAkM1)
+- [Samadhi Part 1](https://www.youtube.com/watch?v=jjcU4_pdCGs&list=PL8qL2YhfbR-ugobJLKrgMHzCauF4zAkM1&index=1)
 
