@@ -3,8 +3,15 @@
         <title>Thinking - 分类 - 浮槎的博客</title>
         <link>http://example.org/categories/thinking/</link>
         <description>Thinking - 分类 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 03 Dec 2021 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
-    <title>非你所想</title>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 01 Feb 2022 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+    <title>无路之路</title>
+    <link>http://example.org/2022-02-01-samadhi-3/</link>
+    <pubDate>Tue, 01 Feb 2022 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2022-02-01-samadhi-3/</guid>
+    <description><![CDATA[无名，天地之始。有名，万物之母。 —《道德经》 容我慎重地提醒你生与死是至高无上的。时光匆匆，机会转瞬即逝。我们每个人都应努力觉醒。觉醒。谨慎，]]></description>
+</item><item>
+    <title>非想之想</title>
     <link>http://example.org/2021-12-03-samadhi-2/</link>
     <pubDate>Fri, 03 Dec 2021 10:50:34 &#43;0800</pubDate>
     <author>作者</author>
@@ -16,13 +23,13 @@
     <pubDate>Tue, 30 Nov 2021 10:50:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2021-11-30-samadhi-1/</guid>
-    <description><![CDATA[你放下抗拒，并非因为你容忍了某件事，而是因为你内在的自由并不依赖于外在。 &ndash; Samadhi &ldquo;三摩地&quot;是一个古老的梵语词汇，现代词语里]]></description>
+    <description><![CDATA[你永远不可能真正自由，因为无论你去哪里，你的监狱都如影随形。 &ndash; Samadhi 三摩地是一个古老的梵语词汇，现代没有与之含义相同的词了。要制作一部关于“三摩]]></description>
 </item><item>
     <title>一些通用计算模型</title>
-    <link>http://example.org/2021-01-30-tag-system-copy/</link>
+    <link>http://example.org/2021-01-30-tag-system/</link>
     <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2021-01-30-tag-system-copy/</guid>
+    <guid>http://example.org/2021-01-30-tag-system/</guid>
     <description><![CDATA[在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计]]></description>
 </item><item>
     <title>IO 和 Monad</title>
