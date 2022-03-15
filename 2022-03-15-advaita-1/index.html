@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>观察者与被观察者 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="观察者与被观察者" />
+<meta property="og:description" content="请继续与我同行。尽管问题愈来愈细微复杂，但是让我们继续探讨下去。 在我建立起对你或对任何东西的印象后，我就只能看到那个印象了，于是这个印象和持" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2022-03-15-advaita-1/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-15T10:50:34&#43;08:00" />
+<meta property="article:modified_time" content="2022-03-15T10:50:34&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="观察者与被观察者"/>
+<meta name="twitter:description" content="请继续与我同行。尽管问题愈来愈细微复杂，但是让我们继续探讨下去。 在我建立起对你或对任何东西的印象后，我就只能看到那个印象了，于是这个印象和持"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2022-03-15-advaita-1/" /><link rel="prev" href="http://example.org/2022-02-01-samadhi-3/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "观察者与被观察者",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2022-03-15-advaita-1\/"
+        },"genre": "posts","keywords": "Advaita","wordcount":  2228 ,
+        "url": "http:\/\/example.org\/2022-03-15-advaita-1\/","datePublished": "2022-03-15T10:50:34+08:00","dateModified": "2022-03-15T10:50:34+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "浮槎"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="浮槎的博客">浮槎的博客</a>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><span class="menu-item search" id="search-desktop">
+                    <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-desktop">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </span><span class="menu-item">|</span><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="浮槎的博客">浮槎的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">观察者与被观察者</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/thinking/"><i class="far fa-folder fa-fw"></i>Thinking</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-15">2022-03-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2228 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/2022-03-15-advaita-1/" class="leancloud_visitors" data-flag-title="观察者与被观察者">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="content" id="content"><p>请继续与我同行。尽管问题愈来愈细微复杂，但是让我们继续探讨下去。</p>
+<p>在我建立起对你或对任何东西的印象后，我就只能看到那个印象了，于是这个印象和持有印象之人就产生了问题。例如，我看到一位穿红衬衫的人，我就会立刻生起喜欢或不喜欢的反应。这好恶的情绪，主要来自于我的文化、素养社交、嗜好以及我先天和后天的性格。我一向是透过这样的一个中心点来观察和判断事情的。因此，观察者和他的所观之物就分裂为二了。</p>
+<p>观察者所觉察到的意象不只是一个而已，他可以创造出上千个意象，那么观察者和那些意象又有什么根本的差别?他本身不也是另一个意象吗?他老想在自己身上加点什么，又减点什么，他是一个在外界压力及内心催迫之下，不断衡量、比较、判断、修正而变化无常的生命，他活在自己的知识、影响以及不断衡量比较的意识领域中。</p>
+<p>如果你同时注视着这个观察者(也就是你自己)，你会认出他不过是一堆记忆经验、事件、影响、传统和各种痛苦的组合，所有这些都是属于过去的。因此，观察者既是过去，也是现在，而明天在他的期待之下也成了他的一部分。<strong>他一半是活的，一半是死的，他就是在这种半死半活的状态下去观察一切的。</strong></p>
+<p>你这个观察者，就是从这种时间的限制中去观察恐惧、嫉妒、争战和家庭（你竟然称这个狭隘封闭的东西为“家”?），然后想在这种情况下，解决生活所带来的挑战。你总是用旧有的那套来诠释新的事物，难怪你会永远陷入冲突而无法自拔。</p>
+<p>观察者本身属于一种意象，同时他也在观察周遭及内心的其他各种意象。他总说“我喜欢这个意象，我要保留它”或者“我讨厌那个意象，我要除掉它”。殊不知，观察者的本身也是由他对各种意象的反应所形成的另一套意象。我们可以这么说：观察者也是一种意象，只不过他能把自已和所观之物分开罢了。<strong>这个由许多意象所组成的观察者认为自己是永恒不变的，于是他把自己和意象之间划清界线，形成时间的空隙</strong>。这促成了他和那些意象之间的冲突，可是他却一味归咎于那些意象，于是他说：“我非除掉这些冲突不可!” 这个想法一产生，却又创造了另一个意象。</p>
+<p>对于上述一切的觉知就是真正的冥想，它披露出存在的真相，也就是各式各样的意象集合成一个意象中心，这个中心意象，就是观察者，也是检查者、经验者、评估者，这个法官总想征服其他的意象，甚至想把它们一举歼灭。其他的意象，既然是观察者的观念、判断和结论的统合，而观察者本身又是由这些其他意象所汇集而成的，所以观察者就是被观察者。</p>
+<p>这份觉察已经披露了人心的不同状态，也揭发了人心各种的意象，以及意象之间所形成的矛盾，同时显示出矛盾所带来的冲突，以及对冲突的一筹莫展，还有那些逃避它们的各种企图。透过非常细心而谨慎的觉察，这一切真相都被揭发了！然后你才发现：原来观察者就是被观察之物。</p>
+<p>但是这觉察的本身，并非另一个比较高级的本体，也没有更高的超我存在（更高的本体以及超我，不过是人类所发明出来的另种意象而已）。就是那觉性本身揭发了“观察者与被观察者不二”的真相。</p>
+<p>如果你问自己一个问题：那么接受答案的那个本体是谁?那个发问的本体又是谁?如果这本体只是意识和思想的一部分，那么它根本就不可能找到答案。<strong>你所能找到的只是觉察的状态而已</strong>。如果在这觉察的状态中还有个本体在那里说“我必须觉察，我必须练习这种觉察力”，你就又开始制造另一个意象了。</p>
+<p>觉察到观者与被观者不二，并不意味着一定要与那被观者认同。我们相当容易将自己与某些东西认同，例如家庭、丈夫或妻子以及国家等，因而招来极大的痛苦以及无止境的战争。我们此刻所探讨的，乃是另一种境界，我们不该在口头上，而应该从内心深处，从存在的根本去了解它。</p>
+<p>据说中国古代有一位艺术家，他在画一棵树之前，一定要坐在那棵树前看上好几回、好几个月，甚至好几年，不论多久，总要看到他自己变成那棵树为止。他并不是在和那棵树认同，因为他就是那棵树了。这表示他与那棵树之间，观察者与被观察者之间，已经毫无时空隔阂，没有那个经验的主体在那里感受大树的美、活动、树阴、叶质以及色泽。他已经完全变成了那棵树，在这种境界之下，他才肯提笔作画。</p>
+<p>如果他尚未领悟到观察者与被观察者不二的真理，则观察者的任何作为不过是在制造另一个意象而又使自己身陷其中。当观察者觉察出所谓的观察者也不过是被观者而已，接着又会怎么样（慢慢来，别急着答复，我们现在正进入一个相当复杂的问题）？</p>
+<p>究竟会怎么样？观察者就不再有任何活动了，不是吗？以前观察者总是说：“我必须解决这些意象，我必须压抑它们、改造它们。” 他所有的行动都和被观察者有关，这些行动和反应有时热情，有时漫不经心。这种好恶交战，也就是“我喜欢，因此我要抓紧它；我不喜欢，因此我得除掉它”的被动反应，居然被人们视为积极的行为。但是，观察者如果突然了悟他所应付的这种被动反应所产生的问题原来就是他自己，那么他和那些意象之间的冲突就消失了。他，就是那个东西，无二无别。当二者对立时，他只好忙着应付它；不过一旦体会他就是那个东西，也就没有什么喜欢或不喜欢的，于是内在的冲突就停止了。</p>
+<p>如果那个东西就是你，你会怎么办？你既无法抗拒，也无法逃避，甚至连接受都没有必要，因为它就在那儿。<strong>于是那个受好恶之心所驱使的反应作用，便到此结束。</strong></p>
+<p>然后你会发现，你的觉知突然变得极为活泼，它不受制于任何事件或意象。从这种强烈的觉知中就会产生不同品质的专注力，这种专注力就会造成全然不同的心智状态。因为心智就是觉知的本身，它会因此而变得极度敏锐，而且有高度的智慧。</p>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://book.douban.com/subject/1005193/" target="_blank" rel="noopener noreffer">《重新认识你自己》克里希那穆提</a></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-03-15</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2022-03-15-advaita-1/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2022-03-15-advaita-1/" data-title="观察者与被观察者" data-hashtags="Advaita"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2022-03-15-advaita-1/" data-hashtag="Advaita"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2022-03-15-advaita-1/" data-title="观察者与被观察者" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2022-03-15-advaita-1/" data-title="观察者与被观察者"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2022-03-15-advaita-1/" data-title="观察者与被观察者"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2022-03-15-advaita-1/" data-title="观察者与被观察者" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2022-03-15-advaita-1/" data-title="观察者与被观察者" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2022-03-15-advaita-1/" data-title="观察者与被观察者"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/advaita/">Advaita</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2022-02-01-samadhi-3/" class="prev" rel="prev" title="无路之路"><i class="fas fa-angle-left fa-fw"></i>无路之路</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz","appKey":"gK3L6a7r80578qujBez4FH6C","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"欢迎讨论交流","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

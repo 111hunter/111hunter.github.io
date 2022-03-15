@@ -3,9 +3,16 @@
         <title>浮槎的博客</title>
         <link>http://example.org/</link>
         <description>空空如也，我叩其两端而竭焉。</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 01 Feb 2022 10:50:34 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 15 Mar 2022 10:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>观察者与被观察者</title>
+    <link>http://example.org/2022-03-15-advaita-1/</link>
+    <pubDate>Tue, 15 Mar 2022 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2022-03-15-advaita-1/</guid>
+    <description><![CDATA[请继续与我同行。尽管问题愈来愈细微复杂，但是让我们继续探讨下去。 在我建立起对你或对任何东西的印象后，我就只能看到那个印象了，于是这个印象和持]]></description>
+</item><item>
     <title>无路之路</title>
     <link>http://example.org/2022-02-01-samadhi-3/</link>
     <pubDate>Tue, 01 Feb 2022 10:50:34 &#43;0800</pubDate>
@@ -68,12 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-12-28-monad/</guid>
     <description><![CDATA[学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程]]></description>
-</item><item>
-    <title>实现 λ 演算解释器</title>
-    <link>http://example.org/2020-12-13-%CE%BB-interpreter/</link>
-    <pubDate>Sun, 13 Dec 2020 09:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-12-13-%CE%BB-interpreter/</guid>
-    <description><![CDATA[如果你没有听说过 λ 演算，可以阅读我的这篇文章。如果你没有编译原理相关知识，可以阅读我的这篇文章。首先介绍调度场算法，后面的实现中会用到。 调度]]></description>
 </item></channel>
 </rss>
