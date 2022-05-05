@@ -3,15 +3,22 @@
         <title>浮槎的博客</title>
         <link>http://example.org/</link>
         <description>空空如也，我叩其两端而竭焉。</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 15 Mar 2022 10:50:34 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 04 May 2022 10:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>有限与无限的游戏</title>
+    <link>http://example.org/2022-05-04-games/</link>
+    <pubDate>Wed, 04 May 2022 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2022-05-04-games/</guid>
+    <description><![CDATA[世上至少有两种游戏。一种可称为有限游戏，另一种为无限游戏。有限游戏以取胜为目的，而无限游戏以延续游戏为目的。 — James P. Carse 有限游戏参与者拥有可随时]]></description>
+</item><item>
     <title>观察者与被观察者</title>
     <link>http://example.org/2022-03-15-advaita-1/</link>
     <pubDate>Tue, 15 Mar 2022 10:50:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2022-03-15-advaita-1/</guid>
-    <description><![CDATA[请继续与我同行。尽管问题愈来愈细微复杂，但是让我们继续探讨下去。 在我建立起对你或对任何东西的印象后，我就只能看到那个印象了，于是这个印象和持]]></description>
+    <description><![CDATA[只要它是个中心，它的空间就必定永远受限。对吗？所以只要存在中心，空间就必定永远受到限制 —— 就像一个住在监狱里的囚徒，他有在院子里散步的自由，]]></description>
 </item><item>
     <title>无路之路</title>
     <link>http://example.org/2022-02-01-samadhi-3/</link>
@@ -68,12 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2021-01-08-tcp/</guid>
     <description><![CDATA[TCP 在不可靠的 IP 协议之上实现了可靠性，使得我们在开发上层应用时，不必关注网络传输的种种复杂性。可靠，指的是采用一系列技术来保障数据在发送方和接]]></description>
-</item><item>
-    <title>IO 和 Monad</title>
-    <link>http://example.org/2020-12-28-monad/</link>
-    <pubDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-12-28-monad/</guid>
-    <description><![CDATA[学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程]]></description>
 </item></channel>
 </rss>

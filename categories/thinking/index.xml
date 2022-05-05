@@ -3,13 +3,20 @@
         <title>Thinking - 分类 - 浮槎的博客</title>
         <link>http://example.org/categories/thinking/</link>
         <description>Thinking - 分类 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 15 Mar 2022 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 04 May 2022 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+    <title>有限与无限的游戏</title>
+    <link>http://example.org/2022-05-04-games/</link>
+    <pubDate>Wed, 04 May 2022 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2022-05-04-games/</guid>
+    <description><![CDATA[世上至少有两种游戏。一种可称为有限游戏，另一种为无限游戏。有限游戏以取胜为目的，而无限游戏以延续游戏为目的。 — James P. Carse 有限游戏参与者拥有可随时]]></description>
+</item><item>
     <title>观察者与被观察者</title>
     <link>http://example.org/2022-03-15-advaita-1/</link>
     <pubDate>Tue, 15 Mar 2022 10:50:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2022-03-15-advaita-1/</guid>
-    <description><![CDATA[请继续与我同行。尽管问题愈来愈细微复杂，但是让我们继续探讨下去。 在我建立起对你或对任何东西的印象后，我就只能看到那个印象了，于是这个印象和持]]></description>
+    <description><![CDATA[只要它是个中心，它的空间就必定永远受限。对吗？所以只要存在中心，空间就必定永远受到限制 —— 就像一个住在监狱里的囚徒，他有在院子里散步的自由，]]></description>
 </item><item>
     <title>无路之路</title>
     <link>http://example.org/2022-02-01-samadhi-3/</link>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-11-17-brainfuck/</guid>
     <description><![CDATA[图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终]]></description>
-</item><item>
-    <title>自我指涉与数理逻辑</title>
-    <link>http://example.org/2020-11-16-self-ref/</link>
-    <pubDate>Mon, 16 Nov 2020 00:27:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-11-16-self-ref/</guid>
-    <description><![CDATA[“我是谁？”，这种对指代自身的疑问每个人都会有。在自然语言和形式语言中，如果一个句子直接或间接提及自身，就称为自指(Self-referen]]></description>
 </item></channel>
 </rss>
