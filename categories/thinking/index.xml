@@ -3,7 +3,14 @@
         <title>Thinking - 分类 - 浮槎的博客</title>
         <link>http://example.org/categories/thinking/</link>
         <description>Thinking - 分类 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 04 May 2022 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 29 May 2022 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+    <title>没有秘密</title>
+    <link>http://example.org/2022-05-29-advaita-2/</link>
+    <pubDate>Sun, 29 May 2022 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2022-05-29-advaita-2/</guid>
+    <description><![CDATA[独立的事物存在于想象中，不存在于现实世界。宇宙是整体的行为，个人的独立行为存在于想象中，不存在于现实世界。 第一个假象是“我”，“我”是在两三]]></description>
+</item><item>
     <title>有限与无限的游戏</title>
     <link>http://example.org/2022-05-04-games/</link>
     <pubDate>Wed, 04 May 2022 10:50:34 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>http://example.org/2020-11-26-%CE%BB-calculus/</guid>
     <description><![CDATA[由邱奇创造的 λ 演算(λ-calculus) 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boo]]></description>
-</item><item>
-    <title>图灵机的极简实现</title>
-    <link>http://example.org/2020-11-17-brainfuck/</link>
-    <pubDate>Tue, 17 Nov 2020 22:00:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-11-17-brainfuck/</guid>
-    <description><![CDATA[图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终]]></description>
 </item></channel>
 </rss>
