@@ -206,7 +206,7 @@ $ npm i redux react-redux -S
 
 Redux 流程图
 
-<div align=center><img src="/img/redux.png" width="75%"></div>
+![Redux流程图](/img/redux.png "Redux流程图")
 
 当 UI 的 state 变化时，组件 dispatch 发送 action 信号, reducer 接收来自 action 的信号更新 state, 然后 store 将新的 state 传递给组件，重新渲染 UI。
 

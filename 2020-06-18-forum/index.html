@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>MyBatis-Plus 实现论坛 Api - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="MyBatis-Plus 实现论坛 Api" />
-<meta property="og:description" content="数据分页获取 引入依赖，连接数据库 在 spring-boot 项目的根目录 pom.xml 添加依赖，相关依赖有 lombok, mybatis-plus, druid, swagger, mysql 驱动等。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26" />
+<meta property="og:description" content="网络论坛，常简称为论坛，又称讨论区、讨论版等，是种提供在线讨论的程序，或由这些程序建立的以在线讨论为主的网站。本文记录如何用 Spring Boot 结合 MyBatis-Plus 实现论" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2020-06-18-forum/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-18T12:00:00&#43;08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
 <meta name="twitter:title" content="MyBatis-Plus 实现论坛 Api"/>
-<meta name="twitter:description" content="数据分页获取 引入依赖，连接数据库 在 spring-boot 项目的根目录 pom.xml 添加依赖，相关依赖有 lombok, mybatis-plus, druid, swagger, mysql 驱动等。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26"/>
+<meta name="twitter:description" content="网络论坛，常简称为论坛，又称讨论区、讨论版等，是种提供在线讨论的程序，或由这些程序建立的以在线讨论为主的网站。本文记录如何用 Spring Boot 结合 MyBatis-Plus 实现论"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020-06-18-forum/" /><link rel="prev" href="http://example.org/2020-05-18-trello/" /><link rel="next" href="http://example.org/2020-06-30-antd/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-06-18-forum\/"
-        },"genre": "posts","keywords": "Spring Boot","wordcount":  2686 ,
+        },"genre": "posts","keywords": "Spring Boot","wordcount":  2765 ,
         "url": "http:\/\/example.org\/2020-06-18-forum\/","datePublished": "2020-06-18T12:00:00+08:00","dateModified": "2020-06-18T12:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">MyBatis-Plus 实现论坛 Api</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-18">2020-06-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2686 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-18">2020-06-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2765 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/2020-06-18-forum/" class="leancloud_visitors" data-flag-title="MyBatis-Plus 实现论坛 Api">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -134,12 +134,13 @@
       </ul>
     </li>
     <li><a href="#创建-controller">创建 controller</a></li>
-    <li><a href="#jwt-登录验证">JWT 登录验证</a></li>
+    <li><a href="#jwt-登录认证">JWT 登录认证</a></li>
     <li><a href="#点赞关注收藏评论">点赞关注收藏评论</a></li>
     <li><a href="#搜索和浏览记录">搜索和浏览记录</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="数据分页获取">数据分页获取</h2>
+            </div><div class="content" id="content"><p>网络论坛，常简称为论坛，又称讨论区、讨论版等，是种提供在线讨论的程序，或由这些程序建立的以在线讨论为主的网站。本文记录如何用 Spring Boot 结合 MyBatis-Plus 实现论坛中常见的 API 接口。</p>
+<h2 id="数据分页获取">数据分页获取</h2>
 <h3 id="引入依赖连接数据库">引入依赖，连接数据库</h3>
 <p>在 spring-boot 项目的根目录 pom.xml 添加依赖，相关依赖有 lombok, mybatis-plus, druid, swagger, mysql 驱动等。</p>
 <div class="highlight"><div class="chroma">
@@ -503,7 +504,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>这样就实现了数据时间排序的分页获取。</p>
-<h2 id="jwt-登录验证">JWT 登录验证</h2>
+<h2 id="jwt-登录认证">JWT 登录认证</h2>
 <p>添加依赖</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-05-18-trello\/"
-        },"genre": "posts","keywords": "React","wordcount":  2712 ,
+        },"genre": "posts","keywords": "React","wordcount":  2822 ,
         "url": "http:\/\/example.org\/2020-05-18-trello\/","datePublished": "2020-05-18T00:18:30+08:00","dateModified": "2020-05-18T00:18:30+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">写一个可拖拽的 Trello</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-18">2020-05-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2712 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-18">2020-05-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2822 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/2020-05-18-trello/" class="leancloud_visitors" data-flag-title="写一个可拖拽的 Trello">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -123,10 +123,28 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间拖放。左上方的搜索框能够搜索筛选卡片，右上方的按钮能够实现撤销重做功能。</p>
-<div align=center><img src="/img/trello.png" width="100%"></div>
+<p><figure><a class="lightgallery" href="/img/trello.png" title="可拖拽Trello页面展示" data-thumbnail="/img/trello.png" data-sub-html="<h2>可拖拽Trello页面展示</h2><p>可拖拽Trello页面展示</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/trello.png"
+            data-srcset="/img/trello.png, /img/trello.png 1.5x, /img/trello.png 2x"
+            data-sizes="auto"
+            alt="/img/trello.png" />
+    </a><figcaption class="image-caption">可拖拽Trello页面展示</figcaption>
+    </figure></p>
 <h2 id="拖拽库的使用">拖拽库的使用</h2>
 <p>react-beautiful-dnd 这个库使用 render-props 完成组件逻辑复用。react-beautiful-dnd 有 3 个主要组件：DragDropContext，Droppable和Draggable。这三者的关系如下：</p>
-<div align=center><img src="/img/react-beautiful-dnd.png" width="50%"></div>
+<p><figure><a class="lightgallery" href="/img/react-beautiful-dnd.png" title="react-beautiful-dnd库的使用" data-thumbnail="/img/react-beautiful-dnd.png" data-sub-html="<h2>react-beautiful-dnd库的使用</h2><p>react-beautiful-dnd库的使用</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/react-beautiful-dnd.png"
+            data-srcset="/img/react-beautiful-dnd.png, /img/react-beautiful-dnd.png 1.5x, /img/react-beautiful-dnd.png 2x"
+            data-sizes="auto"
+            alt="/img/react-beautiful-dnd.png" />
+    </a><figcaption class="image-caption">react-beautiful-dnd库的使用</figcaption>
+    </figure></p>
 <p>DragDropContext 表示一个全局拖拽上下文。Droppable 表示可以被拖入的容器，Draggable 是可被拖放的组件。
 DragDropContext 提供了以下三个钩子：</p>
 <ul>

@@ -58,7 +58,7 @@ server.port = 8034
 
 这是我们的 src 文件夹结构，接下来的文件都会在 src 中编写。
 
-<div align=center><img src="/img/spring-dir.png" width="80%" alt="仓库图解"></div>
+![服务端文件结构](/img/spring-dir.jpg "服务端文件结构")
 
 在 entity文件夹中新建文件 Notes.java，这是我们的数据表映射。
 
@@ -780,9 +780,12 @@ export default new Router({
 
 ## 成果展示
 
-pc端展示：
-<div align=center><img src="/img/vue-pc.png" width="80%" alt="仓库图解"></div>
-移动端展示：
-<div align=center><img src="/img/vue-mobile.png" width="25%" alt="仓库图解"></div>
+pc端页面展示：
+
+![pc端页面展示](/img/vue-pc.png "pc端页面展示")
+
+移动端页面展示：
+
+![移动端页面展示](/img/vue-mobile.png "移动端页面展示")
 
 附：[源码地址](https://github.com/111hunter/notes-app)

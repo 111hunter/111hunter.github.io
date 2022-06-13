@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>antd &#43; TS 的简单 demo - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="antd &#43; TS 的简单 demo" />
-<meta property="og:description" content="这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码" />
+<meta property="og:description" content="这次使用 antd 和 TypeScript 实践一个简单 todolist, 作为简单的练手 Demo。这次的代码中暂时还没有实现数据持久化，状态管理等基础功能，只是把页面上能够看到的功能实现" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2020-06-30-antd/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-30T00:15:00&#43;08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
 <meta name="twitter:title" content="antd &#43; TS 的简单 demo"/>
-<meta name="twitter:description" content="这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码"/>
+<meta name="twitter:description" content="这次使用 antd 和 TypeScript 实践一个简单 todolist, 作为简单的练手 Demo。这次的代码中暂时还没有实现数据持久化，状态管理等基础功能，只是把页面上能够看到的功能实现"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020-06-30-antd/" /><link rel="prev" href="http://example.org/2020-06-18-forum/" /><link rel="next" href="http://example.org/2020-07-13-rbac0/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-06-30-antd\/"
-        },"genre": "posts","keywords": "React","wordcount":  1751 ,
+        },"genre": "posts","keywords": "React","wordcount":  1769 ,
         "url": "http:\/\/example.org\/2020-06-30-antd\/","datePublished": "2020-06-30T00:15:00+08:00","dateModified": "2020-07-23T00:15:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">antd &#43; TS 的简单 demo</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-30">2020-06-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1751 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-30">2020-06-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1769 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/2020-06-30-antd/" class="leancloud_visitors" data-flag-title="antd &#43; TS 的简单 demo">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -122,9 +122,28 @@
     <li><a href="#实现搜索功能">实现搜索功能</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码中暂时还没有实现数据持久化，状态管理等，只是把页面上能够看到的功能实现了。后续我将尝试其他的数据流管理方案。</p>
+            </div><div class="content" id="content"><p>这次使用 antd 和 TypeScript 实践一个简单 todolist, 作为简单的练手 Demo。这次的代码中暂时还没有实现数据持久化，状态管理等基础功能，只是把页面上能够看到的功能实现了。因为后续我可能会结合这个 Demo 尝试其他的数据流管理方案。</p>
 <p>页面长这样，响应 pc 端，移动端:</p>
-<div style="display: flex; justify-content: space-evenly; align-items: center;"><img src="/img/antd-pc.png" style="width:58%;"><img src="/img/antd-mo.png" style="width:28%;"></div>
+<p><figure><a class="lightgallery" href="/img/antd-pc.png" title="pc端页面展示" data-thumbnail="/img/antd-pc.png" data-sub-html="<h2>pc端页面展示</h2><p>pc端页面展示</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/antd-pc.png"
+            data-srcset="/img/antd-pc.png, /img/antd-pc.png 1.5x, /img/antd-pc.png 2x"
+            data-sizes="auto"
+            alt="/img/antd-pc.png" />
+    </a><figcaption class="image-caption">pc端页面展示</figcaption>
+    </figure></p>
+<p><figure><a class="lightgallery" href="/img/antd-mo.png" title="移动端页面展示" data-thumbnail="/img/antd-mo.png" data-sub-html="<h2>移动端页面展示</h2><p>移动端页面展示</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/antd-mo.png"
+            data-srcset="/img/antd-mo.png, /img/antd-mo.png 1.5x, /img/antd-mo.png 2x"
+            data-sizes="auto"
+            alt="/img/antd-mo.png" />
+    </a><figcaption class="image-caption">移动端页面展示</figcaption>
+    </figure></p>
 <p>页面上有一个搜索框，过滤列表项。点击添加按钮，弹出会话框，添加列表数据。下面是三个标签选项，点击不同的标签显示不同的列表内容。列表中每一项中的三个图标分别实现的是编辑数据，修改完成状态和删除这一项的功能。</p>
 <p>这个 todolist 实例只实现了 Todo，ModalForm(对话框)，TodoList(标签选项下的列表) 组件。ModalForm，TodoList 是 Todo 的子组件。这三个组件就足够完成上述的功能了。</p>
 <h2 id="定义数据模型">定义数据模型</h2>

@@ -7,7 +7,7 @@
 
 Recoil 中的核心概念只有 Atom(原子状态) 和 Selector(派生状态)。
 
-<div align=center><img src="/img/recoil.png" width="80%"></div>
+![Recoil状态管理示意图](/img/recoil.png "Recoil状态管理示意图")
 
 ### Atom 
 

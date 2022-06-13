@@ -37,7 +37,7 @@
     <pubDate>Tue, 30 Jun 2020 00:15:00 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2020-06-30-antd/</guid>
-    <description><![CDATA[这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码]]></description>
+    <description><![CDATA[这次使用 antd 和 TypeScript 实践一个简单 todolist, 作为简单的练手 Demo。这次的代码中暂时还没有实现数据持久化，状态管理等基础功能，只是把页面上能够看到的功能实现]]></description>
 </item><item>
     <title>写一个可拖拽的 Trello</title>
     <link>http://example.org/2020-05-18-trello/</link>

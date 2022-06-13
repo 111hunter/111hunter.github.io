@@ -57,7 +57,7 @@ const tokens = lex('mul 3 sub 2 sum 1 3 4')
 
 ### 语法分析
 
-**- 语法描述**
+#### 语法描述
 
 用 [EBNF](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form) 来描述我们的程序语法：
 
@@ -68,11 +68,11 @@ op = sum | sub | mul | div
 expr = num | op expr+
 ```
 
-**- 抽象语法树**
+#### 抽象语法树
 
 确定了语法后，一开始定义的前缀表达式可以表示为如下程序树(AST)：
 
-<div align=center><img src="/img/expr-ast.svg" width="40%"></div>
+![程序树(AST)](/img/expr-ast.jpg "程序树(AST)")
 
 尝试用 JS 代码解析这种逻辑：
 

@@ -3,13 +3,13 @@
 
 本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间拖放。左上方的搜索框能够搜索筛选卡片，右上方的按钮能够实现撤销重做功能。
 
-<div align=center><img src="/img/trello.png" width="100%"></div>
+![可拖拽Trello页面展示](/img/trello.png "可拖拽Trello页面展示")
 
 ## 拖拽库的使用
 
 react-beautiful-dnd 这个库使用 render-props 完成组件逻辑复用。react-beautiful-dnd 有 3 个主要组件：DragDropContext，Droppable和Draggable。这三者的关系如下：
 
-<div align=center><img src="/img/react-beautiful-dnd.png" width="50%"></div>
+![react-beautiful-dnd库的使用](/img/react-beautiful-dnd.png "react-beautiful-dnd库的使用")
 
 DragDropContext 表示一个全局拖拽上下文。Droppable 表示可以被拖入的容器，Draggable 是可被拖放的组件。
 DragDropContext 提供了以下三个钩子：

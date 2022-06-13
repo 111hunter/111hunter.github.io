@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-07-27-recoil\/"
-        },"genre": "posts","keywords": "Recoil","wordcount":  1947 ,
+        },"genre": "posts","keywords": "Recoil","wordcount":  1987 ,
         "url": "http:\/\/example.org\/2020-07-27-recoil\/","datePublished": "2020-07-27T22:26:00+08:00","dateModified": "2020-07-27T22:26:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Recoil 基础</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-27">2020-07-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1947 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-27">2020-07-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1987 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/2020-07-27-recoil/" class="leancloud_visitors" data-flag-title="Recoil 基础">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -130,7 +130,16 @@
             </div><div class="content" id="content"><p>最近，Facebook 官方开源了一个状态管理库 Recoil，我们来学习一下。Recoil 是基于 Immutable 的数据流管理方案，这是它值得学习的重要原因。Recoil非常易于学习，它的 API 简单强大，对于已经习惯使用 hooks 的人来说很自然。</p>
 <h2 id="核心概念">核心概念</h2>
 <p>Recoil 中的核心概念只有 Atom(原子状态) 和 Selector(派生状态)。</p>
-<div align=center><img src="/img/recoil.png" width="80%"></div>
+<p><figure><a class="lightgallery" href="/img/recoil.png" title="Recoil状态管理示意图" data-thumbnail="/img/recoil.png" data-sub-html="<h2>Recoil状态管理示意图</h2><p>Recoil状态管理示意图</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/recoil.png"
+            data-srcset="/img/recoil.png, /img/recoil.png 1.5x, /img/recoil.png 2x"
+            data-sizes="auto"
+            alt="/img/recoil.png" />
+    </a><figcaption class="image-caption">Recoil状态管理示意图</figcaption>
+    </figure></p>
 <h3 id="atom">Atom</h3>
 <p>Atom 是状态的单位。它们可更新也可订阅。当 atom 被更新，每个被订阅的组件都将使用新值进行重渲染。如果多个组件使用相同的 atom，则这些组件共享 atom 的状态。可以使用 atom 替代组件内部的 state。atom 也可以在运行时创建。</p>
 <p>Atom 是使用 atom 函数创建的：</p>

@@ -75,13 +75,13 @@ Computation
 
 依照上述规则，有 256 种可能情况，若规定黑色为 1，白色为 0：
 
-<div align=center><img src="/img/rule110.png" width="60%"></div>
+![Rule110](/img/rule110.png "Rule110")
 
 上图对应 01101110(二进制)，这就是 Rule 110(十进制)，它也是图灵完备的，因为它被证明可以模拟循环标签系统。下面做简单解释：
 
 在元胞自动机中，有的结构会随时间做周期性地“移动”，它们被称为“滑翔机”或“飞船”：
 
-<div align=center><img src="/img/gliders.png" width="100%"></div>
+![Rule110中的滑翔机](/img/gliders.jpg "Rule110中的滑翔机")
 
 上图是 Rule 110 中已发现的所有滑翔机，以及一个滑翔机枪：每周期发射一次A 和 B 滑翔机。[这里](https://www.comunidad.escom.ipn.mx/genaro/rule110/ctsRule110.html)展示了用通过特定排列的滑翔机来模拟 `P: 1 --> 11, 10` 的循环标签系统，这不是完成通用计算的高效方式，但对简单的细胞自动机来说这仍是一项令人印象深刻的技术成果。比起二进制的字符串，图像可能更容易让人观察计算行为的普遍规律。
 

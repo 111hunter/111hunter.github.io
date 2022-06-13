@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-05-07-react-hooks-state\/"
-        },"genre": "posts","keywords": "React","wordcount":  3244 ,
+        },"genre": "posts","keywords": "React","wordcount":  3269 ,
         "url": "http:\/\/example.org\/2020-05-07-react-hooks-state\/","datePublished": "2020-05-07T16:46:30+08:00","dateModified": "2020-05-07T16:46:30+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Context &#43; Hooks：状态管理新方案</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-07">2020-05-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3244 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-07">2020-05-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3269 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/2020-05-07-react-hooks-state/" class="leancloud_visitors" data-flag-title="Context &#43; Hooks：状态管理新方案">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -474,7 +474,16 @@ react官网示例：</p>
 </code></pre></td></tr></table>
 </div>
 </div><p>Redux 流程图</p>
-<div align=center><img src="/img/redux.png" width="75%"></div>
+<p><figure><a class="lightgallery" href="/img/redux.png" title="Redux流程图" data-thumbnail="/img/redux.png" data-sub-html="<h2>Redux流程图</h2><p>Redux流程图</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/redux.png"
+            data-srcset="/img/redux.png, /img/redux.png 1.5x, /img/redux.png 2x"
+            data-sizes="auto"
+            alt="/img/redux.png" />
+    </a><figcaption class="image-caption">Redux流程图</figcaption>
+    </figure></p>
 <p>当 UI 的 state 变化时，组件 dispatch 发送 action 信号, reducer 接收来自 action 的信号更新 state, 然后 store 将新的 state 传递给组件，重新渲染 UI。</p>
 <p>先创建 store，接收 reducer 为参数:</p>
 <div class="highlight"><div class="chroma">

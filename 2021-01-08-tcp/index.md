@@ -14,7 +14,7 @@ TCP 在不可靠的 IP 协议之上实现了可靠性，使得我们在开发上
 
 我们看 TCP 是怎么解决这些问题的，学习它的做法，这可以作为一类问题的处理思路。
 
-<div align=center><img src="/img/tcp.png" width="100%"></div>
+![TCP报文头](/img/tcp.jpg "TCP报文头")
 
 解决问题的办法其实写在了 TCP 报文头上，下面具体分析：
 

@@ -7,7 +7,7 @@ Docker 包括三个基本概念: Image(镜像)、Container(容器)、Repository(
 
 Docker 里的基本概念:
 
-<div align=center><img src="/img/docker.jpg" width="66.7%"></div>
+![Docker里的基本概念](/img/docker.jpg "Docker里的基本概念")
 
 - Image(镜像): 镜像类似于创建虚拟机时只读的系统镜像文件
 - Container(容器): 容器可类比于可以运行的虚拟机，容器可以被创建、启动、停止、删除、暂停等。

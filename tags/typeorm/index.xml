@@ -16,6 +16,6 @@
     <pubDate>Sat, 01 Feb 2020 14:06:31 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2020-02-01-nest-crud/</guid>
-    <description><![CDATA[随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。 传统 MVC 与 NestJS 架构对比： Nest(Nest.js) 的分层借鉴自 Spring，更细化。我们应该要了解整个]]></description>
+    <description><![CDATA[随着代码量的增长传统服务端 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。下面是传统 MVC 服务端架构： 传统MVC架构传统MVC架构 " 传统MVC架构 Nest(Nest.js)]]></description>
 </item></channel>
 </rss>

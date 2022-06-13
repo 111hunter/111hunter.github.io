@@ -71,8 +71,7 @@ socket.disconnect()
 
 整体的开发思路就是服务端和客户端其中一端触发事件，另一端就监听事件。文中的示例程序只用到了事件触发 socket.emit 和事件监听 socket.on。下文的示例程序展示了 Socket.IO 中更多 api 的用法。用户进入聊天室时需要选择房间，进入相同房间的用户才能内部交流，不同房间之间的内部信息不能互通。
 
-<div align=center><img src="/img/socketio.png" width="80%"></div>
-
+![ChatCord实时聊天室](/img/socketio.png "ChatCord实时聊天室")
 
 ## 服务端实现
 

@@ -7,7 +7,7 @@
 
 “这句话在说谎”，那么引号中的话是真话吗？你会发现，你若判定真，就会推出假。而你若判定假，又会推出真。不停的判定下去，就会陷入怪圈：
 
-<div align=center><img src="/img/self-ref.jpg" width="50%"></div>
+![艺术表现自我指涉](/img/self-ref.jpg "艺术表现自我指涉")
 
 在程序中，这就是无穷递归。与意识的自指相似的是别洛索夫发现的[ B-Z 反应](https://en.wikipedia.org/wiki/Belousov%E2%80%93Zhabotinsky_reaction)。意识中的悖论竟在自然界中有对应，这不禁让人疑惑：我们真的有[自由意志](https://en.wikipedia.org/wiki/Free_will)吗？
 

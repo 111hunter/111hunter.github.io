@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-07-13-rbac0\/"
-        },"genre": "posts","keywords": "Node.js","wordcount":  778 ,
+        },"genre": "posts","keywords": "Node.js","wordcount":  967 ,
         "url": "http:\/\/example.org\/2020-07-13-rbac0\/","datePublished": "2020-07-13T17:45:00+08:00","dateModified": "2020-07-13T17:45:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">RBAC0 权限设计实例</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-13">2020-07-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 778 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-13">2020-07-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 967 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/2020-07-13-rbac0/" class="leancloud_visitors" data-flag-title="RBAC0 权限设计实例">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -127,19 +127,46 @@
             </div><div class="content" id="content"><p>权限管理是所有后台系统的都会涉及的一个重要组成部分，主要目的是对不同的人访问资源进行权限的控制，避免因权限控制缺失或操作不当引发的风险问题，如操作错误，隐私数据泄露等问题。</p>
 <p>迄今为止最为普及的权限设计模型是RBAC模型,基于角色的访问控制（Role-Based Access Control)，而 RBAC 模型又可以细分为 RBAC0，RBAC1，RBAC2，RBAC3。</p>
 <p>本文介绍 RBAC0, 这是权限最基础也是最核心的模型，其他复杂模型也是建立在 RBAC0 之上的。关于 RBAC 还有很多重要理论，具体可参考知乎上的这篇 <a href="https://zhuanlan.zhihu.com/p/73414693" target="_blank" rel="noopener noreffer">权限系统设计</a> 和这篇 <a href="https://zhuanlan.zhihu.com/p/63775995" target="_blank" rel="noopener noreffer">RBAC理念</a>。本文将带领读者体会 RBAC0 的实践运用，实现 RBAC0 的关键在建立 <strong>用户-角色-权限</strong> 之间的多对多关系。</p>
-<div align=center><img src="/img/rbac0.png" width="90%"></div>
+<p><figure><a class="lightgallery" href="/img/rbac-permission.jpg" title="RBAC权限模型" data-thumbnail="/img/rbac-permission.jpg" data-sub-html="<h2>RBAC权限模型</h2><p>RBAC权限模型</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/rbac-permission.jpg"
+            data-srcset="/img/rbac-permission.jpg, /img/rbac-permission.jpg 1.5x, /img/rbac-permission.jpg 2x"
+            data-sizes="auto"
+            alt="/img/rbac-permission.jpg" />
+    </a><figcaption class="image-caption">RBAC权限模型</figcaption>
+    </figure></p>
 <h2 id="实例">实例</h2>
 <p>请注意，本文不涉及具体代码讲解。如需具体代码的讲解，请移步到 <a href="https://bezkoder.com/node-js-jwt-authentication-mysql/" target="_blank" rel="noopener noreffer">后端代码讲解</a> 和 <a href="https://bezkoder.com/react-hooks-jwt-auth/" target="_blank" rel="noopener noreffer">前端代码讲解</a>，在这两篇文章末尾附有源码地址。作者的讲解逻辑严密，注重细节，非常优秀，无需我再赘述。本文只演示实例程序，带领读者理解 RBAC0 权限设计模型。</p>
 <p>实例程序将网站用户分为三个角色: Admin(管理员), Moderator(版主), User(普通用户)。</p>
 <p>所有页面路由：home, rigister, login, profile, user, mod, admin</p>
 <h3 id="正常访问截图">正常访问截图</h3>
 <p>对所有未登录用户开放的页面(访客页面): home, register, login</p>
-<div align=center><img src="/img/rbac-public.png" width="90%"></div>
+<p><figure><a class="lightgallery" href="/img/rbac-public.png" title="访客权限展示的页面" data-thumbnail="/img/rbac-public.png" data-sub-html="<h2>访客权限展示的页面</h2><p>访客权限展示的页面</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/rbac-public.png"
+            data-srcset="/img/rbac-public.png, /img/rbac-public.png 1.5x, /img/rbac-public.png 2x"
+            data-sizes="auto"
+            alt="/img/rbac-public.png" />
+    </a><figcaption class="image-caption">访客权限展示的页面</figcaption>
+    </figure></p>
 <p>对网站用户开放的页面：</p>
 <ul>
 <li>对 User 开放的页面(用户页面)：访客页面, profile, user</li>
 </ul>
-<div align=center><img src="/img/rbac-profile.png" width="90%"></div>
+<p><figure><a class="lightgallery" href="/img/rbac-profile.png" title="用户权限展示的页面" data-thumbnail="/img/rbac-profile.png" data-sub-html="<h2>用户权限展示的页面</h2><p>用户权限展示的页面</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/rbac-profile.png"
+            data-srcset="/img/rbac-profile.png, /img/rbac-profile.png 1.5x, /img/rbac-profile.png 2x"
+            data-sizes="auto"
+            alt="/img/rbac-profile.png" />
+    </a><figcaption class="image-caption">用户权限展示的页面</figcaption>
+    </figure></p>
 <ul>
 <li>
 <p>对 Moderator 开放的页面：用户页面, mod(导航栏中增加 Moderator Board)</p>
@@ -151,12 +178,39 @@
 <p>正常访问其他页面的更多截图看 <a href="https://bezkoder.com/react-hooks-jwt-auth/" target="_blank" rel="noopener noreffer">这里</a>，或者自己运行前后端代码，修改用户角色需用 postman 向后端接口发送 http 请求或者直接修改数据表。</p>
 <h3 id="越权访问截图">越权访问截图</h3>
 <p>未登录用户访问 user 页面：</p>
-<div align=center><img src="/img/rbac-!user.png" width="90%"></div>
+<p><figure><a class="lightgallery" href="/img/rbac-!user.png" title="未登录用户访问user页面" data-thumbnail="/img/rbac-!user.png" data-sub-html="<h2>未登录用户访问user页面</h2><p>未登录用户访问user页面</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/rbac-!user.png"
+            data-srcset="/img/rbac-!user.png, /img/rbac-!user.png 1.5x, /img/rbac-!user.png 2x"
+            data-sizes="auto"
+            alt="/img/rbac-!user.png" />
+    </a><figcaption class="image-caption">未登录用户访问user页面</figcaption>
+    </figure></p>
 <p>User 访问 admin 页面：</p>
-<div align=center><img src="/img/rbac-!admin.png" width="90%"></div>
+<p><figure><a class="lightgallery" href="/img/rbac-!admin.png" title="登录用户访问admin页面" data-thumbnail="/img/rbac-!admin.png" data-sub-html="<h2>登录用户访问admin页面</h2><p>登录用户访问admin页面</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/rbac-!admin.png"
+            data-srcset="/img/rbac-!admin.png, /img/rbac-!admin.png 1.5x, /img/rbac-!admin.png 2x"
+            data-sizes="auto"
+            alt="/img/rbac-!admin.png" />
+    </a><figcaption class="image-caption">登录用户访问admin页面</figcaption>
+    </figure></p>
 <p>User, Admin 访问 mod 页面, Moderator 访问 admin 页面的显示结果同理。</p>
-<p>当一个用户同时具有 User, Moderator, Admin 角色时，就有了所有页面的访问权力。</p>
-<div align=center><img src="/img/rbac-root.png" width="90%"></div>
+<p>当一个用户同时具有 User, Moderator, Admin 角色时，就有了所有页面的访问权限。</p>
+<p><figure><a class="lightgallery" href="/img/rbac-root.png" title="访问所有页面的权限" data-thumbnail="/img/rbac-root.png" data-sub-html="<h2>访问所有页面的权限</h2><p>访问所有页面的权限</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/rbac-root.png"
+            data-srcset="/img/rbac-root.png, /img/rbac-root.png 1.5x, /img/rbac-root.png 2x"
+            data-sizes="auto"
+            alt="/img/rbac-root.png" />
+    </a><figcaption class="image-caption">访问所有页面的权限</figcaption>
+    </figure></p>
 <p>根据用户角色来决定页面的数据，这样就实现了 RBAC0 的基本模型。</p>
 <p><strong>参考资料</strong></p>
 <ul>

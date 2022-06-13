@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2021-01-08-tcp\/"
-        },"genre": "posts","keywords": "Network","wordcount":  1325 ,
+        },"genre": "posts","keywords": "Network","wordcount":  1344 ,
         "url": "http:\/\/example.org\/2021-01-08-tcp\/","datePublished": "2021-01-08T10:50:34+08:00","dateModified": "2021-01-08T10:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">关于 TCP, 我学到什么</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/interview/"><i class="far fa-folder fa-fw"></i>Interview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-08">2021-01-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1325 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-08">2021-01-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1344 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2021-01-08-tcp/" class="leancloud_visitors" data-flag-title="关于 TCP, 我学到什么">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -136,7 +136,16 @@
 <li>&hellip;&hellip;</li>
 </ul>
 <p>我们看 TCP 是怎么解决这些问题的，学习它的做法，这可以作为一类问题的处理思路。</p>
-<div align=center><img src="/img/tcp.png" width="100%"></div>
+<p><figure><a class="lightgallery" href="/img/tcp.jpg" title="TCP报文头" data-thumbnail="/img/tcp.jpg" data-sub-html="<h2>TCP报文头</h2><p>TCP报文头</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/tcp.jpg"
+            data-srcset="/img/tcp.jpg, /img/tcp.jpg 1.5x, /img/tcp.jpg 2x"
+            data-sizes="auto"
+            alt="/img/tcp.jpg" />
+    </a><figcaption class="image-caption">TCP报文头</figcaption>
+    </figure></p>
 <p>解决问题的办法其实写在了 TCP 报文头上，下面具体分析：</p>
 <h3 id="数据损坏">数据损坏</h3>
 <ul>

@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>NestJS &#43; TypeORM 实现 crud 示例 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="NestJS &#43; TypeORM 实现 crud 示例" />
-<meta property="og:description" content="随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。 传统 MVC 与 NestJS 架构对比： Nest(Nest.js) 的分层借鉴自 Spring，更细化。我们应该要了解整个" />
+<meta property="og:description" content="随着代码量的增长传统服务端 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。下面是传统 MVC 服务端架构： 传统MVC架构传统MVC架构 &#34; 传统MVC架构 Nest(Nest.js)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2020-02-01-nest-crud/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-02-01T14:06:31&#43;08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
 <meta name="twitter:title" content="NestJS &#43; TypeORM 实现 crud 示例"/>
-<meta name="twitter:description" content="随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。 传统 MVC 与 NestJS 架构对比： Nest(Nest.js) 的分层借鉴自 Spring，更细化。我们应该要了解整个"/>
+<meta name="twitter:description" content="随着代码量的增长传统服务端 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。下面是传统 MVC 服务端架构： 传统MVC架构传统MVC架构 &#34; 传统MVC架构 Nest(Nest.js)"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020-02-01-nest-crud/" /><link rel="prev" href="http://example.org/2019-12-13-git-learn/" /><link rel="next" href="http://example.org/2020-03-13-rxjs-01/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-02-01-nest-crud\/"
-        },"genre": "posts","keywords": "Nest, TypeORM","wordcount":  1716 ,
+        },"genre": "posts","keywords": "Nest, TypeORM","wordcount":  1773 ,
         "url": "http:\/\/example.org\/2020-02-01-nest-crud\/","datePublished": "2020-02-01T14:06:31+08:00","dateModified": "2020-02-01T14:06:31+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">NestJS &#43; TypeORM 实现 crud 示例</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-01">2020-02-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1716 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-01">2020-02-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1773 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/2020-02-01-nest-crud/" class="leancloud_visitors" data-flag-title="NestJS &#43; TypeORM 实现 crud 示例">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -121,10 +121,28 @@
     <li><a href="#aop-的思想">AOP 的思想</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>随着代码量的增长传统的 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。</p>
-<p>传统 MVC 与 NestJS 架构对比：</p>
-<div style="display: flex; justify-content: space-evenly; align-items: center;"><img src="/img/mvc.png" style="width:30%;"><img src="/img/nest.png" style="width:30%;"></div>
+            </div><div class="content" id="content"><p>随着代码量的增长传统服务端 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。下面是传统 MVC 服务端架构：</p>
+<p><figure><a class="lightgallery" href="/img/mvc.jpg" title="传统MVC架构" data-thumbnail="/img/mvc.jpg" data-sub-html="<h2>传统MVC架构</h2><p>传统MVC架构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/mvc.jpg"
+            data-srcset="/img/mvc.jpg, /img/mvc.jpg 1.5x, /img/mvc.jpg 2x"
+            data-sizes="auto"
+            alt="/img/mvc.jpg" />
+    </a><figcaption class="image-caption">传统MVC架构</figcaption>
+    </figure></p>
 <p>Nest(Nest.js) 的分层借鉴自 Spring，更细化。我们应该要了解整个 Nest 框架的三层结构，Nest 和传统的 MVC 框架的区别在于它更注重于后端部分（控制器、服务与数据）的架构，视图层相对比较独立，完全可以由用户自定义配置。</p>
+<p><figure><a class="lightgallery" href="/img/nest.jpg" title="NestJS三层架构" data-thumbnail="/img/nest.jpg" data-sub-html="<h2>NestJS三层架构</h2><p>NestJS三层架构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/nest.jpg"
+            data-srcset="/img/nest.jpg, /img/nest.jpg 1.5x, /img/nest.jpg 2x"
+            data-sizes="auto"
+            alt="/img/nest.jpg" />
+    </a><figcaption class="image-caption">NestJS三层架构</figcaption>
+    </figure></p>
 <h2 id="创建-nest-项目">创建 Nest 项目</h2>
 <p><code>$ npm install -g @nest/cli </code> 全局安装 nest 脚手架</p>
 <p><code>$ nest new nest-crud </code> 新建 nest.js 项目, 选择 yarn 作为开发工具</p>

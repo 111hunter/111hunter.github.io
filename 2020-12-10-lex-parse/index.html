@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-12-10-lex-parse\/"
-        },"genre": "posts","keywords": "Theory, AST","wordcount":  1127 ,
+        },"genre": "posts","keywords": "Theory, AST","wordcount":  1150 ,
         "url": "http:\/\/example.org\/2020-12-10-lex-parse\/","datePublished": "2020-12-10T09:50:34+08:00","dateModified": "2020-12-10T09:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">程序解释与编译</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/thinking/"><i class="far fa-folder fa-fw"></i>Thinking</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-10">2020-12-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1127 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-10">2020-12-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1150 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2020-12-10-lex-parse/" class="leancloud_visitors" data-flag-title="程序解释与编译">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -121,7 +121,12 @@
       <ul>
         <li><a href="#语法和语义">语法和语义</a></li>
         <li><a href="#词法分析">词法分析</a></li>
-        <li><a href="#语法分析">语法分析</a></li>
+        <li><a href="#语法分析">语法分析</a>
+          <ul>
+            <li><a href="#语法描述">语法描述</a></li>
+            <li><a href="#抽象语法树">抽象语法树</a></li>
+          </ul>
+        </li>
         <li><a href="#解释和编译">解释和编译</a></li>
       </ul>
     </li>
@@ -198,7 +203,7 @@
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="语法分析">语法分析</h3>
-<p><strong>- 语法描述</strong></p>
+<h4 id="语法描述">语法描述</h4>
 <p>用 <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form" target="_blank" rel="noopener noreffer">EBNF</a> 来描述我们的程序语法：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -214,9 +219,18 @@
 <span class="nx">expr</span> <span class="o">=</span> <span class="nx">num</span> <span class="o">|</span> <span class="nx">op</span> <span class="nx">expr</span><span class="o">+</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><strong>- 抽象语法树</strong></p>
+</div><h4 id="抽象语法树">抽象语法树</h4>
 <p>确定了语法后，一开始定义的前缀表达式可以表示为如下程序树(AST)：</p>
-<div align=center><img src="/img/expr-ast.svg" width="40%"></div>
+<p><figure><a class="lightgallery" href="/img/expr-ast.jpg" title="程序树(AST)" data-thumbnail="/img/expr-ast.jpg" data-sub-html="<h2>程序树(AST)</h2><p>程序树(AST)</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/expr-ast.jpg"
+            data-srcset="/img/expr-ast.jpg, /img/expr-ast.jpg 1.5x, /img/expr-ast.jpg 2x"
+            data-sizes="auto"
+            alt="/img/expr-ast.jpg" />
+    </a><figcaption class="image-caption">程序树(AST)</figcaption>
+    </figure></p>
 <p>尝试用 JS 代码解析这种逻辑：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

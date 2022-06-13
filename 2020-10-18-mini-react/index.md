@@ -166,7 +166,7 @@ Didact.render(
 
 生成对应的 fiber 树：
 
-<div align=center><img src="/img/fiber-tree.png" width="35%"></div>
+![Fiber Tree](/img/fiber-tree.jpg "Fiber Tree")
 
 在渲染中，我们将 container 创建为 root 并将其设置为 `nextUnitOfWork`。而元素的 fiber 由 `performUnitOfWork` 生成，我们将为每个 fiber 做三件事：
 

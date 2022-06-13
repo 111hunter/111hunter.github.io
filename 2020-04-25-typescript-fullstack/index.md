@@ -7,7 +7,7 @@
 
 后端开发使用 Nest.js 框架，本次实践是重前端的，因此后端会做得简单一些。后端是在上一次鉴权认证的代码做部分修改。如果有不懂的代码，可以参考之前的[文章](https://111hunter.github.io/2020-03-29-nest-auth/)。此部分的讲解略过。这是后端部分生成的 swagger 接口文档:
 
-<div align=center><img src="/img/app-docs.png" width="80%"></div>
+![swagger接口文档](/img/app-docs.png "swagger接口文档")
 
 ## 前端开发
 
@@ -171,7 +171,7 @@ const routes: Routes = [
 export class AuthRoutingModule { }
 ```
 
-#### todolist列表
+#### todolist 列表
 
 创建 todo.component.html, 捕获 todolist 对应的增删改查事件：
 ```html
@@ -225,11 +225,11 @@ export class TodoListItemComponent {
 </mat-list-item>
 ```
 
-#### 会话框
+#### 页面弹窗
 
 在处理 todo 事项时，我们希望弹出一个 dialog：
 
-<div align=center><img src="/img/app-dialog.png" width="100%"></div>
+![页面弹窗](/img/app-dialog.png "页面弹窗")
 
 这样，能监听组件变化，我们的状态变化会显得更加直观。todo-create-dialog.component.ts:
 
@@ -407,7 +407,7 @@ export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [
 
 定义初始状态类似于数据库的创建，action 是 store 数据的来源入口，从NgRx官网示意图中我们可以看到它可以来自用户操作(component)，也可以来自网络请求(effects)，reducer 类似于数据表，那 adapter, selector, effects 又分别是什么呢？
 
-<div align=center><img src="/img/ngrx.png" width="80%"></div>
+![ngrx状态管理](/img/ngrx.png "ngrx状态管理")
 
 按照 Redux 的约定，reducer 必须是纯函数，接收旧状态，返回新状态。adapter 是 reducer 数据表的一行(记录)，selector 类似于 sql 中的 select 语句。而 effects 负责传递数据，和一些 DOM 操作，使用 NgRx 这套流程时，component 唯一能做的是 dispatch action, 额外的事情(副作用)就交给 effects 来做。
 
@@ -565,7 +565,7 @@ this.store.dispatch(UserActions.login({ user }));
 
 状态数据就在 component, store 之间来回传递。最后的程序如图：
 
-<div align=center><img src="/img/app-state.png" width="100%"></div>
+![监听页面状态变化](/img/app-state.png "监听页面状态变化")
 
 ### 思考
 

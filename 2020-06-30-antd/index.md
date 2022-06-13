@@ -1,11 +1,13 @@
 # antd + TS 的简单 demo
 
 
-这次使用 antd 和 TypeScript 实践一个简单 todolist, 为什么又是 todolist？这个问题好比问为什么写代码第一句是 hello world 一样。只是简单的练手，写什么不重要。这次的代码中暂时还没有实现数据持久化，状态管理等，只是把页面上能够看到的功能实现了。后续我将尝试其他的数据流管理方案。
+这次使用 antd 和 TypeScript 实践一个简单 todolist, 作为简单的练手 Demo。这次的代码中暂时还没有实现数据持久化，状态管理等基础功能，只是把页面上能够看到的功能实现了。因为后续我可能会结合这个 Demo 尝试其他的数据流管理方案。
 
 页面长这样，响应 pc 端，移动端:
 
-<div style="display: flex; justify-content: space-evenly; align-items: center;"><img src="/img/antd-pc.png" style="width:58%;"><img src="/img/antd-mo.png" style="width:28%;"></div>
+![pc端页面展示](/img/antd-pc.png "pc端页面展示")
+
+![移动端页面展示](/img/antd-mo.png "移动端页面展示")
 
 页面上有一个搜索框，过滤列表项。点击添加按钮，弹出会话框，添加列表数据。下面是三个标签选项，点击不同的标签显示不同的列表内容。列表中每一项中的三个图标分别实现的是编辑数据，修改完成状态和删除这一项的功能。
 

@@ -164,7 +164,7 @@ ES6，7，8，... 的更多类型补充可以看这一篇 [文章](https://vince
 
 将原代码转化为 AST，修改 AST，再重新转化为新代码就能完成代码转译。Babel 将最新语法的 JS 代码转化为 ES5 的原理就是这样的。
 
-<div align=center><img src="/img/ast.png" width="90%"></div>
+![Babel原理示意图](/img/ast.png "Babel原理示意图")
 
 Babel 操作 AST 会用到以下工具包：
 

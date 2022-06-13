@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2021-01-30-tag-system\/"
-        },"genre": "posts","keywords": "Theory","wordcount":  1221 ,
+        },"genre": "posts","keywords": "Theory","wordcount":  1261 ,
         "url": "http:\/\/example.org\/2021-01-30-tag-system\/","datePublished": "2021-01-30T10:50:34+08:00","dateModified": "2021-01-30T10:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">一些通用计算模型</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/thinking/"><i class="far fa-folder fa-fw"></i>Thinking</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-30">2021-01-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1221 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-30">2021-01-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1261 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2021-01-30-tag-system/" class="leancloud_visitors" data-flag-title="一些通用计算模型">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -226,10 +226,28 @@ Computation
 <li>每个格子下一刻的状态由此刻的自身状态和左右邻居的状态共同决定</li>
 </ul>
 <p>依照上述规则，有 256 种可能情况，若规定黑色为 1，白色为 0：</p>
-<div align=center><img src="/img/rule110.png" width="60%"></div>
+<p><figure><a class="lightgallery" href="/img/rule110.png" title="Rule110" data-thumbnail="/img/rule110.png" data-sub-html="<h2>Rule110</h2><p>Rule110</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/rule110.png"
+            data-srcset="/img/rule110.png, /img/rule110.png 1.5x, /img/rule110.png 2x"
+            data-sizes="auto"
+            alt="/img/rule110.png" />
+    </a><figcaption class="image-caption">Rule110</figcaption>
+    </figure></p>
 <p>上图对应 01101110(二进制)，这就是 Rule 110(十进制)，它也是图灵完备的，因为它被证明可以模拟循环标签系统。下面做简单解释：</p>
 <p>在元胞自动机中，有的结构会随时间做周期性地“移动”，它们被称为“滑翔机”或“飞船”：</p>
-<div align=center><img src="/img/gliders.png" width="100%"></div>
+<p><figure><a class="lightgallery" href="/img/gliders.jpg" title="Rule110中的滑翔机" data-thumbnail="/img/gliders.jpg" data-sub-html="<h2>Rule110中的滑翔机</h2><p>Rule110中的滑翔机</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/gliders.jpg"
+            data-srcset="/img/gliders.jpg, /img/gliders.jpg 1.5x, /img/gliders.jpg 2x"
+            data-sizes="auto"
+            alt="/img/gliders.jpg" />
+    </a><figcaption class="image-caption">Rule110中的滑翔机</figcaption>
+    </figure></p>
 <p>上图是 Rule 110 中已发现的所有滑翔机，以及一个滑翔机枪：每周期发射一次A 和 B 滑翔机。<a href="https://www.comunidad.escom.ipn.mx/genaro/rule110/ctsRule110.html" target="_blank" rel="noopener noreffer">这里</a>展示了用通过特定排列的滑翔机来模拟 <code>P: 1 --&gt; 11, 10</code> 的循环标签系统，这不是完成通用计算的高效方式，但对简单的细胞自动机来说这仍是一项令人印象深刻的技术成果。比起二进制的字符串，图像可能更容易让人观察计算行为的普遍规律。</p>
 <p>如果我们建立了宇宙的完整模型，是否意味着我们没有自由意志了呢？“<a href="https://en.wikipedia.org/wiki/Computational_irreducibility" target="_blank" rel="noopener noreffer">Computational irreducibility</a>” 意味着，就算你知道了一切规则，你可能也无法提前预测这些规则将会做什么 — 唯一的办法是运行这些规则看看它们到底会做出什么来。</p>
 <p><strong>参考资料</strong></p>

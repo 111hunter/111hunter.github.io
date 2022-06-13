@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-08-11-websocket\/"
-        },"genre": "posts","keywords": "Network","wordcount":  1542 ,
+        },"genre": "posts","keywords": "Network","wordcount":  1582 ,
         "url": "http:\/\/example.org\/2020-08-11-websocket\/","datePublished": "2020-08-11T10:51:00+08:00","dateModified": "2020-08-11T10:51:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">基于 Socket.IO 的实时聊天室</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-11">2020-08-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1542 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-11">2020-08-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1582 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/2020-08-11-websocket/" class="leancloud_visitors" data-flag-title="基于 Socket.IO 的实时聊天室">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -240,7 +240,16 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>整体的开发思路就是服务端和客户端其中一端触发事件，另一端就监听事件。文中的示例程序只用到了事件触发 socket.emit 和事件监听 socket.on。下文的示例程序展示了 Socket.IO 中更多 api 的用法。用户进入聊天室时需要选择房间，进入相同房间的用户才能内部交流，不同房间之间的内部信息不能互通。</p>
-<div align=center><img src="/img/socketio.png" width="80%"></div>
+<p><figure><a class="lightgallery" href="/img/socketio.png" title="ChatCord实时聊天室" data-thumbnail="/img/socketio.png" data-sub-html="<h2>ChatCord实时聊天室</h2><p>ChatCord实时聊天室</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/socketio.png"
+            data-srcset="/img/socketio.png, /img/socketio.png 1.5x, /img/socketio.png 2x"
+            data-sizes="auto"
+            alt="/img/socketio.png" />
+    </a><figcaption class="image-caption">ChatCord实时聊天室</figcaption>
+    </figure></p>
 <h2 id="服务端实现">服务端实现</h2>
 <p>WebSocket 依赖于 http，这里需要安装 socket.io 和 express</p>
 <div class="highlight"><div class="chroma">

@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-11-17-brainfuck\/"
-        },"genre": "posts","keywords": "Theory","wordcount":  1301 ,
+        },"genre": "posts","keywords": "Theory","wordcount":  1326 ,
         "url": "http:\/\/example.org\/2020-11-17-brainfuck\/","datePublished": "2020-11-17T22:00:34+08:00","dateModified": "2020-11-17T22:00:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">图灵机的极简实现</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/thinking/"><i class="far fa-folder fa-fw"></i>Thinking</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-17">2020-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1301 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-17">2020-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1326 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2020-11-17-brainfuck/" class="leancloud_visitors" data-flag-title="图灵机的极简实现">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -129,7 +129,16 @@
 <li>把注意力从纸的一个位置移动到另一个位置；</li>
 </ul>
 <p>而在每个阶段，人要决定下一步的动作，依赖于此人当前所关注的纸上某个位置的符号和此人当前思维的状态。为了模拟人的这种运算过程，图灵构造出一台假想机器，该机器由以下几个部分组成：</p>
-<div align=center><img src="/img/turing-mach.jpg" width="80%"></div>
+<p><figure><a class="lightgallery" href="/img/turing-mach.jpg" title="图灵机的组成结构" data-thumbnail="/img/turing-mach.jpg" data-sub-html="<h2>图灵机的组成结构</h2><p>图灵机的组成结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/turing-mach.jpg"
+            data-srcset="/img/turing-mach.jpg, /img/turing-mach.jpg 1.5x, /img/turing-mach.jpg 2x"
+            data-sizes="auto"
+            alt="/img/turing-mach.jpg" />
+    </a><figcaption class="image-caption">图灵机的组成结构</figcaption>
+    </figure></p>
 <ul>
 <li>一条无限长的纸带(tape)，纸带由很多个格子构成，用于输入输出信息。每个格子中包含一个来自有限字母表的符号，字母表中有一个特殊符号表示空白。纸带上一端的格子从 0 开始编号，另一端无限延伸一直到无穷大。</li>
 <li>一个读写头(head)，读写头可以在纸带上左右移动，它能读出当前所指的格子上的符号，并能改变当前格子上的符号。</li>
