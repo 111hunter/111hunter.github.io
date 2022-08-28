@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Maya - 标签 - 浮槎的博客</title>
+        <link>http://example.org/tags/maya/</link>
+        <description>Maya - 标签 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 28 Aug 2022 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/maya/" rel="self" type="application/rss+xml" /><item>
+    <title>教化与现世梦境</title>
+    <link>http://example.org/2022-08-28-maya/</link>
+    <pubDate>Sun, 28 Aug 2022 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2022-08-28-maya/</guid>
+    <description><![CDATA[你现在所看到、所听到的不是其它，都是梦境。此时此刻你正在做梦。你醒着，但你正在做梦。 做梦是人脑的主要功能，你的脑子一天二十四小时都在做梦。二]]></description>
+</item><item>
+    <title>我没有任何信仰</title>
+    <link>http://example.org/2022-08-14-faith/</link>
+    <pubDate>Sun, 14 Aug 2022 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2022-08-14-faith/</guid>
+    <description><![CDATA[我没有任何信仰，我不愿意属于任何宗教组织，请你们务必谅解这点。我坚持主张没有任何宗教组织能引领人们见到真理，如果为了这个目的而成立人为组织，]]></description>
+</item></channel>
+</rss>

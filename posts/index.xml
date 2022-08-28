@@ -3,13 +3,20 @@
         <title>所有文章 - 浮槎的博客</title>
         <link>http://example.org/posts/</link>
         <description>所有文章 | 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 14 Aug 2022 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>知觉是向什么开启的</title>
-    <link>http://example.org/2022-08-14-perception/</link>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 28 Aug 2022 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>教化与现世梦境</title>
+    <link>http://example.org/2022-08-28-maya/</link>
+    <pubDate>Sun, 28 Aug 2022 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2022-08-28-maya/</guid>
+    <description><![CDATA[你现在所看到、所听到的不是其它，都是梦境。此时此刻你正在做梦。你醒着，但你正在做梦。 做梦是人脑的主要功能，你的脑子一天二十四小时都在做梦。二]]></description>
+</item><item>
+    <title>我没有任何信仰</title>
+    <link>http://example.org/2022-08-14-faith/</link>
     <pubDate>Sun, 14 Aug 2022 10:50:34 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2022-08-14-perception/</guid>
-    <description><![CDATA[于是，现在我的知觉中有事物本身，而不是事物的表象，我仅仅补充说，事物在我的目光的末端，普遍地说的话是在我的探究的末端；我没有假设对他者身体的]]></description>
+    <guid>http://example.org/2022-08-14-faith/</guid>
+    <description><![CDATA[我没有任何信仰，我不愿意属于任何宗教组织，请你们务必谅解这点。我坚持主张没有任何宗教组织能引领人们见到真理，如果为了这个目的而成立人为组织，]]></description>
 </item><item>
     <title>像理解网络模型一样理解区块链</title>
     <link>http://example.org/2022-06-05-blockchain-2/</link>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>http://example.org/2021-05-25-blockchain/</guid>
     <description><![CDATA[区块链是一个分布式数据库，任何人都可以读取的它的区块数据。区块链是不可变的，意味着一旦将区块添加到链中，就只能在使链的其余部分无效的情况下才]]></description>
-</item><item>
-    <title>Docker 极速入门</title>
-    <link>http://example.org/2021-05-02-docker/</link>
-    <pubDate>Sun, 02 May 2021 11:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2021-05-02-docker/</guid>
-    <description><![CDATA[Docker 包括三个基本概念: Image(镜像)、Container(容器)、Repository(仓库)，理解了这三个概念，就理解了 Docker 的整个生命周期]]></description>
 </item></channel>
 </rss>
