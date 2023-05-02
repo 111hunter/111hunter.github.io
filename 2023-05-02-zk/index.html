@@ -5,30 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>关于 TCP, 我学到什么 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="关于 TCP, 我学到什么" />
-<meta property="og:description" content="TCP 在不可靠的 IP 协议之上实现了可靠性，使得我们在开发上层应用时，不必关注网络传输的种种复杂性。可靠，指的是采用一系列技术来保障数据在发送方和接" />
+        <title>零知识证明 — 数字签名的起源 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="零知识证明 — 数字签名的起源" />
+<meta property="og:description" content="在密码学中，了解数字签名工作原理的最好方法是了解它的起源。因此，让我们花点儿时间简要介绍一下零知识证明(ZKP)，然后重新讨论数字签名。 想象" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/2021-01-08-tcp/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-01-08T10:50:34&#43;08:00" />
-<meta property="article:modified_time" content="2021-01-08T10:50:34&#43;08:00" />
+<meta property="og:url" content="http://example.org/2023-05-02-zk/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-02T10:50:34&#43;08:00" />
+<meta property="article:modified_time" content="2023-05-02T10:50:34&#43;08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
-<meta name="twitter:title" content="关于 TCP, 我学到什么"/>
-<meta name="twitter:description" content="TCP 在不可靠的 IP 协议之上实现了可靠性，使得我们在开发上层应用时，不必关注网络传输的种种复杂性。可靠，指的是采用一系列技术来保障数据在发送方和接"/>
+<meta name="twitter:title" content="零知识证明 — 数字签名的起源"/>
+<meta name="twitter:description" content="在密码学中，了解数字签名工作原理的最好方法是了解它的起源。因此，让我们花点儿时间简要介绍一下零知识证明(ZKP)，然后重新讨论数字签名。 想象"/>
 <meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2021-01-08-tcp/" /><link rel="prev" href="http://example.org/2020-12-28-monad/" /><link rel="next" href="http://example.org/2021-01-21-metaprogram/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2023-05-02-zk/" /><link rel="prev" href="http://example.org/2022-08-28-maya/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "关于 TCP, 我学到什么",
+        "headline": "零知识证明 — 数字签名的起源",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/example.org\/2021-01-08-tcp\/"
-        },"genre": "posts","keywords": "Network","wordcount":  1344 ,
-        "url": "http:\/\/example.org\/2021-01-08-tcp\/","datePublished": "2021-01-08T10:50:34+08:00","dateModified": "2021-01-08T10:50:34+08:00","publisher": {
+            "@id": "http:\/\/example.org\/2023-05-02-zk\/"
+        },"genre": "posts","keywords": "Blockchain","wordcount":  2315 ,
+        "url": "http:\/\/example.org\/2023-05-02-zk\/","datePublished": "2023-05-02T10:50:34+08:00","dateModified": "2023-05-02T10:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -103,10 +103,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">关于 TCP, 我学到什么</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/interview/"><i class="far fa-folder fa-fw"></i>Interview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-08">2021-01-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1344 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2021-01-08-tcp/" class="leancloud_visitors" data-flag-title="关于 TCP, 我学到什么">
+        </div><article class="page single"><h1 class="single-title animated flipInX">零知识证明 — 数字签名的起源</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/thinking/"><i class="far fa-folder fa-fw"></i>Thinking</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-05-02">2023-05-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2315 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/2023-05-02-zk/" class="leancloud_visitors" data-flag-title="零知识证明 — 数字签名的起源">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -116,117 +116,98 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#信道不可靠">信道不可靠</a>
-      <ul>
-        <li><a href="#数据损坏">数据损坏</a></li>
-        <li><a href="#乱序和冗余">乱序和冗余</a></li>
-        <li><a href="#数据丢失">数据丢失</a></li>
-      </ul>
-    </li>
-    <li><a href="#基本可靠">基本可靠</a></li>
+    <li><a href="#交互式零知识证明">交互式零知识证明</a></li>
+    <li><a href="#非交互式零知识证明">非交互式零知识证明</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>TCP 在不可靠的 IP 协议之上实现了可靠性，使得我们在开发上层应用时，不必关注网络传输的种种复杂性。可靠，指的是采用一系列技术来保障数据在发送方和接收方是一致的。我们了解下 TCP 如何实现可靠性。</p>
-<h2 id="信道不可靠">信道不可靠</h2>
-<p>需要解决的问题是，数据在信道上传输时，不总是符合预期，例如出现以下情况：</p>
-<ul>
-<li>损坏：发送 10，11，接收到 10，10</li>
-<li>乱序：发送 10，11，接收到 11，10</li>
-<li>丢失：发送 10，11，只接收到 10</li>
-<li>&hellip;&hellip;</li>
-</ul>
-<p>我们看 TCP 是怎么解决这些问题的，学习它的做法，这可以作为一类问题的处理思路。</p>
-<p><figure><a class="lightgallery" href="/img/tcp.jpg" title="TCP报文头" data-thumbnail="/img/tcp.jpg" data-sub-html="<h2>TCP报文头</h2><p>TCP报文头</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="/img/tcp.jpg"
-            data-srcset="/img/tcp.jpg, /img/tcp.jpg 1.5x, /img/tcp.jpg 2x"
-            data-sizes="auto"
-            alt="/img/tcp.jpg" />
-    </a><figcaption class="image-caption">TCP报文头</figcaption>
-    </figure></p>
-<p>解决问题的办法其实写在了 TCP 报文头上，下面具体分析：</p>
-<h3 id="数据损坏">数据损坏</h3>
-<ul>
-<li>
-<p>检验和机制：<code>Checksum</code> 用于校验报文是否在传输过程中发生了变化，计算方法：</p>
-<ul>
-<li>1.将报文中的 <code>Checksum</code> 置零</li>
-<li>2.基于整个报文(头部 + 数据部分)计算出 <code>Checksum</code></li>
-</ul>
-</li>
-</ul>
-<p>接收方收到报文后，计算出 <code>Checksum</code> 并与报文中的 <code>Checksum</code> 对比。若一致，数据没有损坏。不一致，数据损坏，丢掉数据包。</p>
-<h3 id="乱序和冗余">乱序和冗余</h3>
-<ul>
-<li>字节编号机制：建立连接时，发送方和接收方各自初始化一个<code>seq(Seq...)</code> 值，并且让对方知道，这就是为什么 TCP 连接时需要三次握手。发送方每次发送数据，都是在自己前一次的 <code>seq</code> 值上加本报文的 <code>data</code> 字节数，得到本报文的 <code>seq</code> 值。接收方接收到多个报文后，按 <code>seq</code> 的值对所有数据包进行升序排列，就能得到有序的报文。并且接收方可以判断接收的数据包之间是否有间隔或冗余。</li>
-</ul>
-<h3 id="数据丢失">数据丢失</h3>
+            </div><div class="content" id="content"><p>在密码学中，了解数字签名工作原理的最好方法是了解它的起源。因此，让我们花点儿时间简要介绍一下零知识证明(ZKP)，然后重新讨论数字签名。
+想象一下，Peggy 想向 Victor 证明自己拥有一些信息。例如，Peggy 想证明她知道某个群元素的离散对数。换句话说，对于一个给定的 Y 以及群生成元 g，Peggy 想要证明她知道一个 x， 满足 $$ Y = {g^x} $$ 当然，最简单的解决方案是 Peggy 把 x(称为见证)发送给 Victor。这就是一个简单的知识证明，但如果 Peggy 不想让 Victor 得到这个 x，这个方案就不适用了。</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">从理论上讲，如果在一个协议中 Peggy 能向 Victor 证明她知道某个证据，我们就说该协议是完备的。如果 Peggy 不能用协议来证明她确实知道某个见证，那么这个方案就不实用。</div>
+        </div>
+    </div>
+<p>在密码学中，我们最感兴趣的是不会将证据泄露给验证者的知识证明，这种证明称为零知识证明。</p>
+<h2 id="交互式零知识证明">交互式零知识证明</h2>
+<p>我们将从被攻破的协议中逐步构建一个 ZKP，并演示 Peggy 如何证明自己知道 x 而不透露 x。</p>
+<p>密码学中处理这类问题的典型方法是使用一些随机值来“隐藏”见证(例如，通过加密)。但我们所做的不仅仅是隐藏: 我们还想证明这个见证确实存在。要做到这一点，我们需要一种代数方法来隐藏见证。</p>
+<p>一个简单的解决方案是将随机生成的值 k 与见证相加: $$ s = k + x $$ 然后，Peggy 可以将隐藏了见证的 s 和随机值 k 一起发送给 Victor。</p>
+<p>为了判断 Peggy 是否真的知道见证，Victor 可以检查 Peggy 给他的值是否与他所知道的相符，Victor 可以检查下面两个数字是否相等: $$ g^s = g^{k+x} = {g^x}{g^k} $$ $$ Y{g^k} = {g^x}{g^k} $$</p>
+<p>这个方案的思想是，只有知道见证 x 的人才能构造出满足这个等式的“盲”证据 s。因此，这是知识的证明。但这个方案存在一个问题，显然它是不安全的! 事实上，由于隐藏见证 x 的等式只有一个未知项(x 本身)，因此 Victor 仅通过移项就可以求出 x 值: $$ x = s - k $$</p>
+<p>为了解决这个问题，Peggy 可以把随机值 k 隐藏起来! Peggy 将随机值 k 隐藏在 g 的指数中（关键🤔），以确保 Victor 的等式仍然有效。 $$ R = g^k $$ 这样一来，Victor 就无法获得 k 的值, 也就无法恢复 x 的值。不过他依然可以验证 Peggy 是否知道 x 的值! $$ g^s = g^{k+x} = {g^x}{g^k} $$ $$ YR = {g^x}{g^k} $$</p>
+<p>我们的方案有一个问题，那就是 Peggy 可以作弊。她可以在不知道 x 的情况下让 Victor 相信她知道 x! 她所要做的就是颠倒她计算证明的步骤。Peggy 首先生成一个随机值 s，然后根据 s 计算 R 值: $$ R = \frac{g^s}{Y} $$</p>
+<p>而 Victor 验证计算时，$ YR = g^s $ 确实成立，因此相信 Peggy 拥有见证 x。(这种使用逆运算来计算一个值的技巧也用于密码学中的许多攻击。)</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">从理论上讲，如果 Peggy 不能作弊(说明如果 Peggy 不知道 x，那么她就不能欺骗 Victor)，我 们说这个方案是“可靠的”。</div>
+        </div>
+    </div>
+<p>如果要确保 ZKP 方案是可靠的，Victor 必须能够确保 Peggy 通过 R（k） 来计算 s，而不是通过 s 计算 R。为此，Victor 使协议具有交互性。</p>
 <ul>
 <li>
-<p>确认应答机制：接收方收到发送方的报文后，将 <code>ack(Ack)</code> 传递给对方，<code>ack</code> 的值表示接收方期望收到的下一次 <code>seq</code> 值。<code>ack</code> 的计算与发送方报文的 <code>ack</code>，<code>ACK</code> 无关(对&quot;确认&quot;进行再确认无意义，在不可靠的信道上，双方不可能达成一致性确认，<a href="https://zhuanlan.zhihu.com/p/163512312" target="_blank" rel="noopener noreffer">两军问题</a>)，这下再看 TCP 三次握手的图就清晰多了。</p>
+<p>1.Peggy 必须对随机值 k 做出承诺，以确保 Peggy 以后无法更改 k 的值。</p>
 </li>
 <li>
-<p>超时重传机制：报文在信道中丢失了，发送方就收不到对方的 <code>ack</code>。发送方在发送报文后，启用定时器(<code>RTO</code>)。一定时间没有返回就重传报文，就要知道报文在两方的往返时间(<code>RTT</code>)，根据 <code>RTT</code> 设计 <code>RTO</code>。而 <code>RTT</code> 实际上是波动的，当 <code>RTO &lt; RTT</code> 时，就造成了数据冗余。</p>
+<p>2.在收到 Peggy 的承诺后，Victor 在协议中引入了他自己的一些随机数。他生成一个随机 值 c(称为挑战)，并将其发送给 Peggy。</p>
 </li>
 <li>
-<p>快速重传机制：以数据驱动重传，例如发送方发送了 <code>seq=1</code>、 <code>seq=2</code>、 <code>seq=3</code>、 <code>seq=4</code> 的报文，其中 <code>seq=1</code> 的报文丢失了，发送方会收到三个连续的 <code>ack=1</code>，此时就触发快速重传机制，重传 <code>seq=1</code>。</p>
+<p>3.然后，Peggy 可以根据随机值 k 和挑战 c 计算她隐藏了见证 x 的承诺。</p>
 </li>
 </ul>
-<h2 id="基本可靠">基本可靠</h2>
-<p>上面的设计在简单场景中是基本可靠的，即确保了字节流在通信双方完全相同。在复杂的场景中，TCP 还有很多其他的机制来实现可靠性。例如，造成数据丢失的原因有很多：</p>
-<ul>
-<li>
-<p>发送方对数据的处理效率高于接收方，接收方达到处理能力极限，而发送方无法感知，依然大量传递数据，就造成了数据丢失。(流量太快)</p>
-</li>
-<li>
-<p>发送太多的数据造成数据在信道中过于拥堵，也会造成数据丢失。(流量太多)</p>
-</li>
-</ul>
-<p>这两种情况都会触发 TCP 的重传机制，而重传只会丢失更多数据，应对这两种情况，我们需要更多的机制：</p>
-<ul>
-<li>
-<p>流量控制机制：找到 TCP 两方中效率低的一方一次能处理的数据峰值，用 <code>Window</code> 表示，发送方根据 <code>Window</code> 的大小发送数据包，直到接收方收到所有数据包再进行下一次数据发送。</p>
-</li>
-<li>
-<p>拥塞控制机制：找到信道一次能容纳的数据峰值，具体的实现涉及很多复杂的算法。</p>
-</li>
-</ul>
-<p>可靠性其实是一个很大的话题，有很多细节值得深究，本文只是让读者对可靠性有个基本的认识。</p>
+<p>由于 Peggy 在没有 Victor 的挑战 c 的情况下无法执行最后一步操作，而 Victor 在没有看到随 机值 k 的承诺的情况下不会将挑战 c 发送给 Peggy，因此 Peggy 不得不使用 k 来计算 s。</p>
+<p>最后构成的协议称为 Schnorr 身份识别协议，Schnorr 身份识别协议是一个交互式 ZKP，它满足了完备性(Peggy 可以证明她知道一些见证 x)、 可靠性(Peggy 不知道见证 x 时无法证明她知道 x)、零知识性(Victor 对见证 x 一无所知)。</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Schnorr 身份识别协议运行在诚实验证者零知识(Honest Verifier Zero-Knowledge，HVZK)模 型下:如果验证者(Victor)不诚实并且没有随机选择挑战 c，那么他可以得到见证 x 的一些信息。 一些更强的 ZKP 方案可以确保即使在验证者是恶意的情况下知识证明也是零知识的。</div>
+        </div>
+    </div>
+<p>所谓的交互式 ZKP 方案通常包含 3 个步骤(承诺、挑战和证明)，在文献中通常被称为 Sigma 协议，有时写成 Σ (Sigma 的希腊字母表示方法)协议。那么这与数字签名有什么关系呢?</p>
+<h2 id="非交互式零知识证明">非交互式零知识证明</h2>
+<p>上述的交互式 ZKP 的问题在于它是交互式的，而现实世界中人们通常不希望协议是交互式 的。交互式协议增加了一些不可忽略的开销，因为它需要双方发送多条消息(通过网络)，并在参与双方不同时在线时会增加无法限制的延迟。因此，应用密码学领域几乎不使用交互式 ZKP。</p>
+<p>但这并不说明之前的讨论毫无意义! 1986 年，Amos Fiat 和 Adi Shamir 提出了一项技术，该 技术可以轻松地将交互式 ZKP 转换为非交互式 ZKP。这项技术(称为 Fiat-Shamir 启发式或 Fiat-Shamir 转换)的关键是让证明者以他们无法控制的方式自己计算挑战。</p>
+<p>这项技术的实现方法是，由证明者计算发送和接收的所有消息的哈希值，这个哈希值可以视为交互式协议中的挑战。如果哈希函数的输出与随机数无法区分(即哈希函数的输出看起来是随机的)，那么它可以成功地模拟验证者的角色。</p>
+<p>Schnorr 在上面的基础之上注意到任何信息都可以计算哈希值! 例如，对一条消息计算哈希值。这样一来，我们得到的不仅是一个能证明我们知道某个见证 x 的证据，还是对一个与证据相关联(指在密码学上的关联)的消息的承诺。</p>
+<p>换句话说，如果证据是正确的，那么只有知道见证(此处见证成为签名密钥)的人才能对该消息做出承诺。那就是签名! 数字签名就是非交互式 ZKP。将 Fiat-Shamir 转换应用于 Schnorr 身份识别协议， 我们就可以得到 Schnorr 签名方案。</p>
+<p>总而言之，Schnorr 签名本质上是两个值，R 和 s，其中 R 是对某个秘密随机值的承诺(通常称秘密值为 nonce，因为它需要对每个签名都是唯一的)，s 是通过承诺 R、私钥(见证 x)和消息(挑战)计算的值。</p>
 <p><strong>参考资料</strong></p>
 <ul>
-<li><a href="https://www.zhihu.com/question/58517416/answer/158142955" target="_blank" rel="noopener noreffer">车小胖的知乎回答</a></li>
-<li><a href="https://www.cnblogs.com/realjimmy/p/12930797.html" target="_blank" rel="noopener noreffer">seq 和 ack 号的正确理解</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/133307545" target="_blank" rel="noopener noreffer">图解 TCP 重传、滑动窗口、流量控制、拥塞控制</a></li>
+<li>全文摘录自 <a href="https://book.douban.com/subject/34615742/" target="_blank" rel="noopener noreffer">《Real-World Cryptography》</a></li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-01-08</span>
+                <span>更新于 2023-05-02</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/2021-01-08-tcp/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/2023-05-02-zk/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2021-01-08-tcp/" data-title="关于 TCP, 我学到什么" data-hashtags="Network"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2021-01-08-tcp/" data-hashtag="Network"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2021-01-08-tcp/" data-title="关于 TCP, 我学到什么" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2021-01-08-tcp/" data-title="关于 TCP, 我学到什么"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2021-01-08-tcp/" data-title="关于 TCP, 我学到什么"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2021-01-08-tcp/" data-title="关于 TCP, 我学到什么" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2021-01-08-tcp/" data-title="关于 TCP, 我学到什么" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2021-01-08-tcp/" data-title="关于 TCP, 我学到什么"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2023-05-02-zk/" data-title="零知识证明 — 数字签名的起源" data-hashtags="Blockchain"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2023-05-02-zk/" data-hashtag="Blockchain"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2023-05-02-zk/" data-title="零知识证明 — 数字签名的起源" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2023-05-02-zk/" data-title="零知识证明 — 数字签名的起源"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2023-05-02-zk/" data-title="零知识证明 — 数字签名的起源"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2023-05-02-zk/" data-title="零知识证明 — 数字签名的起源" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2023-05-02-zk/" data-title="零知识证明 — 数字签名的起源" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2023-05-02-zk/" data-title="零知识证明 — 数字签名的起源"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/network/">Network</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/blockchain/">Blockchain</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/2020-12-28-monad/" class="prev" rel="prev" title="IO 和 Monad"><i class="fas fa-angle-left fa-fw"></i>IO 和 Monad</a>
-            <a href="/2021-01-21-metaprogram/" class="next" rel="next" title="[译]元编程">[译]元编程<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/2022-08-28-maya/" class="prev" rel="prev" title="教化与现世梦境"><i class="fas fa-angle-left fa-fw"></i>教化与现世梦境</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

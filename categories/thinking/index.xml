@@ -3,7 +3,14 @@
         <title>Thinking - 分类 - 浮槎的博客</title>
         <link>http://example.org/categories/thinking/</link>
         <description>Thinking - 分类 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 28 Aug 2022 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 02 May 2023 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+    <title>零知识证明 — 数字签名的起源</title>
+    <link>http://example.org/2023-05-02-zk/</link>
+    <pubDate>Tue, 02 May 2023 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2023-05-02-zk/</guid>
+    <description><![CDATA[在密码学中，了解数字签名工作原理的最好方法是了解它的起源。因此，让我们花点儿时间简要介绍一下零知识证明(ZKP)，然后重新讨论数字签名。 想象]]></description>
+</item><item>
     <title>教化与现世梦境</title>
     <link>http://example.org/2022-08-28-maya/</link>
     <pubDate>Sun, 28 Aug 2022 10:50:34 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>http://example.org/2021-01-30-tag-system/</guid>
     <description><![CDATA[在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计]]></description>
-</item><item>
-    <title>IO 和 Monad</title>
-    <link>http://example.org/2020-12-28-monad/</link>
-    <pubDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-12-28-monad/</guid>
-    <description><![CDATA[学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程]]></description>
 </item></channel>
 </rss>
