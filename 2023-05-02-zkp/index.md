@@ -37,7 +37,7 @@
 
 - 1.Peggy 必须对随机值 k 做出承诺，以确保 Peggy 以后无法更改 k 的值。
 
-- 2.在收到 Peggy 的承诺后，Victor 在协议中引入了他自己的一些随机数。他生成一个随机 值 c(称为挑战)，并将其发送给 Peggy。
+- 2.在收到 Peggy 的承诺后，Victor 在协议中引入了他自己的一些随机数。他生成一个随机值 c(称为挑战)，并将其发送给 Peggy。
 
 - 3.然后，Peggy 可以根据随机值 k 和挑战 c 计算她隐藏了见证 x 的承诺。
 
@@ -72,4 +72,10 @@ Schnorr 在上面的基础之上注意到任何信息都可以计算哈希值! �
 **推荐阅读**
 
 - [初识「零知识」与「证明」](https://mp.weixin.qq.com/s/XQL_taBhPkCHGZOBc24MyQ)
+
+- [一文读懂零知识证明背后的简单逻辑](https://mirror.xyz/0x8B00cEE42f226B340aF806CD7aaA4c10cc5E0154/amsF0AOPKUUy8c2tZCMFuiYiF-2j4Umkv3JEdcMwQcU)
+
+- [彻底读懂零知识证明及其实现方法：解析zk-SNARK](https://mirror.xyz/0x8B00cEE42f226B340aF806CD7aaA4c10cc5E0154/nQ1XeR-nivHIaqZc1-9-TaTz08S7ZgB00bems5-PLus)
+
+- [浅谈零知识证明：背景与起源](https://zhuanlan.zhihu.com/p/98077048)
 
