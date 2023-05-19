@@ -253,7 +253,7 @@ const s5 = rest(s4);
 
 附：[源码地址](https://github.com/111hunter/process-zero-to-hero)
 
-**参考资料**
+**推荐阅读**
 
 - [康托尔、哥德尔、图灵——永恒的金色对角线](http://mindhacks.cn/2006/10/15/cantor-godel-turing-an-eternal-golden-diagonal/)
 - [Church encoding](http://www.cse.unt.edu/~tarau/teaching/PL/docs/Church%20encoding.pdf)

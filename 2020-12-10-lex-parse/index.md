@@ -136,7 +136,7 @@ console.log(newCode);
 
 这里生成的中间代码就可以被直接被低级一些的语言解释或编译。
 
-**参考资料**
+**推荐阅读**
 
 - [Implementing a Simple Compiler on 25 Lines of JavaScript](https://blog.mgechev.com/2017/09/16/developing-simple-interpreter-transpiler-compiler-tutorial/)
 - [解谜计算机科学](http://www.yinwang.org/blog-cn/2018/04/13/computer-science)

@@ -254,7 +254,7 @@ Just "true"
 
 [这里](http://hackage.haskell.org/package/base-4.8.2.0/docs/Prelude.html#t:Maybe) 查阅 Maybe 的相关实现, 有时间再补充。
 
-**参考资料**
+**推荐阅读**
 
 - [Your easy guide to Monads, Applicatives, & Functors](https://medium.com/@lettier/your-easy-guide-to-monads-applicatives-functors-862048d61610)
 - [关于 Monad 的学习笔记](https://juejin.cn/post/6844903438434697224)

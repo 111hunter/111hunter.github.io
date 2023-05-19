@@ -97,7 +97,7 @@ def oppose_P():
 
 自指太神秘了，对它的研究涉及到[复杂性科学](https://en.wikipedia.org/wiki/Complex_system)，作为门外汉的我只能无限感慨。想了解相关知识的读者，可阅读下面的参考资料。
 
-**参考资料**
+**推荐阅读**
 
 - [计算的极限(零)：逻辑与图灵机](https://mp.weixin.qq.com/s/WiWN-C3ansL48NiWLkYJNg)
 - [系统中的观察者——被科学遗忘的角色](http://www.swarmagents.cn/files/jake201113171315.pdf)

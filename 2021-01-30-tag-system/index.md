@@ -87,9 +87,9 @@ Computation
 
 如果我们建立了宇宙的完整模型，是否意味着我们没有自由意志了呢？“[Computational irreducibility](https://en.wikipedia.org/wiki/Computational_irreducibility)” 意味着，就算你知道了一切规则，你可能也无法提前预测这些规则将会做什么 — 唯一的办法是运行这些规则看看它们到底会做出什么来。
 
-**参考资料**
+**推荐阅读**
 
 - [Universality in Elementary Cellular Automata](https://wpmedia.wolfram.com/uploads/sites/13/2018/02/15-1-1.pdf)
 - [Cyclic Tag System in Rule 110 - escom](https://www.comunidad.escom.ipn.mx/genaro/rule110/ctsRule110.html)
+- [从冯·诺依曼“自复制自动机”到生命雏形](https://zhuanlan.zhihu.com/p/393050541)
 - [复杂的极限在哪里](https://zhuanlan.zhihu.com/p/24950767)
-- [理解混沌和决定论的关系](https://www.jasve.com/kx/82e357fd9d5f44f9f5464a57cf65b083.html)
