@@ -61,7 +61,7 @@
 
 **推荐阅读**
 
-- [深度睡眠时，意识在哪里？- 鲁珀特·斯派拉](https://mp.weixin.qq.com/s/JxWH9dUP5ursdxrrLjtoUw)
-- [当我们从梦中醒来 - 鲁珀特·斯派拉](https://mp.weixin.qq.com/s/N6-zInKUOdvRUEW7xQ4vng)
-- [当下、当下、当下、如此而已 - 阿玛斯](https://mp.weixin.qq.com/s/K_QfHbxIyVXypxqJnvHdFA)
+- [你不需要知道一切 - 尼萨迦达塔](https://mp.weixin.qq.com/s/-gr7AEgTIJQWFNgTn2AhyA)
 - [让事情自己运作 - 尼萨迦达塔](https://mp.weixin.qq.com/s/0JqFn_LFqg5izMAvfX8mGA)
+- [深度睡眠时，意识在哪里？- 鲁珀特·斯派拉](https://mp.weixin.qq.com/s/JxWH9dUP5ursdxrrLjtoUw)
+- [当下、当下、当下、如此而已 - 阿玛斯](https://mp.weixin.qq.com/s/K_QfHbxIyVXypxqJnvHdFA)
