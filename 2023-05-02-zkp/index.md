@@ -79,3 +79,5 @@ Schnorr 在上面的基础之上注意到任何信息都可以计算哈希值! �
 
 - [浅谈零知识证明：背景与起源](https://zhuanlan.zhihu.com/p/98077048)
 
+- [创建零知识证明的加密红包](https://mp.weixin.qq.com/s/Q4PWtSxNgyEQ-eTwAV4jDA)
+

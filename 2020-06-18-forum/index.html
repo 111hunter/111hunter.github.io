@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>MyBatis-Plus 实现论坛 Api - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="MyBatis-Plus 实现论坛 Api" />
+        <title>MyBatis-Plus 实现论坛 API - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="MyBatis-Plus 实现论坛 API" />
 <meta property="og:description" content="网络论坛，常简称为论坛，又称讨论区、讨论版等，是种提供在线讨论的程序，或由这些程序建立的以在线讨论为主的网站。本文记录如何用 Spring Boot 结合 MyBatis-Plus 实现论" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2020-06-18-forum/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
@@ -15,19 +15,19 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
-<meta name="twitter:title" content="MyBatis-Plus 实现论坛 Api"/>
+<meta name="twitter:title" content="MyBatis-Plus 实现论坛 API"/>
 <meta name="twitter:description" content="网络论坛，常简称为论坛，又称讨论区、讨论版等，是种提供在线讨论的程序，或由这些程序建立的以在线讨论为主的网站。本文记录如何用 Spring Boot 结合 MyBatis-Plus 实现论"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020-06-18-forum/" /><link rel="prev" href="http://example.org/2020-05-18-trello/" /><link rel="next" href="http://example.org/2020-06-30-antd/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "MyBatis-Plus 实现论坛 Api",
+        "headline": "MyBatis-Plus 实现论坛 API",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-06-18-forum\/"
-        },"genre": "posts","keywords": "Spring Boot","wordcount":  2765 ,
+        },"genre": "posts","keywords": "Spring Boot","wordcount":  2719 ,
         "url": "http:\/\/example.org\/2020-06-18-forum\/","datePublished": "2020-06-18T12:00:00+08:00","dateModified": "2020-06-18T12:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -103,10 +103,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">MyBatis-Plus 实现论坛 Api</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">MyBatis-Plus 实现论坛 API</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-18">2020-06-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2765 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/2020-06-18-forum/" class="leancloud_visitors" data-flag-title="MyBatis-Plus 实现论坛 Api">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-18">2020-06-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2719 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/2020-06-18-forum/" class="leancloud_visitors" data-flag-title="MyBatis-Plus 实现论坛 API">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -286,7 +286,7 @@
 
     <span class="nd">@ApiModelProperty</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;用户主键&#34;</span><span class="o">)</span>
     <span class="kd">private</span> <span class="n">Integer</span> <span class="n">uId</span><span class="o">;</span>
-	
+
     <span class="nd">@ApiModelProperty</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;热度&#34;</span><span class="o">)</span>
     <span class="kd">private</span> <span class="n">Integer</span> <span class="n">score</span><span class="o">;</span>
 
@@ -310,9 +310,9 @@
 </div>
 </div><p>lombok 的注解：</p>
 <ul>
-<li>@Data 相当于 @Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode 这5个注解的合集。</li>
+<li>@Data 相当于 @Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode 这 5 个注解的合集。</li>
 <li>存在继承,编译时有警提示，加上@EqualsAndHashCode(callSuper=false), 只比较当前的类字段。</li>
-<li>@Accessors(chain = true)链式调用为真, setter方法返回当前对象的序列化对象，便于存储，便于传输。</li>
+<li>@Accessors(chain = true)链式调用为真, setter 方法返回当前对象的序列化对象，便于存储，便于传输。</li>
 </ul>
 <p>mybatis-plus 的注解：</p>
 <ul>
@@ -366,7 +366,7 @@
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MybatisPlusConfig</span> <span class="o">{</span>
     <span class="cm">/**
 </span><span class="cm">     * 加载分页插件
-</span><span class="cm">     * 
+</span><span class="cm">     *
 </span><span class="cm">     * @return
 </span><span class="cm">     */</span>
     <span class="nd">@Bean</span>
@@ -472,7 +472,7 @@
 
 	<span class="nd">@Autowired</span>
     <span class="n">ArticleService</span> <span class="n">articleService</span><span class="o">;</span>
-	
+
     <span class="nd">@ApiOperation</span><span class="o">(</span><span class="s">&#34;分页查询文章，时间排序&#34;</span><span class="o">)</span>
     <span class="nd">@PostMapping</span><span class="o">(</span><span class="s">&#34;/article/new&#34;</span><span class="o">)</span>
     <span class="kd">public</span> <span class="n">Object</span> <span class="nf">getArticleNew</span><span class="o">(</span><span class="n">Integer</span> <span class="n">current</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
@@ -582,7 +582,7 @@
 
     <span class="cm">/**
 </span><span class="cm">     * 生成token
-</span><span class="cm">     * 
+</span><span class="cm">     *
 </span><span class="cm">     * @param subject
 </span><span class="cm">     * @return
 </span><span class="cm">     */</span>
@@ -596,7 +596,7 @@
 
     <span class="cm">/**
 </span><span class="cm">     * 获取token中注册信息
-</span><span class="cm">     * 
+</span><span class="cm">     *
 </span><span class="cm">     * @param token
 </span><span class="cm">     * @return
 </span><span class="cm">     */</span>
@@ -611,7 +611,7 @@
 
     <span class="cm">/**
 </span><span class="cm">     * 验证token是否过期失效
-</span><span class="cm">     * 
+</span><span class="cm">     *
 </span><span class="cm">     * @param expirationTime
 </span><span class="cm">     * @return
 </span><span class="cm">     */</span>
@@ -724,7 +724,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="点赞关注收藏评论">点赞关注收藏评论</h2>
-<p>点赞，关注，收藏，评论功能都可以用单表实现。点赞，收藏，评论功能就是在分别在likes, collection, comment 表中记录 uid(用户),aid(文章) 实现关联，而关注则是在 follow 表中记录两个 uid 实现关联，下面给出点赞功能的逻辑实现，关注，收藏，评论功能的逻辑同点赞功能。</p>
+<p>点赞，关注，收藏，评论功能都可以用单表实现。点赞，收藏，评论功能就是在分别在 likes, collection, comment 表中记录 uid(用户),aid(文章) 实现关联，而关注则是在 follow 表中记录两个 uid 实现关联，下面给出点赞功能的逻辑实现，关注，收藏，评论功能的逻辑同点赞功能。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -881,11 +881,11 @@
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>spring boot提供了一个统一的注解@SpringBootApplication。</p>
+</div><p>spring boot 提供了一个统一的注解@SpringBootApplication。</p>
 <p>代表了@Configuration, @EnableAutoConfiguration, @ComponentScan。</p>
-<p>@Configuration 和 @Bean。使用这两个注解就可以创建一个简单的spring配置类，可以用来替代相应的xml配置文件。@Configuration的注解类标识这个类可以使用Spring IoC容器作为bean定义的来源。@Bean注解告诉Spring，一个带有@Bean的注解方法将返回一个对象，该对象应该被注册为在Spring应用程序上下文中的bean。</p>
-<p>@EnableAutoConfiguration：能够自动配置spring的上下文，试图猜测和配置你想要的bean类，通常会自动根据你的类路径和你的bean定义自动配置。</p>
-<p>@ComponentScan：会自动扫描指定包下的全部标有@Component的类，并注册成bean，当然包括@Component下的子注解@Service, @Repository, @Controller。</p>
+<p>@Configuration 和 @Bean。使用这两个注解就可以创建一个简单的 spring 配置类，可以用来替代相应的 xml 配置文件。@Configuration 的注解类标识这个类可以使用 Spring IoC 容器作为 bean 定义的来源。@Bean 注解告诉 Spring，一个带有@Bean 的注解方法将返回一个对象，该对象应该被注册为在 Spring 应用程序上下文中的 bean。</p>
+<p>@EnableAutoConfiguration：能够自动配置 spring 的上下文，试图猜测和配置你想要的 bean 类，通常会自动根据你的类路径和你的 bean 定义自动配置。</p>
+<p>@ComponentScan：会自动扫描指定包下的全部标有@Component 的类，并注册成 bean，当然包括@Component 下的子注解@Service, @Repository, @Controller。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -899,7 +899,7 @@
                             <a class="link-to-markdown" href="/2020-06-18-forum/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 Api" data-hashtags="Spring Boot"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-06-18-forum/" data-hashtag="Spring Boot"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 Api" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 Api"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 Api"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 Api" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 Api" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 Api"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API" data-hashtags="Spring Boot"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-06-18-forum/" data-hashtag="Spring Boot"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>

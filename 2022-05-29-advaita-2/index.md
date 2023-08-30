@@ -61,7 +61,8 @@
 
 **推荐阅读**
 
+- [没有"我" - 罗伯特·亚当斯](https://mp.weixin.qq.com/s/o40q6ZNw_qs2rMGhpXRRbg)
+- [从个人梦中醒来 - 尼萨迦达塔](https://mp.weixin.qq.com/s/9Dwrq7ryE5kga-CWE1nGlA)
 - [你不需要知道一切 - 尼萨迦达塔](https://mp.weixin.qq.com/s/-gr7AEgTIJQWFNgTn2AhyA)
-- [让事情自己运作 - 尼萨迦达塔](https://mp.weixin.qq.com/s/0JqFn_LFqg5izMAvfX8mGA)
 - [深度睡眠时，意识在哪里？- 鲁珀特·斯派拉](https://mp.weixin.qq.com/s/JxWH9dUP5ursdxrrLjtoUw)
 - [当下、当下、当下、如此而已 - 阿玛斯](https://mp.weixin.qq.com/s/K_QfHbxIyVXypxqJnvHdFA)

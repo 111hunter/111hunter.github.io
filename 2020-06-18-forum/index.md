@@ -1,11 +1,11 @@
-# MyBatis-Plus 实现论坛 Api
+# MyBatis-Plus 实现论坛 API
 
 
 网络论坛，常简称为论坛，又称讨论区、讨论版等，是种提供在线讨论的程序，或由这些程序建立的以在线讨论为主的网站。本文记录如何用 Spring Boot 结合 MyBatis-Plus 实现论坛中常见的 API 接口。
 
 ## 数据分页获取
 
-### 引入依赖，连接数据库  
+### 引入依赖，连接数据库
 
 在 spring-boot 项目的根目录 pom.xml 添加依赖，相关依赖有 lombok, mybatis-plus, druid, swagger, mysql 驱动等。
 
@@ -77,7 +77,7 @@ public class Article implements Serializable {
 
     @ApiModelProperty(value = "用户主键")
     private Integer uId;
-	
+
     @ApiModelProperty(value = "热度")
     private Integer score;
 
@@ -98,22 +98,23 @@ public class Article implements Serializable {
 
 }
 ```
- lombok 的注解：
 
-- @Data 相当于 @Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode 这5个注解的合集。
+lombok 的注解：
+
+- @Data 相当于 @Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode 这 5 个注解的合集。
 - 存在继承,编译时有警提示，加上@EqualsAndHashCode(callSuper=false), 只比较当前的类字段。
-- @Accessors(chain = true)链式调用为真, setter方法返回当前对象的序列化对象，便于存储，便于传输。
+- @Accessors(chain = true)链式调用为真, setter 方法返回当前对象的序列化对象，便于存储，便于传输。
 
 mybatis-plus 的注解：
 
 - @TableId 主键的映射,主键的生成策略,自动生成。
 - @TableField(exist = false) 不映射数据表字段。
-  
- swagger 的注解：
- 
- - @Api 开头的是 swagger 的注解。
- 
- 对应的 Mapper 只需继承 BaseMapper，基本的 crud 方法 mybatis-plus 已经封装好了。
+
+swagger 的注解：
+
+- @Api 开头的是 swagger 的注解。
+
+对应的 Mapper 只需继承 BaseMapper，基本的 crud 方法 mybatis-plus 已经封装好了。
 
 ```java
 @Mapper
@@ -137,7 +138,7 @@ public interface ArticleMapper extends BaseMapper<Article> {
 public class MybatisPlusConfig {
     /**
      * 加载分页插件
-     * 
+     *
      * @return
      */
     @Bean
@@ -146,6 +147,7 @@ public class MybatisPlusConfig {
     }
 }
 ```
+
 #### 定义 service 接口
 
 ```java
@@ -155,6 +157,7 @@ public interface ArticleService extends IService<Article> {
 
 }
 ```
+
 #### service 实现类
 
 在实现类里注入 mapper, 完成分页获取数据。selectPage 方法接收两个参数，第一个是 IPage 对象，第二个参数是条件构造器 QueryWrapper。我们需要在 controller 中传递这两个参数。
@@ -185,7 +188,7 @@ public class OpenController {
 
 	@Autowired
     ArticleService articleService;
-	
+
     @ApiOperation("分页查询文章，时间排序")
     @PostMapping("/article/new")
     public Object getArticleNew(Integer current, Integer size) {
@@ -215,6 +218,7 @@ public class OpenController {
     }
 }
 ```
+
 这样就实现了数据时间排序的分页获取。
 
 ## JWT 登录认证
@@ -241,7 +245,7 @@ public class JwtConfig {
 
     /**
      * 生成token
-     * 
+     *
      * @param subject
      * @return
      */
@@ -255,7 +259,7 @@ public class JwtConfig {
 
     /**
      * 获取token中注册信息
-     * 
+     *
      * @param token
      * @return
      */
@@ -270,7 +274,7 @@ public class JwtConfig {
 
     /**
      * 验证token是否过期失效
-     * 
+     *
      * @param expirationTime
      * @return
      */
@@ -279,6 +283,7 @@ public class JwtConfig {
     }
 }
 ```
+
 里面写了 token 的生成和解密的方法。
 
 添加 jwt 拦截器, 除了注册，登录和 get 请求的 uri 地址，都需要验证 token。
@@ -335,7 +340,7 @@ public class TokenInterceptor extends HandlerInterceptorAdapter {
 
 ## 点赞关注收藏评论
 
-点赞，关注，收藏，评论功能都可以用单表实现。点赞，收藏，评论功能就是在分别在likes, collection, comment 表中记录 uid(用户),aid(文章) 实现关联，而关注则是在 follow 表中记录两个 uid 实现关联，下面给出点赞功能的逻辑实现，关注，收藏，评论功能的逻辑同点赞功能。
+点赞，关注，收藏，评论功能都可以用单表实现。点赞，收藏，评论功能就是在分别在 likes, collection, comment 表中记录 uid(用户),aid(文章) 实现关联，而关注则是在 follow 表中记录两个 uid 实现关联，下面给出点赞功能的逻辑实现，关注，收藏，评论功能的逻辑同点赞功能。
 
 ```java
     @PostMapping("/add/like")
@@ -424,14 +429,13 @@ public class BugeServerApplication {
 }
 ```
 
-spring boot提供了一个统一的注解@SpringBootApplication。
+spring boot 提供了一个统一的注解@SpringBootApplication。
 
 代表了@Configuration, @EnableAutoConfiguration, @ComponentScan。
 
-@Configuration 和 @Bean。使用这两个注解就可以创建一个简单的spring配置类，可以用来替代相应的xml配置文件。@Configuration的注解类标识这个类可以使用Spring IoC容器作为bean定义的来源。@Bean注解告诉Spring，一个带有@Bean的注解方法将返回一个对象，该对象应该被注册为在Spring应用程序上下文中的bean。
+@Configuration 和 @Bean。使用这两个注解就可以创建一个简单的 spring 配置类，可以用来替代相应的 xml 配置文件。@Configuration 的注解类标识这个类可以使用 Spring IoC 容器作为 bean 定义的来源。@Bean 注解告诉 Spring，一个带有@Bean 的注解方法将返回一个对象，该对象应该被注册为在 Spring 应用程序上下文中的 bean。
 
-@EnableAutoConfiguration：能够自动配置spring的上下文，试图猜测和配置你想要的bean类，通常会自动根据你的类路径和你的bean定义自动配置。
+@EnableAutoConfiguration：能够自动配置 spring 的上下文，试图猜测和配置你想要的 bean 类，通常会自动根据你的类路径和你的 bean 定义自动配置。
 
-@ComponentScan：会自动扫描指定包下的全部标有@Component的类，并注册成bean，当然包括@Component下的子注解@Service, @Repository, @Controller。
-
+@ComponentScan：会自动扫描指定包下的全部标有@Component 的类，并注册成 bean，当然包括@Component 下的子注解@Service, @Repository, @Controller。
 

@@ -89,7 +89,12 @@ Computation
 
 **推荐阅读**
 
+- [《The Recursive Universe》- William Poundstone](https://book.douban.com/subject/20005773/)
+
 - [Universality in Elementary Cellular Automata](https://wpmedia.wolfram.com/uploads/sites/13/2018/02/15-1-1.pdf)
+
 - [Cyclic Tag System in Rule 110 - escom](https://www.comunidad.escom.ipn.mx/genaro/rule110/ctsRule110.html)
+
 - [从冯·诺依曼“自复制自动机”到生命雏形](https://zhuanlan.zhihu.com/p/393050541)
+
 - [复杂的极限在哪里](https://zhuanlan.zhihu.com/p/24950767)
