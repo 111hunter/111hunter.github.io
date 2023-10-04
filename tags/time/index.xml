@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Time - 标签 - 浮槎的博客</title>
+        <link>http://example.org/tags/time/</link>
+        <description>Time - 标签 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 04 Oct 2023 21:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/time/" rel="self" type="application/rss+xml" /><item>
+    <title>心理冲突的根由</title>
+    <link>http://example.org/2023-10-04-time-1/</link>
+    <pubDate>Wed, 04 Oct 2023 21:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2023-10-04-time-1/</guid>
+    <description><![CDATA[可能有不带目标并因此没有行动者的行动吗 — 不是为了某个结果的行动？这样的行动不是一种“成为”，因此不是一种争斗。的确有这样一种行动的状态，这是]]></description>
+</item></channel>
+</rss>

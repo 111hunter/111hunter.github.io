@@ -1,6 +1,8 @@
 # 没有秘密
 
 
+> **“严格地说， 没有被启发的人，只有被启发的行为。”**  — 铃木俊隆
+
 独立的事物存在于想象中，不存在于现实世界。宇宙是整体的行为，个人的独立行为存在于想象中，不存在于现实世界。
 
 第一个假象是“我”。“我”是在两三岁时伴随思想记忆而产生的，“我”是所有邪恶、痛苦、欲望、攀比、焦虑、恐惧的根源。
@@ -61,8 +63,7 @@
 
 **推荐阅读**
 
-- [没有"我" - 罗伯特·亚当斯](https://mp.weixin.qq.com/s/o40q6ZNw_qs2rMGhpXRRbg)
-- [从个人梦中醒来 - 尼萨迦达塔](https://mp.weixin.qq.com/s/9Dwrq7ryE5kga-CWE1nGlA)
-- [你不需要知道一切 - 尼萨迦达塔](https://mp.weixin.qq.com/s/-gr7AEgTIJQWFNgTn2AhyA)
+- [从个人梦中醒来 - 尼萨迦达塔语录](https://mp.weixin.qq.com/s/9Dwrq7ryE5kga-CWE1nGlA)
+- [你不需要知道一切 - 尼萨迦达塔语录](https://mp.weixin.qq.com/s/-gr7AEgTIJQWFNgTn2AhyA)
 - [深度睡眠时，意识在哪里？- 鲁珀特·斯派拉](https://mp.weixin.qq.com/s/JxWH9dUP5ursdxrrLjtoUw)
 - [当下、当下、当下、如此而已 - 阿玛斯](https://mp.weixin.qq.com/s/K_QfHbxIyVXypxqJnvHdFA)
