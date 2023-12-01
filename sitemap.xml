@@ -2,16 +2,17 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/categories/</loc><lastmod>2023-10-05T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://example.org/posts/</loc><lastmod>2023-10-05T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://example.org/tags/</loc><lastmod>2023-10-05T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://example.org/categories/thinking/</loc><lastmod>2023-10-05T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://example.org/tags/time/</loc><lastmod>2023-10-05T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://example.org/</loc><lastmod>2023-10-05T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://example.org/2023-10-05-time-2/</loc><lastmod>2023-10-05T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://example.org/2023-10-04-time-1/</loc><lastmod>2023-10-04T21:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://example.org/tags/advaita/</loc><lastmod>2023-10-04T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://example.org/2023-10-04-advaita-3/</loc><lastmod>2023-10-04T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://example.org/tags/advaita/</loc><lastmod>2023-11-28T20:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/categories/</loc><lastmod>2023-11-28T20:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/posts/</loc><lastmod>2023-11-28T20:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/tags/</loc><lastmod>2023-11-28T20:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/categories/thinking/</loc><lastmod>2023-11-28T20:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/2023-11-28-advaita-4/</loc><lastmod>2023-11-28T20:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/</loc><lastmod>2023-11-28T20:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/tags/time/</loc><lastmod>2023-10-05T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/2023-10-05-time-2/</loc><lastmod>2023-10-05T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/2023-10-04-time-1/</loc><lastmod>2023-10-04T21:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/2023-10-04-advaita-3/</loc><lastmod>2023-10-04T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/tags/blockchain/</loc><lastmod>2023-05-02T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/categories/interview/</loc><lastmod>2023-05-02T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2023-05-02-zkp/</loc><lastmod>2023-05-02T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
