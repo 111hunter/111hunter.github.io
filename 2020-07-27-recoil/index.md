@@ -1,7 +1,7 @@
 # Recoil 基础
 
 
-最近，Facebook 官方开源了一个状态管理库 Recoil，我们来学习一下。Recoil 是基于 Immutable 的数据流管理方案，这是它值得学习的重要原因。Recoil非常易于学习，它的 API 简单强大，对于已经习惯使用 hooks 的人来说很自然。
+最近，Facebook 官方开源了一个状态管理库 Recoil，我们来学习一下。Recoil 是基于 Immutable 的数据流管理方案，这是它值得学习的重要原因。Recoil 非常易于学习，它的 API 简单强大，对于已经习惯使用 hooks 的人来说很自然。
 
 ## 核心概念
 
@@ -9,9 +9,9 @@ Recoil 中的核心概念只有 Atom(原子状态) 和 Selector(派生状态)。
 
 ![Recoil状态管理示意图](/img/recoil.png "Recoil状态管理示意图")
 
-### Atom 
+### Atom
 
- Atom 是状态的单位。它们可更新也可订阅。当 atom 被更新，每个被订阅的组件都将使用新值进行重渲染。如果多个组件使用相同的 atom，则这些组件共享 atom 的状态。可以使用 atom 替代组件内部的 state。atom 也可以在运行时创建。
+Atom 是状态的单位。它们可更新也可订阅。当 atom 被更新，每个被订阅的组件都将使用新值进行重渲染。如果多个组件使用相同的 atom，则这些组件共享 atom 的状态。可以使用 atom 替代组件内部的 state。atom 也可以在运行时创建。
 
 Atom 是使用 atom 函数创建的：
 
@@ -19,7 +19,7 @@ Atom 是使用 atom 函数创建的：
 function atom<T>({
   key: string,
   default: T | Promise<T> | RecoilValue<T>,
-  
+
   dangerouslyAllowMutability?: boolean,
 }): RecoilState<T>
 ```
@@ -32,8 +32,8 @@ function atom<T>({
 
 ```js
 const textState = atom({
-  key: 'textState', // unique ID (with respect to other atoms/selectors)
-  default: '', // default value (aka initial value)
+  key: "textState", // unique ID (with respect to other atoms/selectors)
+  default: "", // default value (aka initial value)
 });
 ```
 
@@ -63,6 +63,7 @@ function selector<T>({
   dangerouslyAllowMutability?: boolean,
 }): RecoilValueReadOnly<T> | RecoilState<T>
 ```
+
 ```ts
 type ValueOrUpdater<T> = T | DefaultValue | ((prevValue: T) => T | DefaultValue);
 type GetRecoilValue = <T>(RecoilValue<T>) => T;
@@ -78,13 +79,14 @@ type ResetRecoilState = <T>(RecoilState<T>) => void;
 
 ```jsx
 const charCountState = selector({
-  key: 'charCountState', // unique ID (with respect to other atoms/selectors)
-  get: ({get}) => {
+  key: "charCountState", // unique ID (with respect to other atoms/selectors)
+  get: ({ get }) => {
     const text = get(textState);
     return text.length;
   },
 });
 ```
+
 测试 atom 和 selector [示例 demo](https://recoiljs.org/docs/introduction/getting-started#demo)
 
 从组件的角度来看，selector 和 atom 具有相同的功能，因此可以交替使用。
@@ -101,16 +103,16 @@ const charCountState = selector({
 在组件中使用这些 hooks 与使用其他 hooks 的方式基本相同：
 
 ```jsx
-import React from 'react';
-import { atom, useRecoilState, selector, useRecoilValue } from 'recoil';
+import React from "react";
+import { atom, useRecoilState, selector, useRecoilValue } from "recoil";
 
 const textState = atom({
-  key: 'textState', // unique ID (with respect to other atoms/selectors)
-  default: '', // default value (aka initial value)
+  key: "textState", // unique ID (with respect to other atoms/selectors)
+  default: "", // default value (aka initial value)
 });
 
 const charCountState = selector({
-  key: 'charCountState', // unique ID (with respect to other atoms/selectors)
+  key: "charCountState", // unique ID (with respect to other atoms/selectors)
   get: ({ get }) => {
     const text = get(textState);
     return text.length;
@@ -118,9 +120,8 @@ const charCountState = selector({
 });
 
 export const CharacterCounter = () => {
-
   const [char, setChar] = useRecoilState(textState);
-  // selector 没有定义 set，用 useRecoilValue 取值 
+  // selector 没有定义 set，用 useRecoilValue 取值
   const charCount = useRecoilValue(charCountState);
 
   return (
@@ -138,19 +139,19 @@ export const CharacterCounter = () => {
 
 export default CharacterCounter;
 ```
-atom，selector 的 state 的取值和更新函数是相同的，selector 未定义 set 只能用 useRecoilValue 取值，定义 set 之后也能用 useRecoilState，因此 atom 应该是基于 selector 的一个特定封装，帮我们封装好了 set，get，而无须自定义。
 
+atom，selector 的 state 的取值和更新函数是相同的，selector 未定义 set 只能用 useRecoilValue 取值，定义 set 之后也能用 useRecoilState，因此 atom 应该是基于 selector 的一个特定封装，帮我们封装好了 set，get，而无须自定义。
 
 ## 异步支持
 
 在 selector 的数据流图中, Recoil 可以让你随意的混合使用同步和异步函数。只需从 selector get 回调中返回一个 Promise，接口完全一样。因为这些只是 selector，其他的 selector 也可以依赖它们来进一步变更数据。selector 是纯函数，是对只读数据库查询进行建模的好方法，其中重复查询可提供一致的数据。
 
 ```jsx
-import React from 'react';
-import {selector, useRecoilValue} from 'recoil';
+import React from "react";
+import { selector, useRecoilValue } from "recoil";
 
 const myQuery = selector({
-  key: 'MyDBQuery',
+  key: "MyDBQuery",
   get: async () => {
     const response = await fetch(getMyRequestUrl());
     return response.json();
@@ -160,11 +161,7 @@ const myQuery = selector({
 function QueryResults() {
   const queryResults = useRecoilValue(myQuery);
 
-  return (
-    <div>
-      {queryResults.foo}
-    </div>
-  );
+  return <div>{queryResults.foo}</div>;
 }
 
 function ResultsSection() {
@@ -175,6 +172,7 @@ function ResultsSection() {
   );
 }
 ```
+
 atom 是基于 selector 封装，也支持 Promise 做默认 state。不过官方的建议是当其从其他状态或异步请求时派生的 state，应该使用 selector。
 
 ## 参数查询
@@ -184,18 +182,20 @@ atom 与 atomFamily，selector 与 selectorFamily 的区别仅仅是定义 state
 
 ```jsx
 const myDataQuery = selectorFamily({
-  key: 'MyDataQuery',
-  get: (queryParameters) => async ({get}) => {
-    const response = await asyncDataRequest(queryParameters);
-    if (response.error) {
-      throw response.error;
-    }
-    return response.data;
-  },
+  key: "MyDataQuery",
+  get:
+    (queryParameters) =>
+    async ({ get }) => {
+      const response = await asyncDataRequest(queryParameters);
+      if (response.error) {
+        throw response.error;
+      }
+      return response.data;
+    },
 });
 
 function MyComponent() {
-  const data = useRecoilValue(myDataQuery({userID: 132}));
+  const data = useRecoilValue(myDataQuery({ userID: 132 }));
   return <div>...</div>;
 }
 ```
@@ -207,10 +207,8 @@ function MyComponent() {
 - 原子存储的数据相互无关联，关联的数据使用派生值的方式推导。
 - 派生的值必须严格缓存，并在命中缓存时引用保证严格相等。
 
-**参考资料**
+**参阅资料**
 
 - [Recoil 官方文档](https://recoiljs.org/)
 - [精读《recoil》](https://zhuanlan.zhihu.com/p/143335599)
-
-
 

@@ -1,7 +1,7 @@
 # 行动与观念
 
 
-> **“观念能产生行动吗？还是观念只是塑造了思想，因此限制了行动？”** — J. Krishnamurti
+> 观念能产生行动吗？还是观念只是塑造了思想，因此限制了行动？ — 克里希那穆提
 
 我想讨论一下行动的问题。一开始也许是相当深奥和困难的，但是我希望通过对它的认真思考，我们能够清楚地看这个问题，因为我们的整个存在、整个生活，就是一个行动的过程。
 
@@ -41,11 +41,12 @@
 
 只有当头脑从观念中解脱出来的时候才会存在体验。观念不是真实；真实是必须被直接体验的东西，从一个片刻到一个片刻。它不是一种你期望的经验——那不过是感觉。只有当你能够超越观念束缚的时候——也就是“我”，也就是头脑，它有部分或完整的连续性——只有当你能够超越它，只有当思想彻底安静的时候，才会有体验的状态。那时你就会知道真实是什么。
 
-**参考资料**
+**参阅资料**
 
 - 全文摘录自 [《The First And Last Freedom》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_First_And_Last_Freedom.pdf)
 
 **推荐阅读**
 
-- [越是选择，就越是空虚​ - 克里希那穆提](https://mp.weixin.qq.com/s/xg8jKALRfQEpmeTBegm1Ng)
+- [越是选择，就越是空虚 ​- 克里希那穆提](https://mp.weixin.qq.com/s/xg8jKALRfQEpmeTBegm1Ng)
 - [追寻真理不过是一种逃避 - 克里希那穆提](https://mp.weixin.qq.com/s/GpVbz6yianmiantlpU2Eyw)
+

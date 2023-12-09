@@ -8,21 +8,17 @@
 开始之前，我们先回顾 React 是怎么将 JSX 转换成 DOM 节点的：
 
 ```jsx
-const element = <h1 title="foo">Hello</h1>
-const container = document.getElementById("root")
-ReactDOM.render(element, container)
+const element = <h1 title="foo">Hello</h1>;
+const container = document.getElementById("root");
+ReactDOM.render(element, container);
 ```
 
 第一行使用 JSX 来创建元素，但 JSX 不是有效的 JS 代码。React 用 Babel 将 JSX 代码转换为原生 JS 代码。转换过程就是调用 createElement 函数，并将 JSX 的元素类型、props 属性和 childen 元素作为参数依次传入：
 
 ```jsx
-const element = <h1 title="foo">Hello</h1>
+const element = <h1 title="foo">Hello</h1>;
 // Babel 调用 createElement 函数完成转换
-const element = React.createElement(
-  "h1",
-  { title: "foo" },
-  "Hello"
-)
+const element = React.createElement("h1", { title: "foo" }, "Hello");
 // createElement 根据参数生成 object
 const element = {
   type: "h1",
@@ -30,7 +26,7 @@ const element = {
     title: "foo",
     children: "Hello",
   },
-}
+};
 ```
 
 这就是 React 元素的本质，包含 type 和 props 属性的对象(还有其他属性，我们只关注这两个)。现在我们就能用 element 生成 DOM 节点了。
@@ -60,10 +56,10 @@ function createElement(type, props, ...children) {
     type,
     props: {
       ...props,
-      children: children.map(child =>
+      children: children.map((child) =>
         typeof child === "object" ? child : createTextElement(child)
-      )
-    }
+      ),
+    },
   };
 }
 
@@ -72,8 +68,8 @@ function createTextElement(text) {
     type: "TEXT_ELEMENT",
     props: {
       nodeValue: text,
-      children: []
-    }
+      children: [],
+    },
   };
 }
 ```
@@ -88,13 +84,13 @@ function render(element, container) {
     element.type == "TEXT_ELEMENT"
       ? document.createTextNode("")
       : document.createElement(element.type);
-  const isProperty = key => key !== "children";
+  const isProperty = (key) => key !== "children";
   Object.keys(element.props)
     .filter(isProperty)
-    .forEach(name => {
+    .forEach((name) => {
       dom[name] = element.props[name];
     });
-  element.props.children.forEach(child => render(child, dom));
+  element.props.children.forEach((child) => render(child, dom));
   container.appendChild(dom);
 }
 ```
@@ -104,7 +100,7 @@ function render(element, container) {
 ```jsx
 const Didact = {
   createElement,
-  render
+  render,
 };
 
 /** @jsx Didact.createElement */
@@ -117,6 +113,7 @@ const element = (
 const container = document.getElementById("root");
 Didact.render(element, container);
 ```
+
 这样就实现了 JSX 的转换和渲染，在 [codesandbox](https://codesandbox.io/s/didact-2-k6rbj) 中试试看。
 
 ### Concurrent
@@ -161,7 +158,7 @@ Didact.render(
     <h2 />
   </div>,
   container
-)
+);
 ```
 
 生成对应的 fiber 树：
@@ -178,8 +175,8 @@ Didact.render(
 
 ```js
 function createDom(fiber) {
-  const dom = fiber.type == "TEXT_ELEMENT"? 
-    document.createTextNode(""): 
+  const dom = fiber.type == "TEXT_ELEMENT"?
+    document.createTextNode(""):
     document.createElement(fiber.type)
   const isProperty = key => key !== "children"
   Object.keys(fiber.props)
@@ -220,7 +217,7 @@ function performUnitOfWork(fiber) {
   if (fiber.parent) {
     fiber.parent.dom.appendChild(fiber.dom)
   }
-​   
+​
   // 为子元素创建 newFiber，dom 属性为空
   const elements = fiber.props.children
   let index = 0
@@ -235,7 +232,7 @@ function performUnitOfWork(fiber) {
       parent: fiber,
       dom: null,
     }
-   
+
     if (index === 0) {
       fiber.child = newFiber
     } else {
@@ -245,7 +242,7 @@ function performUnitOfWork(fiber) {
     prevSibling = newFiber
     index++
   }
-  
+
   // 寻找下一个子任务，优先级依次是子节点、兄弟节点、叔叔节点。
   if (fiber.child) {
     return fiber.child
@@ -293,7 +290,7 @@ let wipRoot = null
 
 ```js
 function commitRoot() {
-  // 将所有元素的 fiber 递归附加到 DOM 
+  // 将所有元素的 fiber 递归附加到 DOM
   commitWork(wipRoot.child)
   wipRoot = null
 }
@@ -315,7 +312,7 @@ function workLoop(deadline) {
       nextUnitOfWork
     )
     shouldYield = deadline.timeRemaining() < 1
-  } 
+  }
 ​ // 直到没有下一个子任务，将整个 fiber 树提交到 DOM 节点中
   if (!nextUnitOfWork && wipRoot) {
     commitRoot()
@@ -364,14 +361,14 @@ let wipRoot = null
 ```js
 // 协调(比较和复用)当前 fiber 的所有子 fiber
 function reconcileChildren(wipFiber, elements) {
-  let index = 0
-  let oldFiber = wipFiber.alternate && wipFiber.alternate.child
-  let prevSibling = null
-  
-  while ( index < elements.length || oldFiber != null ) {
-    const element = elements[index]
-    let newFiber = null
-    const sameType = oldFiber && element && element.type == oldFiber.type
+  let index = 0;
+  let oldFiber = wipFiber.alternate && wipFiber.alternate.child;
+  let prevSibling = null;
+
+  while (index < elements.length || oldFiber != null) {
+    const element = elements[index];
+    let newFiber = null;
+    const sameType = oldFiber && element && element.type == oldFiber.type;
     // 需要添加新的 fiber
     if (element && !sameType) {
       newFiber = {
@@ -379,9 +376,9 @@ function reconcileChildren(wipFiber, elements) {
         props: element.props,
         dom: null,
         parent: wipFiber,
-        alternate: null, 
+        alternate: null,
         effectTag: "PLACEMENT",
-      }
+      };
     }
     // 需要更新原来的 fiber
     if (sameType) {
@@ -391,24 +388,24 @@ function reconcileChildren(wipFiber, elements) {
         dom: oldFiber.dom,
         parent: wipFiber,
         // oldFiber 被替换时才需要用 alternate 保存
-        alternate: oldFiber, 
+        alternate: oldFiber,
         effectTag: "UPDATE",
-      }
+      };
     }
     // 需要删除原来的 fiber
     if (oldFiber && !sameType) {
-      oldFiber.effectTag = "DELETION"
+      oldFiber.effectTag = "DELETION";
     }
     if (oldFiber) {
-      oldFiber = oldFiber.sibling
+      oldFiber = oldFiber.sibling;
     }
     if (index === 0) {
-      wipFiber.child = newFiber
+      wipFiber.child = newFiber;
     } else if (element) {
-      prevSibling.sibling = newFiber
+      prevSibling.sibling = newFiber;
     }
-    prevSibling = newFiber
-    index++
+    prevSibling = newFiber;
+    index++;
   }
 }
 ```
@@ -420,84 +417,60 @@ function reconcileChildren(wipFiber, elements) {
 ```js
 function commitWork(fiber) {
   if (!fiber) {
-    return
+    return;
   }
-  const domParent = fiber.parent.dom
-  if (
-    fiber.effectTag === "PLACEMENT" &&
-    fiber.dom != null
-  ) {
-    domParent.appendChild(fiber.dom)
-  } else if (
-    fiber.effectTag === "UPDATE" &&
-    fiber.dom != null
-  ) {
-    updateDom(
-      fiber.dom,
-      fiber.alternate.props,
-      fiber.props
-    )
+  const domParent = fiber.parent.dom;
+  if (fiber.effectTag === "PLACEMENT" && fiber.dom != null) {
+    domParent.appendChild(fiber.dom);
+  } else if (fiber.effectTag === "UPDATE" && fiber.dom != null) {
+    updateDom(fiber.dom, fiber.alternate.props, fiber.props);
   } else if (fiber.effectTag === "DELETION") {
-    domParent.removeChild(fiber.dom)
+    domParent.removeChild(fiber.dom);
   }
-  commitWork(fiber.child)
-  commitWork(fiber.sibling)
+  commitWork(fiber.child);
+  commitWork(fiber.sibling);
 }
 ```
 
 这里的 updateDom 就是用来更新 DOM 节点的属性。
 
 ```js
-const isProperty = key => key !== "children" && !isEvent(key)
-const isEvent = key => key.startsWith("on")
-const isNew = (prev, next) => key => prev[key] !== next[key]
-const isGone = (prev, next) => key => !(key in next)
+const isProperty = (key) => key !== "children" && !isEvent(key);
+const isEvent = (key) => key.startsWith("on");
+const isNew = (prev, next) => (key) => prev[key] !== next[key];
+const isGone = (prev, next) => (key) => !(key in next);
 
 function updateDom(dom, prevProps, nextProps) {
   // 删除旧的属性
   Object.keys(prevProps)
     .filter(isProperty)
     .filter(isGone(prevProps, nextProps))
-    .forEach(name => {
-      dom[name] = ""
-    })
+    .forEach((name) => {
+      dom[name] = "";
+    });
   // 删除旧的事件监听
   Object.keys(prevProps)
     .filter(isEvent)
-    .filter(
-      key =>
-        !(key in nextProps) ||
-        isNew(prevProps, nextProps)(key)
-    )
-    .forEach(name => {
-      const eventType = name
-        .toLowerCase()
-        .substring(2)
-      dom.removeEventListener(
-        eventType,
-        prevProps[name]
-      )
-    })
+    .filter((key) => !(key in nextProps) || isNew(prevProps, nextProps)(key))
+    .forEach((name) => {
+      const eventType = name.toLowerCase().substring(2);
+      dom.removeEventListener(eventType, prevProps[name]);
+    });
   // 设置新的属性
   Object.keys(nextProps)
     .filter(isProperty)
     .filter(isNew(prevProps, nextProps))
-    .forEach(name => {
-      dom[name] = nextProps[name]
-    })
+    .forEach((name) => {
+      dom[name] = nextProps[name];
+    });
   // 添加新的事件监听
   Object.keys(nextProps)
     .filter(isEvent)
     .filter(isNew(prevProps, nextProps))
-    .forEach(name => {
-      const eventType = name
-        .toLowerCase()
-        .substring(2)
-      dom.addEventListener(
-        eventType,
-        nextProps[name]
-      )
-    })
+    .forEach((name) => {
+      const eventType = name.toLowerCase().substring(2);
+      dom.addEventListener(eventType, nextProps[name]);
+    });
 }
 ```
 
@@ -512,26 +485,21 @@ function updateDom(dom, prevProps, nextProps) {
 ```jsx
 /** @jsx Didact.createElement */
 function App(props) {
-  return <h1>Hi {props.name}</h1>
+  return <h1>Hi {props.name}</h1>;
 }
-const element = <App name="foo" />
-const container = document.getElementById("root")
-Didact.render(element, container)
+const element = <App name="foo" />;
+const container = document.getElementById("root");
+Didact.render(element, container);
 ```
 
 如果我们将 jsx 转换为 js，Babel 的解析方式会是这样：
 
 ```js
 function App(props) {
-  return Didact.createElement(
-    "h1",
-    null,
-    "Hi ",
-    props.name
-  )
+  return Didact.createElement("h1", null, "Hi ", props.name);
 }
 // 这里虽然会调用 createElement，但并不会调用 App 获取子元素
-const element = Didact.createElement(App, {name: "foo"}, )
+const element = Didact.createElement(App, { name: "foo" });
 ```
 
 观察 Babel 的解析后会发现：
@@ -544,8 +512,8 @@ const element = Didact.createElement(App, {name: "foo"}, )
 ```js
 function updateFunctionComponent(fiber) {
   // 由于 Babel 调用 createElement，得到的 fiber.type 就是函数名
-  const children = [fiber.type(fiber.props)]  
-  reconcileChildren(fiber, children)
+  const children = [fiber.type(fiber.props)];
+  reconcileChildren(fiber, children);
 }
 ```
 
@@ -622,9 +590,9 @@ function updateFunctionComponent(fiber) {
 
 ```js
 function useState(initial) {
-  const oldHook = 
-    wipFiber.alternate && 
-    wipFiber.alternate.hooks && 
+  const oldHook =
+    wipFiber.alternate &&
+    wipFiber.alternate.hooks &&
     wipFiber.alternate.hooks[hookIndex]
   // 如果存在旧的 hook，我们从旧的 hook 中拷贝状态到新的 hook
   const hook = {
@@ -666,6 +634,7 @@ function useState(initial) {
 - 我们在渲染阶段收到一个新的更新时，会丢弃之前的工作树，从根节点重新开始。而 React 给每一个更新标记一个过期时间戳，通过这个时间戳来决定各个更新之间的优先级。
 - 除此之外还有很多...
 
-**参考资料**
+**参阅资料**
 
 - [Build your own React](https://pomb.us/build-your-own-react/)
+

@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-08-23-ast\/"
-        },"genre": "posts","keywords": "AST, JavaScript","wordcount":  1599 ,
+        },"genre": "posts","keywords": "AST, JavaScript","wordcount":  1568 ,
         "url": "http:\/\/example.org\/2020-08-23-ast\/","datePublished": "2020-08-23T00:30:00+08:00","dateModified": "2020-08-23T00:30:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">入门 AST 抽象语法树</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-23">2020-08-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1599 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-23">2020-08-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1568 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/2020-08-23-ast/" class="leancloud_visitors" data-flag-title="入门 AST 抽象语法树">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -147,7 +147,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">href</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/&#39;</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">href</span> <span class="o">=</span> <span class="s2">&#34;https://github.com/&#34;</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>经过词法分析生成类似这样的 tokens：</p>
@@ -174,22 +174,22 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Keyword&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;const&#34;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Identifier&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;href&#34;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Punctuator&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;=&#34;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;String&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;&#39;https://github.com/&#39;&#34;</span>
-    <span class="p">}</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Keyword&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;const&#34;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Identifier&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;href&#34;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Punctuator&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;=&#34;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;String&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;&#39;https://github.com/&#39;&#34;</span>
+  <span class="p">}</span>
 <span class="p">]</span>
 </code></pre></td></tr></table>
 </div>
@@ -273,19 +273,19 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Node</span> <span class="p">{</span>
-    <span class="kr">type</span><span class="o">:</span> <span class="kt">string</span><span class="p">;</span>
-    <span class="nx">loc?</span>: <span class="kt">SourceLocation</span><span class="p">;</span>
+  <span class="kr">type</span><span class="o">:</span> <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">loc?</span>: <span class="kt">SourceLocation</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kr">interface</span> <span class="nx">SourceLocation</span> <span class="p">{</span>
-    <span class="nx">source</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
-    <span class="nx">start</span>: <span class="kt">Position</span><span class="p">;</span>
-    <span class="nx">end</span>: <span class="kt">Position</span><span class="p">;</span>
+  <span class="nx">source</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nx">start</span>: <span class="kt">Position</span><span class="p">;</span>
+  <span class="nx">end</span>: <span class="kt">Position</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kr">interface</span> <span class="nx">Position</span> <span class="p">{</span>
-    <span class="nx">line</span>: <span class="kt">number</span><span class="p">;</span> <span class="c1">// &gt;= 1
-</span><span class="c1"></span>    <span class="nx">column</span>: <span class="kt">number</span><span class="p">;</span> <span class="c1">// &gt;= 0
+  <span class="nx">line</span>: <span class="kt">number</span><span class="p">;</span> <span class="c1">// &gt;= 1
+</span><span class="c1"></span>  <span class="nx">column</span>: <span class="kt">number</span><span class="p">;</span> <span class="c1">// &gt;= 0
 </span><span class="c1"></span><span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -366,7 +366,7 @@
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">interface</span> <span class="nx">Statement</span> <span class="o">&lt;:</span> <span class="nx">Node</span> <span class="p">{</span> <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>语句，子类有很多， 块语句、 if/switch语句、 return语句、 for/while语句、 with语句等。</p>
+</div><p>语句，子类有很多， 块语句、 if/switch 语句、 return 语句、 for/while 语句、 with 语句等。</p>
 <h3 id="declaration-声明">Declaration 声明</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -397,7 +397,7 @@
 <li>@babel/generator 用于将 AST 转换成代码</li>
 <li>@babel/types 用于 AST 节点操作的 Lodash 式工具库,各节点构造、验证等</li>
 </ul>
-<p>更多api详见 <a href="https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md" target="_blank" rel="noopener noreffer">Babel手册</a>。</p>
+<p>更多 api 详见 <a href="https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md" target="_blank" rel="noopener noreffer">Babel 手册</a>。</p>
 <p>下面是用一个例子讲述具体操作步骤：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -409,10 +409,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">fn</span><span class="p">(){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+  <span class="nx">fn</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>我们需要把以上代码转换成下面这样：</p>
@@ -426,10 +426,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">fn</span><span class="p">(){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">,</span><span class="s2">&#34;world&#34;</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+  <span class="nx">fn</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">,</span> <span class="s2">&#34;world&#34;</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>将两份代码在 <a href="https://astexplorer.net/" target="_blank" rel="noopener noreffer">AST Explorer</a> 中打开。选择 @babel/parser 为解析器，右边有选项隐藏不需要的属性。对比两颗 AST 发现差异是 kind 和 arguments，因此代码如下：</p>
@@ -464,6 +464,10 @@
 </span><span class="lnt">27
 </span><span class="lnt">28
 </span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;@babel/parser&#34;</span><span class="p">);</span>
@@ -477,32 +481,36 @@
 </span><span class="sb">      console.log(&#34;hello&#34;)
 </span><span class="sb">    }
 </span><span class="sb">  }
-</span><span class="sb">`</span>
+</span><span class="sb">`</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">ast</span> <span class="o">=</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">sourceCode</span><span class="p">);</span>
 <span class="nx">traverse</span><span class="p">(</span><span class="nx">ast</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">VariableDeclaration</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="p">{</span> <span class="nx">kind</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">node</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">kind</span> <span class="o">===</span> <span class="s2">&#34;var&#34;</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">kind</span> <span class="o">=</span> <span class="s2">&#34;const&#34;</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">CallExpression</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="p">{</span> <span class="nx">callee</span><span class="p">,</span> <span class="nx">arguments</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">node</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">isMemberExpression</span><span class="p">(</span><span class="nx">callee</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">callee</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s2">&#34;console&#34;</span> <span class="o">&amp;&amp;</span> <span class="nx">callee</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s2">&#34;log&#34;</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">arguments</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">stringLiteral</span><span class="p">(</span><span class="s2">&#34;world&#34;</span><span class="p">))</span>
-        <span class="p">}</span>
+  <span class="nx">VariableDeclaration</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="p">{</span> <span class="nx">kind</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">node</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">kind</span> <span class="o">===</span> <span class="s2">&#34;var&#34;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">kind</span> <span class="o">=</span> <span class="s2">&#34;const&#34;</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">})</span>
+  <span class="p">},</span>
+  <span class="nx">CallExpression</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="p">{</span> <span class="nx">callee</span><span class="p">,</span> <span class="nx">arguments</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">node</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span>
+      <span class="nx">t</span><span class="p">.</span><span class="nx">isMemberExpression</span><span class="p">(</span><span class="nx">callee</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+      <span class="nx">callee</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s2">&#34;console&#34;</span> <span class="o">&amp;&amp;</span>
+      <span class="nx">callee</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s2">&#34;log&#34;</span>
+    <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">arguments</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">stringLiteral</span><span class="p">(</span><span class="s2">&#34;world&#34;</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+<span class="p">});</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">generate</span><span class="p">(</span><span class="nx">ast</span><span class="p">).</span><span class="nx">code</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><a href="https://mp.weixin.qq.com/s/Fz9H5dscj5Oy__daecAYvg" target="_blank" rel="noopener noreffer">这里</a> 还有更多例子。</p>
-<p><strong>参考资料</strong></p>
+<p><strong>参阅资料</strong></p>
 <ul>
-<li><a href="https://mp.weixin.qq.com/s/qTPhYD8PXpeAxwmdlUmdEA" target="_blank" rel="noopener noreffer">JS之 执行过程</a></li>
+<li><a href="https://mp.weixin.qq.com/s/qTPhYD8PXpeAxwmdlUmdEA" target="_blank" rel="noopener noreffer">JS 之 执行过程</a></li>
 <li><a href="https://vincentstudio.info/2020/05/27/056_Javascript_ast/" target="_blank" rel="noopener noreffer">JS 语法树学习</a></li>
-<li><a href="https://mp.weixin.qq.com/s/Fz9H5dscj5Oy__daecAYvg" target="_blank" rel="noopener noreffer">Javascript抽象语法树</a></li>
+<li><a href="https://mp.weixin.qq.com/s/Fz9H5dscj5Oy__daecAYvg" target="_blank" rel="noopener noreffer">Javascript 抽象语法树</a></li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">

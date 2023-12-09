@@ -13,7 +13,7 @@ Webpack 是一个前端构建工具，前端构建工具的作用就是把开发
 
 - 语法编译
 
-编写CSS时使用 Less、Sass，编写 JS 时使用 ES6、TypeScript 等，这些标准目前都无法被浏览器兼容，因此需要构建工具编译，例如使用 Babel 编译 ES6 语法。
+编写 CSS 时使用 Less、Sass，编写 JS 时使用 ES6、TypeScript 等，这些标准目前都无法被浏览器兼容，因此需要构建工具编译，例如使用 Babel 编译 ES6 语法。
 
 - 模块化处理
 
@@ -25,7 +25,7 @@ CSS 和 JS 的模块化语法，目前无法被浏览器兼容。因此开发环
 
 以下概念提取自 webpack 的官方文档，学习更多细节请参阅[官方文档](https://www.webpackjs.com/)。
 
-### Entry 
+### Entry
 
 入口起点(entry point)指示 webpack 应该使用哪个模块,来作为构建其内部依赖图的开始。
 
@@ -33,21 +33,21 @@ CSS 和 JS 的模块化语法，目前无法被浏览器兼容。因此开发环
 
 每个依赖项随即被处理,最后输出到称之为 bundles 的内存文件中。
 
-### Output 
+### Output
 
 output 属性指定 webpack 在哪里输出它所创建的 bundles,以及如何命名这些文件,默认值为 ./dist。
 
 基本上,整个应用程序结构,都会被编译到你指定的输出路径的文件夹中。
 
-### Module 
+### Module
 
 模块,在 Webpack 里一切皆模块,一个模块对应着一个文件。Webpack 会从配置的 Entry 开始递归找出所有依赖的模块。
 
-### Chunk 
+### Chunk
 
 代码块,一个 Chunk 由多个模块组合而成,用于代码合并与分割。
 
-### Loader 
+### Loader
 
 loader 让 webpack 能够去处理那些非 JS 文件(webpack 自身只理解 JS)。
 
@@ -55,7 +55,7 @@ loader 可以将所有类型的文件转换为 webpack 能够处理的有效模�
 
 本质上,webpack loader 将所有类型的文件,转换为应用程序的依赖图(和最终的 bundle)可以直接引用的模块。
 
-### Plugin 
+### Plugin
 
 loader 被用于转换某些类型的模块,而插件则可以用于执行范围更广的任务。
 
@@ -63,7 +63,7 @@ loader 被用于转换某些类型的模块,而插件则可以用于执行范围
 
 ## 构建流程
 
-Webpack 在启动后，会从 Entry 开始，递归解析 Entry 依赖的所有 Module，每找到一个 Module，就会根据 Module.rules 里配置的 Loader 规则进行相应的转换处理，对 Module 进行转换后，再解析出当前 Module 依赖的Module，这些 Module 会以 Entry 为单位进行分组，即为一个 Chunk。因此一个 Chunk 就是一个 Entry 及其所有依赖的 Module 合并的结果。最后 Webpack 会将所有的 Chunk 转换成文件输出 Output。在整个构建流程中，Webpack 会在恰当的时机执行 Plugin 里定义的逻辑，从而完成 Plugin 插件的优化任务。
+Webpack 在启动后，会从 Entry 开始，递归解析 Entry 依赖的所有 Module，每找到一个 Module，就会根据 Module.rules 里配置的 Loader 规则进行相应的转换处理，对 Module 进行转换后，再解析出当前 Module 依赖的 Module，这些 Module 会以 Entry 为单位进行分组，即为一个 Chunk。因此一个 Chunk 就是一个 Entry 及其所有依赖的 Module 合并的结果。最后 Webpack 会将所有的 Chunk 转换成文件输出 Output。在整个构建流程中，Webpack 会在恰当的时机执行 Plugin 里定义的逻辑，从而完成 Plugin 插件的优化任务。
 
 简单的解释就是这样，详细构建流程请看这篇[文章](https://juejin.im/post/6844904038543130637)。
 
@@ -71,14 +71,14 @@ Webpack 在启动后，会从 Entry 开始，递归解析 Entry 依赖的所有 
 
 下面以一个配置一个 react 开发环境为例，学习 webpack 的基本配置方法。
 
-新建文件夹 webpack-demo，终端进入文件夹执行 ` npm init ` 初始化项目。
+新建文件夹 webpack-demo，终端进入文件夹执行 `npm init` 初始化项目。
 
-安装 react: ` yarn add react react-dom `
+安装 react: `yarn add react react-dom`
 
-安装 webpack: ` yarn add webpack webpack-cli webpack-dev-server -D `
+安装 webpack: `yarn add webpack webpack-cli webpack-dev-server -D`
 
 - webpack-cli 提供了一组用于运行和设置 webpack 的命令
-- Webpack-dev-server 提供 http 服务，实时重载(hot模式)，cors 配置，端口配置等
+- Webpack-dev-server 提供 http 服务，实时重载(hot 模式)，cors 配置，端口配置等
 
 安装 babel: ` yarn add @babel/core @babel/preset-react @babel/preset-env babel-loader -D`
 
@@ -103,41 +103,41 @@ Webpack 在启动后，会从 Entry 开始，递归解析 Entry 依赖的所有 
 
 ```js
 //webpack.config.js
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
-    entry: './src/main.js',
-    output: {
-        path: path.join(__dirname, '/dist'),
-        filename: 'bundle.js'
-    },
-    devServer: {
-        port: 8080
-    },
-    module: {
-        rules: [
-            {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-            },
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
-            }
-        ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './dist/index.html'
-        })
-    ]
-}
+  entry: "./src/main.js",
+  output: {
+    path: path.join(__dirname, "/dist"),
+    filename: "bundle.js",
+  },
+  devServer: {
+    port: 8080,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./dist/index.html",
+    }),
+  ],
+};
 ```
 
-- "entry": 这是入口 js，webpack将从此处开始打包。
+- "entry": 这是入口 js，webpack 将从此处开始打包。
 - "output": 打包的文件将位于 "/dist/bundle.js"。
-- "devServer": 它定义了 weback-dev-server 的配置，开发服务器的默认端口是8080。
+- "devServer": 它定义了 weback-dev-server 的配置，开发服务器的默认端口是 8080。
 - 模块规则-这些是转译规则：
   - "test": 正则表达式，指定哪种文件需要通过 loader 转译。
   - "exclude": 指定 loader 应忽略的文件。
@@ -150,6 +150,7 @@ babel 转译的配置文件 .babelrc：
     "presets":["@babel/preset-env", "@babel/preset-react"]
 }
 ```
+
 在 package.json 中添加脚本：
 
 ```
@@ -164,44 +165,42 @@ babel 转译的配置文件 .babelrc：
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>React Web</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="root"></div>
     <!-- html-webpack-plugin 插件生成如下标签
     <script src='bundle.js'></script> -->
-</body>
-
+  </body>
 </html>
 ```
 
 ```js
 // src/main.js
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.js';
-ReactDOM.render(<App />, document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App.js";
+ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
 ```js
-// src/app.js 
+// src/app.js
 
-import React, { Component } from 'react';
-import './index.css';
+import React, { Component } from "react";
+import "./index.css";
 class App extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Hello!!</h1>
-                <h2>Welcome to your React App..!</h2>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <h1>Hello!!</h1>
+        <h2>Welcome to your React App..!</h2>
+      </div>
+    );
+  }
 }
 export default App;
 ```
@@ -210,16 +209,16 @@ export default App;
 /* src/index.css */
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 ```
 
-运行代码: ` yarn start `，打包文件: ` yarn run build `，动手试试吧！
+运行代码: `yarn start`，打包文件: `yarn run build`，动手试试吧！
 
-**参考资料**
+**参阅资料**
 
 - [webpack 官方文档](https://www.webpackjs.com/)
-- [webpack打包原理? 看完这篇你就懂了!](https://juejin.im/post/6844904038543130637)
-- [实现一个简单的Webpack](https://juejin.im/post/6844903858179670030)
+- [webpack 打包原理? 看完这篇你就懂了!](https://juejin.im/post/6844904038543130637)
+- [实现一个简单的 Webpack](https://juejin.im/post/6844903858179670030)
+

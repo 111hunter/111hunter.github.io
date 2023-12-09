@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-03-13-rxjs-01\/"
-        },"genre": "posts","keywords": "Rx, Angular","wordcount":  2034 ,
+        },"genre": "posts","keywords": "Rx, Angular","wordcount":  1994 ,
         "url": "http:\/\/example.org\/2020-03-13-rxjs-01\/","datePublished": "2020-03-13T11:50:32+08:00","dateModified": "2020-03-13T11:50:32+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">初探 RxJS - Observable 的简单创建</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-13">2020-03-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2034 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/2020-03-13-rxjs-01/" class="leancloud_visitors" data-flag-title="初探 RxJS - Observable 的简单创建">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-13">2020-03-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1994 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/2020-03-13-rxjs-01/" class="leancloud_visitors" data-flag-title="初探 RxJS - Observable 的简单创建">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -239,29 +239,29 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-	<span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./src/app.js&#39;</span><span class="p">,</span>
-	<span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
-		<span class="nx">path</span><span class="o">:</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">&#39;/dist&#39;</span><span class="p">,</span>
-		<span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;app.bundle.js&#39;</span>
-	<span class="p">},</span>
-	<span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
-		<span class="nx">rules</span><span class="o">:</span> <span class="p">[</span>
-			<span class="p">{</span>
-				<span class="nx">test</span><span class="o">:</span> <span class="sr">/\.m?js$/</span><span class="p">,</span>
-				<span class="nx">exclude</span><span class="o">:</span> <span class="sr">/(node_modules|bower_components)/</span><span class="p">,</span>
-				<span class="nx">use</span><span class="o">:</span> <span class="p">{</span>
-					<span class="nx">loader</span><span class="o">:</span> <span class="s1">&#39;babel-loader&#39;</span><span class="p">,</span>
-					<span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-						<span class="nx">presets</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;@babel/preset-env&#39;</span><span class="p">]</span>
-					<span class="p">}</span>
-				<span class="p">}</span>
-			<span class="p">}</span>
-		<span class="p">]</span>
-	<span class="p">}</span>
-<span class="p">}</span>
+  <span class="nx">entry</span><span class="o">:</span> <span class="s2">&#34;./src/app.js&#34;</span><span class="p">,</span>
+  <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="s2">&#34;/dist&#34;</span><span class="p">,</span>
+    <span class="nx">filename</span><span class="o">:</span> <span class="s2">&#34;app.bundle.js&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">rules</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.m?js$/</span><span class="p">,</span>
+        <span class="nx">exclude</span><span class="o">:</span> <span class="sr">/(node_modules|bower_components)/</span><span class="p">,</span>
+        <span class="nx">use</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">loader</span><span class="o">:</span> <span class="s2">&#34;babel-loader&#34;</span><span class="p">,</span>
+          <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">presets</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;@babel/preset-env&#34;</span><span class="p">],</span>
+          <span class="p">},</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+<span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>新建文件夹src, 在里面新建文件 app.js, 我们在 app.js 中引入 jquery 和 RxJS。</p>
+</div><p>新建文件夹 src, 在里面新建文件 app.js, 我们在 app.js 中引入 jquery 和 RxJS。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -270,10 +270,10 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">$</span> <span class="nx">from</span> <span class="s1">&#39;jquery&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Rx</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/Rx&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">$</span> <span class="nx">from</span> <span class="s2">&#34;jquery&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Rx</span> <span class="nx">from</span> <span class="s2">&#34;rxjs/Rx&#34;</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Code Running...&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Code Running...&#34;</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>在 html 文件中引入编译后的 js 文件。</p>
@@ -291,19 +291,19 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-	<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;input&#34;</span><span class="p">&gt;</span>
-	<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;output&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-	<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-		<span class="p">&lt;</span><span class="nt">li</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;name&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-		<span class="p">&lt;</span><span class="nt">li</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;artist&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-	<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-	<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;./dist/app.bundle.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;input&#34;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;output&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;name&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;artist&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;./dist/app.bundle.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>执行 <code> webpack --watch --mode development</code>，实时监视文件变化，并重新编译代码。
 打开浏览器控制台没有任何报错，并输出 &ldquo;Code Running&hellip;&rdquo; 说明我们的项目构建成功。
-高版本的 chrome 可能出现 DevTools failed to parse SourceMap，在控制台的setting中取消 Enable JavaScript source maps 这一项即可。</p>
+高版本的 chrome 可能出现 DevTools failed to parse SourceMap，在控制台的 setting 中取消 Enable JavaScript source maps 这一项即可。</p>
 <h2 id="转换操作符">转换操作符</h2>
 <h3 id="observablefrom">Observable.from()</h3>
 <p>Observable.from() 将 <strong>可迭代对象</strong> 转化为 observables 序列, 传入数据集合。</p>
@@ -357,55 +357,63 @@
 </span><span class="lnt">46
 </span><span class="lnt">47
 </span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// from array
 </span><span class="c1"></span><span class="kr">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
 <span class="kr">const</span> <span class="nx">numbers$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span>
 <span class="nx">numbers$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="c1">// from string
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&#34;hello world&#34;</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">str$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
 <span class="nx">str$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="c1">// from array of objects
 </span><span class="c1"></span><span class="kr">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;post 1&#39;</span><span class="p">,</span> <span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;body 1&#39;</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;post 2&#39;</span><span class="p">,</span> <span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;body 2&#39;</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;post 3&#39;</span><span class="p">,</span> <span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;body 3&#39;</span> <span class="p">}</span>
+  <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;post 1&#34;</span><span class="p">,</span> <span class="nx">body</span><span class="o">:</span> <span class="s2">&#34;body 1&#34;</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;post 2&#34;</span><span class="p">,</span> <span class="nx">body</span><span class="o">:</span> <span class="s2">&#34;body 2&#34;</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;post 3&#34;</span><span class="p">,</span> <span class="nx">body</span><span class="o">:</span> <span class="s2">&#34;body 3&#34;</span> <span class="p">},</span>
 <span class="p">];</span>
 <span class="kr">const</span> <span class="nx">posts$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">posts</span><span class="p">);</span>
 <span class="nx">posts$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="c1">// from set
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">set</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;my title&#39;</span> <span class="p">}])</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">set</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([</span><span class="s2">&#34;hello&#34;</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;my title&#34;</span> <span class="p">}]);</span>
 <span class="kr">const</span> <span class="nx">set$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">set</span><span class="p">);</span>
 <span class="nx">set$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="c1">// from map
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">([</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+<span class="p">]);</span>
 <span class="kr">const</span> <span class="nx">map$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
 <span class="nx">map$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">)</span>
 <span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
@@ -428,17 +436,17 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#input&#39;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#output&#39;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">inputStream$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="s1">&#39;keyup&#39;</span><span class="p">);</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#input&#34;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#output&#34;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">inputStream$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="s2">&#34;keyup&#34;</span><span class="p">);</span>
 
 <span class="nx">inputStream$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">e</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-        <span class="nx">output</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;completed&#39;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="nx">output</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;completed&#34;</span><span class="p">)</span>
 <span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
@@ -457,15 +465,15 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">moveStream$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">&#39;mousemove&#39;</span><span class="p">);</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">moveStream$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s2">&#34;mousemove&#34;</span><span class="p">);</span>
 
 <span class="nx">moveStream$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">e</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
-        <span class="nx">output</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;&lt;h1&gt;X: &#39;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">+</span> <span class="s1">&#39; Y: &#39;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">+</span> <span class="s1">&#39;&lt;/h1&gt;&#39;</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;err&#39;</span><span class="p">),</span>
-    <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;completed&#39;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
+    <span class="nx">output</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">&#34;&lt;h1&gt;X: &#34;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">+</span> <span class="s2">&#34; Y: &#34;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">+</span> <span class="s2">&#34;&lt;/h1&gt;&#34;</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;err&#34;</span><span class="p">),</span>
+  <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;completed&#34;</span><span class="p">)</span>
 <span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
@@ -485,14 +493,14 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">myPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;creating promise&#39;</span><span class="p">);</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;hello from promise&#39;</span><span class="p">);</span>
-    <span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;creating promise&#34;</span><span class="p">);</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">resolve</span><span class="p">(</span><span class="s2">&#34;hello from promise&#34;</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="kr">const</span> <span class="nx">myPromiseSource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromPromise</span><span class="p">(</span><span class="nx">myPromise</span><span class="p">);</span>
-<span class="nx">myPromiseSource$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
+<span class="nx">myPromiseSource$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">x</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>结合之前定义的 inputStream$ 嵌套使用：</p>
@@ -514,32 +522,28 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">getSong</span><span class="p">(</span><span class="nx">username</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
-        <span class="nx">url</span><span class="o">:</span> <span class="sb">`https://autumnfish.cn/search?keywords=`</span> <span class="o">+</span> <span class="nx">username</span><span class="p">,</span>
-    <span class="p">}).</span><span class="nx">promise</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;GET&#34;</span><span class="p">,</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="sb">`https://autumnfish.cn/search?keywords=`</span> <span class="o">+</span> <span class="nx">username</span><span class="p">,</span>
+  <span class="p">}).</span><span class="nx">promise</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="kr">const</span> <span class="nx">song</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#input&#39;</span><span class="p">)</span>
-<span class="kr">const</span> <span class="nx">inputStream$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nx">song</span><span class="p">,</span> <span class="s1">&#39;keyup&#39;</span><span class="p">)</span>
-<span class="nx">inputStream$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromPromise</span><span class="p">(</span><span class="nx">getSong</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">))</span>
-        <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="p">{</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#name&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Song: &#39;</span> <span class="o">+</span> <span class="nx">x</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">songs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="p">)</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">songs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="p">)</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#artist&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Artist: &#39;</span> <span class="o">+</span> <span class="nx">x</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">songs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">artists</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="p">)</span>
-        <span class="p">});</span>
-<span class="p">}</span>
-<span class="p">);</span>
+<span class="kr">const</span> <span class="nx">song</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#input&#34;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">inputStream$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nx">song</span><span class="p">,</span> <span class="s2">&#34;keyup&#34;</span><span class="p">);</span>
+<span class="nx">inputStream$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromPromise</span><span class="p">(</span><span class="nx">getSong</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)).</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">x</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#name&#34;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&#34;Song: &#34;</span> <span class="o">+</span> <span class="nx">x</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">songs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">songs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#artist&#34;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&#34;Artist: &#34;</span> <span class="o">+</span> <span class="nx">x</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">songs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">artists</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="observableof">Observable.of()</h3>
-<p>of 操作符接收1个或多个参数。转换为 Observable 对象。</p>
+<p>of 操作符接收 1 个或多个参数。转换为 Observable 对象。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -550,17 +554,17 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">stream$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">);</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">stream$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&#34;hello&#34;</span><span class="p">);</span>
 <span class="nx">stream$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="nx">complete</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">complete</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">)</span>
 <span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="创建操作符">创建操作符</h2>
 <h3 id="observablecreate">Observable.create()</h3>
-<p>Rx.Observable.create 是 Observable <strong>构造函数</strong> 的别名，它接收一个以 observer 作为参数的回调函数。这个回调函数会定义 observable 将会如何发送值给 observer。observer是什么？observer就是我们之前传入 subscribe() 的参数，是一个有三个回调函数的对象。</p>
+<p>Rx.Observable.create 是 Observable <strong>构造函数</strong> 的别名，它接收一个以 observer 作为参数的回调函数。这个回调函数会定义 observable 将会如何发送值给 observer。observer 是什么？observer 就是我们之前传入 subscribe() 的参数，是一个有三个回调函数的对象。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -579,32 +583,28 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">source$</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span>
-    <span class="nx">observer</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
-        <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;another hello&#39;</span><span class="p">)</span>
-        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-            <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;next hello&#39;</span><span class="p">)</span>
-            <span class="nx">observer</span><span class="p">.</span><span class="nx">complete</span><span class="p">();</span>
-        <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">);</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">source$</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">observer</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">);</span>
+  <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s2">&#34;another hello&#34;</span><span class="p">);</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s2">&#34;next hello&#34;</span><span class="p">);</span>
+    <span class="nx">observer</span><span class="p">.</span><span class="nx">complete</span><span class="p">();</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
 
 <span class="kr">const</span> <span class="nx">observer1</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">next</span><span class="o">:</span> <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span> <span class="o">+</span> <span class="s1">&#39;1&#39;</span><span class="p">),</span>
-    <span class="nx">error</span><span class="o">:</span> <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="nx">complete</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
-<span class="p">}</span>
+  <span class="nx">next</span><span class="o">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span> <span class="o">+</span> <span class="s2">&#34;1&#34;</span><span class="p">),</span>
+  <span class="nx">error</span><span class="o">:</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="nx">complete</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">),</span>
+<span class="p">};</span>
 
 <span class="nx">source$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">observer1</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>observable 是数据流的生产者，决定数据怎么给。observer 是数据流的消费者，决定数据怎么用。observable 是老板，observer 是顾客。
-observable.subscribe()会实例化一个Subscription对象。Subscription表示Observable 的执行，可以被清理。这个对象最常用的方法是unsubscribe方法。</p>
+observable.subscribe()会实例化一个 Subscription 对象。Subscription 表示 Observable 的执行，可以被清理。这个对象最常用的方法是 unsubscribe 方法。</p>
 <h3 id="observablerange">Observable.range()</h3>
 <p>接收两个数字参数产生有序序列，一个是开始序列数字。一个是序列个数。</p>
 <div class="highlight"><div class="chroma">
@@ -617,17 +617,17 @@ observable.subscribe()会实例化一个Subscription对象。Subscription表示O
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">rangeSource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">rangeSource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
 <span class="nx">rangeSource$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="nx">complete</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
-<span class="p">)</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">complete</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">)</span>
+<span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="时间操作符">时间操作符</h2>
 <h3 id="observableinterval-和-observabletimer">Observable.interval 和 Observable.timer</h3>
-<p>从零开始产生数字，interval的参数是数字产生的间隔时间，timer 多了个开始延迟时间作为第一个参数。</p>
+<p>从零开始产生数字，interval 的参数是数字产生的间隔时间，timer 多了个开始延迟时间作为第一个参数。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -645,19 +645,19 @@ observable.subscribe()会实例化一个Subscription对象。Subscription表示O
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">intervalSource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">intervalSource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">take</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 <span class="nx">intervalSource$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="nx">complete</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
-<span class="p">)</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">complete</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">)</span>
+<span class="p">);</span>
 
-<span class="kr">const</span> <span class="nx">timerSource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">timer</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">).</span><span class="nx">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">timerSource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">timer</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">).</span><span class="nx">take</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 <span class="nx">timerSource$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="nx">complete</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
-<span class="p">)</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">complete</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">)</span>
+<span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="特殊操作符">特殊操作符</h2>
@@ -687,30 +687,30 @@ observable.subscribe()会实例化一个Subscription对象。Subscription表示O
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">emptySource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">empty</span><span class="p">()</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">emptySource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">empty</span><span class="p">();</span>
 <span class="nx">emptySource$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="nx">complete</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
-<span class="p">)</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">complete</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">)</span>
+<span class="p">);</span>
 
-<span class="kr">const</span> <span class="nx">neverSource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">never</span><span class="p">()</span>
+<span class="kr">const</span> <span class="nx">neverSource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">never</span><span class="p">();</span>
 <span class="nx">neverSource$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-    <span class="nx">complete</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
-<span class="p">)</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">complete</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">)</span>
+<span class="p">);</span>
 
-<span class="kr">const</span> <span class="nx">errorSource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">throw</span><span class="p">(</span><span class="s1">&#39;err&#39;</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">errorSource$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">throw</span><span class="p">(</span><span class="s2">&#34;err&#34;</span><span class="p">);</span>
 <span class="nx">errorSource$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-    <span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
-    <span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Throw Error: &#39;</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-    <span class="nx">complete</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
-<span class="p">)</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Throw Error: &#34;</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">complete</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;complete&#34;</span><span class="p">)</span>
+<span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>附：<a href="https://gitee.com/hildakik/rxjs01" target="_blank" rel="noopener noreffer">源码地址</a></p>
-<p><strong>参考资料</strong></p>
+<p><strong>参阅资料</strong></p>
 <ul>
 <li><a href="https://rxjs-cn.github.io/RxJS-Ultimate-CN/" target="_blank" rel="noopener noreffer">RxJS Ultimate 中文版</a></li>
 <li><a href="https://ithelp.ithome.com.tw/users/20103367/ironman/1199" target="_blank" rel="noopener noreffer">30 天精通 RxJS</a></li>

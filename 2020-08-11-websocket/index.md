@@ -12,33 +12,32 @@ WebSocket 广泛应用于多用户实时交流，服务端数据持续变化的�
 常用服务端 api：
 
 ```js
-
-socket.on('eventName', msg => {}) 
+socket.on("eventName", (msg) => {});
 /*服务器端监听客户端emit的事件，事件名称可以和客户端是重复的，但是并没有任何关联。
 socket.io内置了一些事件比如connection，disconnect，exit事件*/
 
-socket.emit('eventName', msg) 
+socket.emit("eventName", msg);
 //服务端各自的socket向各自的客户端发送数据
 
-socket.broadcast('eventName', msg) 
+socket.broadcast("eventName", msg);
 //服务端向其他客户端发送消息，不包括自己的客户端
 
-socket.join(channel) 
+socket.join(channel);
 //创建一个频道（非常有用，尤其做分频道的时候，比如斗地主这种实时棋牌游戏）
 
-io.sockets.in(channel) 
+io.sockets.in(channel);
 //加入一个频道
 
-io.to(channel).emit('eventName', msg)
+io.to(channel).emit("eventName", msg);
 //向一个频道发送消息，包括自己的客户端
 
-socket.broadcast.to(channel).emit('eventName', msg) 
+socket.broadcast.to(channel).emit("eventName", msg);
 //向一个频道发送消息，不包括自己的客户端
 
-io.emit('eventName', msg)
+io.emit("eventName", msg);
 //向所有客户端发送数据
 
-io.sockets.adapter.rooms 
+io.sockets.adapter.rooms;
 //获取所有的频道
 ```
 
@@ -46,25 +45,28 @@ io.sockets.adapter.rooms
 
 ```js
 //客户端
- 
-io.connect(url) 
+
+io.connect(url);
 //客户端连接上服务器端，可简写为 io(url)，无跨域时为 io()
 
-socket.on('eventName', msg => {}) 
+socket.on("eventName", (msg) => {});
 //客户端监听服务器端事件
 
-socket.emit('eventName', msg) 
+socket.emit("eventName", msg);
 //客户端向服务器端发送数据
 
-socket.disconnect() 
+socket.disconnect();
 //客户端断开链接
 ```
 
-更多的 api 请参阅 Socket.IO 的[官方文档](https://socket.io/)。这里有一篇搭建实时聊天室的[文章](https://www.cnblogs.com/AlexZha/p/6101035.html)，注意文中的 index.html 和 client.js 中的线上服务器地址 realtime.plhwin.com:3000 已经没有了，改为本地地址 localhost:3000 就能运行代码了。index.html 里的 
+更多的 api 请参阅 Socket.IO 的[官方文档](https://socket.io/)。这里有一篇搭建实时聊天室的[文章](https://www.cnblogs.com/AlexZha/p/6101035.html)，注意文中的 index.html 和 client.js 中的线上服务器地址 realtime.plhwin.com:3000 已经没有了，改为本地地址 localhost:3000 就能运行代码了。index.html 里的
+
 ```html
 <script src="/socket.io/socket.io.js"></script>
 ```
+
 指向的文件是其实是
+
 ```html
 <script src="../server/node_modules/socket.io-client/dist/socket.io.js"></script>
 ```
@@ -80,73 +82,73 @@ WebSocket 依赖于 http，这里需要安装 socket.io 和 express
 ```js
 // server.js
 
-const path = require('path');
-const http = require('http');
-const express = require('express');
-const socketio = require('socket.io');
-const formatMessage = require('./utils/messages');
+const path = require("path");
+const http = require("http");
+const express = require("express");
+const socketio = require("socket.io");
+const formatMessage = require("./utils/messages");
 const {
   userJoin,
   getCurrentUser,
   userLeave,
-  getRoomUsers
-} = require('./utils/users');
+  getRoomUsers,
+} = require("./utils/users");
 
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
 // Set static folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
-const botName = 'ChatCord Bot';
+const botName = "ChatCord Bot";
 
 // Run when client connects
-io.on('connection', socket => {
-  socket.on('joinRoom', ({ username, room }) => {
+io.on("connection", (socket) => {
+  socket.on("joinRoom", ({ username, room }) => {
     const user = userJoin(socket.id, username, room);
 
     socket.join(user.room);
 
     // Welcome current user
-    socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+    socket.emit("message", formatMessage(botName, "Welcome to ChatCord!"));
 
     // Broadcast when a user connects
     socket.broadcast
       .to(user.room)
       .emit(
-        'message',
+        "message",
         formatMessage(botName, `${user.username} has joined the chat`)
       );
 
     // Send users and room info
-    io.to(user.room).emit('roomUsers', {
+    io.to(user.room).emit("roomUsers", {
       room: user.room,
-      users: getRoomUsers(user.room)
+      users: getRoomUsers(user.room),
     });
   });
 
   // Listen for chatMessage
-  socket.on('chatMessage', msg => {
+  socket.on("chatMessage", (msg) => {
     const user = getCurrentUser(socket.id);
 
-    io.to(user.room).emit('message', formatMessage(user.username, msg));
+    io.to(user.room).emit("message", formatMessage(user.username, msg));
   });
 
   // Runs when client disconnects
-  socket.on('disconnect', () => {
+  socket.on("disconnect", () => {
     const user = userLeave(socket.id);
 
     if (user) {
       io.to(user.room).emit(
-        'message',
+        "message",
         formatMessage(botName, `${user.username} has left the chat`)
       );
 
       // Send users and room info
-      io.to(user.room).emit('roomUsers', {
+      io.to(user.room).emit("roomUsers", {
         room: user.room,
-        users: getRoomUsers(user.room)
+        users: getRoomUsers(user.room),
       });
     }
   });
@@ -156,7 +158,6 @@ const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 ```
-
 
 ## 客户端实现
 
@@ -174,29 +175,29 @@ server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 ```js
 // public/js/main.js
 
-const chatForm = document.getElementById('chat-form');
-const chatMessages = document.querySelector('.chat-messages');
-const roomName = document.getElementById('room-name');
-const userList = document.getElementById('users');
+const chatForm = document.getElementById("chat-form");
+const chatMessages = document.querySelector(".chat-messages");
+const roomName = document.getElementById("room-name");
+const userList = document.getElementById("users");
 
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
-  ignoreQueryPrefix: true
+  ignoreQueryPrefix: true,
 });
 
 const socket = io();
 
 // Join chatroom
-socket.emit('joinRoom', { username, room });
+socket.emit("joinRoom", { username, room });
 
 // Get room and users
-socket.on('roomUsers', ({ room, users }) => {
+socket.on("roomUsers", ({ room, users }) => {
   outputRoomName(room);
   outputUsers(users);
 });
 
 // Message from server
-socket.on('message', message => {
+socket.on("message", (message) => {
   console.log(message);
   outputMessage(message);
 
@@ -205,29 +206,29 @@ socket.on('message', message => {
 });
 
 // Message submit
-chatForm.addEventListener('submit', e => {
+chatForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   // Get message text
   const msg = e.target.elements.msg.value;
 
   // Emit message to server
-  socket.emit('chatMessage', msg);
+  socket.emit("chatMessage", msg);
 
   // Clear input
-  e.target.elements.msg.value = '';
+  e.target.elements.msg.value = "";
   e.target.elements.msg.focus();
 });
 
 // Output message to DOM
 function outputMessage(message) {
-  const div = document.createElement('div');
-  div.classList.add('message');
+  const div = document.createElement("div");
+  div.classList.add("message");
   div.innerHTML = `<p class="meta">${message.username} <span>${message.time}</span></p>
   <p class="text">
     ${message.text}
   </p>`;
-  document.querySelector('.chat-messages').appendChild(div);
+  document.querySelector(".chat-messages").appendChild(div);
 }
 
 // Add room name to DOM
@@ -238,16 +239,18 @@ function outputRoomName(room) {
 // Add users to DOM
 function outputUsers(users) {
   userList.innerHTML = `
-    ${users.map(user => `<li>${user.username}</li>`).join('')}
+    ${users.map((user) => `<li>${user.username}</li>`).join("")}
   `;
 }
 ```
+
 更多内容请看源码。
 
 附：[源码地址](https://github.com/bradtraversy/chatcord)
 
-**参考资料**
+**参阅资料**
 
 - [WebSocket 教程](http://www.ruanyifeng.com/blog/2017/05/websocket.html)
 - [Socket.IO 官方文档](https://socket.io/)
 - [ChatCord 源码](https://github.com/bradtraversy/chatcord)
+

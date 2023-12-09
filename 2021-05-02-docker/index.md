@@ -46,7 +46,7 @@ $ docker images
 ```bash
 $ docker run -d -p 80:80 nginx
 ```
- 
+
 play-with-docker 的网页中出现了可点击的 80 字段，可以再启动一个外部 81 端口的映射
 
 ```bash
@@ -84,7 +84,7 @@ echo hello > index.html
 强制刷新浏览器，网页内容为 “hello” 修改成功
 
 ```bash
-$ exit 
+$ exit
 ```
 
 退出容器后，删除外部 80 端口容器，我们不用这个未修改的容器
@@ -110,7 +110,6 @@ $ docker run -d -p 82:80 m1
 ```
 
 这是对 commit 的实践，符合预期，另一种构建镜像的方式是使用 Dockerfile
-
 
 #### Dockerfile 构建镜像
 
@@ -187,8 +186,8 @@ $ docker images
 
 到这里，我们已入门 docker，其他内容待补充。。。
 
+**参阅资料**
 
-**参考资料**
-
-- [10分钟，快速学会docker](https://www.bilibili.com/video/BV1R4411F7t9)
+- [10 分钟，快速学会 docker](https://www.bilibili.com/video/BV1R4411F7t9)
 - [Docker 从入门到实践](https://yeasy.gitbook.io/docker_practice/)
+

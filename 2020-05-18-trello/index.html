@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-05-18-trello\/"
-        },"genre": "posts","keywords": "React","wordcount":  2822 ,
+        },"genre": "posts","keywords": "React","wordcount":  2803 ,
         "url": "http:\/\/example.org\/2020-05-18-trello\/","datePublished": "2020-05-18T00:18:30+08:00","dateModified": "2020-05-18T00:18:30+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">写一个可拖拽的 Trello</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-18">2020-05-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2822 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-18">2020-05-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2803 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/2020-05-18-trello/" class="leancloud_visitors" data-flag-title="写一个可拖拽的 Trello">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -134,7 +134,7 @@
     </a><figcaption class="image-caption">可拖拽Trello页面展示</figcaption>
     </figure></p>
 <h2 id="拖拽库的使用">拖拽库的使用</h2>
-<p>react-beautiful-dnd 这个库使用 render-props 完成组件逻辑复用。react-beautiful-dnd 有 3 个主要组件：DragDropContext，Droppable和Draggable。这三者的关系如下：</p>
+<p>react-beautiful-dnd 这个库使用 render-props 完成组件逻辑复用。react-beautiful-dnd 有 3 个主要组件：DragDropContext，Droppable 和 Draggable。这三者的关系如下：</p>
 <p><figure><a class="lightgallery" href="/img/react-beautiful-dnd.png" title="react-beautiful-dnd库的使用" data-thumbnail="/img/react-beautiful-dnd.png" data-sub-html="<h2>react-beautiful-dnd库的使用</h2><p>react-beautiful-dnd库的使用</p>">
         <img
             class="lazyload"
@@ -155,34 +155,24 @@ DragDropContext 提供了以下三个钩子：</p>
 <p>我们需要在 Board 组件内建立可拖动范围，则需要这样写：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// components/Board.js
 </span><span class="c1"></span>
 <span class="kr">const</span> <span class="nx">Board</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// onDragEnd 需实现
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">onDragEnd</span> <span class="o">=</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{};</span>
 
-    <span class="c1">// onDragEnd 需实现
-</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">onDragEnd</span> <span class="o">=</span> <span class="nx">result</span> <span class="p">=&gt;</span> <span class="p">{};</span>
-
-    <span class="k">return</span> <span class="p">(</span>
-       <span class="p">&lt;</span><span class="nt">DragDropContext</span> <span class="na">onDragEnd</span><span class="o">=</span><span class="p">{</span><span class="nx">onDragEnd</span><span class="p">}&gt;</span>
-           <span class="p">...</span>
-       <span class="p">&lt;/</span><span class="nt">DragDropContext</span><span class="p">&gt;</span>
-   <span class="p">);</span>
-<span class="p">}</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">DragDropContext</span> <span class="na">onDragEnd</span><span class="o">=</span><span class="p">{</span><span class="nx">onDragEnd</span><span class="p">}&gt;...&lt;/</span><span class="nt">DragDropContext</span><span class="p">&gt;;</span>
+<span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Droppable：</p>
@@ -223,35 +213,33 @@ DragDropContext 提供了以下三个钩子：</p>
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
-</span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// components/Board.js
 </span><span class="c1"></span>
 <span class="c1">// 需嵌套在 DragDropContext 内
 </span><span class="c1">// 包裹 List 的容器，List 在 Board 容器内横向拖动
-</span><span class="c1"></span><span class="p">&lt;</span><span class="nt">Droppable</span> <span class="na">droppableId</span><span class="o">=</span><span class="s">&#39;all-lists&#39;</span> <span class="na">direction</span><span class="o">=</span><span class="s">&#39;horizontal&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;list&#39;</span><span class="p">&gt;</span>
-<span class="p">{</span> <span class="nx">provided</span> <span class="p">=&gt;</span> <span class="p">(</span>
+</span><span class="c1"></span><span class="p">&lt;</span><span class="nt">Droppable</span> <span class="na">droppableId</span><span class="o">=</span><span class="s">&#34;all-lists&#34;</span> <span class="na">direction</span><span class="o">=</span><span class="s">&#34;horizontal&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;list&#34;</span><span class="p">&gt;</span>
+  <span class="p">{(</span><span class="nx">provided</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
     <span class="c1">// 封装后的可拖放的容器组件
-</span><span class="c1"></span>    <span class="p">&lt;</span><span class="nt">ListContainer</span> <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">innerRef</span><span class="p">}</span>
-    <span class="p">{</span><span class="na">...provided.droppableProps</span><span class="p">}&gt;</span>
-    <span class="c1">// 遍历所有的列表，将列表数据传递给每个列表
-</span><span class="c1"></span>    <span class="p">{</span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">lists</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">key</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span><span class="c1"></span>    <span class="p">&lt;</span><span class="nt">ListContainer</span> <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">innerRef</span><span class="p">}</span> <span class="p">{</span><span class="na">...provided.droppableProps</span><span class="p">}&gt;</span>
+      <span class="c1">// 遍历所有的列表，将列表数据传递给每个列表
+</span><span class="c1"></span>      <span class="p">{</span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">lists</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">key</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="kr">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
         <span class="kr">const</span> <span class="nx">listCards</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nx">list</span><span class="p">.</span><span class="nx">cards</span> <span class="o">:</span> <span class="p">[];</span>
         <span class="k">return</span> <span class="p">(</span>
-        <span class="p">&lt;</span><span class="nt">List</span>
+          <span class="p">&lt;</span><span class="nt">List</span>
             <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
             <span class="na">id</span><span class="o">=</span><span class="p">{</span><span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
             <span class="na">title</span><span class="o">=</span><span class="p">{</span><span class="nx">list</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span>
             <span class="na">cards</span><span class="o">=</span><span class="p">{</span><span class="nx">listCards</span><span class="p">}</span>
             <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span>
-        <span class="p">/&gt;</span>
+          <span class="p">/&gt;</span>
         <span class="p">);</span>
-    <span class="p">})}</span>
-    <span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">placeholder</span><span class="p">}</span>
+      <span class="p">})}</span>
+      <span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">placeholder</span><span class="p">}</span>
     <span class="p">&lt;/</span><span class="nt">ListContainer</span><span class="p">&gt;</span>
-<span class="p">)}</span>
+  <span class="p">)}</span>
 <span class="p">&lt;/</span><span class="nt">Droppable</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
@@ -294,11 +282,11 @@ DragDropContext 提供了以下三个钩子：</p>
         <span class="p">&lt;</span><span class="nt">Draggable</span> <span class="na">draggableId</span><span class="o">=</span><span class="p">{</span><span class="nx">id</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}&gt;</span>
         <span class="p">{</span> <span class="nx">provided</span>  <span class="p">=&gt;</span> <span class="p">(</span>
             <span class="c1">// 封装后的可拖放组件
-</span><span class="c1"></span>            <span class="p">&lt;</span><span class="nt">ListContainer</span> 
+</span><span class="c1"></span>            <span class="p">&lt;</span><span class="nt">ListContainer</span>
             <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">innerRef</span><span class="p">}</span>
             <span class="p">{</span><span class="na">...provided.draggableProps</span><span class="p">}</span>
             <span class="err">//</span> <span class="na">dragHandleProps</span> <span class="na">绑定的组件</span> <span class="na">ListContainer</span> <span class="na">可拖动</span>
-            <span class="p">{</span><span class="na">...provided.dragHandleProps</span><span class="p">}&gt;</span> 
+            <span class="p">{</span><span class="na">...provided.dragHandleProps</span><span class="p">}&gt;</span>
                     <span class="p">...</span>
             <span class="p">&lt;/</span><span class="nt">ListContainer</span><span class="p">&gt;</span>
         <span class="p">)}</span>
@@ -331,8 +319,6 @@ DragDropContext 提供了以下三个钩子：</p>
 </span><span class="lnt">19
 </span><span class="lnt">20
 </span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// components/List.js
@@ -340,23 +326,21 @@ DragDropContext 提供了以下三个钩子：</p>
 <span class="c1">// 需嵌套在 List 组件返回的 ListContainer 内
 </span><span class="c1">// 包裹 Card 的容器，Card 在 List 容器内可拖放
 </span><span class="c1"></span><span class="p">&lt;</span><span class="nt">Droppable</span> <span class="na">droppableId</span><span class="o">=</span><span class="p">{</span><span class="nx">id</span><span class="p">}</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;card&#34;</span><span class="p">&gt;</span>
-<span class="p">{</span><span class="nx">provided</span> <span class="p">=&gt;</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">CardContainer</span> 
-    <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">innerRef</span><span class="p">}</span>
-    <span class="p">{</span><span class="na">...provided.droppableProps</span><span class="p">}&gt;</span>
-        <span class="c1">// 遍历每个 List 中所有的卡片，将卡片数据传给每张卡片
-</span><span class="c1"></span>        <span class="p">{</span><span class="nx">cards</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">card</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
-            <span class="p">&lt;</span><span class="nt">Card</span>
-            <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">card</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
-            <span class="na">id</span><span class="o">=</span><span class="p">{</span><span class="nx">card</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
-            <span class="na">text</span><span class="o">=</span><span class="p">{</span><span class="nx">card</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span>
-            <span class="na">listId</span><span class="o">=</span><span class="p">{</span><span class="nx">id</span><span class="p">}</span>
-            <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span>
-            <span class="p">/&gt;</span>
-    <span class="p">))}</span>
-    <span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">placeholder</span><span class="p">}</span>
+  <span class="p">{(</span><span class="nx">provided</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">CardContainer</span> <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">innerRef</span><span class="p">}</span> <span class="p">{</span><span class="na">...provided.droppableProps</span><span class="p">}&gt;</span>
+      <span class="c1">// 遍历每个 List 中所有的卡片，将卡片数据传给每张卡片
+</span><span class="c1"></span>      <span class="p">{</span><span class="nx">cards</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">card</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">Card</span>
+          <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">card</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+          <span class="na">id</span><span class="o">=</span><span class="p">{</span><span class="nx">card</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+          <span class="na">text</span><span class="o">=</span><span class="p">{</span><span class="nx">card</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span>
+          <span class="na">listId</span><span class="o">=</span><span class="p">{</span><span class="nx">id</span><span class="p">}</span>
+          <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span>
+        <span class="p">/&gt;</span>
+      <span class="p">))}</span>
+      <span class="p">{</span><span class="nx">provided</span><span class="p">.</span><span class="nx">placeholder</span><span class="p">}</span>
     <span class="p">&lt;/</span><span class="nt">CardContainer</span><span class="p">&gt;</span>
-<span class="p">)}</span>
+  <span class="p">)}</span>
 <span class="p">&lt;/</span><span class="nt">Droppable</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
@@ -433,51 +417,33 @@ DragDropContext 提供了以下三个钩子：</p>
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// morkData.js
 </span><span class="c1"></span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">uuid</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;uuidv4&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">uuid</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;uuidv4&#34;</span><span class="p">;</span>
 
-<span class="kr">const</span> <span class="nx">getCard</span> <span class="o">=</span> <span class="nx">text</span> <span class="p">=&gt;</span> <span class="p">({</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="nx">uuid</span><span class="p">(),</span>
-    <span class="nx">text</span>
+<span class="kr">const</span> <span class="nx">getCard</span> <span class="o">=</span> <span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">({</span>
+  <span class="nx">id</span><span class="o">:</span> <span class="nx">uuid</span><span class="p">(),</span>
+  <span class="nx">text</span><span class="p">,</span>
 <span class="p">});</span>
 
 <span class="kr">export</span> <span class="kr">const</span> <span class="nx">ListState</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nx">id</span><span class="o">:</span> <span class="nx">uuid</span><span class="p">(),</span>
-        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;To Do&#39;</span><span class="p">,</span>
-        <span class="nx">cards</span><span class="o">:</span> <span class="p">[</span>
-            <span class="nx">getCard</span><span class="p">(</span><span class="s1">&#39;To do task&#39;</span><span class="p">),</span>
-            <span class="nx">getCard</span><span class="p">(</span><span class="s1">&#39;TO FILTER: To do task&#39;</span><span class="p">),</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="nx">id</span><span class="o">:</span> <span class="nx">uuid</span><span class="p">(),</span>
-        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Doing&#39;</span><span class="p">,</span>
-        <span class="nx">cards</span><span class="o">:</span> <span class="p">[</span>
-            <span class="nx">getCard</span><span class="p">(</span><span class="s1">&#39;Doing task&#39;</span><span class="p">),</span>
-            <span class="nx">getCard</span><span class="p">(</span><span class="s1">&#39;TO FILTER: Doing task&#39;</span><span class="p">),</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="nx">id</span><span class="o">:</span> <span class="nx">uuid</span><span class="p">(),</span>
-        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Done&#39;</span><span class="p">,</span>
-        <span class="nx">cards</span><span class="o">:</span> <span class="p">[</span>
-            <span class="nx">getCard</span><span class="p">(</span><span class="s1">&#39;Done task&#39;</span><span class="p">),</span>
-            <span class="nx">getCard</span><span class="p">(</span><span class="s1">&#39;TO FILTER: Done task&#39;</span><span class="p">),</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nx">uuid</span><span class="p">(),</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;To Do&#34;</span><span class="p">,</span>
+    <span class="nx">cards</span><span class="o">:</span> <span class="p">[</span><span class="nx">getCard</span><span class="p">(</span><span class="s2">&#34;To do task&#34;</span><span class="p">),</span> <span class="nx">getCard</span><span class="p">(</span><span class="s2">&#34;TO FILTER: To do task&#34;</span><span class="p">)],</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nx">uuid</span><span class="p">(),</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;Doing&#34;</span><span class="p">,</span>
+    <span class="nx">cards</span><span class="o">:</span> <span class="p">[</span><span class="nx">getCard</span><span class="p">(</span><span class="s2">&#34;Doing task&#34;</span><span class="p">),</span> <span class="nx">getCard</span><span class="p">(</span><span class="s2">&#34;TO FILTER: Doing task&#34;</span><span class="p">)],</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nx">uuid</span><span class="p">(),</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;Done&#34;</span><span class="p">,</span>
+    <span class="nx">cards</span><span class="o">:</span> <span class="p">[</span><span class="nx">getCard</span><span class="p">(</span><span class="s2">&#34;Done task&#34;</span><span class="p">),</span> <span class="nx">getCard</span><span class="p">(</span><span class="s2">&#34;TO FILTER: Done task&#34;</span><span class="p">)],</span>
+  <span class="p">},</span>
 <span class="p">];</span>
 </code></pre></td></tr></table>
 </div>
@@ -500,16 +466,16 @@ DragDropContext 提供了以下三个钩子：</p>
 <td class="lntd">
 <pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">draggableId</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// 移动的组件 id
-</span><span class="c1"></span>  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span>
+</span><span class="c1"></span>  <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;list&#34;</span><span class="p">,</span>
   <span class="nx">source</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">droppableId</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// 移动前所在的容器 id
-</span><span class="c1"></span>    <span class="nx">index</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> 	<span class="c1">// 组件在移动前的容器内的位置
+</span><span class="c1"></span>    <span class="nx">index</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="c1">// 组件在移动前的容器内的位置
 </span><span class="c1"></span>  <span class="p">},</span>
   <span class="nx">destination</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">droppableId</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="c1">// 移动后所在的容器 id
-</span><span class="c1"></span>    <span class="nx">index</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>	<span class="c1">// 组件在移动后的容器内的位置
-</span><span class="c1"></span>  <span class="p">}</span>
-<span class="p">}</span>
+</span><span class="c1"></span>    <span class="nx">index</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// 组件在移动后的容器内的位置
+</span><span class="c1"></span>  <span class="p">},</span>
+<span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>我们需要写拖放组件后的状态变化逻辑，因为我们的列表数据中的 cards 数组发生了变化，但我们还没有把新的状态渲染到 list 组件中，拖放组件后需要重新排序，现在去实现在 Board 组件中定义的 onDragEnd 钩子函数：</p>
@@ -535,20 +501,20 @@ DragDropContext 提供了以下三个钩子：</p>
 <td class="lntd">
 <pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// components/Board.js
 </span><span class="c1"></span>
-  <span class="kr">const</span> <span class="nx">onDragEnd</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">draggableId</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">source</span><span class="p">,</span> <span class="nx">destination</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">destination</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">dispatch</span><span class="p">(</span>
-        <span class="nx">sort</span><span class="p">(</span>
-          <span class="nx">source</span><span class="p">.</span><span class="nx">droppableId</span><span class="p">,</span> 
-          <span class="nx">destination</span><span class="p">.</span><span class="nx">droppableId</span><span class="p">,</span>
-          <span class="nx">source</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span>
-          <span class="nx">destination</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span>
-          <span class="nx">draggableId</span><span class="p">,</span>
-          <span class="nx">type</span>
-        <span class="p">)</span>
-      <span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">};</span>
+<span class="kr">const</span> <span class="nx">onDragEnd</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">draggableId</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">source</span><span class="p">,</span> <span class="nx">destination</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">destination</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">dispatch</span><span class="p">(</span>
+      <span class="nx">sort</span><span class="p">(</span>
+        <span class="nx">source</span><span class="p">.</span><span class="nx">droppableId</span><span class="p">,</span>
+        <span class="nx">destination</span><span class="p">.</span><span class="nx">droppableId</span><span class="p">,</span>
+        <span class="nx">source</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span>
+        <span class="nx">destination</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span>
+        <span class="nx">draggableId</span><span class="p">,</span>
+        <span class="nx">type</span>
+      <span class="p">)</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>action 用 payload 传递接收到的数据：</p>
@@ -589,10 +555,10 @@ DragDropContext 提供了以下三个钩子：</p>
 <span class="p">...</span>
 
 <span class="kr">export</span> <span class="kr">const</span> <span class="nx">sort</span> <span class="o">=</span> <span class="p">(</span>
-  <span class="nx">droppableIdStart</span><span class="p">,</span> 
-  <span class="nx">droppableIdEnd</span><span class="p">,</span> 
-  <span class="nx">droppableIndexStart</span><span class="p">,</span> 
-  <span class="nx">droppableIndexEnd</span><span class="p">,</span>  
+  <span class="nx">droppableIdStart</span><span class="p">,</span>
+  <span class="nx">droppableIdEnd</span><span class="p">,</span>
+  <span class="nx">droppableIndexStart</span><span class="p">,</span>
+  <span class="nx">droppableIndexEnd</span><span class="p">,</span>
   <span class="nx">draggableId</span><span class="p">,</span>
   <span class="nx">type</span>
 <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -663,7 +629,7 @@ DragDropContext 提供了以下三个钩子：</p>
 <span class="k">case</span> <span class="nx">CONSTANTS</span><span class="p">.</span><span class="nx">DRAGGED</span><span class="o">:</span> <span class="p">{</span>  <span class="c1">// 当完成拖放动作时
 </span><span class="c1"></span>  <span class="kr">const</span> <span class="p">{</span>
     <span class="nx">droppableIdStart</span><span class="p">,</span>
-    <span class="nx">droppableIdEnd</span><span class="p">,</span>  
+    <span class="nx">droppableIdEnd</span><span class="p">,</span>
     <span class="nx">droppableIndexStart</span><span class="p">,</span>
     <span class="nx">droppableIndexEnd</span><span class="p">,</span>
     <span class="nx">type</span>
@@ -768,12 +734,16 @@ DragDropContext 提供了以下三个钩子：</p>
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">getFilteredCards</span> <span class="o">=</span> <span class="p">(</span><span class="nx">cards</span><span class="p">,</span> <span class="nx">searchText</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">searchText</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">searchText</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">cards</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">card</span> <span class="p">=&gt;</span> <span class="nx">card</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">searchText</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()));</span>
+    <span class="k">return</span> <span class="nx">cards</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">card</span><span class="p">)</span> <span class="p">=&gt;</span>
+      <span class="nx">card</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">searchText</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span>
+    <span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="nx">cards</span><span class="p">;</span>
 <span class="p">};</span>
@@ -875,17 +845,21 @@ DragDropContext 提供了以下三个钩子：</p>
 </span><span class="lnt">47
 </span><span class="lnt">48
 </span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// reducers/stateEnhancer.js
 </span><span class="c1"></span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">CONSTANTS</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../actions&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">CONSTANTS</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;../actions&#34;</span><span class="p">;</span>
 
-<span class="kr">const</span> <span class="nx">stateEnhancer</span> <span class="o">=</span> <span class="nx">reducer</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="kr">const</span> <span class="nx">stateEnhancer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">reducer</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="kr">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">previousStates</span><span class="o">:</span> <span class="p">[],</span>
     <span class="nx">currentState</span><span class="o">:</span> <span class="nx">reducer</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="p">{}),</span> <span class="c1">// currentState 取 reducer 的返回值
-</span><span class="c1"></span>    <span class="nx">futureStates</span><span class="o">:</span> <span class="p">[]</span>
+</span><span class="c1"></span>    <span class="nx">futureStates</span><span class="o">:</span> <span class="p">[],</span>
   <span class="p">};</span>
 
   <span class="c1">// 调用 reducer 时就会调用 stateEnhancer, 并返回封装后的 reducer
@@ -895,11 +869,14 @@ DragDropContext 提供了以下三个钩子：</p>
     <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">case</span> <span class="nx">CONSTANTS</span><span class="p">.</span><span class="nx">UNDO_ACTION</span><span class="o">:</span>
         <span class="kr">const</span> <span class="nx">previous</span> <span class="o">=</span> <span class="nx">previousStates</span><span class="p">[</span><span class="nx">previousStates</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
-        <span class="kr">const</span> <span class="nx">newPreviousStates</span> <span class="o">=</span> <span class="nx">previousStates</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">previousStates</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="kr">const</span> <span class="nx">newPreviousStates</span> <span class="o">=</span> <span class="nx">previousStates</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span>
+          <span class="mi">0</span><span class="p">,</span>
+          <span class="nx">previousStates</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="p">);</span>
         <span class="k">return</span> <span class="p">{</span>
           <span class="nx">previousStates</span><span class="o">:</span> <span class="nx">newPreviousStates</span><span class="p">,</span>
           <span class="nx">currentState</span><span class="o">:</span> <span class="nx">previous</span><span class="p">,</span>
-          <span class="nx">futureStates</span><span class="o">:</span> <span class="p">[</span><span class="nx">currentState</span><span class="p">,</span> <span class="p">...</span><span class="nx">futureStates</span><span class="p">]</span>
+          <span class="nx">futureStates</span><span class="o">:</span> <span class="p">[</span><span class="nx">currentState</span><span class="p">,</span> <span class="p">...</span><span class="nx">futureStates</span><span class="p">],</span>
         <span class="p">};</span>
       <span class="k">case</span> <span class="nx">CONSTANTS</span><span class="p">.</span><span class="nx">REDO_ACTION</span><span class="o">:</span>
         <span class="kr">const</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">futureStates</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
@@ -907,19 +884,20 @@ DragDropContext 提供了以下三个钩子：</p>
         <span class="k">return</span> <span class="p">{</span>
           <span class="nx">previousStates</span><span class="o">:</span> <span class="p">[...</span><span class="nx">previousStates</span><span class="p">,</span> <span class="nx">currentState</span><span class="p">],</span>
           <span class="nx">currentState</span><span class="o">:</span> <span class="nx">next</span><span class="p">,</span>
-          <span class="nx">futureStates</span><span class="o">:</span> <span class="nx">newFutureStates</span>
+          <span class="nx">futureStates</span><span class="o">:</span> <span class="nx">newFutureStates</span><span class="p">,</span>
         <span class="p">};</span>
       <span class="k">default</span><span class="o">:</span>
         <span class="kr">const</span> <span class="nx">newCurrentState</span> <span class="o">=</span> <span class="nx">reducer</span><span class="p">(</span><span class="nx">currentState</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">currentState</span> <span class="o">===</span> <span class="nx">newCurrentState</span><span class="p">)</span> <span class="p">{</span>   <span class="c1">//初始化列表
-</span><span class="c1"></span>          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">currentState</span> <span class="o">===</span> <span class="nx">newCurrentState</span><span class="p">)</span> <span class="p">{</span>
+          <span class="c1">//初始化列表
+</span><span class="c1"></span>          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;init&#34;</span><span class="p">);</span>
           <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
         <span class="p">}</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;list change&#39;</span><span class="p">);</span>              <span class="c1">// 列表变化时
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;list change&#34;</span><span class="p">);</span> <span class="c1">// 列表变化时
 </span><span class="c1"></span>        <span class="k">return</span> <span class="p">{</span>
           <span class="nx">previousStates</span><span class="o">:</span> <span class="p">[...(</span><span class="nx">previousStates</span> <span class="o">||</span> <span class="p">[]),</span> <span class="nx">currentState</span><span class="p">],</span>
           <span class="nx">currentState</span><span class="o">:</span> <span class="nx">newCurrentState</span><span class="p">,</span>
-          <span class="nx">futureStates</span><span class="o">:</span> <span class="p">[]</span>
+          <span class="nx">futureStates</span><span class="o">:</span> <span class="p">[],</span>
         <span class="p">};</span>
     <span class="p">}</span>
   <span class="p">};</span>
@@ -948,7 +926,7 @@ DragDropContext 提供了以下三个钩子：</p>
 </code></pre></td></tr></table>
 </div>
 </div><p>附：<a href="https://github.com/111hunter/simple-trello" target="_blank" rel="noopener noreffer">源码地址</a></p>
-<p><strong>参考资料</strong></p>
+<p><strong>参阅资料</strong></p>
 <ul>
 <li><a href="https://andyyou.github.io/2019/06/04/react-beautiful-dnd-quick-note/" target="_blank" rel="noopener noreffer">React Beautiful Dnd 快速使用筆記</a></li>
 <li><a href="https://www.redux.org.cn/docs/recipes/ImplementingUndoHistory.html" target="_blank" rel="noopener noreffer">redux 文档 - 实现撤销历史</a></li>

@@ -7,11 +7,11 @@
 
 不好的是，没有一个达成共识的单一定义。让我们参阅一下：
 
->元编程是一种编程技术，指计算机程序具有将其他程序视为其数据的能力。 – [wikipedia](https://en.wikipedia.org/wiki/Metaprogramming)
+> 元编程是一种编程技术，指计算机程序具有将其他程序视为其数据的能力。 – [wikipedia](https://en.wikipedia.org/wiki/Metaprogramming)
 
->元编程是指程序具有了解自身或操纵自身的多种方式。 – [stackoverflow 上的流行答案](https://stackoverflow.com/questions/514644/what-exactly-is-metaprogramming)
+> 元编程是指程序具有了解自身或操纵自身的多种方式。 – [stackoverflow 上的流行答案](https://stackoverflow.com/questions/514644/what-exactly-is-metaprogramming)
 
->“支持元编程”意味着用户可以有效修改该语言内置语法(例如 Lisp 的宏)或扩展该语言常规语法(例如 C 的预处理程序)。 – [rosettacode](https://rosettacode.org/wiki/Metaprogramming)
+> “支持元编程”意味着用户可以有效修改该语言内置语法(例如 Lisp 的宏)或扩展该语言常规语法(例如 C 的预处理程序)。 – [rosettacode](https://rosettacode.org/wiki/Metaprogramming)
 
 没有一个很好的定义，让我们看一些例子。当人们谈论元编程时，他们可能指的是：
 
@@ -29,24 +29,26 @@
 - 一种是(编译时)作为源代码(例如宏，预处理器，模板)，通常称为“宏”
 - 另一种是(运行时)基于“OOP 技巧”(例如动态调度和反射)以支持其他行为，这没有名字，我把它称为“动态”
 
-|   | compile time | runtime |
-| :----: | :----: | :----: |
-| macros in Lisp | ? | + |
-| Preprocessor, templates | + |   |	
-| Dynamic metaprogramming	|	  | + |
+|                         | compile time | runtime |
+| :---------------------: | :----------: | :-----: |
+|     macros in Lisp      |      ?       |    +    |
+| Preprocessor, templates |      +       |         |
+| Dynamic metaprogramming |              |    +    |
 
 ### 动态元编程
 
->元编程是编写在运行时操纵(自身)语言结构的代码。 – [Ruby 元编程](https://book.douban.com/subject/7056800/)
+> 元编程是编写在运行时操纵(自身)语言结构的代码。 – [Ruby 元编程](https://book.douban.com/subject/7056800/)
 
 元编程在 Ruby 中比在其他的动态类型语言中更常用，尤其是在 Rails 中，例如：[Path and URL Helpers](https://guides.rubyonrails.org/routing.html#path-and-url-helpers)。动态元编程的缺点是“事物”没有源代码：你看到了一个函数，但是你不知道它的定义位置，这破坏了“[grep test](http://jamie-wong.com/2013/07/12/grep-test/)”。另一个缺点是它趋向于变慢，例如，参见 [Rails / DynamicFindBy](https://docs.rubocop.org/rubocop-rails/cops_rails.html#railsdynamicfindby)。
 
 编程语言：
+
 - [Ruby](http://media.pragprog.com/titles/ppmetr/spells.pdf)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming)
 - [Python 2](https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Metaprogramming.html), [Python 3](https://www.youtube.com/watch?v=sPiWg5jSoZI)
 
 主要用法：
+
 - 消除重复代码(DRY)，例如，David Beazley 在[演讲中](https://www.youtube.com/watch?v=sPiWg5jSoZI)展示了很多例子。
 - 创建嵌入式领域特定语言(EDSL)，Martin Fowler 称它们为[内部 DSL](https://www.martinfowler.com/bliki/DomainSpecificLanguage.html)。例如，[Sass](https://github.com/sass/ruby-sass)(能转换为 CSS 的 Ruby EDSL)，[Haml](https://haml.info/)(能转换为 HTML 的 Ruby EDSL)，Active Record 查询接口(能转换为 SQL 的 Ruby EDSL)，最重要的是 Rake(替代 Make 的 Ruby EDSL)。
 - “扩展语言”
@@ -79,9 +81,9 @@ match value with
 ```js
 const { matches } = require("z");
 const result = matches(1)(
- (x = 2) => "number 2 is the best!!!",
- (x = Number) => `number ${x} is not that good`,
- (x = Date) => "blaa.. dates are awful!"
+  (x = 2) => "number 2 is the best!!!",
+  (x = Number) => `number ${x} is not that good`,
+  (x = Date) => "blaa.. dates are awful!"
 );
 ```
 
@@ -118,13 +120,13 @@ const result = matches(1)(
 
 #### DSL
 
->JSX 是 ECMAScript 中类似 XML 的语法扩展，没有任何定义的语义  – [Draft: JSX Specification](https://facebook.github.io/jsx/)
+> JSX 是 ECMAScript 中类似 XML 的语法扩展，没有任何定义的语义 – [Draft: JSX Specification](https://facebook.github.io/jsx/)
 
 它本质上是一个 DSL。而负责编译它的 Babel 插件是一个预处理器。你可以使用其他的元编程技术来实现同样的结果 -- 参见 [JSX 的替代方案](https://blog.bloomca.me/2019/02/23/alternatives-to-jsx.html)。
 
 #### 多态性
 
->...多态语言，其中一些值和变量可能有一个以上的类型。多态函数是指其操作数(实际参数)可以有一个以上类型的函数。多态类型是指其操作可以适用于一种以上类型的值的类型。 – [On Understanding Types, Data Abstraction, and Polymorphism](http://lucacardelli.name/Papers/OnUnderstanding.A4.pdf)
+> ...多态语言，其中一些值和变量可能有一个以上的类型。多态函数是指其操作数(实际参数)可以有一个以上类型的函数。多态类型是指其操作可以适用于一种以上类型的值的类型。 – [On Understanding Types, Data Abstraction, and Polymorphism](http://lucacardelli.name/Papers/OnUnderstanding.A4.pdf)
 
 令我惊讶的是:
 
@@ -166,9 +168,9 @@ type List struct {
 
 #### DRY
 
->模板元程序员利用这种机制来提高：源代码的灵活性和运行时性能。 – [Walter E. Brown “Modern Template Metaprogramming: A Compendium, Part I”](https://www.youtube.com/watch?t=607&v=Am2is2QCvxY&feature=youtu.be)
+> 模板元程序员利用这种机制来提高：源代码的灵活性和运行时性能。 – [Walter E. Brown “Modern Template Metaprogramming: A Compendium, Part I”](https://www.youtube.com/watch?t=607&v=Am2is2QCvxY&feature=youtu.be)
 
-在C++中，有函数重载(即一种多态)，但它会产生很多重复：
+在 C++中，有函数重载(即一种多态)，但它会产生很多重复：
 
 ```cpp
 double abs(double x) {
@@ -196,15 +198,16 @@ T abs(T x) {
 
 ### 宏和类型
 
-Lisp(和Scheme)宏非常强大，但它们不能与静态类型检查器一起很好地工作。假设我们有确保能够终止的宏，并且能在编译时扩展(语法糖)并进行类型检查生成的代码，下一个问题是在生成的代码中报告类型错误，这也会很混乱。
+Lisp(和 Scheme)宏非常强大，但它们不能与静态类型检查器一起很好地工作。假设我们有确保能够终止的宏，并且能在编译时扩展(语法糖)并进行类型检查生成的代码，下一个问题是在生成的代码中报告类型错误，这也会很混乱。
 
 有多种尝试使宏与静态类型更好地配合使用，例如：
 
 - [Hackett](https://lexi-lambda.github.io/hackett/index.html)
 - [Inferring Type Rules for Syntactic Sugar](https://cs.brown.edu/~sk/Publications/Papers/Published/pk-resuarging-types/paper.pdf)
 
-**参考资料**
+**参阅资料**
 
 - [Metaprogramming](https://stereobooster.com/posts/metaprogramming/)
 - [谈元编程与表达能力](https://draveness.me/metaprogramming/)
-- [Emacs之魂：宏与元编程](https://zhuanlan.zhihu.com/p/34106430)
+- [Emacs 之魂：宏与元编程](https://zhuanlan.zhihu.com/p/34106430)
+

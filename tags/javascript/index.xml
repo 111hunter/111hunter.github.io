@@ -30,7 +30,7 @@
     <pubDate>Fri, 08 Nov 2019 22:37:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2019-11-08-js-saolei/</guid>
-    <description><![CDATA[扫雷是一款大众类的益智小游戏,于1992年发行。游戏目标是在最短的时间内根据点击格子出现的数字找出所有非雷格子,同时避免踩雷,踩到一个雷即全]]></description>
+    <description><![CDATA[扫雷是一款大众类的益智小游戏,于 1992 年发行。游戏目标是在最短的时间内根据点击格子出现的数字找出所有非雷格子,同时避免踩雷,踩到一个雷即全盘皆输]]></description>
 </item><item>
     <title>ES6 学习笔记</title>
     <link>http://example.org/2019-10-30-js-es6/</link>

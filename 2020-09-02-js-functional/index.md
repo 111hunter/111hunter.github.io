@@ -1,14 +1,14 @@
 # 浅析函数式编程
 
 
->在计算机科学中，[函数式编程](https://en.wikipedia.org/wiki/Functional_programming)是一种编程范式，其中通过应用和组合函数来构造程序。它是一种声明式编程范式，其中函数定义是每个返回一个值的表达式树，而不是一系列更改程序状态的命令性语句。    -- wikipedia
+> 在计算机科学中，[函数式编程](https://en.wikipedia.org/wiki/Functional_programming)是一种编程范式，其中通过应用和组合函数来构造程序。它是一种声明式编程范式，其中函数定义是每个返回一个值的表达式树，而不是一系列更改程序状态的命令性语句。 -- wikipedia
 
 ## 声明式与命令式
 
 假设我们有个需求：把下面字符串变成每个单词首字母大写。
 
 ```js
-const string = 'functional programming is great';
+const string = "functional programming is great";
 ```
 
 ### 命令式
@@ -16,28 +16,28 @@ const string = 'functional programming is great';
 如果你没有听说过函数式编程，用传统的编程思路，很自然的写出如下 [命令式编程](https://en.wikipedia.org/wiki/Imperative_programming) 代码：
 
 ```js
-const string = 'functional programming is great';
-let arrays = string.split(' ');
+const string = "functional programming is great";
+let arrays = string.split(" ");
 let newArray = [];
-for (let i = 0; i < arrays.length; i++){
-	let str = arrays[i].slice(0, 1).toUpperCase() + arrays[i].slice(1);
-	newArray.push(str);
+for (let i = 0; i < arrays.length; i++) {
+  let str = arrays[i].slice(0, 1).toUpperCase() + arrays[i].slice(1);
+  newArray.push(str);
 }
-const newString = newArray.join(' ');
+const newString = newArray.join(" ");
 ```
 
 这样当然能完成任务，结果是产生了一堆临时变量。光是变量名就不好想，同时过程中掺杂了大量逻辑，一个函数需要从头读到尾才知道它具体做了什么，并且一旦出问题很难定位。
 
 ### 声明式
 
-[声明式编程](https://en.wikipedia.org/wiki/Declarative_programming) 被看做是形式逻辑的理论，把计算看做推导。常见的声明式编程有数据库查询(SQL语句)，正则表达式，函数式编程等。函数式编程倡导利用若干简单的执行单元让计算结果不断渐进，逐层推导复杂的运算，而不是设计一个复杂的执行过程。
+[声明式编程](https://en.wikipedia.org/wiki/Declarative_programming) 被看做是形式逻辑的理论，把计算看做推导。常见的声明式编程有数据库查询(SQL 语句)，正则表达式，函数式编程等。函数式编程倡导利用若干简单的执行单元让计算结果不断渐进，逐层推导复杂的运算，而不是设计一个复杂的执行过程。
 
 ```js
-const string = 'functional programming is great';
+const string = "functional programming is great";
 const newString = string
-  .split(' ')
-  .map(str => str.slice(0, 1).toUpperCase() + str.slice(1))
-  .join(' ');
+  .split(" ")
+  .map((str) => str.slice(0, 1).toUpperCase() + str.slice(1))
+  .join(" ");
 ```
 
 函数式编程的核心思想：通过函数转换数据，组合多个函数来求结果。
@@ -110,10 +110,10 @@ const greet = (name) => {
   return `hello, ${name}`;
 };
 
-console.log(greet('beijing'));
+console.log(greet("beijing"));
 
 // 可做如下等价替换
-console.log('hello, beijing');
+console.log("hello, beijing");
 ```
 
 ### 可缓存
@@ -122,7 +122,9 @@ console.log('hello, beijing');
 
 ```js
 // 下面的代码我们可以发现相同的输入，再第二次调用的时候都是直接取的缓存
-let squareNumber  = memoize((x) => { return x*x; });
+let squareNumber = memoize((x) => {
+  return x * x;
+});
 squareNumber(4);
 //=> 16
 squareNumber(4); // 从缓存中读取输入值为 4 的结果
@@ -132,7 +134,9 @@ squareNumber(5);
 squareNumber(5); // 从缓存中读取输入值为 5 的结果
 //=> 25
 ```
+
 这是怎么实现的呢? 请看下面的代码:
+
 ```js
 const memoize = (f) => {
   // 由于使用了闭包，所以函数执行完后 cache 不会立刻被回收
@@ -163,7 +167,7 @@ const result = x + y + z;
 说了这么多优点，其实纯函数的优秀的原因是因为它不使用全局引用：
 
 {{< admonition note "大神语录" >}}
-Shared mutable state is the root of all evil(共享的可变状态是万恶之源)  -- Pete Hunt
+Shared mutable state is the root of all evil(共享的可变状态是万恶之源) -- Pete Hunt
 {{< /admonition >}}
 
 ## 应用和组合函数
@@ -186,17 +190,19 @@ let sum = 0;
 for (let i = 0; i < arr.length; i++) {
   sum = sum + arr[i];
 }
-console.log(sum);  //25
+console.log(sum); //25
 
 // 使用高阶函数
-const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue,0);
-console.log(sum);  //25
-
+const sum = arr.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+console.log(sum); //25
 ```
 
 ### 闭包
 
-通常情况下我们说的 [闭包](https://en.wikipedia.org/wiki/Closure_(computer_programming)) 指的是函数内部的函数。闭包的形成条件：
+通常情况下我们说的 [闭包](<https://en.wikipedia.org/wiki/Closure_(computer_programming)>) 指的是函数内部的函数。闭包的形成条件：
 
 - 存在内、外两层函数
 - 内层函数对外层函数的局部变量进行了引用
@@ -207,21 +213,21 @@ console.log(sum);  //25
 
 ```js
 // 匿名函数创造了一个闭包，实现简单的缓存工具
-const cache = (function() {
+const cache = (function () {
   const store = {};
-  
+
   return {
     get(key) {
       return store[key];
     },
     set(key, val) {
       store[key] = val;
-    }
-  }
-}());
-console.log(cache) //{get: ƒ, set: ƒ}
-cache.set('a', 1);
-cache.get('a');  // 1
+    },
+  };
+})();
+console.log(cache); //{get: ƒ, set: ƒ}
+cache.set("a", 1);
+cache.get("a"); // 1
 ```
 
 ### 柯里化
@@ -233,7 +239,7 @@ function curryIt(fn) {
   // 参数fn函数的参数个数
   let n = fn.length;
   let args = [];
-  return function(arg) {
+  return function (arg) {
     args.push(arg);
     if (args.length < n) {
       return arguments.callee; // 返回这个函数的引用
@@ -247,15 +253,15 @@ function add(a, b, c) {
   return [a, b, c];
 }
 // c 是内部匿名函数
-const c = curryIt(add); 
+const c = curryIt(add);
 
 // 可以分步传参
-const c1 = c(1);        // 将 1 加入 args 中，返回 c 的引用
-const c2 = c1(2);       
-const c3 = c2(3);       // [1, 2, 3]
+const c1 = c(1); // 将 1 加入 args 中，返回 c 的引用
+const c2 = c1(2);
+const c3 = c2(3); // [1, 2, 3]
 
 // 也可以直接调用
-const c3 = c(1)(2)(3);  // [1, 2, 3]
+const c3 = c(1)(2)(3); // [1, 2, 3]
 ```
 
 可以看出，柯里化是一种函数的“预加载”技术，可以通过闭包实现对参数的缓存。
@@ -264,10 +270,10 @@ const c3 = c(1)(2)(3);  // [1, 2, 3]
 
 ```js
 // Currying  f(a)(b)(c)
-const f = a => b => c => a + b + c;
+const f = (a) => (b) => (c) => a + b + c;
 
-// Partial application  f(a)(b,c) 
-const f = a => (b, c) => a + b + c;
+// Partial application  f(a)(b,c)
+const f = (a) => (b, c) => a + b + c;
 ```
 
 ### 函数组合
@@ -275,11 +281,11 @@ const f = a => (b, c) => a + b + c;
 柯里化是函数的拆解，函数组合就是多个函数组合为一个函数。compose 简单实现：
 
 ```js
-const compose = (f, g) => x => f(g(x));
+const compose = (f, g) => (x) => f(g(x));
 
-const g = x => x + 1;
-const f = x => x * 5;
-const fg = compose(f, g); 
+const g = (x) => x + 1;
+const f = (x) => x * 5;
+const fg = compose(f, g);
 fg(2); // 15
 ```
 
@@ -287,38 +293,42 @@ fg(2); // 15
 
 ```js
 function compose(...args) {
-    return function(x) {
-        let composeFun = args.reduceRight(function(first, second) {
-          //从右边开始迭代，这里实际是把右边放入左边
-            return second(first); 
-        }, x);
-        return composeFun;
-    }
-};
+  return function (x) {
+    let composeFun = args.reduceRight(function (first, second) {
+      //从右边开始迭代，这里实际是把右边放入左边
+      return second(first);
+    }, x);
+    return composeFun;
+  };
+}
 // 简化为箭头函数
-const compose = (...args)=>(x)=> args.reduceRight((f,s)=>s(f),x);
+const compose =
+  (...args) =>
+  (x) =>
+    args.reduceRight((f, s) => s(f), x);
 ```
 
 现在我们可以自由组合函数：
 
 ```js
-function addHello(str){
-    return 'hello ' + str;
+function addHello(str) {
+  return "hello " + str;
 }
 function toUpperCase(str) {
-    return str.toUpperCase();
+  return str.toUpperCase();
 }
-function reverse(str){
-    return str.split('').reverse().join('');
+function reverse(str) {
+  return str.split("").reverse().join("");
 }
 
-const composeFn=compose(reverse,toUpperCase,addHello);
-composeFn('ttsy');  // YSTT OLLEH
+const composeFn = compose(reverse, toUpperCase, addHello);
+composeFn("ttsy"); // YSTT OLLEH
 ```
 
 最后，软件工程没有银弹。每种编程范式各有利弊，我们要根据实际需求选择合适的编程范式。
 
-**参考资料**
+**参阅资料**
 
 - [维基百科](https://www.wikipedia.org/)
-- [JavaScript函数式编程入门经典](https://juejin.im/post/6844903837715660814)
+- [JavaScript 函数式编程入门经典](https://juejin.im/post/6844903837715660814)
+

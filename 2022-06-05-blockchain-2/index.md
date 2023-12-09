@@ -1,7 +1,7 @@
 # 像理解网络模型一样理解区块链
 
 
-> 计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决。  —《程序员的自我修养》
+> 计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决。 —《程序员的自我修养》
 
 上述名言概括了计算机系统软件体系结构的设计要点，整个计算机体系结构从上到下都是按照严格的层次结构设计的。不仅是计算机系统软件整个体系是这样的，体系里面的每个组件比如操作系统本身，应用程序、软件系统甚至很多硬件结构都是按照这种层次的结构组织和设计的。
 
@@ -65,13 +65,13 @@ OSI 的七层体系结构概念清楚，理论也很完整，但是它比较复�
 
 ![区块链与OSI、TCP/IP的比较](/img/osi-tcp-blockchain.webp "区块链与OSI、TCP/IP的比较")
 
-
 本文主要介绍了计算机网络与区块链的分层(layer)。提醒一下自己，后续需要总结的内容是计算机领域的状态(state)和分片(fragmentation)。
 
-**参考资料**
+**参阅资料**
 
-- [OSI模型-维基百科](https://en.wikipedia.org/wiki/OSI_model)
+- [OSI 模型-维基百科](https://en.wikipedia.org/wiki/OSI_model)
 - [白话 OSI 七层网络模型](https://chinese.freecodecamp.org/news/osi-model-networking-layers/)
 - [为什么网络要分层？每一层的职责、包含哪些协议？](https://jishuin.proginn.com/p/763bfbd67e99)
 
-- [什么是区块链的Layer0/1/2](https://www.jianshu.com/p/2c957b67fa19)
+- [什么是区块链的 Layer0/1/2](https://www.jianshu.com/p/2c957b67fa19)
+

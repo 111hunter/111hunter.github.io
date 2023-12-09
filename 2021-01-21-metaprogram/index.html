@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2021-01-21-metaprogram\/"
-        },"genre": "posts","keywords": "Theory","wordcount":  2213 ,
+        },"genre": "posts","keywords": "Theory","wordcount":  2209 ,
         "url": "http:\/\/example.org\/2021-01-21-metaprogram\/","datePublished": "2021-01-21T16:50:34+08:00","dateModified": "2021-01-21T16:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">[译]元编程</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-21">2021-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2213 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-21">2021-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2209 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/2021-01-21-metaprogram/" class="leancloud_visitors" data-flag-title="[译]元编程">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -252,9 +252,9 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">{</span> <span class="nx">matches</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;z&#34;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">matches</span><span class="p">(</span><span class="mi">1</span><span class="p">)(</span>
- <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s2">&#34;number 2 is the best!!!&#34;</span><span class="p">,</span>
- <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`number </span><span class="si">${</span><span class="nx">x</span><span class="si">}</span><span class="sb"> is not that good`</span><span class="p">,</span>
- <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s2">&#34;blaa.. dates are awful!&#34;</span>
+  <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s2">&#34;number 2 is the best!!!&#34;</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`number </span><span class="si">${</span><span class="nx">x</span><span class="si">}</span><span class="sb"> is not that good`</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s2">&#34;blaa.. dates are awful!&#34;</span>
 <span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
@@ -296,7 +296,7 @@
 </ul>
 <h4 id="dsl">DSL</h4>
 <blockquote>
-<p>JSX 是 ECMAScript 中类似 XML 的语法扩展，没有任何定义的语义  – <a href="https://facebook.github.io/jsx/" target="_blank" rel="noopener noreffer">Draft: JSX Specification</a></p>
+<p>JSX 是 ECMAScript 中类似 XML 的语法扩展，没有任何定义的语义 – <a href="https://facebook.github.io/jsx/" target="_blank" rel="noopener noreffer">Draft: JSX Specification</a></p>
 </blockquote>
 <p>它本质上是一个 DSL。而负责编译它的 Babel 插件是一个预处理器。你可以使用其他的元编程技术来实现同样的结果 &ndash; 参见 <a href="https://blog.bloomca.me/2019/02/23/alternatives-to-jsx.html" target="_blank" rel="noopener noreffer">JSX 的替代方案</a>。</p>
 <h4 id="多态性">多态性</h4>
@@ -365,7 +365,7 @@
 <blockquote>
 <p>模板元程序员利用这种机制来提高：源代码的灵活性和运行时性能。 – <a href="https://www.youtube.com/watch?t=607&amp;v=Am2is2QCvxY&amp;feature=youtu.be" target="_blank" rel="noopener noreffer">Walter E. Brown “Modern Template Metaprogramming: A Compendium, Part I”</a></p>
 </blockquote>
-<p>在C++中，有函数重载(即一种多态)，但它会产生很多重复：</p>
+<p>在 C++中，有函数重载(即一种多态)，但它会产生很多重复：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -403,17 +403,17 @@
 <p>通常认为，在编译时进行宏扩展可以提高性能。对我来说这很合理，但我没有很好的例子。</p>
 <p>相关：<a href="https://ziglang.org/#Compile-time-reflection-and-compile-time-code-execution" target="_blank" rel="noopener noreffer">Compile-time reflection and compile-time code execution in Zig.</a></p>
 <h3 id="宏和类型">宏和类型</h3>
-<p>Lisp(和Scheme)宏非常强大，但它们不能与静态类型检查器一起很好地工作。假设我们有确保能够终止的宏，并且能在编译时扩展(语法糖)并进行类型检查生成的代码，下一个问题是在生成的代码中报告类型错误，这也会很混乱。</p>
+<p>Lisp(和 Scheme)宏非常强大，但它们不能与静态类型检查器一起很好地工作。假设我们有确保能够终止的宏，并且能在编译时扩展(语法糖)并进行类型检查生成的代码，下一个问题是在生成的代码中报告类型错误，这也会很混乱。</p>
 <p>有多种尝试使宏与静态类型更好地配合使用，例如：</p>
 <ul>
 <li><a href="https://lexi-lambda.github.io/hackett/index.html" target="_blank" rel="noopener noreffer">Hackett</a></li>
 <li><a href="https://cs.brown.edu/~sk/Publications/Papers/Published/pk-resuarging-types/paper.pdf" target="_blank" rel="noopener noreffer">Inferring Type Rules for Syntactic Sugar</a></li>
 </ul>
-<p><strong>参考资料</strong></p>
+<p><strong>参阅资料</strong></p>
 <ul>
 <li><a href="https://stereobooster.com/posts/metaprogramming/" target="_blank" rel="noopener noreffer">Metaprogramming</a></li>
 <li><a href="https://draveness.me/metaprogramming/" target="_blank" rel="noopener noreffer">谈元编程与表达能力</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/34106430" target="_blank" rel="noopener noreffer">Emacs之魂：宏与元编程</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/34106430" target="_blank" rel="noopener noreffer">Emacs 之魂：宏与元编程</a></li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">

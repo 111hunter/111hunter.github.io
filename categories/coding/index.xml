@@ -58,7 +58,7 @@
     <pubDate>Tue, 29 Sep 2020 23:30:00 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2020-09-29-next/</guid>
-    <description><![CDATA[我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next]]></description>
+    <description><![CDATA[Next.js Reddit Memehttps://www.reddit.com/r/nextjs/comments/17iy9sx/nextjs_server_action_is_crazy " Next.js Reddit Meme 我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运]]></description>
 </item><item>
     <title>浅析函数式编程</title>
     <link>http://example.org/2020-09-02-js-functional/</link>

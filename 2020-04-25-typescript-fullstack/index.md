@@ -43,8 +43,9 @@
     MatMenuModule,
   ],
 })
-export class MaterialModule { }
+export class MaterialModule {}
 ```
+
 这样在我们需要用到样式组件时，直接导入 MaterialModule 就好。
 
 #### 顶部导航
@@ -62,11 +63,20 @@ export class MaterialModule { }
       </button>
     </div>
     <div>
-      <button mat-button routerLink="/login" *ngIf="authService.token.length == 0">
+      <button
+        mat-button
+        routerLink="/login"
+        *ngIf="authService.token.length == 0"
+      >
         <mat-icon>account_box</mat-icon>
         Login
       </button>
-      <button mat-button routerLink="/login" *ngIf="authService.token.length > 0" (click)="logout()">
+      <button
+        mat-button
+        routerLink="/login"
+        *ngIf="authService.token.length > 0"
+        (click)="logout()"
+      >
         <mat-icon>exit_to_app</mat-icon>
         Logout
       </button>
@@ -78,20 +88,23 @@ export class MaterialModule { }
 </main>
 <!-- <footer></footer> -->
 ```
+
 顶部导航写在 header 标签中，router-outlet 是路由插座，当路由跳转时，我们导入的组件会替换掉 router-outlet 标签。登录成功后显示 Logout button，未登录或登出用户后显示 Login button。在 css 中做些样式调整，接下来是路由注册模块。新建一个 app-routing.module.ts 组件：
 
 ```ts
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: 'login',
-    loadChildren: () => import('./features/auth/auth.module').then((m) => m.AuthModule),
+    path: "login",
+    loadChildren: () =>
+      import("./features/auth/auth.module").then((m) => m.AuthModule),
   },
   {
-    path: 'todos',
-    loadChildren: () => import('./features/todo/todo.module').then((m) => m.TodoModule),
+    path: "todos",
+    loadChildren: () =>
+      import("./features/todo/todo.module").then((m) => m.TodoModule),
   },
 ];
 
@@ -99,9 +112,9 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
+export class AppRoutingModule {}
 ```
+
 我们注册了路由，因为我们会在导入的模块中进行状态管理，因此这里会用 Angular 中的 Lazy-loading 方式导入模块。这样，当路由匹配 login 时 auth.module.ts 中的 component 成为 main，当路由匹配 todos 时 todo.module.ts 中的 component 成为 main。
 
 #### 登录表单
@@ -117,11 +130,9 @@ export class AppRoutingModule { }
     MaterialModule,
     AuthRoutingModule,
   ],
-  declarations: [
-    LoginComponent
-  ],
+  declarations: [LoginComponent],
 })
-export class AuthModule { }
+export class AuthModule {}
 ```
 
 先创建出 login 组件，可以用 cli 的方式生成：`$ nest g component login`，也可以手动新建文件：login.component.html，"error$ | async" 是因为我们传递的是 obeservable 对象，我们先不说 login.component.ts, 这一部分在后面的状态管理中再说。
@@ -135,31 +146,40 @@ export class AuthModule { }
         The username and password were not recognised
       </mat-error>
       <mat-form-field class="full-width-input">
-        <input matInput placeholder="Username" formControlName="username" required>
-        <mat-error>
-          Please provide a valid email address
-        </mat-error>
+        <input
+          matInput
+          placeholder="Username"
+          formControlName="username"
+          required
+        />
+        <mat-error> Please provide a valid email address </mat-error>
       </mat-form-field>
       <mat-form-field class="full-width-input">
-        <input matInput type="password" placeholder="Password" formControlName="password" required>
-        <mat-error>
-          Please provide a valid password
-        </mat-error>
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          required
+        />
+        <mat-error> Please provide a valid password </mat-error>
       </mat-form-field>
       <button mat-raised-button color="primary">Login</button>
     </form>
   </mat-card-content>
 </mat-card>
 ```
+
 然后注册路由 auth-routing.module.ts：
+
 ```ts
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { LoginComponent } from "./login/login.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: LoginComponent,
   },
 ];
@@ -168,19 +188,25 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AuthRoutingModule { }
+export class AuthRoutingModule {}
 ```
 
 #### todolist 列表
 
 创建 todo.component.html, 捕获 todolist 对应的增删改查事件：
+
 ```html
 <mat-card>
   <ng-container *ngIf="vm$ | async as vm">
     <h2>Todo Lists</h2>
     <mat-action-list role="list">
-      <app-todo-list-item *ngFor="let todo of vm.todos" [todo]="todo" [loading]="vm.loading"
-        (update)="showEditDialog($event)" (remove)="showRemoveDialog($event)"></app-todo-list-item>
+      <app-todo-list-item
+        *ngFor="let todo of vm.todos"
+        [todo]="todo"
+        [loading]="vm.loading"
+        (update)="showEditDialog($event)"
+        (remove)="showRemoveDialog($event)"
+      ></app-todo-list-item>
     </mat-action-list>
   </ng-container>
 </mat-card>
@@ -197,9 +223,9 @@ todolist 模板中的 remove, update 不是 js 原生事件, 我们需要注册�
 
 ```ts
 @Component({
-  selector: 'app-todo-list-item',
-  templateUrl: './todo-list-item.component.html',
-  styleUrls: ['./todo-list-item.component.scss'],
+  selector: "app-todo-list-item",
+  templateUrl: "./todo-list-item.component.html",
+  styleUrls: ["./todo-list-item.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoListItemComponent {
@@ -209,6 +235,7 @@ export class TodoListItemComponent {
   @Output() remove = new EventEmitter<string>();
 }
 ```
+
 自定义事件的触发方法是 EventEmitter.emit()，todo-list-item.html:
 
 ```html
@@ -235,20 +262,26 @@ export class TodoListItemComponent {
 
 ```html
 <h2 mat-dialog-title>Create</h2>
-<mat-error *ngIf="authService.token.length == 0">
-  Please login!
-</mat-error>
-<form class="form" [formGroup]="form" (ngSubmit)="form.valid && save()" novalidate>
+<mat-error *ngIf="authService.token.length == 0"> Please login! </mat-error>
+<form
+  class="form"
+  [formGroup]="form"
+  (ngSubmit)="form.valid && save()"
+  novalidate
+>
   <mat-dialog-content>
     <mat-form-field>
       <input matInput formControlName="text" placeholder="Todo" />
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-    <button type="button" mat-button mat-dialog-close>
-      Cancel
-    </button>
-    <button type="submit" mat-button color="primary" [disabled]="form.invalid || (loading$ | async)">
+    <button type="button" mat-button mat-dialog-close>Cancel</button>
+    <button
+      type="submit"
+      mat-button
+      color="primary"
+      [disabled]="form.invalid || (loading$ | async)"
+    >
       Save
     </button>
   </mat-dialog-actions>
@@ -260,11 +293,11 @@ export class TodoListItemComponent {
 ```html
 ...
 
-  <mat-dialog-content>
-    <mat-form-field>
-      <input matInput formControlName="text" placeholder="Todo" />
-    </mat-form-field>
-  </mat-dialog-content>
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput formControlName="text" placeholder="Todo" />
+  </mat-form-field>
+</mat-dialog-content>
 ```
 
 在弹出删除弹出框时，我们只需弹出一个提示语句。todo-delete-dialog.component.ts：
@@ -283,30 +316,34 @@ export class TodoListItemComponent {
 
 ```ts
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AuthService {
-  private api: string = environment.apiUrl + '/auth';
+  private api: string = environment.apiUrl + "/auth";
 
-  constructor(private http: HttpClient, private router: Router, private store: Store) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private store: Store
+  ) {}
 
   login(user: Partial<User>) {
     return this.http.post<User>(`${this.api}/signIn`, user).pipe(
       mergeMap((user: User) => {
-        this.token = user.access_token || '';
-        this.router.navigate(['todos']);
+        this.token = user.access_token || "";
+        this.router.navigate(["todos"]);
         return of(user);
       })
     );
   }
 
   get token() {
-    return localStorage.getItem('access_token') || '';
+    return localStorage.getItem("access_token") || "";
   }
 
   set token(val: string) {
     if (val.length > 0) {
-      localStorage.setItem('access_token', val);
+      localStorage.setItem("access_token", val);
     }
   }
 
@@ -316,15 +353,18 @@ export class AuthService {
   }
 }
 ```
-为 token 创建一个setter, getter 方法，登录成功后，为 token 赋值，登出后，将 token 置空。providedIn: 'root' 表示我们的 service 是根级作用域。客服端判断用户是否登录成功的方法就是判断我们的 token 是否为空。而服务端将 token 作为验证用户的凭据。用户登录成功后，每次需要用户验证的请求都要求验证 token。我们可以使用拦截器(Interceptor) 对网络请求重新封装。
+
+为 token 创建一个 setter, getter 方法，登录成功后，为 token 赋值，登出后，将 token 置空。providedIn: 'root' 表示我们的 service 是根级作用域。客服端判断用户是否登录成功的方法就是判断我们的 token 是否为空。而服务端将 token 作为验证用户的凭据。用户登录成功后，每次需要用户验证的请求都要求验证 token。我们可以使用拦截器(Interceptor) 对网络请求重新封装。
 
 ```ts
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
+  constructor(public authService: AuthService) {}
 
-  constructor(public authService: AuthService) { }
-
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
     const authToken = this.authService.token;
     const authReq = req.clone({
       headers: req.headers.set("Authorization", "Bearer " + authToken),
@@ -332,7 +372,6 @@ export class AuthInterceptor implements HttpInterceptor {
     return next.handle(authReq);
   }
 }
-
 ```
 
 当我们设置拦截器后，我们需要注册在根模块 app.module.ts 中。
@@ -346,6 +385,7 @@ export class AuthInterceptor implements HttpInterceptor {
     }
   ],
 ```
+
 添加了全局拦截器后我们就不必在每个请求接口都手动添加 header 的 bear 参数了。
 
 ### 状态管理
@@ -354,58 +394,62 @@ export class AuthInterceptor implements HttpInterceptor {
 
 #### 打印日志
 
-新建一个store文件夹，里面新建 app.state.ts 文件，将路由变化 router 加入到 AppState 中。
+新建一个 store 文件夹，里面新建 app.state.ts 文件，将路由变化 router 加入到 AppState 中。
 
 ```ts
-import { RouterReducerState } from '@ngrx/router-store';
+import { RouterReducerState } from "@ngrx/router-store";
 
 export interface AppState {
   router: RouterReducerState;
 }
-
 ```
 
 创建一个 reducers 文件夹, 里面新建 logger.reducer.ts:
 
 ```ts
-import { ActionReducer } from '@ngrx/store';
-import { AppState } from '../app.state';
+import { ActionReducer } from "@ngrx/store";
+import { AppState } from "../app.state";
 
-export function logger(reducer: ActionReducer<AppState>): ActionReducer<AppState> {
+export function logger(
+  reducer: ActionReducer<AppState>
+): ActionReducer<AppState> {
   return (state, action) => {
     const result = reducer(state, action);
     console.groupCollapsed(action.type);
-    console.log('prev state', state);
-    console.log('action', action);
-    console.log('next state', result);
+    console.log("prev state", state);
+    console.log("action", action);
+    console.log("next state", result);
     console.groupEnd();
 
     return result;
   };
 }
 ```
+
 这是参考了 NgRx 在 github 上的[官方示例](https://github.com/ngrx/platform/blob/master/projects/example-app/src/app/reducers/index.ts) 的做法，实现一个控制台的日志打印，当然我们也可以在浏览器安装 redux 扩展程序。新建 index.ts，开发环境下就有日志打印:
 
 ```ts
-import { ActionReducerMap, MetaReducer } from '@ngrx/store';
-import * as fromRouter from '@ngrx/router-store';
+import { ActionReducerMap, MetaReducer } from "@ngrx/store";
+import * as fromRouter from "@ngrx/router-store";
 
-import { environment } from '../../../environments/environment';
-import { logger } from './logger.reducer';
-import { AppState } from '../app.state';
+import { environment } from "../../../environments/environment";
+import { logger } from "./logger.reducer";
+import { AppState } from "../app.state";
 
 export const reducers: ActionReducerMap<AppState> = {
   router: fromRouter.routerReducer,
 };
 
-export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [logger] : [];
-
+export const metaReducers: MetaReducer<AppState>[] = !environment.production
+  ? [logger]
+  : [];
 ```
+
 #### 理解状态管理
 
 写本篇文章的目的之一是将状态管理实践验证。之前我有说前端的状态管理相当于后端的数据库。接下来我将一步一步的验证这个说法。下面以用户状态来讲解。
 
-定义初始状态类似于数据库的创建，action 是 store 数据的来源入口，从NgRx官网示意图中我们可以看到它可以来自用户操作(component)，也可以来自网络请求(effects)，reducer 类似于数据表，那 adapter, selector, effects 又分别是什么呢？
+定义初始状态类似于数据库的创建，action 是 store 数据的来源入口，从 NgRx 官网示意图中我们可以看到它可以来自用户操作(component)，也可以来自网络请求(effects)，reducer 类似于数据表，那 adapter, selector, effects 又分别是什么呢？
 
 ![ngrx状态管理](/img/ngrx.png "ngrx状态管理")
 
@@ -420,10 +464,10 @@ export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [
 初始状态(initialState)是定义在 reducer 中的，user.state.ts:
 
 ```ts
-import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { User } from 'src/app/models/user.model';
+import { EntityState, createEntityAdapter } from "@ngrx/entity";
+import { User } from "src/app/models/user.model";
 
-export const featureName = 'user';
+export const featureName = "user";
 
 export interface State extends EntityState<User> {
   needAuth: boolean;
@@ -436,8 +480,8 @@ export const adapter = createEntityAdapter<User>();
 export const initialState: State = adapter.getInitialState({
   needAuth: false,
 });
-
 ```
+
 #### 注册 reducer 表
 
 featureName 是我们的 reducer 表名，根模块注册时，StoreModule.forRoot(featureName, reducer)。 其他模块注册时，StoreModule.forFeature(featureName, reducer), 当在其他模块注册时，仍然需要在根模块配置 StoreModule.forRoot({})。
@@ -447,26 +491,27 @@ featureName 是我们的 reducer 表名，根模块注册时，StoreModule.forRo
 定义 Action 作为 store 数据来源，props 接收数据参数。
 
 ```ts
-import { createAction, props } from '@ngrx/store';
-import { User } from 'src/app/models/user.model';
+import { createAction, props } from "@ngrx/store";
+import { User } from "src/app/models/user.model";
 
 export const login = createAction(
-  '[Auth Page] User Login',
+  "[Auth Page] User Login",
   props<{ user: Partial<User> }>()
 );
 
 export const loginSuccess = createAction(
-  '[Auth Page] Login Success',
+  "[Auth Page] Login Success",
   props<{ user: User }>()
 );
 
 export const loginFailure = createAction(
-  '[Auth Page] Login Failure',
+  "[Auth Page] Login Failure",
   props<{ error: any }>()
 );
 
-export const logout = createAction('[Auth Page] User Logut');
+export const logout = createAction("[Auth Page] User Logut");
 ```
+
 #### effects 钩子
 
 effects 钩取相应 action(login) 后，发送网络请求，并触发新的 action(loginSuccess 或者 loginFailure)。effects 与 action 数据交互是双向的。
@@ -474,11 +519,7 @@ effects 钩取相应 action(login) 后，发送网络请求，并触发新的 ac
 ```ts
 @Injectable()
 export class UserEffects {
-
-  constructor(
-    private actions$: Actions,
-    private authService: AuthService
-  ) { }
+  constructor(private actions$: Actions, private authService: AuthService) {}
 
   login$ = createEffect(() =>
     this.actions$.pipe(
@@ -489,10 +530,11 @@ export class UserEffects {
           catchError((error) => of(UserActions.loginFailure({ error })))
         )
       )
-    ),
+    )
   );
 }
 ```
+
 #### adapter 记录
 
 action 传递数据给 reducer 表, reducer 表在 loginSuccess 时就增加一行记录。
@@ -511,9 +553,10 @@ export const reducer = createReducer(
   }),
   on(UserActions.logout, (state) => {
     return { ...state, needAuth: true };
-  }),
+  })
 );
 ```
+
 #### selector 状态切片
 
 我们要将新的状态作用到 component 上，这个时候就需要 selector 在 reducer 中查询，创建 user.selector.ts:
@@ -522,10 +565,7 @@ export const reducer = createReducer(
 const getUserState = createFeatureSelector<State>(featureName);
 const { selectEntities } = adapter.getSelectors();
 
-export const getLogin = createSelector(
-  getUserState,
-  (state) => state.needAuth
-);
+export const getLogin = createSelector(getUserState, (state) => state.needAuth);
 
 export const getError = createSelector(getUserState, (state) => state.error);
 
@@ -546,16 +586,18 @@ export const getUser = createSelector(
 在 login.component.ts 中得到新的状态：
 
 ```ts
-  error$ = this.store.pipe(select(UserSelectors.getError));
-  needAuth$ = this.store.pipe(select(UserSelectors.getLogin));
+error$ = this.store.pipe(select(UserSelectors.getError));
+needAuth$ = this.store.pipe(select(UserSelectors.getLogin));
 ```
 
-变量中的 $ 表示得到的数据是 Observable 对象。我们可以直接将 Observable 渲染在html 中：
+变量中的 $ 表示得到的数据是 Observable 对象。我们可以直接将 Observable 渲染在 html 中：
+
 ```html
-      <mat-error *ngIf="error$ | async">
-        The username and password were not recognised
-      </mat-error>
+<mat-error *ngIf="error$ | async">
+  The username and password were not recognised
+</mat-error>
 ```
+
 也可以取订阅后的布尔值 error$.subscribe(data => data)。
 在 component 中填写完登录表单后, 只需 dispatch action:
 
@@ -575,7 +617,8 @@ this.store.dispatch(UserActions.login({ user }));
 
 附：[源码地址](https://github.com/111hunter/ngrx-auth-todo)
 
-**参考资料**
+**参阅资料**
 
- - [NgRx 官方文档](https://ngrx.io/)
- - [Angular 真的需要状态管理么？](https://zhuanlan.zhihu.com/p/45121775)
+- [NgRx 官方文档](https://ngrx.io/)
+- [Angular 真的需要状态管理么？](https://zhuanlan.zhihu.com/p/45121775)
+

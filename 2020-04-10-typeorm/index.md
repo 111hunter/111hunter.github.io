@@ -1,7 +1,6 @@
 # TypeORM 的基本使用
 
 
-
 本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。
 <br>以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBuilder。
 
@@ -15,7 +14,7 @@ export class Photo {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({length: 100})
+  @Column({ length: 100 })
   name: string;
 
   @Column("text")
@@ -28,6 +27,7 @@ export class Photo {
   isPublished: boolean;
 }
 ```
+
 数据库中的列类型是根据你使用的属性类型推断的，例如: number 将被转换为 integer，string 将转换为 varchar，boolean 转换为 bool 等。下面我们从实际的例子出发探索如何用 typeorm 建一对一、一对多、多对多的关系。
 
 ## 一对一
@@ -35,7 +35,7 @@ export class Photo {
 用户 user 和用户档案 profile 是一对一关系，一个用户只有一份档案。
 
 ```ts
-@Entity('users')
+@Entity("users")
 export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -43,11 +43,12 @@ export class UserEntity {
   @Column()
   username: string;
 
-  @OneToOne(type => ProfileEntity, profile => profile.user)
+  @OneToOne((type) => ProfileEntity, (profile) => profile.user)
   @JoinColumn()
   profile: ProfileEntity;
 }
 ```
+
 {{< admonition >}}
 profile 是 ProfileEntity 类型的，在数据库中存储的类型却是 profile.id 的类型。
 {{< /admonition >}}
@@ -55,7 +56,7 @@ profile 是 ProfileEntity 类型的，在数据库中存储的类型却是 profi
 @OneToOne 中需要指明对方 entity 的类型，指明对方 entity 的外键。@JoinColumn 必须在且只在关系的一侧的外键上。
 
 ```ts
-@Entity('profiles')
+@Entity("profiles")
 export class ProfileEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -65,7 +66,7 @@ export class ProfileEntity {
 
   @Column()
   photo: string;
-  @OneToOne(type => UserEntity, user => user.profile)
+  @OneToOne((type) => UserEntity, (user) => user.profile)
   user: UserEntity;
 }
 ```
@@ -89,12 +90,13 @@ export class ProfileEntity {
 | photo       | varchar(255) |                            |
 +-------------+--------------+----------------------------+
 ```
+
 ## 一对多
 
 用户 user 与用户发布的文章 article 是一对多关系，一个用户可发布多篇文章。
 
 ```ts
-@Entity('users')
+@Entity("users")
 export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -102,7 +104,7 @@ export class UserEntity {
   @Column()
   username: string;
 
-  @OneToMany(type => ArticleEntity, article => article.author)
+  @OneToMany((type) => ArticleEntity, (article) => article.author)
   articles: ArticleEntity[];
 }
 ```
@@ -110,7 +112,7 @@ export class UserEntity {
 @OneToMany，@ManyToOne 中需要指明对方的 entity 类型，指明对方 entity 的外键。
 
 ```ts
-@Entity('articles')
+@Entity("articles")
 export class ArticleEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -118,7 +120,7 @@ export class ArticleEntity {
   @Column()
   title: string;
 
-  @ManyToOne(type => UserEntity, user => user.articles)
+  @ManyToOne((type) => UserEntity, (user) => user.articles)
   author: UserEntity;
 }
 ```
@@ -141,12 +143,13 @@ typeorm 在处理 “一对多”关系时将“一”的主键作为“多”�
 | username    | varchar(255) |                            |
 +-------------+--------------+----------------------------+
 ```
+
 ## 多对多
 
 用户 user 对文章 article 的喜欢 favorite 是多对多关系。一个用户可对多篇文章标记喜欢，一篇文章可被多个用户标记喜欢。
 
 ```ts
-@Entity('users')
+@Entity("users")
 export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -154,7 +157,7 @@ export class UserEntity {
   @Column()
   username: string;
 
-  @ManyToMany(type => ArticleEntity, article => article.favoritedBy)
+  @ManyToMany((type) => ArticleEntity, (article) => article.favoritedBy)
   favorites: ArticleEntity[];
 }
 ```
@@ -162,7 +165,7 @@ export class UserEntity {
 @OneToMany 中需要指明对方的 entity 类型，指明对方 entity 的外键。@JoinTable 必须在且只在关系的一侧的外键上。
 
 ```ts
-@Entity('articles')
+@Entity("articles")
 export class ArticleEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -170,7 +173,7 @@ export class ArticleEntity {
   @Column()
   title: string;
 
-  @ManyToMany(type => UserEntity, user => user.favorites)
+  @ManyToMany((type) => UserEntity, (user) => user.favorites)
   @JoinTable()
   favoritedBy: UserEntity[];
 }
@@ -178,8 +181,8 @@ export class ArticleEntity {
 
 typeorm 的处理方式是将多对多关系转化为两个一对多关系:
 
-  - 用户 user 与 喜欢 favorites 一对多。
-  - 文章 article 与被喜欢 favoritedBy 一对多。
+- 用户 user 与 喜欢 favorites 一对多。
+- 文章 article 与被喜欢 favoritedBy 一对多。
 
 多对多关系需要采用中间表的方式处理，这是为了避免笛卡尔积的出现。这会生成以下表：
 
@@ -251,26 +254,26 @@ userRepository.find({
 
 ### QueryBuilder
 
-使用QueryBuilder 查询可以获得两种类型的结果：entities 或原始数据。
-要获取entities，请使用getOne和getMany。
-要获取原始数据，请使用getRawOne和getRawMany。
+使用 QueryBuilder 查询可以获得两种类型的结果：entities 或原始数据。
+要获取 entities，请使用 getOne 和 getMany。
+要获取原始数据，请使用 getRawOne 和 getRawMany。
 它能够很方便的帮我们构造出 sql 语句，addSelect() 可以获取关联对象上的其他属性。
 
 ```ts
 if (query.author) {
-    const article = await getRepository(ArticleEntity)
-        .createQueryBuilder('article')
-        .select("article.id", 'id')
-        .addSelect('favoritedBy.username', 'name')
-        .leftJoin('article.favoritedBy', 'favoritedBy')
-        .where("favoritedBy.username = :name", { name: query.author })
-        .getRawMany();
+  const article = await getRepository(ArticleEntity)
+    .createQueryBuilder("article")
+    .select("article.id", "id")
+    .addSelect("favoritedBy.username", "name")
+    .leftJoin("article.favoritedBy", "favoritedBy")
+    .where("favoritedBy.username = :name", { name: query.author })
+    .getRawMany();
 }
 ```
 
-获取生成的 sql 语句可以在 getRawMany() 前获取 getSql() 或打印 printSql() 生成的sql语句。细节请参考 [Query Builder](https://typeorm.io/#/select-query-builder)。
+获取生成的 sql 语句可以在 getRawMany() 前获取 getSql() 或打印 printSql() 生成的 sql 语句。细节请参考 [Query Builder](https://typeorm.io/#/select-query-builder)。
 
-**参考资料**
+**参阅资料**
 
 - [Typeorm 官方文档](https://typeorm.io/#/)
 

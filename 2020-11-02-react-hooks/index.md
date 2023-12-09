@@ -7,7 +7,7 @@
 
 学习 Hooks 的使用，重点是心智模型的转变。useEffect 的心智模型是实现状态同步，而不是响应生命周期事件。每次触发时 useEffect，它都会捕获本次调用时组件中的数据，也就是所谓的 Capture Value 特性：**组件每次渲染都有自己的数据，组件内的函数(包括 effects，事件处理函数，定时器或者 API 调用等)会捕获该次渲染的组件数据。**
 
-##  状态同步
+## 状态同步
 
 首先看这段代码，请判断最终计时器中的 count 和 组件中的 count 分别是多少？
 
@@ -24,7 +24,7 @@ function Counter() {
     return () => {
       console.log("销毁了定时器");
       clearInterval(id);
-    }
+    };
   }, []);
 
   return <h1>{count}</h1>;
@@ -49,7 +49,7 @@ function Counter() {
     return () => {
       console.log("销毁了定时器");
       clearInterval(id);
-    }
+    };
   }, [count]);
 
   return <h1>{count}</h1>;
@@ -70,14 +70,14 @@ function Counter() {
     const id = setInterval(() => {
       console.log("计时器中的count", count);
       // 这里接收的函数描述 count 如何变化(action)
-      setCount(c => c + 1);
+      setCount((c) => c + 1);
     }, 1000);
     return () => {
       console.log("销毁了定时器");
       clearInterval(id);
-    }
+    };
   }, []);
-  
+
   return <h1>{count}</h1>;
 }
 ```
@@ -90,7 +90,7 @@ function Counter() {
 
 ```js
 function basicStateReducer<S>(state: S, action: BasicStateAction<S>): S {
-  return typeof action === 'function' ? action(state) : action;
+  return typeof action === "function" ? action(state) : action;
 }
 ```
 
@@ -171,20 +171,20 @@ React 判断组件中的数据是否发生改变时使用了 Object.is 进行比
 function SearchResults() {
   const getFetchUrl = (query) => {
     return 'https://hn.algolia.com/api/v1/search?query=' + query;
-  }; 
+  };
 
   useEffect(() => {
     const url = getFetchUrl('react');
-  // Fetch data and do something 
+  // Fetch data and do something
   ...
-  }, [getFetchUrl]); 
+  }, [getFetchUrl]);
 
   useEffect(() => {
     const url = getFetchUrl('redux');
-  // Fetch data and do something 
+  // Fetch data and do something
   ...
   }, [getFetchUrl]);
-  
+
   ...
 }
 ```
@@ -195,10 +195,10 @@ function SearchResults() {
 
 ```js
 /** useCallback 在其依赖变化时，才生成新的函数
-  * 现在依赖为空，getFetchUrl 永远调用同一个函数 */
+ * 现在依赖为空，getFetchUrl 永远调用同一个函数 */
 const getFetchUrl = useCallback((query) => {
-  return 'https://hn.algolia.com/api/v1/search?query=' + query;
-}, []); 
+  return "https://hn.algolia.com/api/v1/search?query=" + query;
+}, []);
 ```
 
 更改 `getFetchUrl` 后就能避免网络请求重复的问题了。useCallback 本质上是对函数添加了一层依赖检查，让函数只在需要改变的时候才改变。
@@ -247,11 +247,12 @@ function Counter() {
   return (
     <>
       <h1>{count}</h1>
-      <button onClick={()=>setCount(count+1)}>Add count</button>
+      <button onClick={() => setCount(count + 1)}>Add count</button>
     </>
   );
 }
 ```
+
 现在我们连续点击会发现 3s 后控制台将多次打印最新的 count 值，这证明我们修改的是同一个 ref 对象。除了用来缓存变量，useRef 还能获得 DOM 元素，需要在元素上绑定 ref 属性：
 
 ```jsx
@@ -259,8 +260,8 @@ function RefDemo() {
   const titleRef = useRef();
 
   function changeDOM() {
-    titleRef.current.innerHTML = 'hello world';
-    titleRef.current.style.color = 'red';
+    titleRef.current.innerHTML = "hello world";
+    titleRef.current.style.color = "red";
   }
   return (
     <div>
@@ -275,6 +276,7 @@ function RefDemo() {
 
 暂时就先这样吧，后面还会再补充。
 
-**参考资料**
+**参阅资料**
 
 - [A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)
+

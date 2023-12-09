@@ -7,7 +7,7 @@
 
 ## 拖拽库的使用
 
-react-beautiful-dnd 这个库使用 render-props 完成组件逻辑复用。react-beautiful-dnd 有 3 个主要组件：DragDropContext，Droppable和Draggable。这三者的关系如下：
+react-beautiful-dnd 这个库使用 render-props 完成组件逻辑复用。react-beautiful-dnd 有 3 个主要组件：DragDropContext，Droppable 和 Draggable。这三者的关系如下：
 
 ![react-beautiful-dnd库的使用](/img/react-beautiful-dnd.png "react-beautiful-dnd库的使用")
 
@@ -17,23 +17,18 @@ DragDropContext 提供了以下三个钩子：
 - onDragStart 拖动开始时执行。
 - onDragUpdate 拖动过程中的执行。
 - onDragEnd 拖拽结束时执行，且 onDragEnd 必须设定。
- 
+
 我们需要在 Board 组件内建立可拖动范围，则需要这样写：
- 
- ```jsx
- // components/Board.js
 
- const Board = () => {
+```jsx
+// components/Board.js
 
-     // onDragEnd 需实现
-     const onDragEnd = result => {};
+const Board = () => {
+  // onDragEnd 需实现
+  const onDragEnd = (result) => {};
 
-     return (
-        <DragDropContext onDragEnd={onDragEnd}>
-            ...
-        </DragDropContext>
-    );
- }
+  return <DragDropContext onDragEnd={onDragEnd}>...</DragDropContext>;
+};
 ```
 
 Droppable：
@@ -49,32 +44,32 @@ Droppable：
 
 // 需嵌套在 DragDropContext 内
 // 包裹 List 的容器，List 在 Board 容器内横向拖动
-<Droppable droppableId='all-lists' direction='horizontal' type='list'>
-{ provided => (
+<Droppable droppableId="all-lists" direction="horizontal" type="list">
+  {(provided) => (
     // 封装后的可拖放的容器组件
-    <ListContainer ref={provided.innerRef}
-    {...provided.droppableProps}>
-    // 遍历所有的列表，将列表数据传递给每个列表
-    {Object.keys(lists).map((key, index) => {
+    <ListContainer ref={provided.innerRef} {...provided.droppableProps}>
+      // 遍历所有的列表，将列表数据传递给每个列表
+      {Object.keys(lists).map((key, index) => {
         const list = lists[key];
         const listCards = list.cards.length > 0 ? list.cards : [];
         return (
-        <List
+          <List
             key={list.id}
             id={list.id}
             title={list.title}
             cards={listCards}
             index={index}
-        />
+          />
         );
-    })}
-    {provided.placeholder}
+      })}
+      {provided.placeholder}
     </ListContainer>
-)}
+  )}
 </Droppable>
 ```
 
 Draggable：
+
 - Draggable 必须设定 draggableId，index(由父组件传入)
 - Draggable 与 Droppable 一样是 render-props，接收 provided 对象，返回值是封装后的可拖放组件
 
@@ -90,11 +85,11 @@ const List = ({ id, title, cards = [], index }) => {
         <Draggable draggableId={id} index={index}>
         { provided  => (
             // 封装后的可拖放组件
-            <ListContainer 
+            <ListContainer
             ref={provided.innerRef}
             {...provided.draggableProps}
             // dragHandleProps 绑定的组件 ListContainer 可拖动
-            {...provided.dragHandleProps}> 
+            {...provided.dragHandleProps}>
                     ...
             </ListContainer>
         )}
@@ -111,23 +106,21 @@ const List = ({ id, title, cards = [], index }) => {
 // 需嵌套在 List 组件返回的 ListContainer 内
 // 包裹 Card 的容器，Card 在 List 容器内可拖放
 <Droppable droppableId={id} type="card">
-{provided => (
-    <CardContainer 
-    ref={provided.innerRef}
-    {...provided.droppableProps}>
-        // 遍历每个 List 中所有的卡片，将卡片数据传给每张卡片
-        {cards.map((card, index) => (
-            <Card
-            key={card.id}
-            id={card.id}
-            text={card.text}
-            listId={id}
-            index={index}
-            />
-    ))}
-    {provided.placeholder}
+  {(provided) => (
+    <CardContainer ref={provided.innerRef} {...provided.droppableProps}>
+      // 遍历每个 List 中所有的卡片，将卡片数据传给每张卡片
+      {cards.map((card, index) => (
+        <Card
+          key={card.id}
+          id={card.id}
+          text={card.text}
+          listId={id}
+          index={index}
+        />
+      ))}
+      {provided.placeholder}
     </CardContainer>
-)}
+  )}
 </Droppable>
 ```
 
@@ -161,38 +154,29 @@ const Card = ({ id, text, index, listId }) => {
 ```jsx
 // morkData.js
 
-import { uuid } from 'uuidv4';
+import { uuid } from "uuidv4";
 
-const getCard = text => ({
-    id: uuid(),
-    text
+const getCard = (text) => ({
+  id: uuid(),
+  text,
 });
 
 export const ListState = [
-    {
-        id: uuid(),
-        title: 'To Do',
-        cards: [
-            getCard('To do task'),
-            getCard('TO FILTER: To do task'),
-        ]
-    },
-    {
-        id: uuid(),
-        title: 'Doing',
-        cards: [
-            getCard('Doing task'),
-            getCard('TO FILTER: Doing task'),
-        ]
-    },
-    {
-        id: uuid(),
-        title: 'Done',
-        cards: [
-            getCard('Done task'),
-            getCard('TO FILTER: Done task'),
-        ]
-    },
+  {
+    id: uuid(),
+    title: "To Do",
+    cards: [getCard("To do task"), getCard("TO FILTER: To do task")],
+  },
+  {
+    id: uuid(),
+    title: "Doing",
+    cards: [getCard("Doing task"), getCard("TO FILTER: Doing task")],
+  },
+  {
+    id: uuid(),
+    title: "Done",
+    cards: [getCard("Done task"), getCard("TO FILTER: Done task")],
+  },
 ];
 ```
 
@@ -201,16 +185,16 @@ export const ListState = [
 ```jsx
 const result = {
   draggableId: 1, // 移动的组件 id
-  type: 'list',
+  type: "list",
   source: {
     droppableId: 1, // 移动前所在的容器 id
-    index: 2, 	// 组件在移动前的容器内的位置
+    index: 2, // 组件在移动前的容器内的位置
   },
   destination: {
     droppableId: 3, // 移动后所在的容器 id
-    index: 1,	// 组件在移动后的容器内的位置
-  }
-}
+    index: 1, // 组件在移动后的容器内的位置
+  },
+};
 ```
 
 我们需要写拖放组件后的状态变化逻辑，因为我们的列表数据中的 cards 数组发生了变化，但我们还没有把新的状态渲染到 list 组件中，拖放组件后需要重新排序，现在去实现在 Board 组件中定义的 onDragEnd 钩子函数：
@@ -218,20 +202,20 @@ const result = {
 ```jsx
 // components/Board.js
 
-  const onDragEnd = ({ draggableId, type, source, destination }) => {
-    if (destination) {
-      dispatch(
-        sort(
-          source.droppableId, 
-          destination.droppableId,
-          source.index,
-          destination.index,
-          draggableId,
-          type
-        )
-      );
-    }
-  };
+const onDragEnd = ({ draggableId, type, source, destination }) => {
+  if (destination) {
+    dispatch(
+      sort(
+        source.droppableId,
+        destination.droppableId,
+        source.index,
+        destination.index,
+        draggableId,
+        type
+      )
+    );
+  }
+};
 ```
 
 action 用 payload 传递接收到的数据：
@@ -244,10 +228,10 @@ import { CONSTANTS } from '.';
 ...
 
 export const sort = (
-  droppableIdStart, 
-  droppableIdEnd, 
-  droppableIndexStart, 
-  droppableIndexEnd,  
+  droppableIdStart,
+  droppableIdEnd,
+  droppableIndexStart,
+  droppableIndexEnd,
   draggableId,
   type
 ) => {
@@ -273,7 +257,7 @@ reducer 实现状态变化逻辑并返回新状态，始终**用新状态替换�
 case CONSTANTS.DRAGGED: {  // 当完成拖放动作时
   const {
     droppableIdStart,
-    droppableIdEnd,  
+    droppableIdEnd,
     droppableIndexStart,
     droppableIndexEnd,
     type
@@ -351,7 +335,9 @@ case CONSTANTS.DRAGGED: {  // 当完成拖放动作时
 const getFilteredCards = (cards, searchText) => {
   if (searchText) {
     console.log(searchText);
-    return cards.filter(card => card.text.toLowerCase().includes(searchText.toLowerCase()));
+    return cards.filter((card) =>
+      card.text.toLowerCase().includes(searchText.toLowerCase())
+    );
   }
   return cards;
 };
@@ -359,7 +345,7 @@ const getFilteredCards = (cards, searchText) => {
 
 ## 撤销重做功能
 
-实现撤销重做功能可用 [redux-undo](https://github.com/omnidan/redux-undo) 这个库，自己实现也不复杂，下面就自己实现: 
+实现撤销重做功能可用 [redux-undo](https://github.com/omnidan/redux-undo) 这个库，自己实现也不复杂，下面就自己实现:
 
 实现方法是自定义一个接收 reducer 为参数，返回新 reducer 的函数(reducer enhancer)，监听 listReducer 的变化并做记录。实现思路来自 [redux 官方文档](https://www.redux.org.cn/docs/recipes/ImplementingUndoHistory.html)。原本创建 store 时需要导出的 reducer 如下：
 
@@ -390,13 +376,13 @@ board 对应的值是将 listReducer 封装后的新 reducer，这样每次调�
 ```jsx
 // reducers/stateEnhancer.js
 
-import { CONSTANTS } from '../actions';
+import { CONSTANTS } from "../actions";
 
-const stateEnhancer = reducer => {
+const stateEnhancer = (reducer) => {
   const initialState = {
     previousStates: [],
     currentState: reducer(undefined, {}), // currentState 取 reducer 的返回值
-    futureStates: []
+    futureStates: [],
   };
 
   // 调用 reducer 时就会调用 stateEnhancer, 并返回封装后的 reducer
@@ -406,11 +392,14 @@ const stateEnhancer = reducer => {
     switch (action.type) {
       case CONSTANTS.UNDO_ACTION:
         const previous = previousStates[previousStates.length - 1];
-        const newPreviousStates = previousStates.slice(0, previousStates.length - 1);
+        const newPreviousStates = previousStates.slice(
+          0,
+          previousStates.length - 1
+        );
         return {
           previousStates: newPreviousStates,
           currentState: previous,
-          futureStates: [currentState, ...futureStates]
+          futureStates: [currentState, ...futureStates],
         };
       case CONSTANTS.REDO_ACTION:
         const next = futureStates[0];
@@ -418,19 +407,20 @@ const stateEnhancer = reducer => {
         return {
           previousStates: [...previousStates, currentState],
           currentState: next,
-          futureStates: newFutureStates
+          futureStates: newFutureStates,
         };
       default:
         const newCurrentState = reducer(currentState, action);
-        if (currentState === newCurrentState) {   //初始化列表
-          console.log('init');
+        if (currentState === newCurrentState) {
+          //初始化列表
+          console.log("init");
           return state;
         }
-        console.log('list change');              // 列表变化时
+        console.log("list change"); // 列表变化时
         return {
           previousStates: [...(previousStates || []), currentState],
           currentState: newCurrentState,
-          futureStates: []
+          futureStates: [],
         };
     }
   };
@@ -452,7 +442,8 @@ export default stateEnhancer;
 
 附：[源码地址](https://github.com/111hunter/simple-trello)
 
-**参考资料**
+**参阅资料**
 
 - [React Beautiful Dnd 快速使用筆記](https://andyyou.github.io/2019/06/04/react-beautiful-dnd-quick-note/)
 - [redux 文档 - 实现撤销历史](https://www.redux.org.cn/docs/recipes/ImplementingUndoHistory.html)
+

@@ -14,27 +14,29 @@
 最终，整个代码被分割进一个 tokens 的数组中。如下代码：
 
 ```js
-const href = 'https://github.com/'
+const href = "https://github.com/";
 ```
+
 经过词法分析生成类似这样的 tokens：
+
 ```json
 [
-    {
-        "type": "Keyword",
-        "value": "const"
-    },
-    {
-        "type": "Identifier",
-        "value": "href"
-    },
-    {
-        "type": "Punctuator",
-        "value": "="
-    },
-    {
-        "type": "String",
-        "value": "'https://github.com/'"
-    }
+  {
+    "type": "Keyword",
+    "value": "const"
+  },
+  {
+    "type": "Identifier",
+    "value": "href"
+  },
+  {
+    "type": "Punctuator",
+    "value": "="
+  },
+  {
+    "type": "String",
+    "value": "'https://github.com/'"
+  }
 ]
 ```
 
@@ -68,6 +70,7 @@ const href = 'https://github.com/'
   "sourceType": "script"
 }
 ```
+
 [这里](https://esprima.org/demo/parse.html?code=const%20href%20%3D%20'https%3A%2F%2Fgithub.com%2F') 可以看到代码的转换。[这里](https://mp.weixin.qq.com/s/qTPhYD8PXpeAxwmdlUmdEA) 有 tokens 和 AST 的简单 JS 实现。
 
 ## AST 节点规范
@@ -78,21 +81,22 @@ ESTree AST 中每个节点都要实现以下的 Node 接口，loc 字段表示�
 
 ```ts
 interface Node {
-    type: string;
-    loc?: SourceLocation;
+  type: string;
+  loc?: SourceLocation;
 }
 
 interface SourceLocation {
-    source: string | null;
-    start: Position;
-    end: Position;
+  source: string | null;
+  start: Position;
+  end: Position;
 }
 
 interface Position {
-    line: number; // >= 1
-    column: number; // >= 0
+  line: number; // >= 1
+  column: number; // >= 0
 }
 ```
+
 ### Programs 根节点
 
 ```ts
@@ -118,7 +122,7 @@ interface Pattern <: Node { }
 interface Expression <: Node { }
 ```
 
-表达式，子类很多，有二元表达式(n*n)、函数表达式(var fun = function(){})、数组表达式(var arr = [])、对象表达式(var obj = {})、赋值表达式( a=1)等。
+表达式，子类很多，有二元表达式(n\*n)、函数表达式(var fun = function(){})、数组表达式(var arr = [])、对象表达式(var obj = {})、赋值表达式( a=1)等。
 
 ### Identifier 标识符
 
@@ -148,7 +152,7 @@ interface Literal <: Expression {
 interface Statement <: Node { }
 ```
 
-语句，子类有很多， 块语句、 if/switch语句、 return语句、 for/while语句、 with语句等。
+语句，子类有很多， 块语句、 if/switch 语句、 return 语句、 for/while 语句、 with 语句等。
 
 ### Declaration 声明
 
@@ -173,26 +177,26 @@ Babel 操作 AST 会用到以下工具包：
 - @babel/generator 用于将 AST 转换成代码
 - @babel/types 用于 AST 节点操作的 Lodash 式工具库,各节点构造、验证等
 
-更多api详见 [Babel手册](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md)。
+更多 api 详见 [Babel 手册](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md)。
 
 下面是用一个例子讲述具体操作步骤：
 
 ```js
 var obj = {
-  fn(){
-    console.log("hello")
-  }
-}
+  fn() {
+    console.log("hello");
+  },
+};
 ```
 
 我们需要把以上代码转换成下面这样：
 
 ```js
 const obj = {
-  fn(){
-    console.log("hello","world")
-  }
-}
+  fn() {
+    console.log("hello", "world");
+  },
+};
 ```
 
 将两份代码在 [AST Explorer](https://astexplorer.net/) 中打开。选择 @babel/parser 为解析器，右边有选项隐藏不需要的属性。对比两颗 AST 发现差异是 kind 和 arguments，因此代码如下：
@@ -209,31 +213,35 @@ var obj = {
       console.log("hello")
     }
   }
-`
+`;
 let ast = parser.parse(sourceCode);
 traverse(ast, {
-    VariableDeclaration(path) {
-        let { kind } = path.node
-        if (kind === "var") {
-            kind = "const"
-        }
-    },
-    CallExpression(path) {
-        let { callee, arguments } = path.node
-        if (t.isMemberExpression(callee) && callee.object.name === "console" && callee.property.name === "log") {
-            arguments.push(t.stringLiteral("world"))
-        }
+  VariableDeclaration(path) {
+    let { kind } = path.node;
+    if (kind === "var") {
+      kind = "const";
     }
-})
+  },
+  CallExpression(path) {
+    let { callee, arguments } = path.node;
+    if (
+      t.isMemberExpression(callee) &&
+      callee.object.name === "console" &&
+      callee.property.name === "log"
+    ) {
+      arguments.push(t.stringLiteral("world"));
+    }
+  },
+});
 
 console.log(generate(ast).code);
 ```
 
 [这里](https://mp.weixin.qq.com/s/Fz9H5dscj5Oy__daecAYvg) 还有更多例子。
 
-**参考资料**
+**参阅资料**
 
-- [JS之 执行过程](https://mp.weixin.qq.com/s/qTPhYD8PXpeAxwmdlUmdEA)
+- [JS 之 执行过程](https://mp.weixin.qq.com/s/qTPhYD8PXpeAxwmdlUmdEA)
 - [JS 语法树学习](https://vincentstudio.info/2020/05/27/056_Javascript_ast/)
-- [Javascript抽象语法树](https://mp.weixin.qq.com/s/Fz9H5dscj5Oy__daecAYvg)
+- [Javascript 抽象语法树](https://mp.weixin.qq.com/s/Fz9H5dscj5Oy__daecAYvg)
 

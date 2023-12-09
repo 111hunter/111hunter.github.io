@@ -1,7 +1,7 @@
 # 实现仿 Recoil 的状态共享
 
 
-本文是我最近阅读一篇英文技术文章后写的小结。阅读前请注意，本文不涉及任何 Recoil 源码。仿写的代码并不是  Recoil 真正的实现方式，本文只仿造实现了 Recoil 中两个重要的 API 接口：Atom 和 Selector。
+本文是我最近阅读一篇英文技术文章后写的小结。阅读前请注意，本文不涉及任何 Recoil 源码。仿写的代码并不是 Recoil 真正的实现方式，本文只仿造实现了 Recoil 中两个重要的 API 接口：Atom 和 Selector。
 
 如果你不熟悉 Recoil，请先阅读我的这篇 [文章](https://111hunter.github.io/2020-07-27-recoil/) 或者阅读它的 [官方文档](https://recoiljs.org/)。然后新建 React 项目：
 
@@ -32,7 +32,7 @@ export class Stateful<T> {
   // 此处才会调用所有的监听者
   private emit() {
     for (const listener of Array.from(this.listeners)) {
-      console.log('调用监听者: ' + listener);
+      console.log("调用监听者: " + listener);
       listener();
     }
   }
@@ -40,17 +40,17 @@ export class Stateful<T> {
   protected update(value: T) {
     if (this.value !== value) {
       this.value = value;
-      console.log('新值: ' + this.value);
+      console.log("新值: " + this.value);
       this.emit();
     }
   }
-  // 订阅就加入监听者的 Set 集合，此方法接收 callback，返回也是 callback 
+  // 订阅就加入监听者的 Set 集合，此方法接收 callback，返回也是 callback
   subscribe(callback: () => void): Disconnect {
-    console.log('注册监听者：' + callback);
+    console.log("注册监听者：" + callback);
     this.listeners.add(callback);
     return {
       disconnect: () => {
-        console.log('注销监听者：' + callback);
+        console.log("注销监听者：" + callback);
         this.listeners.delete(callback);
       },
     };
@@ -61,18 +61,18 @@ export class Stateful<T> {
 ## 自定义 hook
 
 下面是只读 hook 的实现方式。atom 和 selector 均可读，因此参数只需满足 Stateful 类型。这里注册的监听者 **updateState 巧妙地利用了函数组件的重渲染机制**，因为 useState 的参数为引用数据类型，`{} === {}` 的值为 false，因此只要调用 updateState 函数就会重渲染组件。关于 React 组件何时会重渲染可以读这篇 [文章](https://juejin.im/post/6886766652667461646)。
- 
+
 ```ts
 export function useCoiledValue<T>(value: Stateful<T>): T {
   // 只要调用 updateState 就会触发重渲染
   const [, updateState] = useState({});
-    useEffect(() => {
-      console.log('渲染结束调用 useEffect, 添加监听者')
-      // 注册 updateState 为监听者, 监听者是 callback 的 Set 集合
-      const { disconnect } = value.subscribe(() => updateState({}));
-      return () => disconnect();
-    }, [value]);
-  console.log('此时 useCoiledValue 的值: ' + value.snapshot());
+  useEffect(() => {
+    console.log("渲染结束调用 useEffect, 添加监听者");
+    // 注册 updateState 为监听者, 监听者是 callback 的 Set 集合
+    const { disconnect } = value.subscribe(() => updateState({}));
+    return () => disconnect();
+  }, [value]);
+  console.log("此时 useCoiledValue 的值: " + value.snapshot());
   return value.snapshot();
 }
 ```
@@ -82,7 +82,7 @@ export function useCoiledValue<T>(value: Stateful<T>): T {
 ```ts
 export function useCoiledState<T>(atom: Atom<T>): [T, (value: T) => void] {
   const value = useCoiledValue(atom);
-  return [value, useCallback(value => atom.setState(value), [atom])];
+  return [value, useCallback((value) => atom.setState(value), [atom])];
 }
 ```
 
@@ -117,7 +117,7 @@ export class Selector<T> extends Stateful<T> {
 
   private addDep<V>(dep: Stateful<V>): V {
     if (!this.registeredDeps.has(dep)) {
-       // 注册 updateSelector 为监听者，并将 dep 加入 Set 集合
+      // 注册 updateSelector 为监听者，并将 dep 加入 Set 集合
       dep.subscribe(() => this.updateSelector());
       this.registeredDeps.add(dep);
     }
@@ -125,12 +125,12 @@ export class Selector<T> extends Stateful<T> {
   }
   // 调用 generate 直接返回当前的 dep 值
   private updateSelector() {
-    this.update(this.generate({ get: dep => this.addDep(dep) }));
+    this.update(this.generate({ get: (dep) => this.addDep(dep) }));
   }
 
   constructor(private readonly generate: SelectorGenerator<T>) {
     super(undefined as any);
-    this.value = generate({ get: dep => this.addDep(dep) });
+    this.value = generate({ get: (dep) => this.addDep(dep) });
   }
 }
 // selector 接收 atom 或者其他 selector 作为依赖
@@ -153,23 +153,29 @@ export function selector<V>(value: {
 将 index.tsx 作如下修改后，启动项目 `yarn start`，查看浏览器的 cosole 面板，项目成功运行。
 
 ```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { atom, useCoiledState, useCoiledValue, selector } from './coiled';
-import './App.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import { atom, useCoiledState, useCoiledValue, selector } from "./coiled";
+import "./App.css";
 
-const textState = atom<string>({
-  key: 'textState', 
-  default: '', 
-});
+const textState =
+  atom <
+  string >
+  {
+    key: "textState",
+    default: "",
+  };
 
-const charCountState = selector<number>({
-  key: 'charCountState',
-  get: ({get}) => {
-    const text = get(textState);
-    return text.length;
-  },
-});
+const charCountState =
+  selector <
+  number >
+  {
+    key: "charCountState",
+    get: ({ get }) => {
+      const text = get(textState);
+      return text.length;
+    },
+  };
 
 function TextInput() {
   const [text, setText] = useCoiledState(textState);
@@ -201,7 +207,7 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
 在 [codesandbox](https://codesandbox.io/s/patient-worker-ksv85) 中查看完整代码。
@@ -220,7 +226,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 我在 github 上发现了 [jotai](https://github.com/pmndrs/jotai) 项目。它与我的仿写非常相似，并且支持异步。
 
-**参考资料**
+**参阅资料**
 
 - [Rewriting Facebook's "Recoil" React library ...](https://bennetthardwick.com/blog/recoil-js-clone-from-scratch-in-100-lines/)
 

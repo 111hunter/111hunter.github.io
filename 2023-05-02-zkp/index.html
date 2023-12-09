@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="零知识证明 — 数字签名的起源"/>
 <meta name="twitter:description" content="在密码学中，了解数字签名工作原理的最好方法是了解它的起源。因此，让我们花点儿时间简要介绍一下零知识证明(ZKP)，然后重新讨论数字签名。 想象"/>
 <meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2023-05-02-zkp/" /><link rel="prev" href="http://example.org/2022-08-28-maya/" /><link rel="next" href="http://example.org/2023-10-04-advaita-3/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2023-05-02-zkp/" /><link rel="prev" href="http://example.org/2022-08-14-faith/" /><link rel="next" href="http://example.org/2023-10-04-advaita-3/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2023-05-02-zkp\/"
-        },"genre": "posts","keywords": "Blockchain","wordcount":  2398 ,
+        },"genre": "posts","keywords": "Blockchain","wordcount":  2391 ,
         "url": "http:\/\/example.org\/2023-05-02-zkp\/","datePublished": "2023-05-02T10:50:34+08:00","dateModified": "2023-05-02T10:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">零知识证明 — 数字签名的起源</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/interview/"><i class="far fa-folder fa-fw"></i>Interview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-05-02">2023-05-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2398 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-05-02">2023-05-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2391 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/2023-05-02-zkp/" class="leancloud_visitors" data-flag-title="零知识证明 — 数字签名的起源">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -137,7 +137,7 @@
 <p>一个简单的解决方案是将随机生成的值 k 与见证相加: $$ s = k + x $$ 然后，Peggy 可以将隐藏了见证的 s 和随机值 k 一起发送给 Victor。</p>
 <p>为了判断 Peggy 是否真的知道见证，Victor 可以检查 Peggy 给他的值是否与他所知道的相符，Victor 可以检查下面两个数字是否相等: $$ g^s = g^{k+x} = {g^x}{g^k} $$ $$ Y{g^k} = {g^x}{g^k} $$</p>
 <p>这个方案的思想是，只有知道见证 x 的人才能构造出满足这个等式的“盲”证据 s。因此，这是知识的证明。但这个方案存在一个问题，显然它是不安全的! 事实上，由于隐藏见证 x 的等式只有一个未知项(x 本身)，因此 Victor 仅通过移项就可以求出 x 值: $$ x = s - k $$</p>
-<p>为了解决这个问题，Peggy 可以把随机值 k 隐藏起来! Peggy 将随机值 k 隐藏在 g 的指数中（关键🤔），以确保 Victor 的等式仍然有效。 $$ R = g^k $$ 这样一来，Victor 就无法获得 k 的值, 也就无法恢复 x 的值。不过他依然可以验证 Peggy 是否知道 x 的值! $$ g^s = g^{k+x} = {g^x}{g^k} $$ $$ YR = {g^x}{g^k} $$</p>
+<p>为了解决这个问题，Peggy 可以把随机值 k 隐藏起来! Peggy 将随机值 k 隐藏在 g 的指数中（关键 🤔），以确保 Victor 的等式仍然有效。 $$ R = g^k $$ 这样一来，Victor 就无法获得 k 的值, 也就无法恢复 x 的值。不过他依然可以验证 Peggy 是否知道 x 的值! $$ g^s = g^{k+x} = {g^x}{g^k} $$ $$ YR = {g^x}{g^k} $$</p>
 <p>我们的方案有一个问题，那就是 Peggy 可以作弊。她可以在不知道 x 的情况下让 Victor 相信她知道 x! 她所要做的就是颠倒她计算证明的步骤。Peggy 首先生成一个随机值 s，然后根据 s 计算 R 值: $$ R = \frac{g^s}{Y} $$</p>
 <p>而 Victor 验证计算时，$ YR = g^s $ 确实成立，因此相信 Peggy 拥有见证 x。(这种使用逆运算来计算一个值的技巧也用于密码学中的许多攻击。)</p>
 <div class="details admonition note open">
@@ -178,7 +178,7 @@
 <p>Schnorr 在上面的基础之上注意到任何信息都可以计算哈希值! 例如，对一条消息计算哈希值。这样一来，我们得到的不仅是一个能证明我们知道某个见证 x 的证据，还是对一个与证据相关联(指在密码学上的关联)的消息的承诺。</p>
 <p>换句话说，如果证据是正确的，那么只有知道见证(此处见证成为签名密钥)的人才能对该消息做出承诺。那就是签名! 数字签名就是非交互式 ZKP。将 Fiat-Shamir 转换应用于 Schnorr 身份识别协议， 我们就可以得到 Schnorr 签名方案。</p>
 <p>总而言之，Schnorr 签名本质上是两个值，R 和 s，其中 R 是对某个秘密随机值的承诺(通常称秘密值为 nonce，因为它需要对每个签名都是唯一的)，s 是通过承诺 R、私钥(见证 x)和消息(挑战)计算的值。</p>
-<p><strong>参考资料</strong></p>
+<p><strong>参阅资料</strong></p>
 <ul>
 <li>全文摘录自 <a href="https://book.douban.com/subject/34615742/" target="_blank" rel="noopener noreffer">《Real-World Cryptography》</a></li>
 </ul>
@@ -191,7 +191,7 @@
 <p><a href="https://mirror.xyz/0x8B00cEE42f226B340aF806CD7aaA4c10cc5E0154/amsF0AOPKUUy8c2tZCMFuiYiF-2j4Umkv3JEdcMwQcU" target="_blank" rel="noopener noreffer">一文读懂零知识证明背后的简单逻辑</a></p>
 </li>
 <li>
-<p><a href="https://mirror.xyz/0x8B00cEE42f226B340aF806CD7aaA4c10cc5E0154/nQ1XeR-nivHIaqZc1-9-TaTz08S7ZgB00bems5-PLus" target="_blank" rel="noopener noreffer">彻底读懂零知识证明及其实现方法：解析zk-SNARK</a></p>
+<p><a href="https://mirror.xyz/0x8B00cEE42f226B340aF806CD7aaA4c10cc5E0154/nQ1XeR-nivHIaqZc1-9-TaTz08S7ZgB00bems5-PLus" target="_blank" rel="noopener noreffer">彻底读懂零知识证明及其实现方法：解析 zk-SNARK</a></p>
 </li>
 <li>
 <p><a href="https://zhuanlan.zhihu.com/p/98077048" target="_blank" rel="noopener noreffer">浅谈零知识证明：背景与起源</a></p>
@@ -225,7 +225,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/2022-08-28-maya/" class="prev" rel="prev" title="教化与现世梦境"><i class="fas fa-angle-left fa-fw"></i>教化与现世梦境</a>
+    <div class="post-nav"><a href="/2022-08-14-faith/" class="prev" rel="prev" title="我没有任何信仰"><i class="fas fa-angle-left fa-fw"></i>我没有任何信仰</a>
             <a href="/2023-10-04-advaita-3/" class="next" rel="next" title="行动与观念">行动与观念<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>

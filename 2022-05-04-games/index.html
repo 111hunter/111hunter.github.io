@@ -1,177 +1,784 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>有限与无限的游戏 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="有限与无限的游戏" />
-<meta property="og:description" content="世上至少有两种游戏。一种可称为有限游戏，另一种为无限游戏。有限游戏以取胜为目的，而无限游戏以延续游戏为目的。 — James P. Carse 有限游戏参与者拥有可随时" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/2022-05-04-games/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-05-04T10:50:34&#43;08:00" />
-<meta property="article:modified_time" content="2022-05-04T10:50:34&#43;08:00" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <title>有限与无限的游戏 - 浮槎的博客</title>
+    <meta name="Description" content="空空如也，我叩其两端而竭焉。" />
+    <meta property="og:title" content="有限与无限的游戏" />
+    <meta
+      property="og:description"
+      content="世上至少有两种游戏。一种可称为有限游戏，另一种为无限游戏。有限游戏以取胜为目的，而无限游戏以延续游戏为目的。 — James P. Carse 有限游戏参与者拥有可随时"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://example.org/2022-05-04-games/" />
+    <meta property="og:image" content="http://example.org/logo.png" />
+    <meta property="article:section" content="posts" />
+    <meta
+      property="article:published_time"
+      content="2022-05-04T10:50:34&#43;08:00"
+    />
+    <meta
+      property="article:modified_time"
+      content="2022-05-04T10:50:34&#43;08:00"
+    />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="http://example.org/logo.png"/>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="http://example.org/logo.png" />
 
-<meta name="twitter:title" content="有限与无限的游戏"/>
-<meta name="twitter:description" content="世上至少有两种游戏。一种可称为有限游戏，另一种为无限游戏。有限游戏以取胜为目的，而无限游戏以延续游戏为目的。 — James P. Carse 有限游戏参与者拥有可随时"/>
-<meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2022-05-04-games/" /><link rel="prev" href="http://example.org/2022-03-15-advaita-1/" /><link rel="next" href="http://example.org/2022-05-29-advaita-2/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
+    <meta name="twitter:title" content="有限与无限的游戏" />
+    <meta
+      name="twitter:description"
+      content="世上至少有两种游戏。一种可称为有限游戏，另一种为无限游戏。有限游戏以取胜为目的，而无限游戏以延续游戏为目的。 — James P. Carse 有限游戏参与者拥有可随时"
+    />
+    <meta name="application-name" content="LoveIt" />
+    <meta name="apple-mobile-web-app-title" content="LoveIt" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="http://example.org/2022-05-04-games/" />
+    <link rel="prev" href="http://example.org/2022-03-15-advaita-1/" />
+    <link rel="next" href="http://example.org/2022-05-29-advaita-2/" />
+    <link rel="stylesheet" href="/lib/normalize/normalize.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link rel="stylesheet" href="/lib/fontawesome-free/all.min.css" />
+    <link rel="stylesheet" href="/lib/animate/animate.min.css" />
+    <script type="application/ld+json">
+      {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "有限与无限的游戏",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "http:\/\/example.org\/2022-05-04-games\/"
-        },"genre": "posts","keywords": "Philosophy","wordcount":  3176 ,
-        "url": "http:\/\/example.org\/2022-05-04-games\/","datePublished": "2022-05-04T10:50:34+08:00","dateModified": "2022-05-04T10:50:34+08:00","publisher": {
-            "@type": "Organization",
-            "name": ""},"author": {
-                "@type": "Person",
-                "name": "浮槎"
-            },"description": ""
-    }
-    </script></head>
-    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+          "@type": "WebPage",
+          "@id": "http:\/\/example.org\/2022-05-04-games\/"
+        },
+        "genre": "posts",
+        "keywords": "Philosophy",
+        "wordcount": 3176,
+        "url": "http:\/\/example.org\/2022-05-04-games\/",
+        "datePublished": "2022-05-04T10:50:34+08:00",
+        "dateModified": "2022-05-04T10:50:34+08:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": ""
+        },
+        "author": {
+          "@type": "Person",
+          "name": "浮槎"
+        },
+        "description": ""
+      }
+    </script>
+  </head>
+  <body header-desktop="fixed" header-mobile="auto">
+    <script type="text/javascript">
+      (window.localStorage && localStorage.getItem("theme")
+        ? localStorage.getItem("theme") === "dark"
+        : "auto" === "auto"
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches
+        : "auto" === "dark") && document.body.setAttribute("theme", "dark");
+    </script>
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="浮槎的博客">浮槎的博客</a>
-            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><span class="menu-item search" id="search-desktop">
-                    <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
-                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-                        <i class="fas fa-search fa-fw"></i>
-                    </a>
-                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
-                        <i class="fas fa-times-circle fa-fw"></i>
-                    </a>
-                    <span class="search-button search-loading" id="search-loading-desktop">
-                        <i class="fas fa-spinner fa-fw fa-spin"></i>
-                    </span>
-                </span><span class="menu-item">|</span><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a></div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
+    <div id="mask"></div>
+    <div class="wrapper">
+      <header class="desktop" id="header-desktop">
         <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="浮槎的博客">浮槎的博客</a>
-                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                    <i class="fas fa-adjust fa-fw"></i>
+          <div class="header-title">
+            <a href="/" title="浮槎的博客">浮槎的博客</a>
+            <a
+              href="javascript:void(0);"
+              class="menu-item theme-switch"
+              title="切换主题"
+            >
+              <i class="fas fa-adjust fa-fw"></i>
+            </a>
+          </div>
+          <div class="menu">
+            <div class="menu-inner">
+              <span class="menu-item search" id="search-desktop">
+                <input
+                  type="text"
+                  placeholder="搜索文章标题或内容..."
+                  id="search-input-desktop"
+                />
+                <a
+                  href="javascript:void(0);"
+                  class="search-button search-toggle"
+                  id="search-toggle-desktop"
+                  title="搜索"
+                >
+                  <i class="fas fa-search fa-fw"></i>
                 </a>
+                <a
+                  href="javascript:void(0);"
+                  class="search-button search-clear"
+                  id="search-clear-desktop"
+                  title="清空"
+                >
+                  <i class="fas fa-times-circle fa-fw"></i>
+                </a>
+                <span
+                  class="search-button search-loading"
+                  id="search-loading-desktop"
+                >
+                  <i class="fas fa-spinner fa-fw fa-spin"></i>
+                </span> </span
+              ><span class="menu-item">|</span
+              ><a class="menu-item" href="/posts/"> 文章 </a
+              ><a class="menu-item" href="/tags/"> 标签 </a
+              ><a class="menu-item" href="/categories/"> 分类 </a
+              ><a class="menu-item" href="/about/"> 关于 </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <header class="mobile" id="header-mobile">
+        <div class="header-container">
+          <div class="header-wrapper">
+            <div class="header-title">
+              <a href="/" title="浮槎的博客">浮槎的博客</a>
+              <a
+                href="javascript:void(0);"
+                class="menu-item theme-switch"
+                title="切换主题"
+              >
+                <i class="fas fa-adjust fa-fw"></i>
+              </a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
             </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        取消
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a></div>
-    </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">有限与无限的游戏</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/thinking/"><i class="far fa-folder fa-fw"></i>Thinking</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-04">2022-05-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3176 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/2022-05-04-games/" class="leancloud_visitors" data-flag-title="有限与无限的游戏">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;</div>
-        </div><div class="content" id="content"><blockquote>
-<p>世上至少有两种游戏。一种可称为有限游戏，另一种为无限游戏。有限游戏以取胜为目的，而无限游戏以延续游戏为目的。 — James P. Carse</p>
-</blockquote>
-<p>有限游戏参与者拥有可随时离开赛场的自由，但实际上却必须留在斗争中。为了弥合这之间的鸿沟，我们可以说，有限游戏参与者在某种程度上自己遮蔽了自己的这种自由。所有有限游戏中都或多或少存在自我遮蔽。参与者必须有意忘却自己参与游戏所固有的自愿性质，否则，所有竞争努力都将离他们而去。</p>
-<p>从一开始，有限游戏的每一方或每一个角色都必须有一定的严肃性。参与者必须把自己视为老师、轻量级参与者和母亲。通过适当的练习，我们积极地相信自己就是这些角色所塑造的人。甚至，我们让这些角色成为对他人也可信的。「演戏的本质令我们不是把这个女人看作奥菲利娅注 ，而是把奥菲利娅看作这个女人。」(萧伯纳)</p>
-<p><strong>自我遮蔽是一种矛盾的行为，一种对自由的自愿抽离</strong>。我无法忘却自己已经忘记。我可能掩饰得非常成功，就连自己都相信了自己的表演。我可能说服自己我就是奥菲利娅。但这些确信永远不足以消除自我遮蔽的矛盾性。「相信是知道自己相信，而知道自己相信是不相信。」(萨特)</p>
-<p>不允许过去的成为过去，也许是有限游戏的参与者之所以那么严肃的最主要原因。只要有限游戏的参与者还有观众，游戏参与者们就希望观众能知道谁是获胜者。换句话说，有限游戏的参与者但凡还有一个观众，他们就希望这个观众是深深入戏的。</p>
-<p>当我们严肃地(而非怀着戏谑的心)进入有限游戏的时候，我们现身于一群意识到我们不可见的观众。因此，我们感到迫切需要向他们证明，我们不是他们想的那样，或者更精确一些，我们不是我们所认为的那些观众想的那样。和所有有限游戏的参与者一样，在这一努力的中心，迅速出现一个尖锐矛盾。身为有限游戏的参与者，除非我们自己被观众们说服，否则不会有强烈的获胜欲望，但我们的初衷却是要去说服观众。也就是说，除非按照观众的想法将自己真正看做失败者，我们就不会有足够的获胜欲望。我们越是负面评价自己，就越是要扭转别人对我们的负面评价。结果便是将矛盾推进到最高潮：通过证明观众们是错的，我们证明了他们是对的。</p>
-<p><strong>越是将自己视为获胜者，我们就越知道自己是失败者</strong>。这也就是为什么，得到知名度相当高、被很多人觊觎的奖励品的获胜者中，很少有人满足于现有头衔而金盆洗手。获胜者，特别是知名获胜者，必须反复证明他们是获胜者。剧本必须被一遍又一遍地演出。头衔必须得到新比赛的捍卫。没有人已经足够富有，足够光荣，足够被赞誉。我们因胜利带来的可见性，只能让不可见的过去所代表的失败将我们抓得更紧。对有限的游戏而言，过去的力量是如此巨大，以至于我们必须找到办法来牢记：我们曾经在斗争中忘记了维护自己的权益。在所有严肃冲突的最深处都有着屈辱的记忆。「记住阿拉莫」、「记住缅因」、「记住 珍珠港」，是这些呼喊让美国人投入数次战争中。就因曾经被雅典进攻过一次，波斯的大流士就变得对战争情有独钟，并且让一位侍者跟随左右，时刻在耳边提醒:「陛下，牢记雅典人!」</p>
-<p>由于无限游戏中可以存在有限游戏，因此无限游戏参与者并不避开有限游戏的表演。相反，他们进入有限游戏时也拥有所有适当的活力和自我遮蔽，但他们这样做的时候并没有有限游戏参与者那样的严肃性。他们把有限游戏的抽象性看作抽象性并接受，因此他们并不是那么严肃地对待有限游戏，而是游戏似的。 (「抽象」即从整体中抽取出来代替整体的概念，整体是 「具体」。)他们在自己的社交活动中自愿使用面具，但会向自己和他人承认他们在掩饰自己。因此， 他们将有限游戏中的每个参与者都视为参与的人，而不是某人扮演的角色。</p>
-<p>无限游戏参与者通过摆脱自己的自由，进入某个角色的抽象要求，与他人产生关联，他们是与具体的人产生联系的具体人物。因此，<strong>无限游戏无法抽象化，因为它并不是从整体中抽取出来的一部分来代替整体，而是知道这是整体的整体</strong>。我们无法说某个人参与了这个或那个无限游戏，好像游戏规则独立于游戏的具体情况而存在一样。我们只能说，这些人彼此游戏，并且他们开始的游戏无法结束。</p>
-<p>由于有限游戏旨在达成一个结果，由于它的角色已经写好，并且是在为观众表演，因此我们应该把有限游戏看作做戏似的。虽然剧本和情节似乎并非事先写好，但我们总能回首成功路，发现胜利者显然知道如何行动以及说些什么。由于无限游戏参与者会避开任何结果，向未来保持开放，令所有剧本作废，我们应该称无限游戏为传奇性的。</p>
-<p>有限游戏中的惊奇是过去对未来的胜利。与不知道对手将做出什么举动的毫无准备的参与者相比，已经知道对手要做出什么举动的王牌参与者拥有决定性的优势。有限游戏参与者经受过训练，知道不仅要预测每一个未来的可能性，而且要去控制未来，防止它改变过去。这就是处于严肃模式中的有限游戏参与者，他们对不可预知的结果心存恐惧。</p>
-<p>无限游戏中的惊奇，是未来对过去的胜利。<strong>由于无限游戏参与者并不认为过去有结果，因此他们无从知道开始发生了什么</strong>。经过每一次惊奇，过去展现出全新的开端。由于未来总是令人惊讶，因此过去总是在变化。</p>
-<p>触动(touch)，并不是指两个人的距离减少至零。只有我从自己的心中，同时而原创地回应时，我才真正被触动。但是你必须是从你自己的心中，出自你自己的天才，否则你并未能触动我。触动永远是双向的。 除非我以触动你为回应，否则你无法触动我。</p>
-<p>触动的反面是推动(move)。你将我推向一个你预见或预备好的地方，这就叫做推动。这是一个舞台化的行动，只有在推动我的时候，你保持不动，这个行动才是成功的。我可能被技艺精湛的表演、震撼人心的新闻报导推动掉泪，或者被政治宣传或英雄事迹推动得心旌神荡，但是在这些情景里，我是因某些程序或设计而被感动，相关演员或机构是对此免疫的。当演员被自己的表演弄哭，从剧本性来看，他们便是技艺不精。</p>
-<p>这意味着，我们只能被不是他们本人的人们所推动。只有在我们不是我们自己，并且是我们不可能成为的人的时候，我们才能被推动。只有作为所有剧本性面具背后的我本人，我才被触动，但与此同时，我也从内部被改变了──而那触动我的人，也一样被触动。设计好的东西不能触动人。实际上，所有设计性的东西，都会被触动所粉碎。触动者和被触动者，所感受的无非是惊讶。<strong>我们只有遮蔽才能被推动，而穿过遮蔽物，我们得以被触动。</strong></p>
-<p>有限的游戏并不拥有自身的时间。它存在于一个世界的固定时间里。观众只允许参与者用这些时间来赢得胜利头衔。被划分为各个时期的时间，是剧本式的时间。一个时代的开始与终结之间的时间流逝，犹如幕与幕之间的一个场景。它不是被人们生活的时间，而是被参赛者和观众同时审视的时间。时间的分期预设了一个存在于游戏边界外的旁观者，他能够同时看到开端与结尾。</p>
-<p>无限游戏的参与者既不年轻，也不年老，因为他并不生活在别人的时间里。因此，<strong>无限游戏参与者的时间是没有外在尺度的</strong>。对于无限游戏的参与者来说，时间并不流逝。时间的每一瞬间，都是一个开始。每个瞬间都不是某段时期的开始，而是某个事件的开端，它给予时间以特定的性质。对于无限游戏的参与者来说，不存在一个小时的时间这样的东西，只能有一个小时的爱，或者一天的悲伤，一个季节的学习，或者一个时期的劳动。</p>
-<p>如果有限游戏参与者将生存视为要赢得的奖励，那么死亡就是失败的象征。因此，死亡并不是参与者选择的，而是被强加的。若与死亡的抗争失败了，那么死亡便降临在这个人的身上。死亡是一种审判，是耻辱和弱点的象征。有限游戏参与者的死亡是应得的、自找的。“罪的工价乃是死。”(使徒保罗)</p>
-<p><strong>如果赢得有限游戏的奖励是生命，那么参与者便没有好好地活着</strong>。他们在争夺生命，生命也就不是赛局，⽽是赛局的结果。有限游戏参与者参赛是为了活命，他们没有享受⾃己的参赛。因此，生命是应得的、赋予的、被占有的、赢得的，⽽不是生活的。“⽣活本身似乎只是⽣命的一种手段。”(马克思)</p>
-<p><strong>参考资料</strong></p>
-<ul>
-<li>全文摘录自 <a href="https://book.douban.com/subject/25742296/" target="_blank" rel="noopener noreffer">《有限与无限的游戏》</a></li>
-</ul>
-</div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>更新于 2022-05-04</span>
+          </div>
+          <div class="menu" id="menu-mobile">
+            <div class="search-wrapper">
+              <div class="search mobile" id="search-mobile">
+                <input
+                  type="text"
+                  placeholder="搜索文章标题或内容..."
+                  id="search-input-mobile"
+                />
+                <a
+                  href="javascript:void(0);"
+                  class="search-button search-toggle"
+                  id="search-toggle-mobile"
+                  title="搜索"
+                >
+                  <i class="fas fa-search fa-fw"></i>
+                </a>
+                <a
+                  href="javascript:void(0);"
+                  class="search-button search-clear"
+                  id="search-clear-mobile"
+                  title="清空"
+                >
+                  <i class="fas fa-times-circle fa-fw"></i>
+                </a>
+                <span
+                  class="search-button search-loading"
+                  id="search-loading-mobile"
+                >
+                  <i class="fas fa-spinner fa-fw fa-spin"></i>
+                </span>
+              </div>
+              <a
+                href="javascript:void(0);"
+                class="search-cancel"
+                id="search-cancel-mobile"
+              >
+                取消
+              </a>
             </div>
-            <div class="post-info-license"></div>
+            <a class="menu-item" href="/posts/" title="">文章</a
+            ><a class="menu-item" href="/tags/" title="">标签</a
+            ><a class="menu-item" href="/categories/" title="">分类</a
+            ><a class="menu-item" href="/about/" title="">关于</a>
+          </div>
         </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/2022-05-04-games/index.md" target="_blank">阅读原始文档</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2022-05-04-games/" data-title="有限与无限的游戏" data-hashtags="Philosophy"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2022-05-04-games/" data-hashtag="Philosophy"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2022-05-04-games/" data-title="有限与无限的游戏" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2022-05-04-games/" data-title="有限与无限的游戏"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2022-05-04-games/" data-title="有限与无限的游戏"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2022-05-04-games/" data-title="有限与无限的游戏" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2022-05-04-games/" data-title="有限与无限的游戏" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2022-05-04-games/" data-title="有限与无限的游戏"><i class="fab fa-evernote fa-fw"></i></a></span>
+      </header>
+      <div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+      </div>
+      <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+      </div>
+      <main class="main">
+        <div class="container">
+          <article class="page single">
+            <h1 class="single-title animated flipInX">有限与无限的游戏</h1>
+            <div class="post-meta">
+              <div class="post-meta-line">
+                <span class="post-author"
+                  ><a
+                    href="https://111hunter.github.io"
+                    title="Author"
+                    target="_blank"
+                    rel="noopener noreffer author"
+                    class="author"
+                    ><i class="fas fa-user-circle fa-fw"></i>浮槎</a
+                  ></span
+                >&nbsp;<span class="post-category"
+                  >收录于
+                  <a href="/categories/thinking/"
+                    ><i class="far fa-folder fa-fw"></i>Thinking</a
+                  ></span
+                >
+              </div>
+              <div class="post-meta-line">
+                <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time
+                  datetime="2022-05-04"
+                  >2022-05-04</time
+                >&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3176
+                字&nbsp; <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7
+                分钟&nbsp;<span
+                  id="/2022-05-04-games/"
+                  class="leancloud_visitors"
+                  data-flag-title="有限与无限的游戏"
+                >
+                  <i class="far fa-eye fa-fw"></i>&nbsp;<span
+                    class="leancloud-visitors-count"
+                  ></span
+                  >&nbsp;次阅读 </span
+                >&nbsp;
+              </div>
             </div>
+            <div class="content" id="content">
+              <blockquote>
+                <p>
+                  世上至少有两种游戏。一种可称为有限游戏，另一种为无限游戏。有限游戏以取胜为目的，而无限游戏以延续游戏为目的。
+                  — James P. Carse
+                </p>
+              </blockquote>
+              <p>
+                有限游戏参与者拥有可随时离开赛场的自由，但实际上却必须留在斗争中。为了弥合这之间的鸿沟，我们可以说，有限游戏参与者在某种程度上自己遮蔽了自己的这种自由。所有有限游戏中都或多或少存在自我遮蔽。参与者必须有意忘却自己参与游戏所固有的自愿性质，否则，所有竞争努力都将离他们而去。
+              </p>
+              <p>
+                从一开始，有限游戏的每一方或每一个角色都必须有一定的严肃性。参与者必须把自己视为老师、轻量级参与者和母亲。通过适当的练习，我们积极地相信自己就是这些角色所塑造的人。甚至，我们让这些角色成为对他人也可信的。「演戏的本质令我们不是把这个女人看作奥菲利娅注
+                ，而是把奥菲利娅看作这个女人。」(萧伯纳)
+              </p>
+              <p>
+                <strong>自我遮蔽是一种矛盾的行为，一种对自由的自愿抽离</strong
+                >。我无法忘却自己已经忘记。我可能掩饰得非常成功，就连自己都相信了自己的表演。我可能说服自己我就是奥菲利娅。但这些确信永远不足以消除自我遮蔽的矛盾性。「相信是知道自己相信，而知道自己相信是不相信。」(萨特)
+              </p>
+              <p>
+                不允许过去的成为过去，也许是有限游戏的参与者之所以那么严肃的最主要原因。只要有限游戏的参与者还有观众，游戏参与者们就希望观众能知道谁是获胜者。换句话说，有限游戏的参与者但凡还有一个观众，他们就希望这个观众是深深入戏的。
+              </p>
+              <p>
+                当我们严肃地(而非怀着戏谑的心)进入有限游戏的时候，我们现身于一群意识到我们不可见的观众。因此，我们感到迫切需要向他们证明，我们不是他们想的那样，或者更精确一些，我们不是我们所认为的那些观众想的那样。和所有有限游戏的参与者一样，在这一努力的中心，迅速出现一个尖锐矛盾。身为有限游戏的参与者，除非我们自己被观众们说服，否则不会有强烈的获胜欲望，但我们的初衷却是要去说服观众。也就是说，除非按照观众的想法将自己真正看做失败者，我们就不会有足够的获胜欲望。我们越是负面评价自己，就越是要扭转别人对我们的负面评价。结果便是将矛盾推进到最高潮：通过证明观众们是错的，我们证明了他们是对的。
+              </p>
+              <p>
+                <strong>越是将自己视为获胜者，我们就越知道自己是失败者</strong
+                >。这也就是为什么，得到知名度相当高、被很多人觊觎的奖励品的获胜者中，很少有人满足于现有头衔而金盆洗手。获胜者，特别是知名获胜者，必须反复证明他们是获胜者。剧本必须被一遍又一遍地演出。头衔必须得到新比赛的捍卫。没有人已经足够富有，足够光荣，足够被赞誉。我们因胜利带来的可见性，只能让不可见的过去所代表的失败将我们抓得更紧。对有限的游戏而言，过去的力量是如此巨大，以至于我们必须找到办法来牢记：我们曾经在斗争中忘记了维护自己的权益。在所有严肃冲突的最深处都有着屈辱的记忆。「记住阿拉莫」、「记住缅因」、「记住
+                珍珠港」，是这些呼喊让美国人投入数次战争中。就因曾经被雅典进攻过一次，波斯的大流士就变得对战争情有独钟，并且让一位侍者跟随左右，时刻在耳边提醒:「陛下，牢记雅典人!」
+              </p>
+              <p>
+                由于无限游戏中可以存在有限游戏，因此无限游戏参与者并不避开有限游戏的表演。相反，他们进入有限游戏时也拥有所有适当的活力和自我遮蔽，但他们这样做的时候并没有有限游戏参与者那样的严肃性。他们把有限游戏的抽象性看作抽象性并接受，因此他们并不是那么严肃地对待有限游戏，而是游戏似的。
+                (「抽象」即从整体中抽取出来代替整体的概念，整体是
+                「具体」。)他们在自己的社交活动中自愿使用面具，但会向自己和他人承认他们在掩饰自己。因此，
+                他们将有限游戏中的每个参与者都视为参与的人，而不是某人扮演的角色。
+              </p>
+              <p>
+                无限游戏参与者通过摆脱自己的自由，进入某个角色的抽象要求，与他人产生关联，他们是与具体的人产生联系的具体人物。因此，<strong>无限游戏无法抽象化，因为它并不是从整体中抽取出来的一部分来代替整体，而是知道这是整体的整体</strong>。我们无法说某个人参与了这个或那个无限游戏，好像游戏规则独立于游戏的具体情况而存在一样。我们只能说，这些人彼此游戏，并且他们开始的游戏无法结束。
+              </p>
+              <p>
+                由于有限游戏旨在达成一个结果，由于它的角色已经写好，并且是在为观众表演，因此我们应该把有限游戏看作做戏似的。虽然剧本和情节似乎并非事先写好，但我们总能回首成功路，发现胜利者显然知道如何行动以及说些什么。由于无限游戏参与者会避开任何结果，向未来保持开放，令所有剧本作废，我们应该称无限游戏为传奇性的。
+              </p>
+              <p>
+                有限游戏中的惊奇是过去对未来的胜利。与不知道对手将做出什么举动的毫无准备的参与者相比，已经知道对手要做出什么举动的王牌参与者拥有决定性的优势。有限游戏参与者经受过训练，知道不仅要预测每一个未来的可能性，而且要去控制未来，防止它改变过去。这就是处于严肃模式中的有限游戏参与者，他们对不可预知的结果心存恐惧。
+              </p>
+              <p>
+                无限游戏中的惊奇，是未来对过去的胜利。<strong>由于无限游戏参与者并不认为过去有结果，因此他们无从知道开始发生了什么</strong>。经过每一次惊奇，过去展现出全新的开端。由于未来总是令人惊讶，因此过去总是在变化。
+              </p>
+              <p>
+                触动(touch)，并不是指两个人的距离减少至零。只有我从自己的心中，同时而原创地回应时，我才真正被触动。但是你必须是从你自己的心中，出自你自己的天才，否则你并未能触动我。触动永远是双向的。
+                除非我以触动你为回应，否则你无法触动我。
+              </p>
+              <p>
+                触动的反面是推动(move)。你将我推向一个你预见或预备好的地方，这就叫做推动。这是一个舞台化的行动，只有在推动我的时候，你保持不动，这个行动才是成功的。我可能被技艺精湛的表演、震撼人心的新闻报导推动掉泪，或者被政治宣传或英雄事迹推动得心旌神荡，但是在这些情景里，我是因某些程序或设计而被感动，相关演员或机构是对此免疫的。当演员被自己的表演弄哭，从剧本性来看，他们便是技艺不精。
+              </p>
+              <p>
+                这意味着，我们只能被不是他们本人的人们所推动。只有在我们不是我们自己，并且是我们不可能成为的人的时候，我们才能被推动。只有作为所有剧本性面具背后的我本人，我才被触动，但与此同时，我也从内部被改变了──而那触动我的人，也一样被触动。设计好的东西不能触动人。实际上，所有设计性的东西，都会被触动所粉碎。触动者和被触动者，所感受的无非是惊讶。<strong
+                  >我们只有遮蔽才能被推动，而穿过遮蔽物，我们得以被触动。</strong
+                >
+              </p>
+              <p>
+                有限的游戏并不拥有自身的时间。它存在于一个世界的固定时间里。观众只允许参与者用这些时间来赢得胜利头衔。被划分为各个时期的时间，是剧本式的时间。一个时代的开始与终结之间的时间流逝，犹如幕与幕之间的一个场景。它不是被人们生活的时间，而是被参赛者和观众同时审视的时间。时间的分期预设了一个存在于游戏边界外的旁观者，他能够同时看到开端与结尾。
+              </p>
+              <p>
+                无限游戏的参与者既不年轻，也不年老，因为他并不生活在别人的时间里。因此，<strong>无限游戏参与者的时间是没有外在尺度的</strong>。对于无限游戏的参与者来说，时间并不流逝。时间的每一瞬间，都是一个开始。每个瞬间都不是某段时期的开始，而是某个事件的开端，它给予时间以特定的性质。对于无限游戏的参与者来说，不存在一个小时的时间这样的东西，只能有一个小时的爱，或者一天的悲伤，一个季节的学习，或者一个时期的劳动。
+              </p>
+              <p>
+                如果有限游戏参与者将生存视为要赢得的奖励，那么死亡就是失败的象征。因此，死亡并不是参与者选择的，而是被强加的。若与死亡的抗争失败了，那么死亡便降临在这个人的身上。死亡是一种审判，是耻辱和弱点的象征。有限游戏参与者的死亡是应得的、自找的。“罪的工价乃是死。”(使徒保罗)
+              </p>
+              <p>
+                <strong
+                  >如果赢得有限游戏的奖励是生命，那么参与者便没有好好地活着</strong
+                >。他们在争夺生命，生命也就不是赛局，⽽是赛局的结果。有限游戏参与者参赛是为了活命，他们没有享受⾃己的参赛。因此，生命是应得的、赋予的、被占有的、赢得的，⽽不是生活的。“⽣活本身似乎只是⽣命的一种手段。”(马克思)
+              </p>
+              <p><strong>参阅资料</strong></p>
+              <ul>
+                <li>
+                  全文摘录自
+                  <a
+                    href="https://book.douban.com/subject/25742296/"
+                    target="_blank"
+                    rel="noopener noreffer"
+                    >《有限与无限的游戏》</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="post-footer" id="post-footer">
+              <div class="post-info">
+                <div class="post-info-line">
+                  <div class="post-info-mod">
+                    <span>更新于 2022-05-04</span>
+                  </div>
+                  <div class="post-info-license"></div>
+                </div>
+                <div class="post-info-line">
+                  <div class="post-info-md">
+                    <span>
+                      <a
+                        class="link-to-markdown"
+                        href="/2022-05-04-games/index.md"
+                        target="_blank"
+                        >阅读原始文档</a
+                      >
+                    </span>
+                  </div>
+                  <div class="post-info-share">
+                    <span
+                      ><a
+                        href="javascript:void(0);"
+                        title="分享到 Twitter"
+                        data-sharer="twitter"
+                        data-url="http://example.org/2022-05-04-games/"
+                        data-title="有限与无限的游戏"
+                        data-hashtags="Philosophy"
+                        ><i class="fab fa-twitter fa-fw"></i></a
+                      ><a
+                        href="javascript:void(0);"
+                        title="分享到 Facebook"
+                        data-sharer="facebook"
+                        data-url="http://example.org/2022-05-04-games/"
+                        data-hashtag="Philosophy"
+                        ><i class="fab fa-facebook-square fa-fw"></i></a
+                      ><a
+                        href="javascript:void(0);"
+                        title="分享到 WhatsApp"
+                        data-sharer="whatsapp"
+                        data-url="http://example.org/2022-05-04-games/"
+                        data-title="有限与无限的游戏"
+                        data-web
+                        ><i class="fab fa-whatsapp fa-fw"></i></a
+                      ><a
+                        href="javascript:void(0);"
+                        title="分享到 Line"
+                        data-sharer="line"
+                        data-url="http://example.org/2022-05-04-games/"
+                        data-title="有限与无限的游戏"
+                        ><i
+                          data-svg-src="/lib/simple-icons/icons/line.min.svg"
+                        ></i></a
+                      ><a
+                        href="javascript:void(0);"
+                        title="分享到 微博"
+                        data-sharer="weibo"
+                        data-url="http://example.org/2022-05-04-games/"
+                        data-title="有限与无限的游戏"
+                        ><i class="fab fa-weibo fa-fw"></i></a
+                      ><a
+                        href="javascript:void(0);"
+                        title="分享到 Myspace"
+                        data-sharer="myspace"
+                        data-url="http://example.org/2022-05-04-games/"
+                        data-title="有限与无限的游戏"
+                        data-description=""
+                        ><i
+                          data-svg-src="/lib/simple-icons/icons/myspace.min.svg"
+                        ></i></a
+                      ><a
+                        href="javascript:void(0);"
+                        title="分享到 Blogger"
+                        data-sharer="blogger"
+                        data-url="http://example.org/2022-05-04-games/"
+                        data-title="有限与无限的游戏"
+                        data-description=""
+                        ><i class="fab fa-blogger fa-fw"></i></a
+                      ><a
+                        href="javascript:void(0);"
+                        title="分享到 Evernote"
+                        data-sharer="evernote"
+                        data-url="http://example.org/2022-05-04-games/"
+                        data-title="有限与无限的游戏"
+                        ><i class="fab fa-evernote fa-fw"></i></a
+                    ></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="post-info-more">
+                <section class="post-tags">
+                  <i class="fas fa-tags fa-fw"></i>&nbsp;<a
+                    href="/tags/philosophy/"
+                    >Philosophy</a
+                  >
+                </section>
+                <section>
+                  <span
+                    ><a
+                      href="javascript:void(0);"
+                      onclick="window.history.back();"
+                      >返回</a
+                    ></span
+                  >&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+                </section>
+              </div>
+
+              <div class="post-nav">
+                <a
+                  href="/2022-03-15-advaita-1/"
+                  class="prev"
+                  rel="prev"
+                  title="观察者与被观察者"
+                  ><i class="fas fa-angle-left fa-fw"></i>观察者与被观察者</a
+                >
+                <a
+                  href="/2022-05-29-advaita-2/"
+                  class="next"
+                  rel="next"
+                  title="没有秘密"
+                  >没有秘密<i class="fas fa-angle-right fa-fw"></i
+                ></a>
+              </div>
+            </div>
+            <div id="comments">
+              <div id="valine" class="comment"></div>
+              <noscript>
+                Please enable JavaScript to view the comments powered by
+                <a href="https://valine.js.org/">Valine</a>.
+              </noscript>
+            </div>
+          </article>
         </div>
+      </main>
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-line">
+            由
+            <a
+              href="https://gohugo.io/"
+              target="_blank"
+              rel="noopener noreffer"
+              title="Hugo 0.82.0"
+              >Hugo</a
+            >
+            强力驱动 | 主题 -
+            <a
+              href="https://github.com/dillonzq/LoveIt"
+              target="_blank"
+              rel="noopener noreffer"
+              title="LoveIt 0.2.10"
+              ><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a
+            >
+          </div>
+          <div class="footer-line">
+            <i class="far fa-copyright fa-fw"></i
+            ><span itemprop="copyrightYear">2019 - 2023</span
+            ><span class="author" itemprop="copyrightHolder"
+              >&nbsp;<a href="https://111hunter.github.io" target="_blank"
+                >浮槎</a
+              ></span
+            >&nbsp;|&nbsp;<span class="license"
+              ><a
+                rel="license external nofollow noopener noreffer"
+                href="https://creativecommons.org/licenses/by-nc/4.0/"
+                target="_blank"
+                >CC BY-NC 4.0</a
+              ></span
+            >
+          </div>
+        </div>
+      </footer>
     </div>
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/philosophy/">Philosophy</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
-        </section>
+    <div id="fixed-buttons">
+      <a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+        <i class="fas fa-arrow-up fa-fw"></i> </a
+      ><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+        <i class="fas fa-comment fa-fw"></i>
+      </a>
     </div>
-
-    <div class="post-nav"><a href="/2022-03-15-advaita-1/" class="prev" rel="prev" title="观察者与被观察者"><i class="fas fa-angle-left fa-fw"></i>观察者与被观察者</a>
-            <a href="/2022-05-29-advaita-2/" class="next" rel="next" title="没有秘密">没有秘密<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-<div id="comments"><div id="valine" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz","appKey":"gK3L6a7r80578qujBez4FH6C","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"欢迎讨论交流","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+    <link rel="stylesheet" href="/lib/valine/valine.min.css" /><link
+      rel="stylesheet"
+      href="/lib/lightgallery/lightgallery.min.css"
+    /><link rel="stylesheet" href="/lib/katex/katex.min.css" /><link
+      rel="stylesheet"
+      href="/lib/katex/copy-tex.min.css"
+    /><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css" />
+    <script type="text/javascript" src="/lib/valine/Valine.min.js"></script>
+    <script
+      type="text/javascript"
+      src="/lib/smooth-scroll/smooth-scroll.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/lib/autocomplete/autocomplete.min.js"
+    ></script>
+    <script type="text/javascript" src="/lib/lunr/lunr.min.js"></script>
+    <script
+      type="text/javascript"
+      src="/lib/lunr/lunr.stemmer.support.min.js"
+    ></script>
+    <script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script>
+    <script
+      type="text/javascript"
+      src="/lib/lazysizes/lazysizes.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/lib/lightgallery/lightgallery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/lib/lightgallery/lg-thumbnail.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/lib/lightgallery/lg-zoom.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/lib/clipboard/clipboard.min.js"
+    ></script>
+    <script type="text/javascript" src="/lib/sharer/sharer.min.js"></script>
+    <script type="text/javascript" src="/lib/katex/katex.min.js"></script>
+    <script type="text/javascript" src="/lib/katex/auto-render.min.js"></script>
+    <script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script>
+    <script type="text/javascript" src="/lib/katex/mhchem.min.js"></script>
+    <script
+      type="text/javascript"
+      src="/lib/cookieconsent/cookieconsent.min.js"
+    ></script>
+    <script type="text/javascript">
+      window.config = {
+        code: { copyTitle: "复制到剪贴板", maxShownLines: 100 },
+        comment: {
+          valine: {
+            appId: "GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz",
+            appKey: "gK3L6a7r80578qujBez4FH6C",
+            avatar: "mp",
+            el: "#valine",
+            emojiCDN:
+              "https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/",
+            emojiMaps: {
+              100: "1f4af.png",
+              alien: "1f47d.png",
+              anger: "1f4a2.png",
+              angry: "1f620.png",
+              anguished: "1f627.png",
+              astonished: "1f632.png",
+              black_heart: "1f5a4.png",
+              blue_heart: "1f499.png",
+              blush: "1f60a.png",
+              bomb: "1f4a3.png",
+              boom: "1f4a5.png",
+              broken_heart: "1f494.png",
+              brown_heart: "1f90e.png",
+              clown_face: "1f921.png",
+              cold_face: "1f976.png",
+              cold_sweat: "1f630.png",
+              confounded: "1f616.png",
+              confused: "1f615.png",
+              cry: "1f622.png",
+              crying_cat_face: "1f63f.png",
+              cupid: "1f498.png",
+              dash: "1f4a8.png",
+              disappointed: "1f61e.png",
+              disappointed_relieved: "1f625.png",
+              dizzy: "1f4ab.png",
+              dizzy_face: "1f635.png",
+              drooling_face: "1f924.png",
+              exploding_head: "1f92f.png",
+              expressionless: "1f611.png",
+              face_vomiting: "1f92e.png",
+              face_with_cowboy_hat: "1f920.png",
+              face_with_hand_over_mouth: "1f92d.png",
+              face_with_head_bandage: "1f915.png",
+              face_with_monocle: "1f9d0.png",
+              face_with_raised_eyebrow: "1f928.png",
+              face_with_rolling_eyes: "1f644.png",
+              face_with_symbols_on_mouth: "1f92c.png",
+              face_with_thermometer: "1f912.png",
+              fearful: "1f628.png",
+              flushed: "1f633.png",
+              frowning: "1f626.png",
+              ghost: "1f47b.png",
+              gift_heart: "1f49d.png",
+              green_heart: "1f49a.png",
+              grimacing: "1f62c.png",
+              grin: "1f601.png",
+              grinning: "1f600.png",
+              hankey: "1f4a9.png",
+              hear_no_evil: "1f649.png",
+              heart: "2764-fe0f.png",
+              heart_decoration: "1f49f.png",
+              heart_eyes: "1f60d.png",
+              heart_eyes_cat: "1f63b.png",
+              heartbeat: "1f493.png",
+              heartpulse: "1f497.png",
+              heavy_heart_exclamation_mark_ornament: "2763-fe0f.png",
+              hole: "1f573-fe0f.png",
+              hot_face: "1f975.png",
+              hugging_face: "1f917.png",
+              hushed: "1f62f.png",
+              imp: "1f47f.png",
+              innocent: "1f607.png",
+              japanese_goblin: "1f47a.png",
+              japanese_ogre: "1f479.png",
+              joy: "1f602.png",
+              joy_cat: "1f639.png",
+              kiss: "1f48b.png",
+              kissing: "1f617.png",
+              kissing_cat: "1f63d.png",
+              kissing_closed_eyes: "1f61a.png",
+              kissing_heart: "1f618.png",
+              kissing_smiling_eyes: "1f619.png",
+              laughing: "1f606.png",
+              left_speech_bubble: "1f5e8-fe0f.png",
+              love_letter: "1f48c.png",
+              lying_face: "1f925.png",
+              mask: "1f637.png",
+              money_mouth_face: "1f911.png",
+              nauseated_face: "1f922.png",
+              nerd_face: "1f913.png",
+              neutral_face: "1f610.png",
+              no_mouth: "1f636.png",
+              open_mouth: "1f62e.png",
+              orange_heart: "1f9e1.png",
+              partying_face: "1f973.png",
+              pensive: "1f614.png",
+              persevere: "1f623.png",
+              pleading_face: "1f97a.png",
+              pouting_cat: "1f63e.png",
+              purple_heart: "1f49c.png",
+              rage: "1f621.png",
+              relaxed: "263a-fe0f.png",
+              relieved: "1f60c.png",
+              revolving_hearts: "1f49e.png",
+              right_anger_bubble: "1f5ef-fe0f.png",
+              robot_face: "1f916.png",
+              rolling_on_the_floor_laughing: "1f923.png",
+              scream: "1f631.png",
+              scream_cat: "1f640.png",
+              see_no_evil: "1f648.png",
+              shushing_face: "1f92b.png",
+              skull: "1f480.png",
+              skull_and_crossbones: "2620-fe0f.png",
+              sleeping: "1f634.png",
+              sleepy: "1f62a.png",
+              slightly_frowning_face: "1f641.png",
+              slightly_smiling_face: "1f642.png",
+              smile: "1f604.png",
+              smile_cat: "1f638.png",
+              smiley: "1f603.png",
+              smiley_cat: "1f63a.png",
+              smiling_face_with_3_hearts: "1f970.png",
+              smiling_imp: "1f608.png",
+              smirk: "1f60f.png",
+              smirk_cat: "1f63c.png",
+              sneezing_face: "1f927.png",
+              sob: "1f62d.png",
+              space_invader: "1f47e.png",
+              sparkling_heart: "1f496.png",
+              speak_no_evil: "1f64a.png",
+              speech_balloon: "1f4ac.png",
+              "star-struck": "1f929.png",
+              stuck_out_tongue: "1f61b.png",
+              stuck_out_tongue_closed_eyes: "1f61d.png",
+              stuck_out_tongue_winking_eye: "1f61c.png",
+              sunglasses: "1f60e.png",
+              sweat: "1f613.png",
+              sweat_drops: "1f4a6.png",
+              sweat_smile: "1f605.png",
+              thinking_face: "1f914.png",
+              thought_balloon: "1f4ad.png",
+              tired_face: "1f62b.png",
+              triumph: "1f624.png",
+              two_hearts: "1f495.png",
+              unamused: "1f612.png",
+              upside_down_face: "1f643.png",
+              weary: "1f629.png",
+              white_frowning_face: "2639-fe0f.png",
+              white_heart: "1f90d.png",
+              wink: "1f609.png",
+              woozy_face: "1f974.png",
+              worried: "1f61f.png",
+              yawning_face: "1f971.png",
+              yellow_heart: "1f49b.png",
+              yum: "1f60b.png",
+              zany_face: "1f92a.png",
+              zipper_mouth_face: "1f910.png",
+              zzz: "1f4a4.png",
+            },
+            enableQQ: false,
+            highlight: true,
+            lang: "zh-cn",
+            pageSize: 10,
+            placeholder: "欢迎讨论交流",
+            recordIP: true,
+            visitor: true,
+          },
+        },
+        cookieconsent: {
+          content: {
+            dismiss: "同意",
+            link: "了解更多",
+            message: "本网站使用 Cookies 来改善您的浏览体验.",
+          },
+          enable: true,
+          palette: {
+            button: { background: "#f0f0f0" },
+            popup: { background: "#1aa3ff" },
+          },
+          theme: "edgeless",
+        },
+        lightGallery: {
+          actualSize: false,
+          exThumbImage: "data-thumbnail",
+          hideBarsDelay: 2000,
+          selector: ".lightgallery",
+          speed: 400,
+          thumbContHeight: 80,
+          thumbWidth: 80,
+          thumbnail: true,
+        },
+        math: {
+          delimiters: [
+            { display: true, left: "$$", right: "$$" },
+            { display: true, left: "\\[", right: "\\]" },
+            { display: false, left: "$", right: "$" },
+            { display: false, left: "\\(", right: "\\)" },
+          ],
+          strict: false,
+        },
+        search: {
+          highlightTag: "em",
+          lunrIndexURL: "/index.json",
+          lunrLanguageCode: "zh",
+          lunrSegmentitURL: "/lib/lunr/lunr.segmentit.js",
+          maxResultLength: 10,
+          noResultsFound: "没有找到结果",
+          snippetLength: 50,
+          type: "lunr",
+        },
+      };
+    </script>
+    <script type="text/javascript" src="/js/theme.min.js"></script>
+  </body>
 </html>

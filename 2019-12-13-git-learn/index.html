@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2019-12-13-git-learn\/"
-        },"genre": "posts","keywords": "Git","wordcount":  2113 ,
+        },"genre": "posts","keywords": "Git","wordcount":  2046 ,
         "url": "http:\/\/example.org\/2019-12-13-git-learn\/","datePublished": "2019-12-13T15:48:16+08:00","dateModified": "2019-12-13T15:48:16+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Git 快速上手指南</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-13">2019-12-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2113 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-13">2019-12-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2046 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/2019-12-13-git-learn/" class="leancloud_visitors" data-flag-title="Git 快速上手指南">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -150,10 +150,10 @@
 <h2 id="1-使用帮助">1. 使用帮助</h2>
 <p><code>$ git help</code> 可以查看 git 常用命令</p>
 <p><code>$ git help -a</code> 可以查看 git 所有命令，F 或者 空格 向下查看命令，B 向上查看命令，Q 退出 git-cli</p>
-<p><code>$ git help add</code>  help后接一个指令可以查看该指令的详细用法</p>
+<p><code>$ git help add</code> help 后接一个指令可以查看该指令的详细用法</p>
 <h2 id="2-git-配置范围">2. git 配置范围</h2>
 <p>git 配置分为三个范围 system, global 和 项目范围
-<br>一般选择global进行配置 <code>$ git config --global user.name '111hunter' </code></p>
+<br>一般选择 global 进行配置 <code>$ git config --global user.name '111hunter' </code></p>
 <p><code>$ git config --list</code> 查看当前配置信息</p>
 <p><code>$ git config --unset --global user.name</code> 取消 user.name 配置</p>
 <p>配置文件是当前用户主目录 <code>$ cat ~/.gitconfig</code></p>
@@ -166,7 +166,7 @@
 <p><code>$ git add .</code> 提交所有文件到暂存区</p>
 <p><code>$ git commit -m &quot;first commit&quot;</code> 暂存区文件提交仓库区</p>
 <p><code>$ git log</code> 查看提交日志信息</p>
-<p><code>$ vim index.html</code> 将index.html中 charset=&ldquo;UTF-8&rdquo; 改为 charset=&ldquo;GBK&rdquo;</p>
+<p><code>$ vim index.html</code> 将 index.html 中 charset=&ldquo;UTF-8&rdquo; 改为 charset=&ldquo;GBK&rdquo;</p>
 <p><code>$ git status</code> 查看文件状态</p>
 <p><code>$ git diff index.html</code> 查看暂存区文件与本地工作区的对比</p>
 <p><code>$ git diff --staged</code> 查看仓库区与暂存区对比，此时一致</p>
@@ -179,7 +179,7 @@
 <p><code>$ git status</code> 查看文件状态</p>
 <p><code>$ git add . &amp;&amp; git commit -m &quot;新增meta标签&quot;</code> 工作区文件提交到仓库</p>
 <h3 id="重命名-git-已跟踪文件">重命名 git 已跟踪文件</h3>
-<p><code>$ touch style.css &amp;&amp; vim style.css</code> 新建css文件</p>
+<p><code>$ touch style.css &amp;&amp; vim style.css</code> 新建 css 文件</p>
 <p><code>$ mv style.css theme.css</code> 修改文件名</p>
 <p><code>$ git status</code> 查看文件状态</p>
 <p><code>$ git rm style.css &amp;&amp; git add theme.css</code> 就能修改文件名字</p>
@@ -190,9 +190,9 @@
 <p><code>$ git mv aha.css /css</code> 移动文件</p>
 <p><code>$ git commit -m &quot;move aha.css&quot;</code> 上传仓库区</p>
 <h3 id="git-删除文件与恢复">git 删除文件与恢复</h3>
-<p><code>$ git rm index.html</code> 从工作区与暂存区中删除index.html</p>
-<p><code>$ git checkout HEAD -- index.html</code> HEAD 指针指向最近一次提交， &ndash; 表示当前分支，将index.html恢复到当前 commit 的状态</p>
-<p><code>$ git rm index.html &amp;&amp; git commit -m &quot;删除了index.html&quot;</code> 从工作区与暂存区中删除index.html, 并提交仓库</p>
+<p><code>$ git rm index.html</code> 从工作区与暂存区中删除 index.html</p>
+<p><code>$ git checkout HEAD -- index.html</code> HEAD 指针指向最近一次提交， &ndash; 表示当前分支，将 index.html 恢复到当前 commit 的状态</p>
+<p><code>$ git rm index.html &amp;&amp; git commit -m &quot;删除了index.html&quot;</code> 从工作区与暂存区中删除 index.html, 并提交仓库</p>
 <p><code>$ git checkout &quot;HEAD^&quot; -- index.html</code> 恢复到上一次提交，windows cmd 中 ^ 会被当做换行处理，需要加上引号</p>
 <h3 id="git-恢复某个操作状态">git 恢复某个操作状态</h3>
 <p>在 css 文件夹引入 bootstrap</p>
@@ -205,9 +205,9 @@
 <p><code>git revert 981eb52</code> 撤销对 bootstrap 的提交，查看工作区文件夹发现 index.html 对 bootstrap 的引入消失了</p>
 <p>每次 git commit 后 HEAD 都会指向最后一次提交，用 git reset 可以帮助回到某次提交时的状态，有 3 个可选配置参数: &ndash;mixed, &ndash;soft, &ndash;hard</p>
 <ul>
-<li>&ndash;soft 软重置，不会修改任何文件状态。该参数用于git commit后，又要恢复还没commit的场景，重新审查代码，然后再推上去覆盖之后的提交。</li>
+<li>&ndash;soft 软重置，不会修改任何文件状态。该参数用于 git commit 后，又要恢复还没 commit 的场景，重新审查代码，然后再推上去覆盖之后的提交。</li>
 </ul>
-<p><code>$ git log --oneline</code> 查看添加 jquery 的 id 为 e9ae8b5，Revert &ldquo;添加了bootstrap&quot;的 id 为 3e3da01</p>
+<p><code>$ git log --oneline</code> 查看添加 jquery 的 id 为 e9ae8b5，Revert &ldquo;添加了 bootstrap&quot;的 id 为 3e3da01</p>
 <p><code>$ git reset --soft e9ae8b5</code> 回到提交 jquey 的 commit，但是不会对文件做任何操作</p>
 <p><code>$ git status</code> 会提示 撤销 bootstrap 时的消息</p>
 <ul>
@@ -217,7 +217,7 @@
 <ul>
 <li>&ndash;hard 会直接重置暂存区和工作区文件到指定 id 状态，用 git reset &ndash;hard 可直接在不同提交状态切换。</li>
 </ul>
-<p><code>$ git reset --hard e9ae8b5 &amp;&amp; git log --oneline</code> 查看工作区文件发现 bootstrap又回来了</p>
+<p><code>$ git reset --hard e9ae8b5 &amp;&amp; git log --oneline</code> 查看工作区文件发现 bootstrap 又回来了</p>
 <p><code>$ git reset --hard 3e3da01 &amp;&amp; git log --oneline</code> 文件又到了最后一次提交时的状态</p>
 <h2 id="4-git-项目分支">4. git 项目分支</h2>
 <p><code>$ git branch testing &amp;&amp; git checkout testing</code> 新建并切换分支，此时对文件的修改只影响 branch 分支</p>
@@ -253,7 +253,7 @@
 <p><code>$ git remote -v</code> 查看是否关联, fetch 远程用来提取，push 远程用来推送</p>
 <p><code>$ git push -u origin master</code> 推送到远程分支，并跟踪远程分支变化</p>
 <p><code>$ git push origin testing</code> 推送远程分支，不跟踪变化</p>
-<p><strong>参考资料</strong></p>
+<p><strong>参阅资料</strong></p>
 <ul>
 <li><a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener noreffer">廖雪峰的 git 教程</a></li>
 </ul>

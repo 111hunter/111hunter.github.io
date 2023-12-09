@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-07-13-rbac0\/"
-        },"genre": "posts","keywords": "Node.js","wordcount":  967 ,
+        },"genre": "posts","keywords": "Node.js","wordcount":  958 ,
         "url": "http:\/\/example.org\/2020-07-13-rbac0\/","datePublished": "2020-07-13T17:45:00+08:00","dateModified": "2020-07-13T17:45:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">RBAC0 权限设计实例</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-13">2020-07-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 967 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-13">2020-07-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 958 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/2020-07-13-rbac0/" class="leancloud_visitors" data-flag-title="RBAC0 权限设计实例">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -125,8 +125,8 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>权限管理是所有后台系统的都会涉及的一个重要组成部分，主要目的是对不同的人访问资源进行权限的控制，避免因权限控制缺失或操作不当引发的风险问题，如操作错误，隐私数据泄露等问题。</p>
-<p>迄今为止最为普及的权限设计模型是RBAC模型,基于角色的访问控制（Role-Based Access Control)，而 RBAC 模型又可以细分为 RBAC0，RBAC1，RBAC2，RBAC3。</p>
-<p>本文介绍 RBAC0, 这是权限最基础也是最核心的模型，其他复杂模型也是建立在 RBAC0 之上的。关于 RBAC 还有很多重要理论，具体可参考知乎上的这篇 <a href="https://zhuanlan.zhihu.com/p/73414693" target="_blank" rel="noopener noreffer">权限系统设计</a> 和这篇 <a href="https://zhuanlan.zhihu.com/p/63775995" target="_blank" rel="noopener noreffer">RBAC理念</a>。本文将带领读者体会 RBAC0 的实践运用，实现 RBAC0 的关键在建立 <strong>用户-角色-权限</strong> 之间的多对多关系。</p>
+<p>迄今为止最为普及的权限设计模型是 RBAC 模型,基于角色的访问控制（Role-Based Access Control)，而 RBAC 模型又可以细分为 RBAC0，RBAC1，RBAC2，RBAC3。</p>
+<p>本文介绍 RBAC0, 这是权限最基础也是最核心的模型，其他复杂模型也是建立在 RBAC0 之上的。关于 RBAC 还有很多重要理论，具体可参考知乎上的这篇 <a href="https://zhuanlan.zhihu.com/p/73414693" target="_blank" rel="noopener noreffer">权限系统设计</a> 和这篇 <a href="https://zhuanlan.zhihu.com/p/63775995" target="_blank" rel="noopener noreffer">RBAC 理念</a>。本文将带领读者体会 RBAC0 的实践运用，实现 RBAC0 的关键在建立 <strong>用户-角色-权限</strong> 之间的多对多关系。</p>
 <p><figure><a class="lightgallery" href="/img/rbac-permission.jpg" title="RBAC权限模型" data-thumbnail="/img/rbac-permission.jpg" data-sub-html="<h2>RBAC权限模型</h2><p>RBAC权限模型</p>">
         <img
             class="lazyload"
@@ -212,13 +212,14 @@
     </a><figcaption class="image-caption">访问所有页面的权限</figcaption>
     </figure></p>
 <p>根据用户角色来决定页面的数据，这样就实现了 RBAC0 的基本模型。</p>
-<p><strong>参考资料</strong></p>
+<p><strong>参阅资料</strong></p>
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/73414693" target="_blank" rel="noopener noreffer">可能是史上最全的权限系统设计</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/63775995" target="_blank" rel="noopener noreffer">RBAC理念</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/63775995" target="_blank" rel="noopener noreffer">RBAC 理念</a></li>
 <li><a href="https://bezkoder.com/react-express-authentication-jwt/" target="_blank" rel="noopener noreffer">实例程序讲解</a></li>
 </ul>
-<!-- <div align=center><img src="/img/node-rbac.png" width="60%"></div> --></div><div class="post-footer" id="post-footer">
+<!-- <div align=center><img src="/img/node-rbac.png" width="60%"></div> -->
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

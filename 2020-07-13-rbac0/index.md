@@ -3,9 +3,9 @@
 
 权限管理是所有后台系统的都会涉及的一个重要组成部分，主要目的是对不同的人访问资源进行权限的控制，避免因权限控制缺失或操作不当引发的风险问题，如操作错误，隐私数据泄露等问题。
 
-迄今为止最为普及的权限设计模型是RBAC模型,基于角色的访问控制（Role-Based Access Control)，而 RBAC 模型又可以细分为 RBAC0，RBAC1，RBAC2，RBAC3。
+迄今为止最为普及的权限设计模型是 RBAC 模型,基于角色的访问控制（Role-Based Access Control)，而 RBAC 模型又可以细分为 RBAC0，RBAC1，RBAC2，RBAC3。
 
-本文介绍 RBAC0, 这是权限最基础也是最核心的模型，其他复杂模型也是建立在 RBAC0 之上的。关于 RBAC 还有很多重要理论，具体可参考知乎上的这篇 [权限系统设计](https://zhuanlan.zhihu.com/p/73414693) 和这篇 [RBAC理念](https://zhuanlan.zhihu.com/p/63775995)。本文将带领读者体会 RBAC0 的实践运用，实现 RBAC0 的关键在建立 **用户-角色-权限** 之间的多对多关系。
+本文介绍 RBAC0, 这是权限最基础也是最核心的模型，其他复杂模型也是建立在 RBAC0 之上的。关于 RBAC 还有很多重要理论，具体可参考知乎上的这篇 [权限系统设计](https://zhuanlan.zhihu.com/p/73414693) 和这篇 [RBAC 理念](https://zhuanlan.zhihu.com/p/63775995)。本文将带领读者体会 RBAC0 的实践运用，实现 RBAC0 的关键在建立 **用户-角色-权限** 之间的多对多关系。
 
 ![RBAC权限模型](/img/rbac-permission.jpg "RBAC权限模型")
 
@@ -26,7 +26,6 @@
 对网站用户开放的页面：
 
 - 对 User 开放的页面(用户页面)：访客页面, profile, user
-
 
 ![用户权限展示的页面](/img/rbac-profile.png "用户权限展示的页面")
 
@@ -54,12 +53,11 @@ User, Admin 访问 mod 页面, Moderator 访问 admin 页面的显示结果同�
 
 根据用户角色来决定页面的数据，这样就实现了 RBAC0 的基本模型。
 
-**参考资料**
+**参阅资料**
 
 - [可能是史上最全的权限系统设计](https://zhuanlan.zhihu.com/p/73414693)
-- [RBAC理念](https://zhuanlan.zhihu.com/p/63775995)
+- [RBAC 理念](https://zhuanlan.zhihu.com/p/63775995)
 - [实例程序讲解](https://bezkoder.com/react-express-authentication-jwt/)
 
-
-
 <!-- <div align=center><img src="/img/node-rbac.png" width="60%"></div> -->
+
