@@ -3,7 +3,14 @@
         <title>Thinking - 分类 - 浮槎的博客</title>
         <link>http://example.org/categories/thinking/</link>
         <description>Thinking - 分类 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 06 Dec 2023 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 17 Dec 2023 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+    <title>提倡者 (INFJ-A)</title>
+    <link>http://example.org/2023-12-17-mbti/</link>
+    <pubDate>Sun, 17 Dec 2023 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2023-12-17-mbti/</guid>
+    <description><![CDATA[对待人们就像对待他们应该成为的人一样，您可以帮助他们成为他们有能力成为的人。 — 约翰·沃尔夫冈·冯·歌德 倡导者可能是最稀有的人格类型，但他们肯]]></description>
+</item><item>
     <title>现世戏剧</title>
     <link>http://example.org/2023-12-06-performer/</link>
     <pubDate>Wed, 06 Dec 2023 10:50:34 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>http://example.org/2022-02-01-samadhi-3/</guid>
     <description><![CDATA[无名，天地之始。有名，万物之母。 —《道德经》 容我慎重地提醒你生与死是至高无上的。时光匆匆，机会转瞬即逝。我们每个人都应努力觉醒。觉醒。谨慎，]]></description>
-</item><item>
-    <title>非你所想</title>
-    <link>http://example.org/2021-12-03-samadhi-2/</link>
-    <pubDate>Fri, 03 Dec 2021 10:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2021-12-03-samadhi-2/</guid>
-    <description><![CDATA[镜子互相反射，而影子又再次互相反射以至无穷，一个层面的变化会导致所有层面的同时变化。 — 纪录片《三摩地》 从古至今，世界上最伟大的精神导师都认为]]></description>
 </item></channel>
 </rss>

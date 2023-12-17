@@ -3,7 +3,14 @@
         <title>所有文章 - 浮槎的博客</title>
         <link>http://example.org/posts/</link>
         <description>所有文章 | 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 06 Dec 2023 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 17 Dec 2023 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>提倡者 (INFJ-A)</title>
+    <link>http://example.org/2023-12-17-mbti/</link>
+    <pubDate>Sun, 17 Dec 2023 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2023-12-17-mbti/</guid>
+    <description><![CDATA[对待人们就像对待他们应该成为的人一样，您可以帮助他们成为他们有能力成为的人。 — 约翰·沃尔夫冈·冯·歌德 倡导者可能是最稀有的人格类型，但他们肯]]></description>
+</item><item>
     <title>现世戏剧</title>
     <link>http://example.org/2023-12-06-performer/</link>
     <pubDate>Wed, 06 Dec 2023 10:50:34 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>http://example.org/2022-05-29-advaita-2/</guid>
     <description><![CDATA[有苦而无什么受苦者， 有作而无作者的存在， 有灭而无入灭者， 有道却无行者的存在。 —《清净道论》 独立的事物存在于想象中，不存在于现实世界。宇宙是整]]></description>
-</item><item>
-    <title>观察者与被观察者</title>
-    <link>http://example.org/2022-03-15-advaita-1/</link>
-    <pubDate>Tue, 15 Mar 2022 10:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2022-03-15-advaita-1/</guid>
-    <description><![CDATA[只要它是个中心，它的空间就必定永远受限。对吗？所以只要存在中心，空间就必定永远受到限制，就像一个住在监狱里的囚徒，他有在院子里散步的自由，但]]></description>
 </item></channel>
 </rss>
