@@ -90,6 +90,3 @@ INFJ 的本性中有真善美的特点，他们非常在意别人的真诚与否
 **推荐阅读**
 
 - [《佛陀的启示》](https://nanda.online-dhamma.net/a-path-to-freedom/what-the-Buddha-taught/what-the-Buddha-taught-full/)
-
-
-
