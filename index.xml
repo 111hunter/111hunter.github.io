@@ -3,9 +3,16 @@
         <title>浮槎的博客</title>
         <link>http://example.org/</link>
         <description>空空如也，我叩其两端而竭焉。</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 19 Dec 2023 10:50:34 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 28 Dec 2023 21:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>如其本来</title>
+    <link>http://example.org/2023-12-28-time-3/</link>
+    <pubDate>Thu, 28 Dec 2023 21:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2023-12-28-time-3/</guid>
+    <description><![CDATA[生和死，如同阴和阳，是一个不可分割的连续体。持续地进行，没有开始，也没有结束。 — 纪录片《三摩地》 须菩提！如我昔为歌利王割截身体，我于尔时，无]]></description>
+</item><item>
     <title>虚拟 — 膨胀出全息世界</title>
     <link>http://example.org/2023-12-19-itp/</link>
     <pubDate>Tue, 19 Dec 2023 10:50:34 &#43;0800</pubDate>
@@ -25,7 +32,7 @@
     <pubDate>Sun, 17 Dec 2023 10:50:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2023-12-17-mbti/</guid>
-    <description><![CDATA[提倡者 (INFJ-A)提倡者 (INFJ-A) " 提倡者 (INFJ-A) 对待人们就像对待他们应该成为的人一样，您可以帮助他们成为他们有能力成为的人。 — 约翰·沃尔夫冈·冯·歌]]></description>
+    <description><![CDATA[无法达成的目标才是我的目标，迂回曲折的路才是我想走的路，而每次的歇息，总是带来新的向往；等走过更多迂回曲折的路，等无数美梦成真后，我才会感到]]></description>
 </item><item>
     <title>现世戏剧</title>
     <link>http://example.org/2023-12-06-performer/</link>
@@ -68,12 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2023-05-02-zkp/</guid>
     <description><![CDATA[在密码学中，了解数字签名工作原理的最好方法是了解它的起源。因此，让我们花点儿时间简要介绍一下零知识证明(ZKP)，然后重新讨论数字签名。 想象]]></description>
-</item><item>
-    <title>我没有任何信仰</title>
-    <link>http://example.org/2022-08-14-faith/</link>
-    <pubDate>Sun, 14 Aug 2022 10:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2022-08-14-faith/</guid>
-    <description><![CDATA[我没有任何信仰，我不愿意属于任何宗教组织，请你们务必谅解这点。我坚持主张没有任何宗教组织能引领人们见到真理，如果为了这个目的而成立人为组织，]]></description>
 </item></channel>
 </rss>
