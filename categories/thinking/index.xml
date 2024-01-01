@@ -3,13 +3,20 @@
         <title>Thinking - 分类 - 浮槎的博客</title>
         <link>http://example.org/categories/thinking/</link>
         <description>Thinking - 分类 - 浮槎的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 28 Dec 2023 21:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 01 Jan 2024 11:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+    <title>自我认识</title>
+    <link>http://example.org/2024-01-01-advaita-5/</link>
+    <pubDate>Mon, 01 Jan 2024 11:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2024-01-01-advaita-5/</guid>
+    <description><![CDATA[你和我就是问题所在，而不是世界，因为世界就是我们自身的投射。 — 克里希那穆提 有这样一个故事: 一位年轻记者在机场发现了一位僧人，并决定采访他。他]]></description>
+</item><item>
     <title>如其本来</title>
     <link>http://example.org/2023-12-28-time-3/</link>
     <pubDate>Thu, 28 Dec 2023 21:50:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2023-12-28-time-3/</guid>
-    <description><![CDATA[生和死，如同阴和阳，是一个不可分割的连续体。持续地进行，没有开始，也没有结束。 — 纪录片《三摩地》 须菩提！如我昔为歌利王割截身体，我于尔时，无]]></description>
+    <description><![CDATA[看到事物本来是什么，而不是看到你希望看到的事物是什么。思想的愿望是一种成为，通过比较与选择来逃避当下，引入了时间，继而滋生出更多思想，我们要]]></description>
 </item><item>
     <title>虚拟 — 膨胀出全息世界</title>
     <link>http://example.org/2023-12-19-itp/</link>
@@ -44,7 +51,7 @@
     <pubDate>Tue, 28 Nov 2023 20:50:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2023-11-28-advaita-4/</guid>
-    <description><![CDATA[当你认识到选择的无益，觉察就会自发地产生。 — 克里希那穆提 有这样一个故事: 一位年轻记者在机场发现了一位佛教僧人，并决定采访他。他问僧人: “先生]]></description>
+    <description><![CDATA[当你认识到选择的无益，觉察就会自发地产生。 — 克里希那穆提 无论我说了什么，无论任何人说了什么，无论经典说了什么，全都是概念。我们需要概念以便沟]]></description>
 </item><item>
     <title>清除心中的陈迹</title>
     <link>http://example.org/2023-10-05-time-2/</link>
@@ -66,12 +73,5 @@
     <author>作者</author>
     <guid>http://example.org/2023-10-04-advaita-3/</guid>
     <description><![CDATA[观念能产生行动吗？还是观念只是塑造了思想，因此限制了行动？ — 克里希那穆提 我想讨论一下行动的问题。一开始也许是相当深奥和困难的，但是我希望通过]]></description>
-</item><item>
-    <title>我没有任何信仰</title>
-    <link>http://example.org/2022-08-14-faith/</link>
-    <pubDate>Sun, 14 Aug 2022 10:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2022-08-14-faith/</guid>
-    <description><![CDATA[我没有任何信仰，我不愿意属于任何宗教组织，请你们务必谅解这点。我坚持主张没有任何宗教组织能引领人们见到真理，如果为了这个目的而成立人为组织，]]></description>
 </item></channel>
 </rss>

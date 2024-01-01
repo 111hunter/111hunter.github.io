@@ -3,15 +3,22 @@
         <title>浮槎的博客</title>
         <link>http://example.org/</link>
         <description>空空如也，我叩其两端而竭焉。</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 28 Dec 2023 21:50:34 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 01 Jan 2024 11:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>自我认识</title>
+    <link>http://example.org/2024-01-01-advaita-5/</link>
+    <pubDate>Mon, 01 Jan 2024 11:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2024-01-01-advaita-5/</guid>
+    <description><![CDATA[你和我就是问题所在，而不是世界，因为世界就是我们自身的投射。 — 克里希那穆提 有这样一个故事: 一位年轻记者在机场发现了一位僧人，并决定采访他。他]]></description>
+</item><item>
     <title>如其本来</title>
     <link>http://example.org/2023-12-28-time-3/</link>
     <pubDate>Thu, 28 Dec 2023 21:50:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2023-12-28-time-3/</guid>
-    <description><![CDATA[生和死，如同阴和阳，是一个不可分割的连续体。持续地进行，没有开始，也没有结束。 — 纪录片《三摩地》 须菩提！如我昔为歌利王割截身体，我于尔时，无]]></description>
+    <description><![CDATA[看到事物本来是什么，而不是看到你希望看到的事物是什么。思想的愿望是一种成为，通过比较与选择来逃避当下，引入了时间，继而滋生出更多思想，我们要]]></description>
 </item><item>
     <title>虚拟 — 膨胀出全息世界</title>
     <link>http://example.org/2023-12-19-itp/</link>
@@ -46,7 +53,7 @@
     <pubDate>Tue, 28 Nov 2023 20:50:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2023-11-28-advaita-4/</guid>
-    <description><![CDATA[当你认识到选择的无益，觉察就会自发地产生。 — 克里希那穆提 有这样一个故事: 一位年轻记者在机场发现了一位佛教僧人，并决定采访他。他问僧人: “先生]]></description>
+    <description><![CDATA[当你认识到选择的无益，觉察就会自发地产生。 — 克里希那穆提 无论我说了什么，无论任何人说了什么，无论经典说了什么，全都是概念。我们需要概念以便沟]]></description>
 </item><item>
     <title>清除心中的陈迹</title>
     <link>http://example.org/2023-10-05-time-2/</link>
@@ -68,12 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2023-10-04-advaita-3/</guid>
     <description><![CDATA[观念能产生行动吗？还是观念只是塑造了思想，因此限制了行动？ — 克里希那穆提 我想讨论一下行动的问题。一开始也许是相当深奥和困难的，但是我希望通过]]></description>
-</item><item>
-    <title>零知识证明 — 数字签名的起源</title>
-    <link>http://example.org/2023-05-02-zkp/</link>
-    <pubDate>Tue, 02 May 2023 10:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2023-05-02-zkp/</guid>
-    <description><![CDATA[在密码学中，了解数字签名工作原理的最好方法是了解它的起源。因此，让我们花点儿时间简要介绍一下零知识证明(ZKP)，然后重新讨论数字签名。 想象]]></description>
 </item></channel>
 </rss>
