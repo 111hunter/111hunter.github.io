@@ -18,19 +18,19 @@
     <guid>http://example.org/2021-05-02-docker/</guid>
     <description><![CDATA[Docker 包括三个基本概念: Image(镜像)、Container(容器)、Repository(仓库)，理解了这三个概念，就理解了 Docker 的整个生命周期]]></description>
 </item><item>
-    <title>[译]元编程</title>
-    <link>http://example.org/2021-01-21-metaprogram/</link>
-    <pubDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2021-01-21-metaprogram/</guid>
-    <description><![CDATA[本文翻译自 stereobooster 的博客文章：metaprogramming，少量删改。完整内容参阅原文。 什么是元编程 不好的是，没有一个达成共识的单一定义。让我们]]></description>
-</item><item>
     <title>实现 λ 演算解释器</title>
     <link>http://example.org/2020-12-13-%CE%BB-interpreter/</link>
     <pubDate>Sun, 13 Dec 2020 09:50:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2020-12-13-%CE%BB-interpreter/</guid>
     <description><![CDATA[如果你没有听说过 λ 演算，可以阅读我的这篇文章。如果你没有编译原理相关知识，可以阅读我的这篇文章。首先介绍调度场算法，后面的实现中会用到。 调度]]></description>
+</item><item>
+    <title>了解防抖与节流</title>
+    <link>http://example.org/2020-11-10-js-closure/</link>
+    <pubDate>Tue, 10 Nov 2020 22:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-11-10-js-closure/</guid>
+    <description><![CDATA[在前端开发的过程中，我们经常需要绑定一些持续触发的事件，如 resize、scroll、mousemove 等，然而有些时候我们并不希望在事件持]]></description>
 </item><item>
     <title>以 useEffect 为圆心</title>
     <link>http://example.org/2020-11-02-react-hooks/</link>

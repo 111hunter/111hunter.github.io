@@ -1,0 +1,42 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Recursion - 标签 - 浮槎的博客</title>
+        <link>http://example.org/tags/recursion/</link>
+        <description>Recursion - 标签 - 浮槎的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/recursion/" rel="self" type="application/rss+xml" /><item>
+    <title>一些通用计算模型</title>
+    <link>http://example.org/2021-01-30-tag-system/</link>
+    <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2021-01-30-tag-system/</guid>
+    <description><![CDATA[在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计]]></description>
+</item><item>
+    <title>IO 和 Monad</title>
+    <link>http://example.org/2020-12-28-monad/</link>
+    <pubDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-12-28-monad/</guid>
+    <description><![CDATA[学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程]]></description>
+</item><item>
+    <title>λ 演算: 程序从无到有</title>
+    <link>http://example.org/2020-11-26-%CE%BB-calculus/</link>
+    <pubDate>Thu, 26 Nov 2020 09:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-11-26-%CE%BB-calculus/</guid>
+    <description><![CDATA[由邱奇创造的 λ 演算(λ-calculus) 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boo]]></description>
+</item><item>
+    <title>图灵机的极简实现</title>
+    <link>http://example.org/2020-11-17-brainfuck/</link>
+    <pubDate>Tue, 17 Nov 2020 22:00:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-11-17-brainfuck/</guid>
+    <description><![CDATA[图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终]]></description>
+</item><item>
+    <title>自我指涉与数理逻辑</title>
+    <link>http://example.org/2020-11-16-self-ref/</link>
+    <pubDate>Mon, 16 Nov 2020 00:27:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020-11-16-self-ref/</guid>
+    <description><![CDATA[“我是谁？”，这种对指代自身的疑问每个人都会有。在自然语言和形式语言中，如果一个句子直接或间接提及自身，就称为自指(Self-referen]]></description>
+</item></channel>
+</rss>

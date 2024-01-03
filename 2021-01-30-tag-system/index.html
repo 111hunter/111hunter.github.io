@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2021-01-30-tag-system\/"
-        },"genre": "posts","keywords": "Theory","wordcount":  1286 ,
+        },"genre": "posts","keywords": "Recursion, Turing Machine","wordcount":  1286 ,
         "url": "http:\/\/example.org\/2021-01-30-tag-system\/","datePublished": "2021-01-30T10:50:34+08:00","dateModified": "2021-01-30T10:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -104,7 +104,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">一些通用计算模型</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/thinking/"><i class="far fa-folder fa-fw"></i>Thinking</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/theory/"><i class="far fa-folder fa-fw"></i>Theory</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-30">2021-01-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1286 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2021-01-30-tag-system/" class="leancloud_visitors" data-flag-title="一些通用计算模型">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
@@ -122,7 +122,7 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><blockquote>
-<p>在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算」的。    &ndash; wikipedia</p>
+<p>在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算」的。 &ndash; wikipedia</p>
 </blockquote>
 <p>通用计算(图灵完备)是计算能力的体现，意味着解决所有可计算问题的能力。在理论上却不难实现，可能的一个原因是计算能力是传递关系：如果 A 能模拟图灵机，而 B 能模拟 A，则 B 能模拟图灵机。</p>
 <h2 id="标签系统">标签系统</h2>
@@ -152,9 +152,9 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Tag system 
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Tag system
     m: 2
-    A: {1,2,3,H} 
+    A: {1,2,3,H}
     P:
         1  --&gt;  3321H
         2  --&gt;  331
@@ -199,9 +199,9 @@ Computation
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Cyclic tag system 
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Cyclic tag system
     m: 1
-    A: {0, 1} 
+    A: {0, 1}
     P: 1  --&gt;  011, 10, 101
 
 Computation
@@ -248,7 +248,7 @@ Computation
             alt="/img/gliders.jpg" />
     </a><figcaption class="image-caption">Rule110中的滑翔机</figcaption>
     </figure></p>
-<p>上图是 Rule 110 中已发现的所有滑翔机，以及一个滑翔机枪：每周期发射一次A 和 B 滑翔机。<a href="https://www.comunidad.escom.ipn.mx/genaro/rule110/ctsRule110.html" target="_blank" rel="noopener noreffer">这里</a>展示了用通过特定排列的滑翔机来模拟 <code>P: 1 --&gt; 11, 10</code> 的循环标签系统，这不是完成通用计算的高效方式，但对简单的细胞自动机来说这仍是一项令人印象深刻的技术成果。比起二进制的字符串，图像可能更容易让人观察计算行为的普遍规律。</p>
+<p>上图是 Rule 110 中已发现的所有滑翔机，以及一个滑翔机枪：每周期发射一次 A 和 B 滑翔机。<a href="https://www.comunidad.escom.ipn.mx/genaro/rule110/ctsRule110.html" target="_blank" rel="noopener noreffer">这里</a>展示了用通过特定排列的滑翔机来模拟 <code>P: 1 --&gt; 11, 10</code> 的循环标签系统，这不是完成通用计算的高效方式，但对简单的细胞自动机来说这仍是一项令人印象深刻的技术成果。比起二进制的字符串，图像可能更容易让人观察计算行为的普遍规律。</p>
 <p>如果我们建立了宇宙的完整模型，是否意味着我们没有自由意志了呢？“<a href="https://en.wikipedia.org/wiki/Computational_irreducibility" target="_blank" rel="noopener noreffer">Computational irreducibility</a>” 意味着，就算你知道了一切规则，你可能也无法提前预测这些规则将会做什么 — 唯一的办法是运行这些规则看看它们到底会做出什么来。</p>
 <p><strong>推荐阅读</strong></p>
 <ul>
@@ -281,13 +281,13 @@ Computation
                             <a class="link-to-markdown" href="/2021-01-30-tag-system/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型" data-hashtags="Theory"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2021-01-30-tag-system/" data-hashtag="Theory"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型" data-hashtags="Recursion,Turing Machine"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2021-01-30-tag-system/" data-hashtag="Recursion"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2021-01-30-tag-system/" data-title="一些通用计算模型"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/theory/">Theory</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/recursion/">Recursion</a>,&nbsp;<a href="/tags/turing-machine/">Turing Machine</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>

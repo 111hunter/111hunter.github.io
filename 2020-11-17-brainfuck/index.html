@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-11-17-brainfuck\/"
-        },"genre": "posts","keywords": "Theory","wordcount":  1326 ,
+        },"genre": "posts","keywords": "Recursion, Turing Machine","wordcount":  1326 ,
         "url": "http:\/\/example.org\/2020-11-17-brainfuck\/","datePublished": "2020-11-17T22:00:34+08:00","dateModified": "2020-11-17T22:00:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -104,7 +104,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">图灵机的极简实现</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/thinking/"><i class="far fa-folder fa-fw"></i>Thinking</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/theory/"><i class="far fa-folder fa-fw"></i>Theory</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-17">2020-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1326 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2020-11-17-brainfuck/" class="leancloud_visitors" data-flag-title="图灵机的极简实现">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
@@ -235,7 +235,7 @@
 </div>
 </div><p>把 Brainfuck 的一维数组命名为 <code>arr</code>，则开始的数组元素为 <code>arr[0]</code>，<code>arr[0]</code> 右边的数组元素为 <code>arr[1]</code>。第一句代码将 <code>arr[0]</code> 的数值递增 5 次变为 5。</p>
 <p>然后，循环执行“右移指针，递增 13 次，左移指针，递减 1 次”。当 <code>arr[0]</code> 的值最终被递减为 0 的时候，循环结束。此时 <code>arr[1]</code> 的值执行了 5 次“递增 13 次”的操作，即 65。最后指针右移至 <code>arr[1]</code>，输出它对应的 ASCII 值即为 A。</p>
-<p>结合 <a href="http://fatiherikli.github.io/brainfuck-visualizer/" target="_blank" rel="noopener noreffer">网站1</a> 和 <a href="https://copy.sh/brainfuck/text.html" target="_blank" rel="noopener noreffer">网站2</a> 思考一下这门八个字符的编程语言是怎样模拟图灵机的每个组成部分的。</p>
+<p>结合 <a href="http://fatiherikli.github.io/brainfuck-visualizer/" target="_blank" rel="noopener noreffer">网站 1</a> 和 <a href="https://copy.sh/brainfuck/text.html" target="_blank" rel="noopener noreffer">网站 2</a> 思考一下这门八个字符的编程语言是怎样模拟图灵机的每个组成部分的。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -249,13 +249,13 @@
                             <a class="link-to-markdown" href="/2020-11-17-brainfuck/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现" data-hashtags="Theory"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-11-17-brainfuck/" data-hashtag="Theory"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现" data-hashtags="Recursion,Turing Machine"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/2020-11-17-brainfuck/" data-hashtag="Recursion"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020-11-17-brainfuck/" data-title="图灵机的极简实现"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/theory/">Theory</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/recursion/">Recursion</a>,&nbsp;<a href="/tags/turing-machine/">Turing Machine</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
