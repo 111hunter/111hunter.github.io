@@ -26,10 +26,10 @@
     <description><![CDATA[如果你没有听说过 λ 演算，可以阅读我的这篇文章。如果你没有编译原理相关知识，可以阅读我的这篇文章。首先介绍调度场算法，后面的实现中会用到。 调度]]></description>
 </item><item>
     <title>了解防抖与节流</title>
-    <link>http://example.org/2020-11-10-js-closure/</link>
+    <link>http://example.org/2020-11-10-debounce/</link>
     <pubDate>Tue, 10 Nov 2020 22:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020-11-10-js-closure/</guid>
+    <guid>http://example.org/2020-11-10-debounce/</guid>
     <description><![CDATA[在前端开发的过程中，我们经常需要绑定一些持续触发的事件，如 resize、scroll、mousemove 等，然而有些时候我们并不希望在事件持]]></description>
 </item><item>
     <title>以 useEffect 为圆心</title>

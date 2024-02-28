@@ -5,10 +5,10 @@
         <description>JavaScript - 标签 - 浮槎的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 10 Nov 2020 22:30:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/javascript/" rel="self" type="application/rss+xml" /><item>
     <title>了解防抖与节流</title>
-    <link>http://example.org/2020-11-10-js-closure/</link>
+    <link>http://example.org/2020-11-10-debounce/</link>
     <pubDate>Tue, 10 Nov 2020 22:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020-11-10-js-closure/</guid>
+    <guid>http://example.org/2020-11-10-debounce/</guid>
     <description><![CDATA[在前端开发的过程中，我们经常需要绑定一些持续触发的事件，如 resize、scroll、mousemove 等，然而有些时候我们并不希望在事件持]]></description>
 </item><item>
     <title>浅析函数式编程</title>
@@ -44,6 +44,6 @@
     <pubDate>Mon, 07 Oct 2019 18:27:34 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/2019-10-17-js-basis/</guid>
-    <description><![CDATA[闭包就是能够读取其他函数内部变量的函数。在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成&quot;定义在]]></description>
+    <description><![CDATA[闭包的核心作用闭包的核心作用 " 闭包的核心作用 闭包就是能够读取其他函数内部变量的函数。在 javascript 中，只有函数内部的子函数才能读取局部变量，所以闭包可]]></description>
 </item></channel>
 </rss>

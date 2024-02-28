@@ -102,4 +102,5 @@ def oppose_P():
 - [计算的极限(零)：逻辑与图灵机](https://mp.weixin.qq.com/s/WiWN-C3ansL48NiWLkYJNg)
 - [系统中的观察者——被科学遗忘的角色](http://www.swarmagents.cn/files/jake201113171315.pdf)
 - [混沌理论本质一切复杂源于简单](https://zhuanlan.zhihu.com/p/33731245)
+- [量子力学与相对论矛盾且同时合理: 引力的自我指涉](https://www.bilibili.com/video/BV11C411s7YX/?spm_id_from=333.880.my_history.page.click&vd_source=21db84374de3d6785c04b0329b69e5e5)
 
