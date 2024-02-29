@@ -3,6 +3,16 @@
 
 以 useEffect 为圆心，其他 Hooks 为半径，构建 React Hooks 的知识圆环。为什么会想出这样一个标题呢？Hooks 的知识点过于分散，很多朋友在读过 React 官方文档后，还是不知道 Hooks 如何在实际项目中使用。本文希望从 useEffect 的具体用法中引出其他 Hooks，从而构建出完整的 React Hooks 知识体系。
 
+React 的核心原理：**当数据发生变化时，UI 随之更新，就是所谓的数据驱动。**
+
+## 函数式编程
+
+在 [函数式编程](https://zh.wikipedia.org/wiki/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B) 中，函数是 [头等对象](https://zh.wikipedia.org/wiki/%E9%A0%AD%E7%AD%89%E7%89%A9%E4%BB%B6) 即 [头等函数](https://zh.wikipedia.org/wiki/%E5%A4%B4%E7%AD%89%E5%87%BD%E6%95%B0)，这意味着一个函数，既可以作为其它函数的输入参数值，也可以从函数中返回值，被修改或者被分配给一个变量。[λ 演算](https://zh.wikipedia.org/wiki/%CE%9B%E6%BC%94%E7%AE%97) 是这种范型最重要的基础，λ 演算的函数可以接受函数作为输入参数和输出返回值。
+
+顺带提一句，由邱奇创造的 λ 演算 (λ-calculus) 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boolean) 或任何非函数的数据类型，它只用匿名单参函数就能模拟图灵机，具体实现过程可阅读我的这篇 [文章](https://111hunter.github.io/2020-11-26-%CE%BB-calculus/)。
+
+比起[指令式编程](https://zh.wikipedia.org/wiki/%E6%8C%87%E4%BB%A4%E5%BC%8F%E7%B7%A8%E7%A8%8B)，函数式编程更加强调程序执行的结果而非执行的过程，倡导利用若干简单的执行单元让计算结果不断渐进，逐层推导复杂的运算，而不是设计一个复杂的执行过程。
+
 ## 心智模型
 
 学习 Hooks 的使用，重点是心智模型的转变。useEffect 的心智模型是实现状态同步，而不是响应生命周期事件。每次触发时 useEffect，它都会捕获本次调用时组件中的数据，也就是所谓的 Capture Value 特性：**组件每次渲染都有自己的数据，组件内的函数(包括 effects，事件处理函数，定时器或者 API 调用等)会捕获该次渲染的组件数据。**
@@ -279,4 +289,8 @@ function RefDemo() {
 **参阅资料**
 
 - [A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)
+
+**推荐阅读**
+
+- [二十分钟掌握 React 核心理念](https://juejin.cn/post/7278245697165197346)
 
