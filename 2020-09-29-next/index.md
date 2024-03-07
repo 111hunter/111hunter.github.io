@@ -313,11 +313,10 @@ export default Posts;
 - [Next.js 简明教程](https://hicc.pro/p/UEvoioY/T622AgI)
 - [手把手带你入门 NextJs](https://juejin.im/post/6863336367309455373)
 
-
 **进阶阅读**
 
-Next.js Severless 全栈开发: 
+Next.js Severless 全栈开发:
+
 - [使用 Next.js、Prisma 和 Vercel Postgres 构建全栈应用程序](https://vercel.com/guides/nextjs-prisma-postgres)
 - [使用 Next、Prisma 和 MongoDB 进行身份验证和数据库访问](https://blog.openreplay.com/authentication-and-db-access-with-next-prisma-and-mongodb/)
-
 

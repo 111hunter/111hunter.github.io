@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Time - 标签 - 浮槎的博客</title>
+        <title>Time - 标签 - 寂的博客</title>
         <link>http://example.org/tags/time/</link>
-        <description>Time - 标签 - 浮槎的博客</description>
+        <description>Time - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 28 Dec 2023 21:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/time/" rel="self" type="application/rss+xml" /><item>
     <title>如其本来</title>
     <link>http://example.org/2023-12-28-time-3/</link>

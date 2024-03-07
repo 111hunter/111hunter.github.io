@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Webpack - 标签 - 浮槎的博客</title>
+        <title>Webpack - 标签 - 寂的博客</title>
         <link>http://example.org/tags/webpack/</link>
-        <description>Webpack - 标签 - 浮槎的博客</description>
+        <description>Webpack - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 16 Aug 2020 19:51:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/webpack/" rel="self" type="application/rss+xml" /><item>
     <title>Webpack 概念梳理</title>
     <link>http://example.org/2020-08-16-webpack/</link>

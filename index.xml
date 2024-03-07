@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>浮槎的博客</title>
+        <title>寂的博客</title>
         <link>http://example.org/</link>
-        <description>空空如也，我叩其两端而竭焉。</description>
+        <description> 空空如也，我叩其两端而竭焉。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 01 Jan 2024 11:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>

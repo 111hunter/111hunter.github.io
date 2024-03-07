@@ -10,14 +10,17 @@ React 组件分为两类，class 组件和函数组件。hooks 的出现让函�
 ### render-props
 
 具有 render prop 的组件接受一个函数，该函数返回一个 React 元素并调用它(回调函数)而不是实现自己的渲染逻辑。
-react官网示例：
+react 官网示例：
 
 ```jsx
 class Cat extends React.Component {
   render() {
     const mouse = this.props.mouse;
     return (
-      <img src="/cat.jpg" style={{ position: 'absolute', left: mouse.x, top: mouse.y }} />
+      <img
+        src="/cat.jpg"
+        style={{ position: "absolute", left: mouse.x, top: mouse.y }}
+      />
     );
   }
 }
@@ -32,13 +35,13 @@ class Mouse extends React.Component {
   handleMouseMove(event) {
     this.setState({
       x: event.clientX,
-      y: event.clientY
+      y: event.clientY,
     });
   }
 
   render() {
     return (
-      <div style={{ height: '100vh' }} onMouseMove={this.handleMouseMove}>
+      <div style={{ height: "100vh" }} onMouseMove={this.handleMouseMove}>
         {/*使用`render`属性来动态确定要渲染的内容。*/}
         {this.props.render(this.state)}
       </div>
@@ -51,17 +54,15 @@ class MouseTracker extends React.Component {
     return (
       <div>
         <h1>移动鼠标!</h1>
-		{/*将 Mouse 组件中的 state 传递给 Cat 组件*/}
-        <Mouse render={mouse => (
-          <Cat mouse={mouse} />
-        )}/>
+        {/*将 Mouse 组件中的 state 传递给 Cat 组件*/}
+        <Mouse render={(mouse) => <Cat mouse={mouse} />} />
       </div>
     );
   }
 }
 ```
 
-注意 Mouse 组件中的 this.props.render 是绑定在标签模板上的render(外部传入)。这样就实现了鼠标位置状态的共享, Cat 组件能够根据鼠标位置动态移动 cat 图片。这个示例实现了 react 组件的理想状态：**有状态的组件无渲染，有渲染的组件无状态。** 因为 Cat 组件只是一个渲染模板，它也可以替换成如下的函数组件:
+注意 Mouse 组件中的 this.props.render 是绑定在标签模板上的 render(外部传入)。这样就实现了鼠标位置状态的共享, Cat 组件能够根据鼠标位置动态移动 cat 图片。这个示例实现了 react 组件的理想状态：**有状态的组件无渲染，有渲染的组件无状态。** 因为 Cat 组件只是一个渲染模板，它也可以替换成如下的函数组件:
 
 ```jsx
 const Cat = (props) => {
@@ -73,7 +74,7 @@ const Cat = (props) => {
 }
 ```
 
-UI与状态分离，便于逻辑的复用。
+UI 与状态分离，便于逻辑的复用。
 
 ### 高阶组件(HOC)
 
@@ -137,7 +138,7 @@ Hooks 可以让你在函数组件中使用状态(state)以及其他的 React 特
 Hook 是 React 中的一类特殊的 JavaScript 函数。自定义名为 useFriendStatus 的 hook，它通过调用 useState 和 useEffect 来订阅一个好友的在线状态。
 
 ```jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function useFriendStatus(friendID) {
   const [isOnline, setIsOnline] = useState(null);
@@ -165,9 +166,9 @@ function FriendStatus(props) {
   const isOnline = useFriendStatus(props.friend.id);
 
   if (isOnline === null) {
-    return 'Loading...';
+    return "Loading...";
   }
-  return isOnline ? 'Online' : 'Offline';
+  return isOnline ? "Online" : "Offline";
 }
 ```
 
@@ -176,9 +177,7 @@ function FriendListItem(props) {
   const isOnline = useFriendStatus(props.friend.id);
 
   return (
-    <li style={{ color: isOnline ? 'green' : 'black' }}>
-      {props.friend.name}
-    </li>
+    <li style={{ color: isOnline ? "green" : "black" }}>{props.friend.name}</li>
   );
 }
 ```
@@ -186,6 +185,7 @@ function FriendListItem(props) {
 这两个组件的 state 是完全独立的，Hook 是一种复用状态逻辑的方式，它不复用 state 本身。传入不同的 props，得到的 state 也不同。同样是实现了 UI 与状态分离，便于逻辑的复用。
 
 但是使用 Hook 会有几个额外的规则：
+
 - 只能在函数最外层调用 Hook。不要在循环、条件判断或者子函数中调用
 - 不要在普通 Javascript 函数中调用
   - 在 React 的函数组件调用 Hook
@@ -213,11 +213,11 @@ Redux 流程图
 先创建 store，接收 reducer 为参数:
 
 ```jsx
-import { createStore } from 'redux'
-import reducer from './reducer'
+import { createStore } from "redux";
+import reducer from "./reducer";
 
 //创建store
-const store = createStore(reducer)
+const store = createStore(reducer);
 
 export default store;
 ```
@@ -228,7 +228,9 @@ export default store;
 // React Redux 的 `connect` 函数
 const connect(mapStateToProps, mapDispatchToProps)(Component);
 ```
+
 可能看起来有些怪, 这样写你就明白了：
+
 ```js
 //先传递两个参数将 connect 封装成高阶函数
 const higherOrderComponent = connect(mapStateToProps, mapDispatchToProps);
@@ -240,48 +242,54 @@ action 就是 dispatch 中的参数。
 
 ```jsx
 // connect.js
-import { connect } from 'react-redux'
+import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
-    return { count: state.count, message: state.message }
-}
+  return { count: state.count, message: state.message };
+};
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        increment: (data) => { dispatch({ type: "INCREMENT", num: data, message: "Incremented" }) },
-        decrement: (data) => { dispatch({ type: "DECREMENT", num: data, message: "Decremented" }) },
-        reset: () => { dispatch({ type: "RESET", message: "Reset" }) }
-    }
-}
+  return {
+    increment: (data) => {
+      dispatch({ type: "INCREMENT", num: data, message: "Incremented" });
+    },
+    decrement: (data) => {
+      dispatch({ type: "DECREMENT", num: data, message: "Decremented" });
+    },
+    reset: () => {
+      dispatch({ type: "RESET", message: "Reset" });
+    },
+  };
+};
 //封装了一个高阶组件，注意高阶组件是函数
-export default connect(mapStateToProps, mapDispatchToProps)
+export default connect(mapStateToProps, mapDispatchToProps);
 ```
 
 最后写 reducer，接收 action 更新 state:
 
 ```jsx
-const initialState = { count: 0, message: "" }
+const initialState = { count: 0, message: "" };
 const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case "INCREMENT":
-            return {
-                count: state.count + action.num,
-                message: action.message
-            }
-        case "DECREMENT":
-            return {
-                count: state.count - action.num,
-                message: action.message
-            }
-        case "RESET":
-            return {
-                count: 0,
-                message: action.message
-            }
-        default:
-            return state;
-    }
-}
+  switch (action.type) {
+    case "INCREMENT":
+      return {
+        count: state.count + action.num,
+        message: action.message,
+      };
+    case "DECREMENT":
+      return {
+        count: state.count - action.num,
+        message: action.message,
+      };
+    case "RESET":
+      return {
+        count: 0,
+        message: action.message,
+      };
+    default:
+      return state;
+  }
+};
 
 export default reducer;
 ```
@@ -289,97 +297,98 @@ export default reducer;
 创建一个组件测试计数器:
 
 ```jsx
-import React, { Component } from 'react'
-import connect from './connect'
+import React, { Component } from "react";
+import connect from "./connect";
 
 class Count extends Component {
-    render() {
+  render() {
+    let { count, message, increment, decrement, reset } = this.props; //来自 connect
 
-        let { count, message, increment, decrement, reset } = this.props; //来自 connect
-
-        return (
-            <div>
-                {count}
-                <button onClick={() => increment(1)}>+1</button>
-                <button onClick={() => decrement(3)}>-3</button>
-                <button onClick={() => reset()}>reset</button>
-                {message}
-            </div>
-        )
-    }
+    return (
+      <div>
+        {count}
+        <button onClick={() => increment(1)}>+1</button>
+        <button onClick={() => decrement(3)}>-3</button>
+        <button onClick={() => reset()}>reset</button>
+        {message}
+      </div>
+    );
+  }
 }
 
 // 导入的 './connect' 是高阶组件，传入 Count 组件, Count就能接收 store 中的数据
-export default connect(Count)
+export default connect(Count);
 ```
 
 根组件注册 store，并导入 count 组件：
 
 ```jsx
-import React from 'react'
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
-import store from './store'
-import Count from './count'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import store from "./store";
+import Count from "./count";
 
 function App() {
-    return (
-        <Provider store={store}>
-            <Count />
-        </Provider>
-    );
+  return (
+    <Provider store={store}>
+      <Count />
+    </Provider>
+  );
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement)
+ReactDOM.render(<App />, rootElement);
 ```
+
 此时启动项目你发现已经能够计数了，但是我们并没有直接操作 store 啊，其实是 connect 帮我们做了这件事，可以看一下精简版的 connect 源码：
 
 ```jsx
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 const connect = (mapStateToProps, mapDispatchToProps) => (WrappedComponent) => {
-    class Connect extends Component {
-        static contextTypes = {
-            store: PropTypes.object,
-        };
+  class Connect extends Component {
+    static contextTypes = {
+      store: PropTypes.object,
+    };
 
-        constructor() {
-            super();
-            this.state = { allProps: {} }
-        }
-
-        componentWillMount() {
-            const { store } = this.context;
-            this._updateProps();
-            store.subscribe(this._updateProps);
-        }
-
-        _updateProps = () => {
-            const { store } = this.context;
-            let stateProps = mapStateToProps(store.getState());
-            let dispatchProps = mapDispatchToProps(store.dispatch);
-            this.setState({
-                allProps: {
-                    ...stateProps,
-                    ...dispatchProps,
-                    ...this.props,
-                }
-            });
-        };
-
-        render () {
-            return <WrappedComponent {...this.state.allProps} />
-        }
+    constructor() {
+      super();
+      this.state = { allProps: {} };
     }
 
-    return Connect;
+    componentWillMount() {
+      const { store } = this.context;
+      this._updateProps();
+      store.subscribe(this._updateProps);
+    }
+
+    _updateProps = () => {
+      const { store } = this.context;
+      let stateProps = mapStateToProps(store.getState());
+      let dispatchProps = mapDispatchToProps(store.dispatch);
+      this.setState({
+        allProps: {
+          ...stateProps,
+          ...dispatchProps,
+          ...this.props,
+        },
+      });
+    };
+
+    render() {
+      return <WrappedComponent {...this.state.allProps} />;
+    }
+  }
+
+  return Connect;
 };
 
 export default connect;
 ```
-你会发现 store 实际上是通过 Context 创建的，Context 是 React 中的 API 方法:  Context 提供了一个无需为每层组件手动添加 props，就能在组件树间进行数据传递的方法。
+
+你会发现 store 实际上是通过 Context 创建的，Context 是 React 中的 API 方法: Context 提供了一个无需为每层组件手动添加 props，就能在组件树间进行数据传递的方法。
 有了状态共享方法(高阶组件)和数据传递的方法(Context), 就能让在整个组件树中的各个组件都很方便的读取状态修改状态, 就实现了 React-Redux，下面我会用 hooks 实现类似的全局状态管理。
 
 ### 函数组件的状态管理
@@ -389,22 +398,23 @@ export default connect;
 
 ```jsx
 //store.js
-import React, { createContext, useContext, useReducer } from 'react';
-import reducer from './reducer';
+import React, { createContext, useContext, useReducer } from "react";
+import reducer from "./reducer";
 const StoreContext = createContext();
 const initialState = { count: 0, message: "" };
 
 export const StoreProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
-    return (
-        <StoreContext.Provider value={{ state, dispatch }}>
-            {children}
-        </StoreContext.Provider>
-    )
-}
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <StoreContext.Provider value={{ state, dispatch }}>
+      {children}
+    </StoreContext.Provider>
+  );
+};
 
 export const useStore = () => useContext(StoreContext);
 ```
+
 useReducer 是 useState 的替代方案。它接收一个形如 (state, action) => newState 的 reducer，以及初始状态 initialState，返回值是当前的 state 以及与其配套的 dispatch 方法。
 
 useContext 的参数必须是 context 对象，让你能够读取 context 的值以及订阅 context 的变化。调用了 useContext 的组件会在 context 值变化时重新渲染。你仍然需要在上层组件树中使用 <MyContext.Provider> 来为下层组件提供 context。
@@ -418,18 +428,20 @@ OK, 我们的简版 React-redux 就做好了。
 import { useStore } from "./store";
 
 export const useCounter = () => {
-    const { state, dispatch } = useStore();
-    return {
-        count: state.count,
-        message: state.message,
-        increment: (data) => dispatch({ type: "INCREMENT", num: data, message: "Incremented" }),
-        decrement: (data) => dispatch({ type: "DECREMENT", num: data, message: "Decremented" }),
-        reset: () => dispatch({ type: "RESET", message: "Reset" })
-    }
-}
+  const { state, dispatch } = useStore();
+  return {
+    count: state.count,
+    message: state.message,
+    increment: (data) =>
+      dispatch({ type: "INCREMENT", num: data, message: "Incremented" }),
+    decrement: (data) =>
+      dispatch({ type: "DECREMENT", num: data, message: "Decremented" }),
+    reset: () => dispatch({ type: "RESET", message: "Reset" }),
+  };
+};
 ```
 
-写reducer, 去掉 initialState, 我们已经写在了 useReducer 里, 原因是：
+写 reducer, 去掉 initialState, 我们已经写在了 useReducer 里, 原因是：
 
 {{< admonition >}}
 React 不使用 state = initialState 这一由 Redux 推广开来的参数约定。有时候初始值依赖于 props，因此需要在调用 Hook 时指定。
@@ -438,26 +450,26 @@ React 不使用 state = initialState 这一由 Redux 推广开来的参数约定
 ```jsx
 // reducer.js
 const reducer = (state, action) => {
-    switch (action.type) {
-        case "INCREMENT":
-            return {
-                count: state.count + action.num,
-                message: action.message
-            }
-        case "DECREMENT":
-            return {
-                count: state.count - action.num,
-                message: action.message
-            }
-        case "RESET":
-            return {
-                count: 0,
-                message: action.message
-            }
-        default:
-            return state;
-    }
-}
+  switch (action.type) {
+    case "INCREMENT":
+      return {
+        count: state.count + action.num,
+        message: action.message,
+      };
+    case "DECREMENT":
+      return {
+        count: state.count - action.num,
+        message: action.message,
+      };
+    case "RESET":
+      return {
+        count: 0,
+        message: action.message,
+      };
+    default:
+      return state;
+  }
+};
 
 export default reducer;
 ```
@@ -470,19 +482,18 @@ import React from "react";
 import { useCounter } from "./storeApi";
 
 export const Count = () => {
+  const { count, message, increment, decrement, reset } = useCounter();
 
-    const { count, message, increment, decrement, reset } = useCounter();
-
-    return (
-        <div>
-            {count}
-            <button onClick={() => increment(1)}>+1</button>
-            <button onClick={() => decrement(3)}>-3</button>
-            <button onClick={() => reset()}> Reset</button>
-            {message}
-        </div>
-    )
-}
+  return (
+    <div>
+      {count}
+      <button onClick={() => increment(1)}>+1</button>
+      <button onClick={() => decrement(3)}>-3</button>
+      <button onClick={() => reset()}> Reset</button>
+      {message}
+    </div>
+  );
+};
 ```
 
 修改根组件如下：
@@ -494,11 +505,11 @@ import { StoreProvider } from "./store";
 import { Count } from "./Count";
 
 function App() {
-    return (
-        <StoreProvider>
-            <Count />
-        </StoreProvider>
-    );
+  return (
+    <StoreProvider>
+      <Count />
+    </StoreProvider>
+  );
 }
 
 const rootElement = document.getElementById("root");
@@ -506,3 +517,4 @@ ReactDOM.render(<App />, rootElement);
 ```
 
 启动服务，发现能够计数成功，我们的状态管理方案成功了。
+

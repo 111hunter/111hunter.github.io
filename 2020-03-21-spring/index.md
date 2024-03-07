@@ -24,7 +24,7 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
-		
+
 		<!-- Skip test plugin -->
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
@@ -34,8 +34,9 @@
 				<skipTests>true</skipTests>
 			</configuration>
 		</plugin>
-		
+
 ```
+
 ### I. 数据库连接
 
 编写数据库连接文件 application.properties，它在 resources 文件夹中。
@@ -60,7 +61,7 @@ server.port = 8034
 
 ![服务端文件结构](/img/spring-dir.jpg "服务端文件结构")
 
-在 entity文件夹中新建文件 Notes.java，这是我们的数据表映射。
+在 entity 文件夹中新建文件 Notes.java，这是我们的数据表映射。
 
 ```java
 package com.jpa.springjpademo.entity;
@@ -387,7 +388,7 @@ public class SwaggerConfig {
 }
 ```
 
-编写完后端代码，启动服务： ` $ mvn spring-boot:run `
+编写完后端代码，启动服务： `$ mvn spring-boot:run`
 
 浏览器打开 http://localhost:8034/swagger-ui.html
 
@@ -399,15 +400,18 @@ public class SwaggerConfig {
 
 安装完成后生成 Vue 项目: `$ vue create blog-frontend`
 
-输入此命令后，我们将看到一个简短的提示。选择 manually select features 选项（手动选择特性）。然后按空格表示选择，我们选择Babel、Router 和 Linter/Formatter。后面选项一路回车就好。
+输入此命令后，我们将看到一个简短的提示。选择 manually select features 选项（手动选择特性）。然后按空格表示选择，我们选择 Babel、Router 和 Linter/Formatter。后面选项一路回车就好。
 
 我们使用 bootstrap 库定义基本的 css 样式。在 public 文件夹的 index.html 中加入以下代码：
 
 ```html
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+/>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 ```
 
 安装 axios 处理 http 请求，这是一种基于 Promise 的浏览器 HTTP 客户端：
@@ -418,10 +422,8 @@ public class SwaggerConfig {
 
 ```js
 export const server = {
-
-    baseURL: 'http://localhost:8034/api/notes'
-
-}
+  baseURL: "http://localhost:8034/api/notes",
+};
 ```
 
 ### II. 创建页面组件
@@ -438,21 +440,45 @@ export const server = {
       <form id="create-post-form" @submit.prevent="createPost">
         <div class="form-group col-md-12">
           <label for="title">Title</label>
-          <input type="text" id="title" v-model="title" name="title" class="form-control"
-            placeholder="Enter title"/>
+          <input
+            type="text"
+            id="title"
+            v-model="title"
+            name="title"
+            class="form-control"
+            placeholder="Enter title"
+          />
         </div>
         <div class="form-group col-md-12">
           <label for="description">Description</label>
-          <input type="text" id="description" v-model="description" name="description" 
-          class="form-control" placeholder="Enter Description"/>
+          <input
+            type="text"
+            id="description"
+            v-model="description"
+            name="description"
+            class="form-control"
+            placeholder="Enter Description"
+          />
         </div>
         <div class="form-group col-md-12">
           <label for="content">Write Content</label>
-          <textarea id="content" cols="30" rows="5" v-model="content" class="form-control"></textarea>
+          <textarea
+            id="content"
+            cols="30"
+            rows="5"
+            v-model="content"
+            class="form-control"
+          ></textarea>
         </div>
         <div class="form-group col-md-12">
           <label for="author">Author</label>
-          <input type="text" id="author" v-model="author" name="author" class="form-control" />
+          <input
+            type="text"
+            id="author"
+            v-model="author"
+            name="author"
+            class="form-control"
+          />
         </div>
         <div class="form-group col-md-12">
           <button class="btn btn-success" type="submit">Create Post</button>
@@ -475,7 +501,7 @@ export default {
       title: "",
       description: "",
       content: "",
-      author: "111hunter"
+      author: "111hunter",
     };
   },
   methods: {
@@ -484,16 +510,16 @@ export default {
         title: this.title,
         description: this.description,
         content: this.content,
-        author: this.author
+        author: this.author,
       };
       this.__submitToServer(postData);
     },
     __submitToServer(data) {
-      axios.post(`${server.baseURL}/create`, data).then(data => {
+      axios.post(`${server.baseURL}/create`, data).then((data) => {
         router.push({ name: "home" });
       });
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -504,7 +530,9 @@ export default {
   <div>
     <h4 class="text-center mt-20">
       <small>
-        <button class="btn btn-info" v-on:click="navigate()">View All Posts</button>
+        <button class="btn btn-info" v-on:click="navigate()">
+          View All Posts
+        </button>
       </small>
     </h4>
     <div class="col-md-12 form-wrapper">
@@ -512,20 +540,45 @@ export default {
       <form id="edit-post-form" @submit.prevent="editPost">
         <div class="form-group col-md-12">
           <label for="title">Title</label>
-          <input type="text" id="title" v-model="post.title" name="title" 
-          class="form-control" placeholder="Enter title"/>
+          <input
+            type="text"
+            id="title"
+            v-model="post.title"
+            name="title"
+            class="form-control"
+            placeholder="Enter title"
+          />
         </div>
         <div class="form-group col-md-12">
           <label for="description">Description</label>
-          <input type="text" id="description" v-model="post.description" name="description" class="form-control"placeholder="Enter Description"/>
+          <input
+            type="text"
+            id="description"
+            v-model="post.description"
+            name="description"
+            class="form-control"
+            placeholder="Enter Description"
+          />
         </div>
         <div class="form-group col-md-12">
           <label for="content">Write Content</label>
-          <textarea id="content" cols="30" rows="5" v-model="post.content" class="form-control"></textarea>
+          <textarea
+            id="content"
+            cols="30"
+            rows="5"
+            v-model="post.content"
+            class="form-control"
+          ></textarea>
         </div>
         <div class="form-group col-md-12">
           <label for="author">Author</label>
-          <input type="text" id="author" v-model="post.author" name="author" class="form-control" />
+          <input
+            type="text"
+            id="author"
+            v-model="post.author"
+            name="author"
+            class="form-control"
+          />
         </div>
 
         <div class="form-group col-md-12">
@@ -547,7 +600,7 @@ export default {
   data() {
     return {
       id: 0,
-      post: {}
+      post: {},
     };
   },
   created() {
@@ -560,24 +613,24 @@ export default {
         title: this.post.title,
         description: this.post.description,
         content: this.post.content,
-        author: this.post.author
+        author: this.post.author,
       };
 
       axios
         .put(`${server.baseURL}/update/?notes_id=${this.id}`, postData)
-        .then(data => {
+        .then((data) => {
           router.push({ name: "home" });
         });
     },
     getPost() {
       axios
         .get(`${server.baseURL}/${this.id}`)
-        .then(data => (this.post = data.data));
+        .then((data) => (this.post = data.data));
     },
     navigate() {
       router.go(-1);
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -589,14 +642,17 @@ export default {
     <div class="col-sm-12">
       <h4 style="margin-top: 30px;">
         <small>
-          <button class="btn btn-info" v-on:click="navigate()">View All Posts</button>
+          <button class="btn btn-info" v-on:click="navigate()">
+            View All Posts
+          </button>
         </small>
       </h4>
       <hr />
       <h2>{{ post.title }}</h2>
       <h5>
         <span class="glyphicon glyphicon-time"></span>
-        Post by {{post.author}}, {{new Date(post.updateTime).toLocaleDateString()}}.
+        Post by {{post.author}}, {{new
+        Date(post.updateTime).toLocaleDateString()}}.
       </h5>
       <p>{{ post.content }}</p>
     </div>
@@ -614,7 +670,7 @@ export default {
   data() {
     return {
       id: 0,
-      post: {}
+      post: {},
     };
   },
   created() {
@@ -625,12 +681,12 @@ export default {
     getPost() {
       axios
         .get(`${server.baseURL}/${this.id}`)
-        .then(data => (this.post = data.data));
+        .then((data) => (this.post = data.data));
     },
     navigate() {
       router.go(-1);
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -657,17 +713,30 @@ export default {
             <p class="card-text text-truncate">{{ post.content }}</p>
             <div class="d-flex justify-content-center align-items-center">
               <div class="btn-group" style="margin-bottom: 1rem;">
-                <router-link :to="{name: 'Post', params: {id: post.id}}"
-                  class="btn btn-sm btn-outline-info">View Post</router-link>
-                <router-link :to="{name: 'Edit', params: {id: post.id}}"
-                  class="btn btn-sm btn-outline-warning">Edit Post</router-link>
-                <button class="btn btn-sm btn-outline-danger"
-                  v-on:click="deletePost(post.id)">Delete Post</button>
+                <router-link
+                  :to="{name: 'Post', params: {id: post.id}}"
+                  class="btn btn-sm btn-outline-info"
+                  >View Post</router-link
+                >
+                <router-link
+                  :to="{name: 'Edit', params: {id: post.id}}"
+                  class="btn btn-sm btn-outline-warning"
+                  >Edit Post</router-link
+                >
+                <button
+                  class="btn btn-sm btn-outline-danger"
+                  v-on:click="deletePost(post.id)"
+                >
+                  Delete Post
+                </button>
               </div>
             </div>
 
             <div class="card-footer">
-              <small class="text-muted">Posted on: {{ new Date(post.updateTime).toLocaleDateString()}}</small>
+              <small class="text-muted"
+                >Posted on: {{ new
+                Date(post.updateTime).toLocaleDateString()}}</small
+              >
               <br />
               <small class="text-muted">by: {{ post.author}}</small>
             </div>
@@ -678,19 +747,33 @@ export default {
 
     <div class="container">
       <!-- 按钮：用于打开模态框 -->
-      <button v-if="this.posts.length" class="btn btn-warning" data-toggle="modal"
-        data-target="#myModal">Delete All Post</button>
+      <button
+        v-if="this.posts.length"
+        class="btn btn-warning"
+        data-toggle="modal"
+        data-target="#myModal"
+      >
+        Delete All Post
+      </button>
       <!-- 模态框 -->
       <div class="modal" id="myModal">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header" style="border-bottom: 0">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
             </div>
             <div class="modal-body">Are you sure to delete all posts?</div>
             <div class="modal-footer" style="border-top: 0">
               <button class="btn btn-info" data-dismiss="modal">Quit</button>
-              <button v-on:click="deleteAllPost()" class="btn btn-danger" data-dismiss="modal">Sure</button>
+              <button
+                v-on:click="deleteAllPost()"
+                class="btn btn-danger"
+                data-dismiss="modal"
+              >
+                Sure
+              </button>
             </div>
           </div>
         </div>
@@ -709,7 +792,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      posts: []
+      posts: [],
     };
   },
   created() {
@@ -717,21 +800,21 @@ export default {
   },
   methods: {
     fetchPosts() {
-      axios.get(`${server.baseURL}/all`).then(data => {
+      axios.get(`${server.baseURL}/all`).then((data) => {
         this.posts = data.data;
       });
     },
     deletePost(id) {
-      axios.delete(`${server.baseURL}/delete/?notes_id=${id}`).then(data => {
+      axios.delete(`${server.baseURL}/delete/?notes_id=${id}`).then((data) => {
         window.location.reload();
       });
     },
     deleteAllPost() {
-      axios.delete(`${server.baseURL}/delete/all`).then(data => {
+      axios.delete(`${server.baseURL}/delete/all`).then((data) => {
         window.location.reload();
       });
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -752,25 +835,25 @@ export default {
 最后将 router/index.js 改为以下代码：
 
 ```js
-import Vue from 'vue'
-import Router from 'vue-router'
-import HomeComponent from '@/views/Home';
-import EditComponent from '@/components/post/Edit';
-import CreateComponent from '@/components/post/Create';
-import PostComponent from '@/components/post/Post';
+import Vue from "vue";
+import Router from "vue-router";
+import HomeComponent from "@/views/Home";
+import EditComponent from "@/components/post/Edit";
+import CreateComponent from "@/components/post/Create";
+import PostComponent from "@/components/post/Post";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes: [
-    { path: '/', redirect: { name: 'home' } },
-    { path: '/home', name: 'home', component: HomeComponent },
-    { path: '/create', name: 'Create', component: CreateComponent },
-    { path: '/edit/:id', name: 'Edit', component: EditComponent },
-    { path: '/post/:id', name: 'Post', component: PostComponent }
-  ]
+    { path: "/", redirect: { name: "home" } },
+    { path: "/home", name: "home", component: HomeComponent },
+    { path: "/create", name: "Create", component: CreateComponent },
+    { path: "/edit/:id", name: "Edit", component: EditComponent },
+    { path: "/post/:id", name: "Post", component: PostComponent },
+  ],
 });
 ```
 
@@ -780,7 +863,7 @@ export default new Router({
 
 ## 成果展示
 
-pc端页面展示：
+pc 端页面展示：
 
 ![pc端页面展示](/img/vue-pc.png "pc端页面展示")
 
@@ -789,3 +872,4 @@ pc端页面展示：
 ![移动端页面展示](/img/vue-mobile.png "移动端页面展示")
 
 附：[源码地址](https://github.com/111hunter/notes-app)
+

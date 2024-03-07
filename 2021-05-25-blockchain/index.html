@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>单机版区块链 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="单机版区块链" />
+        <title>单机版区块链 - 寂的博客</title><meta name="Description" content=" 空空如也，我叩其两端而竭焉。"><meta property="og:title" content="单机版区块链" />
 <meta property="og:description" content="区块链是一个分布式数据库，任何人都可以读取的它的区块数据。区块链是不可变的，意味着一旦将区块添加到链中，就只能在使链的其余部分无效的情况下才" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2021-05-25-blockchain/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
@@ -27,12 +27,12 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2021-05-25-blockchain\/"
-        },"genre": "posts","keywords": "Blockchain","wordcount":  997 ,
+        },"genre": "posts","keywords": "Blockchain","wordcount":  1020 ,
         "url": "http:\/\/example.org\/2021-05-25-blockchain\/","datePublished": "2021-05-25T19:50:34+08:00","dateModified": "2021-05-25T19:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "浮槎"
+                "name": "寂"
             },"description": ""
     }
     </script></head>
@@ -41,7 +41,7 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="浮槎的博客">浮槎的博客</a>
+            <a href="/" title="寂的博客">寂的博客</a>
             <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a>
@@ -65,7 +65,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="浮槎的博客">浮槎的博客</a>
+                <a href="/" title="寂的博客">寂的博客</a>
                 <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                     <i class="fas fa-adjust fa-fw"></i>
                 </a>
@@ -104,9 +104,9 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">单机版区块链</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-25">2021-05-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 997 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/2021-05-25-blockchain/" class="leancloud_visitors" data-flag-title="单机版区块链">
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>寂</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-25">2021-05-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1020 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2021-05-25-blockchain/" class="leancloud_visitors" data-flag-title="单机版区块链">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -146,20 +146,24 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">SHA256</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;crypto-js/sha256&#34;</span><span class="p">);</span>
 <span class="kr">class</span> <span class="nx">Block</span> <span class="p">{</span>
-	<span class="nx">constructor</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">previousHash</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">timestamp</span> <span class="o">=</span> <span class="nx">timestamp</span><span class="p">;</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">=</span> <span class="nx">previousHash</span><span class="p">;</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">hash</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">calculateHash</span><span class="p">();</span>
-	<span class="p">}</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">previousHash</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">timestamp</span> <span class="o">=</span> <span class="nx">timestamp</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">=</span> <span class="nx">previousHash</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">hash</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">calculateHash</span><span class="p">();</span>
+  <span class="p">}</span>
 
-	<span class="nx">calculateHash</span><span class="p">()</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">SHA256</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">timestamp</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">previousHash</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
-	<span class="p">}</span>
+  <span class="nx">calculateHash</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">SHA256</span><span class="p">(</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">timestamp</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">previousHash</span>
+    <span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -205,39 +209,39 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">Blockchain</span> <span class="p">{</span>
-	<span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">chain</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">createGenesisBlock</span><span class="p">()];</span>
-	<span class="p">}</span>
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">chain</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">createGenesisBlock</span><span class="p">()];</span>
+  <span class="p">}</span>
 
-	<span class="nx">createGenesisBlock</span><span class="p">()</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="k">new</span> <span class="nx">Block</span><span class="p">(</span><span class="s2">&#34;01/01/2021&#34;</span><span class="p">,</span> <span class="s2">&#34;Genesis block&#34;</span><span class="p">,</span> <span class="s2">&#34;0&#34;</span><span class="p">);</span>
-	<span class="p">}</span>
+  <span class="nx">createGenesisBlock</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Block</span><span class="p">(</span><span class="s2">&#34;01/01/2021&#34;</span><span class="p">,</span> <span class="s2">&#34;Genesis block&#34;</span><span class="p">,</span> <span class="s2">&#34;0&#34;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-	<span class="nx">getLatestBlock</span><span class="p">()</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">chain</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">chain</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
-	<span class="p">}</span>
+  <span class="nx">getLatestBlock</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">chain</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">chain</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+  <span class="p">}</span>
 
-	<span class="nx">addBlock</span><span class="p">(</span><span class="nx">newBlock</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">newBlock</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getLatestBlock</span><span class="p">().</span><span class="nx">hash</span><span class="p">;</span>
-		<span class="nx">newBlock</span><span class="p">.</span><span class="nx">hash</span> <span class="o">=</span> <span class="nx">newBlock</span><span class="p">.</span><span class="nx">calculateHash</span><span class="p">();</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">chain</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newBlock</span><span class="p">);</span>
-	<span class="p">}</span>
+  <span class="nx">addBlock</span><span class="p">(</span><span class="nx">newBlock</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">newBlock</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getLatestBlock</span><span class="p">().</span><span class="nx">hash</span><span class="p">;</span>
+    <span class="nx">newBlock</span><span class="p">.</span><span class="nx">hash</span> <span class="o">=</span> <span class="nx">newBlock</span><span class="p">.</span><span class="nx">calculateHash</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">chain</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newBlock</span><span class="p">);</span>
+  <span class="p">}</span>
 
-	<span class="nx">isChainValid</span><span class="p">()</span> <span class="p">{</span>
-		<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">chain</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-			<span class="kr">const</span> <span class="nx">currentBlock</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">chain</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-			<span class="kr">const</span> <span class="nx">previousBlock</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">chain</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+  <span class="nx">isChainValid</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">chain</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">currentBlock</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">chain</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="kr">const</span> <span class="nx">previousBlock</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">chain</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
 
-			<span class="k">if</span> <span class="p">(</span><span class="nx">currentBlock</span><span class="p">.</span><span class="nx">hash</span> <span class="o">!==</span> <span class="nx">currentBlock</span><span class="p">.</span><span class="nx">calculateHash</span><span class="p">())</span> <span class="p">{</span>
-				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-			<span class="p">}</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">currentBlock</span><span class="p">.</span><span class="nx">hash</span> <span class="o">!==</span> <span class="nx">currentBlock</span><span class="p">.</span><span class="nx">calculateHash</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">}</span>
 
-			<span class="k">if</span> <span class="p">(</span><span class="nx">currentBlock</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">!==</span> <span class="nx">previousBlock</span><span class="p">.</span><span class="nx">hash</span><span class="p">)</span> <span class="p">{</span>
-				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-			<span class="p">}</span>
-		<span class="p">}</span>
-		<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-	<span class="p">}</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">currentBlock</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">!==</span> <span class="nx">previousBlock</span><span class="p">.</span><span class="nx">hash</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -291,28 +295,42 @@
 </span><span class="lnt">19
 </span><span class="lnt">20
 </span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">Block</span> <span class="p">{</span>
-	<span class="nx">constructor</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">previousHash</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">timestamp</span> <span class="o">=</span> <span class="nx">timestamp</span><span class="p">;</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">=</span> <span class="nx">previousHash</span><span class="p">;</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">hash</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">calculateHash</span><span class="p">();</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">nonce</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-	<span class="p">}</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">previousHash</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">timestamp</span> <span class="o">=</span> <span class="nx">timestamp</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">=</span> <span class="nx">previousHash</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">hash</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">calculateHash</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">nonce</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
 
-	<span class="nx">calculateHash</span><span class="p">()</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">SHA256</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">timestamp</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">nonce</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
-	<span class="p">}</span>
+  <span class="nx">calculateHash</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">SHA256</span><span class="p">(</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">timestamp</span> <span class="o">+</span>
+        <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span> <span class="o">+</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">+</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">nonce</span>
+    <span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
+  <span class="p">}</span>
 
-	<span class="nx">mineBlock</span><span class="p">(</span><span class="nx">difficulty</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">while</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">hash</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">difficulty</span><span class="p">)</span> <span class="o">!==</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">difficulty</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&#34;0&#34;</span><span class="p">))</span> <span class="p">{</span>
-			<span class="k">this</span><span class="p">.</span><span class="nx">nonce</span><span class="o">++</span><span class="p">;</span>
-			<span class="k">this</span><span class="p">.</span><span class="nx">hash</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">calculateHash</span><span class="p">();</span>
-		<span class="p">}</span>
-		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;BLOCK MINED: &#34;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">hash</span><span class="p">);</span>
-	<span class="p">}</span>
+  <span class="nx">mineBlock</span><span class="p">(</span><span class="nx">difficulty</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">hash</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">difficulty</span><span class="p">)</span> <span class="o">!==</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">difficulty</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&#34;0&#34;</span><span class="p">)</span>
+    <span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">nonce</span><span class="o">++</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">hash</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">calculateHash</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;BLOCK MINED: &#34;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">hash</span><span class="p">);</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -347,9 +365,9 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>在比特币中，大约每10分钟才会添加一个新的区块，而这个计算有效哈希的过程被称为挖矿。</p>
+</div><p>在比特币中，大约每 10 分钟才会添加一个新的区块，而这个计算有效哈希的过程被称为挖矿。</p>
 <h2 id="交易和矿工奖励">交易和矿工奖励</h2>
-<p>当区块链中储存的信息为转账信息时，区块链就成了分布式账本。</p>
+<p>当区块链中储存的信息为转账信息时，区块链就成  了分布式账本。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -373,28 +391,38 @@
 </span><span class="lnt">19
 </span><span class="lnt">20
 </span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">Block</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">,</span> <span class="nx">transactions</span><span class="p">,</span> <span class="nx">previousHash</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">timestamp</span> <span class="o">=</span> <span class="nx">timestamp</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">transactions</span> <span class="o">=</span> <span class="nx">transactions</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">=</span> <span class="nx">previousHash</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">hash</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">calculateHash</span><span class="p">();</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">nonce</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">,</span> <span class="nx">transactions</span><span class="p">,</span> <span class="nx">previousHash</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">timestamp</span> <span class="o">=</span> <span class="nx">timestamp</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">transactions</span> <span class="o">=</span> <span class="nx">transactions</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">=</span> <span class="nx">previousHash</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">hash</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">calculateHash</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">nonce</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
 
-    <span class="nx">calculateHash</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">SHA256</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">timestamp</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">transactions</span><span class="p">)</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">nonce</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>    
-    <span class="p">}</span>
+  <span class="nx">calculateHash</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">SHA256</span><span class="p">(</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">previousHash</span> <span class="o">+</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">timestamp</span> <span class="o">+</span>
+        <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">transactions</span><span class="p">)</span> <span class="o">+</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">nonce</span>
+    <span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kr">class</span> <span class="nx">Transaction</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">fromAddress</span><span class="p">,</span> <span class="nx">toAddress</span><span class="p">,</span> <span class="nx">amount</span><span class="p">){</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">fromAddress</span> <span class="o">=</span> <span class="nx">fromAddress</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">toAddress</span> <span class="o">=</span> <span class="nx">toAddress</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">amount</span> <span class="o">=</span> <span class="nx">amount</span><span class="p">;</span>
-    <span class="p">}</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">fromAddress</span><span class="p">,</span> <span class="nx">toAddress</span><span class="p">,</span> <span class="nx">amount</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">fromAddress</span> <span class="o">=</span> <span class="nx">fromAddress</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">toAddress</span> <span class="o">=</span> <span class="nx">toAddress</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">amount</span> <span class="o">=</span> <span class="nx">amount</span><span class="p">;</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -434,7 +462,7 @@
             </noscript></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

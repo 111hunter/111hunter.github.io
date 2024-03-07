@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Next.js - 标签 - 浮槎的博客</title>
+        <title>Next.js - 标签 - 寂的博客</title>
         <link>http://example.org/tags/next.js/</link>
-        <description>Next.js - 标签 - 浮槎的博客</description>
+        <description>Next.js - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 29 Sep 2020 23:30:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/next.js/" rel="self" type="application/rss+xml" /><item>
     <title>Next.js 概览</title>
     <link>http://example.org/2020-09-29-next/</link>

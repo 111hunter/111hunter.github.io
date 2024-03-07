@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>React - 标签 - 浮槎的博客</title>
+        <title>React - 标签 - 寂的博客</title>
         <link>http://example.org/tags/react/</link>
-        <description>React - 标签 - 浮槎的博客</description>
+        <description>React - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 02 Nov 2020 20:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/react/" rel="self" type="application/rss+xml" /><item>
     <title>以 useEffect 为圆心</title>
     <link>http://example.org/2020-11-02-react-hooks/</link>

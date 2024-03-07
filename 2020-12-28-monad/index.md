@@ -35,7 +35,7 @@ World -> (# World, () #)
 
 ```haskell
 {-# LANGUAGE UnboxedTuples         #-}
-import GHC.Types              
+import GHC.Types
 
 noExec (GHC.Types.IO a) = a
 
@@ -75,13 +75,14 @@ f = e(i -> e(o))
 f = (e(i) -> o)
 ```
 
-### Maybe 
+### Maybe
 
 后面的讨论会用到 Maybe 类型：
 
 ```haskell
 data Maybe a = Nothing | Just a
 ```
+
 ```haskell
 ghci> :t Nothing
 Nothing :: Maybe a
@@ -91,7 +92,7 @@ Just 2 :: Num a => Maybe a
 
 ### Functor
 
-处理函数暴露，值处于上下文的情况： 
+处理函数暴露，值处于上下文的情况：
 
 - `(i -> o) -> e(i) -> e(o)`
 
@@ -160,7 +161,7 @@ instance Applicative Maybe where
 
 只要能被 `<*>` 处理，这种上下文就是 `Applicative`，Maybe 是 `Applicative`
 
-###  Monad
+### Monad
 
 处理值与函数的返回值处于同一种上下文的情况：
 
@@ -177,7 +178,7 @@ ghci> (Just 2) >>= (\x -> Just (x + 3))
 Just 5
 ```
 
-实现 `>>=` (发音为bind) 同样用模式匹配：
+实现 `>>=` (发音为 bind) 同样用模式匹配：
 
 ```haskell
 Nothing >>= f = Nothing
@@ -261,3 +262,4 @@ Just "true"
 - [Primitive Haskell](https://www.fpcomplete.com/haskell/tutorial/primitive-haskell/)
 - [Haskell Tutorial](https://openhome.cc/Gossip/CodeData/HaskellTutorial/)
 - [hackage.haskell.org](http://hackage.haskell.org/package/base-4.8.2.0/docs/Prelude.html#t:Maybe)
+

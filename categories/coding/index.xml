@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Coding - 分类 - 浮槎的博客</title>
+        <title>Coding - 分类 - 寂的博客</title>
         <link>http://example.org/categories/coding/</link>
-        <description>Coding - 分类 - 浮槎的博客</description>
+        <description>Coding - 分类 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 May 2021 19:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/coding/" rel="self" type="application/rss+xml" /><item>
     <title>单机版区块链</title>
     <link>http://example.org/2021-05-25-blockchain/</link>

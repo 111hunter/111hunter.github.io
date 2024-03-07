@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Git - 标签 - 浮槎的博客</title>
+        <title>Git - 标签 - 寂的博客</title>
         <link>http://example.org/tags/git/</link>
-        <description>Git - 标签 - 浮槎的博客</description>
+        <description>Git - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 13 Dec 2019 15:48:16 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/git/" rel="self" type="application/rss+xml" /><item>
     <title>Git 快速上手指南</title>
     <link>http://example.org/2019-12-13-git-learn/</link>

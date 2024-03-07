@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Samadhi - 标签 - 浮槎的博客</title>
+        <title>Samadhi - 标签 - 寂的博客</title>
         <link>http://example.org/tags/samadhi/</link>
-        <description>Samadhi - 标签 - 浮槎的博客</description>
+        <description>Samadhi - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 01 Feb 2022 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/samadhi/" rel="self" type="application/rss+xml" /><item>
     <title>无路之路</title>
     <link>http://example.org/2022-02-01-samadhi-3/</link>

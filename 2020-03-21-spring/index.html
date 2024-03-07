@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>用 Spring Boot 和 Vue.js 写一个全栈应用 - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="用 Spring Boot 和 Vue.js 写一个全栈应用" />
+        <title>用 Spring Boot 和 Vue.js 写一个全栈应用 - 寂的博客</title><meta name="Description" content=" 空空如也，我叩其两端而竭焉。"><meta property="og:title" content="用 Spring Boot 和 Vue.js 写一个全栈应用" />
 <meta property="og:description" content="本篇文章将介绍如何用 Spring boot 与 Vue.js 创建一个具有基本 crud 功能的全栈 web 应用，我们将使用 bootstrap 作为项目的 UI 库，适合 web 开发初学者阅读。 后端接口 到 https://start.spring.io/ 去生成和下载 spring" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2020-03-21-spring/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
@@ -27,12 +27,12 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-03-21-spring\/"
-        },"genre": "posts","keywords": "Spring Boot, Vue.js","wordcount":  3151 ,
+        },"genre": "posts","keywords": "Spring Boot, Vue.js","wordcount":  3256 ,
         "url": "http:\/\/example.org\/2020-03-21-spring\/","datePublished": "2020-03-21T17:59:51+08:00","dateModified": "2020-03-21T17:59:51+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "浮槎"
+                "name": "寂"
             },"description": ""
     }
     </script></head>
@@ -41,7 +41,7 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="浮槎的博客">浮槎的博客</a>
+            <a href="/" title="寂的博客">寂的博客</a>
             <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a>
@@ -65,7 +65,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="浮槎的博客">浮槎的博客</a>
+                <a href="/" title="寂的博客">寂的博客</a>
                 <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                     <i class="fas fa-adjust fa-fw"></i>
                 </a>
@@ -104,8 +104,8 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">用 Spring Boot 和 Vue.js 写一个全栈应用</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-21">2020-03-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3151 字&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>寂</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-21">2020-03-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3256 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/2020-03-21-spring/" class="leancloud_visitors" data-flag-title="用 Spring Boot 和 Vue.js 写一个全栈应用">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -181,7 +181,7 @@
 			<span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
 			<span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
 		<span class="nt">&lt;/dependency&gt;</span>
-		
+
 		<span class="c">&lt;!-- Skip test plugin --&gt;</span>
 		<span class="nt">&lt;plugin&gt;</span>
 			<span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
@@ -191,7 +191,7 @@
 				<span class="nt">&lt;skipTests&gt;</span>true<span class="nt">&lt;/skipTests&gt;</span>
 			<span class="nt">&lt;/configuration&gt;</span>
 		<span class="nt">&lt;/plugin&gt;</span>
-		
+
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="i-数据库连接">I. 数据库连接</h3>
@@ -239,7 +239,7 @@ server.port = 8034
             alt="/img/spring-dir.jpg" />
     </a><figcaption class="image-caption">服务端文件结构</figcaption>
     </figure></p>
-<p>在 entity文件夹中新建文件 Notes.java，这是我们的数据表映射。</p>
+<p>在 entity 文件夹中新建文件 Notes.java，这是我们的数据表映射。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -871,7 +871,7 @@ server.port = 8034
 <h3 id="i-初始化配置">I. 初始化配置</h3>
 <p>先安装好 Vue/cli 工具: <code>$ npm install -g @vue/cli</code></p>
 <p>安装完成后生成 Vue 项目: <code>$ vue create blog-frontend</code></p>
-<p>输入此命令后，我们将看到一个简短的提示。选择 manually select features 选项（手动选择特性）。然后按空格表示选择，我们选择Babel、Router 和 Linter/Formatter。后面选项一路回车就好。</p>
+<p>输入此命令后，我们将看到一个简短的提示。选择 manually select features 选项（手动选择特性）。然后按空格表示选择，我们选择 Babel、Router 和 Linter/Formatter。后面选项一路回车就好。</p>
 <p>我们使用 bootstrap 库定义基本的 css 样式。在 public 文件夹的 index.html 中加入以下代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -879,12 +879,18 @@ server.port = 8034
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span>
+  <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span>
+  <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css&#34;</span>
+<span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>安装 axios 处理 http 请求，这是一种基于 Promise 的浏览器 HTTP 客户端：</p>
@@ -895,15 +901,11 @@ server.port = 8034
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="p">{</span>
-
-    <span class="nx">baseURL</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8034/api/notes&#39;</span>
-
-<span class="p">}</span>
+  <span class="nx">baseURL</span><span class="o">:</span> <span class="s2">&#34;http://localhost:8034/api/notes&#34;</span><span class="p">,</span>
+<span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="ii-创建页面组件">II. 创建页面组件</h3>
@@ -943,6 +945,30 @@ server.port = 8034
 </span><span class="lnt">28
 </span><span class="lnt">29
 </span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
@@ -952,21 +978,45 @@ server.port = 8034
       <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;create-post-form&#34;</span> <span class="err">@</span><span class="na">submit</span><span class="err">.</span><span class="na">prevent</span><span class="o">=</span><span class="s">&#34;createPost&#34;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group col-md-12&#34;</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;title&#34;</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;title&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;title&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;title&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
-            <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Enter title&#34;</span><span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span>
+            <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&#34;title&#34;</span>
+            <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;title&#34;</span>
+            <span class="na">name</span><span class="o">=</span><span class="s">&#34;title&#34;</span>
+            <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
+            <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Enter title&#34;</span>
+          <span class="p">/&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group col-md-12&#34;</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;description&#34;</span><span class="p">&gt;</span>Description<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;description&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;description&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;description&#34;</span> 
-          <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Enter Description&#34;</span><span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span>
+            <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&#34;description&#34;</span>
+            <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;description&#34;</span>
+            <span class="na">name</span><span class="o">=</span><span class="s">&#34;description&#34;</span>
+            <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
+            <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Enter Description&#34;</span>
+          <span class="p">/&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group col-md-12&#34;</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="p">&gt;</span>Write Content<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&#34;30&#34;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&#34;5&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;content&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">textarea</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span>
+            <span class="na">cols</span><span class="o">=</span><span class="s">&#34;30&#34;</span>
+            <span class="na">rows</span><span class="o">=</span><span class="s">&#34;5&#34;</span>
+            <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;content&#34;</span>
+            <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
+          <span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group col-md-12&#34;</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;author&#34;</span><span class="p">&gt;</span>Author<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;author&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;author&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;author&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span>
+            <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&#34;author&#34;</span>
+            <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;author&#34;</span>
+            <span class="na">name</span><span class="o">=</span><span class="s">&#34;author&#34;</span>
+            <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
+          <span class="p">/&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group col-md-12&#34;</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-success&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span><span class="p">&gt;</span>Create Post<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
@@ -1020,7 +1070,7 @@ server.port = 8034
       <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
       <span class="nx">description</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
       <span class="nx">content</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-      <span class="nx">author</span><span class="o">:</span> <span class="s2">&#34;111hunter&#34;</span>
+      <span class="nx">author</span><span class="o">:</span> <span class="s2">&#34;111hunter&#34;</span><span class="p">,</span>
     <span class="p">};</span>
   <span class="p">},</span>
   <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
@@ -1029,16 +1079,16 @@ server.port = 8034
         <span class="nx">title</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span>
         <span class="nx">description</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">description</span><span class="p">,</span>
         <span class="nx">content</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
-        <span class="nx">author</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">author</span>
+        <span class="nx">author</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">author</span><span class="p">,</span>
       <span class="p">};</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">__submitToServer</span><span class="p">(</span><span class="nx">postData</span><span class="p">);</span>
     <span class="p">},</span>
     <span class="nx">__submitToServer</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}</span><span class="sb">/create`</span><span class="p">,</span> <span class="nx">data</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}</span><span class="sb">/create`</span><span class="p">,</span> <span class="nx">data</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;home&#34;</span> <span class="p">});</span>
       <span class="p">});</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
@@ -1082,13 +1132,42 @@ server.port = 8034
 </span><span class="lnt">33
 </span><span class="lnt">34
 </span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h4</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-center mt-20&#34;</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-info&#34;</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&#34;navigate()&#34;</span><span class="p">&gt;</span>View All Posts<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-info&#34;</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&#34;navigate()&#34;</span><span class="p">&gt;</span>
+          View All Posts
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-12 form-wrapper&#34;</span><span class="p">&gt;</span>
@@ -1096,20 +1175,45 @@ server.port = 8034
       <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;edit-post-form&#34;</span> <span class="err">@</span><span class="na">submit</span><span class="err">.</span><span class="na">prevent</span><span class="o">=</span><span class="s">&#34;editPost&#34;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group col-md-12&#34;</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;title&#34;</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;title&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;post.title&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;title&#34;</span> 
-          <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Enter title&#34;</span><span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span>
+            <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&#34;title&#34;</span>
+            <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;post.title&#34;</span>
+            <span class="na">name</span><span class="o">=</span><span class="s">&#34;title&#34;</span>
+            <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
+            <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Enter title&#34;</span>
+          <span class="p">/&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group col-md-12&#34;</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;description&#34;</span><span class="p">&gt;</span>Description<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;description&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;post.description&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;description&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span><span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Enter Description&#34;</span><span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span>
+            <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&#34;description&#34;</span>
+            <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;post.description&#34;</span>
+            <span class="na">name</span><span class="o">=</span><span class="s">&#34;description&#34;</span>
+            <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
+            <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Enter Description&#34;</span>
+          <span class="p">/&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group col-md-12&#34;</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="p">&gt;</span>Write Content<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&#34;30&#34;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&#34;5&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;post.content&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">textarea</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span>
+            <span class="na">cols</span><span class="o">=</span><span class="s">&#34;30&#34;</span>
+            <span class="na">rows</span><span class="o">=</span><span class="s">&#34;5&#34;</span>
+            <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;post.content&#34;</span>
+            <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
+          <span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group col-md-12&#34;</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;author&#34;</span><span class="p">&gt;</span>Author<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;author&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;post.author&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;author&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span> <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span>
+            <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span>
+            <span class="na">id</span><span class="o">=</span><span class="s">&#34;author&#34;</span>
+            <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;post.author&#34;</span>
+            <span class="na">name</span><span class="o">=</span><span class="s">&#34;author&#34;</span>
+            <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
+          <span class="p">/&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group col-md-12&#34;</span><span class="p">&gt;</span>
@@ -1172,7 +1276,7 @@ server.port = 8034
   <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
       <span class="nx">id</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nx">post</span><span class="o">:</span> <span class="p">{}</span>
+      <span class="nx">post</span><span class="o">:</span> <span class="p">{},</span>
     <span class="p">};</span>
   <span class="p">},</span>
   <span class="nx">created</span><span class="p">()</span> <span class="p">{</span>
@@ -1185,24 +1289,24 @@ server.port = 8034
         <span class="nx">title</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span>
         <span class="nx">description</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">post</span><span class="p">.</span><span class="nx">description</span><span class="p">,</span>
         <span class="nx">content</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">post</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
-        <span class="nx">author</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">post</span><span class="p">.</span><span class="nx">author</span>
+        <span class="nx">author</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">post</span><span class="p">.</span><span class="nx">author</span><span class="p">,</span>
       <span class="p">};</span>
 
       <span class="nx">axios</span>
         <span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}</span><span class="sb">/update/?notes_id=</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span> <span class="nx">postData</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
           <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;home&#34;</span> <span class="p">});</span>
         <span class="p">});</span>
     <span class="p">},</span>
     <span class="nx">getPost</span><span class="p">()</span> <span class="p">{</span>
       <span class="nx">axios</span>
         <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">post</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">post</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
     <span class="p">},</span>
     <span class="nx">navigate</span><span class="p">()</span> <span class="p">{</span>
       <span class="nx">router</span><span class="p">.</span><span class="nx">go</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
@@ -1229,6 +1333,9 @@ server.port = 8034
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
@@ -1236,14 +1343,17 @@ server.port = 8034
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-sm-12&#34;</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">h4</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;margin-top: 30px;&#34;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-info&#34;</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&#34;navigate()&#34;</span><span class="p">&gt;</span>View All Posts<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-info&#34;</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&#34;navigate()&#34;</span><span class="p">&gt;</span>
+            View All Posts
+          <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">hr</span> <span class="p">/&gt;</span>
       <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>{{ post.title }}<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;glyphicon glyphicon-time&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-        Post by {{post.author}}, {{new Date(post.updateTime).toLocaleDateString()}}.
+        Post by {{post.author}}, {{new
+        Date(post.updateTime).toLocaleDateString()}}.
       <span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ post.content }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1288,7 +1398,7 @@ server.port = 8034
   <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
       <span class="nx">id</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nx">post</span><span class="o">:</span> <span class="p">{}</span>
+      <span class="nx">post</span><span class="o">:</span> <span class="p">{},</span>
     <span class="p">};</span>
   <span class="p">},</span>
   <span class="nx">created</span><span class="p">()</span> <span class="p">{</span>
@@ -1299,12 +1409,12 @@ server.port = 8034
     <span class="nx">getPost</span><span class="p">()</span> <span class="p">{</span>
       <span class="nx">axios</span>
         <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">post</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">post</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
     <span class="p">},</span>
     <span class="nx">navigate</span><span class="p">()</span> <span class="p">{</span>
       <span class="nx">router</span><span class="p">.</span><span class="nx">go</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
@@ -1373,6 +1483,33 @@ server.port = 8034
 </span><span class="lnt">57
 </span><span class="lnt">58
 </span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
@@ -1393,17 +1530,30 @@ server.port = 8034
             <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-text text-truncate&#34;</span><span class="p">&gt;</span>{{ post.content }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;d-flex justify-content-center align-items-center&#34;</span><span class="p">&gt;</span>
               <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn-group&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;margin-bottom: 1rem;&#34;</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">:to</span><span class="o">=</span><span class="s">&#34;{name: &#39;Post&#39;, params: {id: post.id}}&#34;</span>
-                  <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-sm btn-outline-info&#34;</span><span class="p">&gt;</span>View Post<span class="p">&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">router-link</span> <span class="na">:to</span><span class="o">=</span><span class="s">&#34;{name: &#39;Edit&#39;, params: {id: post.id}}&#34;</span>
-                  <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-sm btn-outline-warning&#34;</span><span class="p">&gt;</span>Edit Post<span class="p">&lt;/</span><span class="nt">router-link</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-sm btn-outline-danger&#34;</span>
-                  <span class="na">v-on:click</span><span class="o">=</span><span class="s">&#34;deletePost(post.id)&#34;</span><span class="p">&gt;</span>Delete Post<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">router-link</span>
+                  <span class="na">:to</span><span class="o">=</span><span class="s">&#34;{name: &#39;Post&#39;, params: {id: post.id}}&#34;</span>
+                  <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-sm btn-outline-info&#34;</span>
+                  <span class="p">&gt;</span>View Post<span class="p">&lt;/</span><span class="nt">router-link</span>
+                <span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">router-link</span>
+                  <span class="na">:to</span><span class="o">=</span><span class="s">&#34;{name: &#39;Edit&#39;, params: {id: post.id}}&#34;</span>
+                  <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-sm btn-outline-warning&#34;</span>
+                  <span class="p">&gt;</span>Edit Post<span class="p">&lt;/</span><span class="nt">router-link</span>
+                <span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">button</span>
+                  <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-sm btn-outline-danger&#34;</span>
+                  <span class="na">v-on:click</span><span class="o">=</span><span class="s">&#34;deletePost(post.id)&#34;</span>
+                <span class="p">&gt;</span>
+                  Delete Post
+                <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
               <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-footer&#34;</span><span class="p">&gt;</span>
-              <span class="p">&lt;</span><span class="nt">small</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-muted&#34;</span><span class="p">&gt;</span>Posted on: {{ new Date(post.updateTime).toLocaleDateString()}}<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">small</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-muted&#34;</span>
+                <span class="p">&gt;</span>Posted on: {{ new
+                Date(post.updateTime).toLocaleDateString()}}<span class="p">&lt;/</span><span class="nt">small</span>
+              <span class="p">&gt;</span>
               <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
               <span class="p">&lt;</span><span class="nt">small</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-muted&#34;</span><span class="p">&gt;</span>by: {{ post.author}}<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1414,19 +1564,33 @@ server.port = 8034
 
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
       <span class="c">&lt;!-- 按钮：用于打开模态框 --&gt;</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;this.posts.length&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-warning&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span>
-        <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#myModal&#34;</span><span class="p">&gt;</span>Delete All Post<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span>
+        <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;this.posts.length&#34;</span>
+        <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-warning&#34;</span>
+        <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span>
+        <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#myModal&#34;</span>
+      <span class="p">&gt;</span>
+        Delete All Post
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
       <span class="c">&lt;!-- 模态框 --&gt;</span>
       <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;myModal&#34;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog&#34;</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-header&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;border-bottom: 0&#34;</span><span class="p">&gt;</span>
-              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span><span class="p">&gt;</span><span class="ni">&amp;times;</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span><span class="p">&gt;</span>
+                <span class="ni">&amp;times;</span>
+              <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-body&#34;</span><span class="p">&gt;</span>Are you sure to delete all posts?<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-footer&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;border-top: 0&#34;</span><span class="p">&gt;</span>
               <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-info&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span><span class="p">&gt;</span>Quit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">&#34;deleteAllPost()&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-danger&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span><span class="p">&gt;</span>Sure<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">button</span>
+                <span class="na">v-on:click</span><span class="o">=</span><span class="s">&#34;deleteAllPost()&#34;</span>
+                <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-danger&#34;</span>
+                <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span>
+              <span class="p">&gt;</span>
+                Sure
+              <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
           <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1477,7 +1641,7 @@ server.port = 8034
 <span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">posts</span><span class="o">:</span> <span class="p">[]</span>
+      <span class="nx">posts</span><span class="o">:</span> <span class="p">[],</span>
     <span class="p">};</span>
   <span class="p">},</span>
   <span class="nx">created</span><span class="p">()</span> <span class="p">{</span>
@@ -1485,21 +1649,21 @@ server.port = 8034
   <span class="p">},</span>
   <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">fetchPosts</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}</span><span class="sb">/all`</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}</span><span class="sb">/all`</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">posts</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
       <span class="p">});</span>
     <span class="p">},</span>
     <span class="nx">deletePost</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}</span><span class="sb">/delete/?notes_id=</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}</span><span class="sb">/delete/?notes_id=</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
       <span class="p">});</span>
     <span class="p">},</span>
     <span class="nx">deleteAllPost</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}</span><span class="sb">/delete/all`</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}</span><span class="sb">/delete/all`</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
       <span class="p">});</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
@@ -1547,32 +1711,32 @@ server.port = 8034
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
-<span class="kr">import</span> <span class="nx">Router</span> <span class="nx">from</span> <span class="s1">&#39;vue-router&#39;</span>
-<span class="kr">import</span> <span class="nx">HomeComponent</span> <span class="nx">from</span> <span class="s1">&#39;@/views/Home&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">EditComponent</span> <span class="nx">from</span> <span class="s1">&#39;@/components/post/Edit&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">CreateComponent</span> <span class="nx">from</span> <span class="s1">&#39;@/components/post/Create&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">PostComponent</span> <span class="nx">from</span> <span class="s1">&#39;@/components/post/Post&#39;</span><span class="p">;</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s2">&#34;vue&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Router</span> <span class="nx">from</span> <span class="s2">&#34;vue-router&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">HomeComponent</span> <span class="nx">from</span> <span class="s2">&#34;@/views/Home&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">EditComponent</span> <span class="nx">from</span> <span class="s2">&#34;@/components/post/Edit&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">CreateComponent</span> <span class="nx">from</span> <span class="s2">&#34;@/components/post/Create&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">PostComponent</span> <span class="nx">from</span> <span class="s2">&#34;@/components/post/Post&#34;</span><span class="p">;</span>
 
-<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Router</span><span class="p">)</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Router</span><span class="p">);</span>
 
 <span class="kr">export</span> <span class="k">default</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">({</span>
-  <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;history&#39;</span><span class="p">,</span>
+  <span class="nx">mode</span><span class="o">:</span> <span class="s2">&#34;history&#34;</span><span class="p">,</span>
   <span class="nx">base</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">BASE_URL</span><span class="p">,</span>
   <span class="nx">routes</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">redirect</span><span class="o">:</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;home&#39;</span> <span class="p">}</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/home&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;home&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">HomeComponent</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/create&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Create&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">CreateComponent</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/edit/:id&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Edit&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">EditComponent</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/post/:id&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Post&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">PostComponent</span> <span class="p">}</span>
-  <span class="p">]</span>
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s2">&#34;/&#34;</span><span class="p">,</span> <span class="nx">redirect</span><span class="o">:</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;home&#34;</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s2">&#34;/home&#34;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;home&#34;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">HomeComponent</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s2">&#34;/create&#34;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;Create&#34;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">CreateComponent</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s2">&#34;/edit/:id&#34;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;Edit&#34;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">EditComponent</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s2">&#34;/post/:id&#34;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;Post&#34;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">PostComponent</span> <span class="p">},</span>
+  <span class="p">],</span>
 <span class="p">});</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>编写完前端代码，启动服务： <code>$ npm run serve </code></p>
 <p>浏览器打开 http://localhost:8080</p>
 <h2 id="成果展示">成果展示</h2>
-<p>pc端页面展示：</p>
+<p>pc 端页面展示：</p>
 <p><figure><a class="lightgallery" href="/img/vue-pc.png" title="pc端页面展示" data-thumbnail="/img/vue-pc.png" data-sub-html="<h2>pc端页面展示</h2><p>pc端页面展示</p>">
         <img
             class="lazyload"
@@ -1628,7 +1792,7 @@ server.port = 8034
             </noscript></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

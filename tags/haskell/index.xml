@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Haskell - 标签 - 浮槎的博客</title>
+        <title>Haskell - 标签 - 寂的博客</title>
         <link>http://example.org/tags/haskell/</link>
-        <description>Haskell - 标签 - 浮槎的博客</description>
+        <description>Haskell - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/haskell/" rel="self" type="application/rss+xml" /><item>
     <title>IO 和 Monad</title>
     <link>http://example.org/2020-12-28-monad/</link>

@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Angular - 标签 - 浮槎的博客</title>
+        <title>Angular - 标签 - 寂的博客</title>
         <link>http://example.org/tags/angular/</link>
-        <description>Angular - 标签 - 浮槎的博客</description>
+        <description>Angular - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 25 Apr 2020 22:27:41 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/angular/" rel="self" type="application/rss+xml" /><item>
     <title>用 NgRx 和 Nest 写一个全栈 todolist</title>
     <link>http://example.org/2020-04-25-typescript-fullstack/</link>

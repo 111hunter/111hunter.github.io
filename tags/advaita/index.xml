@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Advaita - 标签 - 浮槎的博客</title>
+        <title>Advaita - 标签 - 寂的博客</title>
         <link>http://example.org/tags/advaita/</link>
-        <description>Advaita - 标签 - 浮槎的博客</description>
+        <description>Advaita - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 01 Jan 2024 11:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/advaita/" rel="self" type="application/rss+xml" /><item>
     <title>自我认识</title>
     <link>http://example.org/2024-01-01-advaita-5/</link>

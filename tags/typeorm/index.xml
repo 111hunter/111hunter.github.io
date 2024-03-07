@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>TypeORM - 标签 - 浮槎的博客</title>
+        <title>TypeORM - 标签 - 寂的博客</title>
         <link>http://example.org/tags/typeorm/</link>
-        <description>TypeORM - 标签 - 浮槎的博客</description>
+        <description>TypeORM - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 10 Apr 2020 14:35:05 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/typeorm/" rel="self" type="application/rss+xml" /><item>
     <title>TypeORM 的基本使用</title>
     <link>http://example.org/2020-04-10-typeorm/</link>

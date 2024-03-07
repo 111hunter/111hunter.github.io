@@ -12,16 +12,18 @@
 ```js
 const SHA256 = require("crypto-js/sha256");
 class Block {
-	constructor(timestamp, data, previousHash = '') {
-		this.timestamp = timestamp;
-		this.data = data;
-		this.previousHash = previousHash;
-		this.hash = this.calculateHash();
-	}
+  constructor(timestamp, data, previousHash = "") {
+    this.timestamp = timestamp;
+    this.data = data;
+    this.previousHash = previousHash;
+    this.hash = this.calculateHash();
+  }
 
-	calculateHash() {
-		return SHA256(this.timestamp + JSON.stringify(this.data) + this.previousHash).toString();
-	}
+  calculateHash() {
+    return SHA256(
+      this.timestamp + JSON.stringify(this.data) + this.previousHash
+    ).toString();
+  }
 }
 ```
 
@@ -31,39 +33,39 @@ class Block {
 
 ```js
 class Blockchain {
-	constructor() {
-		this.chain = [this.createGenesisBlock()];
-	}
+  constructor() {
+    this.chain = [this.createGenesisBlock()];
+  }
 
-	createGenesisBlock() {
-		return new Block("01/01/2021", "Genesis block", "0");
-	}
+  createGenesisBlock() {
+    return new Block("01/01/2021", "Genesis block", "0");
+  }
 
-	getLatestBlock() {
-		return this.chain[this.chain.length - 1];
-	}
+  getLatestBlock() {
+    return this.chain[this.chain.length - 1];
+  }
 
-	addBlock(newBlock) {
-		newBlock.previousHash = this.getLatestBlock().hash;
-		newBlock.hash = newBlock.calculateHash();
-		this.chain.push(newBlock);
-	}
+  addBlock(newBlock) {
+    newBlock.previousHash = this.getLatestBlock().hash;
+    newBlock.hash = newBlock.calculateHash();
+    this.chain.push(newBlock);
+  }
 
-	isChainValid() {
-		for (let i = 1; i < this.chain.length; i++){
-			const currentBlock = this.chain[i];
-			const previousBlock = this.chain[i - 1];
+  isChainValid() {
+    for (let i = 1; i < this.chain.length; i++) {
+      const currentBlock = this.chain[i];
+      const previousBlock = this.chain[i - 1];
 
-			if (currentBlock.hash !== currentBlock.calculateHash()) {
-				return false;
-			}
+      if (currentBlock.hash !== currentBlock.calculateHash()) {
+        return false;
+      }
 
-			if (currentBlock.previousHash !== previousBlock.hash) {
-				return false;
-			}
-		}
-		return true;
-	}
+      if (currentBlock.previousHash !== previousBlock.hash) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
 ```
 
@@ -87,25 +89,32 @@ class Blockchain {
 
 ```js
 class Block {
-	constructor(timestamp, data, previousHash = '') {
-		this.timestamp = timestamp;
-		this.data = data;
-		this.previousHash = previousHash;
-		this.hash = this.calculateHash();
-		this.nonce = 0;
-	}
+  constructor(timestamp, data, previousHash = "") {
+    this.timestamp = timestamp;
+    this.data = data;
+    this.previousHash = previousHash;
+    this.hash = this.calculateHash();
+    this.nonce = 0;
+  }
 
-	calculateHash() {
-		return SHA256(this.timestamp + JSON.stringify(this.data) + this.previousHash + this.nonce).toString();
-	}
+  calculateHash() {
+    return SHA256(
+      this.timestamp +
+        JSON.stringify(this.data) +
+        this.previousHash +
+        this.nonce
+    ).toString();
+  }
 
-	mineBlock(difficulty) {
-		while (this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")) {
-			this.nonce++;
-			this.hash = this.calculateHash();
-		}
-		console.log("BLOCK MINED: " + this.hash);
-	}
+  mineBlock(difficulty) {
+    while (
+      this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")
+    ) {
+      this.nonce++;
+      this.hash = this.calculateHash();
+    }
+    console.log("BLOCK MINED: " + this.hash);
+  }
 }
 ```
 
@@ -126,33 +135,38 @@ addBlock(newBlock) {
 }
 ```
 
-在比特币中，大约每10分钟才会添加一个新的区块，而这个计算有效哈希的过程被称为挖矿。
+在比特币中，大约每 10 分钟才会添加一个新的区块，而这个计算有效哈希的过程被称为挖矿。
 
 ## 交易和矿工奖励
 
-当区块链中储存的信息为转账信息时，区块链就成了分布式账本。
+当区块链中储存的信息为转账信息时，区块链就成  了分布式账本。
 
 ```js
 class Block {
-    constructor(timestamp, transactions, previousHash = '') {
-        this.timestamp = timestamp;
-        this.transactions = transactions;
-        this.previousHash = previousHash;
-        this.hash = this.calculateHash();
-        this.nonce = 0;
-    }
+  constructor(timestamp, transactions, previousHash = "") {
+    this.timestamp = timestamp;
+    this.transactions = transactions;
+    this.previousHash = previousHash;
+    this.hash = this.calculateHash();
+    this.nonce = 0;
+  }
 
-    calculateHash() {
-        return SHA256(this.previousHash + this.timestamp + JSON.stringify(this.transactions) + this.nonce).toString();    
-    }
+  calculateHash() {
+    return SHA256(
+      this.previousHash +
+        this.timestamp +
+        JSON.stringify(this.transactions) +
+        this.nonce
+    ).toString();
+  }
 }
 
 class Transaction {
-    constructor(fromAddress, toAddress, amount){
-        this.fromAddress = fromAddress;
-        this.toAddress = toAddress;
-        this.amount = amount;
-    }
+  constructor(fromAddress, toAddress, amount) {
+    this.fromAddress = fromAddress;
+    this.toAddress = toAddress;
+    this.amount = amount;
+  }
 }
 ```
 

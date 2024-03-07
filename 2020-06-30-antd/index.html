@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>antd &#43; TS 的简单 demo - 浮槎的博客</title><meta name="Description" content="空空如也，我叩其两端而竭焉。"><meta property="og:title" content="antd &#43; TS 的简单 demo" />
+        <title>antd &#43; TS 的简单 demo - 寂的博客</title><meta name="Description" content=" 空空如也，我叩其两端而竭焉。"><meta property="og:title" content="antd &#43; TS 的简单 demo" />
 <meta property="og:description" content="这次使用 antd 和 TypeScript 实践一个简单 todolist, 作为简单的练手 Demo。这次的代码中暂时还没有实现数据持久化，状态管理等基础功能，只是把页面上能够看到的功能实现" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2020-06-30-antd/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
@@ -27,12 +27,12 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/2020-06-30-antd\/"
-        },"genre": "posts","keywords": "React","wordcount":  1769 ,
+        },"genre": "posts","keywords": "React","wordcount":  1777 ,
         "url": "http:\/\/example.org\/2020-06-30-antd\/","datePublished": "2020-06-30T00:15:00+08:00","dateModified": "2020-07-23T00:15:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "浮槎"
+                "name": "寂"
             },"description": ""
     }
     </script></head>
@@ -41,7 +41,7 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="浮槎的博客">浮槎的博客</a>
+            <a href="/" title="寂的博客">寂的博客</a>
             <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a>
@@ -65,7 +65,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="浮槎的博客">浮槎的博客</a>
+                <a href="/" title="寂的博客">寂的博客</a>
                 <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                     <i class="fas fa-adjust fa-fw"></i>
                 </a>
@@ -104,8 +104,8 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">antd &#43; TS 的简单 demo</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>浮槎</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-30">2020-06-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1769 字&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>寂</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>Coding</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-30">2020-06-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1777 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/2020-06-30-antd/" class="leancloud_visitors" data-flag-title="antd &#43; TS 的简单 demo">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -157,9 +157,9 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">ITodo</span> <span class="p">{</span>
-    <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
-    <span class="nx">text</span>: <span class="kt">string</span><span class="p">;</span>
-    <span class="nx">done</span>: <span class="kt">boolean</span><span class="p">;</span>
+  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+  <span class="nx">text</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">done</span>: <span class="kt">boolean</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -188,8 +188,8 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// Todo.ts
 </span><span class="c1"></span><span class="kr">const</span> <span class="p">[</span><span class="nx">showModal</span><span class="p">,</span> <span class="nx">setShowModal</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-<span class="kr">const</span> <span class="p">[</span><span class="nx">todoId</span><span class="p">,</span> <span class="nx">setTodoId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> 
-<span class="kr">const</span> <span class="p">[</span><span class="nx">modalTitle</span><span class="p">,</span> <span class="nx">setModalTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">todoId</span><span class="p">,</span> <span class="nx">setTodoId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">modalTitle</span><span class="p">,</span> <span class="nx">setModalTitle</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>弹出的对话框可能是添加或编辑 todo：</p>
@@ -202,8 +202,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">ModalType</span> <span class="p">{</span>
-    <span class="nx">Edit</span> <span class="o">=</span> <span class="s1">&#39;EDIT&#39;</span><span class="p">,</span>
-    <span class="nx">Add</span> <span class="o">=</span> <span class="s1">&#39;ADD&#39;</span><span class="p">,</span>
+  <span class="nx">Edit</span> <span class="o">=</span> <span class="s2">&#34;EDIT&#34;</span><span class="p">,</span>
+  <span class="nx">Add</span> <span class="o">=</span> <span class="s2">&#34;ADD&#34;</span><span class="p">,</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -227,14 +227,14 @@
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// Todo.ts
 </span><span class="c1"></span>
 <span class="kr">const</span> <span class="nx">onShowModal</span> <span class="o">=</span> <span class="p">(</span><span class="kr">type</span><span class="o">:</span> <span class="nx">ModalType</span><span class="p">,</span> <span class="nx">id?</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="kr">type</span> <span class="o">===</span> <span class="nx">ModalType</span><span class="p">.</span><span class="nx">Add</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">setModalTitle</span><span class="p">(</span><span class="s1">&#39;添加任务&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="kr">type</span> <span class="o">===</span> <span class="nx">ModalType</span><span class="p">.</span><span class="nx">Edit</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">setModalTitle</span><span class="p">(</span><span class="s1">&#39;编辑任务&#39;</span><span class="p">);</span>
-        <span class="nx">setTodoId</span><span class="p">(</span><span class="nx">id</span><span class="o">!</span><span class="p">);</span> <span class="c1">//记录 TodoList 组件传递的 todoId
-</span><span class="c1"></span>    <span class="p">}</span>
-    <span class="nx">setShowModal</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="kr">type</span> <span class="o">===</span> <span class="nx">ModalType</span><span class="p">.</span><span class="nx">Add</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setModalTitle</span><span class="p">(</span><span class="s2">&#34;添加任务&#34;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="kr">type</span> <span class="o">===</span> <span class="nx">ModalType</span><span class="p">.</span><span class="nx">Edit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setModalTitle</span><span class="p">(</span><span class="s2">&#34;编辑任务&#34;</span><span class="p">);</span>
+    <span class="nx">setTodoId</span><span class="p">(</span><span class="nx">id</span><span class="o">!</span><span class="p">);</span> <span class="c1">//记录 TodoList 组件传递的 todoId
+</span><span class="c1"></span>  <span class="p">}</span>
+  <span class="nx">setShowModal</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
@@ -248,14 +248,18 @@
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">//Todo.ts
 </span><span class="c1"></span>
-<span class="p">&lt;</span><span class="nt">Button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;primary&#34;</span>
-    <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">newTodo</span><span class="p">}</span>
-    <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">onShowModal</span><span class="p">(</span><span class="nx">ModalType</span><span class="p">.</span><span class="nx">Add</span><span class="p">)}&gt;</span>
-    <span class="err">添加</span>
+<span class="p">&lt;</span><span class="nt">Button</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&#34;primary&#34;</span>
+  <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">newTodo</span><span class="p">}</span>
+  <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">onShowModal</span><span class="p">(</span><span class="nx">ModalType</span><span class="p">.</span><span class="nx">Add</span><span class="p">)}</span>
+<span class="p">&gt;</span>
+  <span class="err">添加</span>
 <span class="p">&lt;/</span><span class="nt">Button</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
@@ -318,10 +322,10 @@
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// ModalForm.ts
 </span><span class="c1"></span>
 <span class="kr">interface</span> <span class="nx">IModalFormProps</span> <span class="p">{</span>
-    <span class="nx">visible</span>: <span class="kt">boolean</span><span class="p">;</span>
-    <span class="nx">modalTitle</span>: <span class="kt">string</span><span class="p">;</span>
-    <span class="nx">onClose</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
-    <span class="nx">addTodo</span><span class="o">:</span> <span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">text</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">flag</span>: <span class="kt">boolean</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+  <span class="nx">visible</span>: <span class="kt">boolean</span><span class="p">;</span>
+  <span class="nx">modalTitle</span>: <span class="kt">string</span><span class="p">;</span>
+  <span class="nx">onClose</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+  <span class="nx">addTodo</span><span class="o">:</span> <span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">text</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">flag</span>: <span class="kt">boolean</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -339,8 +343,8 @@
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// TodoList.ts
 </span><span class="c1"></span>
 <span class="p">&lt;</span><span class="nt">EditOutlined</span>
-    <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">icon</span><span class="p">}</span>
-    <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">onShowModal</span><span class="p">(</span><span class="nx">ModalType</span><span class="p">.</span><span class="nx">Edit</span><span class="p">,</span> <span class="nx">todo</span><span class="p">.</span><span class="nx">id</span><span class="p">)}</span>
+  <span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">icon</span><span class="p">}</span>
+  <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">onShowModal</span><span class="p">(</span><span class="nx">ModalType</span><span class="p">.</span><span class="nx">Edit</span><span class="p">,</span> <span class="nx">todo</span><span class="p">.</span><span class="nx">id</span><span class="p">)}</span>
 <span class="p">/&gt;</span>
 </code></pre></td></tr></table>
 </div>
@@ -362,12 +366,12 @@
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// Todo.ts
 </span><span class="c1"></span>
 <span class="p">&lt;</span><span class="nt">ModalForm</span>
-    <span class="na">modalTitle</span><span class="o">=</span><span class="p">{</span><span class="nx">modalTitle</span><span class="p">}</span>
-    <span class="na">todoId</span><span class="o">=</span><span class="p">{</span><span class="nx">todoId</span><span class="p">}</span>
-    <span class="na">visible</span><span class="o">=</span><span class="p">{</span><span class="nx">showModal</span><span class="p">}</span>
-    <span class="na">onClose</span><span class="o">=</span><span class="p">{</span><span class="nx">onClose</span><span class="p">}</span>
-    <span class="na">addTodo</span><span class="o">=</span><span class="p">{</span><span class="nx">addTodo</span><span class="p">}</span>
-    <span class="na">updateText</span><span class="o">=</span><span class="p">{</span><span class="nx">updateText</span><span class="p">}</span>
+  <span class="na">modalTitle</span><span class="o">=</span><span class="p">{</span><span class="nx">modalTitle</span><span class="p">}</span>
+  <span class="na">todoId</span><span class="o">=</span><span class="p">{</span><span class="nx">todoId</span><span class="p">}</span>
+  <span class="na">visible</span><span class="o">=</span><span class="p">{</span><span class="nx">showModal</span><span class="p">}</span>
+  <span class="na">onClose</span><span class="o">=</span><span class="p">{</span><span class="nx">onClose</span><span class="p">}</span>
+  <span class="na">addTodo</span><span class="o">=</span><span class="p">{</span><span class="nx">addTodo</span><span class="p">}</span>
+  <span class="na">updateText</span><span class="o">=</span><span class="p">{</span><span class="nx">updateText</span><span class="p">}</span>
 <span class="p">/&gt;</span>
 </code></pre></td></tr></table>
 </div>
@@ -397,16 +401,16 @@
 <span class="kr">const</span> <span class="p">{</span> <span class="nx">visible</span><span class="p">,</span> <span class="nx">onClose</span><span class="p">,</span> <span class="nx">addTodo</span><span class="p">,</span> <span class="nx">modalTitle</span><span class="p">,</span> <span class="nx">todoId</span><span class="p">,</span> <span class="nx">updateText</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">onFinish</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">text</span>: <span class="kt">string</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">getFieldValue</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">).</span><span class="nx">trim</span><span class="p">();</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">modalTitle</span> <span class="o">===</span> <span class="s1">&#39;添加任务&#39;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">addTodo</span><span class="p">(</span><span class="nx">itemId</span><span class="p">,</span> <span class="nx">text</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-        <span class="nx">setItemId</span><span class="p">(</span><span class="nx">itemId</span> <span class="o">=&gt;</span> <span class="nx">itemId</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">modalTitle</span> <span class="o">===</span> <span class="s1">&#39;编辑任务&#39;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">updateText</span><span class="p">(</span><span class="nx">todoId</span><span class="p">,</span> <span class="nx">text</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="nx">form</span><span class="p">.</span><span class="nx">setFieldsValue</span><span class="p">({</span> <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span> <span class="p">});</span>
-    <span class="nx">onClose</span><span class="p">();</span>
+  <span class="kr">const</span> <span class="nx">text</span>: <span class="kt">string</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">getFieldValue</span><span class="p">(</span><span class="s2">&#34;content&#34;</span><span class="p">).</span><span class="nx">trim</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">modalTitle</span> <span class="o">===</span> <span class="s2">&#34;添加任务&#34;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">addTodo</span><span class="p">(</span><span class="nx">itemId</span><span class="p">,</span> <span class="nx">text</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+    <span class="nx">setItemId</span><span class="p">((</span><span class="nx">itemId</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">itemId</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">modalTitle</span> <span class="o">===</span> <span class="s2">&#34;编辑任务&#34;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">updateText</span><span class="p">(</span><span class="nx">todoId</span><span class="p">,</span> <span class="nx">text</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">form</span><span class="p">.</span><span class="nx">setFieldsValue</span><span class="p">({</span> <span class="nx">content</span><span class="o">:</span> <span class="s2">&#34;&#34;</span> <span class="p">});</span>
+  <span class="nx">onClose</span><span class="p">();</span>
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
@@ -470,41 +474,41 @@
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// Todo.ts
 </span><span class="c1"></span>
 <span class="kr">const</span> <span class="nx">addTodo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">text</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">done</span>: <span class="kt">boolean</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-	<span class="kr">const</span> <span class="nx">Item</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">text</span><span class="p">,</span> <span class="nx">done</span> <span class="p">};</span>
-	<span class="nx">setlists</span><span class="p">([</span><span class="nx">Item</span><span class="p">,</span> <span class="p">...</span><span class="nx">lists</span><span class="p">]);</span>
-	<span class="nx">message</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s1">&#39;新增成功&#39;</span><span class="p">);</span>
+  <span class="kr">const</span> <span class="nx">Item</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">text</span><span class="p">,</span> <span class="nx">done</span> <span class="p">};</span>
+  <span class="nx">setlists</span><span class="p">([</span><span class="nx">Item</span><span class="p">,</span> <span class="p">...</span><span class="nx">lists</span><span class="p">]);</span>
+  <span class="nx">message</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s2">&#34;新增成功&#34;</span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="kr">const</span> <span class="nx">deleteTodo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-	<span class="kr">const</span> <span class="nx">newlists</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span><span class="p">)</span>
-	<span class="nx">setlists</span><span class="p">([...</span><span class="nx">newlists</span><span class="p">]);</span>
-	<span class="nx">message</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s1">&#39;删除成功&#39;</span><span class="p">);</span>
+  <span class="kr">const</span> <span class="nx">newlists</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">i</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span><span class="p">);</span>
+  <span class="nx">setlists</span><span class="p">([...</span><span class="nx">newlists</span><span class="p">]);</span>
+  <span class="nx">message</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s2">&#34;删除成功&#34;</span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="kr">const</span> <span class="nx">toggleDone</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-	<span class="kr">const</span> <span class="nx">newlists</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span>
-		<span class="nx">i</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span>
-			<span class="o">?</span> <span class="p">{</span>
-				<span class="p">...</span><span class="nx">i</span><span class="p">,</span>
-				<span class="nx">done</span><span class="o">:</span> <span class="o">!</span><span class="nx">i</span><span class="p">.</span><span class="nx">done</span>
-			<span class="p">}</span>
-			<span class="o">:</span> <span class="nx">i</span>
-	<span class="p">)</span>
-	<span class="nx">setlists</span><span class="p">([...</span><span class="nx">newlists</span><span class="p">]);</span>
-<span class="p">}</span>
+  <span class="kr">const</span> <span class="nx">newlists</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span>
+    <span class="nx">i</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span>
+      <span class="o">?</span> <span class="p">{</span>
+          <span class="p">...</span><span class="nx">i</span><span class="p">,</span>
+          <span class="nx">done</span><span class="o">:</span> <span class="o">!</span><span class="nx">i</span><span class="p">.</span><span class="nx">done</span><span class="p">,</span>
+        <span class="p">}</span>
+      <span class="o">:</span> <span class="nx">i</span>
+  <span class="p">);</span>
+  <span class="nx">setlists</span><span class="p">([...</span><span class="nx">newlists</span><span class="p">]);</span>
+<span class="p">};</span>
 
 <span class="kr">const</span> <span class="nx">updateText</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">text</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-	<span class="kr">const</span> <span class="nx">newlists</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span>
-		<span class="nx">i</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span>
-			<span class="o">?</span> <span class="p">{</span>
-				<span class="p">...</span><span class="nx">i</span><span class="p">,</span>
-				<span class="nx">text</span>
-			<span class="p">}</span>
-			<span class="o">:</span> <span class="nx">i</span>
-	<span class="p">)</span>
-	<span class="nx">setlists</span><span class="p">([...</span><span class="nx">newlists</span><span class="p">]);</span>
-	<span class="nx">message</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s1">&#39;编辑成功&#39;</span><span class="p">);</span>
-<span class="p">}</span>
+  <span class="kr">const</span> <span class="nx">newlists</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span>
+    <span class="nx">i</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span>
+      <span class="o">?</span> <span class="p">{</span>
+          <span class="p">...</span><span class="nx">i</span><span class="p">,</span>
+          <span class="nx">text</span><span class="p">,</span>
+        <span class="p">}</span>
+      <span class="o">:</span> <span class="nx">i</span>
+  <span class="p">);</span>
+  <span class="nx">setlists</span><span class="p">([...</span><span class="nx">newlists</span><span class="p">]);</span>
+  <span class="nx">message</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s2">&#34;编辑成功&#34;</span><span class="p">);</span>
+<span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>代办项，已完成，清单三个标签过滤列表：</p>
@@ -518,8 +522,8 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// Todo.ts
 </span><span class="c1"></span>
-<span class="kr">const</span> <span class="nx">todoList</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">item</span><span class="p">.</span><span class="nx">done</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">doneList</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">done</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">todoList</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">item</span><span class="p">.</span><span class="nx">done</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">doneList</span> <span class="o">=</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">done</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="实现搜索功能">实现搜索功能</h2>
@@ -533,29 +537,33 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">//Todo.ts
 </span><span class="c1"></span>
-<span class="kr">const</span> <span class="p">[</span><span class="nx">searchText</span><span class="p">,</span> <span class="nx">setSearchText</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">searchText</span><span class="p">,</span> <span class="nx">setSearchText</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>实现按搜索字段过滤数据的方法：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// Todo.ts 
+<pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">// Todo.ts
 </span><span class="c1"></span>
 <span class="kr">const</span> <span class="nx">getFilter</span> <span class="o">=</span> <span class="p">(</span><span class="nx">lists</span>: <span class="kt">ITodo</span><span class="p">[],</span> <span class="nx">searchText</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="p">(</span><span class="nx">searchText</span><span class="p">.</span><span class="nx">trim</span><span class="p">()</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">todo</span> <span class="o">=&gt;</span> <span class="nx">todo</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">searchText</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()));</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="nx">lists</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">searchText</span><span class="p">.</span><span class="nx">trim</span><span class="p">()</span> <span class="o">!==</span> <span class="s2">&#34;&#34;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">lists</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">todo</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="nx">todo</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">searchText</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">lists</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
@@ -574,19 +582,21 @@
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="c1">//Todo.ts
 </span><span class="c1"></span>
 <span class="p">&lt;</span><span class="nt">Tabs</span> <span class="na">defaultActiveKey</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="na">size</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;large&#34;</span><span class="p">}&gt;</span>
-	<span class="p">&lt;</span><span class="nt">TabPane</span> <span class="na">tab</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Badge</span> <span class="na">status</span><span class="o">=</span><span class="s">&#34;warning&#34;</span> <span class="na">text</span><span class="o">=</span><span class="s">&#34;待办项&#34;</span> <span class="p">/&gt;}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>
-		<span class="p">&lt;</span><span class="nt">TodoList</span>
-			<span class="na">lists</span><span class="o">=</span><span class="p">{</span><span class="nx">getFilter</span><span class="p">(</span><span class="nx">todoList</span><span class="p">,</span> <span class="nx">searchText</span><span class="p">)}</span>
-			<span class="na">updateText</span><span class="o">=</span><span class="p">{</span><span class="nx">updateText</span><span class="p">}</span>
-			<span class="na">toggleDone</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleDone</span><span class="p">}</span>
-			<span class="na">deleteTodo</span><span class="o">=</span><span class="p">{</span><span class="nx">deleteTodo</span><span class="p">}</span>
-			<span class="na">onShowModal</span><span class="o">=</span><span class="p">{</span><span class="nx">onShowModal</span><span class="p">}/&gt;</span>
-	<span class="p">&lt;/</span><span class="nt">TabPane</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">TabPane</span> <span class="na">tab</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Badge</span> <span class="na">status</span><span class="o">=</span><span class="s">&#34;warning&#34;</span> <span class="na">text</span><span class="o">=</span><span class="s">&#34;待办项&#34;</span> <span class="p">/&gt;}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">TodoList</span>
+      <span class="na">lists</span><span class="o">=</span><span class="p">{</span><span class="nx">getFilter</span><span class="p">(</span><span class="nx">todoList</span><span class="p">,</span> <span class="nx">searchText</span><span class="p">)}</span>
+      <span class="na">updateText</span><span class="o">=</span><span class="p">{</span><span class="nx">updateText</span><span class="p">}</span>
+      <span class="na">toggleDone</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleDone</span><span class="p">}</span>
+      <span class="na">deleteTodo</span><span class="o">=</span><span class="p">{</span><span class="nx">deleteTodo</span><span class="p">}</span>
+      <span class="na">onShowModal</span><span class="o">=</span><span class="p">{</span><span class="nx">onShowModal</span><span class="p">}</span>
+    <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">TabPane</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">Tabs</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
@@ -626,7 +636,7 @@
             </noscript></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">浮槎</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

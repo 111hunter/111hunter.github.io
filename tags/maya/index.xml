@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Maya - 标签 - 浮槎的博客</title>
+        <title>Maya - 标签 - 寂的博客</title>
         <link>http://example.org/tags/maya/</link>
-        <description>Maya - 标签 - 浮槎的博客</description>
+        <description>Maya - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 17 Dec 2023 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/maya/" rel="self" type="application/rss+xml" /><item>
     <title>人格剧本</title>
     <link>http://example.org/2023-12-17-infj/</link>

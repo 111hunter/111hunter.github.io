@@ -17,9 +17,9 @@
 
 ```tsx
 export interface ITodo {
-    id: number;
-    text: string;
-    done: boolean;
+  id: number;
+  text: string;
+  done: boolean;
 }
 ```
 
@@ -29,7 +29,7 @@ export interface ITodo {
 
 需要共享的状态有：
 
-- 1.编辑 TodoList 组件中的 todo 时，需要让对话框显示(showModal) 
+- 1.编辑 TodoList 组件中的 todo 时，需要让对话框显示(showModal)
 
 - 2.编辑 TodoList 组件中的 todo 时，弹出的对话框需要获得 todo.id(todoId)
 
@@ -40,32 +40,33 @@ export interface ITodo {
 ```tsx
 // Todo.ts
 const [showModal, setShowModal] = useState(false);
-const [todoId, setTodoId] = useState(1); 
-const [modalTitle, setModalTitle] = useState('');
+const [todoId, setTodoId] = useState(1);
+const [modalTitle, setModalTitle] = useState("");
 ```
 
 弹出的对话框可能是添加或编辑 todo：
 
 ```tsx
 export enum ModalType {
-    Edit = 'EDIT',
-    Add = 'ADD',
+  Edit = "EDIT",
+  Add = "ADD",
 }
 ```
+
 根据弹出对话框的位置决定对话框标题:
 
 ```tsx
 // Todo.ts
 
 const onShowModal = (type: ModalType, id?: number) => {
-    if (type === ModalType.Add) {
-        setModalTitle('添加任务');
-    }
-    if (type === ModalType.Edit) {
-        setModalTitle('编辑任务');
-        setTodoId(id!); //记录 TodoList 组件传递的 todoId
-    }
-    setShowModal(true);
+  if (type === ModalType.Add) {
+    setModalTitle("添加任务");
+  }
+  if (type === ModalType.Edit) {
+    setModalTitle("编辑任务");
+    setTodoId(id!); //记录 TodoList 组件传递的 todoId
+  }
+  setShowModal(true);
 };
 ```
 
@@ -74,10 +75,12 @@ const onShowModal = (type: ModalType, id?: number) => {
 ```tsx
 //Todo.ts
 
-<Button type="primary"
-    className={styles.newTodo}
-    onClick={() => onShowModal(ModalType.Add)}>
-    添加
+<Button
+  type="primary"
+  className={styles.newTodo}
+  onClick={() => onShowModal(ModalType.Add)}
+>
+  添加
 </Button>
 ```
 
@@ -110,10 +113,10 @@ const ModalForm: FC<IModalFormProps> = (props) => {
 // ModalForm.ts
 
 interface IModalFormProps {
-    visible: boolean;
-    modalTitle: string;
-    onClose: () => void;
-    addTodo: (id: number, text: string, flag: boolean) => void;
+  visible: boolean;
+  modalTitle: string;
+  onClose: () => void;
+  addTodo: (id: number, text: string, flag: boolean) => void;
 }
 ```
 
@@ -123,8 +126,8 @@ interface IModalFormProps {
 // TodoList.ts
 
 <EditOutlined
-    className={styles.icon}
-    onClick={() => onShowModal(ModalType.Edit, todo.id)}
+  className={styles.icon}
+  onClick={() => onShowModal(ModalType.Edit, todo.id)}
 />
 ```
 
@@ -134,16 +137,16 @@ interface IModalFormProps {
 // Todo.ts
 
 <ModalForm
-    modalTitle={modalTitle}
-    todoId={todoId}
-    visible={showModal}
-    onClose={onClose}
-    addTodo={addTodo}
-    updateText={updateText}
+  modalTitle={modalTitle}
+  todoId={todoId}
+  visible={showModal}
+  onClose={onClose}
+  addTodo={addTodo}
+  updateText={updateText}
 />
 ```
 
-得到 todoId 就能在对话框提交时更新 todo 了，对话框组件中完善提交表单方法: 
+得到 todoId 就能在对话框提交时更新 todo 了，对话框组件中完善提交表单方法:
 
 ```tsx
 // ModalForm.ts
@@ -151,16 +154,16 @@ interface IModalFormProps {
 const { visible, onClose, addTodo, modalTitle, todoId, updateText } = props;
 
 const onFinish = () => {
-    const text: string = form.getFieldValue('content').trim();
-    if (modalTitle === '添加任务') {
-        addTodo(itemId, text, false);
-        setItemId(itemId => itemId + 1);
-    }
-    if (modalTitle === '编辑任务') {
-        updateText(todoId, text);
-    }
-    form.setFieldsValue({ content: '' });
-    onClose();
+  const text: string = form.getFieldValue("content").trim();
+  if (modalTitle === "添加任务") {
+    addTodo(itemId, text, false);
+    setItemId((itemId) => itemId + 1);
+  }
+  if (modalTitle === "编辑任务") {
+    updateText(todoId, text);
+  }
+  form.setFieldsValue({ content: "" });
+  onClose();
 };
 ```
 
@@ -180,41 +183,41 @@ const [lists, setlists] = useState<ITodo[]>([]);
 // Todo.ts
 
 const addTodo = (id: number, text: string, done: boolean) => {
-	const Item = { id, text, done };
-	setlists([Item, ...lists]);
-	message.success('新增成功');
+  const Item = { id, text, done };
+  setlists([Item, ...lists]);
+  message.success("新增成功");
 };
 
 const deleteTodo = (id: number) => {
-	const newlists = lists.filter(i => i.id !== id)
-	setlists([...newlists]);
-	message.success('删除成功');
+  const newlists = lists.filter((i) => i.id !== id);
+  setlists([...newlists]);
+  message.success("删除成功");
 };
 
 const toggleDone = (id: number) => {
-	const newlists = lists.map(i =>
-		i.id === id
-			? {
-				...i,
-				done: !i.done
-			}
-			: i
-	)
-	setlists([...newlists]);
-}
+  const newlists = lists.map((i) =>
+    i.id === id
+      ? {
+          ...i,
+          done: !i.done,
+        }
+      : i
+  );
+  setlists([...newlists]);
+};
 
 const updateText = (id: number, text: string) => {
-	const newlists = lists.map(i =>
-		i.id === id
-			? {
-				...i,
-				text
-			}
-			: i
-	)
-	setlists([...newlists]);
-	message.success('编辑成功');
-}
+  const newlists = lists.map((i) =>
+    i.id === id
+      ? {
+          ...i,
+          text,
+        }
+      : i
+  );
+  setlists([...newlists]);
+  message.success("编辑成功");
+};
 ```
 
 代办项，已完成，清单三个标签过滤列表：
@@ -222,8 +225,8 @@ const updateText = (id: number, text: string) => {
 ```tsx
 // Todo.ts
 
-const todoList = lists.filter(item => !item.done);
-const doneList = lists.filter(item => item.done);
+const todoList = lists.filter((item) => !item.done);
+const doneList = lists.filter((item) => item.done);
 ```
 
 ## 实现搜索功能
@@ -233,19 +236,21 @@ const doneList = lists.filter(item => item.done);
 ```tsx
 //Todo.ts
 
-const [searchText, setSearchText] = useState('');
+const [searchText, setSearchText] = useState("");
 ```
 
 实现按搜索字段过滤数据的方法：
 
 ```tsx
-// Todo.ts 
+// Todo.ts
 
 const getFilter = (lists: ITodo[], searchText: string) => {
-	if (searchText.trim() !== '') {
-		return lists.filter(todo => todo.text.toLowerCase().includes(searchText.toLowerCase()));
-	}
-	return lists;
+  if (searchText.trim() !== "") {
+    return lists.filter((todo) =>
+      todo.text.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
+  return lists;
 };
 ```
 
@@ -255,14 +260,15 @@ Todo 组件将列表数据先用 getFilter 方法过滤再传递给 TodoList 子
 //Todo.ts
 
 <Tabs defaultActiveKey="1" size={"large"}>
-	<TabPane tab={<Badge status="warning" text="待办项" />} key="1">
-		<TodoList
-			lists={getFilter(todoList, searchText)}
-			updateText={updateText}
-			toggleDone={toggleDone}
-			deleteTodo={deleteTodo}
-			onShowModal={onShowModal}/>
-	</TabPane>
+  <TabPane tab={<Badge status="warning" text="待办项" />} key="1">
+    <TodoList
+      lists={getFilter(todoList, searchText)}
+      updateText={updateText}
+      toggleDone={toggleDone}
+      deleteTodo={deleteTodo}
+      onShowModal={onShowModal}
+    />
+  </TabPane>
 </Tabs>
 ```
 
