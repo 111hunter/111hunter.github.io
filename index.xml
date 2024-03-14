@@ -3,9 +3,16 @@
         <title>寂的博客</title>
         <link>http://example.org/</link>
         <description> 空空如也，我叩其两端而竭焉。</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 10 Mar 2024 23:50:34 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 14 Mar 2024 13:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>大器免成</title>
+    <link>http://example.org/2024-03-14-time-5/</link>
+    <pubDate>Thu, 14 Mar 2024 13:50:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2024-03-14-time-5/</guid>
+    <description><![CDATA[意志力只是一种能量，而不是能力。当它被消耗殆尽，努力就会荡然无存。努力是一个伪概念，它改变不了你的命运，很多人不愿接受这个事实，因为他除了努]]></description>
+</item><item>
     <title>寂灭</title>
     <link>http://example.org/2024-03-10-time-4/</link>
     <pubDate>Sun, 10 Mar 2024 23:50:34 &#43;0800</pubDate>
@@ -68,12 +75,5 @@
     <author>作者</author>
     <guid>http://example.org/2023-12-06-performer/</guid>
     <description><![CDATA[不要试图去弯曲勺子。这是不可能的。相反，要尽力去发现真相。勺子根本不存在。 — 勺子男孩，《黑客帝国》 人类的自我就像是在黑夜中独自前行的手电筒，]]></description>
-</item><item>
-    <title>意识之梦</title>
-    <link>http://example.org/2023-11-28-advaita-5/</link>
-    <pubDate>Tue, 28 Nov 2023 20:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2023-11-28-advaita-5/</guid>
-    <description><![CDATA[当你认识到选择的无益，觉察就会自发地产生。 — 克里希那穆提 无论我说了什么，无论任何人说了什么，无论经典说了什么，全都是概念。我们需要概念以便沟]]></description>
 </item></channel>
 </rss>
