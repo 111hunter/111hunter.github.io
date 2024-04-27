@@ -1,21 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Rx - 标签 - 寂的博客</title>
-        <link>http://example.org/tags/rx/</link>
+        <link>https://111hunter.github.io/tags/rx/</link>
         <description>Rx - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 25 Apr 2020 22:27:41 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/rx/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 25 Apr 2020 22:27:41 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/rx/" rel="self" type="application/rss+xml" /><item>
     <title>用 NgRx 和 Nest 写一个全栈 todolist</title>
-    <link>http://example.org/2020-04-25-typescript-fullstack/</link>
+    <link>https://111hunter.github.io/2020-04-25-typescript-fullstack/</link>
     <pubDate>Sat, 25 Apr 2020 22:27:41 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-04-25-typescript-fullstack/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-04-25-typescript-fullstack/</guid>
     <description><![CDATA[本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。 后端开发 后端开发使用 Nest.js 框架，本次实践是重前端的，因此后端会做得简单一些。后端]]></description>
-</item><item>
+</item>
+<item>
     <title>初探 RxJS - Observable 的简单创建</title>
-    <link>http://example.org/2020-03-13-rxjs-01/</link>
+    <link>https://111hunter.github.io/2020-03-13-rxjs-01/</link>
     <pubDate>Fri, 13 Mar 2020 11:50:32 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-03-13-rxjs-01/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-03-13-rxjs-01/</guid>
     <description><![CDATA[ReactiveX 结合了 观察者模式、迭代器模式 和 使用集合的函数式编程，以满足以一种理想方式来管理事件序列所需要的一切。 在 RxJS 中用来解决异步事件管理的的基本概念]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

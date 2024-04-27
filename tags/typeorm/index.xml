@@ -1,21 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>TypeORM - 标签 - 寂的博客</title>
-        <link>http://example.org/tags/typeorm/</link>
+        <link>https://111hunter.github.io/tags/typeorm/</link>
         <description>TypeORM - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 10 Apr 2020 14:35:05 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/typeorm/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 10 Apr 2020 14:35:05 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/typeorm/" rel="self" type="application/rss+xml" /><item>
     <title>TypeORM 的基本使用</title>
-    <link>http://example.org/2020-04-10-typeorm/</link>
+    <link>https://111hunter.github.io/2020-04-10-typeorm/</link>
     <pubDate>Fri, 10 Apr 2020 14:35:05 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-04-10-typeorm/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-04-10-typeorm/</guid>
     <description><![CDATA[本文主要讲述如何用 typeorm 建表，建立一对一，一对多，多对多的关系，建立表的外连接。 以及在 typeorm 做查询操作的两种常用方式：Find 选项 和 QueryBui]]></description>
-</item><item>
+</item>
+<item>
     <title>NestJS &#43; TypeORM 实现 crud 示例</title>
-    <link>http://example.org/2020-02-01-nest-crud/</link>
+    <link>https://111hunter.github.io/2020-02-01-nest-crud/</link>
     <pubDate>Sat, 01 Feb 2020 14:06:31 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-02-01-nest-crud/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-02-01-nest-crud/</guid>
     <description><![CDATA[随着代码量的增长传统服务端 MVC 模式中 Modal 和 Controller 会变得含糊不清，导致难于维护。下面是传统 MVC 服务端架构： 传统MVC架构传统MVC架构 " 传统MVC架构 Nest(Nest.js)]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

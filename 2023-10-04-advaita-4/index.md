@@ -45,8 +45,3 @@
 
 - 全文摘录自 [《The First And Last Freedom》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_First_And_Last_Freedom.pdf)
 
-**推荐阅读**
-
-- [越是选择，就越是空虚 ​- 克里希那穆提](https://mp.weixin.qq.com/s/xg8jKALRfQEpmeTBegm1Ng)
-- [追寻真理不过是一种逃避 - 克里希那穆提](https://mp.weixin.qq.com/s/GpVbz6yianmiantlpU2Eyw)
-

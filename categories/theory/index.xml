@@ -1,77 +1,87 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Theory - 分类 - 寂的博客</title>
-        <link>http://example.org/categories/theory/</link>
+        <link>https://111hunter.github.io/categories/theory/</link>
         <description>Theory - 分类 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 19 Dec 2023 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/theory/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 19 Dec 2023 10:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/categories/theory/" rel="self" type="application/rss+xml" /><item>
     <title>虚拟 — 膨胀出全息世界</title>
-    <link>http://example.org/2023-12-19-itp/</link>
+    <link>https://111hunter.github.io/2023-12-19-itp/</link>
     <pubDate>Tue, 19 Dec 2023 10:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2023-12-19-itp/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2023-12-19-itp/</guid>
     <description><![CDATA[“许多独立的并且很有说服力的论点，都表明时空这个概念本身并不是基础性的。时空注定要消亡。在物理定律的实际底层描述中，根本不存在时空这样的东西]]></description>
-</item><item>
+</item>
+<item>
     <title>零知识证明 — 数字签名的起源</title>
-    <link>http://example.org/2023-05-02-zkp/</link>
+    <link>https://111hunter.github.io/2023-05-02-zkp/</link>
     <pubDate>Tue, 02 May 2023 10:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2023-05-02-zkp/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2023-05-02-zkp/</guid>
     <description><![CDATA[在密码学中，了解数字签名工作原理的最好方法是了解它的起源。因此，让我们花点儿时间简要介绍一下零知识证明(ZKP)，然后重新讨论数字签名。 想象]]></description>
-</item><item>
+</item>
+<item>
     <title>像理解网络模型一样理解区块链</title>
-    <link>http://example.org/2022-06-05-blockchain-2/</link>
+    <link>https://111hunter.github.io/2022-06-05-blockchain-2/</link>
     <pubDate>Sun, 05 Jun 2022 08:00:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2022-06-05-blockchain-2/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2022-06-05-blockchain-2/</guid>
     <description><![CDATA[The Architecture of a Web3 applicationhttps://mirror.xyz/straycatokinawa.eth/orz4h4Q-XbKC-NH8n4mdAyLp2QFD21Dsq5ewL05qoMk " The Architecture of a Web3 application 计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决。 —《程序员的自我修养》 上述名言概括了计算机系统软件体]]></description>
-</item><item>
+</item>
+<item>
     <title>一些通用计算模型</title>
-    <link>http://example.org/2021-01-30-tag-system/</link>
+    <link>https://111hunter.github.io/2021-01-30-tag-system/</link>
     <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2021-01-30-tag-system/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2021-01-30-tag-system/</guid>
     <description><![CDATA[在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计]]></description>
-</item><item>
+</item>
+<item>
     <title>[译]元编程</title>
-    <link>http://example.org/2021-01-21-metaprogram/</link>
+    <link>https://111hunter.github.io/2021-01-21-metaprogram/</link>
     <pubDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2021-01-21-metaprogram/</guid>
-    <description><![CDATA[本文翻译自 stereobooster 的博客文章：metaprogramming，少量删改。完整内容参阅原文。 什么是元编程 不好的是，没有一个达成共识的单一定义。让我们]]></description>
-</item><item>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2021-01-21-metaprogram/</guid>
+    <description><![CDATA[本文翻译自 stereobooster 的博客文章：metaprogramming ，少量删改。完整内容参阅原文。 什么是元编程 不好的是，没有一个达成共识的单一定义。让我们]]></description>
+</item>
+<item>
     <title>关于 TCP, 我学到什么</title>
-    <link>http://example.org/2021-01-08-tcp/</link>
+    <link>https://111hunter.github.io/2021-01-08-tcp/</link>
     <pubDate>Fri, 08 Jan 2021 10:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2021-01-08-tcp/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2021-01-08-tcp/</guid>
     <description><![CDATA[TCP 在不可靠的 IP 协议之上实现了可靠性，使得我们在开发上层应用时，不必关注网络传输的种种复杂性。可靠，指的是采用一系列技术来保障数据在发送方和接]]></description>
-</item><item>
+</item>
+<item>
     <title>IO 和 Monad</title>
-    <link>http://example.org/2020-12-28-monad/</link>
+    <link>https://111hunter.github.io/2020-12-28-monad/</link>
     <pubDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-12-28-monad/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-12-28-monad/</guid>
     <description><![CDATA[学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程]]></description>
-</item><item>
+</item>
+<item>
     <title>程序解释与编译</title>
-    <link>http://example.org/2020-12-10-lex-parse/</link>
+    <link>https://111hunter.github.io/2020-12-10-lex-parse/</link>
     <pubDate>Thu, 10 Dec 2020 09:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-12-10-lex-parse/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-12-10-lex-parse/</guid>
     <description><![CDATA[程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。 前置知识 算术表达式根据运算符所在的位置可以分为三种表示方法： 前缀表达式]]></description>
-</item><item>
+</item>
+<item>
     <title>λ 演算: 程序从无到有</title>
-    <link>http://example.org/2020-11-26-%CE%BB-calculus/</link>
+    <link>https://111hunter.github.io/2020-11-26-%CE%BB-calculus/</link>
     <pubDate>Thu, 26 Nov 2020 09:50:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-11-26-%CE%BB-calculus/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-11-26-%CE%BB-calculus/</guid>
     <description><![CDATA[由邱奇创造的 λ 演算(λ-calculus) 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boo]]></description>
-</item><item>
+</item>
+<item>
     <title>图灵机的极简实现</title>
-    <link>http://example.org/2020-11-17-brainfuck/</link>
+    <link>https://111hunter.github.io/2020-11-17-brainfuck/</link>
     <pubDate>Tue, 17 Nov 2020 22:00:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-11-17-brainfuck/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-11-17-brainfuck/</guid>
     <description><![CDATA[图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

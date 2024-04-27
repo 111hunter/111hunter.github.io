@@ -1,56 +1,63 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>React - 标签 - 寂的博客</title>
-        <link>http://example.org/tags/react/</link>
+        <link>https://111hunter.github.io/tags/react/</link>
         <description>React - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 02 Nov 2020 20:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/react/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 02 Nov 2020 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/react/" rel="self" type="application/rss+xml" /><item>
     <title>以 useEffect 为圆心</title>
-    <link>http://example.org/2020-11-02-react-hooks/</link>
+    <link>https://111hunter.github.io/2020-11-02-react-hooks/</link>
     <pubDate>Mon, 02 Nov 2020 20:00:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-11-02-react-hooks/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-11-02-react-hooks/</guid>
     <description><![CDATA[以 useEffect 为圆心，其他 Hooks 为半径，构建 React Hooks 的知识圆环。为什么会想出这样一个标题呢？Hooks 的知识点过于分散，很多朋友在读过 React 官方文档后，还是不知道]]></description>
-</item><item>
+</item>
+<item>
     <title>构建自己的 mini React</title>
-    <link>http://example.org/2020-10-18-mini-react/</link>
+    <link>https://111hunter.github.io/2020-10-18-mini-react/</link>
     <pubDate>Sun, 18 Oct 2020 22:40:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-10-18-mini-react/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-10-18-mini-react/</guid>
     <description><![CDATA[现在，我们遵循 React 16.8 的代码体系结构，一步一步地构建我们自己的 mini React。 基础回顾 开始之前，我们先回顾 React 是怎么将 JSX 转换成 DOM 节点的： 1 2 3 const element =]]></description>
-</item><item>
+</item>
+<item>
     <title>实现仿 Recoil 的状态共享</title>
-    <link>http://example.org/2020-10-07-recoil-clone/</link>
+    <link>https://111hunter.github.io/2020-10-07-recoil-clone/</link>
     <pubDate>Wed, 07 Oct 2020 19:40:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-10-07-recoil-clone/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-10-07-recoil-clone/</guid>
     <description><![CDATA[本文是我最近阅读一篇英文技术文章后写的小结。阅读前请注意，本文不涉及任何 Recoil 源码。仿写的代码并不是 Recoil 真正的实现方式，本文只仿造实现了 Recoil 中两个重]]></description>
-</item><item>
+</item>
+<item>
     <title>Next.js 概览</title>
-    <link>http://example.org/2020-09-29-next/</link>
+    <link>https://111hunter.github.io/2020-09-29-next/</link>
     <pubDate>Tue, 29 Sep 2020 23:30:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-09-29-next/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-09-29-next/</guid>
     <description><![CDATA[Next.js Reddit Memehttps://www.reddit.com/r/nextjs/comments/17iy9sx/nextjs_server_action_is_crazy " Next.js Reddit Meme 我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运]]></description>
-</item><item>
+</item>
+<item>
     <title>antd &#43; TS 的简单 demo</title>
-    <link>http://example.org/2020-06-30-antd/</link>
+    <link>https://111hunter.github.io/2020-06-30-antd/</link>
     <pubDate>Tue, 30 Jun 2020 00:15:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-06-30-antd/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-06-30-antd/</guid>
     <description><![CDATA[这次使用 antd 和 TypeScript 实践一个简单 todolist, 作为简单的练手 Demo。这次的代码中暂时还没有实现数据持久化，状态管理等基础功能，只是把页面上能够看到的功能实现]]></description>
-</item><item>
+</item>
+<item>
     <title>写一个可拖拽的 Trello</title>
-    <link>http://example.org/2020-05-18-trello/</link>
+    <link>https://111hunter.github.io/2020-05-18-trello/</link>
     <pubDate>Mon, 18 May 2020 00:18:30 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-05-18-trello/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-05-18-trello/</guid>
     <description><![CDATA[本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间]]></description>
-</item><item>
+</item>
+<item>
     <title>Context &#43; Hooks：状态管理新方案</title>
-    <link>http://example.org/2020-05-07-react-hooks-state/</link>
+    <link>https://111hunter.github.io/2020-05-07-react-hooks-state/</link>
     <pubDate>Thu, 07 May 2020 16:46:30 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020-05-07-react-hooks-state/</guid>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2020-05-07-react-hooks-state/</guid>
     <description><![CDATA[React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 React 组件分为两类，class 组件和函数]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>
