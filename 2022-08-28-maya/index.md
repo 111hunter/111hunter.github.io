@@ -81,4 +81,4 @@
 
 **参阅资料**
 
-- 全文摘录自 [《让心自由: 托尔特克智者的四个约定》](https://book.douban.com/subject/1267063/)
+- 节选自 [《让心自由: 托尔特克智者的四个约定》](https://book.douban.com/subject/1267063/)

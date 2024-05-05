@@ -103,7 +103,7 @@
 
 博姆: 我们已经讨论过了，我们本来是一种面目，心里又想变成另外一种面目。当两种需求并存时，冲突就产生了，对不对?
 
-克: 我了解你的意思。但是我要找出的是所有的不幸、困惑、冲突及挣扎的起源，所以在一开头就提出了人类是否误入歧途的问题。“我非我”是否就是问题的起源?
+克: 我了解你的意思。但是我要找出的是所有的不幸、困惑、冲突及挣扎的起源，所以在一开头就提出了人类是否误入歧途的问题。**“我非我”是否就是问题的起源?**
 
 博姆: 我认为现在又更接近答案了。
 
@@ -657,5 +657,5 @@
 
 **参阅资料**
 
-- 全文摘录自 [《The Ending Of Time》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_Ending_Of_Time.pdf)
+- 节选自 [《The Ending Of Time》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_Ending_Of_Time.pdf)
 

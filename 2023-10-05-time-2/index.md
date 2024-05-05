@@ -595,5 +595,5 @@
 
 **参阅资料**
 
-- 全文摘录自 [《The Ending Of Time》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_Ending_Of_Time.pdf)
+- 节选自 [《The Ending Of Time》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_Ending_Of_Time.pdf)
 

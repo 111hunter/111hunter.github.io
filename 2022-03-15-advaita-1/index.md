@@ -37,7 +37,7 @@
 
 **参阅资料**
 
-- 全文摘录自 [《Freedom from the known》](https://mindiver.se/freedom-from-the-known/)
+- 节选自 [《Freedom from the known》](https://mindiver.se/freedom-from-the-known/)
 
 **推荐阅读**
 

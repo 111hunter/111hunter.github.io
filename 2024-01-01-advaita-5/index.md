@@ -1,6 +1,5 @@
 # 自我认识
 
-
 > 你和我就是问题所在，而不是世界，因为世界就是我们自身的投射。 — 克里希那穆提
 
 有这样一个故事: 一位年轻记者在机场发现了一位僧人，并决定采访他。他问僧人: “先生，您认为世界上最大的问题是什么? 是全球变暖吗？世界饥饿？腐败？” 僧人微笑着回答: “我先问你一件事。你是谁？”
@@ -109,5 +108,4 @@
 
 **参阅资料**
 
-- 全文摘录自 [《The First And Last Freedom》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_First_And_Last_Freedom.pdf)
-
+- 节选自 [《The First And Last Freedom》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_First_And_Last_Freedom.pdf)

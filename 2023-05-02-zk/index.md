@@ -65,7 +65,7 @@ Schnorr 在上面的基础之上注意到任何信息都可以计算哈希值! �
 
 **参阅资料**
 
-- 全文摘录自 [《Real-World Cryptography》](https://book.douban.com/subject/34615742/)
+- 节选自 [《Real-World Cryptography》](https://book.douban.com/subject/34615742/)
 
 **推荐阅读**
 

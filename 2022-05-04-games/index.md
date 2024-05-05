@@ -40,4 +40,4 @@
 
 **参阅资料**
 
-- 全文摘录自 [《有限与无限的游戏》](https://book.douban.com/subject/25742296/)
+- 节选自 [《有限与无限的游戏》](https://book.douban.com/subject/25742296/)

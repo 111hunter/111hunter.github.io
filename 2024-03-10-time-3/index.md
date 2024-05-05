@@ -43,7 +43,7 @@
 
 **我们的工作不是追求未知，而是了解我们内心的困惑、混乱和痛苦；然后那个东西就会悄然出现，那其中就有喜悦**。
 
-节选自 “已知与未知”,[《The First And Last Freedom》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_First_And_Last_Freedom.pdf)
+节选自 [《The First And Last Freedom》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_First_And_Last_Freedom.pdf)
 
 ## 什么是死亡
 
@@ -147,7 +147,7 @@
 
 ......
 
-节选了其中一部分，完整对谈在[布罗克伍德公园第二次与佛教学者对话 1979 年 6 月 28 日“死亡”](https://mp.weixin.qq.com/s/kN_MWLzvAI-4myhsgII0GA)
+节选自 [布罗克伍德公园第二次与佛教学者对话 1979 年 6 月 28 日“死亡”](https://mp.weixin.qq.com/s/kN_MWLzvAI-4myhsgII0GA)
 
 ## 不知道的心
 
@@ -217,7 +217,7 @@
 
 你会发现，越是能把一切声音都听进来，你的心就越安静，而这种安静的状态是不会被噪音所破坏的。只有当你在抗拒某个东西时，亦即在你和你不想听的那个东西之间树立起屏障时，心才会出现挣扎。
 
-节选自 “倾听”, [《The Book of Life》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_Book_of_Life.pdf)
+节选自 [《The Book of Life》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_Book_of_Life.pdf)
 
 **推荐阅读**
 

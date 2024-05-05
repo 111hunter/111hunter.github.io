@@ -1,6 +1,5 @@
 # 行动与观念
 
-
 > 观念能产生行动吗？还是观念只是塑造了思想，因此限制了行动？ — 克里希那穆提
 
 我想讨论一下行动的问题。一开始也许是相当深奥和困难的，但是我希望通过对它的认真思考，我们能够清楚地看这个问题，因为我们的整个存在、整个生活，就是一个行动的过程。
@@ -43,10 +42,9 @@
 
 **参阅资料**
 
-- 全文摘录自 [《The First And Last Freedom》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_First_And_Last_Freedom.pdf)
+- 节选自 [《The First And Last Freedom》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_First_And_Last_Freedom.pdf)
 
 **推荐阅读**
 
 - [越是选择，就越是空虚 ​- 克里希那穆提](https://mp.weixin.qq.com/s/xg8jKALRfQEpmeTBegm1Ng)
 - [追寻真理不过是一种逃避 - 克里希那穆提](https://mp.weixin.qq.com/s/GpVbz6yianmiantlpU2Eyw)
-
