@@ -121,5 +121,3 @@
 
 - [Samadhi Part 1](https://www.youtube.com/watch?v=Bw9zSMsKcwk&list=PL8qL2YhfbR-u-xu5-mdHa-F-4l-yb0vQ-&index=1)
 
-- [原始中译文本](https://awakentheworld.com/cn/?awaken-transcript=chinese-san-mo-de-di-1-bu-maya-ziwo-de-huanxiang&noredirect=zh-Hans-CN)
-

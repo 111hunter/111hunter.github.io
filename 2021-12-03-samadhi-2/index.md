@@ -91,5 +91,3 @@
 
 - [Samadhi Part 2](https://www.youtube.com/watch?v=AQL6qcGqQ0Y&list=PL8qL2YhfbR-u-xu5-mdHa-F-4l-yb0vQ-&index=2)
 
-- [原始中译文本](https://awakentheworld.com/cn/?awaken-transcript=chinese-san-mo-de-di-2-bu-zhe-bushi-nin-de-xiangfa&noredirect=zh-Hans-CN)
-

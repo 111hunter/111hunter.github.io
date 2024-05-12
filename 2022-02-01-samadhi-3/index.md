@@ -108,5 +108,3 @@
 
 - [Samadhi Part 3](https://www.youtube.com/watch?v=Vu-Nw_ea9N4&list=PL8qL2YhfbR-u-xu5-mdHa-F-4l-yb0vQ-&index=3)
 
-- [原始中译文本](https://awakentheworld.com/cn/?awaken-transcript=cn-samadhi-3-pathless-path-transcript&noredirect=zh-Hans-CN)
-
