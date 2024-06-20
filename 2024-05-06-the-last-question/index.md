@@ -127,7 +127,7 @@
 
 **参阅资料**
 
-节选自 [Ken Wilber《No boundary》](http://taisa.si/wp/wp-content/uploads/2013/12/Ken-Wilber-No-Boundary.pdf)
+- 节选自 [Ken Wilber《No boundary》](http://taisa.si/wp/wp-content/uploads/2013/12/Ken-Wilber-No-Boundary.pdf)
 
 **推荐阅读**
 

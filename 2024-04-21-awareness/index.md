@@ -208,5 +208,5 @@
 
 **参阅资料**
 
-节选自 [《The Urgency Of Change》](https://www.holybooks.com/wp-content/uploads/The-Urgency-of-Change-Krishnamurti.pdf)
+- 节选自 [《The Urgency Of Change》](https://www.holybooks.com/wp-content/uploads/The-Urgency-of-Change-Krishnamurti.pdf)
 
