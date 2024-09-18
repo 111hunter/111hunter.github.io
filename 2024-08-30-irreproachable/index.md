@@ -25,4 +25,4 @@
 
 **推荐阅读**
 
-- [从孤独到单独 —— 一念行者](https://m.weibo.cn/status/5065128560822069?wx=1)
+- [是什么妨碍了我们的生活不断地更新？](https://mp.weixin.qq.com/s/ngK79ttbdN73-JZJpjmyZA)
