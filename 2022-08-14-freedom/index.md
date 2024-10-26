@@ -173,5 +173,8 @@
 
 **参阅资料**
 
-- 节选自 [《克里希那穆提：我没有任何信仰》](https://zhuanlan.zhihu.com/p/36272875)
+- 节选自 [克里希那穆提：我没有任何信仰](https://zhuanlan.zhihu.com/p/36272875)
 
+**推荐阅读**
+
+- [克里希那穆提：生命的圆满](https://mp.weixin.qq.com/s/sn7ScyrsVTJhgA2GPXfeeA)

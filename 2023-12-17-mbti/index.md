@@ -37,9 +37,13 @@
 
 **参阅资料**
 
-- [16 personalities 测试结果](https://www.16personalities.com/ch/%E7%BB%93%E6%9E%9C/infj-a/x/qlo4953ix)
+- [16 personalities](https://www.16personalities.com/ch/%E7%BB%93%E6%9E%9C/infj-a/x/qlo4953ix)
 
-- [16 型人格的雷点丨 INFJ 篇](https://mp.weixin.qq.com/s/YH3o4eO15utDVMsSZaNzbQ)
+- [idrlabs.com](https://www.idrlabs.com/infj.php)
+
+**推荐阅读**
+
+- [一篇文章，让你理解INFJ的基础模样](https://zhuanlan.zhihu.com/p/691817741?utm_psn=1833569459048165376)
 
 - [INFJ：行走的佛陀](https://mp.weixin.qq.com/s/7pbx_acq5uXTJdgWvCMxdA)
 
