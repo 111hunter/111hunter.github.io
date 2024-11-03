@@ -3,7 +3,15 @@
         <title>Recursion - 标签 - 寂的博客</title>
         <link>https://111hunter.github.io/tags/recursion/</link>
         <description>Recursion - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 25 Oct 2024 11:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/recursion/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 01 Nov 2024 11:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/recursion/" rel="self" type="application/rss+xml" /><item>
+    <title>未来就是你现在的样子</title>
+    <link>https://111hunter.github.io/2024-11-01-time/</link>
+    <pubDate>Fri, 01 Nov 2024 11:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2024-11-01-time/</guid>
+    <description><![CDATA[心若是不被自己的活动所占据，实相及其至乐就会降临。 — 克里希那穆提 真是一个美丽可爱的早晨，不是吗？ 无比宁静， 特别是在清晨， 当太阳刚刚升起的时候]]></description>
+</item>
+<item>
     <title>大脑愿意解开自己的束缚吗?</title>
     <link>https://111hunter.github.io/2024-10-25-proprioception/</link>
     <pubDate>Fri, 25 Oct 2024 11:50:34 &#43;0800</pubDate>
@@ -36,7 +44,7 @@
     <description><![CDATA[“我没有想到，几年后我会遇到很类似万能酸的思想，达尔文的思想: 它侵蚀了几乎所有的传统思想，并在其中唤醒了革命性的世界观，大多数古老的地标仍然]]></description>
 </item>
 <item>
-    <title>存在的探究 — 人类心智</title>
+    <title>存在的探究 — 身份之谜</title>
     <link>https://111hunter.github.io/2024-10-16-mind/</link>
     <pubDate>Wed, 16 Oct 2024 09:50:34 &#43;0800</pubDate>
     <author>寂</author>
@@ -74,14 +82,6 @@
     <author>寂</author>
     <guid>https://111hunter.github.io/2021-01-30-tag-system/</guid>
     <description><![CDATA[在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计]]></description>
-</item>
-<item>
-    <title>IO 和 Monad</title>
-    <link>https://111hunter.github.io/2020-12-28-monad/</link>
-    <pubDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>https://111hunter.github.io/2020-12-28-monad/</guid>
-    <description><![CDATA[学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程]]></description>
 </item>
 </channel>
 </rss>

@@ -49,7 +49,3 @@
 
 - 节选自 [Public Talk 3 Madras (Chennai), India - 04 January 1986](https://jkrishnamurti.org/content/what-creation-origin-beginning)
 
-**推荐阅读**
-
-- [追求真理的人具有哪些品质？](https://www.oshotimes.com/insights/lifestyle/what-are-the-qualities-of-a-seeker-of-truth/)
-
