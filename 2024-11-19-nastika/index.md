@@ -49,7 +49,7 @@
 
 **推荐阅读**
 
-- [U.G. Krishnamurti - What Thinking Is? Why Do We Think?](https://www.youtube.com/watch?v=9olyqhwf2y4&t=791s)
+- [U.G. Krishnamurti - Thinking Is You](https://www.youtube.com/watch?v=9olyqhwf2y4&t=791s)
 
 - [U.G. Krishnamurti - Solutions Is Problems](https://www.youtube.com/watch?v=1exoQ3W-6E4&t=795s)
 
