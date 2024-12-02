@@ -92,3 +92,5 @@
 **推荐阅读**
 
 - [U.G. Krishnamurti - False Perception](https://www.youtube.com/watch?v=EQFrUKQfO4k&t=620s)
+
+- [Infinite Backrooms - conversation_1711051649.txt](https://www.infinitebackrooms.com/dreams/conversation-1711051649-txt)
