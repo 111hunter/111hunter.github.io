@@ -94,3 +94,7 @@
 **参阅资料**
 
 - 节选自 [Learning that transforms consciousness - 2nd Public Talk, Saanen, 14th July 1981](https://www.krishnamurti.org/transcript/learning-that-transforms-consciousness/)
+
+**推荐阅读**
+
+- [当我死后，带着所有痛苦与悲伤的人类意识仍会继续下去！](https://www.krishnamurti.org/transcript/death-is-not-at-the-far-end-of-life/)
