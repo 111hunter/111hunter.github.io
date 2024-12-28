@@ -38,5 +38,3 @@
 - [本是世间过路客，无声无影也无尘。](https://mp.weixin.qq.com/s/h4BKNi-M-09tuMyps8vG1g)
 
 - [这个天气，适合围炉煮茶，发发呆。 — 《烟雨小镇》](https://x.com/yislee52083176/status/1864821874200608919)
-
-- [Is Hard Work a Virtue?](https://sureshn13.medium.com/is-hard-work-a-virtue-b5a009b382a7)
