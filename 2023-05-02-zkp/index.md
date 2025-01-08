@@ -70,11 +70,11 @@ Schnorr 在上面的基础之上注意到任何信息都可以计算哈希值! �
 
 **推荐阅读**
 
-- [初识「零知识」与「证明」](https://mp.weixin.qq.com/s/XQL_taBhPkCHGZOBc24MyQ)
+- [初识「零知识」与「证明」](https://github.com/sec-bit/learning-zkp/blob/master/zkp-intro/1/zkp-back.md)
 
-- [一文读懂零知识证明背后的简单逻辑](https://mirror.xyz/0x8B00cEE42f226B340aF806CD7aaA4c10cc5E0154/amsF0AOPKUUy8c2tZCMFuiYiF-2j4Umkv3JEdcMwQcU)
+- [一文读懂零知识证明背后的简单逻辑](https://mp.weixin.qq.com/s/kzC0gI4P5tdJyrr6XgTUkQ)
 
-- [彻底读懂零知识证明及其实现方法：解析 zk-SNARK](https://mirror.xyz/0x8B00cEE42f226B340aF806CD7aaA4c10cc5E0154/nQ1XeR-nivHIaqZc1-9-TaTz08S7ZgB00bems5-PLus)
+- [彻底读懂零知识证明及其实现方法：解析zk-SNARK](https://mp.weixin.qq.com/s/riDH6UBr1sJxnk-V48KAhQ)
 
 - [浅谈零知识证明：背景与起源](https://zhuanlan.zhihu.com/p/98077048)
 

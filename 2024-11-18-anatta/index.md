@@ -1,8 +1,6 @@
 # 自然状态
 
 
-<!-- > 你若能活出你内在原有之物，那么你原来拥有之物能拯救你。倘若你内没有那样东西，那么你内没有之物会置你于死地。  —《多马福音》 -->
-
 > 我没有观点。我对人类没有什么特别的信息，我身上也没有任何传教士的热情。我不是人类的救世主，或者任何类似的东西。我没有兴趣问你感兴趣的问题。       - U.G. Krishnamurti
 
 我不是来解放任何人的。你必须解放你自己，但你做不到。我说的话起不了作用。我只对描述这种状态感兴趣，对清除那些从事“神圣事业”的人笼罩在整个事物上的遮蔽和神秘感兴趣。也许我能说服你不要浪费太多的时间和精力，去寻找一种在你想象之外根本不存在的状态。
@@ -91,4 +89,8 @@
 
 **推荐阅读**
 
-- [U.G. Krishnamurti - False Perception](https://www.youtube.com/watch?v=EQFrUKQfO4k&t=620s)
+- [U.G. Krishnamurti - There Is Always Someone Else There](https://www.youtube.com/watch?v=PfLEkOdB45M&t=332s)
+
+- [U.G. Krishnamurti Interview - Anti Guru or Godman](https://www.youtube.com/watch?v=B-RT8tj5PrI&t=956s)
+
+- [Who is U.G. Krishnamurti](https://medium.com/original-philosophy/who-is-ug-krishnamurti-d1f23e801be0)

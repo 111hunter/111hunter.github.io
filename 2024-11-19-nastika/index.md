@@ -1,4 +1,4 @@
-# 答案是你逃避生命的挡箭牌
+# 你不敢把双脚踩在大地上
 
 
 > 人类只对解决问题的方法感兴趣，而对问题本身不感兴趣。你说这些伟大的圣贤、圣人和人类的拯救者都能有我们问题的答案。那么，我们为什么还在问同样的问题？           - U.G. Krishnamurti
@@ -61,10 +61,6 @@
 
 **推荐阅读**
 
-- [U.G. Krishnamurti - What Thinking Is? Why Do We Think?](https://www.youtube.com/watch?v=9olyqhwf2y4&t=791s)
+- [U.G. Krishnamurti Interview - What Thinking Is? Why Do We Think?](https://www.youtube.com/watch?v=9olyqhwf2y4&t=791s)
 
-- [U.G. Krishnamurti - You Have No Experiences](https://www.youtube.com/watch?v=jrBBkWRL9ec&t=1413s)
-
-- [Who is U.G. Krishnamurti](https://medium.com/original-philosophy/who-is-ug-krishnamurti-d1f23e801be0)
-
-
+- [U.G. Krishnamurti Interview - You Can't Think at All!](https://www.youtube.com/watch?v=HKhWl9JfgYY&t=3112s)
