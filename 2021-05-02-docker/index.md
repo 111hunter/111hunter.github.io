@@ -17,7 +17,7 @@ Docker 里的基本概念:
 
 镜像与容器类似对象与实例的关系，一个镜像可以创建多个容器
 
-## 实战
+## 实践
 
 在 Docker 官网注册好账号后，进入 [play-with-docker](https://labs.play-with-docker.com/) 添加一个新的实例，就会进入 ssh 页面。
 

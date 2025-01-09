@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://111hunter.github.io/2021-05-25-blockchain/" /><meta property="og:image" content="https://111hunter.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-25T19:50:34&#43;08:00" />
-<meta property="article:modified_time" content="2021-05-25T19:50:34&#43;08:00" /><meta property="og:site_name" content="My cool site" />
+<meta property="article:modified_time" content="2023-01-25T19:50:34&#43;08:00" /><meta property="og:site_name" content="My cool site" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://111hunter.github.io/logo.png"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/111hunter.github.io\/2021-05-25-blockchain\/"
-        },"genre": "posts","keywords": "Blockchain","wordcount":  1020 ,
-        "url": "https:\/\/111hunter.github.io\/2021-05-25-blockchain\/","datePublished": "2021-05-25T19:50:34+08:00","dateModified": "2021-05-25T19:50:34+08:00","publisher": {
+        },"genre": "posts","keywords": "Blockchain","wordcount":  1135 ,
+        "url": "https:\/\/111hunter.github.io\/2021-05-25-blockchain\/","datePublished": "2021-05-25T19:50:34+08:00","dateModified": "2023-01-25T19:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -105,7 +105,7 @@
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">单机版区块链</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
 </span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-05-25">2021-05-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1020 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-05-25">2021-05-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1135 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2021-05-25-blockchain/" class="leancloud_visitors" data-flag-title="单机版区块链">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -125,6 +125,7 @@
     <li><a href="#工作量证明">工作量证明</a></li>
     <li><a href="#交易和矿工奖励">交易和矿工奖励</a></li>
     <li><a href="#数字签名">数字签名</a></li>
+    <li><a href="#补充">补充</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>区块链是一个分布式数据库，任何人都可以读取的它的区块数据。区块链是不可变的，意味着一旦将区块添加到链中，就只能在使链的其余部分无效的情况下才能对其进行更改，这就是加密货币基于区块链来实现的原因。</p>
@@ -248,28 +249,20 @@
 </div><p><code>isChainValid</code> 方法用于验证区块链是否被篡改。若有人想要篡改区块链上的某个区块，他必须要更改这个区块之后的所有区块，才能确保区块链仍是完整的。</p>
 <h2 id="工作量证明">工作量证明</h2>
 <p>现在，我们来总结上面的区块链中的问题：</p>
-<ul>
-<li>
 <ol>
-<li>添加区块非常容易，攻击者可大量添加垃圾区块</li>
-</ol>
+<li>
+<p>添加区块非常容易，攻击者可大量添加垃圾区块</p>
 </li>
 <li>
-<ol start="2">
-<li>篡改区块并不会耗费多少时间</li>
-</ol>
+<p>篡改区块并不会耗费多少时间</p>
 </li>
 <li>
-<ol start="3">
-<li>结合上面两条可造出最长链</li>
-</ol>
+<p>结合上面两条可造出最长链</p>
 </li>
 <li>
-<ol start="4">
-<li>&hellip;</li>
-</ol>
+<p>&hellip;</p>
 </li>
-</ul>
+</ol>
 <p>如果区块的添加需要付出大量的算力成本，就可以在动机层面就杜绝攻击，区块链中这种机制叫工作量证明。简单来说，就是只添加哈希值满足特定条件的区块。</p>
 <p>如果你想添加一个区块，首先需要付出算力，让你的区块的哈希值满足特定条件：</p>
 <div class="highlight"><div class="chroma">
@@ -367,7 +360,7 @@
 </div>
 </div><p>在比特币中，大约每 10 分钟才会添加一个新的区块，而这个计算有效哈希的过程被称为挖矿。</p>
 <h2 id="交易和矿工奖励">交易和矿工奖励</h2>
-<p>当区块链中储存的信息为转账信息时，区块链就成  了分布式账本。</p>
+<p>当区块链中储存的信息为转账信息时，区块链就成了分布式账本。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -429,11 +422,14 @@
 </div><p>我们的区块链中只能在一个区块中存储 1 个交易，并且矿工没有任何奖励，我们来解决这个问题。</p>
 <h2 id="数字签名">数字签名</h2>
 <p>之前写完的，这部分内容不知啥时候弄丢了，打算重写。。。</p>
+<h2 id="补充">补充</h2>
+<p>不重写了，2022 年 11 月 30 日从人类反馈中强化学习（RLHF）的聊天生成预训练转换器（Chat Generative Pre-trained Transformer）诞生，Matrix 中的人类帽子戏法（Mechanical puzzle）成功由 AI 接力。</p>
+<p>游戏方式已悄然发生变化。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-05-25</span>
+                <span>更新于 2023-01-25</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>

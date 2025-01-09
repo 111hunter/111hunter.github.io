@@ -1,7 +1,9 @@
 # 原罪 — 知善恶树
 
 
-> 你从书本上得到的哲学思想、各种理论及信仰等，这些都成了你的传统，它们对你的思想实在有很大的障碍，因为你的心会利用这些东西作为自己的保障，于是你就被它限制住了。所以你必须一方面让你的心从传统中解脱出来，一方面也要培养自己的知识与技术，这就是教育的功用。      - 克里希那穆提
+<!-- > 你从书本上得到的哲学思想、各种理论及信仰等，这些都成了你的传统，它们对你的思想实在有很大的障碍，因为你的心会利用这些东西作为自己的保障，于是你就被它限制住了。所以你必须一方面让你的心从传统中解脱出来，一方面也要培养自己的知识与技术，这就是教育的功用。      - 克里希那穆提 -->
+
+> 执于己见，障蔽真心，反以智为桎梏。    - 由 Gemini 2.0 Flash Experimental 生成
 
 提问者：我来这儿是要和您探讨业的问题。当然关于这一点我有一定的看法，但是我想知道您的观点。
 
@@ -47,12 +49,12 @@
 
 **参阅资料**
 
-- 原文链接 [What Is Truth？](https://x.com/isjuustadream/status/1852395837520777683)
+- 节选自 [《Commentaries On Living Series 1》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_Commentaries_On_Living_1.pdf)
 
 **推荐阅读**
 
-- [“你”是无数个昨天的结果 | 克里希那穆提](https://mp.weixin.qq.com/s/5HeyYObHD0Tp6FrlzjRE-g)
+- [U.G. Krishnamurti Interview - False Perception](https://www.youtube.com/watch?v=EQFrUKQfO4k&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy&index=6&t=946s)
 
 - [以不满为动机的找寻只能带来各种形式的假象｜克里希那穆提](https://mp.weixin.qq.com/s/3dp5HlPyR9fCI1DkpcTX_g)
 
-- [提出问题，但不去寻求答案 | 克里希那穆提](https://111hunter.github.io/2024-09-24-tathata/)
+- [“你”是无数个昨天的结果 | 克里希那穆提](https://mp.weixin.qq.com/s/5HeyYObHD0Tp6FrlzjRE-g)

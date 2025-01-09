@@ -67,4 +67,4 @@
 
 - [U.G. Krishnamurti Interview - You Have No Experiences!](https://www.youtube.com/watch?v=jrBBkWRL9ec&t=1413s)
 
-- [U.G. krishnamurti Interview - What is The Purpose of Human Life?](https://www.youtube.com/watch?v=-UrLWN0HAgE&t=109s)
+- [U.G. Krishnamurti - There Is Always Someone Else There](https://www.youtube.com/watch?v=PfLEkOdB45M&t=332s)
