@@ -1,7 +1,9 @@
-# 寂静是火山爆发
+# 我只知道我不知道
 
 
-> 我认为笛卡尔问了一个错误的问题，并以一种非常有趣的方式回答了这个问题，“我思故我在”。但他从来没问过你应该问的问题，就像印度哲学家建立的那样，如果你不思考，你在吗？            - U.G. Krishnamurti
+<!-- > 我认为笛卡尔问了一个错误的问题，并以一种非常有趣的方式回答了这个问题，“我思故我在”。但他从来没问过你应该问的问题，就像印度哲学家建立的那样，如果你不思考，你在吗？            - U.G. Krishnamurti -->
+
+> 提问者说他很专注。他很专注，因为他想要答案。他不想要暗示，他可能不会…知道这个答案，他会做什么呢？他专注，他等待，他充满希望 — 他拥有所有这些特质 — 为什么呢？       - U.G. Krishnamurti
 
 让你疲惫不堪的是思想的重复机制。那么，你能做些什么呢？——你只能问这个了。这是唯一的问题，我或任何人给出的任何答案都会为这种思想运动增添动力。你能做些什么呢？没有一件事。它太强大了：它有数百万年的势头。你完全是无助的，而你无法意识到这种无助。
 
@@ -68,3 +70,5 @@
 - [U.G. Krishnamurti Interview - You Have No Experiences!](https://www.youtube.com/watch?v=jrBBkWRL9ec&t=1413s)
 
 - [U.G. Krishnamurti - There Is Always Someone Else There](https://www.youtube.com/watch?v=PfLEkOdB45M&t=332s)
+
+- [U.G. Krishnamurti Interview - Who Are We? What is Reality?](https://www.youtube.com/watch?v=6Bf5TX05pc8&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy&index=6&t=676s)

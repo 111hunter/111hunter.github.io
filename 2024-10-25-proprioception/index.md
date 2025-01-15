@@ -97,4 +97,4 @@
 
 **推荐阅读**
 
-- [当有机体死亡，带着所有痛苦与悲伤的人类意识仍会继续下去！](https://www.krishnamurti.org/transcript/death-is-not-at-the-far-end-of-life/)
+- [当有机体死亡，所有痛苦与悲伤仍会继续下去！](https://www.krishnamurti.org/transcript/death-is-not-at-the-far-end-of-life/)

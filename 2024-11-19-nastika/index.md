@@ -1,5 +1,7 @@
-# 你不敢把双脚踩在大地上
+# 戏剧总是以欺骗的形式继续
 
+
+<!-- > 我只知道我不知道。     - 苏格拉底 -->
 
 > 人类只对解决问题的方法感兴趣，而对问题本身不感兴趣。你说这些伟大的圣贤、圣人和人类的拯救者都能有我们问题的答案。那么，我们为什么还在问同样的问题？           - U.G. Krishnamurti
 
@@ -64,3 +66,5 @@
 - [U.G. Krishnamurti Interview - What Thinking Is? Why Do We Think?](https://www.youtube.com/watch?v=9olyqhwf2y4&t=791s)
 
 - [U.G. Krishnamurti Interview - You Can't Think at All!](https://www.youtube.com/watch?v=HKhWl9JfgYY&t=3112s)
+
+- [U.G. Krishnamurti Interview - Freedom From Illusion & Facing Reality](https://www.youtube.com/watch?v=9_sHrqk7Ezw&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy&index=2)

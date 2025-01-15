@@ -247,6 +247,6 @@
 
 - [U.G. Krishnamurti Interview - A to Z For Life](https://www.youtube.com/watch?v=tVcgekmpQ64)
 
-- [忆起“我是谁” — 从身份危机到存在感](https://www.oshotimes.com/insights/society/remembering-who-am-i-from-identity-crisis-to-no-self/)
+- [忆起“我是谁” — 从身份危机到存在](https://www.oshotimes.com/insights/society/remembering-who-am-i-from-identity-crisis-to-no-self/)
 
 - [诞生你的意识是最大的创造力](https://www.oshotimes.com/insights/giving-birth-to-your-consciousness-is-the-greatest-creativity/)

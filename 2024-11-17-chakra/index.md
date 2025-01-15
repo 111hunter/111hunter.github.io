@@ -131,4 +131,4 @@ UG：我告诉你，你不是一个平凡的人；你是一个非凡的人（笑
 
 - [U.G. Krishnamurti Interview - Mind, Thought, Body, Life](https://www.youtube.com/watch?v=x2HIcDgDgMs&t=101s)
 
-- [U.G. Krishnamurti Interview - Who Are We? What is Reality?](https://www.youtube.com/watch?v=6Bf5TX05pc8&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy&index=6&t=676s)
+- [U.G. Krishnamurti Interview - Purpose of life](https://www.youtube.com/watch?v=p6qgSApgVhQ)

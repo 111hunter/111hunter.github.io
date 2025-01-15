@@ -167,5 +167,5 @@ PDA 循环由进化的一个基本要素 — **适应度收益函数**塑造。�
 
 - [U.G. Krishnamurti Interview - Mind, Thought, Body, Life](https://www.youtube.com/watch?v=x2HIcDgDgMs&t=101s)
 
-- [U.G. Krishnamurti Interview - A to Z For Life](https://www.youtube.com/watch?v=tVcgekmpQ64)
+- [U.G. Krishnamurti Interview - Purpose of life](https://www.youtube.com/watch?v=p6qgSApgVhQ)
 

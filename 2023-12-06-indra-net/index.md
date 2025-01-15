@@ -31,6 +31,10 @@
 
 - [U.G. Krishnamurti - What Do I Think?](https://www.youtube.com/watch?v=h3QijuluQJw&t=1114s)
 
+- [偏见造成人与人的对立｜克里希那穆提](https://mp.weixin.qq.com/s/5ZMVIXAxPanROo80pTnA5g)
+
+- [克里希那穆提教诲的核心](https://mp.weixin.qq.com/s/IYWduUknN9xs-jfahyzlDw)
+
 <!-- - [【镜像心理】你眼中的别人，其实是你自己](https://www.bilibili.com/video/BV1Sx4y1t7Da/?spm_id_from=333.788.top_right_bar_window_custom_collection.content.click&vd_source=21db84374de3d6785c04b0329b69e5e5) -->
 
 <!-- - [Everything Is a Play of The Mind](https://thetaoist.online/everything-is-a-play-of-the-mind-f0675beaec89) -->

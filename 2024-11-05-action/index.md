@@ -55,7 +55,7 @@
 
 **参阅资料**
 
-- 节选自 [Is there an action which is withoutcause and motive? - Public Talk 5 Saanen, Switzerland, 1977](https://jkrishnamurti.org/content/there-action-which-without-cause-and-motive-0/1977)
+- 节选自 [Is there an action which is withoutcause and motive? - Public Talk 5 Saanen, Switzerland, 1977](https://www.krishnamurti.org/transcript/is-there-an-action-which-is-without-cause-and-motive/)
 
 **推荐阅读**
 
