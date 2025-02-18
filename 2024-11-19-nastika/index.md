@@ -1,4 +1,4 @@
-# 戏剧总是以欺骗的形式继续
+# 马戏团的小丑穿上了燕尾服
 
 
 <!-- > 我只知道我不知道。     - 苏格拉底 -->
@@ -51,6 +51,10 @@
 
 ---
 
+**你不知道什么是好的；你只知道什么对你有好处。这就是你感兴趣的，这是事实。一切都围绕着这一点**。
+
+你所有的艺术和理性都围绕着它。我并不是愤世嫉俗。这是事实。这没什么问题。我并没有反对它。情况会改变，但正是它指引着你度过所有的情况。你看，我并不是说这是错的。如果不是这样，你一定是出了什么问题。只要你处在他们所谓的“一组对立面”中，即好与坏，你就会总是挑剔，在任何情况下，就是这样——你忍不住会这样做。一个“有道德的人”是一个“胆小鬼”。一个“有道德的人”是一个害怕的人，一个胆小的人——这就是为什么他践行道德，坐在那里评判别人。他义愤填膺！一个有道德的人（如果有的话）永远，永远不会谈论道德或评判别人的道德。永远不会！
+
 道德是什么？它不是遵循行为规则。这不是超越诱惑的问题，也不是征服仇恨、愤怒、贪婪、性欲和暴力的问题。
 
 **前后质疑你的行为会产生道德问题。造成这种情况的是区别是非的机能，并据此影响你的行动**。
@@ -66,5 +70,3 @@
 - [U.G. Krishnamurti Interview - What Thinking Is? Why Do We Think?](https://www.youtube.com/watch?v=9olyqhwf2y4&t=791s)
 
 - [U.G. Krishnamurti Interview - You Can't Think at All!](https://www.youtube.com/watch?v=HKhWl9JfgYY&t=3112s)
-
-- [U.G. Krishnamurti Interview - Freedom From Illusion & Facing Reality](https://www.youtube.com/watch?v=9_sHrqk7Ezw&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy&index=2)

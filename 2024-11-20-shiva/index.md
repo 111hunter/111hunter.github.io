@@ -70,5 +70,3 @@
 - [U.G. Krishnamurti Interview - You Have No Experiences!](https://www.youtube.com/watch?v=jrBBkWRL9ec&t=1413s)
 
 - [U.G. Krishnamurti - There Is Always Someone Else There](https://www.youtube.com/watch?v=PfLEkOdB45M&t=332s)
-
-- [U.G. Krishnamurti Interview - Who Are We? What is Reality?](https://www.youtube.com/watch?v=6Bf5TX05pc8&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy&index=6&t=676s)

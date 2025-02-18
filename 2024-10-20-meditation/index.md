@@ -235,6 +235,4 @@
 
 - [让内心充分展现](https://mp.weixin.qq.com/s/rWCE_miLMqYOJ61SwbuX-Q)
 
-- [Self-Inquiry: Know Thyself](https://thetaoist.online/self-inquiry-know-thyself-8e16ab9e48c8)
-
 - [《楞严经》改编微电影《真心·棒》](https://www.youtube.com/watch?v=iMr76VQkmnU)
