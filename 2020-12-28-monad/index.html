@@ -1,35 +1,39 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
+<html lang="zh-cn">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>IO 和 Monad - 寂的博客</title><meta name="Description" content=" 彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:title" content="IO 和 Monad" />
-<meta property="og:description" content="学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://111hunter.github.io/2020-12-28-monad/" /><meta property="og:image" content="https://111hunter.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-12-28T17:50:34&#43;08:00" />
-<meta property="article:modified_time" content="2020-12-28T17:50:34&#43;08:00" /><meta property="og:site_name" content="My cool site" />
+        <title>IO 和 Monad - 寂的博客</title><meta name="Description" content="彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:url" content="http://localhost:1313/2020-12-28-monad/">
+  <meta property="og:site_name" content="寂的博客">
+  <meta property="og:title" content="IO 和 Monad">
+  <meta property="og:description" content="学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程序时的外部状态(RealWorld)当成函数的参数。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-12-28T17:50:34+08:00">
+    <meta property="article:modified_time" content="2020-12-28T17:50:34+08:00">
+    <meta property="article:tag" content="Recursion">
+    <meta property="article:tag" content="Lambda">
+    <meta property="article:tag" content="Haskell">
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://111hunter.github.io/logo.png"/>
-
-<meta name="twitter:title" content="IO 和 Monad"/>
-<meta name="twitter:description" content="学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程"/>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="IO 和 Monad">
+  <meta name="twitter:description" content="学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程序时的外部状态(RealWorld)当成函数的参数。">
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://111hunter.github.io/2020-12-28-monad/" /><link rel="prev" href="https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/" /><link rel="next" href="https://111hunter.github.io/2021-01-08-tcp/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/2020-12-28-monad/" /><link rel="prev" href="http://localhost:1313/2020-12-13-%CE%BB-interpreter/" /><link rel="next" href="http://localhost:1313/2021-01-08-tcp/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "IO 和 Monad",
-        "inLanguage": "zh-CN",
+        "inLanguage": "zh-cn",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/111hunter.github.io\/2020-12-28-monad\/"
+            "@id": "http:\/\/localhost:1313\/2020-12-28-monad\/"
         },"genre": "posts","keywords": "Recursion, Lambda, Haskell","wordcount":  1432 ,
-        "url": "https:\/\/111hunter.github.io\/2020-12-28-monad\/","datePublished": "2020-12-28T17:50:34+08:00","dateModified": "2020-12-28T17:50:34+08:00","publisher": {
+        "url": "http:\/\/localhost:1313\/2020-12-28-monad\/","datePublished": "2020-12-28T17:50:34+08:00","dateModified": "2020-12-28T17:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -103,7 +107,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">IO 和 Monad</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
 </span>&nbsp;<span class="post-category">收录于 <a href="/categories/theory/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Theory</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-12-28">2020-12-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1432 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2020-12-28-monad/" class="leancloud_visitors" data-flag-title="IO 和 Monad">
@@ -133,47 +137,47 @@
 <p>haskell 中 IO 的类型定义：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="kr">newtype</span> <span class="kt">IO</span> <span class="n">a</span>
-  <span class="ow">=</span> <span class="kt">GHC</span><span class="o">.</span><span class="kt">Types</span><span class="o">.</span><span class="kt">IO</span> <span class="p">(</span><span class="kt">GHC</span><span class="o">.</span><span class="kt">Prim</span><span class="o">.</span><span class="kt">State</span><span class="o">#</span> <span class="kt">GHC</span><span class="o">.</span><span class="kt">Prim</span><span class="o">.</span><span class="kt">RealWorld</span>
-                  <span class="ow">-&gt;</span> <span class="p">(</span><span class="o">#</span> <span class="kt">GHC</span><span class="o">.</span><span class="kt">Prim</span><span class="o">.</span><span class="kt">State</span><span class="o">#</span> <span class="kt">GHC</span><span class="o">.</span><span class="kt">Prim</span><span class="o">.</span><span class="kt">RealWorld</span><span class="p">,</span> <span class="n">a</span> <span class="o">#</span><span class="p">))</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="kr">newtype</span> <span class="kt">IO</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">  <span class="ow">=</span> <span class="kt">GHC</span><span class="o">.</span><span class="kt">Types</span><span class="o">.</span><span class="kt">IO</span> <span class="p">(</span><span class="kt">GHC</span><span class="o">.</span><span class="kt">Prim</span><span class="o">.</span><span class="kt">State</span><span class="o">#</span> <span class="kt">GHC</span><span class="o">.</span><span class="kt">Prim</span><span class="o">.</span><span class="kt">RealWorld</span>
+</span></span><span class="line"><span class="cl">                  <span class="ow">-&gt;</span> <span class="p">(</span><span class="o">#</span> <span class="kt">GHC</span><span class="o">.</span><span class="kt">Prim</span><span class="o">.</span><span class="kt">State</span><span class="o">#</span> <span class="kt">GHC</span><span class="o">.</span><span class="kt">Prim</span><span class="o">.</span><span class="kt">RealWorld</span><span class="p">,</span> <span class="n">a</span> <span class="o">#</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>简化表示如下，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="kr">type</span> <span class="kt">IO</span> <span class="n">a</span> <span class="ow">=</span> <span class="kt">GHC</span><span class="o">.</span><span class="kt">Types</span><span class="o">.</span><span class="kt">IO</span> <span class="p">(</span><span class="kt">World</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="o">#</span> <span class="kt">World</span><span class="p">,</span> <span class="n">a</span> <span class="o">#</span><span class="p">))</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="kr">type</span> <span class="kt">IO</span> <span class="n">a</span> <span class="ow">=</span> <span class="kt">GHC</span><span class="o">.</span><span class="kt">Types</span><span class="o">.</span><span class="kt">IO</span> <span class="p">(</span><span class="kt">World</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="o">#</span> <span class="kt">World</span><span class="p">,</span> <span class="n">a</span> <span class="o">#</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>程序运行时，输入值需要参与到程序运算中。用函数表示输入动作：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="kt">World</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="o">#</span> <span class="kt">World</span><span class="p">,</span> <span class="n">a</span> <span class="o">#</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="kt">World</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="o">#</span> <span class="kt">World</span><span class="p">,</span> <span class="n">a</span> <span class="o">#</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>输出值不能再参与程序运算。用函数表示输出动作：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="kt">World</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="o">#</span> <span class="kt">World</span><span class="p">,</span> <span class="nb">()</span> <span class="o">#</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="kt">World</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="o">#</span> <span class="kt">World</span><span class="p">,</span> <span class="nb">()</span> <span class="o">#</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在 <code>GHCi</code> 中用 <code>:l</code> 加载下面的程序文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -184,16 +188,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="cm">{-# LANGUAGE UnboxedTuples         #-}</span>
-<span class="kr">import</span> <span class="nn">GHC.Types</span>
-
-<span class="nf">noExec</span> <span class="p">(</span><span class="kt">GHC</span><span class="o">.</span><span class="kt">Types</span><span class="o">.</span><span class="kt">IO</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=</span> <span class="n">a</span>
-
-<span class="nf">inStr</span> <span class="ow">=</span> <span class="n">noExec</span> <span class="p">(</span><span class="n">getLine</span><span class="p">)</span>
-<span class="nf">outStr</span> <span class="ow">=</span> <span class="n">noExec</span> <span class="p">(</span><span class="n">putStrLn</span> <span class="s">&#34;hello world!&#34;</span><span class="p">)</span>
-
-<span class="nf">exec</span> <span class="ow">=</span> <span class="kt">GHC</span><span class="o">.</span><span class="kt">Types</span><span class="o">.</span><span class="kt">IO</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="cm">{-# LANGUAGE UnboxedTuples         #-}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">GHC.Types</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">noExec</span> <span class="p">(</span><span class="kt">GHC</span><span class="o">.</span><span class="kt">Types</span><span class="o">.</span><span class="kt">IO</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">inStr</span> <span class="ow">=</span> <span class="n">noExec</span> <span class="p">(</span><span class="n">getLine</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">outStr</span> <span class="ow">=</span> <span class="n">noExec</span> <span class="p">(</span><span class="n">putStrLn</span> <span class="s">&#34;hello world!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">exec</span> <span class="ow">=</span> <span class="kt">GHC</span><span class="o">.</span><span class="kt">Types</span><span class="o">.</span><span class="kt">IO</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后用 <code>:t inStr</code>，<code>:t outStr</code> 查看类型，确实是我们说的那样。</p>
 <h2 id="monad">Monad</h2>
@@ -203,17 +207,17 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">((</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span>
-<span class="mi">12</span>
-<span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span><span class="p">(</span><span class="nf">\</span><span class="n">y</span> <span class="ow">-&gt;</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="kr">then</span> <span class="n">x</span> <span class="kr">else</span> <span class="n">y</span><span class="p">))</span> <span class="mi">8</span> <span class="mi">6</span>
-<span class="mi">8</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">((</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">12</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span><span class="p">(</span><span class="nf">\</span><span class="n">y</span> <span class="ow">-&gt;</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="kr">then</span> <span class="n">x</span> <span class="kr">else</span> <span class="n">y</span><span class="p">))</span> <span class="mi">8</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>调用函数就能计算结果，不过这样做计算对人来说太麻烦了。</p>
 <p>简化计算的办法是将值放在上下文环境(e)中，例如 <code>[1,2,3]</code>，<code>(1,'a',3.14)</code> 等。怎么在不破坏值的上下文前提下，应用函数完成计算呢？</p>
@@ -223,41 +227,41 @@
 <p>换句话说，考虑 f 可能的情况，定义通用计算模型？</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">f</span> <span class="ow">=</span> <span class="p">(</span><span class="n">i</span> <span class="ow">-&gt;</span> <span class="n">o</span><span class="p">)</span>
-<span class="nf">f</span> <span class="ow">=</span> <span class="n">e</span><span class="p">(</span><span class="n">i</span> <span class="ow">-&gt;</span> <span class="n">o</span><span class="p">)</span>
-<span class="nf">f</span> <span class="ow">=</span> <span class="n">e</span><span class="p">(</span><span class="n">i</span> <span class="ow">-&gt;</span> <span class="n">e</span><span class="p">(</span><span class="n">o</span><span class="p">))</span>
-<span class="nf">f</span> <span class="ow">=</span> <span class="p">(</span><span class="n">e</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">o</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">f</span> <span class="ow">=</span> <span class="p">(</span><span class="n">i</span> <span class="ow">-&gt;</span> <span class="n">o</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">f</span> <span class="ow">=</span> <span class="n">e</span><span class="p">(</span><span class="n">i</span> <span class="ow">-&gt;</span> <span class="n">o</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">f</span> <span class="ow">=</span> <span class="n">e</span><span class="p">(</span><span class="n">i</span> <span class="ow">-&gt;</span> <span class="n">e</span><span class="p">(</span><span class="n">o</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">f</span> <span class="ow">=</span> <span class="p">(</span><span class="n">e</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">o</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="maybe">Maybe</h3>
 <p>后面的讨论会用到 Maybe 类型：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="kr">data</span> <span class="kt">Maybe</span> <span class="n">a</span> <span class="ow">=</span> <span class="kt">Nothing</span> <span class="o">|</span> <span class="kt">Just</span> <span class="n">a</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="kr">data</span> <span class="kt">Maybe</span> <span class="n">a</span> <span class="ow">=</span> <span class="kt">Nothing</span> <span class="o">|</span> <span class="kt">Just</span> <span class="n">a</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="kt">:</span><span class="n">t</span> <span class="kt">Nothing</span>
-<span class="kt">Nothing</span> <span class="ow">::</span> <span class="kt">Maybe</span> <span class="n">a</span>
-<span class="nf">ghci</span><span class="o">&gt;</span> <span class="kt">:</span><span class="n">t</span> <span class="kt">Just</span> <span class="mi">2</span>
-<span class="kt">Just</span> <span class="mi">2</span> <span class="ow">::</span> <span class="kt">Num</span> <span class="n">a</span> <span class="ow">=&gt;</span> <span class="kt">Maybe</span> <span class="n">a</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="kt">:</span><span class="n">t</span> <span class="kt">Nothing</span>
+</span></span><span class="line"><span class="cl"><span class="kt">Nothing</span> <span class="ow">::</span> <span class="kt">Maybe</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="kt">:</span><span class="n">t</span> <span class="kt">Just</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="kt">Just</span> <span class="mi">2</span> <span class="ow">::</span> <span class="kt">Num</span> <span class="n">a</span> <span class="ow">=&gt;</span> <span class="kt">Maybe</span> <span class="n">a</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="functor">Functor</h3>
 <p>处理函数暴露，值处于上下文的情况：</p>
@@ -266,33 +270,33 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span>
-<span class="ne">error</span>
-<span class="nf">ghci</span><span class="o">&gt;</span> <span class="n">fmap</span> <span class="p">(</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span>
-<span class="kt">Just</span> <span class="mi">5</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="ne">error</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="n">fmap</span> <span class="p">(</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">Just</span> <span class="mi">5</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>fmap 怎么实现的？模式匹配：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">fmap</span> <span class="n">f</span> <span class="kt">Nothing</span>  <span class="ow">=</span> <span class="kt">Nothing</span>
-<span class="nf">fmap</span> <span class="n">f</span> <span class="p">(</span><span class="kt">Just</span> <span class="n">x</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">f</span> <span class="n">x</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">fmap</span> <span class="n">f</span> <span class="kt">Nothing</span>  <span class="ow">=</span> <span class="kt">Nothing</span>
+</span></span><span class="line"><span class="cl"><span class="nf">fmap</span> <span class="n">f</span> <span class="p">(</span><span class="kt">Just</span> <span class="n">x</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">f</span> <span class="n">x</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>fmap 的动作是将上下文中的值取出，用函数处理后，重新放回上下文：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -300,13 +304,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="kr">class</span> <span class="kt">Functor</span> <span class="n">f</span> <span class="kr">where</span>
-    <span class="n">fmap</span> <span class="ow">::</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">b</span>
-
-<span class="kr">instance</span> <span class="kt">Functor</span> <span class="kt">Maybe</span> <span class="kr">where</span>
-    <span class="n">fmap</span> <span class="n">f</span> <span class="kt">Nothing</span>  <span class="ow">=</span> <span class="kt">Nothing</span>
-    <span class="n">fmap</span> <span class="n">f</span> <span class="p">(</span><span class="kt">Just</span> <span class="n">x</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">f</span> <span class="n">x</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="kr">class</span> <span class="kt">Functor</span> <span class="n">f</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fmap</span> <span class="ow">::</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">instance</span> <span class="kt">Functor</span> <span class="kt">Maybe</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fmap</span> <span class="n">f</span> <span class="kt">Nothing</span>  <span class="ow">=</span> <span class="kt">Nothing</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fmap</span> <span class="n">f</span> <span class="p">(</span><span class="kt">Just</span> <span class="n">x</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">f</span> <span class="n">x</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>只要能被 fmap 处理，这种上下文就是 <code>Functor</code>，Maybe 是 <code>Functor</code></p>
 <h3 id="applicative">Applicative</h3>
@@ -316,39 +320,39 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="p">(</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span>
-<span class="ne">error</span>
-<span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="p">(</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span> <span class="o">&lt;*&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span>
-<span class="kt">Just</span> <span class="mi">5</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="p">(</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="ne">error</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="p">(</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span> <span class="o">&lt;*&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">Just</span> <span class="mi">5</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>实现 <code>&lt;*&gt;</code> 同样用模式匹配：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">fmap</span> <span class="n">f</span> <span class="kt">Nothing</span>  <span class="ow">=</span> <span class="kt">Nothing</span>
-<span class="nf">fmap</span> <span class="n">f</span> <span class="p">(</span><span class="kt">Just</span> <span class="n">x</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">f</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="kt">Nothing</span> <span class="o">&lt;*&gt;</span> <span class="kr">_</span> <span class="ow">=</span> <span class="kt">Nothing</span>
-<span class="p">(</span><span class="kt">Just</span> <span class="n">f</span><span class="p">)</span> <span class="o">&lt;*&gt;</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">fmap</span> <span class="n">f</span> <span class="n">x</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">fmap</span> <span class="n">f</span> <span class="kt">Nothing</span>  <span class="ow">=</span> <span class="kt">Nothing</span>
+</span></span><span class="line"><span class="cl"><span class="nf">fmap</span> <span class="n">f</span> <span class="p">(</span><span class="kt">Just</span> <span class="n">x</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">f</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">Nothing</span> <span class="o">&lt;*&gt;</span> <span class="kr">_</span> <span class="ow">=</span> <span class="kt">Nothing</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kt">Just</span> <span class="n">f</span><span class="p">)</span> <span class="o">&lt;*&gt;</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">fmap</span> <span class="n">f</span> <span class="n">x</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>&lt;*&gt;</code> 的动作是直接从上下文中取出函数，之后就是 Functor 的情况了，用 fmap 处理</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -358,15 +362,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="kr">class</span> <span class="kt">Functor</span> <span class="n">f</span> <span class="ow">=&gt;</span> <span class="kt">Applicative</span> <span class="n">f</span> <span class="kr">where</span>
-    <span class="n">pure</span> <span class="ow">::</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">a</span>
-    <span class="p">(</span><span class="o">&lt;*&gt;</span><span class="p">)</span> <span class="ow">::</span> <span class="n">f</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">b</span>
-
-<span class="kr">instance</span> <span class="kt">Applicative</span> <span class="kt">Maybe</span> <span class="kr">where</span>
-    <span class="n">pure</span> <span class="ow">=</span> <span class="kt">Just</span>
-    <span class="kt">Nothing</span> <span class="o">&lt;*&gt;</span> <span class="kr">_</span> <span class="ow">=</span> <span class="kt">Nothing</span>
-    <span class="p">(</span><span class="kt">Just</span> <span class="n">f</span><span class="p">)</span> <span class="o">&lt;*&gt;</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">fmap</span> <span class="n">f</span> <span class="n">x</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="kr">class</span> <span class="kt">Functor</span> <span class="n">f</span> <span class="ow">=&gt;</span> <span class="kt">Applicative</span> <span class="n">f</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pure</span> <span class="ow">::</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="o">&lt;*&gt;</span><span class="p">)</span> <span class="ow">::</span> <span class="n">f</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">instance</span> <span class="kt">Applicative</span> <span class="kt">Maybe</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pure</span> <span class="ow">=</span> <span class="kt">Just</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">Nothing</span> <span class="o">&lt;*&gt;</span> <span class="kr">_</span> <span class="ow">=</span> <span class="kt">Nothing</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="kt">Just</span> <span class="n">f</span><span class="p">)</span> <span class="o">&lt;*&gt;</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">fmap</span> <span class="n">f</span> <span class="n">x</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>只要能被 <code>&lt;*&gt;</code> 处理，这种上下文就是 <code>Applicative</code>，Maybe 是 <code>Applicative</code></p>
 <h3 id="monad-1">Monad</h3>
@@ -377,7 +381,7 @@
 <p>这里交换了函数和值的顺序，数据流向是从左往右的。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -385,29 +389,29 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="p">(</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span> <span class="o">&lt;*&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span>
-<span class="kt">Just</span> <span class="mi">5</span>
-<span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span>
-<span class="ne">error</span>
-<span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&gt;&gt;=</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>
-<span class="kt">Just</span> <span class="mi">5</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="p">(</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span> <span class="o">&lt;*&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">Just</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="ne">error</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&gt;&gt;=</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="kt">Just</span> <span class="mi">5</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>实现 <code>&gt;&gt;=</code> (发音为 bind) 同样用模式匹配：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="kt">Nothing</span> <span class="o">&gt;&gt;=</span> <span class="n">f</span> <span class="ow">=</span> <span class="kt">Nothing</span>
-<span class="kt">Just</span> <span class="n">x</span>  <span class="o">&gt;&gt;=</span> <span class="n">f</span> <span class="ow">=</span> <span class="n">f</span> <span class="n">x</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="kt">Nothing</span> <span class="o">&gt;&gt;=</span> <span class="n">f</span> <span class="ow">=</span> <span class="kt">Nothing</span>
+</span></span><span class="line"><span class="cl"><span class="kt">Just</span> <span class="n">x</span>  <span class="o">&gt;&gt;=</span> <span class="n">f</span> <span class="ow">=</span> <span class="n">f</span> <span class="n">x</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>&gt;&gt;=</code> 的动作是直接从上下文中取出值，应用到函数上</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -418,66 +422,66 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="kr">class</span> <span class="kt">Applicative</span> <span class="n">m</span> <span class="ow">=&gt;</span> <span class="kt">Monad</span> <span class="n">m</span> <span class="kr">where</span>
-  <span class="p">(</span><span class="o">&gt;&gt;=</span><span class="p">)</span> <span class="ow">::</span> <span class="n">m</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">m</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">m</span> <span class="n">b</span>
-  <span class="p">(</span><span class="o">&gt;&gt;</span><span class="p">)</span> <span class="ow">::</span> <span class="n">m</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">m</span> <span class="n">b</span> <span class="ow">-&gt;</span> <span class="n">m</span> <span class="n">b</span>
-  <span class="n">return</span> <span class="ow">::</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">m</span> <span class="n">a</span>
-
-<span class="kr">instance</span> <span class="kt">Monad</span> <span class="kt">Maybe</span> <span class="kr">where</span>
-    <span class="n">return</span> <span class="n">x</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="n">x</span>
-    <span class="kt">Nothing</span> <span class="o">&gt;&gt;=</span> <span class="kr">_</span> <span class="ow">=</span> <span class="kt">Nothing</span>
-    <span class="kt">Just</span> <span class="n">x</span> <span class="o">&gt;&gt;=</span> <span class="n">f</span> <span class="ow">=</span> <span class="n">f</span> <span class="n">x</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="kr">class</span> <span class="kt">Applicative</span> <span class="n">m</span> <span class="ow">=&gt;</span> <span class="kt">Monad</span> <span class="n">m</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="o">&gt;&gt;=</span><span class="p">)</span> <span class="ow">::</span> <span class="n">m</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">m</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">m</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="o">&gt;&gt;</span><span class="p">)</span> <span class="ow">::</span> <span class="n">m</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">m</span> <span class="n">b</span> <span class="ow">-&gt;</span> <span class="n">m</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">  <span class="n">return</span> <span class="ow">::</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">m</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">instance</span> <span class="kt">Monad</span> <span class="kt">Maybe</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="n">return</span> <span class="n">x</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">Nothing</span> <span class="o">&gt;&gt;=</span> <span class="kr">_</span> <span class="ow">=</span> <span class="kt">Nothing</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">Just</span> <span class="n">x</span> <span class="o">&gt;&gt;=</span> <span class="n">f</span> <span class="ow">=</span> <span class="n">f</span> <span class="n">x</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>能被 <code>&gt;&gt;=</code> 处理，并且实现 <code>Applicative</code> 的行为就是 <code>Monad</code>。每种 <code>Monad</code> 至少能处理三种函数：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">f</span> <span class="ow">=</span> <span class="p">(</span><span class="n">i</span> <span class="ow">-&gt;</span> <span class="n">o</span><span class="p">)</span>
-<span class="nf">f</span> <span class="ow">=</span> <span class="n">e</span><span class="p">(</span><span class="n">i</span> <span class="ow">-&gt;</span> <span class="n">o</span><span class="p">)</span>
-<span class="nf">f</span> <span class="ow">=</span> <span class="n">e</span><span class="p">(</span><span class="n">i</span> <span class="ow">-&gt;</span> <span class="n">e</span><span class="p">(</span><span class="n">o</span><span class="p">))</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">f</span> <span class="ow">=</span> <span class="p">(</span><span class="n">i</span> <span class="ow">-&gt;</span> <span class="n">o</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">f</span> <span class="ow">=</span> <span class="n">e</span><span class="p">(</span><span class="n">i</span> <span class="ow">-&gt;</span> <span class="n">o</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">f</span> <span class="ow">=</span> <span class="n">e</span><span class="p">(</span><span class="n">i</span> <span class="ow">-&gt;</span> <span class="n">e</span><span class="p">(</span><span class="n">o</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>我们可以利用 <code>&gt;&gt;=</code> 的性质实现链式操作：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="kr">let</span> <span class="n">add3</span> <span class="ow">=</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>
-<span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&gt;&gt;=</span> <span class="n">add3</span> <span class="o">&gt;&gt;=</span> <span class="n">add3</span> <span class="o">&gt;&gt;=</span> <span class="n">add3</span> <span class="o">&gt;&gt;=</span> <span class="n">add3</span>
-<span class="kt">Just</span> <span class="mi">14</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="kr">let</span> <span class="n">add3</span> <span class="ow">=</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="p">(</span><span class="kt">Just</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&gt;&gt;=</span> <span class="n">add3</span> <span class="o">&gt;&gt;=</span> <span class="n">add3</span> <span class="o">&gt;&gt;=</span> <span class="n">add3</span> <span class="o">&gt;&gt;=</span> <span class="n">add3</span>
+</span></span><span class="line"><span class="cl"><span class="kt">Just</span> <span class="mi">14</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>IO 类型也被 Haskell 定义为一种 Monad：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="n">getLine</span> <span class="o">&gt;&gt;=</span> <span class="n">readFile</span> <span class="o">&gt;&gt;=</span> <span class="n">putStrLn</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="n">getLine</span> <span class="o">&gt;&gt;=</span> <span class="n">readFile</span> <span class="o">&gt;&gt;=</span> <span class="n">putStrLn</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Haskell 为我们提供了一些用于 Monad 的语法糖，称为 do 语法：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">foo</span> <span class="ow">=</span> <span class="kr">do</span>
-    <span class="n">filename</span> <span class="ow">&lt;-</span> <span class="n">getLine</span>
-    <span class="n">contents</span> <span class="ow">&lt;-</span> <span class="n">readFile</span> <span class="n">filename</span>
-    <span class="n">putStrLn</span> <span class="n">contents</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">foo</span> <span class="ow">=</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">    <span class="n">filename</span> <span class="ow">&lt;-</span> <span class="n">getLine</span>
+</span></span><span class="line"><span class="cl">    <span class="n">contents</span> <span class="ow">&lt;-</span> <span class="n">readFile</span> <span class="n">filename</span>
+</span></span><span class="line"><span class="cl">    <span class="n">putStrLn</span> <span class="n">contents</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在<a href="https://111hunter.github.io/2020-11-26-%CE%BB-calculus/" target="_blank" rel="noopener noreffer">这篇</a>
 文章中，我们用函数模拟了一阶逻辑，
@@ -489,7 +493,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -497,23 +501,23 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="kr">class</span> <span class="kt">Func</span> <span class="n">f</span> <span class="kr">where</span>
-    <span class="n">comp</span> <span class="ow">::</span> <span class="p">(</span><span class="n">f</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">b</span>
-
-<span class="kr">instance</span> <span class="kt">Func</span> <span class="kt">Maybe</span> <span class="kr">where</span>
-    <span class="n">comp</span> <span class="n">f</span> <span class="kt">Nothing</span>  <span class="ow">=</span> <span class="kt">Nothing</span>
-    <span class="n">comp</span> <span class="n">f</span> <span class="n">x</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">f</span> <span class="n">x</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="kr">class</span> <span class="kt">Func</span> <span class="n">f</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="n">comp</span> <span class="ow">::</span> <span class="p">(</span><span class="n">f</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">instance</span> <span class="kt">Func</span> <span class="kt">Maybe</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="n">comp</span> <span class="n">f</span> <span class="kt">Nothing</span>  <span class="ow">=</span> <span class="kt">Nothing</span>
+</span></span><span class="line"><span class="cl">    <span class="n">comp</span> <span class="n">f</span> <span class="n">x</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">f</span> <span class="n">x</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-haskell" data-lang="haskell"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="n">comp</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">==</span> <span class="p">(</span><span class="kt">Just</span> <span class="s">&#34;pwd&#34;</span><span class="p">)</span> <span class="kr">then</span> <span class="s">&#34;true&#34;</span> <span class="kr">else</span> <span class="s">&#34;false&#34;</span><span class="p">)</span> <span class="p">(</span><span class="kt">Just</span> <span class="s">&#34;pwd&#34;</span><span class="p">)</span>
-<span class="kt">Just</span> <span class="s">&#34;true&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">ghci</span><span class="o">&gt;</span> <span class="n">comp</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">==</span> <span class="p">(</span><span class="kt">Just</span> <span class="s">&#34;pwd&#34;</span><span class="p">)</span> <span class="kr">then</span> <span class="s">&#34;true&#34;</span> <span class="kr">else</span> <span class="s">&#34;false&#34;</span><span class="p">)</span> <span class="p">(</span><span class="kt">Just</span> <span class="s">&#34;pwd&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">Just</span> <span class="s">&#34;true&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><a href="http://hackage.haskell.org/package/base-4.8.2.0/docs/Prelude.html#t:Maybe" target="_blank" rel="noopener noreffer">这里</a>
  查阅 Maybe 的相关实现, 有时间再补充。</p>
@@ -541,7 +545,7 @@
                             <a class="link-to-markdown" href="/2020-12-28-monad/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://111hunter.github.io/2020-12-28-monad/" data-title="IO 和 Monad" data-hashtags="Recursion,Lambda,Haskell"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://111hunter.github.io/2020-12-28-monad/" data-hashtag="Recursion"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://111hunter.github.io/2020-12-28-monad/" data-title="IO 和 Monad" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://111hunter.github.io/2020-12-28-monad/" data-title="IO 和 Monad"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://111hunter.github.io/2020-12-28-monad/" data-title="IO 和 Monad"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://111hunter.github.io/2020-12-28-monad/" data-title="IO 和 Monad" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://111hunter.github.io/2020-12-28-monad/" data-title="IO 和 Monad"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/2020-12-28-monad/" data-title="IO 和 Monad" data-hashtags="Recursion,Lambda,Haskell"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/2020-12-28-monad/" data-hashtag="Recursion"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/2020-12-28-monad/" data-title="IO 和 Monad" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/2020-12-28-monad/" data-title="IO 和 Monad"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/2020-12-28-monad/" data-title="IO 和 Monad"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/2020-12-28-monad/" data-title="IO 和 Monad" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/2020-12-28-monad/" data-title="IO 和 Monad"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -560,8 +564,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io/" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

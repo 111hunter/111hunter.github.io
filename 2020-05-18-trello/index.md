@@ -445,5 +445,6 @@ export default stateEnhancer;
 **参阅资料**
 
 - [React Beautiful Dnd 快速使用筆記](https://andyyou.github.io/2019/06/04/react-beautiful-dnd-quick-note/)
-- [redux 文档 - 实现撤销历史](https://www.redux.org.cn/docs/recipes/ImplementingUndoHistory.html)
+
+- [Redux docs - Implementing Undo History](https://redux.js.org/usage/implementing-undo-history)
 

@@ -1,39 +1,57 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>AST - 标签 - 寂的博客</title>
-        <link>https://111hunter.github.io/tags/ast/</link>
+        <link>http://localhost:1313/tags/ast/</link>
         <description>AST - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/ast/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/ast/" rel="self" type="application/rss+xml" /><item>
     <title>[译]元编程</title>
-    <link>https://111hunter.github.io/2021-01-21-metaprogram/</link>
+    <link>http://localhost:1313/2021-01-21-metaprogram/</link>
     <pubDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2021-01-21-metaprogram/</guid>
-    <description><![CDATA[本文翻译自 stereobooster 的博客文章：metaprogramming ，少量删改。完整内容参阅原文。 什么是元编程 不好的是，没有一个达成共识的单一定义。让我们]]></description>
+    <guid>http://localhost:1313/2021-01-21-metaprogram/</guid>
+    <description><![CDATA[<p>本文翻译自 stereobooster 的博客文章：<a href="https://stereobooster.com/posts/metaprogramming/" target="_blank" rel="noopener noreffer">metaprogramming</a>
+，少量删改。完整内容参阅原文。</p>
+<h2 id="什么是元编程">什么是元编程</h2>
+<p>不好的是，没有一个达成共识的单一定义。让我们参阅一下：</p>
+<blockquote>
+<p>元编程是一种编程技术，指计算机程序具有将其他程序视为其数据的能力。 – <a href="https://en.wikipedia.org/wiki/Metaprogramming" target="_blank" rel="noopener noreffer">wikipedia</a>
+</p>]]></description>
 </item>
 <item>
     <title>实现 λ 演算解释器</title>
-    <link>https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/</link>
+    <link>http://localhost:1313/2020-12-13-%CE%BB-interpreter/</link>
     <pubDate>Sun, 13 Dec 2020 09:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/</guid>
-    <description><![CDATA[如果你没有听说过 λ 演算，可以阅读我的这篇文章 。如果你没有编译原理相关知识，可以阅读我的这篇文章 。首先介绍调度场算法，后面的实现中会用到。 调度]]></description>
+    <guid>http://localhost:1313/2020-12-13-%CE%BB-interpreter/</guid>
+    <description><![CDATA[<p>如果你没有听说过 λ 演算，可以阅读我的这篇<a href="https://111hunter.github.io/2020-11-26-%CE%BB-calculus/" target="_blank" rel="noopener noreffer">文章</a>
+。如果你没有编译原理相关知识，可以阅读我的这篇<a href="https://111hunter.github.io/2020-12-10-lex-parse" target="_blank" rel="noopener noreffer">文章</a>
+。首先介绍调度场算法，后面的实现中会用到。</p>]]></description>
 </item>
 <item>
     <title>程序解释与编译</title>
-    <link>https://111hunter.github.io/2020-12-10-lex-parse/</link>
+    <link>http://localhost:1313/2020-12-10-lex-parse/</link>
     <pubDate>Thu, 10 Dec 2020 09:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-12-10-lex-parse/</guid>
-    <description><![CDATA[程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。 前置知识 算术表达式根据运算符所在的位置可以分为三种表示方法： 前缀表达式]]></description>
+    <guid>http://localhost:1313/2020-12-10-lex-parse/</guid>
+    <description><![CDATA[<p>程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。</p>
+<h2 id="前置知识">前置知识</h2>
+<p>算术表达式根据运算符所在的位置可以分为三种表示方法：</p>
+<ul>
+<li>前缀表达式(波兰式)，如 <code>(- (+ 3 (* 2 4)) 1)</code>，Lisp 语言就是使用这种表示方法</li>
+<li>中缀表达式，如 <code>3 + 2 * 4 - 1</code>，最适合人阅读的表示方法</li>
+<li>后缀表达式(逆波兰式)，如 <code>3 2 4 * + 1 -</code>，计算机处理起来比较方便</li>
+</ul>
+<h2 id="编译原理">编译原理</h2>
+<p>为了讲清楚程序解释与编译，我们自定义一种类似 Lisp 的前缀表达式：</p>]]></description>
 </item>
 <item>
     <title>入门 AST 抽象语法树</title>
-    <link>https://111hunter.github.io/2020-08-23-ast/</link>
+    <link>http://localhost:1313/2020-08-23-ast/</link>
     <pubDate>Sun, 23 Aug 2020 00:30:00 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-08-23-ast/</guid>
-    <description><![CDATA[如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、]]></description>
+    <guid>http://localhost:1313/2020-08-23-ast/</guid>
+    <description><![CDATA[<p>如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、Prettier 等功能的实现，都是建立在 AST 的基础之上的。</p>]]></description>
 </item>
 </channel>
 </rss>

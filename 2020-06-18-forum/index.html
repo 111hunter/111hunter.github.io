@@ -1,35 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
+<html lang="zh-cn">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>MyBatis-Plus 实现论坛 API - 寂的博客</title><meta name="Description" content=" 彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:title" content="MyBatis-Plus 实现论坛 API" />
-<meta property="og:description" content="网络论坛，常简称为论坛，又称讨论区、讨论版等，是种提供在线讨论的程序，或由这些程序建立的以在线讨论为主的网站。本文记录如何用 Spring Boot 结合 MyBatis-Plus 实现论" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://111hunter.github.io/2020-06-18-forum/" /><meta property="og:image" content="https://111hunter.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-06-18T12:00:00&#43;08:00" />
-<meta property="article:modified_time" content="2020-06-18T12:00:00&#43;08:00" /><meta property="og:site_name" content="My cool site" />
+        <title>MyBatis-Plus 实现论坛 API - 寂的博客</title><meta name="Description" content="彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:url" content="http://localhost:1313/2020-06-18-forum/">
+  <meta property="og:site_name" content="寂的博客">
+  <meta property="og:title" content="MyBatis-Plus 实现论坛 API">
+  <meta property="og:description" content="网络论坛，常简称为论坛，又称讨论区、讨论版等，是种提供在线讨论的程序，或由这些程序建立的以在线讨论为主的网站。本文记录如何用 Spring Boot 结合 MyBatis-Plus 实现论坛中常见的 API 接口。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-06-18T12:00:00+08:00">
+    <meta property="article:modified_time" content="2020-06-18T12:00:00+08:00">
+    <meta property="article:tag" content="Spring Boot">
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://111hunter.github.io/logo.png"/>
-
-<meta name="twitter:title" content="MyBatis-Plus 实现论坛 API"/>
-<meta name="twitter:description" content="网络论坛，常简称为论坛，又称讨论区、讨论版等，是种提供在线讨论的程序，或由这些程序建立的以在线讨论为主的网站。本文记录如何用 Spring Boot 结合 MyBatis-Plus 实现论"/>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MyBatis-Plus 实现论坛 API">
+  <meta name="twitter:description" content="网络论坛，常简称为论坛，又称讨论区、讨论版等，是种提供在线讨论的程序，或由这些程序建立的以在线讨论为主的网站。本文记录如何用 Spring Boot 结合 MyBatis-Plus 实现论坛中常见的 API 接口。">
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://111hunter.github.io/2020-06-18-forum/" /><link rel="prev" href="https://111hunter.github.io/2020-05-18-trello/" /><link rel="next" href="https://111hunter.github.io/2020-06-30-antd/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/2020-06-18-forum/" /><link rel="prev" href="http://localhost:1313/2020-05-18-trello/" /><link rel="next" href="http://localhost:1313/2020-06-30-antd/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "MyBatis-Plus 实现论坛 API",
-        "inLanguage": "zh-CN",
+        "inLanguage": "zh-cn",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/111hunter.github.io\/2020-06-18-forum\/"
+            "@id": "http:\/\/localhost:1313\/2020-06-18-forum\/"
         },"genre": "posts","keywords": "Spring Boot","wordcount":  2719 ,
-        "url": "https:\/\/111hunter.github.io\/2020-06-18-forum\/","datePublished": "2020-06-18T12:00:00+08:00","dateModified": "2020-06-18T12:00:00+08:00","publisher": {
+        "url": "http:\/\/localhost:1313\/2020-06-18-forum\/","datePublished": "2020-06-18T12:00:00+08:00","dateModified": "2020-06-18T12:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -103,7 +105,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">MyBatis-Plus 实现论坛 API</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
 </span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Coding</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-06-18">2020-06-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2719 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/2020-06-18-forum/" class="leancloud_visitors" data-flag-title="MyBatis-Plus 实现论坛 API">
@@ -145,7 +147,7 @@
 <p>在 spring-boot 项目的根目录 pom.xml 添加依赖，相关依赖有 lombok, mybatis-plus, druid, swagger, mysql 驱动等。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -182,42 +184,42 @@
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
-	<span class="nt">&lt;groupId&gt;</span>com.baomidou<span class="nt">&lt;/groupId&gt;</span>
-	<span class="nt">&lt;artifactId&gt;</span>mybatis-plus-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
-	<span class="nt">&lt;version&gt;</span>3.1.0<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-
-<span class="nt">&lt;dependency&gt;</span>
-	<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
-	<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-
-<span class="nt">&lt;dependency&gt;</span>
-	<span class="nt">&lt;groupId&gt;</span>com.alibaba<span class="nt">&lt;/groupId&gt;</span>
-	<span class="nt">&lt;artifactId&gt;</span>druid-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
-	<span class="nt">&lt;version&gt;</span>1.1.9<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-
-<span class="nt">&lt;dependency&gt;</span>
-	<span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
-	<span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
-	<span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
-	<span class="nt">&lt;version&gt;</span>8.0.12<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-
-<span class="nt">&lt;dependency&gt;</span>
-    <span class="nt">&lt;groupId&gt;</span>io.springfox<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>springfox-swagger2<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>2.8.0<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-
-<span class="nt">&lt;dependency&gt;</span>
-    <span class="nt">&lt;groupId&gt;</span>io.springfox<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>springfox-swagger-ui<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>2.8.0<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>com.baomidou<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>mybatis-plus-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>3.1.0<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>com.alibaba<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>druid-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>1.1.9<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;version&gt;</span>8.0.12<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>io.springfox<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>springfox-swagger2<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>2.8.0<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>io.springfox<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>springfox-swagger-ui<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>2.8.0<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后在 src/main/resources 文件夹下添加 application.properties 或 application.yml 文件配置数据库连接。</p>
 <h3 id="创建数据表">创建数据表</h3>
@@ -226,7 +228,7 @@
 <p>创建文章实体(entity)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -267,46 +269,46 @@
 </span><span class="lnt">39
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Data</span>
-<span class="nd">@EqualsAndHashCode</span><span class="o">(</span><span class="n">callSuper</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
-<span class="nd">@Accessors</span><span class="o">(</span><span class="n">chain</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
-<span class="nd">@ApiModel</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;Article对象&#34;</span><span class="o">,</span> <span class="n">description</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Article</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="n">1L</span><span class="o">;</span>
-
-    <span class="nd">@TableId</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;id&#34;</span><span class="o">,</span> <span class="n">type</span> <span class="o">=</span> <span class="n">IdType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">id</span><span class="o">;</span>
-
-    <span class="nd">@ApiModelProperty</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;标题&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="o">;</span>
-
-    <span class="nd">@ApiModelProperty</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;内容&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">content</span><span class="o">;</span>
-
-    <span class="nd">@ApiModelProperty</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;用户主键&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">uId</span><span class="o">;</span>
-
-    <span class="nd">@ApiModelProperty</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;热度&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">score</span><span class="o">;</span>
-
-    <span class="nd">@ApiModelProperty</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;版块主键/为0时表示未设置&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">bId</span><span class="o">;</span>
-
-    <span class="nd">@JsonFormat</span><span class="o">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="s">&#34;yyyy-MM-dd&#34;</span><span class="o">,</span> <span class="n">timezone</span> <span class="o">=</span> <span class="s">&#34;GMT+8&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">Date</span> <span class="n">createDate</span><span class="o">;</span>
-
-    <span class="nd">@JsonFormat</span><span class="o">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="s">&#34;yyyy-MM-dd&#34;</span><span class="o">,</span> <span class="n">timezone</span> <span class="o">=</span> <span class="s">&#34;GMT+8&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">Date</span> <span class="n">updateDate</span><span class="o">;</span>
-
-    <span class="nd">@TableField</span><span class="o">(</span><span class="n">exist</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">User</span> <span class="n">user</span><span class="o">;</span>
-
-    <span class="nd">@TableField</span><span class="o">(</span><span class="n">exist</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">Block</span> <span class="n">block</span><span class="o">;</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@EqualsAndHashCode</span><span class="p">(</span><span class="n">callSuper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Accessors</span><span class="p">(</span><span class="n">chain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@ApiModel</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;Article对象&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Article</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">serialVersionUID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1L</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@TableId</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;id&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IdType</span><span class="p">.</span><span class="na">AUTO</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@ApiModelProperty</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;标题&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@ApiModelProperty</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;内容&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">content</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@ApiModelProperty</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;用户主键&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">uId</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@ApiModelProperty</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;热度&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">score</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@ApiModelProperty</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;版块主键/为0时表示未设置&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">bId</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@JsonFormat</span><span class="p">(</span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;yyyy-MM-dd&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">timezone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;GMT+8&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Date</span><span class="w"> </span><span class="n">createDate</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@JsonFormat</span><span class="p">(</span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;yyyy-MM-dd&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">timezone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;GMT+8&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Date</span><span class="w"> </span><span class="n">updateDate</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@TableField</span><span class="p">(</span><span class="n">exist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@TableField</span><span class="p">(</span><span class="n">exist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="n">block</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>lombok 的注解：</p>
 <ul>
@@ -326,19 +328,19 @@
 <p>对应的 Mapper 只需继承 BaseMapper，基本的 crud 方法 mybatis-plus 已经封装好了。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Mapper</span>
-<span class="nd">@Component</span>
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ArticleMapper</span> <span class="kd">extends</span> <span class="n">BaseMapper</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="o">{</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Mapper</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Component</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">ArticleMapper</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseMapper</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>@Component 注解代表需要被 Spring IoC 容器管理，才能实现依赖注入。</p>
 <p>然后在启动类中加入 @MapperScan(&quot;&quot;) 就可以完成 spring-boot 到数据表的映射。</p>
@@ -346,7 +348,7 @@
 <p>创建 service，我们想要分页获取数据，先配置 mybatis-plus 分页插件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -361,43 +363,43 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
-<span class="nd">@MapperScan</span><span class="o">(</span><span class="s">&#34;com.forum.buge_server.mapper*&#34;</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MybatisPlusConfig</span> <span class="o">{</span>
-    <span class="cm">/**
-</span><span class="cm">     * 加载分页插件
-</span><span class="cm">     *
-</span><span class="cm">     * @return
-</span><span class="cm">     */</span>
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="n">PaginationInterceptor</span> <span class="nf">paginationInterceptor</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">PaginationInterceptor</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@MapperScan</span><span class="p">(</span><span class="s">&#34;com.forum.buge_server.mapper*&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MybatisPlusConfig</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 加载分页插件
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Bean</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">PaginationInterceptor</span><span class="w"> </span><span class="nf">paginationInterceptor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PaginationInterceptor</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="定义-service-接口">定义 service 接口</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ArticleService</span> <span class="kd">extends</span> <span class="n">IService</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="o">{</span>
-
-    <span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="nf">getArticlePageing</span><span class="o">(</span><span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="n">iPage</span><span class="o">,</span> <span class="n">LambdaQueryWrapper</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="n">wrapper</span><span class="o">);</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">ArticleService</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">IService</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getArticlePageing</span><span class="p">(</span><span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="n">iPage</span><span class="p">,</span><span class="w"> </span><span class="n">LambdaQueryWrapper</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="n">wrapper</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="service-实现类">service 实现类</h4>
 <p>在实现类里注入 mapper, 完成分页获取数据。selectPage 方法接收两个参数，第一个是 IPage 对象，第二个参数是条件构造器 QueryWrapper。我们需要在 controller 中传递这两个参数。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -411,25 +413,25 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Service</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ArticleServiceImpl</span> <span class="kd">extends</span> <span class="n">ServiceImpl</span><span class="o">&lt;</span><span class="n">ArticleMapper</span><span class="o">,</span> <span class="n">Article</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">ArticleService</span> <span class="o">{</span>
-
-    <span class="nd">@Autowired</span>
-    <span class="n">ArticleMapper</span> <span class="n">articleMapper</span><span class="o">;</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="nf">getArticlePageing</span><span class="o">(</span><span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="n">iPage</span><span class="o">,</span> <span class="n">LambdaQueryWrapper</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="n">wrapper</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="n">articleIPage</span> <span class="o">=</span> <span class="n">articleMapper</span><span class="o">.</span><span class="na">selectPage</span><span class="o">(</span><span class="n">iPage</span><span class="o">,</span> <span class="n">wrapper</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">articleIPage</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Service</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ArticleServiceImpl</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ServiceImpl</span><span class="o">&lt;</span><span class="n">ArticleMapper</span><span class="p">,</span><span class="w"> </span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ArticleService</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Autowired</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ArticleMapper</span><span class="w"> </span><span class="n">articleMapper</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getArticlePageing</span><span class="p">(</span><span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="n">iPage</span><span class="p">,</span><span class="w"> </span><span class="n">LambdaQueryWrapper</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="n">wrapper</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="n">articleIPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">articleMapper</span><span class="p">.</span><span class="na">selectPage</span><span class="p">(</span><span class="n">iPage</span><span class="p">,</span><span class="w"> </span><span class="n">wrapper</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">articleIPage</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="创建-controller">创建 controller</h2>
 <p>我们需要传递 IPage 对象，QueryWrapper 对象给 service，然后从返回的 IPage 对象中取得查询到的数据。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -466,66 +468,66 @@
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@RestController</span>
-<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&#34;/open&#34;</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OpenController</span> <span class="o">{</span>
-
-	<span class="nd">@Autowired</span>
-    <span class="n">ArticleService</span> <span class="n">articleService</span><span class="o">;</span>
-
-    <span class="nd">@ApiOperation</span><span class="o">(</span><span class="s">&#34;分页查询文章，时间排序&#34;</span><span class="o">)</span>
-    <span class="nd">@PostMapping</span><span class="o">(</span><span class="s">&#34;/article/new&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">Object</span> <span class="nf">getArticleNew</span><span class="o">(</span><span class="n">Integer</span> <span class="n">current</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// 分页条件
-</span><span class="c1"></span>        <span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="n">page</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Page</span><span class="o">&lt;&gt;(</span><span class="n">current</span><span class="o">,</span> <span class="n">size</span><span class="o">);</span>
-        <span class="c1">// 查询条件
-</span><span class="c1"></span>        <span class="n">LambdaQueryWrapper</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="n">wrapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LambdaQueryWrapper</span><span class="o">&lt;&gt;();</span>
-        <span class="c1">// 根据时间顺序查询
-</span><span class="c1"></span>        <span class="n">wrapper</span><span class="o">.</span><span class="na">orderByDesc</span><span class="o">(</span><span class="n">Article</span><span class="o">::</span><span class="n">getCreateDate</span><span class="o">);</span>
-        <span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="n">articlePageing</span> <span class="o">=</span> <span class="n">articleService</span><span class="o">.</span><span class="na">getArticlePageing</span><span class="o">(</span><span class="n">page</span><span class="o">,</span> <span class="n">wrapper</span><span class="o">);</span>
-
-        <span class="c1">// 当前页数
-</span><span class="c1"></span>        <span class="kt">long</span> <span class="n">atCurrent</span> <span class="o">=</span> <span class="n">articlePageing</span><span class="o">.</span><span class="na">getCurrent</span><span class="o">();</span>
-        <span class="c1">// 当前页的数据
-</span><span class="c1"></span>        <span class="n">List</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="n">records</span> <span class="o">=</span> <span class="n">articlePageing</span><span class="o">.</span><span class="na">getRecords</span><span class="o">();</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">Article</span> <span class="n">article</span> <span class="o">:</span> <span class="n">records</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">article</span><span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>
-            <span class="n">article</span><span class="o">.</span><span class="na">setUser</span><span class="o">(</span><span class="n">userService</span><span class="o">.</span><span class="na">getById</span><span class="o">(</span><span class="n">article</span><span class="o">.</span><span class="na">getUId</span><span class="o">()));</span>
-            <span class="n">article</span><span class="o">.</span><span class="na">setBlock</span><span class="o">(</span><span class="n">blockService</span><span class="o">.</span><span class="na">getById</span><span class="o">(</span><span class="n">article</span><span class="o">.</span><span class="na">getBId</span><span class="o">()));</span>
-        <span class="o">}</span>
-        <span class="c1">// 组装Dto
-</span><span class="c1"></span>        <span class="n">PageResult</span> <span class="n">pageResult</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PageResult</span><span class="o">();</span>
-        <span class="n">pageResult</span><span class="o">.</span><span class="na">setCurrent</span><span class="o">(</span><span class="n">atCurrent</span><span class="o">);</span>
-        <span class="n">pageResult</span><span class="o">.</span><span class="na">setList</span><span class="o">(</span><span class="n">records</span><span class="o">);</span>
-
-        <span class="k">return</span> <span class="k">new</span> <span class="n">JsonResult</span><span class="o">(</span><span class="n">200</span><span class="o">,</span> <span class="s">&#34;查询成功&#34;</span><span class="o">,</span> <span class="n">pageResult</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@RestController</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@RequestMapping</span><span class="p">(</span><span class="s">&#34;/open&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OpenController</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nd">@Autowired</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ArticleService</span><span class="w"> </span><span class="n">articleService</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@ApiOperation</span><span class="p">(</span><span class="s">&#34;分页查询文章，时间排序&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&#34;/article/new&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">getArticleNew</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">current</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 分页条件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Page</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">current</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 查询条件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">LambdaQueryWrapper</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="n">wrapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LambdaQueryWrapper</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 根据时间顺序查询</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">wrapper</span><span class="p">.</span><span class="na">orderByDesc</span><span class="p">(</span><span class="n">Article</span><span class="p">::</span><span class="n">getCreateDate</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">IPage</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="n">articlePageing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">articleService</span><span class="p">.</span><span class="na">getArticlePageing</span><span class="p">(</span><span class="n">page</span><span class="p">,</span><span class="w"> </span><span class="n">wrapper</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 当前页数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">atCurrent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">articlePageing</span><span class="p">.</span><span class="na">getCurrent</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 当前页的数据</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="n">records</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">articlePageing</span><span class="p">.</span><span class="na">getRecords</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Article</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">records</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">article</span><span class="p">.</span><span class="na">setContent</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">article</span><span class="p">.</span><span class="na">setUser</span><span class="p">(</span><span class="n">userService</span><span class="p">.</span><span class="na">getById</span><span class="p">(</span><span class="n">article</span><span class="p">.</span><span class="na">getUId</span><span class="p">()));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">article</span><span class="p">.</span><span class="na">setBlock</span><span class="p">(</span><span class="n">blockService</span><span class="p">.</span><span class="na">getById</span><span class="p">(</span><span class="n">article</span><span class="p">.</span><span class="na">getBId</span><span class="p">()));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 组装Dto</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">PageResult</span><span class="w"> </span><span class="n">pageResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PageResult</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">pageResult</span><span class="p">.</span><span class="na">setCurrent</span><span class="p">(</span><span class="n">atCurrent</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">pageResult</span><span class="p">.</span><span class="na">setList</span><span class="p">(</span><span class="n">records</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JsonResult</span><span class="p">(</span><span class="n">200</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;查询成功&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">pageResult</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>这样就实现了数据时间排序的分页获取。</p>
 <h2 id="jwt-登录认证">JWT 登录认证</h2>
 <p>添加依赖</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
-    <span class="nt">&lt;groupId&gt;</span>io.jsonwebtoken<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>jjwt<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>0.7.0<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>io.jsonwebtoken<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>jjwt<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>0.7.0<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>写一个 jwt 工具类</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -573,59 +575,59 @@
 </span><span class="lnt">46
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Component</span>
-<span class="nd">@Data</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JwtConfig</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">secret</span> <span class="o">=</span> <span class="s">&#34;abcdefg1234567&#34;</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">long</span> <span class="n">expire</span> <span class="o">=</span> <span class="n">3600</span> <span class="o">*</span> <span class="n">60</span> <span class="o">*</span> <span class="n">60</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">header</span> <span class="o">=</span> <span class="s">&#34;token&#34;</span><span class="o">;</span>
-
-    <span class="cm">/**
-</span><span class="cm">     * 生成token
-</span><span class="cm">     *
-</span><span class="cm">     * @param subject
-</span><span class="cm">     * @return
-</span><span class="cm">     */</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">createToken</span><span class="o">(</span><span class="n">String</span> <span class="n">subject</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Date</span> <span class="n">nowDate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">();</span>
-        <span class="n">Date</span> <span class="n">expireDate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="n">nowDate</span><span class="o">.</span><span class="na">getTime</span><span class="o">()</span> <span class="o">+</span> <span class="n">expire</span> <span class="o">*</span> <span class="n">1000</span><span class="o">);</span><span class="c1">// 过期时间
-</span><span class="c1"></span>
-        <span class="k">return</span> <span class="n">Jwts</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">setHeaderParam</span><span class="o">(</span><span class="s">&#34;typ&#34;</span><span class="o">,</span> <span class="s">&#34;JWT&#34;</span><span class="o">).</span><span class="na">setSubject</span><span class="o">(</span><span class="n">subject</span><span class="o">).</span><span class="na">setIssuedAt</span><span class="o">(</span><span class="n">nowDate</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">setExpiration</span><span class="o">(</span><span class="n">expireDate</span><span class="o">).</span><span class="na">signWith</span><span class="o">(</span><span class="n">SignatureAlgorithm</span><span class="o">.</span><span class="na">HS512</span><span class="o">,</span> <span class="n">secret</span><span class="o">).</span><span class="na">compact</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="cm">/**
-</span><span class="cm">     * 获取token中注册信息
-</span><span class="cm">     *
-</span><span class="cm">     * @param token
-</span><span class="cm">     * @return
-</span><span class="cm">     */</span>
-    <span class="kd">public</span> <span class="n">Claims</span> <span class="nf">getTokenClaim</span><span class="o">(</span><span class="n">String</span> <span class="n">token</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">Jwts</span><span class="o">.</span><span class="na">parser</span><span class="o">().</span><span class="na">setSigningKey</span><span class="o">(</span><span class="n">secret</span><span class="o">).</span><span class="na">parseClaimsJws</span><span class="o">(</span><span class="n">token</span><span class="o">).</span><span class="na">getBody</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="c1">// e.printStackTrace();
-</span><span class="c1"></span>            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="cm">/**
-</span><span class="cm">     * 验证token是否过期失效
-</span><span class="cm">     *
-</span><span class="cm">     * @param expirationTime
-</span><span class="cm">     * @return
-</span><span class="cm">     */</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isTokenExpired</span><span class="o">(</span><span class="n">Date</span> <span class="n">expirationTime</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">expirationTime</span><span class="o">.</span><span class="na">before</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">());</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Component</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">JwtConfig</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;abcdefg1234567&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">expire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">3600</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">60</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;token&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 生成token
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param subject
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">createToken</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">subject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Date</span><span class="w"> </span><span class="n">nowDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Date</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Date</span><span class="w"> </span><span class="n">expireDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Date</span><span class="p">(</span><span class="n">nowDate</span><span class="p">.</span><span class="na">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">expire</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">1000</span><span class="p">);</span><span class="c1">// 过期时间</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Jwts</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">setHeaderParam</span><span class="p">(</span><span class="s">&#34;typ&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;JWT&#34;</span><span class="p">).</span><span class="na">setSubject</span><span class="p">(</span><span class="n">subject</span><span class="p">).</span><span class="na">setIssuedAt</span><span class="p">(</span><span class="n">nowDate</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">setExpiration</span><span class="p">(</span><span class="n">expireDate</span><span class="p">).</span><span class="na">signWith</span><span class="p">(</span><span class="n">SignatureAlgorithm</span><span class="p">.</span><span class="na">HS512</span><span class="p">,</span><span class="w"> </span><span class="n">secret</span><span class="p">).</span><span class="na">compact</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取token中注册信息
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param token
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Claims</span><span class="w"> </span><span class="nf">getTokenClaim</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">token</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">Jwts</span><span class="p">.</span><span class="na">parser</span><span class="p">().</span><span class="na">setSigningKey</span><span class="p">(</span><span class="n">secret</span><span class="p">).</span><span class="na">parseClaimsJws</span><span class="p">(</span><span class="n">token</span><span class="p">).</span><span class="na">getBody</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// e.printStackTrace();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 验证token是否过期失效
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param expirationTime
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isTokenExpired</span><span class="p">(</span><span class="n">Date</span><span class="w"> </span><span class="n">expirationTime</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">expirationTime</span><span class="p">.</span><span class="na">before</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Date</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>里面写了 token 的生成和解密的方法。</p>
 <p>添加 jwt 拦截器, 除了注册，登录和 get 请求的 uri 地址，都需要验证 token。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -674,60 +676,60 @@
 </span><span class="lnt">47
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Component</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TokenInterceptor</span> <span class="kd">extends</span> <span class="n">HandlerInterceptorAdapter</span> <span class="o">{</span>
-
-    <span class="n">JwtConfig</span> <span class="n">jwtConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JwtConfig</span><span class="o">();</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">preHandle</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">,</span> <span class="n">Object</span> <span class="n">handler</span><span class="o">)</span>
-            <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-
-        <span class="k">if</span> <span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getMethod</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;OPTIONS&#34;</span><span class="o">))</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="o">}</span>
-
-        <span class="cm">/** 地址过滤 */</span>
-        <span class="n">String</span> <span class="n">uri</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getRequestURI</span><span class="o">();</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">uri</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&#34;/api/login&#34;</span><span class="o">)</span> <span class="o">||</span> <span class="n">uri</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&#34;/api/reg&#34;</span><span class="o">)</span> <span class="o">||</span> <span class="n">uri</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&#34;/sys/login&#34;</span><span class="o">)</span>
-                <span class="o">||</span> <span class="n">uri</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&#34;/api/get&#34;</span><span class="o">))</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="o">}</span>
-
-        <span class="cm">/** Token 验证是否存在 */</span>
-        <span class="n">String</span> <span class="n">token</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getHeader</span><span class="o">(</span><span class="n">jwtConfig</span><span class="o">.</span><span class="na">getHeader</span><span class="o">());</span>
-
-        <span class="k">if</span> <span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">token</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">token</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="n">jwtConfig</span><span class="o">.</span><span class="na">getHeader</span><span class="o">());</span>
-        <span class="o">}</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">token</span><span class="o">))</span> <span class="o">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">SignatureException</span><span class="o">(</span><span class="n">jwtConfig</span><span class="o">.</span><span class="na">getHeader</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;不能为空&#34;</span><span class="o">);</span>
-        <span class="o">}</span>
-
-        <span class="n">Claims</span> <span class="n">claims</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="c1">// 判断是否有效
-</span><span class="c1"></span>        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">claims</span> <span class="o">=</span> <span class="n">jwtConfig</span><span class="o">.</span><span class="na">getTokenClaim</span><span class="o">(</span><span class="n">token</span><span class="o">);</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">claims</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">jwtConfig</span><span class="o">.</span><span class="na">isTokenExpired</span><span class="o">(</span><span class="n">claims</span><span class="o">.</span><span class="na">getExpiration</span><span class="o">()))</span> <span class="o">{</span>
-                <span class="k">throw</span> <span class="k">new</span> <span class="n">SignatureException</span><span class="o">(</span><span class="n">jwtConfig</span><span class="o">.</span><span class="na">getHeader</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;失效，请重新登录。&#34;</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">SignatureException</span><span class="o">(</span><span class="n">jwtConfig</span><span class="o">.</span><span class="na">getHeader</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;失效，请重新登录。&#34;</span><span class="o">);</span>
-        <span class="o">}</span>
-
-        <span class="cm">/** 设置 identityId 用户身份ID */</span>
-        <span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">&#34;identityId&#34;</span><span class="o">,</span> <span class="n">claims</span><span class="o">.</span><span class="na">getSubject</span><span class="o">());</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Component</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TokenInterceptor</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HandlerInterceptorAdapter</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">JwtConfig</span><span class="w"> </span><span class="n">jwtConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JwtConfig</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">preHandle</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">handler</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="na">getMethod</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">&#34;OPTIONS&#34;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="cm">/** 地址过滤 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getRequestURI</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&#34;/api/login&#34;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">uri</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&#34;/api/reg&#34;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">uri</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&#34;/sys/login&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="o">||</span><span class="w"> </span><span class="n">uri</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&#34;/api/get&#34;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="cm">/** Token 验证是否存在 */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getHeader</span><span class="p">(</span><span class="n">jwtConfig</span><span class="p">.</span><span class="na">getHeader</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">StringUtils</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">(</span><span class="n">token</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="n">jwtConfig</span><span class="p">.</span><span class="na">getHeader</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">StringUtils</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">(</span><span class="n">token</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SignatureException</span><span class="p">(</span><span class="n">jwtConfig</span><span class="p">.</span><span class="na">getHeader</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;不能为空&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Claims</span><span class="w"> </span><span class="n">claims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 判断是否有效</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">claims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jwtConfig</span><span class="p">.</span><span class="na">getTokenClaim</span><span class="p">(</span><span class="n">token</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">claims</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">jwtConfig</span><span class="p">.</span><span class="na">isTokenExpired</span><span class="p">(</span><span class="n">claims</span><span class="p">.</span><span class="na">getExpiration</span><span class="p">()))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SignatureException</span><span class="p">(</span><span class="n">jwtConfig</span><span class="p">.</span><span class="na">getHeader</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;失效，请重新登录。&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SignatureException</span><span class="p">(</span><span class="n">jwtConfig</span><span class="p">.</span><span class="na">getHeader</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;失效，请重新登录。&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="cm">/** 设置 identityId 用户身份ID */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">request</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&#34;identityId&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">claims</span><span class="p">.</span><span class="na">getSubject</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="点赞关注收藏评论">点赞关注收藏评论</h2>
 <p>点赞，关注，收藏，评论功能都可以用单表实现。点赞，收藏，评论功能就是在分别在 likes, collection, comment 表中记录 uid(用户),aid(文章) 实现关联，而关注则是在 follow 表中记录两个 uid 实现关联，下面给出点赞功能的逻辑实现，关注，收藏，评论功能的逻辑同点赞功能。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -745,29 +747,29 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java">    <span class="nd">@PostMapping</span><span class="o">(</span><span class="s">&#34;/add/like&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">Object</span> <span class="nf">setLike</span><span class="o">(</span><span class="n">Integer</span> <span class="n">aid</span><span class="o">,</span> <span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Claims</span> <span class="n">token</span> <span class="o">=</span> <span class="n">jwtConfig</span><span class="o">.</span><span class="na">getTokenClaim</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getHeader</span><span class="o">(</span><span class="s">&#34;token&#34;</span><span class="o">));</span>
-        <span class="n">String</span> <span class="n">subject</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="na">getSubject</span><span class="o">();</span>
-        <span class="n">LambdaQueryWrapper</span><span class="o">&lt;</span><span class="n">Likes</span><span class="o">&gt;</span> <span class="n">queryWrapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LambdaQueryWrapper</span><span class="o">&lt;&gt;();</span>
-        <span class="n">queryWrapper</span><span class="o">.</span><span class="na">eq</span><span class="o">(</span><span class="n">Likes</span><span class="o">::</span><span class="n">getUid</span><span class="o">,</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">subject</span><span class="o">));</span>
-        <span class="n">queryWrapper</span><span class="o">.</span><span class="na">eq</span><span class="o">(</span><span class="n">Likes</span><span class="o">::</span><span class="n">getAId</span><span class="o">,</span> <span class="n">aid</span><span class="o">);</span>
-        <span class="n">Likes</span> <span class="n">one</span> <span class="o">=</span> <span class="n">likeService</span><span class="o">.</span><span class="na">getOne</span><span class="o">(</span><span class="n">queryWrapper</span><span class="o">);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">one</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="kt">boolean</span> <span class="n">save</span> <span class="o">=</span> <span class="n">likeService</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="k">new</span> <span class="n">Likes</span><span class="o">().</span><span class="na">setAId</span><span class="o">(</span><span class="n">aid</span><span class="o">).</span><span class="na">setUid</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">subject</span><span class="o">)));</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="n">JsonResult</span><span class="o">(</span><span class="n">200</span><span class="o">,</span> <span class="s">&#34;点赞成功!&#34;</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="n">likeService</span><span class="o">.</span><span class="na">removeById</span><span class="o">(</span><span class="n">one</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="n">JsonResult</span><span class="o">(</span><span class="n">200</span><span class="o">,</span> <span class="s">&#34;已取消点赞!&#34;</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&#34;/add/like&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">setLike</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">aid</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Claims</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jwtConfig</span><span class="p">.</span><span class="na">getTokenClaim</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="na">getHeader</span><span class="p">(</span><span class="s">&#34;token&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">token</span><span class="p">.</span><span class="na">getSubject</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">LambdaQueryWrapper</span><span class="o">&lt;</span><span class="n">Likes</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queryWrapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LambdaQueryWrapper</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">queryWrapper</span><span class="p">.</span><span class="na">eq</span><span class="p">(</span><span class="n">Likes</span><span class="p">::</span><span class="n">getUid</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">subject</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">queryWrapper</span><span class="p">.</span><span class="na">eq</span><span class="p">(</span><span class="n">Likes</span><span class="p">::</span><span class="n">getAId</span><span class="p">,</span><span class="w"> </span><span class="n">aid</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Likes</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">likeService</span><span class="p">.</span><span class="na">getOne</span><span class="p">(</span><span class="n">queryWrapper</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">one</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">boolean</span><span class="w"> </span><span class="n">save</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">likeService</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Likes</span><span class="p">().</span><span class="na">setAId</span><span class="p">(</span><span class="n">aid</span><span class="p">).</span><span class="na">setUid</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">subject</span><span class="p">)));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JsonResult</span><span class="p">(</span><span class="n">200</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;点赞成功!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">boolean</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">likeService</span><span class="p">.</span><span class="na">removeById</span><span class="p">(</span><span class="n">one</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JsonResult</span><span class="p">(</span><span class="n">200</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;已取消点赞!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="搜索和浏览记录">搜索和浏览记录</h2>
 <p>搜索使用 mysql 的模糊查询实现。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -781,25 +783,25 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java">    <span class="nd">@PostMapping</span><span class="o">(</span><span class="s">&#34;/search/article&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">Object</span> <span class="nf">searchArticle</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">LambdaQueryWrapper</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="n">articleWrapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LambdaQueryWrapper</span><span class="o">&lt;&gt;();</span>
-        <span class="n">articleWrapper</span><span class="o">.</span><span class="na">like</span><span class="o">(</span><span class="n">Article</span><span class="o">::</span><span class="n">getTitle</span><span class="o">,</span> <span class="n">title</span><span class="o">);</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">articleService</span><span class="o">.</span><span class="na">list</span><span class="o">(</span><span class="n">articleWrapper</span><span class="o">);</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">Article</span> <span class="n">article</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">article</span><span class="o">.</span><span class="na">setContent</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>
-            <span class="n">article</span><span class="o">.</span><span class="na">setUser</span><span class="o">(</span><span class="n">userService</span><span class="o">.</span><span class="na">getById</span><span class="o">(</span><span class="n">article</span><span class="o">.</span><span class="na">getUId</span><span class="o">()));</span>
-            <span class="n">article</span><span class="o">.</span><span class="na">setBlock</span><span class="o">(</span><span class="n">blockService</span><span class="o">.</span><span class="na">getById</span><span class="o">(</span><span class="n">article</span><span class="o">.</span><span class="na">getBId</span><span class="o">()));</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">JsonResult</span><span class="o">(</span><span class="n">200</span><span class="o">,</span> <span class="s">&#34;&#34;</span><span class="o">,</span> <span class="n">list</span><span class="o">);</span>
-    <span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&#34;/search/article&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">searchArticle</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">LambdaQueryWrapper</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="n">articleWrapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LambdaQueryWrapper</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">articleWrapper</span><span class="p">.</span><span class="na">like</span><span class="p">(</span><span class="n">Article</span><span class="p">::</span><span class="n">getTitle</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Article</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">articleService</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="n">articleWrapper</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Article</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">article</span><span class="p">.</span><span class="na">setContent</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">article</span><span class="p">.</span><span class="na">setUser</span><span class="p">(</span><span class="n">userService</span><span class="p">.</span><span class="na">getById</span><span class="p">(</span><span class="n">article</span><span class="p">.</span><span class="na">getUId</span><span class="p">()));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">article</span><span class="p">.</span><span class="na">setBlock</span><span class="p">(</span><span class="n">blockService</span><span class="p">.</span><span class="na">getById</span><span class="p">(</span><span class="n">article</span><span class="p">.</span><span class="na">getBId</span><span class="p">()));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JsonResult</span><span class="p">(</span><span class="n">200</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">list</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>浏览记录，进入文章详情页面后，如果用户是登录状态，就加入 History 表。</p>
 <p>History 表有三个字段，uid(用户), aid(文章), time(访问时间)。如果已经在 History 表中存在记录，则更新时间。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -830,42 +832,42 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java">    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">&#34;/article/{id}&#34;</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">Object</span> <span class="nf">getArticleById</span><span class="o">(</span><span class="nd">@PathVariable</span><span class="o">(</span><span class="s">&#34;id&#34;</span><span class="o">)</span> <span class="n">Integer</span> <span class="n">id</span><span class="o">,</span> <span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Claims</span> <span class="n">token</span> <span class="o">=</span> <span class="n">jwtConfig</span><span class="o">.</span><span class="na">getTokenClaim</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getHeader</span><span class="o">(</span><span class="s">&#34;token&#34;</span><span class="o">));</span>
-        <span class="c1">// 在登陆状态下保存到历史表中
-</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">token</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">String</span> <span class="n">subject</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="na">getSubject</span><span class="o">();</span>
-            <span class="n">LambdaQueryWrapper</span><span class="o">&lt;</span><span class="n">History</span><span class="o">&gt;</span> <span class="n">queryWrapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LambdaQueryWrapper</span><span class="o">&lt;&gt;();</span>
-            <span class="n">queryWrapper</span><span class="o">.</span><span class="na">eq</span><span class="o">(</span><span class="n">History</span><span class="o">::</span><span class="n">getAid</span><span class="o">,</span> <span class="n">id</span><span class="o">);</span>
-            <span class="n">queryWrapper</span><span class="o">.</span><span class="na">eq</span><span class="o">(</span><span class="n">History</span><span class="o">::</span><span class="n">getUid</span><span class="o">,</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">subject</span><span class="o">));</span>
-            <span class="n">History</span> <span class="n">one</span> <span class="o">=</span> <span class="n">historyService</span><span class="o">.</span><span class="na">getOne</span><span class="o">(</span><span class="n">queryWrapper</span><span class="o">);</span>
-            <span class="c1">// 如果已存在记录，则更新时间
-</span><span class="c1"></span>            <span class="n">History</span> <span class="n">history</span> <span class="o">=</span> <span class="k">new</span> <span class="n">History</span><span class="o">().</span><span class="na">setAid</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">setTime</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">()).</span><span class="na">setUid</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">subject</span><span class="o">));</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">one</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">historyService</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">history</span><span class="o">);</span>
-            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-                <span class="n">one</span><span class="o">.</span><span class="na">setTime</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">());</span>
-                <span class="n">historyService</span><span class="o">.</span><span class="na">updateById</span><span class="o">(</span><span class="n">one</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-
-        <span class="n">Article</span> <span class="n">byId</span> <span class="o">=</span> <span class="n">articleService</span><span class="o">.</span><span class="na">getById</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
-        <span class="n">byId</span><span class="o">.</span><span class="na">setUser</span><span class="o">(</span><span class="n">userService</span><span class="o">.</span><span class="na">getById</span><span class="o">(</span><span class="n">byId</span><span class="o">.</span><span class="na">getUId</span><span class="o">()));</span>
-        <span class="n">byId</span><span class="o">.</span><span class="na">setBlock</span><span class="o">(</span><span class="n">blockService</span><span class="o">.</span><span class="na">getById</span><span class="o">(</span><span class="n">byId</span><span class="o">.</span><span class="na">getBId</span><span class="o">()));</span>
-
-        <span class="c1">// 每次访问热度加1
-</span><span class="c1"></span>        <span class="n">articleService</span><span class="o">.</span><span class="na">updateById</span><span class="o">(</span><span class="k">new</span> <span class="n">Article</span><span class="o">().</span><span class="na">setId</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">setScore</span><span class="o">(</span><span class="n">byId</span><span class="o">.</span><span class="na">getScore</span><span class="o">()</span> <span class="o">+</span> <span class="n">1</span><span class="o">));</span>
-
-        <span class="k">return</span> <span class="k">new</span> <span class="n">JsonResult</span><span class="o">(</span><span class="n">200</span><span class="o">,</span> <span class="s">&#34;查询成功&#34;</span><span class="o">,</span> <span class="n">byId</span><span class="o">);</span>
-    <span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@GetMapping</span><span class="p">(</span><span class="s">&#34;/article/{id}&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">getArticleById</span><span class="p">(</span><span class="nd">@PathVariable</span><span class="p">(</span><span class="s">&#34;id&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Claims</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jwtConfig</span><span class="p">.</span><span class="na">getTokenClaim</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="na">getHeader</span><span class="p">(</span><span class="s">&#34;token&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 在登陆状态下保存到历史表中</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">token</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">token</span><span class="p">.</span><span class="na">getSubject</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">LambdaQueryWrapper</span><span class="o">&lt;</span><span class="n">History</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queryWrapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LambdaQueryWrapper</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">queryWrapper</span><span class="p">.</span><span class="na">eq</span><span class="p">(</span><span class="n">History</span><span class="p">::</span><span class="n">getAid</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">queryWrapper</span><span class="p">.</span><span class="na">eq</span><span class="p">(</span><span class="n">History</span><span class="p">::</span><span class="n">getUid</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">subject</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">History</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">historyService</span><span class="p">.</span><span class="na">getOne</span><span class="p">(</span><span class="n">queryWrapper</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 如果已存在记录，则更新时间</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">History</span><span class="w"> </span><span class="n">history</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">History</span><span class="p">().</span><span class="na">setAid</span><span class="p">(</span><span class="n">id</span><span class="p">).</span><span class="na">setTime</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Date</span><span class="p">()).</span><span class="na">setUid</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">subject</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">one</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">historyService</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">history</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">one</span><span class="p">.</span><span class="na">setTime</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Date</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">historyService</span><span class="p">.</span><span class="na">updateById</span><span class="p">(</span><span class="n">one</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Article</span><span class="w"> </span><span class="n">byId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">articleService</span><span class="p">.</span><span class="na">getById</span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">byId</span><span class="p">.</span><span class="na">setUser</span><span class="p">(</span><span class="n">userService</span><span class="p">.</span><span class="na">getById</span><span class="p">(</span><span class="n">byId</span><span class="p">.</span><span class="na">getUId</span><span class="p">()));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">byId</span><span class="p">.</span><span class="na">setBlock</span><span class="p">(</span><span class="n">blockService</span><span class="p">.</span><span class="na">getById</span><span class="p">(</span><span class="n">byId</span><span class="p">.</span><span class="na">getBId</span><span class="p">()));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 每次访问热度加1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">articleService</span><span class="p">.</span><span class="na">updateById</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Article</span><span class="p">().</span><span class="na">setId</span><span class="p">(</span><span class="n">id</span><span class="p">).</span><span class="na">setScore</span><span class="p">(</span><span class="n">byId</span><span class="p">.</span><span class="na">getScore</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JsonResult</span><span class="p">(</span><span class="n">200</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;查询成功&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">byId</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>每次访问文章详情页，文章热度发生变化，首页热度排序的内容将重新排序。</p>
 <p>项目启动主类</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -873,13 +875,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@SpringBootApplication</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BugeServerApplication</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">BugeServerApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BugeServerApplication</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">SpringApplication</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">BugeServerApplication</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>spring boot 提供了一个统一的注解@SpringBootApplication。</p>
 <p>代表了@Configuration, @EnableAutoConfiguration, @ComponentScan。</p>
@@ -897,7 +899,7 @@
                             <a class="link-to-markdown" href="/2020-06-18-forum/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://111hunter.github.io/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API" data-hashtags="Spring Boot"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://111hunter.github.io/2020-06-18-forum/" data-hashtag="Spring Boot"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://111hunter.github.io/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://111hunter.github.io/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://111hunter.github.io/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://111hunter.github.io/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://111hunter.github.io/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API" data-hashtags="Spring Boot"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/2020-06-18-forum/" data-hashtag="Spring Boot"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/2020-06-18-forum/" data-title="MyBatis-Plus 实现论坛 API"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -916,8 +918,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io/" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

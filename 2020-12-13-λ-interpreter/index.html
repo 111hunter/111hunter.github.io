@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
+<html lang="zh-cn">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>实现 λ 演算解释器 - 寂的博客</title><meta name="Description" content=" 彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:title" content="实现 λ 演算解释器" />
-<meta property="og:description" content="如果你没有听说过 λ 演算，可以阅读我的这篇文章 。如果你没有编译原理相关知识，可以阅读我的这篇文章 。首先介绍调度场算法，后面的实现中会用到。 调度" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/" /><meta property="og:image" content="https://111hunter.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-12-13T09:50:34&#43;08:00" />
-<meta property="article:modified_time" content="2020-12-13T09:50:34&#43;08:00" /><meta property="og:site_name" content="My cool site" />
+        <title>实现 λ 演算解释器 - 寂的博客</title><meta name="Description" content="彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:url" content="http://localhost:1313/2020-12-13-%CE%BB-interpreter/">
+  <meta property="og:site_name" content="寂的博客">
+  <meta property="og:title" content="实现 λ 演算解释器">
+  <meta property="og:description" content="如果你没有听说过 λ 演算，可以阅读我的这篇文章 。如果你没有编译原理相关知识，可以阅读我的这篇文章 。首先介绍调度场算法，后面的实现中会用到。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-12-13T09:50:34+08:00">
+    <meta property="article:modified_time" content="2020-12-13T09:50:34+08:00">
+    <meta property="article:tag" content="AST">
+    <meta property="article:tag" content="Lambda">
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://111hunter.github.io/logo.png"/>
-
-<meta name="twitter:title" content="实现 λ 演算解释器"/>
-<meta name="twitter:description" content="如果你没有听说过 λ 演算，可以阅读我的这篇文章 。如果你没有编译原理相关知识，可以阅读我的这篇文章 。首先介绍调度场算法，后面的实现中会用到。 调度"/>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="实现 λ 演算解释器">
+  <meta name="twitter:description" content="如果你没有听说过 λ 演算，可以阅读我的这篇文章 。如果你没有编译原理相关知识，可以阅读我的这篇文章 。首先介绍调度场算法，后面的实现中会用到。">
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/" /><link rel="prev" href="https://111hunter.github.io/2020-12-10-lex-parse/" /><link rel="next" href="https://111hunter.github.io/2020-12-28-monad/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/2020-12-13-%CE%BB-interpreter/" /><link rel="prev" href="http://localhost:1313/2020-12-10-lex-parse/" /><link rel="next" href="http://localhost:1313/2020-12-28-monad/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "实现 λ 演算解释器",
-        "inLanguage": "zh-CN",
+        "inLanguage": "zh-cn",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/111hunter.github.io\/2020-12-13-%CE%BB-interpreter\/"
-        },"genre": "posts","keywords": "AST, Lambda","wordcount":  2129 ,
-        "url": "https:\/\/111hunter.github.io\/2020-12-13-%CE%BB-interpreter\/","datePublished": "2020-12-13T09:50:34+08:00","dateModified": "2020-12-13T09:50:34+08:00","publisher": {
+            "@id": "http:\/\/localhost:1313\/2020-12-13-%CE%BB-interpreter\/"
+        },"genre": "posts","keywords": "AST, Lambda","wordcount":  2110 ,
+        "url": "http:\/\/localhost:1313\/2020-12-13-%CE%BB-interpreter\/","datePublished": "2020-12-13T09:50:34+08:00","dateModified": "2020-12-13T09:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -103,9 +106,9 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">实现 λ 演算解释器</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
 </span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-12-13">2020-12-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2129 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-12-13">2020-12-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2110 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/2020-12-13-%CE%BB-interpreter/" class="leancloud_visitors" data-flag-title="实现 λ 演算解释器">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -161,7 +164,7 @@
 <p>对任意的 λ 演算表达式，只保留函数间的空格。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -178,39 +181,39 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="cm">/** remove any space that isn&#39;t in one of the following spots:
-</span><span class="cm">)_(, x_(, )_x, x_x, x_\, )_\ */</span>
-<span class="kd">function</span> <span class="nx">remove_extra_spaces</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">str</span>
-    <span class="p">.</span><span class="nx">trim</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\s+([^\(\wλ])/g</span><span class="p">,</span> <span class="s2">&#34;$1&#34;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/([^\)\w])\s+/g</span><span class="p">,</span> <span class="s2">&#34;$1&#34;</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="c1">// all spaces are lambda application =&gt; whitespace matters
-</span><span class="c1"></span><span class="kd">function</span> <span class="nx">lex</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">tokens</span> <span class="o">=</span> <span class="nx">remove_extra_spaces</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/(\)|\(|λ|\.|\w+|\s+)/</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">t</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">t</span> <span class="o">!=</span> <span class="s2">&#34;&#34;</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">tokens</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="cm">/** remove any space that isn&#39;t in one of the following spots:
+</span></span></span><span class="line"><span class="cl"><span class="cm">)_(, x_(, )_x, x_x, x_\, )_\ */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">remove_extra_spaces</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">str</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">trim</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\s+([^\(\wλ])/g</span><span class="p">,</span> <span class="s2">&#34;$1&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/([^\)\w])\s+/g</span><span class="p">,</span> <span class="s2">&#34;$1&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// all spaces are lambda application =&gt; whitespace matters
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">lex</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">tokens</span> <span class="o">=</span> <span class="nx">remove_extra_spaces</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/(\)|\(|λ|\.|\w+|\s+)/</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">t</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">t</span> <span class="o">!=</span> <span class="s2">&#34;&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">tokens</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">lex</span><span class="p">(</span><span class="s2">&#34; ( λ a. λ b. a ) a b &#34;</span><span class="p">);</span>
-<span class="c1">// [&#34;(&#34;, &#34;λ&#34;, &#34;a&#34;, &#34;.&#34;, &#34;λ&#34;, &#34;b&#34;, &#34;.&#34;, &#34;a&#34;, &#34;)&#34;, &#34; &#34;, &#34;a&#34;, &#34; &#34;, &#34;b&#34;]
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">lex</span><span class="p">(</span><span class="s2">&#34; ( λ a. λ b. a ) a b &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// [&#34;(&#34;, &#34;λ&#34;, &#34;a&#34;, &#34;.&#34;, &#34;λ&#34;, &#34;b&#34;, &#34;.&#34;, &#34;a&#34;, &#34;)&#34;, &#34; &#34;, &#34;a&#34;, &#34; &#34;, &#34;b&#34;]
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="语法分析">语法分析</h2>
 <p>按照调度场算法处理运算符，空格的优先级高于 <code>.</code>，因为函数的参数是函数。设计如下<a href="https://en.wikipedia.org/wiki/Recursive_descent_parser" target="_blank" rel="noopener noreffer">递归下降解析器</a>
 ：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -244,44 +247,44 @@
 </span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// shunting yard algorithm
-</span><span class="c1"></span><span class="kd">function</span> <span class="nx">parse</span><span class="p">(</span><span class="nx">tokens</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="p">[];</span>
-  <span class="kd">let</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[];</span>
-  <span class="k">while</span> <span class="p">(</span><span class="nx">tokens</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">tokens</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\w+/</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nx">output</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">Var</span><span class="p">(</span><span class="nx">current</span><span class="p">));</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">))</span> <span class="p">{</span>
-      <span class="c1">// swap if both o1 and o2 are application
-</span><span class="c1"></span>      <span class="nx">stack_to_output</span><span class="p">(</span><span class="nx">stack</span><span class="p">,</span> <span class="nx">output</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span>
-        <span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">].</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">)</span>
-      <span class="p">);</span>
-      <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">current</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">current</span> <span class="o">==</span> <span class="s2">&#34;(&#34;</span> <span class="o">||</span> <span class="nx">current</span> <span class="o">==</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">current</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">current</span> <span class="o">==</span> <span class="s2">&#34;)&#34;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">stack_to_output</span><span class="p">(</span><span class="nx">stack</span><span class="p">,</span> <span class="nx">output</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&#34;(&#34;</span><span class="p">);</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;mismatched parenthesis&#34;</span><span class="p">);</span>
-      <span class="p">}</span>
-      <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span> <span class="c1">// pop off left paren
-</span><span class="c1"></span>    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&#34;(&#34;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&#34;)&#34;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;mismatched parenthesis&#34;</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">stack_to_output</span><span class="p">(</span><span class="nx">stack</span><span class="p">,</span> <span class="nx">output</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kc">true</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">output</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// shunting yard algorithm
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">parse</span><span class="p">(</span><span class="nx">tokens</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="p">(</span><span class="nx">tokens</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">tokens</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\w+/</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">output</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">Var</span><span class="p">(</span><span class="nx">current</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">current</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// swap if both o1 and o2 are application
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">stack_to_output</span><span class="p">(</span><span class="nx">stack</span><span class="p">,</span> <span class="nx">output</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">].</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">current</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">current</span> <span class="o">==</span> <span class="s2">&#34;(&#34;</span> <span class="o">||</span> <span class="nx">current</span> <span class="o">==</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">current</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">current</span> <span class="o">==</span> <span class="s2">&#34;)&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">stack_to_output</span><span class="p">(</span><span class="nx">stack</span><span class="p">,</span> <span class="nx">output</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&#34;(&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;mismatched parenthesis&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span> <span class="c1">// pop off left paren
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&#34;(&#34;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&#34;)&#34;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;mismatched parenthesis&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">stack_to_output</span><span class="p">(</span><span class="nx">stack</span><span class="p">,</span> <span class="nx">output</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">output</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>加入运算符到后缀表达式 output</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -291,20 +294,20 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">stack_to_output</span><span class="p">(</span><span class="nx">stack</span><span class="p">,</span> <span class="nx">output</span><span class="p">,</span> <span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">while</span> <span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">condition</span><span class="p">())</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">top</span> <span class="o">=</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
-    <span class="kd">let</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">output</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
-    <span class="kd">let</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">output</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
-    <span class="nx">output</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">top</span> <span class="o">==</span> <span class="s2">&#34;.&#34;</span> <span class="o">?</span> <span class="k">new</span> <span class="nx">Abs</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span> <span class="o">:</span> <span class="k">new</span> <span class="nx">App</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">s</span><span class="p">));</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">stack_to_output</span><span class="p">(</span><span class="nx">stack</span><span class="p">,</span> <span class="nx">output</span><span class="p">,</span> <span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">condition</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">top</span> <span class="o">=</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">output</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">output</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">output</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">top</span> <span class="o">==</span> <span class="s2">&#34;.&#34;</span> <span class="o">?</span> <span class="k">new</span> <span class="nx">Abs</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span> <span class="o">:</span> <span class="k">new</span> <span class="nx">App</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">s</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这里用到了 AST 节点，给出定义：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -326,32 +329,32 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Var</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">&#34;var&#34;</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">free_vars</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([</span><span class="nx">id</span><span class="p">]);</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">&#34;app&#34;</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">func</span> <span class="o">=</span> <span class="nx">func</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">arg</span> <span class="o">=</span> <span class="nx">arg</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">free_vars</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([...</span><span class="nx">func</span><span class="p">.</span><span class="nx">free_vars</span><span class="p">,</span> <span class="p">...</span><span class="nx">arg</span><span class="p">.</span><span class="nx">free_vars</span><span class="p">]);</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">Abs</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">expr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">&#34;abs&#34;</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="kd">var</span> <span class="o">=</span> <span class="nx">v</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">expr</span> <span class="o">=</span> <span class="nx">expr</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">free_vars</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([...</span><span class="nx">expr</span><span class="p">.</span><span class="nx">free_vars</span><span class="p">]);</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">free_vars</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="kd">var</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Var</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">&#34;var&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">free_vars</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([</span><span class="nx">id</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">App</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">&#34;app&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">func</span> <span class="o">=</span> <span class="nx">func</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">arg</span> <span class="o">=</span> <span class="nx">arg</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">free_vars</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([...</span><span class="nx">func</span><span class="p">.</span><span class="nx">free_vars</span><span class="p">,</span> <span class="p">...</span><span class="nx">arg</span><span class="p">.</span><span class="nx">free_vars</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Abs</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">expr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">&#34;abs&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="kd">var</span> <span class="o">=</span> <span class="nx">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">expr</span> <span class="o">=</span> <span class="nx">expr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">free_vars</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([...</span><span class="nx">expr</span><span class="p">.</span><span class="nx">free_vars</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">free_vars</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="kd">var</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>只有 <code>abs</code> 类型里的参数 <code>var</code> 是约束变量，例如 <code>(λa.b)</code> 生成的 AST 如下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -359,18 +362,18 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">Abs</span> <span class="p">{</span>
-  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;abs&#39;</span><span class="p">,</span>
-  <span class="kd">var</span><span class="o">:</span> <span class="nx">Var</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="nx">free_vars</span><span class="o">:</span> <span class="nx">Set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span> <span class="p">}</span> <span class="p">},</span>
-  <span class="nx">expr</span><span class="o">:</span> <span class="nx">Var</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="nx">free_vars</span><span class="o">:</span> <span class="nx">Set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="s1">&#39;b&#39;</span> <span class="p">}</span> <span class="p">},</span>
-  <span class="nx">free_vars</span><span class="o">:</span> <span class="nx">Set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="s1">&#39;b&#39;</span> <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">Abs</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;abs&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span><span class="o">:</span> <span class="nx">Var</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="nx">free_vars</span><span class="o">:</span> <span class="nx">Set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">expr</span><span class="o">:</span> <span class="nx">Var</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="nx">free_vars</span><span class="o">:</span> <span class="nx">Set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="s1">&#39;b&#39;</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">free_vars</span><span class="o">:</span> <span class="nx">Set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="s1">&#39;b&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>(λa.b) c</code> 生成的 AST 如下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -383,24 +386,24 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">App</span> <span class="p">{</span>
-  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;app&#39;</span><span class="p">,</span>
-  <span class="nx">func</span><span class="o">:</span> <span class="nx">Abs</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;abs&#39;</span><span class="p">,</span>
-    <span class="kd">var</span><span class="o">:</span> <span class="nx">Var</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="nx">free_vars</span><span class="o">:</span> <span class="p">[</span><span class="nx">Set</span><span class="p">]</span> <span class="p">},</span>
-    <span class="nx">expr</span><span class="o">:</span> <span class="nx">Var</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="nx">free_vars</span><span class="o">:</span> <span class="p">[</span><span class="nx">Set</span><span class="p">]</span> <span class="p">},</span>
-    <span class="nx">free_vars</span><span class="o">:</span> <span class="nx">Set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="s1">&#39;b&#39;</span> <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="nx">arg</span><span class="o">:</span> <span class="nx">Var</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="nx">free_vars</span><span class="o">:</span> <span class="nx">Set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="s1">&#39;c&#39;</span> <span class="p">}</span> <span class="p">},</span>
-  <span class="nx">free_vars</span><span class="o">:</span> <span class="nx">Set</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">App</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;app&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">func</span><span class="o">:</span> <span class="nx">Abs</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;abs&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span><span class="o">:</span> <span class="nx">Var</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="nx">free_vars</span><span class="o">:</span> <span class="p">[</span><span class="nx">Set</span><span class="p">]</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expr</span><span class="o">:</span> <span class="nx">Var</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="nx">free_vars</span><span class="o">:</span> <span class="p">[</span><span class="nx">Set</span><span class="p">]</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">free_vars</span><span class="o">:</span> <span class="nx">Set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="s1">&#39;b&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">arg</span><span class="o">:</span> <span class="nx">Var</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="nx">free_vars</span><span class="o">:</span> <span class="nx">Set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="s1">&#39;c&#39;</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">free_vars</span><span class="o">:</span> <span class="nx">Set</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="实现解释器">实现解释器</h2>
 <p>在每个 AST 节点上封装一个 <code>stepped</code> 布尔值，表示对应的表达式是否能够 β 规约。只有在调用函数时，才能进行 β 规约，替换掉函数里的约束变量。代码的实现思路是观察 AST 的结构，例如 <code>(λa.b) c</code> 能够被替换的是 <code>(λa.b)</code>，对应的 AST 结构是 <code>app</code> 里的 <code>abs</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -436,46 +439,46 @@
 </span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">redexes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kd">function</span> <span class="nx">stepper</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s2">&#34;var&#34;</span><span class="o">:</span>
-      <span class="k">return</span> <span class="p">{</span> <span class="nx">stepped</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">node</span><span class="o">:</span> <span class="nx">node</span> <span class="p">};</span>
-    <span class="k">case</span> <span class="s2">&#34;app&#34;</span><span class="o">:</span>
-      <span class="k">switch</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">case</span> <span class="s2">&#34;var&#34;</span><span class="o">:</span>
-        <span class="k">case</span> <span class="s2">&#34;app&#34;</span><span class="o">:</span>
-          <span class="kd">let</span> <span class="nx">func_evaled</span> <span class="o">=</span> <span class="nx">stepper</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">func</span><span class="p">);</span>
-          <span class="k">if</span> <span class="p">(</span><span class="nx">func_evaled</span><span class="p">.</span><span class="nx">stepped</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="p">{</span> <span class="nx">stepped</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">node</span><span class="o">:</span> <span class="k">new</span> <span class="nx">App</span><span class="p">(</span><span class="nx">func_evaled</span><span class="p">.</span><span class="nx">node</span><span class="p">,</span> <span class="nx">node</span><span class="p">.</span><span class="nx">arg</span><span class="p">)</span> <span class="p">};</span>
-          <span class="p">}</span>
-          <span class="kd">let</span> <span class="nx">arg_evaled</span> <span class="o">=</span> <span class="nx">stepper</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">arg</span><span class="p">);</span>
-          <span class="k">return</span> <span class="p">{</span>
-            <span class="nx">stepped</span><span class="o">:</span> <span class="nx">arg_evaled</span><span class="p">.</span><span class="nx">stepped</span><span class="p">,</span>
-            <span class="nx">node</span><span class="o">:</span> <span class="k">new</span> <span class="nx">App</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">func</span><span class="p">,</span> <span class="nx">arg_evaled</span><span class="p">.</span><span class="nx">node</span><span class="p">),</span>
-          <span class="p">};</span>
-        <span class="k">case</span> <span class="s2">&#34;abs&#34;</span><span class="o">:</span> <span class="c1">// redex
-</span><span class="c1"></span>          <span class="nx">redexes</span><span class="o">++</span><span class="p">;</span>
-          <span class="k">return</span> <span class="p">{</span>
-            <span class="nx">stepped</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nx">node</span><span class="o">:</span> <span class="nx">substitute</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">arg</span><span class="p">,</span> <span class="nx">node</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="kd">var</span><span class="p">,</span> <span class="nx">node</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="nx">expr</span><span class="p">),</span>
-          <span class="p">};</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">&#34;abs&#34;</span><span class="o">:</span>
-      <span class="kd">let</span> <span class="nx">new_expr</span> <span class="o">=</span> <span class="nx">stepper</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">expr</span><span class="p">);</span>
-      <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">stepped</span><span class="o">:</span> <span class="nx">new_expr</span><span class="p">.</span><span class="nx">stepped</span><span class="p">,</span>
-        <span class="nx">node</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Abs</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="kd">var</span><span class="p">,</span> <span class="nx">new_expr</span><span class="p">.</span><span class="nx">node</span><span class="p">),</span>
-      <span class="p">};</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">redexes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">stepper</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">switch</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;var&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">{</span> <span class="nx">stepped</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">node</span><span class="o">:</span> <span class="nx">node</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;app&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">switch</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s2">&#34;var&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s2">&#34;app&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">          <span class="kd">let</span> <span class="nx">func_evaled</span> <span class="o">=</span> <span class="nx">stepper</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">func</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">          <span class="k">if</span> <span class="p">(</span><span class="nx">func_evaled</span><span class="p">.</span><span class="nx">stepped</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="p">{</span> <span class="nx">stepped</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">node</span><span class="o">:</span> <span class="k">new</span> <span class="nx">App</span><span class="p">(</span><span class="nx">func_evaled</span><span class="p">.</span><span class="nx">node</span><span class="p">,</span> <span class="nx">node</span><span class="p">.</span><span class="nx">arg</span><span class="p">)</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="kd">let</span> <span class="nx">arg_evaled</span> <span class="o">=</span> <span class="nx">stepper</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">arg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">stepped</span><span class="o">:</span> <span class="nx">arg_evaled</span><span class="p">.</span><span class="nx">stepped</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">node</span><span class="o">:</span> <span class="k">new</span> <span class="nx">App</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">func</span><span class="p">,</span> <span class="nx">arg_evaled</span><span class="p">.</span><span class="nx">node</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="p">};</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s2">&#34;abs&#34;</span><span class="o">:</span> <span class="c1">// redex
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="nx">redexes</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">stepped</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">node</span><span class="o">:</span> <span class="nx">substitute</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">arg</span><span class="p">,</span> <span class="nx">node</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="kd">var</span><span class="p">,</span> <span class="nx">node</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="nx">expr</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="p">};</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;abs&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">let</span> <span class="nx">new_expr</span> <span class="o">=</span> <span class="nx">stepper</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">expr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">stepped</span><span class="o">:</span> <span class="nx">new_expr</span><span class="p">.</span><span class="nx">stepped</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">node</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Abs</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="kd">var</span><span class="p">,</span> <span class="nx">new_expr</span><span class="p">.</span><span class="nx">node</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">      <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>实现替换函数 <code>substitute</code>，代码的实现思路同样是观察 AST 的结构</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -500,35 +503,35 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// substitute e for x (variable) in expr
-</span><span class="c1"></span><span class="kd">function</span> <span class="nx">substitute</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">expr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s2">&#34;var&#34;</span><span class="o">:</span>
-      <span class="k">return</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">x</span><span class="p">.</span><span class="nx">id</span> <span class="o">?</span> <span class="nx">e</span> <span class="o">:</span> <span class="nx">expr</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">&#34;app&#34;</span><span class="o">:</span>
-      <span class="k">return</span> <span class="k">new</span> <span class="nx">App</span><span class="p">(</span><span class="nx">substitute</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">func</span><span class="p">),</span> <span class="nx">substitute</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">arg</span><span class="p">));</span>
-    <span class="k">case</span> <span class="s2">&#34;abs&#34;</span><span class="o">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">x</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">expr</span><span class="p">;</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">.</span><span class="nx">free_vars</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nx">Abs</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">,</span> <span class="nx">substitute</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">expr</span><span class="p">));</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">do</span> <span class="p">{</span>
-          <span class="kd">var</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">rename</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">free_vars</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">z</span><span class="p">)</span> <span class="o">||</span> <span class="nx">variables</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">expr</span><span class="p">).</span><span class="nx">has</span><span class="p">(</span><span class="nx">z</span><span class="p">));</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nx">Abs</span><span class="p">(</span>
-          <span class="k">new</span> <span class="nx">Var</span><span class="p">(</span><span class="nx">z</span><span class="p">),</span>
-          <span class="nx">substitute</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">substitute</span><span class="p">(</span><span class="k">new</span> <span class="nx">Var</span><span class="p">(</span><span class="nx">z</span><span class="p">),</span> <span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">,</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">expr</span><span class="p">))</span>
-        <span class="p">);</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// substitute e for x (variable) in expr
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">substitute</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">expr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">switch</span> <span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;var&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">x</span><span class="p">.</span><span class="nx">id</span> <span class="o">?</span> <span class="nx">e</span> <span class="o">:</span> <span class="nx">expr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;app&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="k">new</span> <span class="nx">App</span><span class="p">(</span><span class="nx">substitute</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">func</span><span class="p">),</span> <span class="nx">substitute</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">arg</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;abs&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">x</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">expr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">.</span><span class="nx">free_vars</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="nx">Abs</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">,</span> <span class="nx">substitute</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">expr</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">do</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">rename</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">free_vars</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">z</span><span class="p">)</span> <span class="o">||</span> <span class="nx">variables</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">expr</span><span class="p">).</span><span class="nx">has</span><span class="p">(</span><span class="nx">z</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="nx">Abs</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">          <span class="k">new</span> <span class="nx">Var</span><span class="p">(</span><span class="nx">z</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">substitute</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">substitute</span><span class="p">(</span><span class="k">new</span> <span class="nx">Var</span><span class="p">(</span><span class="nx">z</span><span class="p">),</span> <span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">,</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">expr</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>进行 β 规约时，约束变量的名字可能重复，这就需要使用 α 变换重命名约束变量</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -545,27 +548,27 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">rename</span><span class="p">(</span><span class="nx">variable</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="p">[</span><span class="nx">match</span><span class="p">,</span> <span class="nx">prefix</span><span class="p">,</span> <span class="nx">num</span><span class="p">]</span> <span class="o">=</span> <span class="sr">/^(.*?)([\d]*)$/</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">variable</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">prefix</span> <span class="o">+</span> <span class="p">(</span><span class="nx">num</span> <span class="o">==</span> <span class="s2">&#34;&#34;</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">variables</span><span class="p">(</span><span class="nx">expr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s2">&#34;var&#34;</span><span class="o">:</span>
-      <span class="k">return</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([</span><span class="nx">expr</span><span class="p">.</span><span class="nx">id</span><span class="p">]);</span>
-    <span class="k">case</span> <span class="s2">&#34;app&#34;</span><span class="o">:</span>
-      <span class="k">return</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([...</span><span class="nx">variables</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">func</span><span class="p">),</span> <span class="p">...</span><span class="nx">variables</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">arg</span><span class="p">)]);</span>
-    <span class="k">case</span> <span class="s2">&#34;abs&#34;</span><span class="o">:</span>
-      <span class="k">return</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([...</span><span class="nx">variables</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">expr</span><span class="p">),</span> <span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">.</span><span class="nx">id</span><span class="p">]);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">rename</span><span class="p">(</span><span class="nx">variable</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="p">[</span><span class="nx">match</span><span class="p">,</span> <span class="nx">prefix</span><span class="p">,</span> <span class="nx">num</span><span class="p">]</span> <span class="o">=</span> <span class="sr">/^(.*?)([\d]*)$/</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">variable</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">prefix</span> <span class="o">+</span> <span class="p">(</span><span class="nx">num</span> <span class="o">==</span> <span class="s2">&#34;&#34;</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">variables</span><span class="p">(</span><span class="nx">expr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">switch</span> <span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;var&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([</span><span class="nx">expr</span><span class="p">.</span><span class="nx">id</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;app&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([...</span><span class="nx">variables</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">func</span><span class="p">),</span> <span class="p">...</span><span class="nx">variables</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">arg</span><span class="p">)]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;abs&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([...</span><span class="nx">variables</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">expr</span><span class="p">),</span> <span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">.</span><span class="nx">id</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>最后实现一个由 AST 节点重新生成 λ 演算表达式的函数</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -584,29 +587,29 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// unnecessary parenthesises uses in some abstractions
-</span><span class="c1"></span><span class="kd">function</span> <span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">expr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s2">&#34;var&#34;</span><span class="o">:</span>
-      <span class="k">return</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">&#34;abs&#34;</span><span class="o">:</span>
-      <span class="k">return</span> <span class="sb">`(λ</span><span class="si">${</span><span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">.</span><span class="si">${</span><span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">expr</span><span class="p">)</span><span class="si">}</span><span class="sb">)`</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">&#34;app&#34;</span><span class="o">:</span>
-      <span class="k">return</span> <span class="p">(</span>
-        <span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">func</span><span class="p">)</span> <span class="o">+</span>
-        <span class="s2">&#34; &#34;</span> <span class="o">+</span>
-        <span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">arg</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s2">&#34;app&#34;</span>
-          <span class="o">?</span> <span class="s2">&#34;(&#34;</span> <span class="o">+</span> <span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">arg</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;)&#34;</span>
-          <span class="o">:</span> <span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">arg</span><span class="p">))</span>
-      <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// unnecessary parenthesises uses in some abstractions
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">expr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">switch</span> <span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;var&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">expr</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;abs&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="sb">`(λ</span><span class="si">${</span><span class="nx">expr</span><span class="p">.</span><span class="kd">var</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">.</span><span class="si">${</span><span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">expr</span><span class="p">)</span><span class="si">}</span><span class="sb">)`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;app&#34;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">func</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34; &#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">arg</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s2">&#34;app&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">?</span> <span class="s2">&#34;(&#34;</span> <span class="o">+</span> <span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">arg</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;)&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">:</span> <span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">expr</span><span class="p">.</span><span class="nx">arg</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>现在可以自顶向下的解释 λ 演算表达式的计算规则了</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -624,28 +627,28 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">expr</span> <span class="o">=</span> <span class="s2">&#34;(λn. (λf. (λx. (f ((n f) x))))) (λf. (λx. x))&#34;</span><span class="p">;</span>
-<span class="kd">function</span> <span class="nx">run</span><span class="p">(</span><span class="nx">expr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">t</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
-  <span class="kd">let</span> <span class="nx">ast</span> <span class="o">=</span> <span class="nx">parse</span><span class="p">(</span><span class="nx">lex</span><span class="p">(</span><span class="nx">expr</span><span class="p">));</span>
-  <span class="kd">let</span> <span class="nx">new_expr</span> <span class="o">=</span> <span class="nx">stepper</span><span class="p">(</span><span class="nx">ast</span><span class="p">);</span>
-  <span class="k">while</span> <span class="p">(</span><span class="nx">new_expr</span><span class="p">.</span><span class="nx">stepped</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">redexes</span> <span class="o">+</span> <span class="s2">&#34;: &#34;</span> <span class="o">+</span> <span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">new_expr</span><span class="p">.</span><span class="nx">node</span><span class="p">));</span>
-    <span class="nx">new_expr</span> <span class="o">=</span> <span class="nx">stepper</span><span class="p">(</span><span class="nx">new_expr</span><span class="p">.</span><span class="nx">node</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="kd">let</span> <span class="nx">delay</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">t</span><span class="p">;</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;delay: &#34;</span> <span class="o">+</span> <span class="nx">delay</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;redexes: &#34;</span> <span class="o">+</span> <span class="nx">redexes</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;final: &#34;</span> <span class="o">+</span> <span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">new_expr</span><span class="p">.</span><span class="nx">node</span><span class="p">));</span>
-<span class="p">}</span>
-
-<span class="nx">run</span><span class="p">(</span><span class="nx">expr</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">expr</span> <span class="o">=</span> <span class="s2">&#34;(λn. (λf. (λx. (f ((n f) x))))) (λf. (λx. x))&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">run</span><span class="p">(</span><span class="nx">expr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">t</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">ast</span> <span class="o">=</span> <span class="nx">parse</span><span class="p">(</span><span class="nx">lex</span><span class="p">(</span><span class="nx">expr</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">new_expr</span> <span class="o">=</span> <span class="nx">stepper</span><span class="p">(</span><span class="nx">ast</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="p">(</span><span class="nx">new_expr</span><span class="p">.</span><span class="nx">stepped</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">redexes</span> <span class="o">+</span> <span class="s2">&#34;: &#34;</span> <span class="o">+</span> <span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">new_expr</span><span class="p">.</span><span class="nx">node</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">new_expr</span> <span class="o">=</span> <span class="nx">stepper</span><span class="p">(</span><span class="nx">new_expr</span><span class="p">.</span><span class="nx">node</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">delay</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;delay: &#34;</span> <span class="o">+</span> <span class="nx">delay</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;redexes: &#34;</span> <span class="o">+</span> <span class="nx">redexes</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;final: &#34;</span> <span class="o">+</span> <span class="nx">ast_to_expr</span><span class="p">(</span><span class="nx">new_expr</span><span class="p">.</span><span class="nx">node</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">run</span><span class="p">(</span><span class="nx">expr</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>expr 中第一个表达式是数字的后继函数，第二个表达式是数字 0</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -653,13 +656,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="mi">1</span><span class="o">:</span> <span class="p">(</span><span class="nx">λf</span><span class="p">.(</span><span class="nx">λx</span><span class="p">.</span><span class="nx">f</span> <span class="p">((</span><span class="nx">λf</span><span class="p">.(</span><span class="nx">λx</span><span class="p">.</span><span class="nx">x</span><span class="p">))</span> <span class="nx">f</span> <span class="nx">x</span><span class="p">)))</span>
-<span class="mi">2</span><span class="o">:</span> <span class="p">(</span><span class="nx">λf</span><span class="p">.(</span><span class="nx">λx</span><span class="p">.</span><span class="nx">f</span> <span class="p">((</span><span class="nx">λx</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span> <span class="nx">x</span><span class="p">)))</span>
-<span class="mi">3</span><span class="o">:</span> <span class="p">(</span><span class="nx">λf</span><span class="p">.(</span><span class="nx">λx</span><span class="p">.</span><span class="nx">f</span> <span class="nx">x</span><span class="p">))</span>
-<span class="nx">delay</span><span class="o">:</span> <span class="mi">10</span>
-<span class="nx">redexes</span><span class="o">:</span> <span class="mi">3</span>
-<span class="kr">final</span><span class="o">:</span> <span class="p">(</span><span class="nx">λf</span><span class="p">.(</span><span class="nx">λx</span><span class="p">.</span><span class="nx">f</span> <span class="nx">x</span><span class="p">))</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="mi">1</span><span class="o">:</span> <span class="p">(</span><span class="nx">λf</span><span class="p">.(</span><span class="nx">λx</span><span class="p">.</span><span class="nx">f</span> <span class="p">((</span><span class="nx">λf</span><span class="p">.(</span><span class="nx">λx</span><span class="p">.</span><span class="nx">x</span><span class="p">))</span> <span class="nx">f</span> <span class="nx">x</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span><span class="o">:</span> <span class="p">(</span><span class="nx">λf</span><span class="p">.(</span><span class="nx">λx</span><span class="p">.</span><span class="nx">f</span> <span class="p">((</span><span class="nx">λx</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span> <span class="nx">x</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span><span class="o">:</span> <span class="p">(</span><span class="nx">λf</span><span class="p">.(</span><span class="nx">λx</span><span class="p">.</span><span class="nx">f</span> <span class="nx">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nx">delay</span><span class="o">:</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="nx">redexes</span><span class="o">:</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="kr">final</span><span class="o">:</span> <span class="p">(</span><span class="nx">λf</span><span class="p">.(</span><span class="nx">λx</span><span class="p">.</span><span class="nx">f</span> <span class="nx">x</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>可以看到经过 3 次计算后，最终的表达式是数字 1，我们实现了 λ 演算解释器！</p>
 <p>附：<a href="https://github.com/111hunter/process-zero-to-hero" target="_blank" rel="noopener noreffer">源码地址</a>
@@ -682,7 +685,7 @@
                             <a class="link-to-markdown" href="/2020-12-13-%CE%BB-interpreter/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/" data-title="实现 λ 演算解释器" data-hashtags="AST,Lambda"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/" data-hashtag="AST"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/" data-title="实现 λ 演算解释器" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/" data-title="实现 λ 演算解释器"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/" data-title="实现 λ 演算解释器"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/" data-title="实现 λ 演算解释器" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/" data-title="实现 λ 演算解释器"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/2020-12-13-%CE%BB-interpreter/" data-title="实现 λ 演算解释器" data-hashtags="AST,Lambda"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/2020-12-13-%CE%BB-interpreter/" data-hashtag="AST"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/2020-12-13-%CE%BB-interpreter/" data-title="实现 λ 演算解释器" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/2020-12-13-%CE%BB-interpreter/" data-title="实现 λ 演算解释器"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/2020-12-13-%CE%BB-interpreter/" data-title="实现 λ 演算解释器"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/2020-12-13-%CE%BB-interpreter/" data-title="实现 λ 演算解释器" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/2020-12-13-%CE%BB-interpreter/" data-title="实现 λ 演算解释器"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -701,8 +704,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io/" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

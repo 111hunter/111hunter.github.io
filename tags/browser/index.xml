@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Browser - 标签 - 寂的博客</title>
+        <link>http://localhost:1313/tags/browser/</link>
+        <description>Browser - 标签 - 寂的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/browser/" rel="self" type="application/rss+xml" /><item>
+    <title>从启动浏览器到打开网页，发生了什么？</title>
+    <link>http://localhost:1313/2025-03-17-browser/</link>
+    <pubDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-03-17-browser/</guid>
+    <description><![CDATA[<p>从计算机科学的角度来看，从启动浏览器到输入网址并打开网页的全过程是一个复杂且多层次的协作，涉及网络通信、浏览器架构、JavaScript 执行机制等多个方面。现代浏览器（如Chrome、Firefox）采用了多进程架构，并结合单线程的 JavaScript 运行机制，通过事件循环和专用 Worker API 实现高效的任务处理和页面渲染。以下将详细描述这一过程，并突出 JavaScript 的单线程特性及其在浏览器中的运作方式。</p>]]></description>
+</item>
+</channel>
+</rss>

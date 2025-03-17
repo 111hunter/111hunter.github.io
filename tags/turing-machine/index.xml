@@ -1,31 +1,34 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Turing Machine - 标签 - 寂的博客</title>
-        <link>https://111hunter.github.io/tags/turing-machine/</link>
+        <link>http://localhost:1313/tags/turing-machine/</link>
         <description>Turing Machine - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/turing-machine/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/turing-machine/" rel="self" type="application/rss+xml" /><item>
     <title>一些通用计算模型</title>
-    <link>https://111hunter.github.io/2021-01-30-tag-system/</link>
+    <link>http://localhost:1313/2021-01-30-tag-system/</link>
     <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2021-01-30-tag-system/</guid>
-    <description><![CDATA[在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计]]></description>
+    <guid>http://localhost:1313/2021-01-30-tag-system/</guid>
+    <description><![CDATA[<blockquote>
+<p>在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算」的。 &ndash; wikipedia</p>]]></description>
 </item>
 <item>
     <title>图灵机的极简实现</title>
-    <link>https://111hunter.github.io/2020-11-17-brainfuck/</link>
+    <link>http://localhost:1313/2020-11-17-brainfuck/</link>
     <pubDate>Tue, 17 Nov 2020 22:00:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-11-17-brainfuck/</guid>
-    <description><![CDATA[图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终]]></description>
+    <guid>http://localhost:1313/2020-11-17-brainfuck/</guid>
+    <description><![CDATA[<p>图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终极强大逻辑机器。</p>]]></description>
 </item>
 <item>
     <title>自我指涉与数理逻辑</title>
-    <link>https://111hunter.github.io/2020-11-16-self-reference/</link>
+    <link>http://localhost:1313/2020-11-16-self-reference/</link>
     <pubDate>Mon, 16 Nov 2020 00:27:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-11-16-self-reference/</guid>
-    <description><![CDATA[“我是谁？”，这种对指代自身的疑问每个人都会有。在自然语言和形式语言中，如果一个句子直接或间接提及自身，就称为自指 (Self-referen]]></description>
+    <guid>http://localhost:1313/2020-11-16-self-reference/</guid>
+    <description><![CDATA[<p>“我是谁？”，这种对指代自身的疑问每个人都会有。在自然语言和形式语言中，如果一个句子直接或间接提及自身，就称为<a href="https://en.wikipedia.org/wiki/Self-reference" target="_blank" rel="noopener noreffer">自指</a>
+(Self-reference)，自指的语句常常会造成悖论。</p>]]></description>
 </item>
 </channel>
 </rss>

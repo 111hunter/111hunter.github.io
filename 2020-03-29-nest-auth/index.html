@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
+<html lang="zh-cn">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>NestJS &#43; Passport 实现鉴权认证 - 寂的博客</title><meta name="Description" content=" 彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:title" content="NestJS &#43; Passport 实现鉴权认证" />
-<meta property="og:description" content="鉴权(authentication)是指验证用户是否拥有访问系统的权利。传统的鉴权是通过密码来验证的。这种方式的前提是，每个获得密码的用户都" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://111hunter.github.io/2020-03-29-nest-auth/" /><meta property="og:image" content="https://111hunter.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-03-29T10:24:40&#43;08:00" />
-<meta property="article:modified_time" content="2020-03-29T10:24:40&#43;08:00" /><meta property="og:site_name" content="My cool site" />
+        <title>NestJS &#43; Passport 实现鉴权认证 - 寂的博客</title><meta name="Description" content="彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:url" content="http://localhost:1313/2020-03-29-nest-auth/">
+  <meta property="og:site_name" content="寂的博客">
+  <meta property="og:title" content="NestJS &#43; Passport 实现鉴权认证">
+  <meta property="og:description" content="鉴权(authentication)是指验证用户是否拥有访问系统的权利。传统的鉴权是通过密码来验证的。这种方式的前提是，每个获得密码的用户都已经被授权。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-03-29T10:24:40+08:00">
+    <meta property="article:modified_time" content="2020-03-29T10:24:40+08:00">
+    <meta property="article:tag" content="Nest">
+    <meta property="article:tag" content="Passport">
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://111hunter.github.io/logo.png"/>
-
-<meta name="twitter:title" content="NestJS &#43; Passport 实现鉴权认证"/>
-<meta name="twitter:description" content="鉴权(authentication)是指验证用户是否拥有访问系统的权利。传统的鉴权是通过密码来验证的。这种方式的前提是，每个获得密码的用户都"/>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NestJS &#43; Passport 实现鉴权认证">
+  <meta name="twitter:description" content="鉴权(authentication)是指验证用户是否拥有访问系统的权利。传统的鉴权是通过密码来验证的。这种方式的前提是，每个获得密码的用户都已经被授权。">
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://111hunter.github.io/2020-03-29-nest-auth/" /><link rel="prev" href="https://111hunter.github.io/2020-03-21-spring/" /><link rel="next" href="https://111hunter.github.io/2020-04-10-typeorm/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/2020-03-29-nest-auth/" /><link rel="prev" href="http://localhost:1313/2020-03-21-spring/" /><link rel="next" href="http://localhost:1313/2020-04-10-typeorm/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "NestJS + Passport 实现鉴权认证",
-        "inLanguage": "zh-CN",
+        "inLanguage": "zh-cn",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/111hunter.github.io\/2020-03-29-nest-auth\/"
+            "@id": "http:\/\/localhost:1313\/2020-03-29-nest-auth\/"
         },"genre": "posts","keywords": "Nest, Passport","wordcount":  2877 ,
-        "url": "https:\/\/111hunter.github.io\/2020-03-29-nest-auth\/","datePublished": "2020-03-29T10:24:40+08:00","dateModified": "2020-03-29T10:24:40+08:00","publisher": {
+        "url": "http:\/\/localhost:1313\/2020-03-29-nest-auth\/","datePublished": "2020-03-29T10:24:40+08:00","dateModified": "2020-03-29T10:24:40+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -103,7 +106,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">NestJS &#43; Passport 实现鉴权认证</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
 </span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Coding</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-03-29">2020-03-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2877 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/2020-03-29-nest-auth/" class="leancloud_visitors" data-flag-title="NestJS &#43; Passport 实现鉴权认证">
@@ -130,7 +133,7 @@
 <p>然后在 user 文件夹新建 user.entity.ts, 其中我们做了密码散列:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -151,33 +154,33 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">BeforeInsert</span><span class="p">,</span> <span class="nx">Column</span><span class="p">,</span> <span class="nx">Entity</span><span class="p">,</span> <span class="nx">PrimaryGeneratedColumn</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;typeorm&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">bcrypt</span> <span class="kr">from</span> <span class="s2">&#34;bcryptjs&#34;</span><span class="p">;</span>
-
-<span class="kd">@Entity</span><span class="p">(</span><span class="s2">&#34;user&#34;</span><span class="p">)</span>
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserEntity</span> <span class="p">{</span>
-  <span class="kd">@PrimaryGeneratedColumn</span><span class="p">()</span>
-  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
-
-  <span class="kd">@Column</span><span class="p">({</span> <span class="nx">length</span>: <span class="kt">20</span> <span class="p">})</span>
-  <span class="nx">username</span>: <span class="kt">string</span><span class="p">;</span>
-
-  <span class="kd">@Column</span><span class="p">({</span> <span class="nx">length</span>: <span class="kt">255</span> <span class="p">})</span>
-  <span class="nx">password</span>: <span class="kt">string</span><span class="p">;</span>
-
-  <span class="kd">@BeforeInsert</span><span class="p">()</span>
-  <span class="kr">async</span> <span class="nx">hashPassword() {</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">hash</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">password</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">BeforeInsert</span><span class="p">,</span> <span class="nx">Column</span><span class="p">,</span> <span class="nx">Entity</span><span class="p">,</span> <span class="nx">PrimaryGeneratedColumn</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;typeorm&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">bcrypt</span> <span class="kr">from</span> <span class="s2">&#34;bcryptjs&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">@Entity</span><span class="p">(</span><span class="s2">&#34;user&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserEntity</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">@PrimaryGeneratedColumn</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">@Column</span><span class="p">({</span> <span class="nx">length</span>: <span class="kt">20</span> <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">username</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">@Column</span><span class="p">({</span> <span class="nx">length</span>: <span class="kt">255</span> <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">password</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">@BeforeInsert</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">hashPassword() {</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">hash</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">password</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在 user.module.ts 中注册 user 表：<code>TypeOrmModule.forFeature([UserEntity])</code></p>
 <p>上一次我们直接在 module 中写了数据库连接配置，其实更常见的做法是写一个数据库配置文件。可以用环境变量设置数据库连接，这是 typeorm 数据库连接配置的<a href="https://typeorm.io/#/using-ormconfig/using-environment-variables" target="_blank" rel="noopener noreffer">参考地址</a>
 。在文件夹建立一个 .env 文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -192,20 +195,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="err">#</span> <span class="nx">App</span>
-<span class="nx">JWT_SECRET</span> <span class="o">=</span> <span class="s1">&#39;ThisIsASecretKey&#39;</span>
-
-<span class="err">#</span> <span class="nx">Database</span>
-<span class="nx">TYPEORM_CONNECTION</span> <span class="o">=</span> <span class="nx">mysql</span>
-<span class="nx">TYPEORM_HOST</span> <span class="o">=</span> <span class="nx">localhost</span>
-<span class="nx">TYPEORM_USERNAME</span> <span class="o">=</span> <span class="nx">root</span>
-<span class="nx">TYPEORM_PASSWORD</span> <span class="o">=</span> <span class="mi">123456</span>
-<span class="nx">TYPEORM_DATABASE</span> <span class="o">=</span> <span class="nx">test</span>
-<span class="nx">TYPEORM_PORT</span> <span class="o">=</span> <span class="mi">3306</span>
-<span class="nx">TYPEORM_SYNCHRONIZE</span> <span class="o">=</span> <span class="kc">true</span>
-<span class="nx">TYPEORM_LOGGING</span> <span class="o">=</span> <span class="kc">true</span>
-<span class="nx">TYPEORM_ENTITIES</span> <span class="o">=</span> <span class="nx">dist</span><span class="cm">/**/</span><span class="o">*</span><span class="p">.</span><span class="nx">entity</span><span class="p">.</span><span class="nx">js</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="err">#</span> <span class="nx">App</span>
+</span></span><span class="line"><span class="cl"><span class="nx">JWT_SECRET</span> <span class="o">=</span> <span class="s1">&#39;ThisIsASecretKey&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="nx">Database</span>
+</span></span><span class="line"><span class="cl"><span class="nx">TYPEORM_CONNECTION</span> <span class="o">=</span> <span class="nx">mysql</span>
+</span></span><span class="line"><span class="cl"><span class="nx">TYPEORM_HOST</span> <span class="o">=</span> <span class="nx">localhost</span>
+</span></span><span class="line"><span class="cl"><span class="nx">TYPEORM_USERNAME</span> <span class="o">=</span> <span class="nx">root</span>
+</span></span><span class="line"><span class="cl"><span class="nx">TYPEORM_PASSWORD</span> <span class="o">=</span> <span class="mi">123456</span>
+</span></span><span class="line"><span class="cl"><span class="nx">TYPEORM_DATABASE</span> <span class="o">=</span> <span class="nx">test</span>
+</span></span><span class="line"><span class="cl"><span class="nx">TYPEORM_PORT</span> <span class="o">=</span> <span class="mi">3306</span>
+</span></span><span class="line"><span class="cl"><span class="nx">TYPEORM_SYNCHRONIZE</span> <span class="o">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">TYPEORM_LOGGING</span> <span class="o">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">TYPEORM_ENTITIES</span> <span class="o">=</span> <span class="nx">dist</span><span class="cm">/**/</span><span class="o">*</span><span class="p">.</span><span class="nx">entity</span><span class="p">.</span><span class="nx">js</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中写了数据库配置和自定义的 jwt 密匙，关于如何生成 jwt 格式的字符串, 可以看<a href="https://www.footmark.info/programming-language/nodejs/nodejs-restful-webapi-oauth2-jwt/#fm-chapter-2-1" target="_blank" rel="noopener noreffer">这篇文章</a>
 , 本文只讲如何使用它来做用户登录验证。</p>
@@ -213,7 +216,7 @@
 <p>在 user 文件夹新建 user.dto.ts：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -227,24 +230,24 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">IsString</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;class-validator&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">ApiProperty</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/swagger&#34;</span><span class="p">;</span>
-
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserDto</span> <span class="p">{</span>
-  <span class="kd">@ApiProperty</span><span class="p">()</span>
-  <span class="kd">@IsString</span><span class="p">()</span>
-  <span class="kr">readonly</span> <span class="nx">username</span>: <span class="kt">string</span><span class="p">;</span>
-
-  <span class="kd">@ApiProperty</span><span class="p">()</span>
-  <span class="kd">@IsString</span><span class="p">()</span>
-  <span class="kr">readonly</span> <span class="nx">password</span>: <span class="kt">string</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">IsString</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;class-validator&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ApiProperty</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/swagger&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserDto</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">@ApiProperty</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">@IsString</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">readonly</span> <span class="nx">username</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">@ApiProperty</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">@IsString</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">readonly</span> <span class="nx">password</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后创建 user service：<code>$ nest g s user</code>，注意在 createUser 方法中一定要先 <strong>实例化</strong> user, 再返回创建的对象。否则 user.entity.ts 中的 @BeforeInsert() 装饰的方法不会执行，密码就不会取散列后的值。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -273,52 +276,52 @@
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">InjectRepository</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/typeorm&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserEntity</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;./user.entity&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Repository</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;typeorm&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserDto</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;./user.dto&#34;</span><span class="p">;</span>
-
-<span class="kd">@Injectable</span><span class="p">()</span>
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserService</span> <span class="p">{</span>
-  <span class="kr">constructor</span><span class="p">(</span>
-    <span class="kd">@InjectRepository</span><span class="p">(</span><span class="nx">UserEntity</span><span class="p">)</span>
-    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">userRepository</span>: <span class="kt">Repository</span><span class="p">&lt;</span><span class="nt">UserEntity</span><span class="p">&gt;</span>
-  <span class="p">)</span> <span class="p">{}</span>
-
-  <span class="kr">async</span> <span class="nx">createUser</span><span class="p">(</span><span class="nx">userDto</span>: <span class="kt">UserDto</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// const user = Object.assign(new UserEntity(), userDto)
-</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">userDto</span><span class="p">);</span>
-    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="kr">async</span> <span class="nx">findUsername</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">where</span><span class="o">:</span> <span class="p">{</span> <span class="nx">username</span> <span class="p">}</span> <span class="p">});</span>
-  <span class="p">}</span>
-
-  <span class="kr">async</span> <span class="nx">findAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">UserEntity</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">InjectRepository</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/typeorm&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">UserEntity</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;./user.entity&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Repository</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;typeorm&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">UserDto</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;./user.dto&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">@Injectable</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserService</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@InjectRepository</span><span class="p">(</span><span class="nx">UserEntity</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">userRepository</span>: <span class="kt">Repository</span><span class="p">&lt;</span><span class="nt">UserEntity</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">createUser</span><span class="p">(</span><span class="nx">userDto</span>: <span class="kt">UserDto</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// const user = Object.assign(new UserEntity(), userDto)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">userDto</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">findUsername</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">where</span><span class="o">:</span> <span class="p">{</span> <span class="nx">username</span> <span class="p">}</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">findAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">UserEntity</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="实现本地认证策略">实现本地认证策略</h2>
 <p>实现本地认证策略需要先安装以下依赖：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">yarn add @nestjs/passport passport passport-local
-yarn add -D @types/passport-local
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yarn add @nestjs/passport passport passport-local
+</span></span><span class="line"><span class="cl">yarn add -D @types/passport-local
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>说明一下，这一步不是必须的。其实本地认证就是做用户名和密码的核对，我们自己去实现也不算麻烦。但是为了和 NestJS 官网教程保持一致，我们也这样做。
 创建 auth module: <code>$ nest g mo auth</code>，在 auth 目录下创建一个 local.strategy.ts 文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -339,31 +342,31 @@ yarn add -D @types/passport-local
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">UnauthorizedException</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">PassportStrategy</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/passport&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Strategy</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;passport-local&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;./auth.service&#34;</span><span class="p">;</span>
-
-<span class="kd">@Injectable</span><span class="p">()</span>
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">LocalStrategy</span> <span class="kr">extends</span> <span class="nx">PassportStrategy</span><span class="p">(</span><span class="nx">Strategy</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">authService</span>: <span class="kt">AuthService</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">super</span><span class="p">();</span>
-  <span class="p">}</span>
-
-  <span class="kr">async</span> <span class="nx">validate</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">password</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">validateUser</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="nx">password</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="nx">UnauthorizedException</span><span class="p">();</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">user</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">UnauthorizedException</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">PassportStrategy</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/passport&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Strategy</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;passport-local&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;./auth.service&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">@Injectable</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">LocalStrategy</span> <span class="kr">extends</span> <span class="nx">PassportStrategy</span><span class="p">(</span><span class="nx">Strategy</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">authService</span>: <span class="kt">AuthService</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">super</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">validate</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">password</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">validateUser</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="nx">password</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">throw</span> <span class="k">new</span> <span class="nx">UnauthorizedException</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">user</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用 @nestjs/passport ，你需要继承 PassportStrategy 类来配置 passport 策略。通过调用子类中的 super() 方法传递策略选项，通过在子类中实现 validate() 方法，可以提供 verify 回调。Passport 定义的 <strong>所有策略</strong> 都是将 validate() 方法执行的结果作为 user 属性存储在当前 <strong>HTTP Request 对象</strong> 上,你也可以自定义此属性的名称。上面文件中的 validateUser 方法需要在 auth.service.ts 自己实现，因为框架不清楚你定义的密码散列方式。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -377,25 +380,25 @@ yarn add -D @types/passport-local
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">//auth.service.ts
-</span><span class="c1"></span>
-<span class="p">...</span>
-
-    <span class="kr">async</span> <span class="nx">validateUser</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">pass</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;-----------Login-----------&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">user</span> <span class="o">&amp;&amp;</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">compareSync</span><span class="p">(</span><span class="nx">pass</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">password</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="nx">user</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-    <span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">//auth.service.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">async</span> <span class="nx">validateUser</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">pass</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;-----------Login-----------&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">user</span> <span class="o">&amp;&amp;</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">compareSync</span><span class="p">(</span><span class="nx">pass</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">password</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">user</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="实现注册登录功能">实现注册登录功能</h2>
 <p>创建 auth controller: <code>$ nest g co auth</code>，路由功能：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -440,56 +443,56 @@ yarn add -D @types/passport-local
 </span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">UserDto</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;./../user/user.dto&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span>
-  <span class="nx">Body</span><span class="p">,</span>
-  <span class="nx">Controller</span><span class="p">,</span>
-  <span class="nx">Get</span><span class="p">,</span>
-  <span class="nx">Post</span><span class="p">,</span>
-  <span class="nx">UseGuards</span><span class="p">,</span>
-  <span class="nx">Res</span><span class="p">,</span>
-  <span class="nx">Request</span><span class="p">,</span>
-<span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthGuard</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/passport&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">ApiTags</span><span class="p">,</span> <span class="nx">ApiBearerAuth</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/swagger&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;src/auth/auth.service&#34;</span><span class="p">;</span>
-
-<span class="kd">@ApiBearerAuth</span><span class="p">()</span>
-<span class="kd">@ApiTags</span><span class="p">(</span><span class="s2">&#34;Auth&#34;</span><span class="p">)</span>
-<span class="kd">@Controller</span><span class="p">(</span><span class="s2">&#34;auth&#34;</span><span class="p">)</span>
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AuthController</span> <span class="p">{</span>
-  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">authService</span>: <span class="kt">AuthService</span><span class="p">)</span> <span class="p">{}</span>
-
-  <span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">(</span><span class="s2">&#34;jwt&#34;</span><span class="p">))</span>
-  <span class="kd">@Get</span><span class="p">(</span><span class="s2">&#34;users&#34;</span><span class="p">)</span>
-  <span class="kr">async</span> <span class="nx">findAll</span><span class="p">(</span><span class="kd">@Request</span><span class="p">()</span> <span class="nx">req</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;--------------Auth--Success---------------&#34;</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">);</span>
-    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
-  <span class="p">}</span>
-
-  <span class="kd">@Post</span><span class="p">(</span><span class="s2">&#34;signUp&#34;</span><span class="p">)</span>
-  <span class="kr">async</span> <span class="nx">register</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="nx">req</span>: <span class="kt">UserDto</span><span class="p">,</span> <span class="kd">@Res</span><span class="p">()</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">(</span><span class="s2">&#34;local&#34;</span><span class="p">))</span>
-  <span class="kd">@Post</span><span class="p">(</span><span class="s2">&#34;signIn&#34;</span><span class="p">)</span>
-  <span class="kr">async</span> <span class="nx">login</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="kd">@Request</span><span class="p">()</span> <span class="nx">req</span>: <span class="kt">UserDto</span><span class="p">,</span> <span class="kd">@Res</span><span class="p">()</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;----------Login--Success-----------&#34;</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
-    <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">UserDto</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;./../user/user.dto&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Body</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Controller</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Get</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Post</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">UseGuards</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Res</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Request</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthGuard</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/passport&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ApiTags</span><span class="p">,</span> <span class="nx">ApiBearerAuth</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/swagger&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;src/auth/auth.service&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">@ApiBearerAuth</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kd">@ApiTags</span><span class="p">(</span><span class="s2">&#34;Auth&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">@Controller</span><span class="p">(</span><span class="s2">&#34;auth&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AuthController</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">authService</span>: <span class="kt">AuthService</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">(</span><span class="s2">&#34;jwt&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">@Get</span><span class="p">(</span><span class="s2">&#34;users&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">findAll</span><span class="p">(</span><span class="kd">@Request</span><span class="p">()</span> <span class="nx">req</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;--------------Auth--Success---------------&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">@Post</span><span class="p">(</span><span class="s2">&#34;signUp&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">register</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="nx">req</span>: <span class="kt">UserDto</span><span class="p">,</span> <span class="kd">@Res</span><span class="p">()</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">(</span><span class="s2">&#34;local&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">@Post</span><span class="p">(</span><span class="s2">&#34;signIn&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">login</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="kd">@Request</span><span class="p">()</span> <span class="nx">req</span>: <span class="kt">UserDto</span><span class="p">,</span> <span class="kd">@Res</span><span class="p">()</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;----------Login--Success-----------&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
-</div><p>注意其中的 @UseGuards(AuthGuard(&lsquo;local&rsquo;)) 装饰器，因为我们写了 local.strategy.ts 文件，其中继承了 PassportStrategy 类，并实现了 validate 方法。@nestjs/passport 就会为我们实现一个 AuthGuard，我们直接在需要验证的路由前使用就好。@UseGuards(AuthGuard(&lsquo;jwt&rsquo;)) 是我们接下来要讲的 JWT 认证策略。</p>
+</div><p>注意其中的 @UseGuards(AuthGuard(&rsquo;local&rsquo;)) 装饰器，因为我们写了 local.strategy.ts 文件，其中继承了 PassportStrategy 类，并实现了 validate 方法。@nestjs/passport 就会为我们实现一个 AuthGuard，我们直接在需要验证的路由前使用就好。@UseGuards(AuthGuard(&lsquo;jwt&rsquo;)) 是我们接下来要讲的 JWT 认证策略。</p>
 <p>再补充完整 auth.service.ts 文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -548,64 +551,64 @@ yarn add -D @types/passport-local
 </span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// auth.service.ts
-</span><span class="c1"></span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">BadRequestException</span><span class="p">,</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Body</span><span class="p">,</span> <span class="nx">Request</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">UserService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;../user/user.service&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">JwtService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/jwt&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">bcrypt</span> <span class="kr">from</span> <span class="s2">&#34;bcryptjs&#34;</span><span class="p">;</span>
-
-<span class="kd">@Injectable</span><span class="p">()</span>
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AuthService</span> <span class="p">{</span>
-  <span class="kr">constructor</span><span class="p">(</span>
-    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">userService</span>: <span class="kt">UserService</span><span class="p">,</span>
-    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">jwtService</span>: <span class="kt">JwtService</span>
-  <span class="p">)</span> <span class="p">{}</span>
-
-  <span class="kr">async</span> <span class="nx">findAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
-  <span class="p">}</span>
-
-  <span class="kr">async</span> <span class="nx">validateUser</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">pass</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;-----------Login-----------&#34;</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">user</span> <span class="o">&amp;&amp;</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">compareSync</span><span class="p">(</span><span class="nx">pass</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">password</span><span class="p">))</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">user</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="kr">async</span> <span class="nx">register</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">userData</span>: <span class="kt">any</span><span class="p">;</span>
-    <span class="nx">userData</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">userData</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="p">{</span> <span class="nx">statusCode</span>: <span class="kt">400</span><span class="p">,</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&#34;This username aleady exists&#34;</span> <span class="p">};</span>
-    <span class="p">}</span>
-    <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">createUser</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
-    <span class="nx">userData</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">username</span>: <span class="kt">userData.username</span><span class="p">,</span>
-      <span class="nx">statusCode</span>: <span class="kt">201</span><span class="p">,</span>
-    <span class="p">};</span>
-  <span class="p">}</span>
-
-  <span class="kr">async</span> <span class="nx">login</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">userData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">Token</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">createToken</span><span class="p">(</span><span class="nx">userData</span><span class="p">);</span>
-      <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">username</span>: <span class="kt">userData.username</span><span class="p">,</span>
-        <span class="nx">access_token</span>: <span class="kt">Token</span><span class="p">,</span>
-        <span class="nx">statusCode</span>: <span class="kt">200</span><span class="p">,</span>
-      <span class="p">};</span>
-    <span class="p">});</span>
-  <span class="p">}</span>
-
-  <span class="nx">createToken</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">username</span>: <span class="kt">user.username</span><span class="p">,</span> <span class="nx">sub</span>: <span class="kt">user.id</span> <span class="p">};</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">jwtService</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">payload</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// auth.service.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">BadRequestException</span><span class="p">,</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Body</span><span class="p">,</span> <span class="nx">Request</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">UserService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;../user/user.service&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">JwtService</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/jwt&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">bcrypt</span> <span class="kr">from</span> <span class="s2">&#34;bcryptjs&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">@Injectable</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AuthService</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">userService</span>: <span class="kt">UserService</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="kr">readonly</span> <span class="nx">jwtService</span>: <span class="kt">JwtService</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">findAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">validateUser</span><span class="p">(</span><span class="nx">username</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">pass</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;-----------Login-----------&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">user</span> <span class="o">&amp;&amp;</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">compareSync</span><span class="p">(</span><span class="nx">pass</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">password</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">user</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">register</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">userData</span>: <span class="kt">any</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">userData</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">userData</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">{</span> <span class="nx">statusCode</span>: <span class="kt">400</span><span class="p">,</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&#34;This username aleady exists&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">createUser</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">userData</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">username</span>: <span class="kt">userData.username</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">statusCode</span>: <span class="kt">201</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">login</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">findUsername</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">userData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">Token</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">createToken</span><span class="p">(</span><span class="nx">userData</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">username</span>: <span class="kt">userData.username</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">access_token</span>: <span class="kt">Token</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">statusCode</span>: <span class="kt">200</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">createToken</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">username</span>: <span class="kt">user.username</span><span class="p">,</span> <span class="nx">sub</span>: <span class="kt">user.id</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">jwtService</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">payload</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="实现-jwt-认证策略">实现 JWT 认证策略</h2>
 <p>实现了用户注册登录后，我们需要保护 API，限制有的路由地址需要用户登录后才能访问，有的路由地址需要管理员登录后才能访问。我们这里只实现需要普通用户登录后才能访问的路由。</p>
@@ -620,28 +623,28 @@ yarn add -D @types/passport-local
 <p>在 Nest.js 中使用 jwt(json web token), 我们需要安装以下依赖：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">yarn add @nestjs/jwt passport-jwt
-yarn add -D @types/passport-jwt
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yarn add @nestjs/jwt passport-jwt
+</span></span><span class="line"><span class="cl">yarn add -D @types/passport-jwt
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>我们在 auth.service.ts 中已经实现了生成 jwt 字符串的方法，在用户登录路由中就会调用，并返回 jwt 字符串：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts">    <span class="nx">createToken</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">username</span>: <span class="kt">user.username</span><span class="p">,</span> <span class="nx">sub</span>: <span class="kt">user.id</span> <span class="p">};</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">jwtService</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">payload</span><span class="p">);</span>
-    <span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl">    <span class="nx">createToken</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">username</span>: <span class="kt">user.username</span><span class="p">,</span> <span class="nx">sub</span>: <span class="kt">user.id</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">jwtService</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">payload</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="details admonition note open">
         <div class="details-summary admonition-title">
@@ -655,7 +658,7 @@ yarn add -D @types/passport-jwt
 我们就需要实现 jwt 认证策略，在 auth 文件夹下新建 jwt.strategy.ts 文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -676,32 +679,32 @@ yarn add -D @types/passport-jwt
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">PassportStrategy</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/passport&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">ExtractJwt</span><span class="p">,</span> <span class="nx">Strategy</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;passport-jwt&#34;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">JWT_SECRET</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;config&#34;</span><span class="p">;</span>
-
-<span class="kd">@Injectable</span><span class="p">()</span>
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">JwtStrategy</span> <span class="kr">extends</span> <span class="nx">PassportStrategy</span><span class="p">(</span><span class="nx">Strategy</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kr">super</span><span class="p">({</span>
-      <span class="nx">jwtFromRequest</span>: <span class="kt">ExtractJwt.fromAuthHeaderAsBearerToken</span><span class="p">(),</span>
-      <span class="nx">ignoreExpiration</span>: <span class="kt">false</span><span class="p">,</span>
-      <span class="nx">secretOrKey</span>: <span class="kt">JWT_SECRET</span><span class="p">,</span>
-    <span class="p">});</span>
-  <span class="p">}</span>
-
-  <span class="kr">async</span> <span class="nx">validate</span><span class="p">(</span><span class="nx">payload</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span> <span class="nx">userId</span>: <span class="kt">payload.sub</span><span class="p">,</span> <span class="nx">username</span>: <span class="kt">payload.username</span> <span class="p">};</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">PassportStrategy</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/passport&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ExtractJwt</span><span class="p">,</span> <span class="nx">Strategy</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;passport-jwt&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">JWT_SECRET</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;config&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">@Injectable</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">JwtStrategy</span> <span class="kr">extends</span> <span class="nx">PassportStrategy</span><span class="p">(</span><span class="nx">Strategy</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">super</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">jwtFromRequest</span>: <span class="kt">ExtractJwt.fromAuthHeaderAsBearerToken</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">ignoreExpiration</span>: <span class="kt">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">secretOrKey</span>: <span class="kt">JWT_SECRET</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">validate</span><span class="p">(</span><span class="nx">payload</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span> <span class="nx">userId</span>: <span class="kt">payload.sub</span><span class="p">,</span> <span class="nx">username</span>: <span class="kt">payload.username</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>解释一下，对于 JWT 策略，Passport 首先验证 JWT 的签名并解码为 JSON 格式内容。仅在 @nestjs/passport 模块验证令牌有效后，才调用 validate() 方法。该方法将解码后的 JSON 作为其单个参数继续传递。否则。将阻止请求，抛出 401 Unauthorized 的异常。</p>
 <p>现在来看我们的 auth.controller.ts，可以将 validate() 返回值输出到控制台：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -712,21 +715,21 @@ yarn add -D @types/passport-jwt
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// auth.controller.ts
-</span><span class="c1"></span>
-    <span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">(</span><span class="s1">&#39;jwt&#39;</span><span class="p">))</span>
-    <span class="kd">@Get</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">)</span>
-    <span class="kr">async</span> <span class="nx">findAll</span><span class="p">(</span><span class="kd">@Request</span><span class="p">()</span> <span class="nx">req</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;--------------Auth--Success---------------&#39;</span><span class="p">)</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">);</span>
-        <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
-    <span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// auth.controller.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">(</span><span class="s1">&#39;jwt&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">@Get</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">async</span> <span class="nx">findAll</span><span class="p">(</span><span class="kd">@Request</span><span class="p">()</span> <span class="nx">req</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">any</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;--------------Auth--Success---------------&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>最后这是我们的 auth.module.ts，其中注册了 jwt 字符串过期时间，我们在 auth.service.ts 中注入了 UserService，记得导入 UserModule。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -744,23 +747,23 @@ yarn add -D @types/passport-jwt
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="c1">// auth.module.ts
-</span><span class="c1"></span>
-<span class="kd">@Module</span><span class="p">({</span>
-  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
-    <span class="nx">PassportModule</span><span class="p">,</span>
-    <span class="nx">JwtModule</span><span class="p">.</span><span class="nx">register</span><span class="p">({</span>
-      <span class="nx">secret</span>: <span class="kt">JWT_SECRET</span><span class="p">,</span>
-      <span class="nx">signOptions</span><span class="o">:</span> <span class="p">{</span> <span class="nx">expiresIn</span><span class="o">:</span> <span class="s2">&#34;3600s&#34;</span> <span class="p">},</span>
-    <span class="p">}),</span>
-    <span class="nx">UserModule</span><span class="p">,</span>
-  <span class="p">],</span>
-  <span class="nx">controllers</span><span class="o">:</span> <span class="p">[</span><span class="nx">AuthController</span><span class="p">],</span>
-  <span class="nx">providers</span><span class="o">:</span> <span class="p">[</span><span class="nx">AuthService</span><span class="p">,</span> <span class="nx">LocalStrategy</span><span class="p">,</span> <span class="nx">JwtStrategy</span><span class="p">],</span>
-  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">AuthService</span><span class="p">],</span>
-<span class="p">})</span>
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AuthModule</span> <span class="p">{}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// auth.module.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">@Module</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">PassportModule</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">JwtModule</span><span class="p">.</span><span class="nx">register</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">secret</span>: <span class="kt">JWT_SECRET</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">signOptions</span><span class="o">:</span> <span class="p">{</span> <span class="nx">expiresIn</span><span class="o">:</span> <span class="s2">&#34;3600s&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">UserModule</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">controllers</span><span class="o">:</span> <span class="p">[</span><span class="nx">AuthController</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">providers</span><span class="o">:</span> <span class="p">[</span><span class="nx">AuthService</span><span class="p">,</span> <span class="nx">LocalStrategy</span><span class="p">,</span> <span class="nx">JwtStrategy</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">AuthService</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AuthModule</span> <span class="p">{}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>启动项目：<code>$ npm run start:dev</code>，打开 http://localhost:3000/docs 在 swagger 文档模型中测试我们的 api。先 signUp, 然后 signIn, 登录成功返回 access_token，点击那个锁符号，将 access_token 的值粘贴过去，就能通过认证了。</p>
 <p>附：<a href="https://github.com/111hunter/nest-crud" target="_blank" rel="noopener noreffer">源码地址</a>
@@ -785,7 +788,7 @@ yarn add -D @types/passport-jwt
                             <a class="link-to-markdown" href="/2020-03-29-nest-auth/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://111hunter.github.io/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证" data-hashtags="Nest,Passport"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://111hunter.github.io/2020-03-29-nest-auth/" data-hashtag="Nest"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://111hunter.github.io/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://111hunter.github.io/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://111hunter.github.io/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://111hunter.github.io/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://111hunter.github.io/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证" data-hashtags="Nest,Passport"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/2020-03-29-nest-auth/" data-hashtag="Nest"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/2020-03-29-nest-auth/" data-title="NestJS &#43; Passport 实现鉴权认证"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -804,8 +807,8 @@ yarn add -D @types/passport-jwt
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io/" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

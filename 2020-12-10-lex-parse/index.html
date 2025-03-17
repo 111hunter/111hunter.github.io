@@ -1,35 +1,41 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
+<html lang="zh-cn">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>程序解释与编译 - 寂的博客</title><meta name="Description" content=" 彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:title" content="程序解释与编译" />
-<meta property="og:description" content="程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。 前置知识 算术表达式根据运算符所在的位置可以分为三种表示方法： 前缀表达式" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://111hunter.github.io/2020-12-10-lex-parse/" /><meta property="og:image" content="https://111hunter.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-12-10T09:50:34&#43;08:00" />
-<meta property="article:modified_time" content="2020-12-10T09:50:34&#43;08:00" /><meta property="og:site_name" content="My cool site" />
+        <title>程序解释与编译 - 寂的博客</title><meta name="Description" content="彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:url" content="http://localhost:1313/2020-12-10-lex-parse/">
+  <meta property="og:site_name" content="寂的博客">
+  <meta property="og:title" content="程序解释与编译">
+  <meta property="og:description" content="程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。
+前置知识 算术表达式根据运算符所在的位置可以分为三种表示方法：
+前缀表达式(波兰式)，如 (- (&#43; 3 (* 2 4)) 1)，Lisp 语言就是使用这种表示方法 中缀表达式，如 3 &#43; 2 * 4 - 1，最适合人阅读的表示方法 后缀表达式(逆波兰式)，如 3 2 4 * &#43; 1 -，计算机处理起来比较方便 编译原理 为了讲清楚程序解释与编译，我们自定义一种类似 Lisp 的前缀表达式：">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-12-10T09:50:34+08:00">
+    <meta property="article:modified_time" content="2020-12-10T09:50:34+08:00">
+    <meta property="article:tag" content="AST">
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://111hunter.github.io/logo.png"/>
-
-<meta name="twitter:title" content="程序解释与编译"/>
-<meta name="twitter:description" content="程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。 前置知识 算术表达式根据运算符所在的位置可以分为三种表示方法： 前缀表达式"/>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="程序解释与编译">
+  <meta name="twitter:description" content="程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。
+前置知识 算术表达式根据运算符所在的位置可以分为三种表示方法：
+前缀表达式(波兰式)，如 (- (&#43; 3 (* 2 4)) 1)，Lisp 语言就是使用这种表示方法 中缀表达式，如 3 &#43; 2 * 4 - 1，最适合人阅读的表示方法 后缀表达式(逆波兰式)，如 3 2 4 * &#43; 1 -，计算机处理起来比较方便 编译原理 为了讲清楚程序解释与编译，我们自定义一种类似 Lisp 的前缀表达式：">
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://111hunter.github.io/2020-12-10-lex-parse/" /><link rel="prev" href="https://111hunter.github.io/2020-11-26-%CE%BB-calculus/" /><link rel="next" href="https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/2020-12-10-lex-parse/" /><link rel="prev" href="http://localhost:1313/2020-11-26-%CE%BB-calculus/" /><link rel="next" href="http://localhost:1313/2020-12-13-%CE%BB-interpreter/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "程序解释与编译",
-        "inLanguage": "zh-CN",
+        "inLanguage": "zh-cn",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/111hunter.github.io\/2020-12-10-lex-parse\/"
-        },"genre": "posts","keywords": "AST","wordcount":  1159 ,
-        "url": "https:\/\/111hunter.github.io\/2020-12-10-lex-parse\/","datePublished": "2020-12-10T09:50:34+08:00","dateModified": "2020-12-10T09:50:34+08:00","publisher": {
+            "@id": "http:\/\/localhost:1313\/2020-12-10-lex-parse\/"
+        },"genre": "posts","keywords": "AST","wordcount":  1142 ,
+        "url": "http:\/\/localhost:1313\/2020-12-10-lex-parse\/","datePublished": "2020-12-10T09:50:34+08:00","dateModified": "2020-12-10T09:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -103,9 +109,9 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">程序解释与编译</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
 </span>&nbsp;<span class="post-category">收录于 <a href="/categories/theory/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Theory</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-12-10">2020-12-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1159 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-12-10">2020-12-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1142 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2020-12-10-lex-parse/" class="leancloud_visitors" data-flag-title="程序解释与编译">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -144,11 +150,11 @@
 <p>为了讲清楚程序解释与编译，我们自定义一种类似 Lisp 的前缀表达式：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mul</span> <span class="mi">3</span> <span class="nx">sub</span> <span class="mi">2</span> <span class="nx">sum</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">4</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">mul</span> <span class="mi">3</span> <span class="nx">sub</span> <span class="mi">2</span> <span class="nx">sum</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">4</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="语法和语义">语法和语义</h3>
 <p>为了完整地定义编程语言，我们需要：</p>
@@ -161,7 +167,7 @@
 <p>我们用 JS 代码来规范前缀表达式的语义：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -169,32 +175,32 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">OpMapper</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">sum</span><span class="o">:</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-  <span class="nx">sub</span><span class="o">:</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">),</span>
-  <span class="nx">div</span><span class="o">:</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">/</span> <span class="nx">b</span><span class="p">),</span>
-  <span class="nx">mul</span><span class="o">:</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">OpMapper</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">sum</span><span class="o">:</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">sub</span><span class="o">:</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">div</span><span class="o">:</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">/</span> <span class="nx">b</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">mul</span><span class="o">:</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">args</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>按照我们规范的语义，前缀表达式等价为如下 JS 代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">mul</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nx">sub</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)));</span>
-<span class="c1">// or
-</span><span class="c1"></span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">));</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">mul</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nx">sub</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)));</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// or
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">));</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="词法分析">词法分析</h3>
 <p>词法分析将源代码中每一个有语义的字符(token)提取出来，用数组表示。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -203,14 +209,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">lex</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">=&gt;</span>
-  <span class="nx">str</span>
-    <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">s</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">trim</span><span class="p">())</span>
-    <span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">s</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">tokens</span> <span class="o">=</span> <span class="nx">lex</span><span class="p">(</span><span class="s2">&#34;mul 3 sub 2 sum 1 3 4&#34;</span><span class="p">);</span>
-<span class="c1">// tokens = [&#34;mul&#34;, &#34;3&#34;, &#34;sub&#34;, &#34;2&#34;, &#34;sum&#34;, &#34;1&#34;, &#34;3&#34;, &#34;4&#34;]
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">lex</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">str</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">s</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">trim</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">s</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">tokens</span> <span class="o">=</span> <span class="nx">lex</span><span class="p">(</span><span class="s2">&#34;mul 3 sub 2 sum 1 3 4&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// tokens = [&#34;mul&#34;, &#34;3&#34;, &#34;sub&#34;, &#34;2&#34;, &#34;sum&#34;, &#34;1&#34;, &#34;3&#34;, &#34;4&#34;]
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="语法分析">语法分析</h3>
 <h4 id="语法描述">语法描述</h4>
@@ -218,17 +224,17 @@
  来描述我们的程序语法：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">digit</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span> <span class="o">|</span> <span class="mi">4</span> <span class="o">|</span> <span class="mi">5</span> <span class="o">|</span> <span class="mi">6</span> <span class="o">|</span> <span class="mi">7</span> <span class="o">|</span> <span class="mi">8</span> <span class="o">|</span> <span class="mi">9</span>
-<span class="nx">num</span> <span class="o">=</span> <span class="nx">digit</span><span class="o">+</span>
-<span class="nx">op</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">|</span> <span class="nx">sub</span> <span class="o">|</span> <span class="nx">mul</span> <span class="o">|</span> <span class="nx">div</span>
-<span class="nx">expr</span> <span class="o">=</span> <span class="nx">num</span> <span class="o">|</span> <span class="nx">op</span> <span class="nx">expr</span><span class="o">+</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">digit</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span> <span class="o">|</span> <span class="mi">4</span> <span class="o">|</span> <span class="mi">5</span> <span class="o">|</span> <span class="mi">6</span> <span class="o">|</span> <span class="mi">7</span> <span class="o">|</span> <span class="mi">8</span> <span class="o">|</span> <span class="mi">9</span>
+</span></span><span class="line"><span class="cl"><span class="nx">num</span> <span class="o">=</span> <span class="nx">digit</span><span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nx">op</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">|</span> <span class="nx">sub</span> <span class="o">|</span> <span class="nx">mul</span> <span class="o">|</span> <span class="nx">div</span>
+</span></span><span class="line"><span class="cl"><span class="nx">expr</span> <span class="o">=</span> <span class="nx">num</span> <span class="o">|</span> <span class="nx">op</span> <span class="nx">expr</span><span class="o">+</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="抽象语法树">抽象语法树</h4>
 <p>确定了语法后，一开始定义的前缀表达式可以表示为如下程序树(AST)：</p>
@@ -245,7 +251,7 @@
 <p>尝试用 JS 代码解析这种逻辑：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -265,25 +271,25 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">Op</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s2">&#34;op&#34;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">Num</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s2">&#34;num&#34;</span><span class="p">);</span>
-
-<span class="kr">const</span> <span class="nx">parse</span> <span class="o">=</span> <span class="p">(</span><span class="nx">tokens</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kr">const</span> <span class="nx">peek</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">tokens</span><span class="p">[</span><span class="nx">c</span><span class="p">];</span>
-  <span class="kr">const</span> <span class="nx">consume</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">tokens</span><span class="p">[</span><span class="nx">c</span><span class="o">++</span><span class="p">];</span>
-
-  <span class="kr">const</span> <span class="nx">parseNum</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">({</span> <span class="nx">val</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">consume</span><span class="p">()),</span> <span class="nx">type</span><span class="o">:</span> <span class="nx">Num</span> <span class="p">});</span>
-  <span class="kr">const</span> <span class="nx">parseOp</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">val</span><span class="o">:</span> <span class="nx">consume</span><span class="p">(),</span> <span class="nx">type</span><span class="o">:</span> <span class="nx">Op</span><span class="p">,</span> <span class="nx">expr</span><span class="o">:</span> <span class="p">[]</span> <span class="p">};</span>
-    <span class="k">while</span> <span class="p">(</span><span class="nx">peek</span><span class="p">())</span> <span class="nx">node</span><span class="p">.</span><span class="nx">expr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">parseExpr</span><span class="p">());</span>
-    <span class="k">return</span> <span class="nx">node</span><span class="p">;</span>
-  <span class="p">};</span>
-  <span class="kr">const</span> <span class="nx">parseExpr</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="sr">/\d/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">peek</span><span class="p">())</span> <span class="o">?</span> <span class="nx">parseNum</span><span class="p">()</span> <span class="o">:</span> <span class="nx">parseOp</span><span class="p">());</span>
-
-  <span class="k">return</span> <span class="nx">parseExpr</span><span class="p">();</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Op</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s2">&#34;op&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Num</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s2">&#34;num&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">parse</span> <span class="o">=</span> <span class="p">(</span><span class="nx">tokens</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">peek</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">tokens</span><span class="p">[</span><span class="nx">c</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">consume</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">tokens</span><span class="p">[</span><span class="nx">c</span><span class="o">++</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">parseNum</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">({</span> <span class="nx">val</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">consume</span><span class="p">()),</span> <span class="nx">type</span><span class="o">:</span> <span class="nx">Num</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">parseOp</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">val</span><span class="o">:</span> <span class="nx">consume</span><span class="p">(),</span> <span class="nx">type</span><span class="o">:</span> <span class="nx">Op</span><span class="p">,</span> <span class="nx">expr</span><span class="o">:</span> <span class="p">[]</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">peek</span><span class="p">())</span> <span class="nx">node</span><span class="p">.</span><span class="nx">expr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">parseExpr</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">node</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">parseExpr</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="sr">/\d/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">peek</span><span class="p">())</span> <span class="o">?</span> <span class="nx">parseNum</span><span class="p">()</span> <span class="o">:</span> <span class="nx">parseOp</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">parseExpr</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>程序树中每个节点都被表示为了 JS 对象，我们完成了程序的解析！</p>
 <p>实际上，我们开发了一个简单的<a href="https://en.wikipedia.org/wiki/Recursive_descent_parser" target="_blank" rel="noopener noreffer">递归下降解析器</a>
@@ -291,7 +297,7 @@
 自顶向下地对整个前缀表达式进行求值。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -305,25 +311,25 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">evaluate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ast</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">ast</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="nx">Num</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">ast</span><span class="p">.</span><span class="nx">val</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="c1">// Op needs parameters to be evaluated
-</span><span class="c1"></span>    <span class="k">return</span> <span class="nx">OpMapper</span><span class="p">[</span><span class="nx">ast</span><span class="p">.</span><span class="nx">val</span><span class="p">](</span><span class="nx">ast</span><span class="p">.</span><span class="nx">expr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">evaluate</span><span class="p">));</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kr">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">evaluate</span><span class="p">(</span><span class="nx">parse</span><span class="p">(</span><span class="nx">tokens</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
-<span class="c1">// -18
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">evaluate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ast</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">ast</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="nx">Num</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">ast</span><span class="p">.</span><span class="nx">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Op needs parameters to be evaluated
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="nx">OpMapper</span><span class="p">[</span><span class="nx">ast</span><span class="p">.</span><span class="nx">val</span><span class="p">](</span><span class="nx">ast</span><span class="p">.</span><span class="nx">expr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">evaluate</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">evaluate</span><span class="p">(</span><span class="nx">parse</span><span class="p">(</span><span class="nx">tokens</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// -18
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="解释和编译">解释和编译</h3>
 <p>将程序转换为 AST，然后直接对 AST 求值就是程序的解释(Interpreted)，还有一种求值方式是由 AST 生成中间代码，再由别的解释器或编译器对中间代码求值，就是程序的编译(Compiled)。通过 AST 完成代码转换非常方便，只需设计转换前后的映射表，代码转换就是查表替换。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -338,20 +344,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">compile</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ast</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">opMap</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">sum</span><span class="o">:</span> <span class="s2">&#34;+&#34;</span><span class="p">,</span> <span class="nx">mul</span><span class="o">:</span> <span class="s2">&#34;*&#34;</span><span class="p">,</span> <span class="nx">sub</span><span class="o">:</span> <span class="s2">&#34;-&#34;</span><span class="p">,</span> <span class="nx">div</span><span class="o">:</span> <span class="s2">&#34;/&#34;</span> <span class="p">};</span>
-  <span class="kr">const</span> <span class="nx">compileNum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ast</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">ast</span><span class="p">.</span><span class="nx">val</span><span class="p">;</span>
-  <span class="kr">const</span> <span class="nx">compileOp</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ast</span><span class="p">)</span> <span class="p">=&gt;</span>
-    <span class="sb">`(</span><span class="si">${</span><span class="nx">ast</span><span class="p">.</span><span class="nx">expr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">compile</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&#34; &#34;</span> <span class="o">+</span> <span class="nx">opMap</span><span class="p">[</span><span class="nx">ast</span><span class="p">.</span><span class="nx">val</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span><span class="p">)</span><span class="si">}</span><span class="sb">)`</span><span class="p">;</span>
-  <span class="kr">const</span> <span class="nx">compile</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ast</span><span class="p">)</span> <span class="p">=&gt;</span>
-    <span class="nx">ast</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="nx">Num</span> <span class="o">?</span> <span class="nx">compileNum</span><span class="p">(</span><span class="nx">ast</span><span class="p">)</span> <span class="o">:</span> <span class="nx">compileOp</span><span class="p">(</span><span class="nx">ast</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">compile</span><span class="p">(</span><span class="nx">ast</span><span class="p">);</span>
-<span class="p">};</span>
-
-<span class="kr">const</span> <span class="nx">newCode</span> <span class="o">=</span> <span class="nx">compile</span><span class="p">(</span><span class="nx">parse</span><span class="p">(</span><span class="nx">tokens</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newCode</span><span class="p">);</span>
-<span class="c1">// (3 * (2 - (1 + 3 + 4)))
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">compile</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ast</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">opMap</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">sum</span><span class="o">:</span> <span class="s2">&#34;+&#34;</span><span class="p">,</span> <span class="nx">mul</span><span class="o">:</span> <span class="s2">&#34;*&#34;</span><span class="p">,</span> <span class="nx">sub</span><span class="o">:</span> <span class="s2">&#34;-&#34;</span><span class="p">,</span> <span class="nx">div</span><span class="o">:</span> <span class="s2">&#34;/&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">compileNum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ast</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">ast</span><span class="p">.</span><span class="nx">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">compileOp</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ast</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="sb">`(</span><span class="si">${</span><span class="nx">ast</span><span class="p">.</span><span class="nx">expr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">compile</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s2">&#34; &#34;</span> <span class="o">+</span> <span class="nx">opMap</span><span class="p">[</span><span class="nx">ast</span><span class="p">.</span><span class="nx">val</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span><span class="p">)</span><span class="si">}</span><span class="sb">)`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">compile</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ast</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">ast</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="nx">Num</span> <span class="o">?</span> <span class="nx">compileNum</span><span class="p">(</span><span class="nx">ast</span><span class="p">)</span> <span class="o">:</span> <span class="nx">compileOp</span><span class="p">(</span><span class="nx">ast</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">compile</span><span class="p">(</span><span class="nx">ast</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">newCode</span> <span class="o">=</span> <span class="nx">compile</span><span class="p">(</span><span class="nx">parse</span><span class="p">(</span><span class="nx">tokens</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newCode</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// (3 * (2 - (1 + 3 + 4)))
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>这里生成的中间代码就可以被直接被低级一些的语言解释或编译。</p>
 <p><strong>参阅阅读</strong></p>
@@ -372,7 +378,7 @@
                             <a class="link-to-markdown" href="/2020-12-10-lex-parse/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://111hunter.github.io/2020-12-10-lex-parse/" data-title="程序解释与编译" data-hashtags="AST"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://111hunter.github.io/2020-12-10-lex-parse/" data-hashtag="AST"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://111hunter.github.io/2020-12-10-lex-parse/" data-title="程序解释与编译" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://111hunter.github.io/2020-12-10-lex-parse/" data-title="程序解释与编译"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://111hunter.github.io/2020-12-10-lex-parse/" data-title="程序解释与编译"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://111hunter.github.io/2020-12-10-lex-parse/" data-title="程序解释与编译" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://111hunter.github.io/2020-12-10-lex-parse/" data-title="程序解释与编译"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/2020-12-10-lex-parse/" data-title="程序解释与编译" data-hashtags="AST"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/2020-12-10-lex-parse/" data-hashtag="AST"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/2020-12-10-lex-parse/" data-title="程序解释与编译" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/2020-12-10-lex-parse/" data-title="程序解释与编译"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/2020-12-10-lex-parse/" data-title="程序解释与编译"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/2020-12-10-lex-parse/" data-title="程序解释与编译" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/2020-12-10-lex-parse/" data-title="程序解释与编译"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -391,8 +397,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io/" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
