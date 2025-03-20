@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>从启动浏览器到打开网页，发生了什么？ - 寂的博客</title><meta name="Description" content="彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:url" content="http://localhost:1313/2025-03-17-browser/">
+        <title>从启动浏览器到打开网页，发生了什么？ - 寂的博客</title><meta name="Description" content="彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:url" content="https://111hunter.github.io/2025-03-17-browser/">
   <meta property="og:site_name" content="寂的博客">
   <meta property="og:title" content="从启动浏览器到打开网页，发生了什么？">
   <meta property="og:description" content="从计算机科学的角度来看，从启动浏览器到输入网址并打开网页的全过程是一个复杂且多层次的协作，涉及网络通信、浏览器架构、JavaScript 执行机制等多个方面。现代浏览器（如Chrome、Firefox）采用了多进程架构，并结合单线程的 JavaScript 运行机制，通过事件循环和专用 Worker API 实现高效的任务处理和页面渲染。以下将详细描述这一过程，并突出 JavaScript 的单线程特性及其在浏览器中的运作方式。">
@@ -23,7 +23,7 @@
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/2025-03-17-browser/" /><link rel="prev" href="http://localhost:1313/2025-01-27-self-delusion/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://111hunter.github.io/2025-03-17-browser/" /><link rel="prev" href="https://111hunter.github.io/2025-01-27-self-delusion/" /><link rel="next" href="https://111hunter.github.io/2025-03-20-dapp/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -31,9 +31,9 @@
         "inLanguage": "zh-cn",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/localhost:1313\/2025-03-17-browser\/"
+            "@id": "https:\/\/111hunter.github.io\/2025-03-17-browser\/"
         },"genre": "posts","keywords": "Browser, Network, JavaScript","wordcount":  2866 ,
-        "url": "http:\/\/localhost:1313\/2025-03-17-browser\/","datePublished": "2025-03-17T17:50:34+08:00","dateModified": "2025-03-17T17:50:34+08:00","publisher": {
+        "url": "https:\/\/111hunter.github.io\/2025-03-17-browser\/","datePublished": "2025-03-17T17:50:34+08:00","dateModified": "2025-03-17T17:50:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -147,6 +147,7 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>从计算机科学的角度来看，从启动浏览器到输入网址并打开网页的全过程是一个复杂且多层次的协作，涉及网络通信、浏览器架构、JavaScript 执行机制等多个方面。现代浏览器（如Chrome、Firefox）采用了多进程架构，并结合单线程的 JavaScript 运行机制，通过事件循环和专用 Worker API 实现高效的任务处理和页面渲染。以下将详细描述这一过程，并突出 JavaScript 的单线程特性及其在浏览器中的运作方式。</p>
+<hr>
 <h2 id="1-启动浏览器">1. 启动浏览器</h2>
 <p>当你双击浏览器图标启动浏览器时，操作系统会为浏览器创建一个主进程，称为 <code>Browser Process</code>。现代浏览器采用多进程架构，以提升性能、稳定性和安全性。以下是主要进程的职责：</p>
 <ul>
@@ -384,7 +385,7 @@
                             <a class="link-to-markdown" href="/2025-03-17-browser/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/2025-03-17-browser/" data-title="从启动浏览器到打开网页，发生了什么？" data-hashtags="Browser,Network,JavaScript"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/2025-03-17-browser/" data-hashtag="Browser"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/2025-03-17-browser/" data-title="从启动浏览器到打开网页，发生了什么？" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/2025-03-17-browser/" data-title="从启动浏览器到打开网页，发生了什么？"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/2025-03-17-browser/" data-title="从启动浏览器到打开网页，发生了什么？"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/2025-03-17-browser/" data-title="从启动浏览器到打开网页，发生了什么？" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/2025-03-17-browser/" data-title="从启动浏览器到打开网页，发生了什么？"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://111hunter.github.io/2025-03-17-browser/" data-title="从启动浏览器到打开网页，发生了什么？" data-hashtags="Browser,Network,JavaScript"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://111hunter.github.io/2025-03-17-browser/" data-hashtag="Browser"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://111hunter.github.io/2025-03-17-browser/" data-title="从启动浏览器到打开网页，发生了什么？" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://111hunter.github.io/2025-03-17-browser/" data-title="从启动浏览器到打开网页，发生了什么？"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://111hunter.github.io/2025-03-17-browser/" data-title="从启动浏览器到打开网页，发生了什么？"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://111hunter.github.io/2025-03-17-browser/" data-title="从启动浏览器到打开网页，发生了什么？" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://111hunter.github.io/2025-03-17-browser/" data-title="从启动浏览器到打开网页，发生了什么？"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -396,7 +397,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/2025-01-27-self-delusion/" class="prev" rel="prev" title="我们制造欺骗，然后成为它的奴隶"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>我们制造欺骗，然后成为它的奴隶</a></div>
+    <div class="post-nav"><a href="/2025-01-27-self-delusion/" class="prev" rel="prev" title="我们制造欺骗，然后成为它的奴隶"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>我们制造欺骗，然后成为它的奴隶</a>
+            <a href="/2025-03-20-dapp/" class="next" rel="next" title="从链下到链上，什么是 DApp？">从链下到链上，什么是 DApp？<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

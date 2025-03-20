@@ -1,41 +1,49 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Theory - 分类 - 寂的博客</title>
-        <link>http://localhost:1313/categories/theory/</link>
+        <link>https://111hunter.github.io/categories/theory/</link>
         <description>Theory - 分类 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/theory/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/categories/theory/" rel="self" type="application/rss+xml" /><item>
+    <title>从链下到链上，什么是 DApp？</title>
+    <link>https://111hunter.github.io/2025-03-20-dapp/</link>
+    <pubDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2025-03-20-dapp/</guid>
+    <description><![CDATA[<p>DApp（去中心化应用程序，Decentralized Application）是一种运行在区块链网络上的应用程序。与传统的中心化应用程序不同，DApp 不依赖单一服务器或中心化实体，而是利用区块链的去中心化特性，通过智能合约实现业务逻辑，提供数据的透明性、安全性和不可篡改性。DApp 通常由两部分组成：前端用户界面（可以是网页、移动应用等）和后端智能合约（运行在区块链上的代码）。</p>]]></description>
+</item>
+<item>
     <title>从启动浏览器到打开网页，发生了什么？</title>
-    <link>http://localhost:1313/2025-03-17-browser/</link>
+    <link>https://111hunter.github.io/2025-03-17-browser/</link>
     <pubDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2025-03-17-browser/</guid>
+    <guid>https://111hunter.github.io/2025-03-17-browser/</guid>
     <description><![CDATA[<p>从计算机科学的角度来看，从启动浏览器到输入网址并打开网页的全过程是一个复杂且多层次的协作，涉及网络通信、浏览器架构、JavaScript 执行机制等多个方面。现代浏览器（如Chrome、Firefox）采用了多进程架构，并结合单线程的 JavaScript 运行机制，通过事件循环和专用 Worker API 实现高效的任务处理和页面渲染。以下将详细描述这一过程，并突出 JavaScript 的单线程特性及其在浏览器中的运作方式。</p>]]></description>
 </item>
 <item>
     <title>虚拟 — 膨胀出全息世界</title>
-    <link>http://localhost:1313/2023-12-19-itp/</link>
+    <link>https://111hunter.github.io/2023-12-19-itp/</link>
     <pubDate>Tue, 19 Dec 2023 10:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2023-12-19-itp/</guid>
+    <guid>https://111hunter.github.io/2023-12-19-itp/</guid>
     <description><![CDATA[<blockquote>
 <p>“许多独立的并且很有说服力的论点，都表明时空这个概念本身并不是基础性的。时空注定要消亡。在物理定律的实际底层描述中，根本不存在时空这样的东西。这是非常令人震惊的，因为物理学被认为是描述在空间和时间中发生的事情。因此，如果没有时空，就不清楚物理学讲的什么。” — 尼马·阿尔卡尼-哈米德，康奈尔大学信使讲座，2016</p>]]></description>
 </item>
 <item>
     <title>零知识证明 — 数字签名的起源</title>
-    <link>http://localhost:1313/2023-05-02-zkp/</link>
+    <link>https://111hunter.github.io/2023-05-02-zkp/</link>
     <pubDate>Tue, 02 May 2023 10:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2023-05-02-zkp/</guid>
+    <guid>https://111hunter.github.io/2023-05-02-zkp/</guid>
     <description><![CDATA[<p>在密码学中，了解数字签名工作原理的最好方法是了解它的起源。因此，让我们花点儿时间简要介绍一下零知识证明(ZKP)，然后重新讨论数字签名。
 想象一下，Peggy 想向 Victor 证明自己拥有一些信息。例如，Peggy 想证明她知道某个群元素的离散对数。换句话说，对于一个给定的 Y 以及群生成元 g，Peggy 想要证明她知道一个 x， 满足 $$ Y = {g^x} $$ 当然，最简单的解决方案是 Peggy 把 x(称为见证)发送给 Victor。这就是一个简单的知识证明，但如果 Peggy 不想让 Victor 得到这个 x，这个方案就不适用了。</p>]]></description>
 </item>
 <item>
     <title>像理解网络模型一样理解区块链</title>
-    <link>http://localhost:1313/2022-06-05-blockchain-2/</link>
+    <link>https://111hunter.github.io/2022-06-05-blockchain-2/</link>
     <pubDate>Sun, 05 Jun 2022 08:00:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2022-06-05-blockchain-2/</guid>
+    <guid>https://111hunter.github.io/2022-06-05-blockchain-2/</guid>
     <description><![CDATA[<p><figure><a class="lightgallery" href="/img/web3-app.jpg" title="https://mirror.xyz/straycatokinawa.eth/orz4h4Q-XbKC-NH8n4mdAyLp2QFD21Dsq5ewL05qoMk" data-thumbnail="/img/web3-app.jpg" data-sub-html="<h2>The Architecture of a Web3 application</h2><p>https://mirror.xyz/straycatokinawa.eth/orz4h4Q-XbKC-NH8n4mdAyLp2QFD21Dsq5ewL05qoMk</p>">
         
     </a><figcaption class="image-caption">The Architecture of a Web3 application</figcaption>
@@ -46,19 +54,19 @@
 </item>
 <item>
     <title>一些通用计算模型</title>
-    <link>http://localhost:1313/2021-01-30-tag-system/</link>
+    <link>https://111hunter.github.io/2021-01-30-tag-system/</link>
     <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2021-01-30-tag-system/</guid>
+    <guid>https://111hunter.github.io/2021-01-30-tag-system/</guid>
     <description><![CDATA[<blockquote>
 <p>在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算」的。 &ndash; wikipedia</p>]]></description>
 </item>
 <item>
     <title>[译]元编程</title>
-    <link>http://localhost:1313/2021-01-21-metaprogram/</link>
+    <link>https://111hunter.github.io/2021-01-21-metaprogram/</link>
     <pubDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2021-01-21-metaprogram/</guid>
+    <guid>https://111hunter.github.io/2021-01-21-metaprogram/</guid>
     <description><![CDATA[<p>本文翻译自 stereobooster 的博客文章：<a href="https://stereobooster.com/posts/metaprogramming/" target="_blank" rel="noopener noreffer">metaprogramming</a>
 ，少量删改。完整内容参阅原文。</p>
 <h2 id="什么是元编程">什么是元编程</h2>
@@ -69,26 +77,26 @@
 </item>
 <item>
     <title>关于 TCP, 我学到什么</title>
-    <link>http://localhost:1313/2021-01-08-tcp/</link>
+    <link>https://111hunter.github.io/2021-01-08-tcp/</link>
     <pubDate>Fri, 08 Jan 2021 10:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2021-01-08-tcp/</guid>
+    <guid>https://111hunter.github.io/2021-01-08-tcp/</guid>
     <description><![CDATA[<p>TCP 在不可靠的 IP 协议之上实现了可靠性，使得我们在开发上层应用时，不必关注网络传输的种种复杂性。可靠，指的是采用一系列技术来保障数据在发送方和接收方是一致的。我们了解下 TCP 如何实现可靠性。</p>]]></description>
 </item>
 <item>
     <title>IO 和 Monad</title>
-    <link>http://localhost:1313/2020-12-28-monad/</link>
+    <link>https://111hunter.github.io/2020-12-28-monad/</link>
     <pubDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2020-12-28-monad/</guid>
+    <guid>https://111hunter.github.io/2020-12-28-monad/</guid>
     <description><![CDATA[<p>学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程序时的外部状态(RealWorld)当成函数的参数。</p>]]></description>
 </item>
 <item>
     <title>程序解释与编译</title>
-    <link>http://localhost:1313/2020-12-10-lex-parse/</link>
+    <link>https://111hunter.github.io/2020-12-10-lex-parse/</link>
     <pubDate>Thu, 10 Dec 2020 09:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2020-12-10-lex-parse/</guid>
+    <guid>https://111hunter.github.io/2020-12-10-lex-parse/</guid>
     <description><![CDATA[<p>程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。</p>
 <h2 id="前置知识">前置知识</h2>
 <p>算术表达式根据运算符所在的位置可以分为三种表示方法：</p>
@@ -99,15 +107,6 @@
 </ul>
 <h2 id="编译原理">编译原理</h2>
 <p>为了讲清楚程序解释与编译，我们自定义一种类似 Lisp 的前缀表达式：</p>]]></description>
-</item>
-<item>
-    <title>λ 演算: 程序从无到有</title>
-    <link>http://localhost:1313/2020-11-26-%CE%BB-calculus/</link>
-    <pubDate>Thu, 26 Nov 2020 09:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2020-11-26-%CE%BB-calculus/</guid>
-    <description><![CDATA[<p>由邱奇创造的 <a href="https://en.wikipedia.org/wiki/Lambda_calculus" target="_blank" rel="noopener noreffer">λ 演算(λ-calculus)</a>
- 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boolean) 或任何非函数的数据类型，它只用匿名单参函数就能模拟图灵机。</p>]]></description>
 </item>
 </channel>
 </rss>

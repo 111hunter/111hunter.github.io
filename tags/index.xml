@@ -1,87 +1,87 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - 标签 - 寂的博客</title>
-        <link>http://localhost:1313/tags/</link>
+        <link>https://111hunter.github.io/tags/</link>
         <description>Tags - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>Browser</title>
-    <link>http://localhost:1313/tags/browser/</link>
-    <pubDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</pubDate>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Blockchain</title>
+    <link>https://111hunter.github.io/tags/blockchain/</link>
+    <pubDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/tags/browser/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>JavaScript</title>
-    <link>http://localhost:1313/tags/javascript/</link>
-    <pubDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/tags/javascript/</guid>
+    <guid>https://111hunter.github.io/tags/blockchain/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Network</title>
-    <link>http://localhost:1313/tags/network/</link>
+    <link>https://111hunter.github.io/tags/network/</link>
+    <pubDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/tags/network/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Browser</title>
+    <link>https://111hunter.github.io/tags/browser/</link>
     <pubDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/tags/network/</guid>
+    <guid>https://111hunter.github.io/tags/browser/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>JavaScript</title>
+    <link>https://111hunter.github.io/tags/javascript/</link>
+    <pubDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/tags/javascript/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Maya</title>
-    <link>http://localhost:1313/tags/maya/</link>
+    <link>https://111hunter.github.io/tags/maya/</link>
     <pubDate>Mon, 27 Jan 2025 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/tags/maya/</guid>
+    <guid>https://111hunter.github.io/tags/maya/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Time</title>
-    <link>http://localhost:1313/tags/time/</link>
+    <link>https://111hunter.github.io/tags/time/</link>
     <pubDate>Mon, 27 Jan 2025 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/tags/time/</guid>
+    <guid>https://111hunter.github.io/tags/time/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Advaita</title>
-    <link>http://localhost:1313/tags/advaita/</link>
+    <link>https://111hunter.github.io/tags/advaita/</link>
     <pubDate>Wed, 25 Dec 2024 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/tags/advaita/</guid>
+    <guid>https://111hunter.github.io/tags/advaita/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Recursion</title>
-    <link>http://localhost:1313/tags/recursion/</link>
+    <link>https://111hunter.github.io/tags/recursion/</link>
     <pubDate>Wed, 25 Dec 2024 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/tags/recursion/</guid>
+    <guid>https://111hunter.github.io/tags/recursion/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Samadhi</title>
-    <link>http://localhost:1313/tags/samadhi/</link>
+    <link>https://111hunter.github.io/tags/samadhi/</link>
     <pubDate>Wed, 25 Dec 2024 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/tags/samadhi/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Blockchain</title>
-    <link>http://localhost:1313/tags/blockchain/</link>
-    <pubDate>Tue, 02 May 2023 10:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/tags/blockchain/</guid>
+    <guid>https://111hunter.github.io/tags/samadhi/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Docker</title>
-    <link>http://localhost:1313/tags/docker/</link>
+    <link>https://111hunter.github.io/tags/docker/</link>
     <pubDate>Sun, 02 May 2021 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/tags/docker/</guid>
+    <guid>https://111hunter.github.io/tags/docker/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
