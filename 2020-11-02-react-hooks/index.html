@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/111hunter.github.io\/2020-11-02-react-hooks\/"
-        },"genre": "posts","keywords": "React","wordcount":  3124 ,
+        },"genre": "posts","keywords": "React","wordcount":  3226 ,
         "url": "https:\/\/111hunter.github.io\/2020-11-02-react-hooks\/","datePublished": "2020-11-02T20:00:00+08:00","dateModified": "2020-11-02T20:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,7 +107,7 @@
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">以 useEffect 为圆心</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
 </span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-11-02">2020-11-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3124 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-11-02">2020-11-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3226 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/2020-11-02-react-hooks/" class="leancloud_visitors" data-flag-title="以 useEffect 为圆心">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -133,12 +133,24 @@
 <p>在 <a href="https://zh.wikipedia.org/wiki/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B" target="_blank" rel="noopener noreffer">函数式编程</a>
  中，函数是 <a href="https://zh.wikipedia.org/wiki/%E9%A0%AD%E7%AD%89%E7%89%A9%E4%BB%B6" target="_blank" rel="noopener noreffer">头等对象</a>
  即 <a href="https://zh.wikipedia.org/wiki/%E5%A4%B4%E7%AD%89%E5%87%BD%E6%95%B0" target="_blank" rel="noopener noreffer">头等函数</a>
-，这意味着一个函数，既可以作为其它函数的输入参数值，也可以从函数中返回值，被修改或者被分配给一个变量。<a href="https://zh.wikipedia.org/wiki/%CE%9B%E6%BC%94%E7%AE%97" target="_blank" rel="noopener noreffer">λ 演算</a>
- 是这种范型最重要的基础，λ 演算的函数可以接受函数作为输入参数和输出返回值。</p>
-<p>顺带提一句，由邱奇创造的 λ 演算 (λ-calculus) 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boolean) 或任何非函数的数据类型，它只用匿名单参函数就能模拟图灵机，具体实现过程可阅读我的这篇 <a href="https://111hunter.github.io/2020-11-26-%CE%BB-calculus/" target="_blank" rel="noopener noreffer">文章</a>
+，这意味着一个函数，既可以作为其它函数的输入参数值，也可以从函数中返回值，被修改或者被分配给一个变量。λ 演算是这种范型最重要的基础，λ 演算的函数可以接受函数作为输入参数和输出返回值。</p>
+<p>顺带提一句，由邱奇创造的 λ 演算 (λ-calculus) 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boolean) 或任何非函数的数据类型，它只用匿名单参函数就能模拟图灵机，具体实现过程可阅读我的这篇 <a href="https://111hunter.github.io/2020-11-26-%CE%BB-calculus/" target="_blank" rel="noopener noreffer">λ 演算: 程序从无到有</a>
 。</p>
 <p>比起<a href="https://zh.wikipedia.org/wiki/%E6%8C%87%E4%BB%A4%E5%BC%8F%E7%B7%A8%E7%A8%8B" target="_blank" rel="noopener noreffer">指令式编程</a>
 ，函数式编程更加强调程序执行的结果而非执行的过程，倡导利用若干简单的执行单元让计算结果不断渐进，逐层推导复杂的运算，而不是设计一个复杂的执行过程。</p>
+<p>React 底层逻辑建立在 λ 演算之上，其核心公式可抽象为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">UI = f(state)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个公式揭示了三个关键设计原则：</p>
+<p><strong>纯函数性</strong>：相同输入必得相同输出，无副作用</p>
+<p><strong>状态驱动</strong>：UI 是状态的映射函数</p>
+<p><strong>幂等性</strong>：渲染过程可安全重复执行</p>
 <h2 id="心智模型">心智模型</h2>
 <p>学习 Hooks 的使用，重点是心智模型的转变。useEffect 的心智模型是实现状态同步，而不是响应生命周期事件。每次触发时 useEffect，它都会捕获本次调用时组件中的数据，也就是所谓的 Capture Value 特性：<strong>组件每次渲染都有自己的数据，组件内的函数(包括 effects，事件处理函数，定时器或者 API 调用等)会捕获该次渲染的组件数据。</strong></p>
 <h2 id="状态同步">状态同步</h2>

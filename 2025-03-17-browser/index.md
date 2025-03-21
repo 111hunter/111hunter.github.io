@@ -93,9 +93,9 @@ JavaScript 在浏览器中的执行是单线程的，这对其运行机制和性
 
 ### 微任务与宏任务
 
-- 宏任务（Macrotasks）：如 setTimeout、setInterval、I/O 操作，进入消息队列。
+- 宏任务（Macrotasks）：如 `setTimeout`、`setInterval`、I/O 操作，进入消息队列。
 
-- 微任务（Microtasks）：如 Promise.then、MutationObserver，优先级高于宏任务，在当前任务结束后立即执行。
+- 微任务（Microtasks）：如 `Promise.then`、`MutationObserver`，优先级高于宏任务，在当前任务结束后立即执行。
 
 ### 单线程的优缺点
 
@@ -145,7 +145,7 @@ JavaScript 在浏览器中的执行是单线程的，这对其运行机制和性
 
 - IndexedDB：存储大量结构化数据，类似本地数据库。
 
-- Web Storage：包括 localStorage（持久存储）和 sessionStorage（会话存储），用于简单键值对。
+- Web Storage：包括 `localStorage`（持久存储）和 `sessionStorage`（会话存储），用于简单键值对。
 
 - WebRTC：支持实时音视频通信。
 

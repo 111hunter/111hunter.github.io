@@ -4,7 +4,27 @@
         <link>https://111hunter.github.io/categories/coding/</link>
         <description>Coding - 分类 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Tue, 25 May 2021 19:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/categories/coding/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/categories/coding/" rel="self" type="application/rss+xml" /><item>
+    <title>从函数到副作用 - React 的时空观</title>
+    <link>https://111hunter.github.io/2025-03-21-react/</link>
+    <pubDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2025-03-21-react/</guid>
+    <description><![CDATA[<p>让我们从计算机科学基础到框架设计哲学，逐层解剖 React 的核心思想：</p>
+<h2 id="一数学根基函数式编程的觉醒">一、数学根基：函数式编程的觉醒</h2>
+<p>React 将 UI 抽象为状态函数的哲学，源于对计算机图形学与函数式编程的深刻融合：</p>
+<h3 id="1-命令式-dom-操作的致命缺陷">1. 命令式 DOM 操作的致命缺陷</h3>
+<p><strong>矛盾本质</strong>：直接操作DOM导致状态与视图耦合，违反单向数据流原则</p>]]></description>
+</item>
+<item>
+    <title>从栈到堆，什么是 JavaScript?</title>
+    <link>https://111hunter.github.io/2025-03-21-js/</link>
+    <pubDate>Fri, 21 Mar 2025 10:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2025-03-21-js/</guid>
+    <description><![CDATA[<p>JavaScript 是一种功能强大且灵活的编程语言，广泛应用于网页开发、服务器端开发等领域。要深入理解 JavaScript，我们可以从变量在计算机中的数据存储开始，逐步探讨其运行机制、最新语法以及设计理念。以下是对这些方面的逐层剖析。</p>]]></description>
+</item>
+<item>
     <title>单机版区块链</title>
     <link>https://111hunter.github.io/2021-05-25-blockchain/</link>
     <pubDate>Tue, 25 May 2021 19:50:34 &#43;0800</pubDate>
@@ -88,24 +108,6 @@
     </a><figcaption class="image-caption">Next.js Reddit Meme</figcaption>
     </figure></p>
 <p>我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next.js 是 React 的同构框架，它的页面由 React 组件构成。</p>]]></description>
-</item>
-<item>
-    <title>浅析函数式编程</title>
-    <link>https://111hunter.github.io/2020-09-02-js-functional/</link>
-    <pubDate>Wed, 02 Sep 2020 08:30:00 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>https://111hunter.github.io/2020-09-02-js-functional/</guid>
-    <description><![CDATA[<blockquote>
-<p>在计算机科学中，<a href="https://en.wikipedia.org/wiki/Functional_programming" target="_blank" rel="noopener noreffer">函数式编程</a>
-是一种编程范式，其中通过应用和组合函数来构造程序。它是一种声明式编程范式，其中函数定义是每个返回一个值的表达式树，而不是一系列更改程序状态的命令性语句。 &ndash; wikipedia</p>]]></description>
-</item>
-<item>
-    <title>入门 AST 抽象语法树</title>
-    <link>https://111hunter.github.io/2020-08-23-ast/</link>
-    <pubDate>Sun, 23 Aug 2020 00:30:00 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>https://111hunter.github.io/2020-08-23-ast/</guid>
-    <description><![CDATA[<p>如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、Prettier 等功能的实现，都是建立在 AST 的基础之上的。</p>]]></description>
 </item>
 </channel>
 </rss>

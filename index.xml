@@ -4,9 +4,29 @@
         <link>https://111hunter.github.io/</link>
         <description>彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</lastBuildDate>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</lastBuildDate>
             <atom:link href="https://111hunter.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>从函数到副作用 - React 的时空观</title>
+    <link>https://111hunter.github.io/2025-03-21-react/</link>
+    <pubDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2025-03-21-react/</guid>
+    <description><![CDATA[<p>让我们从计算机科学基础到框架设计哲学，逐层解剖 React 的核心思想：</p>
+<h2 id="一数学根基函数式编程的觉醒">一、数学根基：函数式编程的觉醒</h2>
+<p>React 将 UI 抽象为状态函数的哲学，源于对计算机图形学与函数式编程的深刻融合：</p>
+<h3 id="1-命令式-dom-操作的致命缺陷">1. 命令式 DOM 操作的致命缺陷</h3>
+<p><strong>矛盾本质</strong>：直接操作DOM导致状态与视图耦合，违反单向数据流原则</p>]]></description>
+</item>
+<item>
+    <title>从栈到堆，什么是 JavaScript?</title>
+    <link>https://111hunter.github.io/2025-03-21-js/</link>
+    <pubDate>Fri, 21 Mar 2025 10:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2025-03-21-js/</guid>
+    <description><![CDATA[<p>JavaScript 是一种功能强大且灵活的编程语言，广泛应用于网页开发、服务器端开发等领域。要深入理解 JavaScript，我们可以从变量在计算机中的数据存储开始，逐步探讨其运行机制、最新语法以及设计理念。以下是对这些方面的逐层剖析。</p>]]></description>
+</item>
+<item>
     <title>从链下到链上，什么是 DApp？</title>
     <link>https://111hunter.github.io/2025-03-20-dapp/</link>
     <pubDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</pubDate>
@@ -81,25 +101,6 @@
     <description><![CDATA[<!-- > 我认为笛卡尔问了一个错误的问题，并以一种非常有趣的方式回答了这个问题，“我思故我在”。但他从来没问过你应该问的问题，就像印度哲学家建立的那样，如果你不思考，你在吗？            - U.G. Krishnamurti -->
 <blockquote>
 <p>提问者说他很专注。他很专注，因为他想要答案。他不想要暗示，他可能不会…知道这个答案，他会做什么呢？他专注，他等待，他充满希望 — 他拥有所有这些特质 — 为什么呢？       - U.G. Krishnamurti</p>]]></description>
-</item>
-<item>
-    <title>马戏团的小丑穿上了燕尾服</title>
-    <link>https://111hunter.github.io/2024-11-19-nastika/</link>
-    <pubDate>Tue, 19 Nov 2024 11:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>https://111hunter.github.io/2024-11-19-nastika/</guid>
-    <description><![CDATA[<!-- > 我只知道我不知道。     - 苏格拉底 -->
-<blockquote>
-<p>人类只对解决问题的方法感兴趣，而对问题本身不感兴趣。你说这些伟大的圣贤、圣人和人类的拯救者都能有我们问题的答案。那么，我们为什么还在问同样的问题？           - U.G. Krishnamurti</p>]]></description>
-</item>
-<item>
-    <title>自然状态</title>
-    <link>https://111hunter.github.io/2024-11-18-anatta/</link>
-    <pubDate>Mon, 18 Nov 2024 11:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>https://111hunter.github.io/2024-11-18-anatta/</guid>
-    <description><![CDATA[<blockquote>
-<p>我没有观点。我对人类没有什么特别的信息，我身上也没有任何传教士的热情。我不是人类的救世主，或者任何类似的东西。我没有兴趣问你感兴趣的问题。       - U.G. Krishnamurti</p>]]></description>
 </item>
 </channel>
 </rss>

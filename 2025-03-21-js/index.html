@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>从栈到堆，什么是 JavaScript? - 寂的博客</title><meta name="Description" content="彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:url" content="https://111hunter.github.io/2025-03-21-js/">
+  <meta property="og:site_name" content="寂的博客">
+  <meta property="og:title" content="从栈到堆，什么是 JavaScript?">
+  <meta property="og:description" content="JavaScript 是一种功能强大且灵活的编程语言，广泛应用于网页开发、服务器端开发等领域。要深入理解 JavaScript，我们可以从变量在计算机中的数据存储开始，逐步探讨其运行机制、最新语法以及设计理念。以下是对这些方面的逐层剖析。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-21T10:50:34+08:00">
+    <meta property="article:modified_time" content="2025-03-21T10:50:34+08:00">
+    <meta property="article:tag" content="JavaScript">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="从栈到堆，什么是 JavaScript?">
+  <meta name="twitter:description" content="JavaScript 是一种功能强大且灵活的编程语言，广泛应用于网页开发、服务器端开发等领域。要深入理解 JavaScript，我们可以从变量在计算机中的数据存储开始，逐步探讨其运行机制、最新语法以及设计理念。以下是对这些方面的逐层剖析。">
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://111hunter.github.io/2025-03-21-js/" /><link rel="prev" href="https://111hunter.github.io/2025-03-20-dapp/" /><link rel="next" href="https://111hunter.github.io/2025-03-21-react/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "从栈到堆，什么是 JavaScript?",
+        "inLanguage": "zh-cn",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/111hunter.github.io\/2025-03-21-js\/"
+        },"genre": "posts","keywords": "JavaScript","wordcount":  2454 ,
+        "url": "https:\/\/111hunter.github.io\/2025-03-21-js\/","datePublished": "2025-03-21T10:50:34+08:00","dateModified": "2025-03-21T10:50:34+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "寂"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="寂的博客">寂的博客</a>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><span class="menu-item">|</span><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="寂的博客">寂的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">从栈到堆，什么是 JavaScript?</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
+</span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Coding</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-03-21">2025-03-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2454 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/2025-03-21-js/" class="leancloud_visitors" data-flag-title="从栈到堆，什么是 JavaScript?">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#从栈到堆--javascript-在计算机中的数据存储">从栈到堆 — JavaScript 在计算机中的数据存储</a>
+      <ul>
+        <li><a href="#1栈stack">1.栈（Stack）</a></li>
+        <li><a href="#2堆heap">2.堆（Heap）</a></li>
+        <li><a href="#3栈与堆的交互">3.栈与堆的交互</a></li>
+      </ul>
+    </li>
+    <li><a href="#javascript-的运行机制--从内存到执行">JavaScript 的运行机制 — 从内存到执行</a>
+      <ul>
+        <li><a href="#1执行上下文execution-context">1.执行上下文（Execution Context）</a></li>
+        <li><a href="#2调用栈call-stack">2.调用栈（Call Stack）</a></li>
+        <li><a href="#3事件循环与异步">3.事件循环与异步</a></li>
+        <li><a href="#4引擎优化">4.引擎优化</a></li>
+      </ul>
+    </li>
+    <li><a href="#最新语法--javascript-的语法演进">最新语法 — JavaScript 的语法演进</a>
+      <ul>
+        <li><a href="#1es62015奠基">1.ES6（2015）奠基</a></li>
+        <li><a href="#2后续版本亮点">2.后续版本亮点</a></li>
+        <li><a href="#3模块化">3.模块化</a></li>
+        <li><a href="#4异步编程">4.异步编程</a></li>
+      </ul>
+    </li>
+    <li><a href="#javascript-为什么这么设计">JavaScript 为什么这么设计？</a>
+      <ul>
+        <li><a href="#1最初目标简单嵌入网页">1.最初目标：简单嵌入网页</a></li>
+        <li><a href="#2单线程与事件循环">2.单线程与事件循环</a></li>
+        <li><a href="#3原型继承">3.原型继承</a></li>
+        <li><a href="#4动态类型">4.动态类型</a></li>
+        <li><a href="#5向后兼容性">5.向后兼容性</a></li>
+        <li><a href="#6生态驱动演进">6.生态驱动演进</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>JavaScript 是一种功能强大且灵活的编程语言，广泛应用于网页开发、服务器端开发等领域。要深入理解 JavaScript，我们可以从变量在计算机中的数据存储开始，逐步探讨其运行机制、最新语法以及设计理念。以下是对这些方面的逐层剖析。</p>
+<h2 id="从栈到堆--javascript-在计算机中的数据存储">从栈到堆 — JavaScript 在计算机中的数据存储</h2>
+<p>JavaScript 是一种高级编程语言，其代码最终由 JavaScript 引擎（如<code>V8</code>、<code>SpiderMonkey</code>）执行。在计算机内存中，JavaScript 的数据存储主要涉及栈（Stack）和堆（Heap）两种结构：</p>
+<h3 id="1栈stack">1.栈（Stack）</h3>
+<ul>
+<li>
+<p>用途：栈是一个后进先出（<code>LIFO</code>）的内存结构，用于存储基本数据类型（<code>Primitive Types</code>）和函数调用上下文。</p>
+</li>
+<li>
+<p>存储内容：包括 <code>undefined</code>、<code>null</code>、<code>boolean</code>、<code>number</code>、<code>string</code>、<code>symbol</code>（ES6新增）和<code>bigint</code>（ES2020新增）。这些数据大小固定且较小，直接存储在栈中。</p>
+</li>
+<li>
+<p>特点：栈内存分配是静态的，访问速度快。例如：</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 数字 10 直接存储在栈中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="s2">&#34;hello&#34;</span><span class="p">;</span> <span class="c1">// 字符串 &#34;hello&#34; 的引用在栈中，实际内容在堆中（见下文）
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>函数调用：每次函数调用时，会在栈中创建一个新的调用帧（<code>Call Frame</code>），包含局部变量和返回地址。函数执行完毕后，该帧被弹出，释放内存。</li>
+</ul>
+<h3 id="2堆heap">2.堆（Heap）</h3>
+<ul>
+<li>
+<p>用途：堆是一个动态分配的内存区域，用于存储引用数据类型（<code>Reference Types</code>），如对象（<code>Object</code>）、数组（<code>Array</code>）、函数等。</p>
+</li>
+<li>
+<p>存储内容：这些数据大小不固定，存储在堆中，而栈中仅保存指向堆内存的引用。例如：</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;Alice&#34;</span> <span class="p">};</span> <span class="c1">// obj 是栈中的引用，{ name: &#34;Alice&#34; } 存储在堆中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span> <span class="c1">// arr 是栈中的引用，[1, 2, 3] 存储在堆中
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>特点：堆内存由垃圾回收机制（如标记-清除算法）管理，当对象不再被引用时，内存会被自动回收。</li>
+</ul>
+<h3 id="3栈与堆的交互">3.栈与堆的交互</h3>
+<p>当你将一个对象赋值给另一个变量时，复制的是栈中的引用，而不是堆中的数据：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="nx">obj1</span><span class="p">;</span> <span class="c1">// obj2 复制的是引用，指向同一个堆内存地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">obj2</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// 输出 2
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="javascript-的运行机制--从内存到执行">JavaScript 的运行机制 — 从内存到执行</h2>
+<p>JavaScript 是单线程语言，依赖 <strong>事件循环（Event Loop）</strong> 处理异步操作。其运行机制可以分解为以下几个核心部分：</p>
+<h3 id="1执行上下文execution-context">1.执行上下文（Execution Context）</h3>
+<ul>
+<li>
+<p>每段代码运行时，会创建一个执行上下文，分为全局上下文和函数上下文。</p>
+</li>
+<li>
+<p>执行上下文包含三部分：</p>
+<ul>
+<li>
+<p>变量对象（<code>Variable Object</code>）：存储变量和函数声明。</p>
+</li>
+<li>
+<p>作用域链（<code>Scope Chain</code>）：决定变量访问权限。</p>
+</li>
+<li>
+<p>this 指向：当前执行环境的对象。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2调用栈call-stack">2.调用栈（Call Stack）</h3>
+<p>JavaScript 使用调用栈追踪函数执行。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;foo&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">foo</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">bar</span><span class="p">();</span> <span class="c1">// 调用栈：bar -&gt; foo -&gt; 弹出 foo -&gt; 弹出 bar
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3事件循环与异步">3.事件循环与异步</h3>
+<ul>
+<li>
+<p>JavaScript 通过**任务队列（Task Queue）和微任务队列（Microtask Queue）**处理异步操作（如 setTimeout、Promise）。</p>
+</li>
+<li>
+<p>例子：</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Start&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Timeout&#34;</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Promise&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;End&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 输出顺序：Start -&gt; End -&gt; Promise -&gt; Timeout
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p><code>setTimeout</code> 被放入任务队列，<code>Promise.then</code> 被放入微任务队列。</p>
+</li>
+<li>
+<p>事件循环优先执行微任务，再处理任务队列。</p>
+</li>
+</ul>
+<h3 id="4引擎优化">4.引擎优化</h3>
+<ul>
+<li>现代 JavaScript 引擎（如 <code>V8</code>）使用即时编译（<code>JIT</code>），将代码编译为机器码，并通过内联缓存（<code>inline caching</code>）和隐藏类（<code>hidden class</code>）优化对象访问性能。</li>
+</ul>
+<h2 id="最新语法--javascript-的语法演进">最新语法 — JavaScript 的语法演进</h2>
+<p>JavaScript 的语法通过 ECMAScript（ES） 标准不断更新，目前最新广泛支持的是 ES2023（截至 2025 年 3 月，可能有 ES2024）。以下是一些关键特性：</p>
+<h3 id="1es62015奠基">1.ES6（2015）奠基</h3>
+<ul>
+<li>
+<p><code>let</code> 和 <code>const</code>：块级作用域取代 <code>var</code>。</p>
+</li>
+<li>
+<p>箭头函数：简洁语法，绑定 <code>this</code>。</p>
+</li>
+<li>
+<p>模板字面量：<code>Hello, ${name}</code>。</p>
+</li>
+<li>
+<p>解构赋值：<code>let [a, b] = [1, 2];</code>。</p>
+</li>
+</ul>
+<h3 id="2后续版本亮点">2.后续版本亮点</h3>
+<ul>
+<li>
+<p>ES2020：<code>BigInt</code>（<code>123n</code>）、可选链（<code>obj?.prop</code>）、空值合并（<code>??</code>）。</p>
+</li>
+<li>
+<p>ES2021：<code>Promise.any</code>、<code>String.replaceAll</code>。</p>
+</li>
+<li>
+<p>ES2022：深拷贝方法 <code>structuredClone</code>。</p>
+</li>
+<li>
+<p>ES2023：数组方法如 <code>findLast</code> 和 <code>findLastIndex</code>。</p>
+</li>
+</ul>
+<h3 id="3模块化">3.模块化</h3>
+<ul>
+<li>从 CommonJS（<code>require</code>）到 ES Modules（<code>import/export</code>），支持树摇（Tree Shaking）优化。</li>
+</ul>
+<h3 id="4异步编程">4.异步编程</h3>
+<p>从回调函数到 <code>Promise</code>，再到 <code>async/await</code>，极大简化异步代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">fetchData</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">&#34;url&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="javascript-为什么这么设计">JavaScript 为什么这么设计？</h2>
+<p>JavaScript 的设计源于其历史背景和目标，以下是几个关键原因：</p>
+<h3 id="1最初目标简单嵌入网页">1.最初目标：简单嵌入网页</h3>
+<p>1995 年，Brendan Eich 在 10 天内为 Netscape 浏览器开发 JavaScript，目标是让网页动态化。它受限于浏览器环境，必须轻量、易用，因此选择了动态类型和解释执行。</p>
+<h3 id="2单线程与事件循环">2.单线程与事件循环</h3>
+<p>为避免复杂的线程同步问题（如 DOM 操作的竞争），JavaScript 采用单线程模型。通过事件循环处理异步任务，既简化开发，又适应浏览器交互需求。</p>
+<h3 id="3原型继承">3.原型继承</h3>
+<p>与基于类的语言（如 Java）不同，JavaScript 使用原型链实现继承（如 <code>Object.create</code>）。这设计更灵活，但也带来复杂性（如 this 的动态绑定）。</p>
+<h3 id="4动态类型">4.动态类型</h3>
+<p>JavaScript 是弱类型语言（<code>1 + &quot;2&quot; = &quot;12&quot;</code>），方便快速开发，但也易出错。设计初衷是降低学习门槛，吸引非专业开发者。</p>
+<h3 id="5向后兼容性">5.向后兼容性</h3>
+<p>为保证旧代码可用，JavaScript 保留了许多“历史包袱”，如 <code>var</code> 的变量提升、<code>==</code> 的宽松比较。这种设计限制了彻底重构，但确保了生态稳定性。</p>
+<h3 id="6生态驱动演进">6.生态驱动演进</h3>
+<p>JavaScript 的发展由 TC39（ECMAScript 委员会）管理，社区需求推动语法更新。例如，<code>async/await</code> 源于异步编程的痛点，<code>class</code> 则是对开发者熟悉语法的妥协。</p>
+<h2 id="总结">总结</h2>
+<p>从栈到堆，JavaScript 的数据存储体现了内存管理的效率与灵活性；其运行机制通过单线程和事件循环平衡了简单性与异步能力；语法演进（如 ES6 及之后）不断提升开发体验；设计理念则根植于历史、实用性和生态需求。JavaScript 的成功在于它既简单易上手，又能通过引擎优化和社区扩展满足复杂场景。</p>
+<p><strong>推荐阅读</strong></p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank" rel="noopener noreffer">mdn web docs - Web technology for developers</a>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2025-03-21</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2025-03-21-js/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://111hunter.github.io/2025-03-21-js/" data-title="从栈到堆，什么是 JavaScript?" data-hashtags="JavaScript"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://111hunter.github.io/2025-03-21-js/" data-hashtag="JavaScript"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://111hunter.github.io/2025-03-21-js/" data-title="从栈到堆，什么是 JavaScript?" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://111hunter.github.io/2025-03-21-js/" data-title="从栈到堆，什么是 JavaScript?"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://111hunter.github.io/2025-03-21-js/" data-title="从栈到堆，什么是 JavaScript?"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://111hunter.github.io/2025-03-21-js/" data-title="从栈到堆，什么是 JavaScript?" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://111hunter.github.io/2025-03-21-js/" data-title="从栈到堆，什么是 JavaScript?"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/javascript/">JavaScript</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2025-03-20-dapp/" class="prev" rel="prev" title="从链下到链上，什么是 DApp？"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>从链下到链上，什么是 DApp？</a>
+            <a href="/2025-03-21-react/" class="next" rel="next" title="从函数到副作用 - React 的时空观">从函数到副作用 - React 的时空观<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io/" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz","appKey":"gK3L6a7r80578qujBez4FH6C","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"欢迎讨论交流","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -4,7 +4,15 @@
         <link>https://111hunter.github.io/tags/javascript/</link>
         <description>JavaScript - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Fri, 21 Mar 2025 10:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+    <title>从栈到堆，什么是 JavaScript?</title>
+    <link>https://111hunter.github.io/2025-03-21-js/</link>
+    <pubDate>Fri, 21 Mar 2025 10:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2025-03-21-js/</guid>
+    <description><![CDATA[<p>JavaScript 是一种功能强大且灵活的编程语言，广泛应用于网页开发、服务器端开发等领域。要深入理解 JavaScript，我们可以从变量在计算机中的数据存储开始，逐步探讨其运行机制、最新语法以及设计理念。以下是对这些方面的逐层剖析。</p>]]></description>
+</item>
+<item>
     <title>从启动浏览器到打开网页，发生了什么？</title>
     <link>https://111hunter.github.io/2025-03-17-browser/</link>
     <pubDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</pubDate>
