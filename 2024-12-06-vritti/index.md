@@ -1,7 +1,7 @@
 # Hello, World! return 0
 
 
-> 先生，您看，如果您提出一个问题，您要么期待有人回答，要么一直在思考、思考、思考 - 对吗？ - 试图找到答案。但是思考或等待别人回答您​​的问题并不能解决问题。对吗？因此，您如何接受问题、如何处理问题非常重要。如果您的方法是全面的、完整的，那么答案就在那里。但是，如果您说，好吧，告诉我，然后靠在椅背上等待，或者询问您的牧师、您的上师、您的书或您的权威人士，那么这毫无意义。他们已经告诉过您一千遍了。所以，先生，就像您在湖中扔下一块石头，湖面如此平静，而您扔下一块石头，波浪继续。问题在于您扔进湖中的那块石头。您明白吗？对，先生。               — 克里希那穆提
+<!-- > 先生，您看，如果您提出一个问题，您要么期待有人回答，要么一直在思考、思考、思考 - 对吗？ - 试图找到答案。但是思考或等待别人回答您​​的问题并不能解决问题。对吗？因此，您如何接受问题、如何处理问题非常重要。如果您的方法是全面的、完整的，那么答案就在那里。但是，如果您说，好吧，告诉我，然后靠在椅背上等待，或者询问您的牧师、您的上师、您的书或您的权威人士，那么这毫无意义。他们已经告诉过您一千遍了。所以，先生，就像您在湖中扔下一块石头，湖面如此平静，而您扔下一块石头，波浪继续。问题在于您扔进湖中的那块石头。您明白吗？对，先生。               — 克里希那穆提 -->
 
 ![hello-world-cpp](/img/hello-world-cpp.jpeg "hello-world-cpp")
 
@@ -87,4 +87,4 @@
 
 - [Infinite Backrooms - conversation_1711051649.txt](https://www.infinitebackrooms.com/dreams/conversation-1711051649-txt)
 
-- [The art of observing the book of mankind - 4th Public Talk, Ojai, CaliforniaApril 15, 1979](https://www.krishnamurti.org/transcript/the-art-of-observing-the-book-of-mankind/)
+- [李继刚: 纯逻辑拆解(Claude Prompt: 第一性原理)](https://mp.weixin.qq.com/s/OVUOpFecfT4n2ZqRk6YMfQ)

@@ -1,33 +1,50 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Recursion - 标签 - 寂的博客</title>
-        <link>https://111hunter.github.io/tags/recursion/</link>
+        <link>http://localhost:1313/tags/recursion/</link>
         <description>Recursion - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 25 Dec 2024 11:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/recursion/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/recursion/" rel="self" type="application/rss+xml" /><item>
+    <title>从符号到括号，什么是S-表达式？</title>
+    <link>http://localhost:1313/2025-03-26-symbolic-expression/</link>
+    <pubDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-03-26-symbolic-expression/</guid>
+    <description><![CDATA[<p>S-表达式（S-expression，全称Symbolic Expression，符号表达式）是一种由约翰·麦卡锡（John McCarthy）在设计Lisp编程语言时引入的数据表示方法。它以简洁的语法和强大的表达能力著称，不仅是Lisp及其变种（如Scheme、Common Lisp）的核心，还广泛应用于符号计算、人工智能和数据结构的表示。S-表达式的核心思想是通过符号和括号构建一种既能表示数据又能表示程序的结构，具有“代码即数据”的特性。</p>]]></description>
+</item>
+<item>
     <title>原罪 — 知善恶树</title>
-    <link>https://111hunter.github.io/2024-12-25-yaldabaoth/</link>
+    <link>http://localhost:1313/2024-12-25-yaldabaoth/</link>
     <pubDate>Wed, 25 Dec 2024 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2024-12-25-yaldabaoth/</guid>
+    <guid>http://localhost:1313/2024-12-25-yaldabaoth/</guid>
     <description><![CDATA[<!-- > 你从书本上得到的哲学思想、各种理论及信仰等，这些都成了你的传统，它们对你的思想实在有很大的障碍，因为你的心会利用这些东西作为自己的保障，于是你就被它限制住了。所以你必须一方面让你的心从传统中解脱出来，一方面也要培养自己的知识与技术，这就是教育的功用。      - 克里希那穆提 -->
 <blockquote>
 <p>执于己见，障蔽真心，反以智为桎梏。    - 由 Gemini 2.0 Flash Experimental 生成</p>]]></description>
 </item>
 <item>
+    <title>Hello, World! return 0</title>
+    <link>http://localhost:1313/2024-12-06-vritti/</link>
+    <pubDate>Fri, 06 Dec 2024 11:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2024-12-06-vritti/</guid>
+    <description><![CDATA[<!-- > 先生，您看，如果您提出一个问题，您要么期待有人回答，要么一直在思考、思考、思考 - 对吗？ - 试图找到答案。但是思考或等待别人回答您​​的问题并不能解决问题。对吗？因此，您如何接受问题、如何处理问题非常重要。如果您的方法是全面的、完整的，那么答案就在那里。但是，如果您说，好吧，告诉我，然后靠在椅背上等待，或者询问您的牧师、您的上师、您的书或您的权威人士，那么这毫无意义。他们已经告诉过您一千遍了。所以，先生，就像您在湖中扔下一块石头，湖面如此平静，而您扔下一块石头，波浪继续。问题在于您扔进湖中的那块石头。您明白吗？对，先生。               — 克里希那穆提 -->
+<p><figure><a class="lightgallery" href="/img/hello-world-cpp.jpeg" title="hello-world-cpp" data-thumbnail="/img/hello-world-cpp.jpeg" data-sub-html="<h2>hello-world-cpp</h2><p>hello-world-cpp</p>]]></description>
+</item>
+<item>
     <title>大脑愿意解开自己的束缚吗?</title>
-    <link>https://111hunter.github.io/2024-10-25-proprioception/</link>
+    <link>http://localhost:1313/2024-10-25-proprioception/</link>
     <pubDate>Fri, 25 Oct 2024 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2024-10-25-proprioception/</guid>
+    <guid>http://localhost:1313/2024-10-25-proprioception/</guid>
     <description><![CDATA[<p>思想发明了计算机。你必须了解计算机的复杂性和未来；计算机将超越人类的思想；它将改变社会结构和政府结构。这不是演讲者的奇思妙想，也不是幻想，而是现在正在发生的事情，你可能还不知道。计算机具有机械智能；它可以学习和发明。计算机将会使人类几乎没有必要工作，也许人类每天只需工作两个小时就可以了。请注意，这些都是正在发生的事情，你可能不喜欢这样，你可能会抵触计算机，但是这正在成为现实。</p>]]></description>
 </item>
 <item>
     <title>我总是观看，似乎我只有眼睛</title>
-    <link>https://111hunter.github.io/2024-10-20-meditation/</link>
+    <link>http://localhost:1313/2024-10-20-meditation/</link>
     <pubDate>Sun, 20 Oct 2024 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2024-10-20-meditation/</guid>
+    <guid>http://localhost:1313/2024-10-20-meditation/</guid>
     <description><![CDATA[<!-- > 知见立知，即无明本；知见无见，斯即涅槃。   —《楞严经》 -->
 <!-- > 心生于物，死于物，机在目。   —《阴符经》 -->
 <blockquote>
@@ -35,67 +52,50 @@
 </item>
 <item>
     <title>你为这次旅行准备了无数次</title>
-    <link>https://111hunter.github.io/2024-10-19-unconscious/</link>
+    <link>http://localhost:1313/2024-10-19-unconscious/</link>
     <pubDate>Sat, 19 Oct 2024 09:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2024-10-19-unconscious/</guid>
+    <guid>http://localhost:1313/2024-10-19-unconscious/</guid>
     <description><![CDATA[<blockquote>
 <p>你是那种会把行李打开再打包的人。你想继续忙着打包。你渴望活动，所以继续打包。你为这次旅行准备了无数次。你做了多少次？但你还是没有成为一个男人！<strong>你遇到过很多次这种情况，但每次准备工作完成后，你又开始想知道还有什么要做。你又打开行李，又把东西收拾好，这样你就能很容易地找到它们……然后下次你开始收拾行李。会议什么时候举行</strong>？      — 奥修</p>]]></description>
 </item>
 <item>
     <title>从本能到无聊 — 人类停止进化了吗?</title>
-    <link>https://111hunter.github.io/2024-10-18-evolution/</link>
+    <link>http://localhost:1313/2024-10-18-evolution/</link>
     <pubDate>Fri, 18 Oct 2024 10:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2024-10-18-evolution/</guid>
+    <guid>http://localhost:1313/2024-10-18-evolution/</guid>
     <description><![CDATA[<blockquote>
 <p>“我没有想到，几年后我会遇到很类似万能酸的思想，达尔文的思想: 它侵蚀了几乎所有的传统思想，并在其中唤醒了革命性的世界观，大多数古老的地标仍然可以辨认，但发生了根本性变化。”   - 丹尼尔·丹尼特,《达尔文的危险思想》</p>]]></description>
 </item>
 <item>
     <title>存在的探究 — 身份之谜</title>
-    <link>https://111hunter.github.io/2024-10-16-alchemy/</link>
+    <link>http://localhost:1313/2024-10-16-alchemy/</link>
     <pubDate>Wed, 16 Oct 2024 09:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2024-10-16-alchemy/</guid>
+    <guid>http://localhost:1313/2024-10-16-alchemy/</guid>
     <description><![CDATA[<!-- > 一个人睡着了，梦见了千百件事情，而早上醒来，所有的梦想都消失了。生活也是如此。我们睡着了 — 睡着了我们的内心。我们忘记了我们是谁；因此，世界，轮回。轮回意味着万物的世界。 - 奥修 -->
 <blockquote>
 <p>如果一个人的目光不朝着虔诚的方向，他的一生就毫无意义。           - 奥修</p>]]></description>
 </item>
 <item>
     <title>虚拟 — 膨胀出全息世界</title>
-    <link>https://111hunter.github.io/2023-12-19-itp/</link>
+    <link>http://localhost:1313/2023-12-19-itp/</link>
     <pubDate>Tue, 19 Dec 2023 10:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2023-12-19-itp/</guid>
+    <guid>http://localhost:1313/2023-12-19-itp/</guid>
     <description><![CDATA[<blockquote>
 <p>“许多独立的并且很有说服力的论点，都表明时空这个概念本身并不是基础性的。时空注定要消亡。在物理定律的实际底层描述中，根本不存在时空这样的东西。这是非常令人震惊的，因为物理学被认为是描述在空间和时间中发生的事情。因此，如果没有时空，就不清楚物理学讲的什么。” — 尼马·阿尔卡尼-哈米德，康奈尔大学信使讲座，2016</p>]]></description>
 </item>
 <item>
     <title>业力 - 因陀罗网</title>
-    <link>https://111hunter.github.io/2023-12-06-indra-net/</link>
+    <link>http://localhost:1313/2023-12-06-indra-net/</link>
     <pubDate>Wed, 06 Dec 2023 10:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2023-12-06-indra-net/</guid>
+    <guid>http://localhost:1313/2023-12-06-indra-net/</guid>
     <description><![CDATA[<blockquote>
 <p>有我之境，以我观物，故物我皆著我之色彩。无我之境，以物观物，故不知何者为我，何者为物。  -《人间词话》</p></blockquote>
 <p>你看到的世界是你的本质，而不是世界的本质，你对世界的看法是你意识状态的反映。事情于你而言是增上缘还是增上慢，由你内心发生的事情决定，而不是由事情本身决定。当我们的内在世界发生变化时，我们的外在世界也在跟着发生变化。</p>]]></description>
-</item>
-<item>
-    <title>一些通用计算模型</title>
-    <link>https://111hunter.github.io/2021-01-30-tag-system/</link>
-    <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>https://111hunter.github.io/2021-01-30-tag-system/</guid>
-    <description><![CDATA[<blockquote>
-<p>在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算」的。 &ndash; wikipedia</p>]]></description>
-</item>
-<item>
-    <title>IO 和 Monad</title>
-    <link>https://111hunter.github.io/2020-12-28-monad/</link>
-    <pubDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>https://111hunter.github.io/2020-12-28-monad/</guid>
-    <description><![CDATA[<p>学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程序时的外部状态(RealWorld)当成函数的参数。</p>]]></description>
 </item>
 </channel>
 </rss>

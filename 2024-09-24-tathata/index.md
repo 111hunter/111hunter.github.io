@@ -49,6 +49,8 @@
 
 **推荐阅读**
 
+- [李继刚: 问题背后始终藏着问题 (Claude Prompt: 问题之锤)](https://mp.weixin.qq.com/s/KlkomVKEYKjVAb6NEXcjSg)
+
 - [“不知道”是一种摆脱意识内容的状态｜克里希那穆提](https://mp.weixin.qq.com/s/vxqgibdrQwZxdwcFpeJN_g)
 
 - [既然意识是纯粹的，怎么会与自我相认同？](https://sureshn13.medium.com/why-awareness-identifies-with-ego-ff23d8109a9b)

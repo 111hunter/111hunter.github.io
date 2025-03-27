@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>从符号到括号，什么是S-表达式？ - 寂的博客</title><meta name="Description" content="彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:url" content="http://localhost:1313/2025-03-26-symbolic-expression/">
+  <meta property="og:site_name" content="寂的博客">
+  <meta property="og:title" content="从符号到括号，什么是S-表达式？">
+  <meta property="og:description" content="S-表达式（S-expression，全称Symbolic Expression，符号表达式）是一种由约翰·麦卡锡（John McCarthy）在设计Lisp编程语言时引入的数据表示方法。它以简洁的语法和强大的表达能力著称，不仅是Lisp及其变种（如Scheme、Common Lisp）的核心，还广泛应用于符号计算、人工智能和数据结构的表示。S-表达式的核心思想是通过符号和括号构建一种既能表示数据又能表示程序的结构，具有“代码即数据”的特性。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-26T17:50:34+08:00">
+    <meta property="article:modified_time" content="2025-03-26T17:50:34+08:00">
+    <meta property="article:tag" content="Recursion">
+    <meta property="article:tag" content="AST">
+    <meta property="article:tag" content="Lisp">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="从符号到括号，什么是S-表达式？">
+  <meta name="twitter:description" content="S-表达式（S-expression，全称Symbolic Expression，符号表达式）是一种由约翰·麦卡锡（John McCarthy）在设计Lisp编程语言时引入的数据表示方法。它以简洁的语法和强大的表达能力著称，不仅是Lisp及其变种（如Scheme、Common Lisp）的核心，还广泛应用于符号计算、人工智能和数据结构的表示。S-表达式的核心思想是通过符号和括号构建一种既能表示数据又能表示程序的结构，具有“代码即数据”的特性。">
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/2025-03-26-symbolic-expression/" /><link rel="prev" href="http://localhost:1313/2025-03-21-react/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "从符号到括号，什么是S-表达式？",
+        "inLanguage": "zh-cn",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/2025-03-26-symbolic-expression\/"
+        },"genre": "posts","keywords": "Recursion, AST, Lisp","wordcount":  2058 ,
+        "url": "http:\/\/localhost:1313\/2025-03-26-symbolic-expression\/","datePublished": "2025-03-26T17:50:34+08:00","dateModified": "2025-03-26T17:50:34+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "寂"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="寂的博客">寂的博客</a>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><span class="menu-item">|</span><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="寂的博客">寂的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">从符号到括号，什么是S-表达式？</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
+</span>&nbsp;<span class="post-category">收录于 <a href="/categories/theory/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Theory</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-03-26">2025-03-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2058 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/2025-03-26-symbolic-expression/" class="leancloud_visitors" data-flag-title="从符号到括号，什么是S-表达式？">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-s-表达式的基本构成">一. S-表达式的基本构成</a>
+      <ul>
+        <li><a href="#1-原子atoms">1. 原子（Atoms）</a></li>
+        <li><a href="#2-列表lists">2. 列表（Lists）</a></li>
+      </ul>
+    </li>
+    <li><a href="#二-s-表达式的递归性质">二. S-表达式的递归性质</a></li>
+    <li><a href="#三-s-表达式的双重身份">三. S-表达式的双重身份</a>
+      <ul>
+        <li><a href="#1-作为数据">1. 作为数据</a></li>
+        <li><a href="#2-作为代码">2. 作为代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#四-s-表达式的语法与语义">四. S-表达式的语法与语义</a>
+      <ul>
+        <li><a href="#1-语法">1. 语法</a></li>
+        <li><a href="#2-语义">2. 语义</a></li>
+      </ul>
+    </li>
+    <li><a href="#五-s-表达式的实现与存储">五. S-表达式的实现与存储</a></li>
+    <li><a href="#六-s-表达式的应用与意义">六. S-表达式的应用与意义</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>S-表达式（S-expression，全称Symbolic Expression，符号表达式）是一种由约翰·麦卡锡（John McCarthy）在设计Lisp编程语言时引入的数据表示方法。它以简洁的语法和强大的表达能力著称，不仅是Lisp及其变种（如Scheme、Common Lisp）的核心，还广泛应用于符号计算、人工智能和数据结构的表示。S-表达式的核心思想是通过符号和括号构建一种既能表示数据又能表示程序的结构，具有“代码即数据”的特性。</p>
+<p>下面我将从符号到括号，深入解析S-表达式的构成、特性、应用及其意义。</p>
+<h2 id="一-s-表达式的基本构成">一. S-表达式的基本构成</h2>
+<p>S-表达式由两种基本元素组成：原子（Atoms）和列表（Lists），它们通过括号和符号组合成复杂的结构。</p>
+<h3 id="1-原子atoms">1. 原子（Atoms）</h3>
+<ul>
+<li>
+<p>定义：原子是S-表达式中最基本的不可分单元，通常是一个符号、数字或字符串。</p>
+</li>
+<li>
+<p>示例：</p>
+<ul>
+<li>
+<p>符号：<code>x</code>、<code>foo</code>、<code>+</code></p>
+</li>
+<li>
+<p>数字：<code>42</code>、<code>3.14</code></p>
+</li>
+<li>
+<p>字符串：<code>&quot;hello&quot;</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>特性：</p>
+<ul>
+<li>
+<p>原子是S-表达式的“叶子”，不包含子结构。</p>
+</li>
+<li>
+<p>符号是无固定含义的标识符，其意义由上下文决定。例如，<code>+</code>可能表示加法函数，而<code>x</code>可能是一个变量。</p>
+</li>
+<li>
+<p>在内存中，原子通常是单一对象（如指针或值），处理效率高。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-列表lists">2. 列表（Lists）</h3>
+<ul>
+<li>
+<p>定义：列表是由括号<code>()</code>包围的有序元素序列，元素可以是原子或其他S-表达式（包括嵌套列表）。</p>
+</li>
+<li>
+<p>语法：用括号括起，元素间以空格分隔。</p>
+</li>
+<li>
+<p>示例：</p>
+<ul>
+<li>
+<p><code>(a b c)</code>：包含三个原子<code>a</code>、<code>b</code>、<code>c</code>的列表。</p>
+</li>
+<li>
+<p><code>(1 (2 3) 4)</code>：一个嵌套列表，包含原子<code>1</code>、子列表<code>(2 3)</code>和原子<code>4</code>。</p>
+</li>
+<li>
+<p><code>(+ 2 3)</code>：表示加法操作的列表，<code>+</code>是操作符，<code>2</code>和<code>3</code>是操作数。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>特性：</p>
+<ul>
+<li>
+<p>列表是有序的，元素位置有意义。</p>
+</li>
+<li>
+<p>列表支持无限嵌套，表达复杂层次结构。</p>
+</li>
+<li>
+<p>空列表<code>()</code>在Lisp中通常表示<code>nil</code>，既是“无”的值，也是逻辑“假”。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>括号的作用</strong></p>
+<ul>
+<li>
+<p>括号是S-表达式的语法支柱，用于定义列表的边界和层次。</p>
+</li>
+<li>
+<p>它消除了歧义，例如<code>(a b c)</code>和<code>((a b) c)</code>有着截然不同的结构。</p>
+</li>
+<li>
+<p>括号的嵌套直接映射到树的深度，使得S-表达式天然适合树形数据表示。</p>
+</li>
+</ul>
+<h2 id="二-s-表达式的递归性质">二. S-表达式的递归性质</h2>
+<p>S-表达式可以用递归方式定义，体现了其数学上的优雅：</p>
+<ul>
+<li>
+<p>原子是一个S-表达式。</p>
+</li>
+<li>
+<p>如果<code>e1, e2, ..., en</code>是S-表达式，那么<code>(e1 e2 ... en)</code>也是S-表达式。</p>
+</li>
+<li>
+<p>除此之外没有其他形式是S-表达式。</p>
+</li>
+</ul>
+<p>这种定义表明S-表达式本质上是一个<strong>树形结构</strong>：</p>
+<ul>
+<li>
+<p>原子是叶子节点。</p>
+</li>
+<li>
+<p>列表是非叶子节点，其子节点可以是原子或子列表。</p>
+</li>
+</ul>
+<p>例如，<code>(a (b c) d)</code>的树形表示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">       .
+</span></span><span class="line"><span class="cl">      /|\
+</span></span><span class="line"><span class="cl">     a . d
+</span></span><span class="line"><span class="cl">      / \
+</span></span><span class="line"><span class="cl">     b   c
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这种递归性使得S-表达式能够表示任意复杂的层次结构，从简单的算术表达式到完整的程序。</p>
+<h2 id="三-s-表达式的双重身份">三. S-表达式的双重身份</h2>
+<p>S-表达式最引人注目的特性是“代码即数据”（Homoiconicity），即它既可以表示数据，也可以表示可执行代码。</p>
+<h3 id="1-作为数据">1. 作为数据</h3>
+<ul>
+<li>
+<p>S-表达式是一种通用的数据表示方式，类似现代的 JSON 或 XML。</p>
+</li>
+<li>
+<p>示例：<code>(person (name &quot;Alice&quot;) (age 25))</code>可以表示一个人的结构化信息。</p>
+</li>
+<li>
+<p>这种表示法易于解析和操作，尤其在符号计算中非常有用。</p>
+</li>
+</ul>
+<h3 id="2-作为代码">2. 作为代码</h3>
+<ul>
+<li>
+<p>在Lisp中，S-表达式直接被解释为程序。</p>
+</li>
+<li>
+<p>示例：<code>(+ 2 3)</code>表示“将2和3相加”，求值后返回<code>5</code>。</p>
+</li>
+<li>
+<p>规则：列表的第一个元素通常是操作符（函数、宏或特殊形式），后续元素是参数。</p>
+</li>
+</ul>
+<p><strong>代码与数据的统一</strong></p>
+<ul>
+<li>
+<p>这种统一性赋予了S-表达式强大的元编程能力。</p>
+</li>
+<li>
+<p>示例：可以用<code>(list '+ 2 3)</code>生成表达式<code>(+ 2 3)</code>，然后通过<code>eval</code>执行它。</p>
+</li>
+<li>
+<p>这使得程序可以动态生成、修改和执行代码，是Lisp在人工智能领域（如自动推理、符号代数）成功的关键。</p>
+</li>
+</ul>
+<h2 id="四-s-表达式的语法与语义">四. S-表达式的语法与语义</h2>
+<h3 id="1-语法">1. 语法</h3>
+<ul>
+<li>
+<p>S-表达式的语法极简，只有原子和括号列表两种形式。</p>
+</li>
+<li>
+<p>用形式化表示（<code>BNF</code>）：</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;S-expr&gt; ::= &lt;atom&gt; | (&lt;S-expr&gt; ...)
+</span></span><span class="line"><span class="cl">&lt;atom&gt;   ::= &lt;symbol&gt; | &lt;number&gt; | &lt;string&gt; | ...
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>空格分隔元素，括号分组，语法无歧义。</li>
+</ul>
+<h3 id="2-语义">2. 语义</h3>
+<ul>
+<li>
+<p>S-表达式的语义由解释器或上下文赋予。</p>
+</li>
+<li>
+<p>在Lisp中：</p>
+<ul>
+<li>
+<p>原子可能是变量或常量，求值时查找其绑定值。</p>
+</li>
+<li>
+<p>列表被视为函数调用或特殊形式，求值时执行操作。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>示例：</p>
+<ul>
+<li>
+<p><code>(define x 10)</code>：定义变量<code>x</code>为<code>10</code>。</p>
+</li>
+<li>
+<p><code>(+ x 5)</code>：求值为<code>15</code>。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="五-s-表达式的实现与存储">五. S-表达式的实现与存储</h2>
+<p>在Lisp的实现中，S-表达式通常基于 <strong>链表（Cons Cell）</strong> 存储：</p>
+<ul>
+<li>
+<p>一个cons单元包含两个指针：<code>car</code>（指向列表头部）和<code>cdr</code>（指向剩余部分）。</p>
+</li>
+<li>
+<p>示例：<code>(a b c)</code>存储为：</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(cons &#39;a (cons &#39;b (cons &#39;c nil)))
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>原子则直接存储为单一对象。</li>
+</ul>
+<p>这种结构支持高效的递归遍历和操作。</p>
+<h2 id="六-s-表达式的应用与意义">六. S-表达式的应用与意义</h2>
+<ul>
+<li>
+<p>编程语言：Lisp及其方言用S-表达式实现简洁的语法和强大的宏系统。</p>
+</li>
+<li>
+<p>符号计算：如数学表达式<code>(sin (+ x 2))</code>的表示和求导。</p>
+</li>
+<li>
+<p>人工智能：S-表达式在早期AI研究中用于表示知识和推理规则。</p>
+</li>
+<li>
+<p>数据交换：其树形结构启发了现代格式如JSON。</p>
+</li>
+</ul>
+<h2 id="总结">总结</h2>
+<p>从符号到括号，S-表达式是一种基于原子和列表的递归数据结构，通过括号组织层次，用符号承载意义。它的简单语法掩盖了深远的表达能力，既能作为数据表示任意信息，又能作为代码执行复杂逻辑。这种“代码即数据”的特性，加上树形结构的灵活性，使S-表达式成为计算机科学中的经典概念，至今仍影响着编程语言设计和符号处理领域。</p>
+<p><strong>推荐资料</strong></p>
+<ul>
+<li><a href="https://x.com/lijigang_com/status/1899764564713246782" target="_blank" rel="noopener noreffer">李继刚: 思考的原子材料是什么? (Claude Prompt: 定义之矛)</a>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2025-03-26</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2025-03-26-symbolic-expression/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/2025-03-26-symbolic-expression/" data-title="从符号到括号，什么是S-表达式？" data-hashtags="Recursion,AST,Lisp"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/2025-03-26-symbolic-expression/" data-hashtag="Recursion"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/2025-03-26-symbolic-expression/" data-title="从符号到括号，什么是S-表达式？" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/2025-03-26-symbolic-expression/" data-title="从符号到括号，什么是S-表达式？"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/2025-03-26-symbolic-expression/" data-title="从符号到括号，什么是S-表达式？"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/2025-03-26-symbolic-expression/" data-title="从符号到括号，什么是S-表达式？" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/2025-03-26-symbolic-expression/" data-title="从符号到括号，什么是S-表达式？"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/recursion/">Recursion</a>,&nbsp;<a href="/tags/ast/">AST</a>,&nbsp;<a href="/tags/lisp/">Lisp</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2025-03-21-react/" class="prev" rel="prev" title="从函数到副作用 - React 的时空观"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>从函数到副作用 - React 的时空观</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io/" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz","appKey":"gK3L6a7r80578qujBez4FH6C","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"欢迎讨论交流","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

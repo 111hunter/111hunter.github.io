@@ -1,4 +1,4 @@
-# λ 演算: 程序从无到有
+# λ 演算 — 程序从无到有
 
 
 由邱奇创造的 [λ 演算(λ-calculus)](https://en.wikipedia.org/wiki/Lambda_calculus) 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boolean) 或任何非函数的数据类型，它只用匿名单参函数就能模拟图灵机。

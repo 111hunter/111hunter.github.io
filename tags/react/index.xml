@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>React - 标签 - 寂的博客</title>
-        <link>https://111hunter.github.io/tags/react/</link>
+        <link>http://localhost:1313/tags/react/</link>
         <description>React - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/react/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/react/" rel="self" type="application/rss+xml" /><item>
     <title>从函数到副作用 - React 的时空观</title>
-    <link>https://111hunter.github.io/2025-03-21-react/</link>
+    <link>http://localhost:1313/2025-03-21-react/</link>
     <pubDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2025-03-21-react/</guid>
+    <guid>http://localhost:1313/2025-03-21-react/</guid>
     <description><![CDATA[<p>让我们从计算机科学基础到框架设计哲学，逐层解剖 React 的核心思想：</p>
 <h2 id="一数学根基函数式编程的觉醒">一、数学根基：函数式编程的觉醒</h2>
 <p>React 将 UI 抽象为状态函数的哲学，源于对计算机图形学与函数式编程的深刻融合：</p>
@@ -18,18 +18,18 @@
 </item>
 <item>
     <title>以 useEffect 为圆心</title>
-    <link>https://111hunter.github.io/2020-11-02-react-hooks/</link>
+    <link>http://localhost:1313/2020-11-02-react-hooks/</link>
     <pubDate>Mon, 02 Nov 2020 20:00:00 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-11-02-react-hooks/</guid>
+    <guid>http://localhost:1313/2020-11-02-react-hooks/</guid>
     <description><![CDATA[<p>以 useEffect 为圆心，其他 Hooks 为半径，构建 React Hooks 的知识圆环。为什么会想出这样一个标题呢？Hooks 的知识点过于分散，很多朋友在读过 React 官方文档后，还是不知道 Hooks 如何在实际项目中使用。本文希望从 useEffect 的具体用法中引出其他 Hooks，从而构建出完整的 React Hooks 知识体系。</p>]]></description>
 </item>
 <item>
     <title>构建自己的 mini React</title>
-    <link>https://111hunter.github.io/2020-10-18-mini-react/</link>
+    <link>http://localhost:1313/2020-10-18-mini-react/</link>
     <pubDate>Sun, 18 Oct 2020 22:40:00 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-10-18-mini-react/</guid>
+    <guid>http://localhost:1313/2020-10-18-mini-react/</guid>
     <description><![CDATA[<p>现在，我们遵循 React 16.8 的代码体系结构，一步一步地构建我们自己的 mini React。</p>
 <h2 id="基础回顾">基础回顾</h2>
 <p>开始之前，我们先回顾 React 是怎么将 JSX 转换成 DOM 节点的：</p>
@@ -49,18 +49,18 @@
 </item>
 <item>
     <title>实现仿 Recoil 的状态共享</title>
-    <link>https://111hunter.github.io/2020-10-07-recoil-clone/</link>
+    <link>http://localhost:1313/2020-10-07-recoil-clone/</link>
     <pubDate>Wed, 07 Oct 2020 19:40:00 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-10-07-recoil-clone/</guid>
+    <guid>http://localhost:1313/2020-10-07-recoil-clone/</guid>
     <description><![CDATA[<p>本文是我最近阅读一篇英文技术文章后写的小结。阅读前请注意，本文不涉及任何 Recoil 源码。仿写的代码并不是 Recoil 真正的实现方式，本文只仿造实现了 Recoil 中两个重要的 API 接口：Atom 和 Selector。</p>]]></description>
 </item>
 <item>
     <title>Next.js 概览</title>
-    <link>https://111hunter.github.io/2020-09-29-next/</link>
+    <link>http://localhost:1313/2020-09-29-next/</link>
     <pubDate>Tue, 29 Sep 2020 23:30:00 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-09-29-next/</guid>
+    <guid>http://localhost:1313/2020-09-29-next/</guid>
     <description><![CDATA[<p><figure><a class="lightgallery" href="/img/nextjs-slug.webp" title="https://www.reddit.com/r/nextjs/comments/17iy9sx/nextjs_server_action_is_crazy" data-thumbnail="/img/nextjs-slug.webp" data-sub-html="<h2>Next.js Reddit Meme</h2><p>https://www.reddit.com/r/nextjs/comments/17iy9sx/nextjs_server_action_is_crazy</p>">
         
     </a><figcaption class="image-caption">Next.js Reddit Meme</figcaption>
@@ -69,26 +69,26 @@
 </item>
 <item>
     <title>antd &#43; TS 的简单 demo</title>
-    <link>https://111hunter.github.io/2020-06-30-antd/</link>
+    <link>http://localhost:1313/2020-06-30-antd/</link>
     <pubDate>Tue, 30 Jun 2020 00:15:00 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-06-30-antd/</guid>
+    <guid>http://localhost:1313/2020-06-30-antd/</guid>
     <description><![CDATA[<p>这次使用 antd 和 TypeScript 实践一个简单 todolist, 作为简单的练手 Demo。这次的代码中暂时还没有实现数据持久化，状态管理等基础功能，只是把页面上能够看到的功能实现了。因为后续我可能会结合这个 Demo 尝试其他的数据流管理方案。</p>]]></description>
 </item>
 <item>
     <title>写一个可拖拽的 Trello</title>
-    <link>https://111hunter.github.io/2020-05-18-trello/</link>
+    <link>http://localhost:1313/2020-05-18-trello/</link>
     <pubDate>Mon, 18 May 2020 00:18:30 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-05-18-trello/</guid>
+    <guid>http://localhost:1313/2020-05-18-trello/</guid>
     <description><![CDATA[<p>本文记录 react-beautiful-dnd 这个拖拽库的使用，我们将完成一个类似 trello 的看板应用。最终实现的效果如下：List 是一个可横向拖放的列表，Card 可在不同的 List 列表之间拖放。左上方的搜索框能够搜索筛选卡片，右上方的按钮能够实现撤销重做功能。</p>]]></description>
 </item>
 <item>
     <title>Context &#43; Hooks：状态管理新方案</title>
-    <link>https://111hunter.github.io/2020-05-07-react-hooks-state/</link>
+    <link>http://localhost:1313/2020-05-07-react-hooks-state/</link>
     <pubDate>Thu, 07 May 2020 16:46:30 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-05-07-react-hooks-state/</guid>
+    <guid>http://localhost:1313/2020-05-07-react-hooks-state/</guid>
     <description><![CDATA[<p>React 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。</p>
 <p>React 组件分为两类，class 组件和函数组件。hooks 的出现让函数组件拥有了状态(state), 因此让自定义 hook 成为了继 render-props 和高阶组件(HOC)之后的第三种状态共享方案。</p>]]></description>
 </item>

@@ -1,32 +1,32 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Blockchain - 标签 - 寂的博客</title>
-        <link>https://111hunter.github.io/tags/blockchain/</link>
+        <link>http://localhost:1313/tags/blockchain/</link>
         <description>Blockchain - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/blockchain/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/blockchain/" rel="self" type="application/rss+xml" /><item>
     <title>从链下到链上，什么是 DApp？</title>
-    <link>https://111hunter.github.io/2025-03-20-dapp/</link>
+    <link>http://localhost:1313/2025-03-20-dapp/</link>
     <pubDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2025-03-20-dapp/</guid>
+    <guid>http://localhost:1313/2025-03-20-dapp/</guid>
     <description><![CDATA[<p>DApp（去中心化应用程序，Decentralized Application）是一种运行在区块链网络上的应用程序。与传统的中心化应用程序不同，DApp 不依赖单一服务器或中心化实体，而是利用区块链的去中心化特性，通过智能合约实现业务逻辑，提供数据的透明性、安全性和不可篡改性。DApp 通常由两部分组成：前端用户界面（可以是网页、移动应用等）和后端智能合约（运行在区块链上的代码）。</p>]]></description>
 </item>
 <item>
     <title>零知识证明 — 数字签名的起源</title>
-    <link>https://111hunter.github.io/2023-05-02-zkp/</link>
+    <link>http://localhost:1313/2023-05-02-zkp/</link>
     <pubDate>Tue, 02 May 2023 10:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2023-05-02-zkp/</guid>
+    <guid>http://localhost:1313/2023-05-02-zkp/</guid>
     <description><![CDATA[<p>在密码学中，了解数字签名工作原理的最好方法是了解它的起源。因此，让我们花点儿时间简要介绍一下零知识证明(ZKP)，然后重新讨论数字签名。
 想象一下，Peggy 想向 Victor 证明自己拥有一些信息。例如，Peggy 想证明她知道某个群元素的离散对数。换句话说，对于一个给定的 Y 以及群生成元 g，Peggy 想要证明她知道一个 x， 满足 $$ Y = {g^x} $$ 当然，最简单的解决方案是 Peggy 把 x(称为见证)发送给 Victor。这就是一个简单的知识证明，但如果 Peggy 不想让 Victor 得到这个 x，这个方案就不适用了。</p>]]></description>
 </item>
 <item>
     <title>像理解网络模型一样理解区块链</title>
-    <link>https://111hunter.github.io/2022-06-05-blockchain-2/</link>
+    <link>http://localhost:1313/2022-06-05-blockchain-2/</link>
     <pubDate>Sun, 05 Jun 2022 08:00:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2022-06-05-blockchain-2/</guid>
+    <guid>http://localhost:1313/2022-06-05-blockchain-2/</guid>
     <description><![CDATA[<p><figure><a class="lightgallery" href="/img/web3-app.jpg" title="https://mirror.xyz/straycatokinawa.eth/orz4h4Q-XbKC-NH8n4mdAyLp2QFD21Dsq5ewL05qoMk" data-thumbnail="/img/web3-app.jpg" data-sub-html="<h2>The Architecture of a Web3 application</h2><p>https://mirror.xyz/straycatokinawa.eth/orz4h4Q-XbKC-NH8n4mdAyLp2QFD21Dsq5ewL05qoMk</p>">
         
     </a><figcaption class="image-caption">The Architecture of a Web3 application</figcaption>
@@ -37,10 +37,10 @@
 </item>
 <item>
     <title>单机版区块链</title>
-    <link>https://111hunter.github.io/2021-05-25-blockchain/</link>
+    <link>http://localhost:1313/2021-05-25-blockchain/</link>
     <pubDate>Tue, 25 May 2021 19:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2021-05-25-blockchain/</guid>
+    <guid>http://localhost:1313/2021-05-25-blockchain/</guid>
     <description><![CDATA[<p>区块链是一个分布式数据库，任何人都可以读取的它的区块数据。区块链是不可变的，意味着一旦将区块添加到链中，就只能在使链的其余部分无效的情况下才能对其进行更改，这就是加密货币基于区块链来实现的原因。</p>]]></description>
 </item>
 </channel>
