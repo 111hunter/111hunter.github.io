@@ -185,7 +185,7 @@ SwaggerModule.setup("docs", app, document);
 await app.listen(3000);
 ```
 
-`$ npm run start` 启动 nest 项目, 访问 http://localhost:3000/docs ，到这里基本的 crud 操作已经实现，此时，NestJS 框架的<font color="#dd0000">三层结构</font>已有体现。接下来再完善项目。
+`$ npm run start` 启动 nest 项目, 访问 http://localhost:3000/docs ，到这里基本的 crud 操作已经实现，此时，NestJS 框架的**三层结构**已有体现。接下来再完善项目。
 
 ## AOP 的思想
 

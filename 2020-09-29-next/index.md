@@ -212,7 +212,7 @@ export async function getStaticProps({ params }) {
 export default Post;
 ```
 
-api 的更多细节用法请阅读 [官方文档](https://nextjs.org/docs/basic-features/data-fetching)。
+api 的更多细节用法请阅读 [官方文档](https://nextjs.org/docs/pages/building-your-application/data-fetching)。
 
 ## 其他功能
 
@@ -248,7 +248,7 @@ export default function MyApp({ Component, pageProps }) {
 }
 ```
 
-其他配置文件的作用请阅读 [官方文档](https://nextjs.org/docs/advanced-features/custom-document)。
+其他配置文件的作用请阅读 [官方文档](https://nextjs.org/docs/pages/building-your-application/routing/custom-document)。
 
 ### 自定义构建
 
