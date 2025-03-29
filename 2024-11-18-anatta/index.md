@@ -89,8 +89,8 @@
 
 **推荐阅读**
 
-- [U.G. krishnamurti Interview - What is The Purpose of Human Life?](https://www.youtube.com/watch?v=-UrLWN0HAgE&t=109s)
+- [What is The Purpose of Human Life? | U.G. krishnamurti Interview](https://www.youtube.com/watch?v=-UrLWN0HAgE&t=109s)
 
-- [U.G. Krishnamurti Interview - Anti Guru or Godman](https://www.youtube.com/watch?v=B-RT8tj5PrI&t=956s)
+- [Anti Guru or Godman | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=B-RT8tj5PrI&t=956s)
 
 - [Who is U.G. Krishnamurti](https://medium.com/original-philosophy/who-is-ug-krishnamurti-d1f23e801be0)

@@ -171,7 +171,7 @@ JavaScript 在浏览器中的执行是单线程的，这对其运行机制和性
 
 从启动浏览器到打开网页，涉及多进程协作：`Browser Process` 管理全局，`Renderer Process` 渲染页面，`Network Process` 处理请求，`GPU Process` 优化图形。JavaScript 的单线程特性通过事件循环实现异步处理，尽管存在阻塞风险，但 Worker API 提供了并发能力。这种架构设计兼顾了安全性、性能和开发便捷性，是现代浏览器的核心优势。
 
-**推荐阅读**
+**参阅资料**
 
-- [Inside look at modern web browser - Chrome for Developers](https://developer.chrome.com/blog/inside-browser-part1)
+- [Inside look at modern web browser | Chrome for Developers](https://developer.chrome.com/blog/inside-browser-part1)
 

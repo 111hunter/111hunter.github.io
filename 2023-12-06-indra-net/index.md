@@ -29,7 +29,7 @@
 
 **推荐阅读**
 
-- [U.G. Krishnamurti - What Do I Think?](https://www.youtube.com/watch?v=h3QijuluQJw&t=1114s)
+- [What Do I Think? | U.G. Krishnamurti](https://www.youtube.com/watch?v=h3QijuluQJw&t=1114s)
 
 - [偏见造成人与人的对立｜克里希那穆提](https://mp.weixin.qq.com/s/5ZMVIXAxPanROo80pTnA5g)
 

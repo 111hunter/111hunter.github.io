@@ -67,6 +67,6 @@
 
 **推荐阅读**
 
-- [U.G. Krishnamurti Interview - You Have No Experiences!](https://www.youtube.com/watch?v=jrBBkWRL9ec&t=1413s)
+- [You Have No Experiences! | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=jrBBkWRL9ec&t=1413s)
 
-- [U.G. Krishnamurti - There Is Always Someone Else There](https://www.youtube.com/watch?v=PfLEkOdB45M&t=332s)
+- [There Is Always Someone Else There | U.G. Krishnamurti](https://www.youtube.com/watch?v=PfLEkOdB45M&t=332s)

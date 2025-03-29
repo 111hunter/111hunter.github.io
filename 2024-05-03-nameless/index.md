@@ -55,6 +55,6 @@
 
 **推荐阅读**
 
-- [丽莲空间：自我机制 — 识别](https://mp.weixin.qq.com/s/mh6Llkq9PnJX3AJoN0Ae5g)
+- [自我机制 — 识别 | 丽莲空间](https://mp.weixin.qq.com/s/mh6Llkq9PnJX3AJoN0Ae5g)
 
-- [U.G. Krishnamurti Interview - Purpose of life](https://www.youtube.com/watch?v=p6qgSApgVhQ)
+- [Purpose of life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=p6qgSApgVhQ)

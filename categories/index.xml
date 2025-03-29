@@ -1,31 +1,31 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - 分类 - 寂的博客</title>
-        <link>http://localhost:1313/categories/</link>
+        <link>https://111hunter.github.io/categories/</link>
         <description>Categories - 分类 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/categories/" rel="self" type="application/rss+xml" /><item>
     <title>Theory</title>
-    <link>http://localhost:1313/categories/theory/</link>
+    <link>https://111hunter.github.io/categories/theory/</link>
     <pubDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/categories/theory/</guid>
+    <guid>https://111hunter.github.io/categories/theory/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Coding</title>
-    <link>http://localhost:1313/categories/coding/</link>
+    <link>https://111hunter.github.io/categories/coding/</link>
     <pubDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/categories/coding/</guid>
+    <guid>https://111hunter.github.io/categories/coding/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Thinking</title>
-    <link>http://localhost:1313/categories/thinking/</link>
+    <link>https://111hunter.github.io/categories/thinking/</link>
     <pubDate>Mon, 27 Jan 2025 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/categories/thinking/</guid>
+    <guid>https://111hunter.github.io/categories/thinking/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

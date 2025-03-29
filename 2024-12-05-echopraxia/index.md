@@ -100,17 +100,17 @@ UG：你看，即使那样你也会发现你做不到。**你看，当有需求�
 
 **推荐阅读**
 
-- [U.G. Krishnamurti Interview - Mind, Thought, Body, Life](https://www.youtube.com/watch?v=x2HIcDgDgMs&t=101s)
+- [Mind, Thought, Body, Life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=x2HIcDgDgMs&t=101s)
 
 - [困惑暗示着拣择，而拣择就是思维的产物｜克里希那穆提](https://mp.weixin.qq.com/s/mkNGE_tirtjpdrDvH1p0kg)
 
 - [无明没有开始，但是可以结束｜克里希那穆提](https://mp.weixin.qq.com/s/PwHNWxSi9sNo6lb_k81y8w)
 
-<!-- - [U.G. Krishnamurti - Are You Sure of That?](https://www.youtube.com/watch?v=mzTxLHpuNTo&t=3797s) -->
+<!-- - [Are You Sure of That? | U.G. Krishnamurti](https://www.youtube.com/watch?v=mzTxLHpuNTo&t=3797s) -->
 
-<!-- - [U.G. Krishnamurti Interview - Quest For Permanent Happiness!](https://www.youtube.com/watch?v=d_B8_A-RSIY) -->
+<!-- - [Quest For Permanent Happiness! | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=d_B8_A-RSIY) -->
 
-<!-- - [世界的真相是什么? - 吴施无的知乎回答](https://www.zhihu.com/question/486546847/answer/3509777966) -->
+<!-- - [世界的真相是什么? | 吴施无的知乎回答](https://www.zhihu.com/question/486546847/answer/3509777966) -->
 
 <!-- - [《盲视》：关于永恒的未知](https://www.bilibili.com/video/BV1ZG411W7Hh/?spm_id_from=333.788.top_right_bar_window_custom_collection.content.click&vd_source=21db84374de3d6785c04b0329b69e5e5) -->
 

@@ -129,6 +129,6 @@ UG：我告诉你，你不是一个平凡的人；你是一个非凡的人（笑
 
 - [inner-worlds-outer-worlds-serpent-and-the-lotus](https://awakentheworld.com/film/inner-worlds-outer-worlds-serpent-and-the-lotus/)
 
-- [U.G. Krishnamurti Interview - Mind, Thought, Body, Life](https://www.youtube.com/watch?v=x2HIcDgDgMs&t=101s)
+- [Mind, Thought, Body, Life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=x2HIcDgDgMs&t=101s)
 
-- [U.G. Krishnamurti Interview - Purpose of life](https://www.youtube.com/watch?v=p6qgSApgVhQ)
+- [Purpose of life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=p6qgSApgVhQ)

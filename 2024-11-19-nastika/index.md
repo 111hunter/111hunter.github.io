@@ -67,6 +67,6 @@
 
 **推荐阅读**
 
-- [U.G. Krishnamurti Interview - What Thinking Is? Why Do We Think?](https://www.youtube.com/watch?v=9olyqhwf2y4&t=791s)
+- [What Thinking Is? Why Do We Think? | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=9olyqhwf2y4&t=791s)
 
-- [U.G. Krishnamurti Interview - You Can't Think at All!](https://www.youtube.com/watch?v=HKhWl9JfgYY&t=3112s)
+- [You Can't Think at All! | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=HKhWl9JfgYY&t=3112s)

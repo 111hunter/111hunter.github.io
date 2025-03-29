@@ -168,6 +168,6 @@ JavaScript 的发展由 TC39（ECMAScript 委员会）管理，社区需求推�
 
 从栈到堆，JavaScript 的数据存储体现了内存管理的效率与灵活性；其运行机制通过单线程和事件循环平衡了简单性与异步能力；语法演进（如 ES6 及之后）不断提升开发体验；设计理念则根植于历史、实用性和生态需求。JavaScript 的成功在于它既简单易上手，又能通过引擎优化和社区扩展满足复杂场景。
 
-**推荐阅读**
+**参阅资料**
 
-- [mdn web docs - Web technology for developers](https://developer.mozilla.org/en-US/docs/Web)
+- [Web technology for developers | MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web)

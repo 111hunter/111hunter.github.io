@@ -1,23 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>AST - 标签 - 寂的博客</title>
-        <link>http://localhost:1313/tags/ast/</link>
+        <link>https://111hunter.github.io/tags/ast/</link>
         <description>AST - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/ast/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/ast/" rel="self" type="application/rss+xml" /><item>
     <title>从符号到括号，什么是S-表达式？</title>
-    <link>http://localhost:1313/2025-03-26-symbolic-expression/</link>
+    <link>https://111hunter.github.io/2025-03-26-symbolic-expression/</link>
     <pubDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2025-03-26-symbolic-expression/</guid>
+    <guid>https://111hunter.github.io/2025-03-26-symbolic-expression/</guid>
     <description><![CDATA[<p>S-表达式（S-expression，全称Symbolic Expression，符号表达式）是一种由约翰·麦卡锡（John McCarthy）在设计Lisp编程语言时引入的数据表示方法。它以简洁的语法和强大的表达能力著称，不仅是Lisp及其变种（如Scheme、Common Lisp）的核心，还广泛应用于符号计算、人工智能和数据结构的表示。S-表达式的核心思想是通过符号和括号构建一种既能表示数据又能表示程序的结构，具有“代码即数据”的特性。</p>]]></description>
 </item>
 <item>
     <title>[译]元编程</title>
-    <link>http://localhost:1313/2021-01-21-meta-programs/</link>
+    <link>https://111hunter.github.io/2021-01-21-meta-programs/</link>
     <pubDate>Thu, 21 Jan 2021 16:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2021-01-21-meta-programs/</guid>
+    <guid>https://111hunter.github.io/2021-01-21-meta-programs/</guid>
     <description><![CDATA[<p>本文翻译自 stereobooster 的博客文章：<a href="https://stereobooster.com/posts/metaprogramming/" target="_blank" rel="noopener noreffer">metaprogramming</a>
 ，少量删改。完整内容参阅原文。</p>
 <h2 id="什么是元编程">什么是元编程</h2>
@@ -28,20 +28,20 @@
 </item>
 <item>
     <title>实现 λ 演算解释器</title>
-    <link>http://localhost:1313/2020-12-13-%CE%BB-interpreter/</link>
+    <link>https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/</link>
     <pubDate>Sun, 13 Dec 2020 09:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2020-12-13-%CE%BB-interpreter/</guid>
+    <guid>https://111hunter.github.io/2020-12-13-%CE%BB-interpreter/</guid>
     <description><![CDATA[<p>如果你没有听说过 λ 演算，可以阅读我的这篇<a href="https://111hunter.github.io/2020-11-26-%CE%BB-calculus/" target="_blank" rel="noopener noreffer">文章</a>
 。如果你没有编译原理相关知识，可以阅读我的这篇<a href="https://111hunter.github.io/2020-12-10-lex-parse" target="_blank" rel="noopener noreffer">文章</a>
 。首先介绍调度场算法，后面的实现中会用到。</p>]]></description>
 </item>
 <item>
     <title>程序解释与编译</title>
-    <link>http://localhost:1313/2020-12-10-lex-parse/</link>
+    <link>https://111hunter.github.io/2020-12-10-lex-parse/</link>
     <pubDate>Thu, 10 Dec 2020 09:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2020-12-10-lex-parse/</guid>
+    <guid>https://111hunter.github.io/2020-12-10-lex-parse/</guid>
     <description><![CDATA[<p>程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。</p>
 <h2 id="前置知识">前置知识</h2>
 <p>算术表达式根据运算符所在的位置可以分为三种表示方法：</p>
@@ -55,10 +55,10 @@
 </item>
 <item>
     <title>入门 AST 抽象语法树</title>
-    <link>http://localhost:1313/2020-08-23-ast/</link>
+    <link>https://111hunter.github.io/2020-08-23-ast/</link>
     <pubDate>Sun, 23 Aug 2020 00:30:00 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2020-08-23-ast/</guid>
+    <guid>https://111hunter.github.io/2020-08-23-ast/</guid>
     <description><![CDATA[<p>如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、Prettier 等功能的实现，都是建立在 AST 的基础之上的。</p>]]></description>
 </item>
 </channel>
