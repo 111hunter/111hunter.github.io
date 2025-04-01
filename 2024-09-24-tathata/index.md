@@ -49,7 +49,7 @@
 
 **推荐阅读**
 
-- [李继刚: 问题背后始终藏着问题 (Claude Prompt: 问题之锤)](https://mp.weixin.qq.com/s/KlkomVKEYKjVAb6NEXcjSg)
+- [问题背后始终藏着问题 (Claude Prompt: 问题之锤)｜李继刚](https://mp.weixin.qq.com/s/KlkomVKEYKjVAb6NEXcjSg)
 
 - [“不知道”是一种摆脱意识内容的状态｜克里希那穆提](https://mp.weixin.qq.com/s/vxqgibdrQwZxdwcFpeJN_g)
 

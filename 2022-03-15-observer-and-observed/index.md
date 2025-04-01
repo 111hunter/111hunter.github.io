@@ -69,5 +69,5 @@
 
 **推荐阅读**
 
-- [丽莲空间：自我机制 — 二元性](https://mp.weixin.qq.com/s/qG9zyIJe36uxN3f7ZlSVHQ)
+- [自我机制 — 二元性｜丽莲空间](https://mp.weixin.qq.com/s/qG9zyIJe36uxN3f7ZlSVHQ)
 

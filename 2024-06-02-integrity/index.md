@@ -21,4 +21,4 @@
 
 **推荐阅读**
 
-- [丽莲空间：自我机制 — 心理时间](https://mp.weixin.qq.com/s/epI4ZrxbFQKXU6bW9jMB4w)
+- [自我机制 — 心理时间｜丽莲空间](https://mp.weixin.qq.com/s/epI4ZrxbFQKXU6bW9jMB4w)
