@@ -70,3 +70,5 @@
 - [What Thinking Is? Why Do We Think? | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=9olyqhwf2y4&t=791s)
 
 - [You Can't Think at All! | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=HKhWl9JfgYY&t=3112s)
+
+- [A to Z For Life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=tVcgekmpQ64)
