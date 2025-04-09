@@ -39,6 +39,10 @@
     <author>寂</author>
     <guid>https://111hunter.github.io/2025-03-20-dapp/</guid>
     <description><![CDATA[<!-- 从链下到链上，什么是DApp？——以典型DeFi借贷平台为例 -->
+<p><figure><a class="lightgallery" href="/img/onchain-mcp.jpg" title="https://github.com/bankless/onchain-mcp" data-thumbnail="/img/onchain-mcp.jpg" data-sub-html="<h2>Bankless Onchain MCP Server</h2><p>https://github.com/bankless/onchain-mcp</p>">
+        
+    </a><figcaption class="image-caption">Bankless Onchain MCP Server</figcaption>
+    </figure></p>
 <p>DApp（去中心化应用程序，Decentralized Application）是一种运行在区块链网络上的应用程序。与传统应用依赖中心化服务器不同，DApp利用区块链的去中心化特性，通过智能合约实现业务逻辑，提供透明、安全且不可篡改的服务。DApp通常由两部分组成：</p>]]></description>
 </item>
 <item>

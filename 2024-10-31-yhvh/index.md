@@ -1,7 +1,7 @@
 # 我们为什么接受别人所说的话？
 
 
-> 一个人不能服侍两位主人；因为他不是恨这位、爱那位，就是重这位、轻那位。你们不能又事奉神，又崇拜玛门。      -《马太福音》 
+> 先生， 我们为什么追求身体安全之外的安全呢？ 除了生存安全之外， 我们为什么还想得到安全？      - 克里希那穆提 
 
 希：我们想探讨一下这个问题， 即有没有一种深刻的安全， 自我能否被消除。你曾经说过如果这是可能的， 那么个人带到办公室去的那些问题， 那些问题
 
@@ -759,7 +759,3 @@
 **参阅资料**
 
 - 节选自 [The need for security - 3rd Scientists Discussion, Ojai, 1982](https://www.krishnamurti.org/transcript/the-need-for-security/)
-
-**推荐阅读**
-
-- [常年独居的人，靠什么抵抗孤独？| hasmart的知乎回答](https://www.zhihu.com/question/667903304/answer/3638324774?utm_campaign=&utm_medium=social&utm_psn=1839318541892984832&utm_source=qq)

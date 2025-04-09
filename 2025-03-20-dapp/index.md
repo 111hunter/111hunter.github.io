@@ -3,13 +3,15 @@
 
 <!-- 从链下到链上，什么是DApp？——以典型DeFi借贷平台为例 -->
 
+![https://github.com/bankless/onchain-mcp](/img/onchain-mcp.jpg "Bankless Onchain MCP Server")
+
 DApp（去中心化应用程序，Decentralized Application）是一种运行在区块链网络上的应用程序。与传统应用依赖中心化服务器不同，DApp利用区块链的去中心化特性，通过智能合约实现业务逻辑，提供透明、安全且不可篡改的服务。DApp通常由两部分组成：
 
 - **前端用户界面**：如网页或移动应用，用户通过它与DApp交互。
 
 - **后端智能合约**：运行在区块链上的代码，负责核心业务逻辑的执行。
 
-以DeFi借贷平台（如Aave V3）为例，用户可以通过DApp存入加密资产（如ETH）作为抵押品，借出其他资产（如DAI），并实时查看借贷状态。这种无需信任中介的金融服务正是DApp的典型应用场景。
+以DeFi借贷平台（如Aave V3）为例，用户可以通过DApp存入加密资产（如ETH）作为抵押品，借出其他资产（如USDC），并实时查看借贷状态。这种无需信任中介的金融服务正是DApp的典型应用场景。
 
 ## 1. 智能合约：DApp的核心
 
@@ -21,7 +23,7 @@ DApp（去中心化应用程序，Decentralized Application）是一种运行在
 
 - **去中心化**：无需依赖第三方中介，降低信任成本。
 
-在Aave V3中，智能合约管理用户的抵押品和借款。例如，用户存入ETH后，合约根据市场条件计算可借DAI的数量，并在抵押率不足时自动触发清算机制。
+在Aave V3中，智能合约管理用户的抵押品和借款。例如，用户存入ETH后，合约根据市场条件计算可借USDC的数量，并在抵押率不足时自动触发清算机制。
 
 Aave V3示例：Aave V3的借贷逻辑由Pool合约的 [BorrowLogic](https://etherscan.io/address/0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2#readProxyContract#F8)实现。
 
