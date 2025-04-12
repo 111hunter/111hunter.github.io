@@ -52,3 +52,7 @@
 **参阅资料**
 
 - 节选自 [《The Whole Movement of Life Is Learning》](https://jkrishnamurti.org/content/whole-movement-life-learning)
+
+**推荐阅读**
+
+- [Purpose of life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=p6qgSApgVhQ)

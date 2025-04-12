@@ -1,9 +1,9 @@
-# 马戏团的小丑穿上了燕尾服
+# 知识总是与愚昧共存
 
 
 <!-- > 我只知道我不知道。     - 苏格拉底 -->
 
-> 人类只对解决问题的方法感兴趣，而对问题本身不感兴趣。你说这些伟大的圣贤、圣人和人类的拯救者都能有我们问题的答案。那么，我们为什么还在问同样的问题？           - U.G. Krishnamurti
+> 人类只对解决问题的方法感兴趣，而对问题本身不感兴趣。你说这些伟大的圣贤、圣人和人类的拯救者都有我们问题的答案。那么，我们为什么还在问同样的问题？           - U.G. Krishnamurti
 
 **是什么让你不在你的自然状态？你在不断地远离自己**。你想要快乐，要么永远快乐，要么至少此刻快乐。你不满足于你每天的经历，所以你想要一些新的经历。你想完善自己、改变自己。你在向外伸展，试图成为不同于你自己的东西。正是这个让你远离你自己。
 
@@ -71,4 +71,6 @@
 
 - [You Can't Think at All! | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=HKhWl9JfgYY&t=3112s)
 
-- [A to Z For Life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=tVcgekmpQ64)
+- [U.G Krishnamurti - Snap Out of It!](https://www.youtube.com/watch?v=1exoQ3W-6E4&t=1073s)
+
+<!-- - [A to Z For Life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=tVcgekmpQ64) -->

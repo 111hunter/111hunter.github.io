@@ -61,6 +61,4 @@
 
 **推荐阅读**
 
-- [认识自我](https://111hunter.github.io/2024-01-01-self-knowledge/)
-
-
+- [认识你自己](https://111hunter.github.io/2024-01-01-know-thyself/)

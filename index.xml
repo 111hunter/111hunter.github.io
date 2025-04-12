@@ -4,9 +4,19 @@
         <link>https://111hunter.github.io/</link>
         <description>彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</lastBuildDate>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Fri, 11 Apr 2025 13:50:34 &#43;0800</lastBuildDate>
             <atom:link href="https://111hunter.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>心智模型 — 游戏规则说明书</title>
+    <link>https://111hunter.github.io/2025-04-11-mental-models/</link>
+    <pubDate>Fri, 11 Apr 2025 13:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2025-04-11-mental-models/</guid>
+    <description><![CDATA[<!-- > 人必须始终带着完整的意识热切地活着，诚实而非忠实地面对发生的每件事情。这样就能从每件事情自身的角度，从本质上来看待它，而不是去比较你能从中得到什么。 - 克里希阿穆提 -->
+<blockquote>
+<p>如果你想成为一名优秀的思考者，你必须培养一种能够跨越管辖界限的头脑。你不必了解所有内容。只需吸收所有这些学科中最好的大创意。而且这并不难做到。  — 查理·芒格</p>]]></description>
+</item>
+<item>
     <title>从符号到括号，什么是S-表达式？</title>
     <link>https://111hunter.github.io/2025-03-26-symbolic-expression/</link>
     <pubDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</pubDate>
@@ -86,24 +96,14 @@
 <p><figure><a class="lightgallery" href="/img/hello-world-cpp.jpeg" title="hello-world-cpp" data-thumbnail="/img/hello-world-cpp.jpeg" data-sub-html="<h2>hello-world-cpp</h2><p>hello-world-cpp</p>]]></description>
 </item>
 <item>
-    <title>蜘蛛会结网，河狸会筑坝</title>
-    <link>https://111hunter.github.io/2024-12-05-echopraxia/</link>
+    <title>我们过着一种盲从的生活</title>
+    <link>https://111hunter.github.io/2024-12-05-avidya/</link>
     <pubDate>Thu, 05 Dec 2024 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2024-12-05-echopraxia/</guid>
+    <guid>https://111hunter.github.io/2024-12-05-avidya/</guid>
     <description><![CDATA[<!-- > 十方如来，同一道故。出离生死，皆以直心。       —《楞严经》 -->
 <blockquote>
 <p>这就像任何其他的反射行为一样：你问一个问题，那么就会有一些东西从它出来。它是如何运作的，我不知道。它不是任何思想的产物。从我身上出来的任何东西都不是由思想制造出来的 — 但是某种东西正在出来。你在扔一个球，球弹回来，你称它为“答案”。实际上，我所做的只是重新构造问题，然后把它扔给你们。            - U.G. Krishnamurti</p>]]></description>
-</item>
-<item>
-    <title>不孕妇女的孩子</title>
-    <link>https://111hunter.github.io/2024-12-03-gnosis/</link>
-    <pubDate>Tue, 03 Dec 2024 11:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>https://111hunter.github.io/2024-12-03-gnosis/</guid>
-    <description><![CDATA[<blockquote>
-<p>你若能活出你内在原有之物，那么你原来拥有之物能拯救你。倘若你内没有那样东西，那么你内没有之物会置你于死地！ - 《多玛福音》</p></blockquote>
-<p>安：克里希那穆提先生， 在我们上次的谈话中，在把生活看作是 一个整体运动的背景下， 我们开始谈到了意识以及 它和死亡的关系。</p>]]></description>
 </item>
 </channel>
 </rss>
