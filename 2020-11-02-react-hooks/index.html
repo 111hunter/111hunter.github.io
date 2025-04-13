@@ -119,7 +119,7 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#函数式编程">函数式编程</a></li>
-    <li><a href="#心智模型">心智模型</a></li>
+    <li><a href="#心智模式">心智模式</a></li>
     <li><a href="#状态同步">状态同步</a></li>
     <li><a href="#usereducer">useReducer</a></li>
     <li><a href="#usecallback">useCallback</a></li>
@@ -151,8 +151,8 @@
 <p><strong>纯函数性</strong>：相同输入必得相同输出，无副作用</p>
 <p><strong>状态驱动</strong>：UI 是状态的映射函数</p>
 <p><strong>幂等性</strong>：渲染过程可安全重复执行</p>
-<h2 id="心智模型">心智模型</h2>
-<p>学习 Hooks 的使用，重点是心智模型的转变。useEffect 的心智模型是实现状态同步，而不是响应生命周期事件。每次触发时 useEffect，它都会捕获本次调用时组件中的数据，也就是所谓的 Capture Value 特性：<strong>组件每次渲染都有自己的数据，组件内的函数(包括 effects，事件处理函数，定时器或者 API 调用等)会捕获该次渲染的组件数据。</strong></p>
+<h2 id="心智模式">心智模式</h2>
+<p>学习 Hooks 的使用，重点是心智模式的转变。useEffect 的心智模式是实现状态同步，而不是响应生命周期事件。每次触发时 useEffect，它都会捕获本次调用时组件中的数据，也就是所谓的 Capture Value 特性：<strong>组件每次渲染都有自己的数据，组件内的函数(包括 effects，事件处理函数，定时器或者 API 调用等)会捕获该次渲染的组件数据。</strong></p>
 <h2 id="状态同步">状态同步</h2>
 <p>首先看这段代码，请判断最终计时器中的 count 和 组件中的 count 分别是多少？</p>
 <div class="highlight"><div class="chroma">
