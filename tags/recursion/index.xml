@@ -4,33 +4,13 @@
         <link>https://111hunter.github.io/tags/recursion/</link>
         <description>Recursion - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Fri, 11 Apr 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/recursion/" rel="self" type="application/rss+xml" /><item>
-    <title>心智模式 — 游戏规则说明书</title>
-    <link>https://111hunter.github.io/2025-04-11-mental-models/</link>
-    <pubDate>Fri, 11 Apr 2025 13:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>https://111hunter.github.io/2025-04-11-mental-models/</guid>
-    <description><![CDATA[<!-- > 人必须始终带着完整的意识热切地活着，诚实而非忠实地面对发生的每件事情。这样就能从每件事情自身的角度，从本质上来看待它，而不是去比较你能从中得到什么。 - 克里希那穆提 -->
-<blockquote>
-<p>如果你想成为一名优秀的思考者，你必须培养一种能够跨越管辖界限的头脑。你不必了解所有内容。只需吸收所有这些学科中最好的大创意。而且这并不难做到。  — 查理·芒格</p>]]></description>
-</item>
-<item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/recursion/" rel="self" type="application/rss+xml" /><item>
     <title>从符号到括号，什么是S-表达式？</title>
     <link>https://111hunter.github.io/2025-03-26-symbolic-expression/</link>
     <pubDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
     <guid>https://111hunter.github.io/2025-03-26-symbolic-expression/</guid>
     <description><![CDATA[<p>S-表达式（S-expression，全称Symbolic Expression，符号表达式）是一种由约翰·麦卡锡（John McCarthy）在设计Lisp编程语言时引入的数据表示方法。它以简洁的语法和强大的表达能力著称，不仅是Lisp及其变种（如Scheme、Common Lisp）的核心，还广泛应用于符号计算、人工智能和数据结构的表示。S-表达式的核心思想是通过符号和括号构建一种既能表示数据又能表示程序的结构，具有“代码即数据”的特性。</p>]]></description>
-</item>
-<item>
-    <title>原罪 — 知善恶树</title>
-    <link>https://111hunter.github.io/2024-12-25-yaldabaoth/</link>
-    <pubDate>Wed, 25 Dec 2024 11:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>https://111hunter.github.io/2024-12-25-yaldabaoth/</guid>
-    <description><![CDATA[<!-- > 你从书本上得到的哲学思想、各种理论及信仰等，这些都成了你的传统，它们对你的思想实在有很大的障碍，因为你的心会利用这些东西作为自己的保障，于是你就被它限制住了。所以你必须一方面让你的心从传统中解脱出来，一方面也要培养自己的知识与技术，这就是教育的功用。      - 克里希那穆提 -->
-<blockquote>
-<p>执于己见，障蔽真心，反以智为桎梏。    - 由 Gemini 2.0 Flash Experimental 生成</p>]]></description>
 </item>
 <item>
     <title>Hello, World! return 0</title>
@@ -96,6 +76,25 @@
     <guid>https://111hunter.github.io/2023-12-19-itp/</guid>
     <description><![CDATA[<blockquote>
 <p>“许多独立的并且很有说服力的论点，都表明时空这个概念本身并不是基础性的。时空注定要消亡。在物理定律的实际底层描述中，根本不存在时空这样的东西。这是非常令人震惊的，因为物理学被认为是描述在空间和时间中发生的事情。因此，如果没有时空，就不清楚物理学讲的什么。” — 尼马·阿尔卡尼-哈米德，康奈尔大学信使讲座，2016</p>]]></description>
+</item>
+<item>
+    <title>业力 - 因陀罗网</title>
+    <link>https://111hunter.github.io/2023-12-06-indra-net/</link>
+    <pubDate>Wed, 06 Dec 2023 10:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2023-12-06-indra-net/</guid>
+    <description><![CDATA[<blockquote>
+<p>有我之境，以我观物，故物我皆著我之色彩。无我之境，以物观物，故不知何者为我，何者为物。  -《人间词话》</p></blockquote>
+<p>你看到的世界是你的本质，而不是世界的本质，你对世界的看法是你意识状态的反映。事情于你而言是增上缘还是增上慢，由你内心发生的事情决定，而不是由事情本身决定。当我们的内在世界发生变化时，我们的外在世界也在跟着发生变化。</p>]]></description>
+</item>
+<item>
+    <title>一些通用计算模型</title>
+    <link>https://111hunter.github.io/2021-01-30-tag-system/</link>
+    <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>https://111hunter.github.io/2021-01-30-tag-system/</guid>
+    <description><![CDATA[<blockquote>
+<p>在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算」的。 &ndash; wikipedia</p>]]></description>
 </item>
 </channel>
 </rss>
