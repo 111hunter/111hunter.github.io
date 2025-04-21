@@ -1,17 +1,25 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>寂的博客</title>
-        <link>https://111hunter.github.io/</link>
+        <link>http://localhost:1313/</link>
         <description>彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Fri, 11 Apr 2025 13:50:34 &#43;0800</lastBuildDate>
-            <atom:link href="https://111hunter.github.io/index.xml" rel="self" type="application/rss+xml" />
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sun, 20 Apr 2025 21:50:34 &#43;0800</lastBuildDate>
+            <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>弱 — 历史的动力</title>
+    <link>http://localhost:1313/2025-04-20-weak/</link>
+    <pubDate>Sun, 20 Apr 2025 21:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-04-20-weak/</guid>
+    <description><![CDATA[<p>拉图尔：我有理由保持怀疑，因为您对智者的描述会导致一种完全孤立、孤芳自赏、回归象牙塔的形象。谈论道德总是让人只关注自我，这就没办法再大幅往前走。</p>]]></description>
+</item>
+<item>
     <title>心智模式 — 游戏规则说明书</title>
-    <link>https://111hunter.github.io/2025-04-11-mental-models/</link>
+    <link>http://localhost:1313/2025-04-11-mental-models/</link>
     <pubDate>Fri, 11 Apr 2025 13:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2025-04-11-mental-models/</guid>
+    <guid>http://localhost:1313/2025-04-11-mental-models/</guid>
     <description><![CDATA[<!-- > 人必须始终带着完整的意识热切地活着，诚实而非忠实地面对发生的每件事情。这样就能从每件事情自身的角度，从本质上来看待它，而不是去比较你能从中得到什么。 - 克里希那穆提 -->
 <!-- 一花一世界，一叶一如来。  -《华严经》 -->
 <blockquote>
@@ -19,18 +27,18 @@
 </item>
 <item>
     <title>从符号到括号，什么是S-表达式？</title>
-    <link>https://111hunter.github.io/2025-03-26-symbolic-expression/</link>
+    <link>http://localhost:1313/2025-03-26-symbolic-expression/</link>
     <pubDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2025-03-26-symbolic-expression/</guid>
+    <guid>http://localhost:1313/2025-03-26-symbolic-expression/</guid>
     <description><![CDATA[<p>S-表达式（S-expression，全称Symbolic Expression，符号表达式）是一种由约翰·麦卡锡（John McCarthy）在设计Lisp编程语言时引入的数据表示方法。它以简洁的语法和强大的表达能力著称，不仅是Lisp及其变种（如Scheme、Common Lisp）的核心，还广泛应用于符号计算、人工智能和数据结构的表示。S-表达式的核心思想是通过符号和括号构建一种既能表示数据又能表示程序的结构，具有“代码即数据”的特性。</p>]]></description>
 </item>
 <item>
     <title>从函数到副作用 - React 的时空观</title>
-    <link>https://111hunter.github.io/2025-03-21-react/</link>
+    <link>http://localhost:1313/2025-03-21-react/</link>
     <pubDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2025-03-21-react/</guid>
+    <guid>http://localhost:1313/2025-03-21-react/</guid>
     <description><![CDATA[<p>让我们从计算机科学基础到框架设计哲学，逐层解剖 React 的核心思想：</p>
 <h2 id="一数学根基函数式编程的觉醒">一、数学根基：函数式编程的觉醒</h2>
 <p>React 将 UI 抽象为状态函数的哲学，源于对计算机图形学与函数式编程的深刻融合：</p>
@@ -39,18 +47,18 @@
 </item>
 <item>
     <title>从栈到堆，什么是 JavaScript?</title>
-    <link>https://111hunter.github.io/2025-03-21-js/</link>
+    <link>http://localhost:1313/2025-03-21-js/</link>
     <pubDate>Fri, 21 Mar 2025 10:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2025-03-21-js/</guid>
+    <guid>http://localhost:1313/2025-03-21-js/</guid>
     <description><![CDATA[<p>JavaScript 是一种功能强大且灵活的编程语言，广泛应用于网页开发、服务器端开发等领域。要深入理解 JavaScript，我们可以从变量在计算机中的数据存储开始，逐步探讨其运行机制、最新语法以及设计理念。以下是对这些方面的逐层剖析。</p>]]></description>
 </item>
 <item>
     <title>从链下到链上，什么是 DApp？</title>
-    <link>https://111hunter.github.io/2025-03-20-dapp/</link>
+    <link>http://localhost:1313/2025-03-20-dapp/</link>
     <pubDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2025-03-20-dapp/</guid>
+    <guid>http://localhost:1313/2025-03-20-dapp/</guid>
     <description><![CDATA[<!-- 从链下到链上，什么是DApp？——以典型DeFi借贷平台为例 -->
 <p><figure><a class="lightgallery" href="/img/onchain-mcp.jpg" title="https://github.com/bankless/onchain-mcp" data-thumbnail="/img/onchain-mcp.jpg" data-sub-html="<h2>Bankless Onchain MCP Server</h2><p>https://github.com/bankless/onchain-mcp</p>">
         
@@ -60,18 +68,18 @@
 </item>
 <item>
     <title>从启动浏览器到打开网页，发生了什么？</title>
-    <link>https://111hunter.github.io/2025-03-17-browser/</link>
+    <link>http://localhost:1313/2025-03-17-browser/</link>
     <pubDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2025-03-17-browser/</guid>
+    <guid>http://localhost:1313/2025-03-17-browser/</guid>
     <description><![CDATA[<p>从计算机科学的角度来看，从启动浏览器到输入网址并打开网页的全过程是一个复杂且多层次的协作，涉及网络通信、浏览器架构、JavaScript 执行机制等多个方面。现代浏览器（如Chrome、Firefox）采用了多进程架构，并结合单线程的 JavaScript 运行机制，通过事件循环和专用 Worker API 实现高效的任务处理和页面渲染。以下将详细描述这一过程，并突出 JavaScript 的单线程特性及其在浏览器中的运作方式。</p>]]></description>
 </item>
 <item>
     <title>我们制造欺骗，然后成为它的奴隶</title>
-    <link>https://111hunter.github.io/2025-01-27-self-delusion/</link>
+    <link>http://localhost:1313/2025-01-27-self-delusion/</link>
     <pubDate>Mon, 27 Jan 2025 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2025-01-27-self-delusion/</guid>
+    <guid>http://localhost:1313/2025-01-27-self-delusion/</guid>
     <description><![CDATA[<blockquote>
 <p>一旦我的欲望超出了纯粹的物质必需品，我不就制造了一种轻易相信的状态？   - 克里希那穆提</p></blockquote>
 <!-- ![寻找一个诚实的人](/img/Diogenes.png "寻找一个诚实的人") -->
@@ -79,32 +87,22 @@
 </item>
 <item>
     <title>原罪 — 知善恶树</title>
-    <link>https://111hunter.github.io/2024-12-25-yaldabaoth/</link>
+    <link>http://localhost:1313/2024-12-25-yaldabaoth/</link>
     <pubDate>Wed, 25 Dec 2024 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2024-12-25-yaldabaoth/</guid>
+    <guid>http://localhost:1313/2024-12-25-yaldabaoth/</guid>
     <description><![CDATA[<!-- > 你从书本上得到的哲学思想、各种理论及信仰等，这些都成了你的传统，它们对你的思想实在有很大的障碍，因为你的心会利用这些东西作为自己的保障，于是你就被它限制住了。所以你必须一方面让你的心从传统中解脱出来，一方面也要培养自己的知识与技术，这就是教育的功用。      - 克里希那穆提 -->
 <blockquote>
 <p>执于己见，障蔽真心，反以智为桎梏。    - 由 Gemini 2.0 Flash Experimental 生成</p>]]></description>
 </item>
 <item>
     <title>Hello, World! return 0</title>
-    <link>https://111hunter.github.io/2024-12-06-vritti/</link>
+    <link>http://localhost:1313/2024-12-06-vritti/</link>
     <pubDate>Fri, 06 Dec 2024 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2024-12-06-vritti/</guid>
+    <guid>http://localhost:1313/2024-12-06-vritti/</guid>
     <description><![CDATA[<!-- > 先生，您看，如果您提出一个问题，您要么期待有人回答，要么一直在思考、思考、思考 - 对吗？ - 试图找到答案。但是思考或等待别人回答您​​的问题并不能解决问题。对吗？因此，您如何接受问题、如何处理问题非常重要。如果您的方法是全面的、完整的，那么答案就在那里。但是，如果您说，好吧，告诉我，然后靠在椅背上等待，或者询问您的牧师、您的上师、您的书或您的权威人士，那么这毫无意义。他们已经告诉过您一千遍了。所以，先生，就像您在湖中扔下一块石头，湖面如此平静，而您扔下一块石头，波浪继续。问题在于您扔进湖中的那块石头。您明白吗？对，先生。               — 克里希那穆提 -->
 <p><figure><a class="lightgallery" href="/img/hello-world-cpp.jpeg" title="hello-world-cpp" data-thumbnail="/img/hello-world-cpp.jpeg" data-sub-html="<h2>hello-world-cpp</h2><p>hello-world-cpp</p>]]></description>
-</item>
-<item>
-    <title>我们过着一种盲从的生活</title>
-    <link>https://111hunter.github.io/2024-12-05-avidya/</link>
-    <pubDate>Thu, 05 Dec 2024 11:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>https://111hunter.github.io/2024-12-05-avidya/</guid>
-    <description><![CDATA[<!-- > 十方如来，同一道故。出离生死，皆以直心。       —《楞严经》 -->
-<blockquote>
-<p>这就像任何其他的反射行为一样：你问一个问题，那么就会有一些东西从它出来。它是如何运作的，我不知道。它不是任何思想的产物。从我身上出来的任何东西都不是由思想制造出来的 — 但是某种东西正在出来。你在扔一个球，球弹回来，你称它为“答案”。实际上，我所做的只是重新构造问题，然后把它扔给你们。            - U.G. Krishnamurti</p>]]></description>
 </item>
 </channel>
 </rss>

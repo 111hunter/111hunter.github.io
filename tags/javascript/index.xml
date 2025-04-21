@@ -1,73 +1,73 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>JavaScript - 标签 - 寂的博客</title>
-        <link>https://111hunter.github.io/tags/javascript/</link>
+        <link>http://localhost:1313/tags/javascript/</link>
         <description>JavaScript - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Fri, 21 Mar 2025 10:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Fri, 21 Mar 2025 10:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/javascript/" rel="self" type="application/rss+xml" /><item>
     <title>从栈到堆，什么是 JavaScript?</title>
-    <link>https://111hunter.github.io/2025-03-21-js/</link>
+    <link>http://localhost:1313/2025-03-21-js/</link>
     <pubDate>Fri, 21 Mar 2025 10:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2025-03-21-js/</guid>
+    <guid>http://localhost:1313/2025-03-21-js/</guid>
     <description><![CDATA[<p>JavaScript 是一种功能强大且灵活的编程语言，广泛应用于网页开发、服务器端开发等领域。要深入理解 JavaScript，我们可以从变量在计算机中的数据存储开始，逐步探讨其运行机制、最新语法以及设计理念。以下是对这些方面的逐层剖析。</p>]]></description>
 </item>
 <item>
     <title>从启动浏览器到打开网页，发生了什么？</title>
-    <link>https://111hunter.github.io/2025-03-17-browser/</link>
+    <link>http://localhost:1313/2025-03-17-browser/</link>
     <pubDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2025-03-17-browser/</guid>
+    <guid>http://localhost:1313/2025-03-17-browser/</guid>
     <description><![CDATA[<p>从计算机科学的角度来看，从启动浏览器到输入网址并打开网页的全过程是一个复杂且多层次的协作，涉及网络通信、浏览器架构、JavaScript 执行机制等多个方面。现代浏览器（如Chrome、Firefox）采用了多进程架构，并结合单线程的 JavaScript 运行机制，通过事件循环和专用 Worker API 实现高效的任务处理和页面渲染。以下将详细描述这一过程，并突出 JavaScript 的单线程特性及其在浏览器中的运作方式。</p>]]></description>
 </item>
 <item>
     <title>了解防抖与节流</title>
-    <link>https://111hunter.github.io/2020-11-10-debounce/</link>
+    <link>http://localhost:1313/2020-11-10-debounce/</link>
     <pubDate>Tue, 10 Nov 2020 22:30:00 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-11-10-debounce/</guid>
+    <guid>http://localhost:1313/2020-11-10-debounce/</guid>
     <description><![CDATA[<p>在前端开发的过程中，我们经常需要绑定一些持续触发的事件，如 resize、scroll、mousemove 等，然而有些时候我们并不希望在事件持续触发的过程中频繁地去执行函数，这时候就会用到函数防抖(Debounce)与节流(Throttle)：</p>]]></description>
 </item>
 <item>
     <title>浅析函数式编程</title>
-    <link>https://111hunter.github.io/2020-09-02-js-functional/</link>
+    <link>http://localhost:1313/2020-09-02-js-functional/</link>
     <pubDate>Wed, 02 Sep 2020 08:30:00 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-09-02-js-functional/</guid>
+    <guid>http://localhost:1313/2020-09-02-js-functional/</guid>
     <description><![CDATA[<blockquote>
 <p>在计算机科学中，<a href="https://en.wikipedia.org/wiki/Functional_programming" target="_blank" rel="noopener noreffer">函数式编程</a>
 是一种编程范式，其中通过应用和组合函数来构造程序。它是一种声明式编程范式，其中函数定义是每个返回一个值的表达式树，而不是一系列更改程序状态的命令性语句。 &ndash; wikipedia</p>]]></description>
 </item>
 <item>
     <title>入门 AST 抽象语法树</title>
-    <link>https://111hunter.github.io/2020-08-23-ast/</link>
+    <link>http://localhost:1313/2020-08-23-ast/</link>
     <pubDate>Sun, 23 Aug 2020 00:30:00 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2020-08-23-ast/</guid>
+    <guid>http://localhost:1313/2020-08-23-ast/</guid>
     <description><![CDATA[<p>如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、Prettier 等功能的实现，都是建立在 AST 的基础之上的。</p>]]></description>
 </item>
 <item>
     <title>JS 扫雷小游戏</title>
-    <link>https://111hunter.github.io/2019-11-08-js-saolei/</link>
+    <link>http://localhost:1313/2019-11-08-js-saolei/</link>
     <pubDate>Fri, 08 Nov 2019 22:37:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2019-11-08-js-saolei/</guid>
+    <guid>http://localhost:1313/2019-11-08-js-saolei/</guid>
     <description><![CDATA[<p>扫雷是一款大众类的益智小游戏,于 1992 年发行。游戏目标是在最短的时间内根据点击格子出现的数字找出所有非雷格子,同时避免踩雷,踩到一个雷即全盘皆输。</p>]]></description>
 </item>
 <item>
     <title>ES6 学习笔记</title>
-    <link>https://111hunter.github.io/2019-10-30-js-es6/</link>
+    <link>http://localhost:1313/2019-10-30-js-es6/</link>
     <pubDate>Wed, 30 Oct 2019 20:59:36 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2019-10-30-js-es6/</guid>
+    <guid>http://localhost:1313/2019-10-30-js-es6/</guid>
     <description><![CDATA[<p>ECMAScript 6(以下简称 ES6)是 JavaScript 语言的下一代标准,已经在 2015 年 6 月正式发布了。Mozilla 公司将在这个标准的基础上,推出 JavaScript 2.0。ECMAScript 和 JavaScript 是什么关系？简单来说，ECMAScript 是 JavaScript 语言的国际标准，JavaScript 是 ECMAScript 的实现。</p>]]></description>
 </item>
 <item>
     <title>JS 闭包写法的演变过程</title>
-    <link>https://111hunter.github.io/2019-10-17-js-basis/</link>
+    <link>http://localhost:1313/2019-10-17-js-basis/</link>
     <pubDate>Mon, 07 Oct 2019 18:27:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2019-10-17-js-basis/</guid>
+    <guid>http://localhost:1313/2019-10-17-js-basis/</guid>
     <description><![CDATA[<p><figure><a class="lightgallery" href="/img/closure.jpg" title="闭包的核心作用" data-thumbnail="/img/closure.jpg" data-sub-html="<h2>闭包的核心作用</h2><p>闭包的核心作用</p>">
         
     </a><figcaption class="image-caption">闭包的核心作用</figcaption>

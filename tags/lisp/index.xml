@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Lisp - 标签 - 寂的博客</title>
-        <link>https://111hunter.github.io/tags/lisp/</link>
+        <link>http://localhost:1313/tags/lisp/</link>
         <description>Lisp - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="https://111hunter.github.io/tags/lisp/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/lisp/" rel="self" type="application/rss+xml" /><item>
     <title>从符号到括号，什么是S-表达式？</title>
-    <link>https://111hunter.github.io/2025-03-26-symbolic-expression/</link>
+    <link>http://localhost:1313/2025-03-26-symbolic-expression/</link>
     <pubDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>https://111hunter.github.io/2025-03-26-symbolic-expression/</guid>
+    <guid>http://localhost:1313/2025-03-26-symbolic-expression/</guid>
     <description><![CDATA[<p>S-表达式（S-expression，全称Symbolic Expression，符号表达式）是一种由约翰·麦卡锡（John McCarthy）在设计Lisp编程语言时引入的数据表示方法。它以简洁的语法和强大的表达能力著称，不仅是Lisp及其变种（如Scheme、Common Lisp）的核心，还广泛应用于符号计算、人工智能和数据结构的表示。S-表达式的核心思想是通过符号和括号构建一种既能表示数据又能表示程序的结构，具有“代码即数据”的特性。</p>]]></description>
 </item>
 </channel>
