@@ -1,4 +1,4 @@
-# 我们过着一种盲从的生活
+# 你不想要什么和你拥有了它造成的是同样的结果
 
 
 <!-- > 十方如来，同一道故。出离生死，皆以直心。       —《楞严经》 -->
@@ -110,7 +110,4 @@ UG：你看，即使那样你也会发现你做不到。**你看，当有需求�
 
 <!-- - [Quest For Permanent Happiness! | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=d_B8_A-RSIY) -->
 
-<!-- - [世界的真相是什么? | 吴施无的知乎回答](https://www.zhihu.com/question/486546847/answer/3509777966) -->
-
 <!-- - [《盲视》：关于永恒的未知](https://www.bilibili.com/video/BV1ZG411W7Hh/?spm_id_from=333.788.top_right_bar_window_custom_collection.content.click&vd_source=21db84374de3d6785c04b0329b69e5e5) -->
-
