@@ -4,7 +4,19 @@
         <link>http://localhost:1313/categories/coding/</link>
         <description>Coding - 分类 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/coding/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 26 Apr 2025 01:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/coding/" rel="self" type="application/rss+xml" /><item>
+    <title>Sui, 从认识到理解</title>
+    <link>http://localhost:1313/2025-04-26-sui/</link>
+    <pubDate>Sat, 26 Apr 2025 01:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-04-26-sui/</guid>
+    <description><![CDATA[<blockquote>
+<p>不闻不若闻之，闻之不若见之，见之不若知之，知之不若行之。    -《荀子·儒效》</p></blockquote>
+<h2 id="rust-所有权系统">Rust: 所有权系统</h2>
+<h3 id="属和种差">属和种差</h3>
+<p>Rust是一种系统级编程语言，它通过<strong>所有权系统</strong>和类型安全设计，实现了内存安全与高性能的平衡，无需垃圾回收即可防止内存错误和数据竞争。</p>]]></description>
+</item>
+<item>
     <title>从函数到副作用 - React 的时空观</title>
     <link>http://localhost:1313/2025-03-21-react/</link>
     <pubDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</pubDate>
@@ -96,18 +108,6 @@
     <author>寂</author>
     <guid>http://localhost:1313/2020-10-07-recoil-clone/</guid>
     <description><![CDATA[<p>本文是我最近阅读一篇英文技术文章后写的小结。阅读前请注意，本文不涉及任何 Recoil 源码。仿写的代码并不是 Recoil 真正的实现方式，本文只仿造实现了 Recoil 中两个重要的 API 接口：Atom 和 Selector。</p>]]></description>
-</item>
-<item>
-    <title>Next.js 概览</title>
-    <link>http://localhost:1313/2020-09-29-next/</link>
-    <pubDate>Tue, 29 Sep 2020 23:30:00 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2020-09-29-next/</guid>
-    <description><![CDATA[<p><figure><a class="lightgallery" href="/img/nextjs-slug.webp" title="https://www.reddit.com/r/nextjs/comments/17iy9sx/nextjs_server_action_is_crazy" data-thumbnail="/img/nextjs-slug.webp" data-sub-html="<h2>Next.js Reddit Meme</h2><p>https://www.reddit.com/r/nextjs/comments/17iy9sx/nextjs_server_action_is_crazy</p>">
-        
-    </a><figcaption class="image-caption">Next.js Reddit Meme</figcaption>
-    </figure></p>
-<p>我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next.js 是 React 的同构框架，它的页面由 React 组件构成。</p>]]></description>
 </item>
 </channel>
 </rss>

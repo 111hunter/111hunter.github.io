@@ -4,9 +4,29 @@
         <link>http://localhost:1313/</link>
         <description>彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sun, 20 Apr 2025 21:50:34 &#43;0800</lastBuildDate>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 26 Apr 2025 20:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>从基础理论到工业应用，什么是虚拟化环境？</title>
+    <link>http://localhost:1313/2025-04-26-virtualization/</link>
+    <pubDate>Sat, 26 Apr 2025 20:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-04-26-virtualization/</guid>
+    <description><![CDATA[<p>虚拟化环境是通过虚拟化技术在物理硬件上创建的模拟计算环境，允许在单一物理设备上运行多个操作系统或应用程序实例。本质上，虚拟化通过软件层（虚拟化管理程序或容器引擎）抽象硬件资源，实现资源隔离、灵活分配和高效利用。以下从基础理论、工业应用和技术发展展望三个维度展开详细分析。</p>]]></description>
+</item>
+<item>
+    <title>Sui, 从认识到理解</title>
+    <link>http://localhost:1313/2025-04-26-sui/</link>
+    <pubDate>Sat, 26 Apr 2025 01:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-04-26-sui/</guid>
+    <description><![CDATA[<blockquote>
+<p>不闻不若闻之，闻之不若见之，见之不若知之，知之不若行之。    -《荀子·儒效》</p></blockquote>
+<h2 id="rust-所有权系统">Rust: 所有权系统</h2>
+<h3 id="属和种差">属和种差</h3>
+<p>Rust是一种系统级编程语言，它通过<strong>所有权系统</strong>和类型安全设计，实现了内存安全与高性能的平衡，无需垃圾回收即可防止内存错误和数据竞争。</p>]]></description>
+</item>
+<item>
     <title>弱 — 历史的动力</title>
     <link>http://localhost:1313/2025-04-20-weak/</link>
     <pubDate>Sun, 20 Apr 2025 21:50:34 &#43;0800</pubDate>
@@ -84,25 +104,6 @@
 <p>一旦我的欲望超出了纯粹的物质必需品，我不就制造了一种轻易相信的状态？   - 克里希那穆提</p></blockquote>
 <!-- ![寻找一个诚实的人](/img/Diogenes.png "寻找一个诚实的人") -->
 <p>我想来谈谈或者说仔细思考一下自欺的问题，那些头脑沉溺于其中的幻觉，我们把那些幻觉强加给自己，也强加给别人。这是件非常严肃的事情，特别是世界正面临着这样的危机。但要了解自欺的整个问题，我们不能只停留在语言的表层，而要深入挖掘到它的本质。我们太容易满足于正面和反面的说辞；我们老于世故，由于老于世故，因而无所作为，只一味希望某些事情会发生。我们看到对战争的解释并没有阻止战争；有数不清的历史学家、理论家、宗教人士在解释战争，解释它是怎样形成的，但战争依然继续，也许比以前更具破坏性。</p>]]></description>
-</item>
-<item>
-    <title>原罪 — 知善恶树</title>
-    <link>http://localhost:1313/2024-12-25-yaldabaoth/</link>
-    <pubDate>Wed, 25 Dec 2024 11:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2024-12-25-yaldabaoth/</guid>
-    <description><![CDATA[<!-- > 你从书本上得到的哲学思想、各种理论及信仰等，这些都成了你的传统，它们对你的思想实在有很大的障碍，因为你的心会利用这些东西作为自己的保障，于是你就被它限制住了。所以你必须一方面让你的心从传统中解脱出来，一方面也要培养自己的知识与技术，这就是教育的功用。      - 克里希那穆提 -->
-<blockquote>
-<p>执于己见，障蔽真心，反以智为桎梏。    - 由 Gemini 2.0 Flash Experimental 生成</p>]]></description>
-</item>
-<item>
-    <title>Hello, World! return 0</title>
-    <link>http://localhost:1313/2024-12-06-vritti/</link>
-    <pubDate>Fri, 06 Dec 2024 11:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2024-12-06-vritti/</guid>
-    <description><![CDATA[<!-- > 先生，您看，如果您提出一个问题，您要么期待有人回答，要么一直在思考、思考、思考 - 对吗？ - 试图找到答案。但是思考或等待别人回答您​​的问题并不能解决问题。对吗？因此，您如何接受问题、如何处理问题非常重要。如果您的方法是全面的、完整的，那么答案就在那里。但是，如果您说，好吧，告诉我，然后靠在椅背上等待，或者询问您的牧师、您的上师、您的书或您的权威人士，那么这毫无意义。他们已经告诉过您一千遍了。所以，先生，就像您在湖中扔下一块石头，湖面如此平静，而您扔下一块石头，波浪继续。问题在于您扔进湖中的那块石头。您明白吗？对，先生。               — 克里希那穆提 -->
-<p><figure><a class="lightgallery" href="/img/hello-world-cpp.jpeg" title="hello-world-cpp" data-thumbnail="/img/hello-world-cpp.jpeg" data-sub-html="<h2>hello-world-cpp</h2><p>hello-world-cpp</p>]]></description>
 </item>
 </channel>
 </rss>

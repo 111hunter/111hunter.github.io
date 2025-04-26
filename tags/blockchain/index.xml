@@ -4,7 +4,19 @@
         <link>http://localhost:1313/tags/blockchain/</link>
         <description>Blockchain - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/blockchain/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 26 Apr 2025 01:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/blockchain/" rel="self" type="application/rss+xml" /><item>
+    <title>Sui, 从认识到理解</title>
+    <link>http://localhost:1313/2025-04-26-sui/</link>
+    <pubDate>Sat, 26 Apr 2025 01:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-04-26-sui/</guid>
+    <description><![CDATA[<blockquote>
+<p>不闻不若闻之，闻之不若见之，见之不若知之，知之不若行之。    -《荀子·儒效》</p></blockquote>
+<h2 id="rust-所有权系统">Rust: 所有权系统</h2>
+<h3 id="属和种差">属和种差</h3>
+<p>Rust是一种系统级编程语言，它通过<strong>所有权系统</strong>和类型安全设计，实现了内存安全与高性能的平衡，无需垃圾回收即可防止内存错误和数据竞争。</p>]]></description>
+</item>
+<item>
     <title>从链下到链上，什么是 DApp？</title>
     <link>http://localhost:1313/2025-03-20-dapp/</link>
     <pubDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</pubDate>
