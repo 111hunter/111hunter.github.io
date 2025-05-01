@@ -10,8 +10,7 @@
     <pubDate>Fri, 11 Apr 2025 13:50:34 &#43;0800</pubDate>
     <author>寂</author>
     <guid>http://localhost:1313/2025-04-11-mental-models/</guid>
-    <description><![CDATA[<!-- > 人必须始终带着完整的意识热切地活着，诚实而非忠实地面对发生的每件事情。这样就能从每件事情自身的角度，从本质上来看待它，而不是去比较你能从中得到什么。 - 克里希那穆提 -->
-<!-- 一花一世界，一叶一如来。  -《华严经》 -->
+    <description><![CDATA[<!-- 一花一世界，一叶一如来。  -《华严经》 -->
 <blockquote>
 <p>如果你想成为一名优秀的思考者，你必须培养一种能够跨越管辖界限的头脑。你不必了解所有内容。只需吸收所有这些学科中最好的大创意。而且这并不难做到。  — 查理·芒格</p>]]></description>
 </item>
@@ -24,16 +23,30 @@
     <description><![CDATA[<p>S-表达式（S-expression，全称Symbolic Expression，符号表达式）是一种由约翰·麦卡锡（John McCarthy）在设计Lisp编程语言时引入的数据表示方法。它以简洁的语法和强大的表达能力著称，不仅是Lisp及其变种（如Scheme、Common Lisp）的核心，还广泛应用于符号计算、人工智能和数据结构的表示。S-表达式的核心思想是通过符号和括号构建一种既能表示数据又能表示程序的结构，具有“代码即数据”的特性。</p>]]></description>
 </item>
 <item>
-    <title>Hello, World! return 0</title>
-    <link>http://localhost:1313/2024-12-06-vritti/</link>
+    <title>巫师的学徒</title>
+    <link>http://localhost:1313/2024-12-06-sorcerer/</link>
     <pubDate>Fri, 06 Dec 2024 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2024-12-06-vritti/</guid>
-    <description><![CDATA[<!-- > 先生，您看，如果您提出一个问题，您要么期待有人回答，要么一直在思考、思考、思考 - 对吗？ - 试图找到答案。但是思考或等待别人回答您​​的问题并不能解决问题。对吗？因此，您如何接受问题、如何处理问题非常重要。如果您的方法是全面的、完整的，那么答案就在那里。但是，如果您说，好吧，告诉我，然后靠在椅背上等待，或者询问您的牧师、您的上师、您的书或您的权威人士，那么这毫无意义。他们已经告诉过您一千遍了。所以，先生，就像您在湖中扔下一块石头，湖面如此平静，而您扔下一块石头，波浪继续。问题在于您扔进湖中的那块石头。您明白吗？对，先生。               — 克里希那穆提 -->
-<p><figure><a class="lightgallery" href="/img/hello-world-cpp.jpeg" title="hello-world-cpp" data-thumbnail="/img/hello-world-cpp.jpeg" data-sub-html="<h2>hello-world-cpp</h2><p>hello-world-cpp</p>]]></description>
+    <guid>http://localhost:1313/2024-12-06-sorcerer/</guid>
+    <description><![CDATA[<!-- "Der Zauberlehrling" (1797), by Johann Wolfgang von Goethe -->
+<blockquote>
+<p>吾有知乎哉？无知也。有鄙夫问于我，空空如也。我叩其两端而竭焉。    -《论语·子罕》</p></blockquote>
+<!-- ![hello-world-cpp](/img/hello-world-cpp.jpeg "hello-world-cpp") -->
+<p>“真理是什么？从神秘主义者、哲学家和科学家的视角和 AI 探索绝对真理，你认为真理是什么？在这一个主题研究的背景下，问你，AI，你认为真理是什么？” 以下是 AI 的回答：</p>]]></description>
 </item>
 <item>
-    <title>我的背景把我变成了猪，我该如何破局?</title>
+    <title>我们为什么接受别人所说的话？</title>
+    <link>http://localhost:1313/2024-10-31-yhvh/</link>
+    <pubDate>Thu, 31 Oct 2024 11:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2024-10-31-yhvh/</guid>
+    <description><![CDATA[<!-- 没有自我，失去的只是与世界的分离感 -->
+<blockquote>
+<p>先生， 我们为什么追求身体安全之外的安全呢？ 除了生存安全之外， 我们为什么还想得到安全？      - 克里希那穆提</p></blockquote>
+<p>希：我们想探讨一下这个问题， 即有没有一种深刻的安全， 自我能否被消除。你曾经说过如果这是可能的， 那么个人带到办公室去的那些问题， 那些问题</p>]]></description>
+</item>
+<item>
+    <title>西西弗斯，你太狡猾！</title>
     <link>http://localhost:1313/2024-10-25-proprioception/</link>
     <pubDate>Fri, 25 Oct 2024 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
@@ -46,8 +59,7 @@
     <pubDate>Sun, 20 Oct 2024 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
     <guid>http://localhost:1313/2024-10-20-meditation/</guid>
-    <description><![CDATA[<!-- > 知见立知，即无明本；知见无见，斯即涅槃。   —《楞严经》 -->
-<!-- > 心生于物，死于物，机在目。   —《阴符经》 -->
+    <description><![CDATA[<!-- 我总想观看，似乎我只有眼睛。 - 佩索阿，《我从不曾努力生活》 -->
 <blockquote>
 <p>一旦体验被赋予了语言，思想就诞生了。经验被压抑，所见被压抑，只有文字在脑海中飘荡。这些想法非常短暂，所以在一个想法消失之前，我们会将另一个经验转化为想法。<strong>这个过程会持续一生，我们被文字填满，承受着文字的沉重负担，以至于迷失了自己</strong>。   - 奥修</p>]]></description>
 </item>
@@ -76,27 +88,19 @@
     <author>寂</author>
     <guid>http://localhost:1313/2024-10-16-alchemy/</guid>
     <description><![CDATA[<!-- > 一个人睡着了，梦见了千百件事情，而早上醒来，所有的梦想都消失了。生活也是如此。我们睡着了 — 睡着了我们的内心。我们忘记了我们是谁；因此，世界，轮回。轮回意味着万物的世界。 - 奥修 -->
+<!-- > 如果一个人的目光不朝着虔诚的方向，他的一生就毫无意义。           - 奥修 -->
 <blockquote>
-<p>如果一个人的目光不朝着虔诚的方向，他的一生就毫无意义。           - 奥修</p>]]></description>
+<p>要么你变得完全无意识，就像一个喝了太多酒的醉汉失去了所有的意识 — 然后就有和平，要么你变得非常有意识，以至于你存在的所有角落都充满光明 — 你成为一个佛陀或一个基督 — 然后就有和平。要么低于人，要么超越人。不要一直执着于做人，因为那样你就是在执着于一种疾病。            - 奥修</p>]]></description>
 </item>
 <item>
-    <title>虚拟 — 膨胀出全息世界</title>
-    <link>http://localhost:1313/2023-12-19-itp/</link>
-    <pubDate>Tue, 19 Dec 2023 10:50:34 &#43;0800</pubDate>
+    <title>二手人类</title>
+    <link>http://localhost:1313/2024-05-12-deus-deceptor/</link>
+    <pubDate>Sun, 12 May 2024 11:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2023-12-19-itp/</guid>
-    <description><![CDATA[<blockquote>
-<p>“许多独立的并且很有说服力的论点，都表明时空这个概念本身并不是基础性的。时空注定要消亡。在物理定律的实际底层描述中，根本不存在时空这样的东西。这是非常令人震惊的，因为物理学被认为是描述在空间和时间中发生的事情。因此，如果没有时空，就不清楚物理学讲的什么。” — 尼马·阿尔卡尼-哈米德，康奈尔大学信使讲座，2016</p>]]></description>
-</item>
-<item>
-    <title>业力 - 因陀罗网</title>
-    <link>http://localhost:1313/2023-12-06-indra-net/</link>
-    <pubDate>Wed, 06 Dec 2023 10:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2023-12-06-indra-net/</guid>
-    <description><![CDATA[<blockquote>
-<p>有我之境，以我观物，故物我皆著我之色彩。无我之境，以物观物，故不知何者为我，何者为物。  -《人间词话》</p></blockquote>
-<p>你看到的世界是你的本质，而不是世界的本质，你对世界的看法是你意识状态的反映。事情于你而言是增上缘还是增上慢，由你内心发生的事情决定，而不是由事情本身决定。当我们的内在世界发生变化时，我们的外在世界也在跟着发生变化。</p>]]></description>
+    <guid>http://localhost:1313/2024-05-12-deus-deceptor/</guid>
+    <description><![CDATA[<!-- > 我们从未质疑过思想的本质。我们认定思想是必不可少的，就像我们的眼睛和腿一样。我们从未探查过思想的深层，而因为我们从来没有质疑过它，它占据了突出的位置。它是我们生活的统治者，而统治者很少会受到挑战。 — 克里希那穆提 -->
+<blockquote>
+<p>思考是从一个结论开始的吗？思考是不是从一个结论到另一个结论的运动？如果思考是肯定的，思考会存在吗？最高形式的思考不是否定的吗？所有的知识不是一个定义、结论和肯定性声明的集合吗？肯定的思想是以经验为基础的，它总是过去的结果，这样的思想永远不能发现新事物。             — 克里希那穆提</p>]]></description>
 </item>
 </channel>
 </rss>

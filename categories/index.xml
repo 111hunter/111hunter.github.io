@@ -4,7 +4,15 @@
         <link>http://localhost:1313/categories/</link>
         <description>Categories - 分类 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 26 Apr 2025 20:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 28 Apr 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Thinking</title>
+    <link>http://localhost:1313/categories/thinking/</link>
+    <pubDate>Mon, 28 Apr 2025 17:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/categories/thinking/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Theory</title>
     <link>http://localhost:1313/categories/theory/</link>
     <pubDate>Sat, 26 Apr 2025 20:50:34 &#43;0800</pubDate>
@@ -18,14 +26,6 @@
     <pubDate>Sat, 26 Apr 2025 01:50:34 &#43;0800</pubDate>
     <author>寂</author>
     <guid>http://localhost:1313/categories/coding/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Thinking</title>
-    <link>http://localhost:1313/categories/thinking/</link>
-    <pubDate>Sun, 20 Apr 2025 21:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/categories/thinking/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

@@ -1,6 +1,8 @@
 # 自然状态
 
 
+<!-- I know that I know nothing       - Socrates -->
+
 > 我没有观点。我对人类没有什么特别的信息，我身上也没有任何传教士的热情。我不是人类的救世主，或者任何类似的东西。我没有兴趣问你感兴趣的问题。       - U.G. Krishnamurti
 
 我不是来解放任何人的。你必须解放你自己，但你做不到。我说的话起不了作用。我只对描述这种状态感兴趣，对清除那些从事“神圣事业”的人笼罩在整个事物上的遮蔽和神秘感兴趣。也许我能说服你不要浪费太多的时间和精力，去寻找一种在你想象之外根本不存在的状态。
@@ -89,7 +91,9 @@
 
 **推荐阅读**
 
-- [What is The Purpose of Human Life? | U.G. krishnamurti Interview](https://www.youtube.com/watch?v=-UrLWN0HAgE&t=109s)
+<!-- - [What is The Purpose of Human Life? | U.G. krishnamurti Interview](https://www.youtube.com/watch?v=-UrLWN0HAgE&t=109s) -->
+
+- [Mind, Thought, Body, Life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=x2HIcDgDgMs&t=101s)
 
 - [Anti Guru or Godman | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=B-RT8tj5PrI&t=956s)
 

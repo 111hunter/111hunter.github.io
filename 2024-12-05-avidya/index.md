@@ -1,4 +1,4 @@
-# 你不想要什么和你得到了它会造成一样的结果
+# 你不想要什么和你得到它造成了一样的结果
 
 
 <!-- > 十方如来，同一道故。出离生死，皆以直心。       —《楞严经》 -->
@@ -100,7 +100,7 @@ UG：你看，即使那样你也会发现你做不到。**你看，当有需求�
 
 **推荐阅读**
 
-- [Mind, Thought, Body, Life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=x2HIcDgDgMs&t=101s)
+<!-- - [Mind, Thought, Body, Life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=x2HIcDgDgMs&t=101s) -->
 
 - [困惑暗示着拣择，而拣择就是思维的产物｜克里希那穆提](https://mp.weixin.qq.com/s/mkNGE_tirtjpdrDvH1p0kg)
 

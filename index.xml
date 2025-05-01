@@ -4,9 +4,20 @@
         <link>http://localhost:1313/</link>
         <description>彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 26 Apr 2025 20:50:34 &#43;0800</lastBuildDate>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 28 Apr 2025 17:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>美即是真，真即是美</title>
+    <link>http://localhost:1313/2025-04-28-virtue/</link>
+    <pubDate>Mon, 28 Apr 2025 17:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-04-28-virtue/</guid>
+    <description><![CDATA[<!-- “美即是真，真即是美” 这就包括你们所知道、和该知道的一切。 - 济慈，《希腊古翁颂》 -->
+<!-- 根据苏格拉底的说法，美德就是知识。根据亚里士多德的说法，苏格拉底的道德美德观与人类的共识背道而驰。 -->
+<blockquote>
+<p>当你说，看，那个真实的东西比词语更重要，然后他们说：“我要怎样摆脱词语，我要怎样沟通，如果我没有词语的话？” 你看到他们是怎么跑掉的吗？他们不关心那个东西本身，只关心词语。            - 克里希那穆提</p>]]></description>
+</item>
+<item>
     <title>从基础理论到工业应用，什么是虚拟化环境？</title>
     <link>http://localhost:1313/2025-04-26-virtualization/</link>
     <pubDate>Sat, 26 Apr 2025 20:50:34 &#43;0800</pubDate>
@@ -40,8 +51,7 @@
     <pubDate>Fri, 11 Apr 2025 13:50:34 &#43;0800</pubDate>
     <author>寂</author>
     <guid>http://localhost:1313/2025-04-11-mental-models/</guid>
-    <description><![CDATA[<!-- > 人必须始终带着完整的意识热切地活着，诚实而非忠实地面对发生的每件事情。这样就能从每件事情自身的角度，从本质上来看待它，而不是去比较你能从中得到什么。 - 克里希那穆提 -->
-<!-- 一花一世界，一叶一如来。  -《华严经》 -->
+    <description><![CDATA[<!-- 一花一世界，一叶一如来。  -《华严经》 -->
 <blockquote>
 <p>如果你想成为一名优秀的思考者，你必须培养一种能够跨越管辖界限的头脑。你不必了解所有内容。只需吸收所有这些学科中最好的大创意。而且这并不难做到。  — 查理·芒格</p>]]></description>
 </item>
@@ -93,17 +103,6 @@
     <author>寂</author>
     <guid>http://localhost:1313/2025-03-17-browser/</guid>
     <description><![CDATA[<p>从计算机科学的角度来看，从启动浏览器到输入网址并打开网页的全过程是一个复杂且多层次的协作，涉及网络通信、浏览器架构、JavaScript 执行机制等多个方面。现代浏览器（如Chrome、Firefox）采用了多进程架构，并结合单线程的 JavaScript 运行机制，通过事件循环和专用 Worker API 实现高效的任务处理和页面渲染。以下将详细描述这一过程，并突出 JavaScript 的单线程特性及其在浏览器中的运作方式。</p>]]></description>
-</item>
-<item>
-    <title>我们制造欺骗，然后成为它的奴隶</title>
-    <link>http://localhost:1313/2025-01-27-self-delusion/</link>
-    <pubDate>Mon, 27 Jan 2025 11:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2025-01-27-self-delusion/</guid>
-    <description><![CDATA[<blockquote>
-<p>一旦我的欲望超出了纯粹的物质必需品，我不就制造了一种轻易相信的状态？   - 克里希那穆提</p></blockquote>
-<!-- ![寻找一个诚实的人](/img/Diogenes.png "寻找一个诚实的人") -->
-<p>我想来谈谈或者说仔细思考一下自欺的问题，那些头脑沉溺于其中的幻觉，我们把那些幻觉强加给自己，也强加给别人。这是件非常严肃的事情，特别是世界正面临着这样的危机。但要了解自欺的整个问题，我们不能只停留在语言的表层，而要深入挖掘到它的本质。我们太容易满足于正面和反面的说辞；我们老于世故，由于老于世故，因而无所作为，只一味希望某些事情会发生。我们看到对战争的解释并没有阻止战争；有数不清的历史学家、理论家、宗教人士在解释战争，解释它是怎样形成的，但战争依然继续，也许比以前更具破坏性。</p>]]></description>
 </item>
 </channel>
 </rss>

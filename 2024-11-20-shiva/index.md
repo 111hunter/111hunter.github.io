@@ -1,7 +1,7 @@
 # 我只知道我不知道
 
 
-<!-- > 我认为笛卡尔问了一个错误的问题，并以一种非常有趣的方式回答了这个问题，“我思故我在”。但他从来没问过你应该问的问题，就像印度哲学家建立的那样，如果你不思考，你在吗？            - U.G. Krishnamurti -->
+<!-- 我们必须接受这个世界的现实，因为它是由社会文化强加给我们的。留在那里并将其视为具有功能价值的东西，但它无法帮助我们体验任何事物的现实。   - U.G. Krishnamurti -->
 
 > 提问者说他很专注。他很专注，因为他想要答案。他不想要暗示，他可能不会…知道这个答案，他会做什么呢？他专注，他等待，他充满希望 — 他拥有所有这些特质 — 为什么呢？       - U.G. Krishnamurti
 
@@ -68,5 +68,7 @@
 **推荐阅读**
 
 - [You Have No Experiences! | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=jrBBkWRL9ec&t=1413s)
+
+- [What is The Purpose of Human Life? | UG Krishnamurti Interview](https://www.youtube.com/watch?v=-UrLWN0HAgE&t=109s)
 
 - [There Is Always Someone Else There | U.G. Krishnamurti](https://www.youtube.com/watch?v=PfLEkOdB45M&t=332s)

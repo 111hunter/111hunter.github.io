@@ -51,6 +51,8 @@
 
 **推荐阅读**
 
+<!-- 真理照亮真理。 - 卢克莱修 -->
+
 - [Freedom From Illusion & Facing Reality | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=9_sHrqk7Ezw&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy&index=2)
 
 - [Who Are We? What is Reality? | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=6Bf5TX05pc8&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy&index=6&t=676s)

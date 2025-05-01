@@ -4,7 +4,31 @@
         <link>http://localhost:1313/tags/</link>
         <description>Tags - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 26 Apr 2025 20:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 28 Apr 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Advaita</title>
+    <link>http://localhost:1313/tags/advaita/</link>
+    <pubDate>Mon, 28 Apr 2025 17:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/tags/advaita/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Samadhi</title>
+    <link>http://localhost:1313/tags/samadhi/</link>
+    <pubDate>Mon, 28 Apr 2025 17:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/tags/samadhi/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Time</title>
+    <link>http://localhost:1313/tags/time/</link>
+    <pubDate>Mon, 28 Apr 2025 17:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/tags/time/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Docker</title>
     <link>http://localhost:1313/tags/docker/</link>
     <pubDate>Sat, 26 Apr 2025 20:50:34 &#43;0800</pubDate>
@@ -29,27 +53,11 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Samadhi</title>
-    <link>http://localhost:1313/tags/samadhi/</link>
+    <title>Maya</title>
+    <link>http://localhost:1313/tags/maya/</link>
     <pubDate>Sun, 20 Apr 2025 21:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/tags/samadhi/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Time</title>
-    <link>http://localhost:1313/tags/time/</link>
-    <pubDate>Sun, 20 Apr 2025 21:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/tags/time/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Advaita</title>
-    <link>http://localhost:1313/tags/advaita/</link>
-    <pubDate>Fri, 11 Apr 2025 13:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/tags/advaita/</guid>
+    <guid>http://localhost:1313/tags/maya/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
@@ -74,14 +82,6 @@
     <pubDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
     <guid>http://localhost:1313/tags/lisp/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>React</title>
-    <link>http://localhost:1313/tags/react/</link>
-    <pubDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/tags/react/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
