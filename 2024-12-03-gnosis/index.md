@@ -415,7 +415,7 @@
 
 安：是的。
 
-克：而是：对时间死去才是爱。所以，生活、爱和死亡是合一的，它们之间没有分裂， 没有分隔，没有分离， 它没有在时间的领域内，而完全是一个鲜活的、运动着的 和不可分割的事物。 而那就是不朽。
+克：**而是：对时间死去才是爱。所以，生活、爱和死亡是合一的，它们之间没有分裂， 没有分隔，没有分离， 它没有在时间的领域内，而完全是一个鲜活的、运动着的 和不可分割的事物。 而那就是不朽。**
 
 安：是的。
 
@@ -532,3 +532,8 @@
 **参阅资料**
 
 - 节选自 [Death, life and love are indivisible - 14th Dialogue, San Diego, CaliforniaFebruary 26, 1974](https://www.krishnamurti.org/transcript/death-life-and-love-are-indivisible/)
+
+**推荐阅读**
+
+- [Life is sacred - 7th Small Group Discussion, Brockwood ParkMay 20, 1976](https://www.krishnamurti.org/transcript/life-is-sacred/)
+

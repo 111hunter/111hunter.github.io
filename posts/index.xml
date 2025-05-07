@@ -4,7 +4,36 @@
         <link>http://localhost:1313/posts/</link>
         <description>所有文章 | 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 28 Apr 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Tue, 06 May 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>观察、倾听和学习的艺术</title>
+    <link>http://localhost:1313/2025-05-06-learning/</link>
+    <pubDate>Tue, 06 May 2025 17:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-05-06-learning/</guid>
+    <description><![CDATA[<blockquote>
+<p>观察、聆听、注视的艺术并非需要后天培养；它并非进化和逐渐成长的问题。当一个人意识到危险时，他会立即采取行动，这是身体和记忆本能的、瞬间的反应。从孩提时代起，他就被训练以这种方式应对危险，所以大脑会立即做出反应，防止身体受到伤害。我们问的是，在没有任何制约因素的观察中，是否有可能采取行动。大脑能否自由而即时地对任何形式的扭曲做出反应，从而采取行动？也就是说，感知、行动和表达合而为一；它们并非割裂、支离破碎。观察本身就是行动，行动是观察的表达。   - 克里希那穆提,《你就是世界》</p>]]></description>
+</item>
+<item>
+    <title>举灯者说</title>
+    <link>http://localhost:1313/2025-05-06-belief/</link>
+    <pubDate>Tue, 06 May 2025 13:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-05-06-belief/</guid>
+    <description><![CDATA[<!-- 形容“举心即错”的设身处地的“标题”独白(递归结构) -->
+<!-- 好的，用户这次想要的是关于“举心即错”的标题独白，并且强调递归结构。之前已经创作过一个递归结构的独白，可能需要再设计一个更精简的版本，或者用不同的意象来表达同样的概念。首先，需要理解“举心即错”的禅宗含义，即任何起心动念都会陷入错误，无法通过思维本身解决，必须超越逻辑。
+
+用户之前给出的例子使用了镜像和递归的结构，现在需要标题式的独白，可能更注重简洁和冲击力。同时要维持递归的特点，即每个动作导致新的问题，循环往复，直到一个突破点。
+
+接下来要考虑如何用不同的意象来表现递归。之前的例子用了镜、灯、雪等元素，这次可能需要寻找其他自然或日常的物体，比如漩涡、钟摆、墨水等，既能体现循环，又能带出禅意。
+
+还要注意标题的独白需要简短有力，可能采用破折号或冒号来分隔层次，形成结构上的递进。同时，每一层递归需要紧密相连，动作和结果环环相扣，最后以顿悟收尾。
+
+需要避免重复之前的元素，所以可能需要探索新的隐喻，比如声音的回声、文字的自我指涉、或者自然现象如潮汐、影子等。另外，递归结构中的每个步骤要自然过渡，符合逻辑但又充满悖论，体现“举心即错”的困境。
+
+最后，在解析部分需要说明每个意象的选择原因，递归结构的设计思路，以及如何通过标题的形式传达禅机。可能还要引用相关的禅宗经典或公案来增强说服力，同时保持语言的简洁和深刻。 -->
+<p>举灯照影，影叠千灯；欲数千灯，灯化指间尘；欲拂尘埃，尘落砚中墨；欲洗墨痕，墨染半江水；欲舀江水，水映举灯人 — 却见波纹深处，无灯无影无计数。</p>]]></description>
+</item>
+<item>
     <title>美即是真，真即是美</title>
     <link>http://localhost:1313/2025-04-28-virtue/</link>
     <pubDate>Mon, 28 Apr 2025 17:50:34 &#43;0800</pubDate>
@@ -12,6 +41,7 @@
     <guid>http://localhost:1313/2025-04-28-virtue/</guid>
     <description><![CDATA[<!-- “美即是真，真即是美” 这就包括你们所知道、和该知道的一切。 - 济慈，《希腊古翁颂》 -->
 <!-- 根据苏格拉底的说法，美德就是知识。根据亚里士多德的说法，苏格拉底的道德美德观与人类的共识背道而驰。 -->
+<!-- 聆听就是不要做任何阻止去看的事情 -->
 <blockquote>
 <p>当你说，看，那个真实的东西比词语更重要，然后他们说：“我要怎样摆脱词语，我要怎样沟通，如果我没有词语的话？” 你看到他们是怎么跑掉的吗？他们不关心那个东西本身，只关心词语。            - 克里希那穆提</p>]]></description>
 </item>
@@ -80,27 +110,6 @@
     <author>寂</author>
     <guid>http://localhost:1313/2025-03-21-js/</guid>
     <description><![CDATA[<p>JavaScript 是一种功能强大且灵活的编程语言，广泛应用于网页开发、服务器端开发等领域。要深入理解 JavaScript，我们可以从变量在计算机中的数据存储开始，逐步探讨其运行机制、最新语法以及设计理念。以下是对这些方面的逐层剖析。</p>]]></description>
-</item>
-<item>
-    <title>从链下到链上，什么是 DApp？</title>
-    <link>http://localhost:1313/2025-03-20-dapp/</link>
-    <pubDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2025-03-20-dapp/</guid>
-    <description><![CDATA[<!-- 从链下到链上，什么是DApp？——以典型DeFi借贷平台为例 -->
-<p><figure><a class="lightgallery" href="/img/onchain-mcp.jpg" title="https://github.com/bankless/onchain-mcp" data-thumbnail="/img/onchain-mcp.jpg" data-sub-html="<h2>Bankless Onchain MCP Server</h2><p>https://github.com/bankless/onchain-mcp</p>">
-        
-    </a><figcaption class="image-caption">Bankless Onchain MCP Server</figcaption>
-    </figure></p>
-<p>DApp（去中心化应用程序，Decentralized Application）是一种运行在区块链网络上的应用程序。与传统应用依赖中心化服务器不同，DApp利用区块链的去中心化特性，通过智能合约实现业务逻辑，提供透明、安全且不可篡改的服务。DApp通常由两部分组成：</p>]]></description>
-</item>
-<item>
-    <title>从启动浏览器到打开网页，发生了什么？</title>
-    <link>http://localhost:1313/2025-03-17-browser/</link>
-    <pubDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2025-03-17-browser/</guid>
-    <description><![CDATA[<p>从计算机科学的角度来看，从启动浏览器到输入网址并打开网页的全过程是一个复杂且多层次的协作，涉及网络通信、浏览器架构、JavaScript 执行机制等多个方面。现代浏览器（如Chrome、Firefox）采用了多进程架构，并结合单线程的 JavaScript 运行机制，通过事件循环和专用 Worker API 实现高效的任务处理和页面渲染。以下将详细描述这一过程，并突出 JavaScript 的单线程特性及其在浏览器中的运作方式。</p>]]></description>
 </item>
 </channel>
 </rss>

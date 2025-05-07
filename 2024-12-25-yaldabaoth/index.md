@@ -53,8 +53,6 @@
 
 **推荐阅读**
 
-- [False Perception | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=EQFrUKQfO4k&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy&index=6&t=946s)
-
 - [以不满为动机的找寻只能带来各种形式的假象｜克里希那穆提](https://mp.weixin.qq.com/s/3dp5HlPyR9fCI1DkpcTX_g)
 
 - [“你”是无数个昨天的结果 | 克里希那穆提](https://mp.weixin.qq.com/s/5HeyYObHD0Tp6FrlzjRE-g)
