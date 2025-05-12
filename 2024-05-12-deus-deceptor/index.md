@@ -94,3 +94,9 @@
 - [因为选择，所以我们害怕死亡 | 克里希那穆提](https://mp.weixin.qq.com/s/PaaR1wwOS3MPhhvSXVxg6w)
 
 - [寻求结果的科学家不是科学家 | 克里希那穆提](https://mp.weixin.qq.com/s/0thQ2iMDVDIwVrSpFIEKkA)
+
+<!-- - [困惑暗示着拣择，而拣择就是思维的产物｜克里希那穆提](https://mp.weixin.qq.com/s/mkNGE_tirtjpdrDvH1p0kg) -->
+
+<!-- - [无明没有开始，但是可以结束｜克里希那穆提](https://mp.weixin.qq.com/s/PwHNWxSi9sNo6lb_k81y8w) -->
+
+<!-- - [《盲视》：关于永恒的未知](https://www.bilibili.com/video/BV1ZG411W7Hh/?spm_id_from=333.788.top_right_bar_window_custom_collection.content.click&vd_source=21db84374de3d6785c04b0329b69e5e5) -->

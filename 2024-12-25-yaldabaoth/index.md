@@ -56,3 +56,5 @@
 - [以不满为动机的找寻只能带来各种形式的假象｜克里希那穆提](https://mp.weixin.qq.com/s/3dp5HlPyR9fCI1DkpcTX_g)
 
 - [“你”是无数个昨天的结果 | 克里希那穆提](https://mp.weixin.qq.com/s/5HeyYObHD0Tp6FrlzjRE-g)
+
+- [Anti Guru or Godman | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=B-RT8tj5PrI)

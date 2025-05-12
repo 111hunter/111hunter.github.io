@@ -1,9 +1,7 @@
-# 我思故我痴
+# 思想的本质是法西斯
 
 
-<!-- 无智亦无得．以无所得故．菩提萨埵。  - 《心经》 -->
-
-<!-- > 我认为笛卡尔问了一个错误的问题，并以一种非常有趣的方式回答了这个问题，“我思故我在”。但他从来没问过你应该问的问题，就像印度哲学家建立的那样，如果你不思考，你在吗？            - U.G. Krishnamurti -->
+<!-- 你不想成为一个正常人，你不想成为一个普通人。这就是真正的问题所在。做一个普通人是最困难的事情。文化要求你必须成为你本身以外的东西。这已经创造了某种势头 — 一种巨大的、强大的思想运动，要求你应该成为与你本身不同的东西。这就是它的全部。 -->
 
 > 人类只对解决问题的方法感兴趣，而对问题本身不感兴趣。你说这些伟大的圣贤、圣人和人类的拯救者都有我们问题的答案。那么，我们为什么还在问同样的问题？           - U.G. Krishnamurti
 
@@ -79,10 +77,8 @@
 
 - [What Thinking Is? Why Do We Think? | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=9olyqhwf2y4)
 
-<!-- 这里揭示了一个朴素的真理，念头创建了人类的社会结构 -->
-
 - [You Can't Think at All! | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=HKhWl9JfgYY)
 
-- [Quest For Permanent Happiness | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=d_B8_A-RSIY)
+- [Anti Guru or Godman | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=B-RT8tj5PrI)
 
 - [U.G Krishnamurti - Snap Out of It!](https://www.youtube.com/watch?v=1exoQ3W-6E4)

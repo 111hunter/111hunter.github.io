@@ -140,3 +140,5 @@ UG：我告诉你，你不是一个平凡的人；你是一个非凡的人（笑
 - [Mind, Thought, Body, Life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=x2HIcDgDgMs)
 
 - [Anti Guru or Godman | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=B-RT8tj5PrI)
+
+- [If Fear Ends, You Die | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=pxWozZbSqhc)

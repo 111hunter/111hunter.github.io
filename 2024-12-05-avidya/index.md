@@ -1,9 +1,11 @@
-# 完整不会产生问题
+# 我只知道我不知道
 
 
-<!-- > 十方如来，同一道故。出离生死，皆以直心。       —《楞严经》 -->
+<!-- I know that I know nothing       - Socrates -->
 
-> 这就像任何其他的反射行为一样：你问一个问题，那么就会有一些东西从它出来。它是如何运作的，我不知道。它不是任何思想的产物。从我身上出来的任何东西都不是由思想制造出来的 — 但是某种东西正在出来。你在扔一个球，球弹回来，你称它为“答案”。实际上，我所做的只是重新构造问题，然后把它扔给你们。            - U.G. Krishnamurti
+> 你看，因为我没有总结任何东西，这些都是不连贯，脱节的一系列陈述，仅此而已。所以很难总结并呈现给观众或听众，一些他们可以理解，从中受益并利用的东西。为什么你要听任何东西？你听老师的话只是为了学习一些东西并用它带来改变，我一直在说的是那里没有什么可以改变。         - U.G. Krishnamurti
+
+<!-- 如果你不想要这个世界上的任何东西，就不会有思想，这并不意味着思想不存在。   - 《独立的勇气》, U.G. Krishnamurti -->
 
 你和动物并没有什么不同 — 你不想接受这个事实。唯一的区别是你会思考。动物也有思维，但人的思维变得非常复杂——这就是不同之处。不要告诉我动物不会思考；它们会思考。但对人来说，它已经变成了一个非常复杂的结构，问题是如何把你自己从这个结构中解放出来，只把它作为在这个世界上发挥作用的工具 — 它根本没有其他用途 — 它只有一个可能的价值，用来交流一些东西，在日常世界中发挥作用 — “火车站在哪里？我在哪里可以买到西红柿？市场在哪里？” — 仅此而已。不是哲学概念，那根本没有意义。**除了基本需求 — 食物、衣服和住所 — 你想要任何东西，这就是你自我欺骗的开始，而且你的自我欺骗永无止境**。
 
@@ -30,6 +32,8 @@ UG：事实并非如此。你会发现：它们根本不是你的问题。提问
 **你知道答案，你想从我这里得到确认，或者你想让你的问题阐述清楚，或者你很好奇 — 如果你因为这些原因想和我对话，你只是在浪费你的时间；**
 
 你得去找一个学者，一个专家，一个有学问的人——他们能让这类问题更清楚。这就是我对这种对话感兴趣的地方：帮助你们提出自己的问题。试着提出一个你自己的问题。
+
+<!-- 知道什么是存在的是不可能的。这总是与你想成为什么有关。There Is No "How". Devastating words of U.G. Krishnamurti.   - 《独立的勇气》, U.G. Krishnamurti -->
 
 我完全没有什么问题。我来到这里，坐在这里，它是空的，但不是你用“空”这个词的那种意思。空和满并不是两件不同的事情；你无法在空和满之间划一条界线。可是这里什么也没有 — 什么也没有 — 所以我不知道该说些什么。
 
@@ -110,14 +114,19 @@ UG：**你看，即使那样你也会发现你做不到。你看，当有需求�
 
 **推荐阅读**
 
-<!-- 云在青天水在瓶 - 自在 -->
+<!-- 为什么你要听任何东西？你听老师的话只是为了学习一些东西并用它带来改变，我一直在说的是那里没有什么可以改变。 -->
 
-- [A to Z For LIFE | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=tVcgekmpQ64)
+- [False Perception | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=EQFrUKQfO4k&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy&index=6)
 
-- [Who Are We? What is Reality? | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=6Bf5TX05pc8&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy)
+<!-- 这个（信仰的）结构感兴趣的是保护传统，但是这个（新人）感兴趣的是打破传统的累积性质 - 不是维持传统，而是打破传统。在你体内运作的倾听机制就是传统 — 它通过倾听的过程，自我强化，自我增强。这就是为什么我说从我嘴里发出的声音和狗的吠叫、豺的嚎叫、猫的喧闹声没什么不同。  - 《独立的勇气》, U.G. Krishnamurti  -->
 
-<!-- - [困惑暗示着拣择，而拣择就是思维的产物｜克里希那穆提](https://mp.weixin.qq.com/s/mkNGE_tirtjpdrDvH1p0kg) -->
+- [Purpose of life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=p6qgSApgVhQ)
 
-<!-- - [无明没有开始，但是可以结束｜克里希那穆提](https://mp.weixin.qq.com/s/PwHNWxSi9sNo6lb_k81y8w) -->
+<!-- ……但同时我也知道，这种想法本质上是功能性的，它无法帮助我实现我无法实现的事情。 -->
 
-<!-- - [《盲视》：关于永恒的未知](https://www.bilibili.com/video/BV1ZG411W7Hh/?spm_id_from=333.788.top_right_bar_window_custom_collection.content.click&vd_source=21db84374de3d6785c04b0329b69e5e5) -->
+- [Insights | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=6VRf9x7SQyg)
+
+<!-- 如果这个世界上有艺术家的话，他永远不会破坏任何东西，因为如果他试图摧毁周围的世界，他也是在摧毁自己。 -->
+
+<!-- - [A to Z For LIFE | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=tVcgekmpQ64) -->
+

@@ -81,7 +81,7 @@
 
 因此，探究时间终结的本质需要一颗静默的心，一颗自由观察的心，一颗不受恐惧、自由观察你内在时间流逝的心，以及你如何依赖时间的心。如果有人告诉你，没有希望这回事，你会感到震惊。希望就是时间。你必须探究时间的本质，并意识到你的大脑、你的思想和你的心，它们是一体的，都在时间中运作，受时间的制约。因此，你现在所问的完全不同。你在要求大脑、思想以不同的方式运作，而这需要你在阅读时保持高度专注。
 
-## 认真倾听，意味着只记录必要的事物。
+## 正确倾听，意味着只记录必要的事物。
 
 我们应该清晰而简单地理解聆听的艺术、观察的艺术和学习的艺术。“艺术”一词通常指艺术家，那些绘画、诗歌、雕塑等等的人。但“艺术”一词的真正含义是赋予万物以适当的位置，将我们所有的思想、情感、焦虑等等都置于恰当的位置，赋予事物适当的比例，使一切和谐统一。
 
@@ -103,8 +103,16 @@
 
 **推荐阅读**
 
-- [The book of life - 2nd Public Talk, 1980](https://www.krishnamurti.org/transcript/the-book-of-life/)
+<!-- https://www.krishnamurti.org/transcript/can-i-completely-change-at-the-very-root/ -->
+
+- [Can I completely change at the very root? - 3rd Small Group Discussion, Brockwood Park, 1976](https://www.youtube.com/watch?v=BJNevwhO720)
+
+<!-- “寂静”是什么意思，在我们的现代语言系统中是没有词的。梵文、瑜伽士的语言中，有更精确的术语指向非二元。“Śūnyatā”这个字通常会翻译成“虚无”、“寂静”或“空性”。Stillness 可能是最接近的英语单词，但它不足以描述不属于这个二元世界的事物。真正体悟的是超越静与动的本初意识。超越时间。它是永恒的，是你存在的基础，是不会改变的实相的本质。事实上，它是不可改变的。当我们认识到我们的真实本性时，就能了解到，很明显地“寂静”和“噪音”是心智创造出来的二元对立。“静”与“动”是心智所创造出来的二元对立。一切都已经固有于那原始的寂静之中。世界的运动与静止完全相同。静止而知本性，动而知本性。都是空性在跳舞。这不是哲学问题，而是一种完全不同的与世界互动的方式。实际上它是在丢弃介面。    - 《无路之路》，纪录片三摩地 -->
+
+- [What is it to observe holistically? - 6th Public Talk, Saanen, 1977](https://www.krishnamurti.org/transcript/what-is-it-to-observe-holistically/)
+
+<!-- - [The book of life - 2nd Public Talk, 1980](https://www.krishnamurti.org/transcript/the-book-of-life/)
 
 - [What is the relationship of clarity to compassion? - 3rd Public Talk, Saanen, 1977](https://www.krishnamurti.org/transcript/what-is-the-relationship-of-clarity-to-compassion/)
 
-- [Without beauty and love there is no truth - 3rd Public Questions, Saanen, 1985](https://www.krishnamurti.org/transcript/3rd-question-answer-meeting-6/)
+- [Without beauty and love there is no truth - 3rd Public Questions, Saanen, 1985](https://www.krishnamurti.org/transcript/3rd-question-answer-meeting-6/) -->
