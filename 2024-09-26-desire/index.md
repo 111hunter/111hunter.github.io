@@ -1,4 +1,4 @@
-# 追寻真理不过是一种逃避
+# 追寻真理即是在逃避真理
 
 
 > 如果我们了解了不完整本身，那么我们就不再需要寻找目标，目标不过是个替代品而已。 — 克里希那穆提
@@ -41,11 +41,14 @@
 
 所以哪里有选择，哪里就不可能有洞察，因为洞察是毫无选择的。哪里有选择和选择的能力，哪里就只有局限。只有当选择止息，才会有解放、完满、丰足的行动，也就是生命本身。创造是没有选择的，就像生命没有选择、了解没有选择一样。真理也同样，它是一种持续不断的行动，是一种永恒的发生，其中没有选择。它是纯然的洞察。
 
-
 **参阅资料**
 
-- 节选自 [《倾听内心的声音》](https://book.douban.com/subject/25775617/)
+<!-- 《倾听内心的声音》“追寻真理不过是一种逃避” -->
+
+- 节选自 [Alpino, Italy 3rd Public Talk 6th July, 1933](https://jkrishnamurti.org/content/alpino-italy-3rd-public-talk-6th-july-1933/1933)
 
 **推荐阅读**
 
-- [Truth and Actuality](https://mp.weixin.qq.com/s/80fHVG6om7EIRu1WeBOHXQ)
+<!-- https://www.krishnamurti.org/transcript/can-i-completely-change-at-the-very-root/ -->
+
+- [Can I completely change at the very root? - 3rd Small Group Discussion, Brockwood Park, 1976](https://www.youtube.com/watch?v=BJNevwhO720)

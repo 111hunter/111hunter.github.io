@@ -4,7 +4,19 @@
         <link>http://localhost:1313/posts/</link>
         <description>所有文章 | 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Tue, 06 May 2025 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 17 May 2025 11:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>如果起作用的即是程序，怎样才能不在程序中？</title>
+    <link>http://localhost:1313/2025-05-17-memory/</link>
+    <pubDate>Sat, 17 May 2025 11:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-05-17-memory/</guid>
+    <description><![CDATA[<!-- 每个人都有如其所是，直接认识事实的能力，放弃这种能力，无疑是人类这个物种的悲剧。 -->
+<!-- 并不是以一种分离的方式认识到我很混乱。 事实是意识很混乱，句号。 我无法对它采取行动。 因为之前对它的行动是一种能量的浪费。 因为我从未解决它。  - 克里希那穆提 -->
+<!-- 无论你出于什么原因想要摆脱的事物，都是可以让你自由的东西。 - U.G. Krishnamurti -->
+<blockquote>
+<p>记忆是死的，不是活的东西。 你不会有活着的东西的记忆。 所以，我是在和死的东西一起生活。 依靠过去的记忆过活，我就是和死亡、 死掉的东西生活在一起。 我执着于那些记忆， 因为它给了我某种安慰、安全感等等， 但是这就跟抱着一具死尸一样。 所以，如果我意识到、实际看到这个真相， 大脑细胞会发生突变。        - 克里希那穆提</p>]]></description>
+</item>
+<item>
     <title>观察、倾听和学习的艺术</title>
     <link>http://localhost:1313/2025-05-06-learning/</link>
     <pubDate>Tue, 06 May 2025 17:50:34 &#43;0800</pubDate>
@@ -34,16 +46,17 @@
 <p>举灯照影，影叠千灯；欲数千灯，灯化指间尘；欲拂尘埃，尘落砚中墨；欲洗墨痕，墨染半江水；欲舀江水，水映举灯人 — 却见波纹深处，无灯无影无计数。</p>]]></description>
 </item>
 <item>
-    <title>美即是真，真即是美</title>
+    <title>如果外在即内在，那么什么是学习？</title>
     <link>http://localhost:1313/2025-04-28-virtue/</link>
     <pubDate>Mon, 28 Apr 2025 17:50:34 &#43;0800</pubDate>
     <author>寂</author>
     <guid>http://localhost:1313/2025-04-28-virtue/</guid>
     <description><![CDATA[<!-- “美即是真，真即是美” 这就包括你们所知道、和该知道的一切。 - 济慈，《希腊古翁颂》 -->
 <!-- 根据苏格拉底的说法，美德就是知识。根据亚里士多德的说法，苏格拉底的道德美德观与人类的共识背道而驰。 -->
-<!-- 聆听就是不要做任何阻止去看的事情 -->
+<!-- 聆听就是不做任何阻止去看的事情 -->
+<!-- > 当你说，看，那个真实的东西比词语更重要，然后他们说：“我要怎样摆脱词语，我要怎样沟通，如果我没有词语的话？” 你看到他们是怎么跑掉的吗？他们不关心那个东西本身，只关心词语。            - 克里希那穆提 -->
 <blockquote>
-<p>当你说，看，那个真实的东西比词语更重要，然后他们说：“我要怎样摆脱词语，我要怎样沟通，如果我没有词语的话？” 你看到他们是怎么跑掉的吗？他们不关心那个东西本身，只关心词语。            - 克里希那穆提</p>]]></description>
+<p>从心理上，从内在，存在学习吗？ 内在是由思想的发明， 与外在相对应。 我不知道你是不是明白了。 如果我了解了外在， 我就了解了内在， 因为是内在创造了外在。 外在指的是社会结构、宗教约束，所有那些都是 思想发明或堆砌起来的： 各种耶稣、基督、佛陀 — 所有的。 那有什么可学的？           - 克里希那穆提</p>]]></description>
 </item>
 <item>
     <title>从基础理论到工业应用，什么是虚拟化环境？</title>
@@ -71,7 +84,8 @@
     <pubDate>Sun, 20 Apr 2025 21:50:34 &#43;0800</pubDate>
     <author>寂</author>
     <guid>http://localhost:1313/2025-04-20-weak/</guid>
-    <description><![CDATA[<p>拉图尔：我有理由保持怀疑，因为您对智者的描述会导致一种完全孤立、孤芳自赏、回归象牙塔的形象。谈论道德总是让人只关注自我，这就没办法再大幅往前走。</p>]]></description>
+    <description><![CDATA[<!-- > 反者，道之动；弱者，道之用。    -《道德经》 -->
+<p>拉图尔：我有理由保持怀疑，因为您对智者的描述会导致一种完全孤立、孤芳自赏、回归象牙塔的形象。谈论道德总是让人只关注自我，这就没办法再大幅往前走。</p>]]></description>
 </item>
 <item>
     <title>心智模式 — 游戏规则说明书</title>
@@ -102,14 +116,6 @@
 <p>React 将 UI 抽象为状态函数的哲学，源于对计算机图形学与函数式编程的深刻融合：</p>
 <h3 id="1-命令式-dom-操作的致命缺陷">1. 命令式 DOM 操作的致命缺陷</h3>
 <p><strong>矛盾本质</strong>：直接操作DOM导致状态与视图耦合，违反单向数据流原则</p>]]></description>
-</item>
-<item>
-    <title>从栈到堆，什么是 JavaScript?</title>
-    <link>http://localhost:1313/2025-03-21-js/</link>
-    <pubDate>Fri, 21 Mar 2025 10:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2025-03-21-js/</guid>
-    <description><![CDATA[<p>JavaScript 是一种功能强大且灵活的编程语言，广泛应用于网页开发、服务器端开发等领域。要深入理解 JavaScript，我们可以从变量在计算机中的数据存储开始，逐步探讨其运行机制、最新语法以及设计理念。以下是对这些方面的逐层剖析。</p>]]></description>
 </item>
 </channel>
 </rss>

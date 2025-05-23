@@ -165,7 +165,7 @@ PDA 循环由进化的一个基本要素 — **适应度收益函数**塑造。�
 
 - [意识是一种幻觉吗？](https://neu-reality.com/2018/06/is-consciousness-an-illusion/)
 
-- [Mind, Thought, Body, Life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=x2HIcDgDgMs&t=101s)
+- [Body, Mind and Soul | ugarchive.blogspot](https://ugarchive.blogspot.com/2022/01/body-mind-and-soul.html)
 
-- [Purpose of life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=p6qgSApgVhQ)
+- [Science and U.G. | ugarchive.blogspot](https://ugarchive.blogspot.com/2021/08/science-and-ug.html)
 

@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/2020-11-10-debounce\/"
-        },"genre": "posts","keywords": "JavaScript","wordcount":  1096 ,
+        },"genre": "posts","keywords": "JavaScript","wordcount":  1519 ,
         "url": "http:\/\/localhost:1313\/2020-11-10-debounce\/","datePublished": "2020-11-10T22:30:00+08:00","dateModified": "2020-11-10T22:30:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,8 +107,8 @@
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">了解防抖与节流</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
 </span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-11-10">2020-11-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1096 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/2020-11-10-debounce/" class="leancloud_visitors" data-flag-title="了解防抖与节流">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-11-10">2020-11-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1519 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/2020-11-10-debounce/" class="leancloud_visitors" data-flag-title="了解防抖与节流">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -134,12 +134,56 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>在前端开发的过程中，我们经常需要绑定一些持续触发的事件，如 resize、scroll、mousemove 等，然而有些时候我们并不希望在事件持续触发的过程中频繁地去执行函数，这时候就会用到函数防抖(Debounce)与节流(Throttle)：</p>
+<p><strong>防抖</strong>：</p>
 <ul>
 <li>
-<p>防抖：在触发事件 n 秒后才执行函数，如果在 n 秒内又触发了事件，则重新计算时间。</p>
+<p>特征：事件触发后，延迟一段时间执行回调。若在延迟期间再次触发事件，则重新计时。</p>
 </li>
 <li>
-<p>节流：连续触发事件时在 n 秒中只执行一次函数，节流的目的是稀释函数的执行频率。</p>
+<p>逻辑：事件频繁触发，但只需在最后一次触发后执行一次回调。</p>
+</li>
+<li>
+<p>事件：</p>
+<ul>
+<li>
+<p>input（搜索框输入: 用户连续输入时，避免每次按键都发送请求，而是在用户停止输入（如 300ms 后）再发起搜索请求）</p>
+</li>
+<li>
+<p>resize（窗口大小调整：窗口拖动调整大小时，频繁触发 resize 事件，防抖可确保只在调整结束后计算布局）</p>
+</li>
+<li>
+<p>submit（表单验证：实时验证输入内容时，避免每次输入都触发校验逻辑，而是在用户暂停输入后执行）</p>
+</li>
+<li>
+<p>click（按钮防重复提交：防止用户快速点击按钮多次提交数据，只在最后一次点击后执行提交逻辑）</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>节流</strong>：</p>
+<ul>
+<li>
+<p>特征：事件触发时，固定时间间隔内只执行一次回调，稀释回调执行频率。</p>
+</li>
+<li>
+<p>逻辑：事件持续高频触发，但需要以可控的频率执行回调。</p>
+</li>
+<li>
+<p>事件：</p>
+<ul>
+<li>
+<p>scroll（滚动事件：页面滚动时，每隔固定时间（如 100ms）检查滚动位置（用于懒加载、回到顶部按钮显隐等））</p>
+</li>
+<li>
+<p>mousemove（鼠标移动：拖拽元素或绘制画布时，限制高频更新频率，避免卡顿）</p>
+</li>
+<li>
+<p>游戏技能冷却：限制玩家按键频率（如射击类游戏），确保技能按固定间隔触发</p>
+</li>
+<li>
+<p>实时数据更新：高频数据流中，固定时间间隔更新界面，避免频繁渲染</p>
+</li>
+</ul>
 </li>
 </ul>
 <p>下面我们简单地了解这两种限制函数执行次数的具体实现方式。首先看这个例子：</p>
