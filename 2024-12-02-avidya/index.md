@@ -126,7 +126,7 @@ UG：**你看，即使那样你也会发现你做不到。你看，当有需求�
 
 - [A to Z For LIFE | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=tVcgekmpQ64)
 
-<!-- ……但同时我也知道，这种想法本质上是功能性的，它无法帮助我实现我无法实现的事情。 -->
+<!-- ……但与此同时，我知道思想的本质只是功能性的，它不能帮助我成为我不是的东西。 -->
 
 - [The Fundamental Mistake of Mankind | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=bBTzL2WQ5OI)
 

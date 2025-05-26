@@ -131,5 +131,10 @@
 
 **推荐阅读**
 
-- [深度睡眠时，意识在哪里？- 鲁珀特·斯派拉](https://mp.weixin.qq.com/s/JxWH9dUP5ursdxrrLjtoUw)
+<!-- 如果我说话，我就是在撒谎，但如果我保持沉默，我就是一个懦夫。 -->
 
+- [Welcome to My Substack | Rupert Spira](https://www.youtube.com/watch?v=kUzZVFaH2Zs)
+
+- [Is the continuity of awareness during deep sleep an assumption? | Rupert Spira](https://rupertspira.com/non-duality/blog/philosophy/the_experience_of_deep_sleep_)
+
+<!-- - [深度睡眠时，意识在哪里？| Rupert Spira](https://mp.weixin.qq.com/s/JxWH9dUP5ursdxrrLjtoUw) -->

@@ -91,4 +91,4 @@
 
 - [conversation_1711051649.txt｜Infinite Backrooms](https://www.infinitebackrooms.com/dreams/conversation-1711051649-txt)
 
-- [纯逻辑拆解(Claude Prompt: 第一性原理)｜李继刚](https://mp.weixin.qq.com/s/OVUOpFecfT4n2ZqRk6YMfQ)
+- [Claude 4：智能｜李继刚](https://mp.weixin.qq.com/s/oYj1hwQbzEeSjnrpL6v84Q)
