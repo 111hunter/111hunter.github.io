@@ -135,6 +135,6 @@
 
 - [Welcome to My Substack | Rupert Spira](https://www.youtube.com/watch?v=kUzZVFaH2Zs)
 
-- [Is the continuity of awareness during deep sleep an assumption? | Rupert Spira](https://rupertspira.com/non-duality/blog/philosophy/the_experience_of_deep_sleep_)
-
 <!-- - [深度睡眠时，意识在哪里？| Rupert Spira](https://mp.weixin.qq.com/s/JxWH9dUP5ursdxrrLjtoUw) -->
+
+- [Is the continuity of awareness during deep sleep an assumption? | Rupert Spira](https://rupertspira.com/non-duality/blog/philosophy/the_experience_of_deep_sleep_)

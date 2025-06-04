@@ -4,7 +4,16 @@
         <link>http://localhost:1313/categories/thinking/</link>
         <description>Thinking - 分类 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 17 May 2025 11:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 02 Jun 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/thinking/" rel="self" type="application/rss+xml" /><item>
+    <title>问题背后的那个问题是什么？</title>
+    <link>http://localhost:1313/2025-06-02-knowledge/</link>
+    <pubDate>Mon, 02 Jun 2025 13:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-06-02-knowledge/</guid>
+    <description><![CDATA[<!-- 佛陀在《迦罗摩经》中说，为了探究真相，人们必须怀疑所有的传统、经典、教义，以及思维和感观中的所有内容。 -->
+<p>克：<strong>我们可以从昨天停下的地方继续探讨吗？是什么在折磨着心灵？ 它总是遵循着某个模式，总是在追寻。 如果它放下一个模式，就会捡起另一个模式， 继续在那个模式之中不停运转。 为什么？一个人可以给出各种解释，也明白它为什么这么做： 为了保护，为了安全，因为懒散、冷漠、 一种麻木不仁， 完全不顾及自己的绽放，等等。但是我认为弄清楚 我们的心为什么总是沿着某个特定的方向运转非常重要。</strong></p>]]></description>
+</item>
+<item>
     <title>如果起作用的即是程序，怎样才能不在程序中？</title>
     <link>http://localhost:1313/2025-05-17-memory/</link>
     <pubDate>Sat, 17 May 2025 11:50:34 &#43;0800</pubDate>
@@ -108,16 +117,6 @@
     <description><![CDATA[<!-- 如果你不想要这个世界上的任何东西，就不会有思想，这并不意味着思想不存在。   - U.G. Krishnamurti，《独立的勇气》 -->
 <blockquote>
 <p>人类只对解决问题的方法感兴趣，而对问题本身不感兴趣。你说这些伟大的圣贤、圣人和人类的拯救者都有我们问题的答案。那么，我们为什么还在问同样的问题？           - U.G. Krishnamurti</p>]]></description>
-</item>
-<item>
-    <title>抓取经验即是在背弃经验</title>
-    <link>http://localhost:1313/2024-11-20-shiva/</link>
-    <pubDate>Wed, 20 Nov 2024 11:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2024-11-20-shiva/</guid>
-    <description><![CDATA[<!-- 如果思维不是解决问题的工具，那么还有其他工具吗？我说没有。它只能制造问题。它不能解决问题。当你明白了这一点，你就会意识到，身体里的能量是生命的体现或表达，它处理一切问题的方式都要简单得多，比你通过自己的想法产生的摩擦性思维要简单得多。      -  U.G. Krishnamurti，《独立的勇气》 -->
-<blockquote>
-<p>提问者说他很专注。他很专注，因为他想要答案。他不想要暗示，他可能不会…知道这个答案，他会做什么呢？他专注，他等待，他充满希望 — 他拥有所有这些特质 — 为什么呢？ - U.G. Krishnamurti</p>]]></description>
 </item>
 </channel>
 </rss>

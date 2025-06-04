@@ -4,7 +4,16 @@
         <link>http://localhost:1313/tags/recursion/</link>
         <description>Recursion - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 17 May 2025 11:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/recursion/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 02 Jun 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/recursion/" rel="self" type="application/rss+xml" /><item>
+    <title>问题背后的那个问题是什么？</title>
+    <link>http://localhost:1313/2025-06-02-knowledge/</link>
+    <pubDate>Mon, 02 Jun 2025 13:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-06-02-knowledge/</guid>
+    <description><![CDATA[<!-- 佛陀在《迦罗摩经》中说，为了探究真相，人们必须怀疑所有的传统、经典、教义，以及思维和感观中的所有内容。 -->
+<p>克：<strong>我们可以从昨天停下的地方继续探讨吗？是什么在折磨着心灵？ 它总是遵循着某个模式，总是在追寻。 如果它放下一个模式，就会捡起另一个模式， 继续在那个模式之中不停运转。 为什么？一个人可以给出各种解释，也明白它为什么这么做： 为了保护，为了安全，因为懒散、冷漠、 一种麻木不仁， 完全不顾及自己的绽放，等等。但是我认为弄清楚 我们的心为什么总是沿着某个特定的方向运转非常重要。</strong></p>]]></description>
+</item>
+<item>
     <title>如果起作用的即是程序，怎样才能不在程序中？</title>
     <link>http://localhost:1313/2025-05-17-memory/</link>
     <pubDate>Sat, 17 May 2025 11:50:34 &#43;0800</pubDate>
@@ -105,15 +114,6 @@
     <description><![CDATA[<!-- 我总想观看，似乎我只有眼睛。 - 佩索阿，《我从不曾努力生活》 -->
 <blockquote>
 <p>一旦体验被赋予了语言，思想就诞生了。经验被压抑，所见被压抑，只有文字在脑海中飘荡。这些想法非常短暂，所以在一个想法消失之前，我们会将另一个经验转化为想法。<strong>这个过程会持续一生，我们被文字填满，承受着文字的沉重负担，以至于迷失了自己</strong>。   - 奥修</p>]]></description>
-</item>
-<item>
-    <title>你为这次旅行准备了无数次</title>
-    <link>http://localhost:1313/2024-10-19-unconscious/</link>
-    <pubDate>Sat, 19 Oct 2024 09:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2024-10-19-unconscious/</guid>
-    <description><![CDATA[<blockquote>
-<p>你是那种会把行李打开再打包的人。你想继续忙着打包。你渴望活动，所以继续打包。你为这次旅行准备了无数次。你做了多少次？但你还是没有成为一个男人！<strong>你遇到过很多次这种情况，但每次准备工作完成后，你又开始想知道还有什么要做。你又打开行李，又把东西收拾好，这样你就能很容易地找到它们……然后下次你开始收拾行李。会议什么时候举行</strong>？      — 奥修</p>]]></description>
 </item>
 </channel>
 </rss>

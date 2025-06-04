@@ -4,9 +4,18 @@
         <link>http://localhost:1313/</link>
         <description>彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 17 May 2025 11:50:34 &#43;0800</lastBuildDate>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 02 Jun 2025 13:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>问题背后的那个问题是什么？</title>
+    <link>http://localhost:1313/2025-06-02-knowledge/</link>
+    <pubDate>Mon, 02 Jun 2025 13:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-06-02-knowledge/</guid>
+    <description><![CDATA[<!-- 佛陀在《迦罗摩经》中说，为了探究真相，人们必须怀疑所有的传统、经典、教义，以及思维和感观中的所有内容。 -->
+<p>克：<strong>我们可以从昨天停下的地方继续探讨吗？是什么在折磨着心灵？ 它总是遵循着某个模式，总是在追寻。 如果它放下一个模式，就会捡起另一个模式， 继续在那个模式之中不停运转。 为什么？一个人可以给出各种解释，也明白它为什么这么做： 为了保护，为了安全，因为懒散、冷漠、 一种麻木不仁， 完全不顾及自己的绽放，等等。但是我认为弄清楚 我们的心为什么总是沿着某个特定的方向运转非常重要。</strong></p>]]></description>
+</item>
+<item>
     <title>如果起作用的即是程序，怎样才能不在程序中？</title>
     <link>http://localhost:1313/2025-05-17-memory/</link>
     <pubDate>Sat, 17 May 2025 11:50:34 &#43;0800</pubDate>
@@ -106,18 +115,6 @@
     <author>寂</author>
     <guid>http://localhost:1313/2025-03-26-symbolic-expression/</guid>
     <description><![CDATA[<p>S-表达式（S-expression，全称Symbolic Expression，符号表达式）是一种由约翰·麦卡锡（John McCarthy）在设计Lisp编程语言时引入的数据表示方法。它以简洁的语法和强大的表达能力著称，不仅是Lisp及其变种（如Scheme、Common Lisp）的核心，还广泛应用于符号计算、人工智能和数据结构的表示。S-表达式的核心思想是通过符号和括号构建一种既能表示数据又能表示程序的结构，具有“代码即数据”的特性。</p>]]></description>
-</item>
-<item>
-    <title>从函数到副作用 - React 的时空观</title>
-    <link>http://localhost:1313/2025-03-21-react/</link>
-    <pubDate>Fri, 21 Mar 2025 11:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2025-03-21-react/</guid>
-    <description><![CDATA[<p>让我们从计算机科学基础到框架设计哲学，逐层解剖 React 的核心思想：</p>
-<h2 id="一数学根基函数式编程的觉醒">一、数学根基：函数式编程的觉醒</h2>
-<p>React 将 UI 抽象为状态函数的哲学，源于对计算机图形学与函数式编程的深刻融合：</p>
-<h3 id="1-命令式-dom-操作的致命缺陷">1. 命令式 DOM 操作的致命缺陷</h3>
-<p><strong>矛盾本质</strong>：直接操作DOM导致状态与视图耦合，违反单向数据流原则</p>]]></description>
 </item>
 </channel>
 </rss>
