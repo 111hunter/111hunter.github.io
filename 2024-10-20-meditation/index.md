@@ -227,8 +227,6 @@
 
 **推荐阅读**
 
-<!-- > 知见立知，即无明本；知见无见，斯即涅槃。   —《楞严经》 -->
-
 <!-- > 心生于物，死于物，机在目。   —《阴符经》 -->
 
 - [观察者的麻烦](https://www.oshotimes.com/insights/lifestyle/spirituality/the-trouble-with-the-watcher/)
@@ -237,4 +235,6 @@
 
 - [让内心充分展现](https://mp.weixin.qq.com/s/rWCE_miLMqYOJ61SwbuX-Q)
 
-- [《楞严经》改编微电影《真心·棒》](https://www.youtube.com/watch?v=iMr76VQkmnU)
+<!-- > 知见立知，即无明本；知见无见，斯即涅槃。   —《楞严经》 -->
+
+<!-- - [《楞严经》改编微电影《真心·棒》](https://www.youtube.com/watch?v=iMr76VQkmnU) -->

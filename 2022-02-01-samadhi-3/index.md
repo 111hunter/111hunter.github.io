@@ -129,7 +129,10 @@
 
 **推荐阅读**
 
-<!-- ……但与此同时，我知道思想的本质只是功能性的，它不能帮助我成为我不是的东西。 -->
+<!-- ……但与此同时，我知道思想的本质只是功能性的，它不能帮助我成为我不是的东西。   -《No Way Out》 -->
+
+<!-- https://en.wikisource.org/wiki/No_Way_Out/Chapter_3 -->
 
 - [The Fundamental Mistake of Mankind | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=bBTzL2WQ5OI)
+
 
