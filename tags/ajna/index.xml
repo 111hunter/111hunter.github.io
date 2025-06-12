@@ -1,8 +1,0 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Ajna - 标签 - 寂的博客</title>
-        <link>http://localhost:1313/tags/ajna/</link>
-        <description>Ajna - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><atom:link href="http://localhost:1313/tags/ajna/" rel="self" type="application/rss+xml" /></channel>
-</rss>

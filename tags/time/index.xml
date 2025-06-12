@@ -4,7 +4,16 @@
         <link>http://localhost:1313/tags/time/</link>
         <description>Time - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 02 Jun 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/time/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 11 Jun 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/time/" rel="self" type="application/rss+xml" /><item>
+    <title>我们正在寻找的正是正在寻找的</title>
+    <link>http://localhost:1313/2025-06-11-halting-problem/</link>
+    <pubDate>Wed, 11 Jun 2025 13:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-06-11-halting-problem/</guid>
+    <description><![CDATA[<!-- 想法本身，当它觉察到自己，知道自己的局限，便会找到它的位置。 - The beginning of meditation, Public Talk 4 Brockwood Park, krishnamurti,  -->
+<p>克：<span style="color: #EF3882; font-weight: bold; font-style: italic;">我们那天谈到了 一颗心彻底摆脱了一切运动， 摆脱了思想堆砌的一切事物， 摆脱了思想带来的、 在过去、未来经历的一切，等等。 但是在我们探讨这个问题之前， 我想问问什么是唯物主义？ 人类被困在了这种唯物主义的态度、 价值观和经验中。 唯物主义的本质是什么？</span></p>]]></description>
+</item>
+<item>
     <title>问题背后的那个问题是什么？</title>
     <link>http://localhost:1313/2025-06-02-knowledge/</link>
     <pubDate>Mon, 02 Jun 2025 13:50:34 &#43;0800</pubDate>
@@ -106,18 +115,6 @@
     <description><![CDATA[<!-- > 你从书本上得到的哲学思想、各种理论及信仰等，这些都成了你的传统，它们对你的思想实在有很大的障碍，因为你的心会利用这些东西作为自己的保障，于是你就被它限制住了。所以你必须一方面让你的心从传统中解脱出来，一方面也要培养自己的知识与技术，这就是教育的功用。      - 克里希那穆提 -->
 <blockquote>
 <p>执于己见，障蔽真心，反以智为桎梏。    - 由 Gemini 2.0 Flash Experimental 生成</p>]]></description>
-</item>
-<item>
-    <title>巫师的学徒</title>
-    <link>http://localhost:1313/2024-12-06-sorcerer/</link>
-    <pubDate>Fri, 06 Dec 2024 11:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2024-12-06-sorcerer/</guid>
-    <description><![CDATA[<!-- "Der Zauberlehrling" (1797), by Johann Wolfgang von Goethe -->
-<blockquote>
-<p>吾有知乎哉？无知也。有鄙夫问于我，空空如也。我叩其两端而竭焉。    -《论语·子罕》</p></blockquote>
-<!-- ![hello-world-cpp](/img/hello-world-cpp.jpeg "hello-world-cpp") -->
-<p>“真理是什么？从神秘主义者、哲学家和科学家的视角和 AI 探索绝对真理，你认为真理是什么？在这一个主题研究的背景下，问你，AI，你认为真理是什么？” 以下是 AI 的回答：</p>]]></description>
 </item>
 </channel>
 </rss>

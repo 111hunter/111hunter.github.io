@@ -385,6 +385,8 @@
 
 **参阅资料**
 
+<!-- https://krishnamurtisubtitles.info/en/SD74CA10_EN_1.html -->
+
 - 节选自 [The art of listening - 3rd Dialogue, San Diego, California, 1974](https://www.krishnamurti.org/transcript/the-art-of-listening/)
 
 **推荐阅读**

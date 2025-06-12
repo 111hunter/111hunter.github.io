@@ -4,7 +4,16 @@
         <link>http://localhost:1313/tags/recursion/</link>
         <description>Recursion - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 02 Jun 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/recursion/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 11 Jun 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/recursion/" rel="self" type="application/rss+xml" /><item>
+    <title>我们正在寻找的正是正在寻找的</title>
+    <link>http://localhost:1313/2025-06-11-halting-problem/</link>
+    <pubDate>Wed, 11 Jun 2025 13:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-06-11-halting-problem/</guid>
+    <description><![CDATA[<!-- 想法本身，当它觉察到自己，知道自己的局限，便会找到它的位置。 - The beginning of meditation, Public Talk 4 Brockwood Park, krishnamurti,  -->
+<p>克：<span style="color: #EF3882; font-weight: bold; font-style: italic;">我们那天谈到了 一颗心彻底摆脱了一切运动， 摆脱了思想堆砌的一切事物， 摆脱了思想带来的、 在过去、未来经历的一切，等等。 但是在我们探讨这个问题之前， 我想问问什么是唯物主义？ 人类被困在了这种唯物主义的态度、 价值观和经验中。 唯物主义的本质是什么？</span></p>]]></description>
+</item>
+<item>
     <title>问题背后的那个问题是什么？</title>
     <link>http://localhost:1313/2025-06-02-knowledge/</link>
     <pubDate>Mon, 02 Jun 2025 13:50:34 &#43;0800</pubDate>
@@ -104,16 +113,6 @@
     <guid>http://localhost:1313/2024-10-25-proprioception/</guid>
     <description><![CDATA[<blockquote>
 <p>什么是平庸？ “平庸”这个词来自于希腊语、拉丁文， 它的意思是“爬山爬到一半”。 这就是这个词 — 平庸 — 的真正含义， 从来不一直往上爬， 而是满足于爬到半山腰，或者爬到三分之一的高度。 这就是这个词 — 平庸 — 的意思。 而我们的教育 — 不管多么包罗万象， 也无论我们通过一门特定的课程获得了怎样的知识 — 所有这些教育的要素都制约着心灵。 你难道没有注意到那些专家是如何 — 特别是在这个国家， 而这种现象正蔓延到世界的每个角落 — 那些专家： 科学家、医生、外科医师、哲学家、 心理学家等等 — 他们是如何支配着我们每一个人的。 他们是权威，来告诉你该怎么做。 他们是专家：指导你如何抚养小孩， 如何正确地发生性关系， 如何给你的脸化妆； 有着这些权威人士，而我们都听他们的。 我们的顺从某些时候也会变为反抗， 然而那种反抗仅仅是一种反应， 所以它并不是彻底的了悟 — 明白。所有专业化的知识都是局限的， 就如所有的知识都是局限的一样。 而一种诞生于这种局限事物的文明根本不是文明。 并不存在什么美国文明，或者欧洲文明。 他们可以追溯到文艺复兴，追溯过去的历史， 然而心灵的深层文明 只有通过摆脱已知才会产生。 我们能够有这样的自由吗？      - 克里希那穆提</p>]]></description>
-</item>
-<item>
-    <title>我总是观看，似乎我只有眼睛</title>
-    <link>http://localhost:1313/2024-10-20-meditation/</link>
-    <pubDate>Sun, 20 Oct 2024 17:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2024-10-20-meditation/</guid>
-    <description><![CDATA[<!-- 我总想观看，似乎我只有眼睛。 - 佩索阿，《我从不曾努力生活》 -->
-<blockquote>
-<p>一旦体验被赋予了语言，思想就诞生了。经验被压抑，所见被压抑，只有文字在脑海中飘荡。这些想法非常短暂，所以在一个想法消失之前，我们会将另一个经验转化为想法。<strong>这个过程会持续一生，我们被文字填满，承受着文字的沉重负担，以至于迷失了自己</strong>。   - 奥修</p>]]></description>
 </item>
 </channel>
 </rss>

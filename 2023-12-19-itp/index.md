@@ -167,5 +167,7 @@ PDA 循环由进化的一个基本要素 — **适应度收益函数**塑造。�
 
 - [Body, Mind and Soul | ugarchive.blogspot](https://ugarchive.blogspot.com/2022/01/body-mind-and-soul.html)
 
-- [Science and U.G. | ugarchive.blogspot](https://ugarchive.blogspot.com/2021/08/science-and-ug.html)
+<!-- - [Science and U.G. | ugarchive.blogspot](https://ugarchive.blogspot.com/2021/08/science-and-ug.html) -->
+
+- [如何证明时间和空间可能根本不存在？| Rupert Spira](https://www.youtube.com/watch?v=paG19Kpn_1Y)
 
