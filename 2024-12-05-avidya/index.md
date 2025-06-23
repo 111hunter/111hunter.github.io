@@ -31,7 +31,7 @@ UG：事实并非如此。你会发现：它们根本不是你的问题。提问
 
 你得去找一个学者，一个专家，一个有学问的人——他们能让这类问题更清楚。这就是我对这种对话感兴趣的地方：帮助你们提出自己的问题。试着提出一个你自己的问题。
 
-<!-- 知道什么是存在的是不可能的。这总是与你想成为什么有关。There Is No "How". Devastating words of U.G. Krishnamurti.   - 《独立的勇气》, U.G. Krishnamurti -->
+<!-- 知道什么是存在的是不可能的。这总是与你想成为什么有关。There Is No "How". Devastating words of U.G. Krishnamurti.   - U.G. Krishnamurti,《The Courage To Stand Alone》 -->
 
 我完全没有什么问题。我来到这里，坐在这里，它是空的，但不是你用“空”这个词的那种意思。空和满并不是两件不同的事情；你无法在空和满之间划一条界线。可是这里什么也没有 — 什么也没有 — 所以我不知道该说些什么。
 

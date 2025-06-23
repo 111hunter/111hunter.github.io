@@ -43,15 +43,13 @@
 
 **推荐阅读**
 
+<!-- （他）对社会是一种威胁，因为所有的破坏都来自他们（宗教导师）— 一个谈论爱的人，一个谈论“爱人如己”的人，一个谈论非暴力的人。所有的破坏力量都源自那个人的思想。因此，我们都是这种文化的继承者。我们只能这样做。（如果你拒绝这些导师），你就能摆脱这种负担，摆脱整个文化的虚假性。这就是我要说的。就个人而言，你将从强加给我们的所有荒谬中解脱出来。我要说的就是这些。     - U.G. Krishnamurti,《The Courage To Stand Alone》 -->
+
 - [Anything born out of thought is a sensual activity | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=x5RilCu8--s)
 
-<!-- https://www.krishnamurti.org/transcript/can-i-completely-change-at-the-very-root/ -->
-
-<!-- （他）对社会是一种威胁，因为所有的破坏都来自他们（宗教导师）——一个谈论爱的人，一个谈论“爱人如己”的人，一个谈论非暴力的人。所有的破坏力量都源自那个人的思想。因此，我们都是这种文化的继承者。我们只能这样做。（如果你拒绝这些导师），你就能摆脱这种负担，摆脱整个文化的虚假性。这就是我要说的。就个人而言，你将从强加给我们的所有荒谬中解脱出来。我要说的就是这些。     - U.G. Krishnamurti，《独立的勇气》 -->
+<!-- 实际上，这些问题都是神经系统的问题，如果让身体自己来处理，它会比你试图从心理或宗教层面来解决这些问题做得更好。所有提供给我们的解决方案，以及几个世纪以来我们一直在采用的解决方案，除了给我们带来一点安慰，给我们一种帮助你承受痛苦的缓和剂之外，并没有起到任何作用。然而，我们根本无法摆脱这种痛苦，因为我们寄希望于问题能通过同样的工具来解决，而这些工具正是把所有这些事情变成问题的工具。这种思维机制唯一能做的就是制造问题。但它永远、永远无法解决问题。    - U.G. Krishnamurti,《The Courage To Stand Alone》 -->
 
 - [Freedom From Illusion & Facing Reality | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=9_sHrqk7Ezw&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy)
-
-<!-- 实际上，这些问题都是神经系统的问题，如果让身体自己来处理，它会比你试图从心理或宗教层面来解决这些问题做得更好。所有提供给我们的解决方案，以及几个世纪以来我们一直在采用的解决方案，除了给我们带来一点安慰，给我们一种帮助你承受痛苦的缓和剂之外，并没有起到任何作用。然而，我们根本无法摆脱这种痛苦，因为我们寄希望于问题能通过同样的工具来解决，而这些工具正是把所有这些事情变成问题的工具。这种思维机制唯一能做的就是制造问题。但它永远、永远无法解决问题。    - U.G. Krishnamurti，《独立的勇气》 -->
 
 - [Who Are We? What is Reality? | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=6Bf5TX05pc8&list=PLJGnfFmap7N9BTHNv4mIaqgyv-Co1K0Sy)
 

@@ -323,7 +323,7 @@
 
 克：就像我是个英国人、法国人一样， 它给了我巨大的能量。
 
-博姆：[*同时它也引发了一种身体状态， 看上去那就像是自我的存在一样。 而这个人并没有体会到 它仅仅是知识而已，而是首先感觉到 某种非常强大的东西，它看起来似乎不是知识。*]()
+博姆：**[*同时它也引发了一种身体状态， 看上去那就像是自我的存在一样。 而这个人并没有体会到 它仅仅是知识而已，而是首先感觉到 某种非常强大的东西，它看起来似乎不是知识。*]()**
 
 克：<span style="color: #EF3882; font-weight: bold; font-style: italic;">是的。我们是在来回绕圈子吗？看起来是这样的。</span>
 
@@ -460,3 +460,5 @@
 <!-- https://en.wikisource.org/wiki/No_Way_Out/Chapter_3 -->
 
 - [The Fundamental Mistake of Mankind | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=bBTzL2WQ5OI)
+
+<!-- - [Rare Osho Interview 1985 (Top 5 Moments!) | Vishrant](https://www.youtube.com/watch?v=4-87Xu-Pmz0) -->

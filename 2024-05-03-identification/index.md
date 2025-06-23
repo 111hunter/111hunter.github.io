@@ -57,6 +57,6 @@
 
 - [You Are Just Like a Parrot | U.G. Krishnamurti](https://www.youtube.com/watch?v=0giYl6bi7Os)
 
-<!-- 这个（信仰的）结构感兴趣的是保护传统，但是这个（新人）感兴趣的是打破传统的累积性质 - 不是维持传统，而是打破传统。在你体内运作的倾听机制就是传统 — 它通过倾听的过程，自我强化，自我增强。这就是为什么我说从我嘴里发出的声音和狗的吠叫、豺的嚎叫、猫的喧闹声没什么不同。  - U.G. Krishnamurti，《独立的勇气》  -->
+<!-- 这个（信仰的）结构感兴趣的是保护传统，但是这个（新人）感兴趣的是打破传统的累积性质 - 不是维持传统，而是打破传统。在你体内运作的倾听机制就是传统 — 它通过倾听的过程，自我强化，自我增强。这就是为什么我说从我嘴里发出的声音和狗的吠叫、豺的嚎叫、猫的喧闹声没什么不同。  - U.G. Krishnamurti,《The Courage To Stand Alone》  -->
 
 - [Purpose of life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=p6qgSApgVhQ)

@@ -1,7 +1,7 @@
 # 如果问题是从答案中产生的，那么问题的答案是什么？
 
 
-<!-- 如果你不想要这个世界上的任何东西，就不会有思想，这并不意味着思想不存在。   - U.G. Krishnamurti，《独立的勇气》 -->
+<!-- 如果你不想要这个世界上的任何东西，就不会有思想，这并不意味着思想不存在。   - U.G. Krishnamurti,《The Courage To Stand Alone》 -->
 
 > 人类只对解决问题的方法感兴趣，而对问题本身不感兴趣。你说这些伟大的圣贤、圣人和人类的拯救者都有我们问题的答案。那么，我们为什么还在问同样的问题？           - U.G. Krishnamurti
 
@@ -33,7 +33,7 @@ UG：事实并非如此。你会发现：它们根本不是你的问题。提问
 
 你得去找一个学者，一个专家，一个有学问的人——他们能让这类问题更清楚。这就是我对这种对话感兴趣的地方：帮助你们提出自己的问题。试着提出一个你自己的问题。
 
-<!-- 知道什么是存在的是不可能的。这总是与你想成为什么有关。There Is No "How". Devastating words of U.G. Krishnamurti.   - U.G. Krishnamurti，《独立的勇气》 -->
+<!-- 知道什么是存在的是不可能的。这总是与你想成为什么有关。There Is No "How". Devastating words of U.G. Krishnamurti.   - U.G. Krishnamurti,《The Courage To Stand Alone》 -->
 
 我完全没有什么问题。我来到这里，坐在这里，它是空的，但不是你用“空”这个词的那种意思。空和满并不是两件不同的事情；你无法在空和满之间划一条界线。可是这里什么也没有 — 什么也没有 — 所以我不知道该说些什么。
 
@@ -132,7 +132,7 @@ UG：**你看，即使那样你也会发现你做不到。你看，当有需求�
 
 - [The Fundamental Mistake of Mankind | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=bBTzL2WQ5OI)
 
-<!-- 这个（信仰的）结构感兴趣的是保护传统，但是这个（新人）感兴趣的是打破传统的累积性质 - 不是维持传统，而是打破传统。在你体内运作的倾听机制就是传统 — 它通过倾听的过程，自我强化，自我增强。这就是为什么我说从我嘴里发出的声音和狗的吠叫、豺的嚎叫、猫的喧闹声没什么不同。  - U.G. Krishnamurti，《独立的勇气》  -->
+<!-- 这个（信仰的）结构感兴趣的是保护传统，但是这个（新人）感兴趣的是打破传统的累积性质 - 不是维持传统，而是打破传统。在你体内运作的倾听机制就是传统 — 它通过倾听的过程，自我强化，自我增强。这就是为什么我说从我嘴里发出的声音和狗的吠叫、豺的嚎叫、猫的喧闹声没什么不同。  - U.G. Krishnamurti,《The Courage To Stand Alone》  -->
 
 - [Purpose of life | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=p6qgSApgVhQ)
 
