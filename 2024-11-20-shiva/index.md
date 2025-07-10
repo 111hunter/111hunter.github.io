@@ -67,6 +67,6 @@
 
 - [There Is Always Someone Else There | U.G. Krishnamurti](https://www.youtube.com/watch?v=PfLEkOdB45M)
 
-- [You Are Just Like a Parrot | U.G. Krishnamurti](https://www.youtube.com/watch?v=0giYl6bi7Os)
+<!-- - [You Are Just Like a Parrot | U.G. Krishnamurti](https://www.youtube.com/watch?v=0giYl6bi7Os) -->
 
 - [Frustration! | U.G. Krishnamurti](https://www.youtube.com/watch?v=HGY37Am7dQ4)

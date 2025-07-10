@@ -2,26 +2,25 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/categories/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3.3</priority></url><url>
-            <loc>http://localhost:1313/posts/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3.3</priority></url><url>
-            <loc>http://localhost:1313/tags/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3.3</priority></url><url>
-            <loc>http://localhost:1313/categories/thinking/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3.3</priority></url><url>
-            <loc>http://localhost:1313/tags/time/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3.3</priority></url><url>
-            <loc>http://localhost:1313/2025-06-21-zero/</loc><lastmod>2025-06-21T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3.3</priority></url><url>
-            <loc>http://localhost:1313/tags/recursion/</loc><lastmod>2025-06-11T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>http://localhost:1313/tags/turing-machine/</loc><lastmod>2025-06-11T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>http://localhost:1313/2025-06-11-halting-problem/</loc><lastmod>2025-06-11T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>http://localhost:1313/tags/maya/</loc><lastmod>2025-06-02T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://localhost:1313/2025-06-02-knowledge/</loc><lastmod>2025-06-02T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://localhost:1313/categories/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3</priority></url><url>
+            <loc>http://localhost:1313/tags/maya/</loc><lastmod>2025-07-09T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/posts/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3</priority></url><url>
+            <loc>http://localhost:1313/tags/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3</priority></url><url>
+            <loc>http://localhost:1313/categories/thinking/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3</priority></url><url>
+            <loc>http://localhost:1313/tags/time/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3</priority></url><url>
+            <loc>http://localhost:1313/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3</priority></url><url>
+            <loc>http://localhost:1313/2025-07-09-sin/</loc><lastmod>2025-07-09T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/tags/recursion/</loc><lastmod>2025-06-11T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>http://localhost:1313/tags/turing-machine/</loc><lastmod>2025-06-11T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>http://localhost:1313/2025-06-11-halting-problem/</loc><lastmod>2025-06-11T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>http://localhost:1313/2025-06-02-knowledge/</loc><lastmod>2025-06-02T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2025-05-17-memory/</loc><lastmod>2025-05-17T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/tags/advaita/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3.3</priority></url><url>
+            <loc>http://localhost:1313/tags/advaita/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3</priority></url><url>
             <loc>http://localhost:1313/tags/samadhi/</loc><lastmod>2025-05-06T17:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2025-05-06-learning/</loc><lastmod>2025-05-06T17:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/2025-05-06-belief/</loc><lastmod>2025-05-06T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2025-04-28-virtue/</loc><lastmod>2025-04-28T17:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/tags/docker/</loc><lastmod>2025-04-26T20:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/categories/theory/</loc><lastmod>2025-06-09T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/categories/theory/</loc><lastmod>2025-06-09T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>http://localhost:1313/2025-04-26-virtualization/</loc><lastmod>2025-04-26T20:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/tags/blockchain/</loc><lastmod>2025-04-26T01:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/categories/coding/</loc><lastmod>2025-04-26T01:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -42,9 +41,9 @@
             <loc>http://localhost:1313/2025-03-17-browser/</loc><lastmod>2025-03-17T17:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2025-01-27-self-delusion/</loc><lastmod>2025-01-27T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2024-12-25-yaldabaoth/</loc><lastmod>2024-12-25T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/2024-12-06-sorcerer/</loc><lastmod>2025-05-25T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>http://localhost:1313/2024-12-06-sorcerer/</loc><lastmod>2025-05-25T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2024-12-03-gnosis/</loc><lastmod>2024-12-03T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/2024-12-02-avidya/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3.3</priority></url><url>
+            <loc>http://localhost:1313/2024-12-02-avidya/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>3</priority></url><url>
             <loc>http://localhost:1313/2024-11-20-shiva/</loc><lastmod>2024-11-20T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2024-11-19-nastika/</loc><lastmod>2024-11-19T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2024-11-18-anatta/</loc><lastmod>2024-11-18T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -76,7 +75,7 @@
             <loc>http://localhost:1313/2024-04-21-awareness/</loc><lastmod>2024-04-21T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2024-03-31-confusion/</loc><lastmod>2024-03-31T16:00:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2024-01-01-know-thyself/</loc><lastmod>2024-01-01T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/2023-12-19-itp/</loc><lastmod>2025-06-09T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/2023-12-19-itp/</loc><lastmod>2025-06-09T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>http://localhost:1313/2023-12-17-mbti/</loc><lastmod>2023-12-17T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2023-10-05-time-2/</loc><lastmod>2023-10-05T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2023-10-04-time-1/</loc><lastmod>2023-10-04T21:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
