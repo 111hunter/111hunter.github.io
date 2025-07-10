@@ -4,13 +4,14 @@
         <link>http://localhost:1313/tags/maya/</link>
         <description>Maya - 标签 - 寂的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 09 Jul 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/maya/" rel="self" type="application/rss+xml" /><item>
-    <title>债权人与债务人</title>
-    <link>http://localhost:1313/2025-07-09-sin/</link>
-    <pubDate>Wed, 09 Jul 2025 13:50:34 &#43;0800</pubDate>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Thu, 10 Jul 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/maya/" rel="self" type="application/rss+xml" /><item>
+    <title>善之与恶，相去若何？</title>
+    <link>http://localhost:1313/2025-07-10-mind/</link>
+    <pubDate>Thu, 10 Jul 2025 13:50:34 &#43;0800</pubDate>
     <author>寂</author>
-    <guid>http://localhost:1313/2025-07-09-sin/</guid>
-    <description><![CDATA[<p>纳伦达：一天，七个人和导师从鹰巢返回方舟时，看到萨玛丹站在门口，对着一个匍匐在他脚下的人挥舞着一张纸，并听到他愤怒地说道：“你的失职让我忍无可忍。我不能再宽容了。现在就付钱，否则你就在监狱里腐烂。”</p>]]></description>
+    <guid>http://localhost:1313/2025-07-10-mind/</guid>
+    <description><![CDATA[<!-- > 众人皆有以，而我独顽且鄙。我独异于人，而贵食母。      -《道德经》 -->
+<p>他上了年纪，却保养得很好，长长的灰发，白白的胡须。他在世界各地的大学开设哲学讲座。他安静，学养深厚的样子。他说自己不做禅修；也不是一般意义上的宗教人士。他只关注学问；尽管他开设哲学和宗教的讲座，自己却没有宗教经历，对此也不作任何探究。他来是谈关于时间的问题。</p>]]></description>
 </item>
 <item>
     <title>问题背后的那个问题是什么？</title>
@@ -32,15 +33,6 @@
 <!-- 无论你出于什么原因想要摆脱的事物，都是可以让你自由的东西。 - U.G. Krishnamurti -->
 <blockquote>
 <p>记忆是死的，不是活的东西。 你不会有活着的东西的记忆。 所以，我是在和死的东西一起生活。 依靠过去的记忆过活，我就是和死亡、 死掉的东西生活在一起。 我执着于那些记忆， 因为它给了我某种安慰、安全感等等， 但是这就跟抱着一具死尸一样。 所以，如果我意识到、实际看到这个真相， 大脑细胞会发生突变。        - 克里希那穆提</p>]]></description>
-</item>
-<item>
-    <title>弱 — 历史的动力</title>
-    <link>http://localhost:1313/2025-04-20-weak/</link>
-    <pubDate>Sun, 20 Apr 2025 21:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2025-04-20-weak/</guid>
-    <description><![CDATA[<!-- > 反者，道之动；弱者，道之用。    -《道德经》 -->
-<p>拉图尔：我有理由保持怀疑，因为您对智者的描述会导致一种完全孤立、孤芳自赏、回归象牙塔的形象。谈论道德总是让人只关注自我，这就没办法再大幅往前走。</p>]]></description>
 </item>
 <item>
     <title>我们制造欺骗，然后成为它的奴隶</title>
@@ -104,6 +96,16 @@
     <description><![CDATA[<!-- 无论你出于什么原因想要摆脱的事物，都是可以让你自由的东西。 - U.G. Krishnamurti -->
 <blockquote>
 <p>“我”并不是一个抽象的存在，“我”无法透过抽象思考来认识自己，“我”必须在我的具体存在中，认出我之为我，而非理想的我。 — 克里希那穆提</p>]]></description>
+</item>
+<item>
+    <title>二手人类</title>
+    <link>http://localhost:1313/2024-05-12-deus-deceptor/</link>
+    <pubDate>Sun, 12 May 2024 11:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2024-05-12-deus-deceptor/</guid>
+    <description><![CDATA[<!-- > 我们从未质疑过思想的本质。我们认定思想是必不可少的，就像我们的眼睛和腿一样。我们从未探查过思想的深层，而因为我们从来没有质疑过它，它占据了突出的位置。它是我们生活的统治者，而统治者很少会受到挑战。 — 克里希那穆提 -->
+<blockquote>
+<p>思考是从一个结论开始的吗？思考是不是从一个结论到另一个结论的运动？如果思考是肯定的，思考会存在吗？最高形式的思考不是否定的吗？所有的知识不是一个定义、结论和肯定性声明的集合吗？肯定的思想是以经验为基础的，它总是过去的结果，这样的思想永远不能发现新事物。             — 克里希那穆提</p>]]></description>
 </item>
 </channel>
 </rss>

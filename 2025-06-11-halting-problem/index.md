@@ -559,10 +559,8 @@
 
 **推荐阅读**
 
-- [OSHO: You Have Everything but You Don't Have Yourself](https://www.youtube.com/watch?v=Zo_P2rbEtwo)
-
 <!-- 整个自然界是一个整体。人类无法将自己与我们所谓的自然的整体分开。不幸的是，通过这种发生在某个地方的自我意识的帮助，他给了自己一个优越的地位。他把自己放在了一个更高的层次上;他对待自己，我们仍然继续对待自己，比这个星球上的其他物种优越。这就是我们制造这种不和谐的原因;这就是为什么我们制造了这些巨大的生态问题和其他问题。实际上，人，或者你想怎么称呼他，是不能与自然的整体分开的。这就是为什么我们犯下了最大的错误之一，不幸的是，这就是人类的悲剧。 -->
 
 <!-- - [Mind As a Myth | ugarchive.blogspot](https://ugarchive.blogspot.com/2021/08/mind-as-myth.html) -->
 
-<!-- - [What Thinking Is? Why Do We Think? | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=9olyqhwf2y4) -->
+- [What Thinking Is? Why Do We Think? | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=9olyqhwf2y4)

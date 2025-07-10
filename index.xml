@@ -4,9 +4,18 @@
         <link>http://localhost:1313/</link>
         <description>彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 09 Jul 2025 13:50:34 &#43;0800</lastBuildDate>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Thu, 10 Jul 2025 13:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>善之与恶，相去若何？</title>
+    <link>http://localhost:1313/2025-07-10-mind/</link>
+    <pubDate>Thu, 10 Jul 2025 13:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-07-10-mind/</guid>
+    <description><![CDATA[<!-- > 众人皆有以，而我独顽且鄙。我独异于人，而贵食母。      -《道德经》 -->
+<p>他上了年纪，却保养得很好，长长的灰发，白白的胡须。他在世界各地的大学开设哲学讲座。他安静，学养深厚的样子。他说自己不做禅修；也不是一般意义上的宗教人士。他只关注学问；尽管他开设哲学和宗教的讲座，自己却没有宗教经历，对此也不作任何探究。他来是谈关于时间的问题。</p>]]></description>
+</item>
+<item>
     <title>债权人与债务人</title>
     <link>http://localhost:1313/2025-07-09-sin/</link>
     <pubDate>Wed, 09 Jul 2025 13:50:34 &#43;0800</pubDate>
@@ -85,15 +94,6 @@
 <h2 id="rust-所有权系统">Rust: 所有权系统</h2>
 <h3 id="属和种差">属和种差</h3>
 <p>Rust是一种系统级编程语言，它通过<strong>所有权系统</strong>和类型安全设计，实现了内存安全与高性能的平衡，无需垃圾回收即可防止内存错误和数据竞争。</p>]]></description>
-</item>
-<item>
-    <title>弱 — 历史的动力</title>
-    <link>http://localhost:1313/2025-04-20-weak/</link>
-    <pubDate>Sun, 20 Apr 2025 21:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2025-04-20-weak/</guid>
-    <description><![CDATA[<!-- > 反者，道之动；弱者，道之用。    -《道德经》 -->
-<p>拉图尔：我有理由保持怀疑，因为您对智者的描述会导致一种完全孤立、孤芳自赏、回归象牙塔的形象。谈论道德总是让人只关注自我，这就没办法再大幅往前走。</p>]]></description>
 </item>
 <item>
     <title>心智模式 — 游戏规则说明书</title>

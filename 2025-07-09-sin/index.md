@@ -69,6 +69,6 @@
 
 **推荐阅读**
 
-- [OSHO: I Respect Money](https://www.youtube.com/watch?v=mmAo99SW6_E)
+- [I Respect Money | OSHO](https://www.youtube.com/watch?v=mmAo99SW6_E)
 
-<!-- - [OSHO: You Have Everything but You Don't Have Yourself](https://www.youtube.com/watch?v=Zo_P2rbEtwo) -->
+<!-- - [You Have Everything but You Don't Have Yourself | OSHO](https://www.youtube.com/watch?v=Zo_P2rbEtwo) -->
