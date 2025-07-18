@@ -393,6 +393,8 @@
 
 - [You Can't Think at All! | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=HKhWl9JfgYY)
 
+- [I've Never Met Anyone Religious | U.G. Krishnamurti](https://www.youtube.com/watch?v=S1IIMpfokFU)
+
 <!-- - [Sorrow, passion and beauty - 9th Dialogue, San Diego, California, 1974](https://www.krishnamurti.org/transcript/sorrow-passion-and-beauty/) -->
 
 <!-- 如果我说话，我就是在撒谎，但如果我保持沉默，我就是一个懦夫。 -->
