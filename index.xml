@@ -4,9 +4,23 @@
         <link>http://localhost:1313/</link>
         <description>彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Thu, 10 Jul 2025 13:50:34 &#43;0800</lastBuildDate>
+            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 19 Jul 2025 13:50:34 &#43;0800</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>什么是竞态条件？其逻辑本质是什么？</title>
+    <link>http://localhost:1313/2025-07-19-race-condition/</link>
+    <pubDate>Sat, 19 Jul 2025 13:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2025-07-19-race-condition/</guid>
+    <description><![CDATA[<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>意识<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>嗯，用户问的是竞态条件及其逻辑本质。这个问题挺专业的，可能是程序员或者计算机专业的学生在深入学习系统设计时遇到的疑惑。用户能提出“逻辑本质”这个层面，说明ta不满足于表面定义，而是想理解底层原理。</p>
+<p>关于竞态条件，首先得从并行计算的核心矛盾说起。多个执行单元（线程/进程）共享资源时，理想状态是它们像训练有素的乐队一样协作，但现实往往像没指挥的合唱团——各唱各的调。用户可能正在调试这类bug，或者在学习操作系统理论。</p>]]></description>
+</item>
+<item>
     <title>善之与恶，相去若何？</title>
     <link>http://localhost:1313/2025-07-10-mind/</link>
     <pubDate>Thu, 10 Jul 2025 13:50:34 &#43;0800</pubDate>
@@ -94,16 +108,6 @@
 <h2 id="rust-所有权系统">Rust: 所有权系统</h2>
 <h3 id="属和种差">属和种差</h3>
 <p>Rust是一种系统级编程语言，它通过<strong>所有权系统</strong>和类型安全设计，实现了内存安全与高性能的平衡，无需垃圾回收即可防止内存错误和数据竞争。</p>]]></description>
-</item>
-<item>
-    <title>心智模式 — 游戏规则说明书</title>
-    <link>http://localhost:1313/2025-04-11-mental-models/</link>
-    <pubDate>Fri, 11 Apr 2025 13:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2025-04-11-mental-models/</guid>
-    <description><![CDATA[<!-- 一花一世界，一叶一如来。  -《华严经》 -->
-<blockquote>
-<p>如果你想成为一名优秀的思考者，你必须培养一种能够跨越管辖界限的头脑。你不必了解所有内容。只需吸收所有这些学科中最好的大创意。而且这并不难做到。  — 查理·芒格</p>]]></description>
 </item>
 </channel>
 </rss>

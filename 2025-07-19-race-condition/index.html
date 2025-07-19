@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>什么是竞态条件？其逻辑本质是什么？ - 寂的博客</title><meta name="Description" content="彼是莫得其偶，谓之道枢。枢始得其环中，以应无穷。"><meta property="og:url" content="http://localhost:1313/2025-07-19-race-condition/">
+  <meta property="og:site_name" content="寂的博客">
+  <meta property="og:title" content="什么是竞态条件？其逻辑本质是什么？">
+  <meta property="og:description" content="意识 嗯，用户问的是竞态条件及其逻辑本质。这个问题挺专业的，可能是程序员或者计算机专业的学生在深入学习系统设计时遇到的疑惑。用户能提出“逻辑本质”这个层面，说明ta不满足于表面定义，而是想理解底层原理。
+关于竞态条件，首先得从并行计算的核心矛盾说起。多个执行单元（线程/进程）共享资源时，理想状态是它们像训练有素的乐队一样协作，但现实往往像没指挥的合唱团——各唱各的调。用户可能正在调试这类bug，或者在学习操作系统理论。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-19T13:50:34+08:00">
+    <meta property="article:modified_time" content="2025-07-19T13:50:34+08:00">
+    <meta property="article:tag" content="Network">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="什么是竞态条件？其逻辑本质是什么？">
+  <meta name="twitter:description" content="意识 嗯，用户问的是竞态条件及其逻辑本质。这个问题挺专业的，可能是程序员或者计算机专业的学生在深入学习系统设计时遇到的疑惑。用户能提出“逻辑本质”这个层面，说明ta不满足于表面定义，而是想理解底层原理。
+关于竞态条件，首先得从并行计算的核心矛盾说起。多个执行单元（线程/进程）共享资源时，理想状态是它们像训练有素的乐队一样协作，但现实往往像没指挥的合唱团——各唱各的调。用户可能正在调试这类bug，或者在学习操作系统理论。">
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/2025-07-19-race-condition/" /><link rel="prev" href="http://localhost:1313/2025-07-10-mind/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "什么是竞态条件？其逻辑本质是什么？",
+        "inLanguage": "zh-cn",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/2025-07-19-race-condition\/"
+        },"genre": "posts","keywords": "Network","wordcount":  2690 ,
+        "url": "http:\/\/localhost:1313\/2025-07-19-race-condition\/","datePublished": "2025-07-19T13:50:34+08:00","dateModified": "2025-07-19T13:50:34+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "寂"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="寂的博客">寂的博客</a>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><span class="menu-item">|</span><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="寂的博客">寂的博客</a>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">什么是竞态条件？其逻辑本质是什么？</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
+</span>&nbsp;<span class="post-category">收录于 <a href="/categories/theory/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Theory</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-07-19">2025-07-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2690 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/2025-07-19-race-condition/" class="leancloud_visitors" data-flag-title="什么是竞态条件？其逻辑本质是什么？">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#竞态条件">竞态条件</a>
+      <ul>
+        <li><a href="#属和种差">属和种差</a></li>
+        <li><a href="#核心特征">核心特征</a></li>
+        <li><a href="#经典示例">经典示例</a></li>
+        <li><a href="#逻辑本质">逻辑本质</a></li>
+        <li><a href="#如何解决竞态条件">如何解决竞态条件？</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>意识<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>嗯，用户问的是竞态条件及其逻辑本质。这个问题挺专业的，可能是程序员或者计算机专业的学生在深入学习系统设计时遇到的疑惑。用户能提出“逻辑本质”这个层面，说明ta不满足于表面定义，而是想理解底层原理。</p>
+<p>关于竞态条件，首先得从并行计算的核心矛盾说起。多个执行单元（线程/进程）共享资源时，理想状态是它们像训练有素的乐队一样协作，但现实往往像没指挥的合唱团——各唱各的调。用户可能正在调试这类bug，或者在学习操作系统理论。</p>
+<p>竞态条件的经典例子是银行存款。假设账户有100元，A线程要存50元，B线程要取30元。正常应该120元，但如果两个线程同时读到100元这个初始值，A计算150元写入，B计算70元写入，最后账户要么是150元（覆盖了取款）要么是70元（覆盖了存款）——这就是竞态。用户可能更关心的是为什么看似简单的“读取-计算-写入”三步操作会出问题。</p>
+<p>逻辑本质要拆解三点：首先是“共享状态”，这是冲突的舞台；其次是“非原子操作”，任何需要多步骤完成的操作都可能被中断；最后是“时序敏感性”，就像两辆车同时到达没有红绿灯的十字路口，结果取决于谁恰好快那么零点几秒。用户可能没意识到的是，单核CPU通过时间片切换线程也会产生竞态，并非多核专属问题。</p>
+<p>需要提醒用户的是，竞态不一定导致程序崩溃——有时只是数据轻微错误，这种隐蔽性最危险。比如游戏里的金币数量异常，开发者可能很久都发现不了。所以最后补充了“隐蔽性”这个点，这在实际开发中很重要。</p>
+</div>
+        </div>
+    </div>
+<h2 id="竞态条件">竞态条件</h2>
+<h3 id="属和种差">属和种差</h3>
+<p>竞态条件（Race Condition）是并发编程和系统设计中一个<strong>核心且危险</strong>的概念。它指的是<strong>一个系统、程序或计算过程的输出或行为，在不可预测的时间点上依赖于两个或多个事件（通常是线程或进程的操作）发生的相对顺序或时序。</strong></p>
+<p>简单来说，当<strong>多个执行单元（线程、进程、协程）并发地访问和操作共享资源（数据、文件、设备、内存地址等），且最终结果依赖于它们执行的精确先后顺序（这个顺序通常是不可控、不可预测的）</strong> 时，就存在竞态条件。</p>
+<h3 id="核心特征">核心特征</h3>
+<ul>
+<li>
+<p><strong>共享资源</strong>： 至少有一个资源被多个执行单元访问。</p>
+</li>
+<li>
+<p><strong>并发访问</strong>： 多个执行单元“同时”或“交错”地执行（即使单核CPU通过时间片切换也能实现逻辑上的并发）。</p>
+</li>
+<li>
+<p><strong>状态改变</strong>： 至少有一个执行单元会修改共享资源的状态（不仅仅是读取）。</p>
+</li>
+<li>
+<p><strong>时序敏感性</strong>： 最终结果取决于不同执行单元访问共享资源的相对顺序（哪个先读、哪个先写、哪个在哪个中间执行了修改）。</p>
+</li>
+</ul>
+<h3 id="经典示例">经典示例</h3>
+<p><strong>账户取款</strong>：假设一个银行账户初始余额为 balance = 100。有两个线程（A 和 B）都要从这个账户取款 50 元。</p>
+<ul>
+<li>
+<p><strong>正常期望</strong>： A 取 50，余额变为 50；B 再取 50，失败（余额不足）或提示错误。或者 B 先取，A 后取，结果类似。最终余额应为 50 或 0（如果 B 能取），但绝不会出现负数或错误地允许两次都成功。</p>
+</li>
+<li>
+<p><strong>竞态条件发生</strong>：</p>
+<ul>
+<li>
+<p><strong>线程A</strong> 读取 balance = 100。</p>
+</li>
+<li>
+<p><strong>线程B</strong> 也 读取 balance = 100 (在 A 完成取款操作之前)。</p>
+</li>
+<li>
+<p><strong>线程A</strong> 计算 new_balance = 100 - 50 = 50，并将 50 写回 balance。</p>
+</li>
+<li>
+<p><strong>线程B</strong> 计算 new_balance = 100 - 50 = 50，并将 50 写回 balance。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>结果</strong>： 两个线程都成功取走了 50 元，但账户最终余额是 50 元！银行损失了 50 元。实际只应有 50 元被取出，但现在有 100 元被取出了。结果依赖于 A 和 B 读取 balance 以及写入新值的相对顺序。</p>
+</li>
+</ul>
+<h3 id="逻辑本质">逻辑本质</h3>
+<p>竞态条件的逻辑本质可以归结为以下几点：</p>
+<p><strong>1.违反操作的原子性要求</strong>：</p>
+<ul>
+<li>
+<p><strong>核心根源</strong>： 竞态条件发生的根本原因在于，<strong>程序员在逻辑上期望的一组不可分割的操作（原子操作）在物理实现上被拆分成多个步骤（非原子操作）</strong>，并且这些步骤可以被其他并发操作插入打断。</p>
+</li>
+<li>
+<p><strong>原子性缺失</strong>： 在上面的取款例子中，程序员期望的原子操作是“检查余额足够 -&gt; 扣除金额”。但在代码层面，这被分解为“读取余额 -&gt; 计算新余额 -&gt; 写入新余额”三个独立的、可被中断的步骤。线程B在A的“读取”和“写入”之间插入了自己的“读取”操作，破坏了A操作的原子性感知，导致了错误。</p>
+</li>
+</ul>
+<p><strong>2.对共享状态的非受控交错访问</strong>：</p>
+<ul>
+<li>多个执行单元对共享状态的访问（读/写）序列没有强制性的、可预测的顺序约束。它们的指令流以不确定的方式交织在一起。这种<strong>非受控的交错访问</strong>使得结果依赖于运行时环境的细微差异（线程调度策略、CPU核心负载、中断发生时机、内存访问延迟等），而这些因素通常是不可预测和不可靠的。</li>
+</ul>
+<p><strong>3.时序作为隐式输入</strong>：</p>
+<ul>
+<li>在存在竞态条件的程序中，<strong>时间本身（事件发生的相对顺序）成为程序的一个隐式输入变量</strong>。程序的输出不仅取决于显式的输入数据，还取决于这个不可控的、随机的“时序输入”。这直接违反了程序应具有确定性的基本原则（给定相同输入，应产生相同输出）。</li>
+</ul>
+<p><strong>4.状态依赖的脆弱性</strong>：</p>
+<ul>
+<li>后续操作的正确性依赖于之前操作建立起来的共享状态。当并发操作基于同一个“过时”或“中间不一致”的状态快照做出决策或进行修改时（如线程B读取了A修改前的旧余额），就会导致逻辑错误（如超额取款）。这种对共享状态的依赖在并发环境下变得极其脆弱。</li>
+</ul>
+<p><strong>5.隐蔽性</strong>：</p>
+<ul>
+<li>竞态条件往往只在特定、难以复现的时序交错下才会触发错误。在测试中可能运行成千上万次都表现正常，但在生产环境的压力下突然出现，这使得它们非常难以调试和诊断。这也源于其逻辑本质——对不可控时序的依赖。</li>
+</ul>
+<h3 id="如何解决竞态条件">如何解决竞态条件？</h3>
+<p>解决的核心思想就是<strong>消除其逻辑本质</strong>：</p>
+<p><strong>1.互斥锁</strong>： 确保对共享资源的访问是排他的。一个线程访问共享资源时，其他线程必须等待（锁住临界区）。这<strong>强制了操作的原子性</strong>（逻辑上的原子操作在临界区内执行）并<strong>控制了访问顺序</strong>（获得锁的顺序决定了访问顺序）。</p>
+<p><strong>2.原子操作</strong>： 利用硬件支持的、不可分割的指令（如CAS）直接修改共享变量。这<strong>保证了特定内存操作的物理原子性</strong>。</p>
+<p><strong>3.避免共享状态</strong>： 从根本上消除竞态条件的根源。使用线程本地存储、不可变数据、消息传递（如Actor模型）等方式，让线程之间不直接共享可变状态。</p>
+<p><strong>4.同步原语</strong>： 使用信号量、条件变量、屏障等工具，在更高层次上协调多个线程的执行顺序和条件等待，<strong>显式地控制时序依赖关系</strong>。</p>
+<p><strong>5.事务内存</strong>： 将一组操作封装在一个事务中，如果执行过程中共享数据被其他线程修改，则事务会中止并重试，保证操作序列的原子性和隔离性。</p>
+<h3 id="总结">总结</h3>
+<p>竞态条件的<strong>逻辑本质</strong>在于：</p>
+<p><strong>由于缺乏必要的同步机制，导致程序员在逻辑上期望的原子操作被物理上的非原子步骤所实现，并且这些步骤的执行序列（相对时序）不受控地交织在一起，使得程序的正确性依赖于不可预测的运行时事件顺序（时序）</strong>。 这违反了程序的确定性原则，并表现为对共享状态的非受控、交错访问，最终导致错误或未定义的行为。解决的关键在于通过同步机制（如锁、原子操作）恢复逻辑操作的原子性或显式控制访问顺序，或者从根本上消除共享可变状态。</p>
+<p>理解这个逻辑本质对于设计健壮、正确的并发程序至关重要。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2025-07-19</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2025-07-19-race-condition/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/2025-07-19-race-condition/" data-title="什么是竞态条件？其逻辑本质是什么？" data-hashtags="Network"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/2025-07-19-race-condition/" data-hashtag="Network"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/2025-07-19-race-condition/" data-title="什么是竞态条件？其逻辑本质是什么？" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/2025-07-19-race-condition/" data-title="什么是竞态条件？其逻辑本质是什么？"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/2025-07-19-race-condition/" data-title="什么是竞态条件？其逻辑本质是什么？"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://localhost:1313/2025-07-19-race-condition/" data-title="什么是竞态条件？其逻辑本质是什么？" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://localhost:1313/2025-07-19-race-condition/" data-title="什么是竞态条件？其逻辑本质是什么？"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/network/">Network</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2025-07-10-mind/" class="prev" rel="prev" title="善之与恶，相去若何？"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>善之与恶，相去若何？</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io/" target="_blank">寂</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"GzB2bXSslsgmFj2g6hS3EPH8-gzGzoHsz","appKey":"gK3L6a7r80578qujBez4FH6C","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"欢迎讨论交流","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
