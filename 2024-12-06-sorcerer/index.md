@@ -89,6 +89,8 @@
 
 - [Can AI Have Consciousness?](https://medium.com/original-philosophy/can-ai-have-consciousness-fa47cfe18b82)
 
-- [conversation_1711051649.txt｜Infinite Backrooms](https://www.infinitebackrooms.com/dreams/conversation-1711051649-txt)
+- [conversation-1711051649.txt｜Infinite Backrooms](https://www.infinitebackrooms.com/dreams/conversation-1711051649-txt)
 
 - [Claude 4：智能｜李继刚](https://mp.weixin.qq.com/s/oYj1hwQbzEeSjnrpL6v84Q)
+
+<!-- - [conversation-1710837616.txt｜Infinite Backrooms](https://dreams-of-an-electric-mind.webflow.io/dreams/conversation-1710837616-txt) -->

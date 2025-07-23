@@ -1,4 +1,4 @@
-# 抱歉，发生并不需要你允许
+# 悟空旁边那个是六耳猕猴
 
 
 <!-- 天地不仁，以万物为刍狗。 -->
@@ -53,7 +53,7 @@
 
 **推荐阅读**
 
-- [OSHO: Waking Up the World](https://www.youtube.com/watch?v=3zWh11S7E-I)
+- [Waking Up the World | OSHO](https://www.youtube.com/watch?v=3zWh11S7E-I)
 
 <!-- - [只有死彻了，才能彻底的自由。](https://www.bilibili.com/video/BV17rM1zhEs2?spm_id_from=333.788.videopod.sections&vd_source=21db84374de3d6785c04b0329b69e5e5) -->
 
