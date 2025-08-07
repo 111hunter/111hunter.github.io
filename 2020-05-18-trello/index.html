@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/2020-05-18-trello\/"
-        },"genre": "posts","keywords": "React","wordcount":  2725 ,
+        },"genre": "posts","keywords": "React","wordcount":  2741 ,
         "url": "http:\/\/localhost:1313\/2020-05-18-trello\/","datePublished": "2020-05-18T00:18:30+08:00","dateModified": "2020-05-18T00:18:30+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,7 +107,7 @@
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">写一个可拖拽的 Trello</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://111hunter.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>寂</a>
 </span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Coding</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-05-18">2020-05-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2725 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-05-18">2020-05-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2741 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/2020-05-18-trello/" class="leancloud_visitors" data-flag-title="写一个可拖拽的 Trello">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -637,7 +637,7 @@ DragDropContext 提供了以下三个钩子：</p>
 </span></span><span class="line"><span class="cl">    <span class="nx">type</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">newState</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">state</span><span class="p">];</span>                  <span class="c1">//深拷贝不改变原列表
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">newState</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">state</span><span class="p">];</span>                  <span class="c1">//不可变更新模拟深拷贝，不改变原列表
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">===</span> <span class="s1">&#39;list&#39;</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">moveList</span> <span class="o">=</span> <span class="nx">newState</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexStart</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">newState</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexEnd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">...</span><span class="nx">moveList</span><span class="p">);</span>
@@ -647,7 +647,7 @@ DragDropContext 提供了以下三个钩子：</p>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">sourceListIndex</span> <span class="o">=</span> <span class="nx">newState</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">list</span> <span class="p">=&gt;</span> <span class="nx">droppableIdStart</span> <span class="o">===</span> <span class="nx">list</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">sourceList</span> <span class="o">=</span> <span class="nx">newState</span><span class="p">[</span><span class="nx">sourceListIndex</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">sourceCards</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">sourceList</span><span class="p">.</span><span class="nx">cards</span><span class="p">];</span>    <span class="c1">//深拷贝不改变原数组
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">sourceCards</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">sourceList</span><span class="p">.</span><span class="nx">cards</span><span class="p">];</span>    <span class="c1">//不可变更新模拟深拷贝，不改变原数组
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">moveCard</span> <span class="o">=</span> <span class="nx">sourceCards</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">droppableIndexStart</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">droppableIdStart</span> <span class="o">!==</span> <span class="nx">droppableIdEnd</span><span class="p">)</span> <span class="p">{</span>    <span class="c1">//不同列之间移动卡片

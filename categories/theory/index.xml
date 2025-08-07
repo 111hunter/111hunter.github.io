@@ -19,14 +19,6 @@
 <p>关于竞态条件，首先得从并行计算的核心矛盾说起。多个执行单元（线程/进程）共享资源时，理想状态是它们像训练有素的乐队一样协作，但现实往往像没指挥的合唱团——各唱各的调。用户可能正在调试这类bug，或者在学习操作系统理论。</p>]]></description>
 </item>
 <item>
-    <title>从基础理论到工业应用，什么是虚拟化环境？</title>
-    <link>http://localhost:1313/2025-04-26-virtualization/</link>
-    <pubDate>Sat, 26 Apr 2025 20:50:34 &#43;0800</pubDate>
-    <author>寂</author>
-    <guid>http://localhost:1313/2025-04-26-virtualization/</guid>
-    <description><![CDATA[<p>虚拟化环境是通过虚拟化技术在物理硬件上创建的<strong>模拟计算环境</strong>，允许在单一物理设备上运行多个操作系统或应用程序实例。本质上，虚拟化通过软件层（虚拟化管理程序或容器引擎）抽象硬件资源，实现资源隔离、灵活分配和高效利用。以下从基础理论、工业应用和技术发展展望三个维度展开详细分析。</p>]]></description>
-</item>
-<item>
     <title>心智模式 — 游戏规则说明书</title>
     <link>http://localhost:1313/2025-04-11-mental-models/</link>
     <pubDate>Fri, 11 Apr 2025 13:50:34 &#43;0800</pubDate>
@@ -108,6 +100,15 @@
 <blockquote>
 <p>计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决。 —《程序员的自我修养》</p></blockquote>
 <p>上述名言概括了计算机系统软件体系结构的设计要点，整个计算机体系结构从上到下都是按照严格的层次结构设计的。不仅是计算机系统软件整个体系是这样的，体系里面的每个组件比如操作系统本身，应用程序、软件系统甚至很多硬件结构都是按照这种层次的结构组织和设计的。</p>]]></description>
+</item>
+<item>
+    <title>一些通用计算模型</title>
+    <link>http://localhost:1313/2021-01-30-tag-system/</link>
+    <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
+    <author>寂</author>
+    <guid>http://localhost:1313/2021-01-30-tag-system/</guid>
+    <description><![CDATA[<blockquote>
+<p>在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算」的。 &ndash; wikipedia</p>]]></description>
 </item>
 </channel>
 </rss>

@@ -263,7 +263,7 @@ case CONSTANTS.DRAGGED: {  // 当完成拖放动作时
     type
   } = action.payload;
 
-  const newState = [...state];                  //深拷贝不改变原列表
+  const newState = [...state];                  //不可变更新模拟深拷贝，不改变原列表
   if (type === 'list') {
     const moveList = newState.splice(droppableIndexStart, 1);
     newState.splice(droppableIndexEnd, 0, ...moveList);
@@ -273,7 +273,7 @@ case CONSTANTS.DRAGGED: {  // 当完成拖放动作时
 
   const sourceListIndex = newState.findIndex(list => droppableIdStart === list.id);
   const sourceList = newState[sourceListIndex];
-  const sourceCards = [...sourceList.cards];    //深拷贝不改变原数组
+  const sourceCards = [...sourceList.cards];    //不可变更新模拟深拷贝，不改变原数组
   const moveCard = sourceCards.splice(droppableIndexStart, 1);
 
   if (droppableIdStart !== droppableIdEnd) {    //不同列之间移动卡片

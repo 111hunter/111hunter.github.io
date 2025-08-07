@@ -1,9 +1,9 @@
-# 提倡者 (INFJ-A)
+# 提倡者 (INFJ-A) - 循此苦旅，以达天际
 
 
 > 大智不群，大善无帮，何惧孤步，何惧毁谤。 — 余秋雨《文化苦旅》
 
-![提倡者 (INFJ-A)](/img/infj-a.jpg "提倡者 (INFJ-A)")
+![https://www.16personalities.com/ch](/img/infj-a.png "16 personalities 2025 test results")
 
 > 对待人们就像对待他们应该成为的人一样，您可以帮助他们成为他们有能力成为的人。 — 约翰·沃尔夫冈·冯·歌德
 
@@ -35,15 +35,13 @@
 
 当倡导者遇到不公平或不公正时，他们很少放弃 — 相反，他们会参考自己的直觉和同情心来找到解决方案。**凭借他们与生俱来的平衡心灵和头脑的能力，倡导者天生就能纠正世界上的错误，无论是大是小**。这些人只需要记住，当他们忙于照顾其他人的时候，他们需要偶尔停下来，照顾好自己。
 
+![意识能级](/img/motivation.jpg "人类行为背后的动机")
+
 **参阅资料**
 
-- [16 personalities](https://www.16personalities.com/ch/%E7%BB%93%E6%9E%9C/infj-a/x/qlo4953ix)
+- [16 personalities 2023 test results](https://www.16personalities.com/ch/%E7%BB%93%E6%9E%9C/infj-a/x/qlo4953ix)
+
+- [16 personalities 2025 test results](https://www.16personalities.com/ch/%E7%BB%93%E6%9E%9C/infj-a/x/hdqud6bme)
 
 - [idrlabs.com](https://www.idrlabs.com/infj.php)
-
-**推荐阅读**
-
-- [一篇文章，让你理解INFJ的基础模样](https://zhuanlan.zhihu.com/p/691817741?utm_psn=1833569459048165376)
-
-- [INFJ：行走的佛陀](https://mp.weixin.qq.com/s/7pbx_acq5uXTJdgWvCMxdA)
 

@@ -71,7 +71,9 @@
 
 - [I Respect Money | OSHO](https://www.youtube.com/watch?v=mmAo99SW6_E)
 
-<!-- 侠之大者，为国为民。  -《射雕英雄传》 -->
+<!-- 微信视频号#齐语剑鸣#惩罚和记忆#尼采与身体 -->
+
+- [人性是惩罚驯化出来的？|《尼采与身体》](https://book.douban.com/subject/36455716/)
 
 - [是时代“枭雄”还是迟暮的狂想家？| 对话中国第一代企业家牟其中](https://www.youtube.com/watch?v=3QDrVkT--bY)
 
