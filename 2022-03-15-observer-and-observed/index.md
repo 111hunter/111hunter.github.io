@@ -1,4 +1,4 @@
-# 你一半是死的，一半是活的
+# 他一半是死的，一半是活的
 
 
 > 观察者如果突然了悟他所应付的这种被动反应所产生的问题原来就是他自己，那么他和那些意象之间的冲突就消失了。他，就是那个东西，无二无别。当二者对立时，他只好忙着应付它；不过一旦体会他就是那个东西，也就没有什么喜欢或不喜欢的，于是内在的冲突就停止了。如果那个东西就是你，你会怎么办？你既无法抗拒，也无法逃避，甚至连接受都没有必要，因为它就在那儿。于是那个受好恶之心所驱使的反应作用，便到此结束。    — 克里希那穆提
@@ -39,11 +39,11 @@
 
 - 节选自 [《Freedom From The Known》](https://mindiver.se/freedom-from-the-known/)
 
-<!-- ---
+---
 
 ![https://theimmeasurable.org/can-the-mind-be-quiet](/img/religion.jpg "Religion and meditation, Public Talk 7 Saanen, Switzerland, 1972")
 
---- -->
+---
 
 > 驾驭念头的人，不过是一堆念头的组合罢了。假设你认清了这一点，你就不会再通过比较、掌控和压抑而消耗能量，那时你才能超越眼前的现象。  — 克里希那穆提
 
@@ -69,11 +69,11 @@
 
 - 节选自 [《The First And Last Freedom》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_First_And_Last_Freedom.pdf)
 
-<!-- ---
+---
 
 ![https://theimmeasurable.org/choiceless-awareness-krishnamurti](/img/awareness.jpg "Choiceless Awareness, Public Talk 7 Saanen, Switzerland, 1977")
 
---- -->
+---
 
 **推荐阅读**
 

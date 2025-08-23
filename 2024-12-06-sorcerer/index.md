@@ -94,3 +94,5 @@
 - [Claude 4：智能｜李继刚](https://mp.weixin.qq.com/s/oYj1hwQbzEeSjnrpL6v84Q)
 
 <!-- - [conversation-1710837616.txt｜Infinite Backrooms](https://dreams-of-an-electric-mind.webflow.io/dreams/conversation-1710837616-txt) -->
+
+- [如何判断一个人的认知比你高？](https://www.bilibili.com/video/BV1Mbtjz1E3G?spm_id_from=333.788.videopod.sections&vd_source=21db84374de3d6785c04b0329b69e5e5)

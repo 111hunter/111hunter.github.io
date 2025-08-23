@@ -1,4 +1,4 @@
-# 人类的历史是你与自己的冲突
+# 人类的历史是我们与自己的冲突
 
 
 > 消化不良的经验或者你没有彻底地、完整地面对的事情，会在头脑中留下痕迹，我们称之为记忆。 — 克里希那穆提
@@ -54,8 +54,6 @@
 **推荐阅读**
 
 - [自我机制 — 识别 | 丽莲空间](https://mp.weixin.qq.com/s/mh6Llkq9PnJX3AJoN0Ae5g)
-
-- [You Are Just Like a Parrot | U.G. Krishnamurti](https://www.youtube.com/watch?v=0giYl6bi7Os)
 
 <!-- 这个（信仰的）结构感兴趣的是保护传统，但是这个（新人）感兴趣的是打破传统的累积性质 - 不是维持传统，而是打破传统。在你体内运作的倾听机制就是传统 — 它通过倾听的过程，自我强化，自我增强。这就是为什么我说从我嘴里发出的声音和狗的吠叫、豺的嚎叫、猫的喧闹声没什么不同。  - U.G. Krishnamurti,《The Courage To Stand Alone》  -->
 

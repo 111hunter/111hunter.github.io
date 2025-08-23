@@ -65,3 +65,6 @@
 
 - [从个人梦中醒来 - 尼萨迦达塔语录](https://mp.weixin.qq.com/s/9Dwrq7ryE5kga-CWE1nGlA)
 
+- [臣服是唯一的出路 | 埃克哈特·托利](https://www.zhihu.com/zvideo/1598515287053275136)
+
+- [《醒来》| 海灵格](https://mp.weixin.qq.com/s/xMy-B23OvDwhq0APVWOKew)

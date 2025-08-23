@@ -43,5 +43,16 @@
 
 - [16 personalities 2025 test results](https://www.16personalities.com/ch/%E7%BB%93%E6%9E%9C/infj-a/x/hdqud6bme)
 
+<!-- - [MBTI人格每天都在干什么‼️和你一样吗？](https://mp.weixin.qq.com/s/KVsHWNhmJzacrTUL1qkSIQ) -->
+
+- [悟性高的人往往不太合群，更喜欢独处，这种性格特征背后的深层原因是什么？| Syeri的知乎回答](https://www.zhihu.com/question/1929199723807498709/answer/1929582220294729765)
+
+- [INFJ 的学习模式是什么？| 理思真的知乎回答](https://www.zhihu.com/question/346500350/answer/2992687359)
+
+- [INFJ Careers](https://www.infj.com/INFJ_Careers.htm)
+
 - [idrlabs.com](https://www.idrlabs.com/infj.php)
 
+<!-- - [INFJ有多聪明？](https://mp.weixin.qq.com/s/MM5stQJ0OebN5Nb8Kh10WQ) -->
+
+<!-- - [INFJ为什么是最差的人格？](https://mp.weixin.qq.com/s/s5p5DAd2IlbDHokIoeaLmw) -->

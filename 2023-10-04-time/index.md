@@ -665,3 +665,6 @@
 
 - 节选自 [《The Ending Of Time》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_Ending_Of_Time.pdf)
 
+**推荐阅读**
+
+- [你相信“善有善报，恶有恶报，不是不报，时候未到”吗？| 画中之人的知乎回答](https://www.zhihu.com/question/48482863/answer/2934064957)

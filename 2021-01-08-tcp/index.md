@@ -57,7 +57,7 @@ TCP 在不可靠的 IP 协议之上实现了可靠性，使得我们在开发上
 
 **参阅资料**
 
-- [TCP拥塞控制的问题？ - 车小胖的知乎回答](https://www.zhihu.com/question/58517416/answer/158142955)
+- [TCP拥塞控制的问题？| 车小胖的知乎回答](https://www.zhihu.com/question/58517416/answer/158142955)
 - [seq 和 ack 号的正确理解](https://www.cnblogs.com/realjimmy/p/12930797.html)
 - [图解 TCP 重传、滑动窗口、流量控制、拥塞控制](https://zhuanlan.zhihu.com/p/133307545)
 

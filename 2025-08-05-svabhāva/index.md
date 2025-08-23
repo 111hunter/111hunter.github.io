@@ -1,5 +1,7 @@
-# 本来面目
+# 既然无我，谁在说话？
 
+
+<!-- 我确信心智不存在，但无论我多么努力，也无法将这种确信传达给任何人。你还没准备好接受这个说法，因为我们用来交流的东西本身正处于危险之中。    — U.G. Krishnamurti -->
 
 问：U.G.，我想探究一下您那革命性的、毫不妥协的言论“没有灵魂”的本质。
 
@@ -147,6 +149,10 @@ U.G.：没有自我，没有“我”，没有精神，没有灵魂，也没有�
 
 **推荐阅读**
 
-- [Why You Suffer - U.G. Krishnamurti](https://www.youtube.com/watch?v=tLa0N1eSUBw)
+- [No Free Will & No Thoughts of Your Own | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=Zs4C91-_eqQ)
+
+<!-- - [Thoughts, Language & Energy | U.G. Krishnamurti](https://www.youtube.com/watch?v=vQl9bvoXx6o) -->
+
+<!-- - [Why You Suffer - U.G. Krishnamurti](https://www.youtube.com/watch?v=tLa0N1eSUBw) -->
 
 <!-- - [Escape The Matrix & Stop Being A Sheep - U.G. Krishnamurti](https://www.youtube.com/watch?v=pA1uP_R4vuc) -->

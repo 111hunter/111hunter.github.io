@@ -607,6 +607,6 @@
 
 - 节选自 [《The Ending Of Time》](https://selfdefinition.org/krishnamurti/Jiddu_Krishnamurt_The_Ending_Of_Time.pdf)
 
-<!-- **推荐阅读**
+**推荐阅读**
 
-- [意图](https://111hunter.github.io/2024-09-14-inner-purpose/) -->
+- [方丈都背叛了佛，你还有什么是不能释怀的？ - 画中之人的知乎回答](https://www.zhihu.com/question/1935303659228463506/answer/1936734681153410370)

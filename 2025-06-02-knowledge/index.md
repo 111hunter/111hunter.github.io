@@ -453,14 +453,14 @@
 
 **推荐阅读**
 
-- [Rare Osho Interview 1985 (Top 5 Moments!) | Vishrant](https://www.youtube.com/watch?v=4-87Xu-Pmz0)
-
-- [如果我們真的來自同一個意識源頭，為什麼有些人快樂，有些人卻活在痛苦裡？| Jiddu Krishnamurti](https://www.youtube.com/watch?v=xSzkESt4XQ0)
-
 <!-- 几个世纪以来，我们一直被告知该怎么做。为什么我们要问同样的问题，“怎么办？做什么与什么相关？我所强调的是，要求改变我们自己是我们痛苦的原因。我可以说，没有什么可以改变的。但是革命的老师们来告诉我们，那里有一些东西，你必须带来一场激进的革命。然后我们假设存在灵魂、精神或“我”这样的东西。我一直坚持的是，我在那里没有找到任何像自我或灵魂的东西。这个问题困扰了我一辈子，突然间它击中了我：“没有自我可以实现。我这段时间到底在干什么？你看，这就像闪电一样击中了你。一旦它击中你，由这个想法 [我] 控制的整个身体机制就会粉碎。剩下的是拥有自己智慧的巨大生物体。你剩下的是生命的脉搏、节拍和悸动。
 
 “必须有更多的东西，我们必须做点什么才能成为整个事情的一部分。”之所以出现这样的要求，是因为我们认为我们被创造的目的比这个星球上其他物种被创造的目的更宏大。这就是我们犯下的根本错误。文化是造成我们假设这一点的原因。因此，我们开始相信，整个创造都是为了人类的利益。为了我们的目的而利用自然的需求造成了所有的生态问题。对我们来说，处理这些问题并不是一件容易的事。我们已经到了没有回头路的地步。 -->
 
 <!-- https://en.wikisource.org/wiki/No_Way_Out/Chapter_3 -->
 
-<!-- - [The Fundamental Mistake of Mankind | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=bBTzL2WQ5OI) -->
+- [The Fundamental Mistake of Mankind | U.G. Krishnamurti Interview](https://www.youtube.com/watch?v=bBTzL2WQ5OI)
+
+<!-- - [为什么我无法从内心深处真正的与人亲近？| 画中之人的知乎回答](https://www.zhihu.com/question/59527921/answer/3008234823) -->
+
+<!-- - [Rare Osho Interview 1985 (Top 5 Moments!) | Vishrant](https://www.youtube.com/watch?v=4-87Xu-Pmz0) -->
