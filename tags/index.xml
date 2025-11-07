@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Tags - 标签 - 寂的博客</title>
+        <title>Tags - 标签 - 氚的博客</title>
         <link>http://localhost:1313/tags/</link>
-        <description>Tags - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Tue, 05 Aug 2025 00:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
+        <description>Tags - 标签 - 氚的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (氚)</managingEditor>
+            <webMaster>1621209357@qq.com (氚)</webMaster><lastBuildDate>Tue, 05 Aug 2025 00:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
     <title>Maya</title>
     <link>http://localhost:1313/tags/maya/</link>
     <pubDate>Tue, 05 Aug 2025 00:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/tags/maya/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -16,7 +16,7 @@
     <title>Time</title>
     <link>http://localhost:1313/tags/time/</link>
     <pubDate>Tue, 05 Aug 2025 00:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/tags/time/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -24,7 +24,7 @@
     <title>Network</title>
     <link>http://localhost:1313/tags/network/</link>
     <pubDate>Sat, 19 Jul 2025 13:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/tags/network/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -32,7 +32,7 @@
     <title>Recursion</title>
     <link>http://localhost:1313/tags/recursion/</link>
     <pubDate>Wed, 09 Jul 2025 13:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/tags/recursion/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -40,7 +40,7 @@
     <title>Turing Machine</title>
     <link>http://localhost:1313/tags/turing-machine/</link>
     <pubDate>Wed, 11 Jun 2025 13:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/tags/turing-machine/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -48,7 +48,7 @@
     <title>Advaita</title>
     <link>http://localhost:1313/tags/advaita/</link>
     <pubDate>Tue, 06 May 2025 17:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/tags/advaita/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -56,7 +56,7 @@
     <title>Samadhi</title>
     <link>http://localhost:1313/tags/samadhi/</link>
     <pubDate>Tue, 06 May 2025 17:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/tags/samadhi/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -64,7 +64,7 @@
     <title>Blockchain</title>
     <link>http://localhost:1313/tags/blockchain/</link>
     <pubDate>Sat, 26 Apr 2025 01:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/tags/blockchain/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -72,7 +72,7 @@
     <title>Rust</title>
     <link>http://localhost:1313/tags/rust/</link>
     <pubDate>Sat, 26 Apr 2025 01:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/tags/rust/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -80,7 +80,7 @@
     <title>AST</title>
     <link>http://localhost:1313/tags/ast/</link>
     <pubDate>Wed, 26 Mar 2025 17:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/tags/ast/</guid>
     <description><![CDATA[]]></description>
 </item>

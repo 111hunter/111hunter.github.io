@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Angular - 标签 - 寂的博客</title>
+        <title>Angular - 标签 - 氚的博客</title>
         <link>http://localhost:1313/tags/angular/</link>
-        <description>Angular - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 25 Apr 2020 22:27:41 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/angular/" rel="self" type="application/rss+xml" /><item>
+        <description>Angular - 标签 - 氚的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (氚)</managingEditor>
+            <webMaster>1621209357@qq.com (氚)</webMaster><lastBuildDate>Sat, 25 Apr 2020 22:27:41 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/angular/" rel="self" type="application/rss+xml" /><item>
     <title>用 NgRx 和 Nest 写一个全栈 todolist</title>
     <link>http://localhost:1313/2020-04-25-typescript-fullstack/</link>
     <pubDate>Sat, 25 Apr 2020 22:27:41 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2020-04-25-typescript-fullstack/</guid>
     <description><![CDATA[<p>本次实践我将使用 Angular 和 Nest.js 写一个带有状态管理，登录验证的全栈 todolist 应用。</p>
 <h2 id="后端开发">后端开发</h2>
@@ -19,7 +19,7 @@
     <title>初探 RxJS - Observable 的简单创建</title>
     <link>http://localhost:1313/2020-03-13-rxjs-01/</link>
     <pubDate>Fri, 13 Mar 2020 11:50:32 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2020-03-13-rxjs-01/</guid>
     <description><![CDATA[<blockquote>
 <p>ReactiveX 结合了 <strong>观察者模式</strong>、<strong>迭代器模式</strong> 和 <strong>使用集合的函数式编程</strong>，以满足以一种理想方式来管理事件序列所需要的一切。</p></blockquote>

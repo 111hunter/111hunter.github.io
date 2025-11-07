@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Recoil - 标签 - 寂的博客</title>
+        <title>Recoil - 标签 - 氚的博客</title>
         <link>http://localhost:1313/tags/recoil/</link>
-        <description>Recoil - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 07 Oct 2020 19:40:00 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/recoil/" rel="self" type="application/rss+xml" /><item>
+        <description>Recoil - 标签 - 氚的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (氚)</managingEditor>
+            <webMaster>1621209357@qq.com (氚)</webMaster><lastBuildDate>Wed, 07 Oct 2020 19:40:00 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/recoil/" rel="self" type="application/rss+xml" /><item>
     <title>实现仿 Recoil 的状态共享</title>
     <link>http://localhost:1313/2020-10-07-recoil-clone/</link>
     <pubDate>Wed, 07 Oct 2020 19:40:00 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2020-10-07-recoil-clone/</guid>
     <description><![CDATA[<p>本文是我最近阅读一篇英文技术文章后写的小结。阅读前请注意，本文不涉及任何 Recoil 源码。仿写的代码并不是 Recoil 真正的实现方式，本文只仿造实现了 Recoil 中两个重要的 API 接口：Atom 和 Selector。</p>]]></description>
 </item>
@@ -16,7 +16,7 @@
     <title>Recoil 基础</title>
     <link>http://localhost:1313/2020-07-27-recoil/</link>
     <pubDate>Mon, 27 Jul 2020 22:26:00 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2020-07-27-recoil/</guid>
     <description><![CDATA[<p>最近，Facebook 官方开源了一个状态管理库 Recoil，我们来学习一下。Recoil 是基于 Immutable 的数据流管理方案，这是它值得学习的重要原因。Recoil 非常易于学习，它的 API 简单强大，对于已经习惯使用 hooks 的人来说很自然。</p>]]></description>
 </item>

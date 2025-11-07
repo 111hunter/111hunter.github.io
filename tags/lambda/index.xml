@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Lambda - 标签 - 寂的博客</title>
+        <title>Lambda - 标签 - 氚的博客</title>
         <link>http://localhost:1313/tags/lambda/</link>
-        <description>Lambda - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/lambda/" rel="self" type="application/rss+xml" /><item>
+        <description>Lambda - 标签 - 氚的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (氚)</managingEditor>
+            <webMaster>1621209357@qq.com (氚)</webMaster><lastBuildDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/lambda/" rel="self" type="application/rss+xml" /><item>
     <title>IO 和 Monad</title>
     <link>http://localhost:1313/2020-12-28-monad/</link>
     <pubDate>Mon, 28 Dec 2020 17:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2020-12-28-monad/</guid>
     <description><![CDATA[<p>学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程序时的外部状态(RealWorld)当成函数的参数。</p>]]></description>
 </item>
@@ -16,7 +16,7 @@
     <title>实现 λ 演算解释器</title>
     <link>http://localhost:1313/2020-12-13-%CE%BB-interpreter/</link>
     <pubDate>Sun, 13 Dec 2020 09:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2020-12-13-%CE%BB-interpreter/</guid>
     <description><![CDATA[<p>如果你没有听说过 λ 演算，可以阅读我的这篇<a href="https://111hunter.github.io/2020-11-26-%CE%BB-calculus/" target="_blank" rel="noopener noreffer">文章</a>
 。如果你没有编译原理相关知识，可以阅读我的这篇<a href="https://111hunter.github.io/2020-12-10-lex-parse" target="_blank" rel="noopener noreffer">文章</a>
@@ -26,7 +26,7 @@
     <title>λ 演算 — 程序从无到有</title>
     <link>http://localhost:1313/2020-11-26-%CE%BB-calculus/</link>
     <pubDate>Thu, 26 Nov 2020 09:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2020-11-26-%CE%BB-calculus/</guid>
     <description><![CDATA[<p>由邱奇创造的 <a href="https://en.wikipedia.org/wiki/Lambda_calculus" target="_blank" rel="noopener noreffer">λ 演算(λ-calculus)</a>
  是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boolean) 或任何非函数的数据类型，它只用匿名单参函数就能模拟图灵机。</p>]]></description>

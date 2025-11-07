@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Turing Machine - 标签 - 寂的博客</title>
+        <title>Turing Machine - 标签 - 氚的博客</title>
         <link>http://localhost:1313/tags/turing-machine/</link>
-        <description>Turing Machine - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Wed, 11 Jun 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/turing-machine/" rel="self" type="application/rss+xml" /><item>
+        <description>Turing Machine - 标签 - 氚的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (氚)</managingEditor>
+            <webMaster>1621209357@qq.com (氚)</webMaster><lastBuildDate>Wed, 11 Jun 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/turing-machine/" rel="self" type="application/rss+xml" /><item>
     <title>我们正在寻找的正是正在寻找的</title>
     <link>http://localhost:1313/2025-06-11-halting-problem/</link>
     <pubDate>Wed, 11 Jun 2025 13:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2025-06-11-halting-problem/</guid>
     <description><![CDATA[<!-- 想法本身，当它觉察到自己，知道自己的局限，便会找到它的位置。 - The beginning of meditation, Public Talk 4 Brockwood Park, krishnamurti,  -->
 <p>克：<span style="color: #EF3882; font-weight: bold; font-style: italic;">我们那天谈到了 一颗心彻底摆脱了一切运动， 摆脱了思想堆砌的一切事物， 摆脱了思想带来的、 在过去、未来经历的一切，等等。 但是在我们探讨这个问题之前， 我想问问什么是唯物主义？ 人类被困在了这种唯物主义的态度、 价值观和经验中。 唯物主义的本质是什么？</span></p>]]></description>
@@ -17,7 +17,7 @@
     <title>一些通用计算模型</title>
     <link>http://localhost:1313/2021-01-30-tag-system/</link>
     <pubDate>Sat, 30 Jan 2021 10:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2021-01-30-tag-system/</guid>
     <description><![CDATA[<blockquote>
 <p>在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算」的。 &ndash; wikipedia</p>]]></description>
@@ -26,7 +26,7 @@
     <title>图灵机的极简实现</title>
     <link>http://localhost:1313/2020-11-17-brainfuck/</link>
     <pubDate>Tue, 17 Nov 2020 22:00:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2020-11-17-brainfuck/</guid>
     <description><![CDATA[<p>图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终极强大逻辑机器。</p>]]></description>
 </item>
@@ -34,7 +34,7 @@
     <title>自我指涉与数理逻辑</title>
     <link>http://localhost:1313/2020-11-16-self-reference/</link>
     <pubDate>Mon, 16 Nov 2020 00:27:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2020-11-16-self-reference/</guid>
     <description><![CDATA[<p>“我是谁？”，这种对指代自身的疑问每个人都会有。在自然语言和形式语言中，如果一个句子直接或间接提及自身，就称为<a href="https://en.wikipedia.org/wiki/Self-reference" target="_blank" rel="noopener noreffer">自指</a>
 (Self-reference)，自指的语句常常会造成悖论。</p>]]></description>

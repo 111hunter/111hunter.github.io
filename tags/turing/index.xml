@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Turing - 标签 - 寂的博客</title>
+        <title>Turing - 标签 - 氚的博客</title>
         <link>http://example.org/tags/turing/</link>
-        <description>Turing - 标签 - 寂的博客</description>
+        <description>Turing - 标签 - 氚的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 14 Nov 2020 11:27:34 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/turing/" rel="self" type="application/rss+xml" /><item>
     <title>图灵机的极简实现</title>
     <link>http://example.org/2020-11-14-brainfuck/</link>

@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Network - 标签 - 寂的博客</title>
+        <title>Network - 标签 - 氚的博客</title>
         <link>http://localhost:1313/tags/network/</link>
-        <description>Network - 标签 - 寂的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (寂)</managingEditor>
-            <webMaster>1621209357@qq.com (寂)</webMaster><lastBuildDate>Sat, 19 Jul 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/network/" rel="self" type="application/rss+xml" /><item>
+        <description>Network - 标签 - 氚的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (氚)</managingEditor>
+            <webMaster>1621209357@qq.com (氚)</webMaster><lastBuildDate>Sat, 19 Jul 2025 13:50:34 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/network/" rel="self" type="application/rss+xml" /><item>
     <title>什么是竞态条件？其逻辑本质是什么？</title>
     <link>http://localhost:1313/2025-07-19-race-condition/</link>
     <pubDate>Sat, 19 Jul 2025 13:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2025-07-19-race-condition/</guid>
     <description><![CDATA[<div class="details admonition tip open">
         <div class="details-summary admonition-title">
@@ -22,7 +22,7 @@
     <title>从链下到链上，什么是 DApp？</title>
     <link>http://localhost:1313/2025-03-20-dapp/</link>
     <pubDate>Thu, 20 Mar 2025 17:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2025-03-20-dapp/</guid>
     <description><![CDATA[<!-- 从链下到链上，什么是DApp？——以典型DeFi借贷平台为例 -->
 <p><figure><a class="lightgallery" href="/img/onchain-mcp.jpg" title="https://github.com/bankless/onchain-mcp" data-thumbnail="/img/onchain-mcp.jpg" data-sub-html="<h2>Bankless Onchain MCP Server</h2><p>https://github.com/bankless/onchain-mcp</p>">
@@ -35,7 +35,7 @@
     <title>从启动浏览器到打开网页，发生了什么？</title>
     <link>http://localhost:1313/2025-03-17-browser/</link>
     <pubDate>Mon, 17 Mar 2025 17:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2025-03-17-browser/</guid>
     <description><![CDATA[<p>从计算机科学的角度来看，从启动浏览器到输入网址并打开网页的全过程是一个复杂且多层次的协作，涉及网络通信、浏览器架构、JavaScript 执行机制等多个方面。现代浏览器（如Chrome、Firefox）采用了多进程架构，并结合单线程的 JavaScript 运行机制，通过事件循环和专用 Worker API 实现高效的任务处理和页面渲染。以下将详细描述这一过程，并突出 JavaScript 的单线程特性及其在浏览器中的运作方式。</p>]]></description>
 </item>
@@ -43,7 +43,7 @@
     <title>像理解网络模型一样理解区块链</title>
     <link>http://localhost:1313/2022-06-05-blockchain-2/</link>
     <pubDate>Sun, 05 Jun 2022 08:00:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2022-06-05-blockchain-2/</guid>
     <description><![CDATA[<p><figure><a class="lightgallery" href="/img/web3-app.jpg" title="https://mirror.xyz/straycatokinawa.eth/orz4h4Q-XbKC-NH8n4mdAyLp2QFD21Dsq5ewL05qoMk" data-thumbnail="/img/web3-app.jpg" data-sub-html="<h2>The Architecture of a Web3 application</h2><p>https://mirror.xyz/straycatokinawa.eth/orz4h4Q-XbKC-NH8n4mdAyLp2QFD21Dsq5ewL05qoMk</p>">
         
@@ -57,7 +57,7 @@
     <title>关于 TCP, 我学到什么</title>
     <link>http://localhost:1313/2021-01-08-tcp/</link>
     <pubDate>Fri, 08 Jan 2021 10:50:34 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2021-01-08-tcp/</guid>
     <description><![CDATA[<p>TCP 在不可靠的 IP 协议之上实现了可靠性，使得我们在开发上层应用时，不必关注网络传输的种种复杂性。可靠，指的是采用一系列技术来保障数据在发送方和接收方是一致的。我们了解下 TCP 如何实现可靠性。</p>]]></description>
 </item>
@@ -65,7 +65,7 @@
     <title>基于 Socket.IO 的实时聊天室</title>
     <link>http://localhost:1313/2020-08-11-websocket/</link>
     <pubDate>Tue, 11 Aug 2020 10:51:00 &#43;0800</pubDate>
-    <author>寂</author>
+    <author>氚</author>
     <guid>http://localhost:1313/2020-08-11-websocket/</guid>
     <description><![CDATA[<p>WebSocket 是一种服务端和客户端之间的双向通信协议，和 HTTP 一样是基于 TCP 协议的应用层协议，并且 WebSocket 在握手阶段依赖于 HTTP 连接。</p>
 <p>WebSocket 广泛应用于多用户实时交流，服务端数据持续变化的场景。比如社交聊天、弹幕、多玩家游戏、协同编辑、股票基金实时报价、体育实况更新、视频会议/聊天、基于位置的应用、在线教育、智能家居等需要高实时的场景。</p>]]></description>

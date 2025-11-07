@@ -2,15 +2,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/categories/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>2.4</priority></url><url>
-            <loc>http://localhost:1313/tags/maya/</loc><lastmod>2025-08-23T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/posts/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>2.4</priority></url><url>
-            <loc>http://localhost:1313/tags/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>2.4</priority></url><url>
-            <loc>http://localhost:1313/categories/thinking/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>2.4</priority></url><url>
-            <loc>http://localhost:1313/tags/time/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>2.4</priority></url><url>
-            <loc>http://localhost:1313/2025-08-05-svabh%C4%81va/</loc><lastmod>2025-08-05T00:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://localhost:1313/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>2.4</priority></url><url>
-            <loc>http://localhost:1313/2025-08-01-avidy%C4%81/</loc><lastmod>2025-08-01T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://localhost:1313/categories/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1.3</priority></url><url>
+            <loc>http://localhost:1313/tags/maya/</loc><lastmod>2025-08-23T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/posts/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1.3</priority></url><url>
+            <loc>http://localhost:1313/tags/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1.3</priority></url><url>
+            <loc>http://localhost:1313/categories/thinking/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1.3</priority></url><url>
+            <loc>http://localhost:1313/tags/time/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1.3</priority></url><url>
+            <loc>http://localhost:1313/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1.3</priority></url><url>
+            <loc>http://localhost:1313/2025-08-05-svabh%C4%81va/</loc><lastmod>2025-08-05T00:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/2025-08-01-avidy%C4%81/</loc><lastmod>2025-08-01T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/tags/network/</loc><lastmod>2025-07-19T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/categories/theory/</loc><lastmod>2025-07-19T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2025-07-19-race-condition/</loc><lastmod>2025-07-19T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -23,8 +23,8 @@
             <loc>http://localhost:1313/2025-06-11-halting-problem/</loc><lastmod>2025-06-11T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2025-06-02-knowledge/</loc><lastmod>2025-06-02T13:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2025-05-17-memory/</loc><lastmod>2025-05-17T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/tags/advaita/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>2.4</priority></url><url>
-            <loc>http://localhost:1313/tags/samadhi/</loc><lastmod>2025-07-21T21:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>http://localhost:1313/tags/advaita/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1.3</priority></url><url>
+            <loc>http://localhost:1313/tags/samadhi/</loc><lastmod>2025-07-21T21:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2025-05-06-learning/</loc><lastmod>2025-05-06T17:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/tags/blockchain/</loc><lastmod>2025-04-26T01:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/categories/coding/</loc><lastmod>2025-04-26T01:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -45,7 +45,7 @@
             <loc>http://localhost:1313/2024-12-25-yaldabaoth/</loc><lastmod>2024-12-25T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2024-12-06-sorcerer/</loc><lastmod>2025-05-25T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2024-12-03-gnosis/</loc><lastmod>2024-12-03T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/2024-12-02-avidya/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>2.4</priority></url><url>
+            <loc>http://localhost:1313/2024-12-02-avidya/</loc><lastmod>2025-12-02T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1.3</priority></url><url>
             <loc>http://localhost:1313/2024-11-20-shiva/</loc><lastmod>2024-11-20T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2024-11-19-nastika/</loc><lastmod>2024-11-19T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2024-11-18-anatta/</loc><lastmod>2024-11-18T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -78,14 +78,14 @@
             <loc>http://localhost:1313/2024-03-31-confusion/</loc><lastmod>2024-03-31T16:00:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2024-01-01-know-thyself/</loc><lastmod>2024-01-01T11:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2023-12-19-itp/</loc><lastmod>2025-06-09T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/2023-12-17-mbti/</loc><lastmod>2025-08-04T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://localhost:1313/2023-10-05-creativity/</loc><lastmod>2025-07-21T21:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>http://localhost:1313/2023-10-04-time/</loc><lastmod>2025-07-21T21:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>http://localhost:1313/2023-12-17-mbti/</loc><lastmod>2025-08-04T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/2023-10-05-creativity/</loc><lastmod>2025-07-21T21:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/2023-10-04-time/</loc><lastmod>2025-07-21T21:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2023-10-04-action-and-idea/</loc><lastmod>2023-10-04T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2023-05-02-zkp/</loc><lastmod>2023-05-02T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2022-08-14-freedom/</loc><lastmod>2022-08-14T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2022-06-05-blockchain-2/</loc><lastmod>2022-06-05T08:00:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/2022-05-29-no-secret/</loc><lastmod>2025-08-23T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/2022-05-29-no-secret/</loc><lastmod>2025-08-23T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2022-03-15-observer-and-observed/</loc><lastmod>2022-03-15T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2022-02-01-samadhi-3/</loc><lastmod>2022-02-01T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://localhost:1313/2021-12-03-samadhi-2/</loc><lastmod>2021-12-03T10:50:34&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
