@@ -1,20 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Vue.js - 标签 - 氚的博客</title>
-        <link>http://localhost:1313/tags/vue.js/</link>
-        <description>Vue.js - 标签 - 氚的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>1621209357@qq.com (氚)</managingEditor>
-            <webMaster>1621209357@qq.com (氚)</webMaster><lastBuildDate>Sat, 21 Mar 2020 17:59:51 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/vue.js/" rel="self" type="application/rss+xml" /><item>
-    <title>用 Spring Boot 和 Vue.js 写一个全栈应用</title>
-    <link>http://localhost:1313/2020-03-21-spring/</link>
-    <pubDate>Sat, 21 Mar 2020 17:59:51 &#43;0800</pubDate>
-    <author>氚</author>
-    <guid>http://localhost:1313/2020-03-21-spring/</guid>
-    <description><![CDATA[<p>本篇文章将介绍如何用 Spring boot 与 Vue.js 创建一个具有基本 crud 功能的全栈 web 应用，我们将使用 bootstrap 作为项目的 UI 库，适合 web 开发初学者阅读。</p>
-<h2 id="后端接口">后端接口</h2>
-<p>到 <a href="https://start.spring.io/" target="_blank" rel="noopener noreffer">https://start.spring.io/</a>
- 去生成和下载 spring 应用，Group 填写 com.jpa，Artifact 填写 spring-jpa-demo， 其他默认选择就好，点击 Generate 就会生成并下载名压缩包，将压缩包解压，并在编辑器中打开。
-我们使用 jpa 作为我们的 orm, 连接 mysql 数据库，因此在 pom.xml 中加入以下依赖。</p>]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue.js on 氚的博客</title>
+    <link>http://localhost:1313/tags/vue.js/</link>
+    <description>Recent content in Vue.js on 氚的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>1621209357@qq.com (氚)</managingEditor>
+    <webMaster>1621209357@qq.com (氚)</webMaster>
+    <lastBuildDate>Sat, 21 Mar 2020 17:59:51 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用 Spring Boot 和 Vue.js 写一个全栈应用</title>
+      <link>http://localhost:1313/2020-03-21-spring/</link>
+      <pubDate>Sat, 21 Mar 2020 17:59:51 +0800</pubDate><author>1621209357@qq.com (氚)</author>
+      <guid>http://localhost:1313/2020-03-21-spring/</guid>
+      <description>&lt;p&gt;本篇文章将介绍如何用 Spring boot 与 Vue.js 创建一个具有基本 crud 功能的全栈 web 应用，我们将使用 bootstrap 作为项目的 UI 库，适合 web 开发初学者阅读。&lt;/p&gt;&#xA;&lt;h2 id=&#34;后端接口&#34;&gt;后端接口&lt;/h2&gt;&#xA;&lt;p&gt;到 &lt;a href=&#34;https://start.spring.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;https://start.spring.io/&lt;/a&gt;&#xA; 去生成和下载 spring 应用，Group 填写 com.jpa，Artifact 填写 spring-jpa-demo， 其他默认选择就好，点击 Generate 就会生成并下载名压缩包，将压缩包解压，并在编辑器中打开。&#xA;我们使用 jpa 作为我们的 orm, 连接 mysql 数据库，因此在 pom.xml 中加入以下依赖。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

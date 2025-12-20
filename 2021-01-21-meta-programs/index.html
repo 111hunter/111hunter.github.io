@@ -150,13 +150,16 @@
 <p>不好的是，没有一个达成共识的单一定义。让我们参阅一下：</p>
 <blockquote>
 <p>元编程是一种编程技术，指计算机程序具有将其他程序视为其数据的能力。 – <a href="https://en.wikipedia.org/wiki/Metaprogramming" target="_blank" rel="noopener noreffer">wikipedia</a>
-</p></blockquote>
+</p>
+</blockquote>
 <blockquote>
 <p>元编程是指程序具有了解自身或操纵自身的多种方式。 – <a href="https://stackoverflow.com/questions/514644/what-exactly-is-metaprogramming" target="_blank" rel="noopener noreffer">stackoverflow 上的流行答案</a>
-</p></blockquote>
+</p>
+</blockquote>
 <blockquote>
 <p>“支持元编程”意味着用户可以有效修改该语言内置语法(例如 Lisp 的宏)或扩展该语言常规语法(例如 C 的预处理程序)。 – <a href="https://rosettacode.org/wiki/Metaprogramming" target="_blank" rel="noopener noreffer">rosettacode</a>
-</p></blockquote>
+</p>
+</blockquote>
 <p>没有一个很好的定义，让我们看一些例子。当人们谈论元编程时，他们可能指的是：</p>
 <ul>
 <li>macros in Lisp (1960)</li>
@@ -201,7 +204,8 @@
 <h3 id="动态元编程">动态元编程</h3>
 <blockquote>
 <p>元编程是编写在运行时操纵(自身)语言结构的代码。 – <a href="https://book.douban.com/subject/7056800/" target="_blank" rel="noopener noreffer">Ruby 元编程</a>
-</p></blockquote>
+</p>
+</blockquote>
 <p>元编程在 Ruby 中比在其他的动态类型语言中更常用，尤其是在 Rails 中，例如：<a href="https://guides.rubyonrails.org/routing.html#path-and-url-helpers" target="_blank" rel="noopener noreffer">Path and URL Helpers</a>
 。动态元编程的缺点是“事物”没有源代码：你看到了一个函数，但是你不知道它的定义位置，这破坏了“<a href="http://jamie-wong.com/2013/07/12/grep-test/" target="_blank" rel="noopener noreffer">grep test</a>
 ”。另一个缺点是它趋向于变慢，例如，参见 <a href="https://docs.rubocop.org/rubocop-rails/cops_rails.html#railsdynamicfindby" target="_blank" rel="noopener noreffer">Rails / DynamicFindBy</a>
@@ -320,13 +324,15 @@
 <h4 id="dsl">DSL</h4>
 <blockquote>
 <p>JSX 是 ECMAScript 中类似 XML 的语法扩展，没有任何定义的语义 – <a href="https://facebook.github.io/jsx/" target="_blank" rel="noopener noreffer">Draft: JSX Specification</a>
-</p></blockquote>
+</p>
+</blockquote>
 <p>它本质上是一个 DSL。而负责编译它的 Babel 插件是一个预处理器。你可以使用其他的元编程技术来实现同样的结果 &ndash; 参见 <a href="https://blog.bloomca.me/2019/02/23/alternatives-to-jsx.html" target="_blank" rel="noopener noreffer">JSX 的替代方案</a>
 。</p>
 <h4 id="多态性">多态性</h4>
 <blockquote>
 <p>&hellip;多态语言，其中一些值和变量可能有一个以上的类型。多态函数是指其操作数(实际参数)可以有一个以上类型的函数。多态类型是指其操作可以适用于一种以上类型的值的类型。 – <a href="http://lucacardelli.name/Papers/OnUnderstanding.A4.pdf" target="_blank" rel="noopener noreffer">On Understanding Types, Data Abstraction, and Polymorphism</a>
-</p></blockquote>
+</p>
+</blockquote>
 <p>令我惊讶的是:</p>
 <ul>
 <li>动态类型语言，是非常灵活的(但也很容易给自己找麻烦)。</li>
@@ -350,15 +356,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">list</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;github.com/joeshaw/gengen/generic&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">List</span> <span class="kd">struct</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">data</span> <span class="nx">generic</span><span class="p">.</span><span class="nx">T</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">next</span> <span class="o">*</span><span class="nx">List</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">list</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="s">&#34;github.com/joeshaw/gengen/generic&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">type</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">data</span><span class="w"> </span><span class="nx">generic</span><span class="p">.</span><span class="nx">T</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">next</span><span class="w"> </span><span class="o">*</span><span class="nx">List</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后，您需要运行预处理器：</p>
 <div class="highlight"><div class="chroma">
@@ -380,13 +386,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">list</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">List</span> <span class="kd">struct</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">data</span> <span class="kt">string</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">next</span> <span class="o">*</span><span class="nx">List</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">list</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">type</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">data</span><span class="w"> </span><span class="kt">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">next</span><span class="w"> </span><span class="o">*</span><span class="nx">List</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>另请参阅：<a href="https://appliedgo.net/generics/" target="_blank" rel="noopener noreffer">Who needs generics? Use … instead!</a>
 , <a href="https://blog.golang.org/generics-next-step" target="_blank" rel="noopener noreffer">The Next Step for Generics.</a>
@@ -394,7 +400,8 @@
 <h4 id="dry">DRY</h4>
 <blockquote>
 <p>模板元程序员利用这种机制来提高：源代码的灵活性和运行时性能。 – <a href="https://www.youtube.com/watch?t=607&amp;v=Am2is2QCvxY&amp;feature=youtu.be" target="_blank" rel="noopener noreffer">Walter E. Brown “Modern Template Metaprogramming: A Compendium, Part I”</a>
-</p></blockquote>
+</p>
+</blockquote>
 <p>在 C++中，有函数重载(即一种多态)，但它会产生很多重复：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -481,7 +488,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://111hunter.github.io/" target="_blank">氚</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
