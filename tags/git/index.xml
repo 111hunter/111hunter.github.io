@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on 氚的博客</title>
-    <link>http://localhost:1313/tags/git/</link>
+    <link>http://localhost:53466/tags/git/</link>
     <description>Recent content in Git on 氚的博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>1621209357@qq.com (氚)</managingEditor>
     <webMaster>1621209357@qq.com (氚)</webMaster>
     <lastBuildDate>Fri, 13 Dec 2019 15:48:16 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:53466/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git 快速上手指南</title>
-      <link>http://localhost:1313/2019-12-13-git-learn/</link>
+      <link>http://localhost:53466/2019-12-13-git-learn/</link>
       <pubDate>Fri, 13 Dec 2019 15:48:16 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/2019-12-13-git-learn/</guid>
+      <guid>http://localhost:53466/2019-12-13-git-learn/</guid>
       <description>&lt;p&gt;Git 是一个全世界开发者都在用的版本控制系统。它会帮助你与其他开发者合作，以及跟踪你不同版本的代码。如果你长时间在一个项目工作，你也许会想对那些有改动的地方保持跟踪：是谁，以及什么时候改动的。要是最终你发现你的代码里有 bug，这跟踪就变得更重要了。&lt;/p&gt;</description>
     </item>
   </channel>

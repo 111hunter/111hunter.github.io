@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Webpack on 氚的博客</title>
-    <link>http://localhost:1313/tags/webpack/</link>
+    <link>http://localhost:53466/tags/webpack/</link>
     <description>Recent content in Webpack on 氚的博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>1621209357@qq.com (氚)</managingEditor>
     <webMaster>1621209357@qq.com (氚)</webMaster>
     <lastBuildDate>Sun, 16 Aug 2020 19:51:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:53466/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Webpack 概念梳理</title>
-      <link>http://localhost:1313/2020-08-16-webpack/</link>
+      <link>http://localhost:53466/2020-08-16-webpack/</link>
       <pubDate>Sun, 16 Aug 2020 19:51:00 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/2020-08-16-webpack/</guid>
+      <guid>http://localhost:53466/2020-08-16-webpack/</guid>
       <description>&lt;p&gt;Webpack 是一个前端构建工具，前端构建工具的作用就是把开发环境的代码转化成运行环境代码。一般来说，开发环境的代码是为了更好的阅读，而运行环境的代码则是为了能够更快地执行。因此开发环境和运行环境的代码形式也不相同。比如，开发环境的代码，要通过混淆压缩后才能放在线上运行，这样代码体积更小，但对代码执行不会有任何影响。&lt;/p&gt;</description>
     </item>
   </channel>
