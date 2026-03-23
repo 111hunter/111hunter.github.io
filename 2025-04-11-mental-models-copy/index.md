@@ -305,6 +305,8 @@
 
 **推荐阅读**
 
+- [珍藏！送你人类史上顶级思维模型！](https://mp.weixin.qq.com/s/lf4M5iyTGJwVhtgMX5K31w)
+
 - [什么是想要？什么是不想要？(进化论视角)｜纳瓦尔最新访谈](https://mp.weixin.qq.com/s/CBJdjjgQXerm90UAgMEZSg)
 
 - [只有方法才是世界上唯一的，不可战胜的力量！｜牟其中](https://www.youtube.com/watch?v=f9L4i3bO8kk)
