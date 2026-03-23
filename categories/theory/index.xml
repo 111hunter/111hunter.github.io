@@ -2,138 +2,145 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Theory on 氚的博客</title>
-    <link>http://localhost:53466/categories/theory/</link>
+    <link>http://localhost:1313/categories/theory/</link>
     <description>Recent content in Theory on 氚的博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>1621209357@qq.com (氚)</managingEditor>
     <webMaster>1621209357@qq.com (氚)</webMaster>
-    <lastBuildDate>Tue, 11 Nov 2025 00:50:34 +0800</lastBuildDate>
-    <atom:link href="http://localhost:53466/categories/theory/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Mar 2026 13:50:34 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>生命以负熵为食</title>
+      <link>http://localhost:1313/2026-03-22-blindsight/</link>
+      <pubDate>Sun, 22 Mar 2026 13:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
+      <guid>http://localhost:1313/2026-03-22-blindsight/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;就身体而言，既没有诞生，也没有死亡。我们所谓的死亡不过是原子的重新排列，而原子之所以会重新排列，是因为宇宙中的能量水平必须维持。正因如此，也就是为了维持能量水平，无数人在灾难性事件中丧生。对自然来说，这并非灾难。地震和其他任何事件一样，都是行星活动的必要组成部分。  — U.G. Krishnamurti&lt;/p&gt;</description>
+    </item>
     <item>
       <title>桥山黄陵阴符经</title>
-      <link>http://localhost:53466/2025-11-11-paradigm/</link>
+      <link>http://localhost:1313/2025-11-11-paradigm/</link>
       <pubDate>Tue, 11 Nov 2025 00:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2025-11-11-paradigm/</guid>
+      <guid>http://localhost:1313/2025-11-11-paradigm/</guid>
       <description>&lt;p&gt;寰宇蕴神魔，天地分正邪，道亦化阴阳，善恶溯根源。&lt;/p&gt;&#xA;&lt;p&gt;盘古辟洪荒，神山创世。伏羲划乾坤，薪火传承。女娲定四极，五色中枢。俱如神农正道，善志济世，法出璇玑。&lt;/p&gt;</description>
     </item>
     <item>
       <title>什么是竞态条件？其逻辑本质是什么？</title>
-      <link>http://localhost:53466/2025-07-19-race-condition/</link>
+      <link>http://localhost:1313/2025-07-19-race-condition/</link>
       <pubDate>Sat, 19 Jul 2025 13:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2025-07-19-race-condition/</guid>
+      <guid>http://localhost:1313/2025-07-19-race-condition/</guid>
       <description>&lt;div class=&#34;details admonition tip open&#34;&gt;&#xA;        &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;            &lt;i class=&#34;icon fas fa-lightbulb fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;意识&lt;i class=&#34;details-icon fas fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;        &lt;/div&gt;&#xA;        &lt;div class=&#34;details-content&#34;&gt;&#xA;            &lt;div class=&#34;admonition-content&#34;&gt;&lt;p&gt;嗯，用户问的是竞态条件及其逻辑本质。这个问题挺专业的，可能是程序员或者计算机专业的学生在深入学习系统设计时遇到的疑惑。用户能提出“逻辑本质”这个层面，说明ta不满足于表面定义，而是想理解底层原理。&lt;/p&gt;&#xA;&lt;p&gt;关于竞态条件，首先得从并行计算的核心矛盾说起。多个执行单元（线程/进程）共享资源时，理想状态是它们像训练有素的乐队一样协作，但现实往往像没指挥的合唱团——各唱各的调。用户可能正在调试这类bug，或者在学习操作系统理论。&lt;/p&gt;</description>
     </item>
     <item>
       <title>心智模式 — 游戏规则说明书</title>
-      <link>http://localhost:53466/2025-04-11-mental-models/</link>
+      <link>http://localhost:1313/2025-04-11-mental-models-copy/</link>
       <pubDate>Fri, 11 Apr 2025 13:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2025-04-11-mental-models/</guid>
+      <guid>http://localhost:1313/2025-04-11-mental-models-copy/</guid>
       <description>&lt;!-- 一花一世界，一叶一如来。  -《华严经》 --&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;如果你想成为一名优秀的思考者，你必须培养一种能够跨越管辖界限的头脑。你不必了解所有内容。只需吸收所有这些学科中最好的大创意。而且这并不难做到。  — 查理·芒格&lt;/p&gt;</description>
     </item>
     <item>
       <title>从符号到括号，什么是S-表达式？</title>
-      <link>http://localhost:53466/2025-03-26-symbolic-expression/</link>
+      <link>http://localhost:1313/2025-03-26-symbolic-expression/</link>
       <pubDate>Wed, 26 Mar 2025 17:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2025-03-26-symbolic-expression/</guid>
+      <guid>http://localhost:1313/2025-03-26-symbolic-expression/</guid>
       <description>&lt;p&gt;S-表达式（S-expression，全称Symbolic Expression，符号表达式）是一种由约翰·麦卡锡（John McCarthy）在设计Lisp编程语言时引入的数据表示方法。它以简洁的语法和强大的表达能力著称，不仅是Lisp及其变种（如Scheme、Common Lisp）的核心，还广泛应用于符号计算、人工智能和数据结构的表示。S-表达式的核心思想是通过符号和括号构建一种既能表示数据又能表示程序的结构，具有“代码即数据”的特性。&lt;/p&gt;</description>
     </item>
     <item>
       <title>从链下到链上，什么是 DApp？</title>
-      <link>http://localhost:53466/2025-03-20-dapp/</link>
+      <link>http://localhost:1313/2025-03-20-dapp/</link>
       <pubDate>Thu, 20 Mar 2025 17:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2025-03-20-dapp/</guid>
-      <description>&lt;!-- 从链下到链上，什么是DApp？——以典型DeFi借贷平台为例 --&gt;&#xA;&lt;p&gt;&lt;figure&gt;&lt;a class=&#34;lightgallery&#34; href=&#34;http://localhost:53466/img/onchain-mcp.jpg&#34; title=&#34;https://github.com/bankless/onchain-mcp&#34; data-thumbnail=&#34;/img/onchain-mcp.jpg&#34; data-sub-html=&#34;&lt;h2&gt;Bankless Onchain MCP Server&lt;/h2&gt;&lt;p&gt;https://github.com/bankless/onchain-mcp&lt;/p&gt;&#34;&gt;&#xA;        &lt;img&#xA;            class=&#34;lazyload&#34;&#xA;            src=&#34;http://localhost:53466/svg/loading.min.svg&#34;&#xA;            data-src=&#34;http://localhost:53466/img/onchain-mcp.jpg&#34;&#xA;            data-srcset=&#34;http://localhost:53466/img/onchain-mcp.jpg, http://localhost:53466/img/onchain-mcp.jpg 1.5x, http://localhost:53466/img/onchain-mcp.jpg 2x&#34;&#xA;            data-sizes=&#34;auto&#34;&#xA;            alt=&#34;/img/onchain-mcp.jpg&#34; /&gt;&#xA;    &lt;/a&gt;&lt;figcaption class=&#34;image-caption&#34;&gt;Bankless Onchain MCP Server&lt;/figcaption&gt;&#xA;    &lt;/figure&gt;&lt;/p&gt;&#xA;&lt;p&gt;DApp（去中心化应用程序，Decentralized Application）是一种运行在区块链网络上的应用程序。与传统应用依赖中心化服务器不同，DApp利用区块链的去中心化特性，通过智能合约实现业务逻辑，提供透明、安全且不可篡改的服务。DApp通常由两部分组成：&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2025-03-20-dapp/</guid>
+      <description>&lt;!-- 从链下到链上，什么是DApp？——以典型DeFi借贷平台为例 --&gt;&#xA;&lt;p&gt;&lt;figure&gt;&lt;a class=&#34;lightgallery&#34; href=&#34;http://localhost:1313/img/onchain-mcp.jpg&#34; title=&#34;https://github.com/bankless/onchain-mcp&#34; data-thumbnail=&#34;/img/onchain-mcp.jpg&#34; data-sub-html=&#34;&lt;h2&gt;Bankless Onchain MCP Server&lt;/h2&gt;&lt;p&gt;https://github.com/bankless/onchain-mcp&lt;/p&gt;&#34;&gt;&#xA;        &lt;img&#xA;            class=&#34;lazyload&#34;&#xA;            src=&#34;http://localhost:1313/svg/loading.min.svg&#34;&#xA;            data-src=&#34;http://localhost:1313/img/onchain-mcp.jpg&#34;&#xA;            data-srcset=&#34;http://localhost:1313/img/onchain-mcp.jpg, http://localhost:1313/img/onchain-mcp.jpg 1.5x, http://localhost:1313/img/onchain-mcp.jpg 2x&#34;&#xA;            data-sizes=&#34;auto&#34;&#xA;            alt=&#34;/img/onchain-mcp.jpg&#34; /&gt;&#xA;    &lt;/a&gt;&lt;figcaption class=&#34;image-caption&#34;&gt;Bankless Onchain MCP Server&lt;/figcaption&gt;&#xA;    &lt;/figure&gt;&lt;/p&gt;&#xA;&lt;p&gt;DApp（去中心化应用程序，Decentralized Application）是一种运行在区块链网络上的应用程序。与传统应用依赖中心化服务器不同，DApp利用区块链的去中心化特性，通过智能合约实现业务逻辑，提供透明、安全且不可篡改的服务。DApp通常由两部分组成：&lt;/p&gt;</description>
     </item>
     <item>
       <title>从启动浏览器到打开网页，发生了什么？</title>
-      <link>http://localhost:53466/2025-03-17-browser/</link>
+      <link>http://localhost:1313/2025-03-17-browser/</link>
       <pubDate>Mon, 17 Mar 2025 17:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2025-03-17-browser/</guid>
+      <guid>http://localhost:1313/2025-03-17-browser/</guid>
       <description>&lt;p&gt;从计算机科学的角度来看，从启动浏览器到输入网址并打开网页的全过程是一个复杂且多层次的协作，涉及网络通信、浏览器架构、JavaScript 执行机制等多个方面。现代浏览器（如Chrome、Firefox）采用了多进程架构，并结合单线程的 JavaScript 运行机制，通过事件循环和专用 Worker API 实现高效的任务处理和页面渲染。以下将详细描述这一过程，并突出 JavaScript 的单线程特性及其在浏览器中的运作方式。&lt;/p&gt;</description>
     </item>
     <item>
       <title>巫师的学徒</title>
-      <link>http://localhost:53466/2024-12-06-sorcerer/</link>
+      <link>http://localhost:1313/2024-12-06-sorcerer/</link>
       <pubDate>Fri, 06 Dec 2024 11:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2024-12-06-sorcerer/</guid>
+      <guid>http://localhost:1313/2024-12-06-sorcerer/</guid>
       <description>&lt;!-- &#34;Der Zauberlehrling&#34; (1797), by Johann Wolfgang von Goethe --&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;吾有知乎哉？无知也。有鄙夫问于我，空空如也。我叩其两端而竭焉。    -《论语·子罕》&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;!-- ![hello-world-cpp](/img/hello-world-cpp.jpeg &#34;hello-world-cpp&#34;) --&gt;&#xA;&lt;p&gt;“真理是什么？从神秘主义者、哲学家和科学家的视角和 AI 探索绝对真理，你认为真理是什么？在这一个主题研究的背景下，问你，AI，你认为真理是什么？” 以下是 AI 的回答：&lt;/p&gt;</description>
     </item>
     <item>
       <title>虚拟 — 膨胀出全息世界</title>
-      <link>http://localhost:53466/2023-12-19-itp/</link>
+      <link>http://localhost:1313/2023-12-19-itp/</link>
       <pubDate>Tue, 19 Dec 2023 10:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2023-12-19-itp/</guid>
+      <guid>http://localhost:1313/2023-12-19-itp/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;“许多独立的并且很有说服力的论点，都表明时空这个概念本身并不是基础性的。时空注定要消亡。在物理定律的实际底层描述中，根本不存在时空这样的东西。这是非常令人震惊的，因为物理学被认为是描述在空间和时间中发生的事情。因此，如果没有时空，就不清楚物理学讲的什么。” — 尼马·阿尔卡尼-哈米德，康奈尔大学信使讲座，2016&lt;/p&gt;</description>
     </item>
     <item>
       <title>零知识证明 — 数字签名的起源</title>
-      <link>http://localhost:53466/2023-05-02-zkp/</link>
+      <link>http://localhost:1313/2023-05-02-zkp/</link>
       <pubDate>Tue, 02 May 2023 10:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2023-05-02-zkp/</guid>
+      <guid>http://localhost:1313/2023-05-02-zkp/</guid>
       <description>&lt;p&gt;在密码学中，了解数字签名工作原理的最好方法是了解它的起源。因此，让我们花点儿时间简要介绍一下零知识证明(ZKP)，然后重新讨论数字签名。&#xA;想象一下，Peggy 想向 Victor 证明自己拥有一些信息。例如，Peggy 想证明她知道某个群元素的离散对数。换句话说，对于一个给定的 Y 以及群生成元 g，Peggy 想要证明她知道一个 x， 满足 $$ Y = {g^x} $$ 当然，最简单的解决方案是 Peggy 把 x(称为见证)发送给 Victor。这就是一个简单的知识证明，但如果 Peggy 不想让 Victor 得到这个 x，这个方案就不适用了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>像理解网络模型一样理解区块链</title>
-      <link>http://localhost:53466/2022-06-05-blockchain-2/</link>
+      <link>http://localhost:1313/2022-06-05-blockchain-2/</link>
       <pubDate>Sun, 05 Jun 2022 08:00:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2022-06-05-blockchain-2/</guid>
-      <description>&lt;p&gt;&lt;figure&gt;&lt;a class=&#34;lightgallery&#34; href=&#34;http://localhost:53466/img/web3-app.jpg&#34; title=&#34;https://mirror.xyz/straycatokinawa.eth/orz4h4Q-XbKC-NH8n4mdAyLp2QFD21Dsq5ewL05qoMk&#34; data-thumbnail=&#34;/img/web3-app.jpg&#34; data-sub-html=&#34;&lt;h2&gt;The Architecture of a Web3 application&lt;/h2&gt;&lt;p&gt;https://mirror.xyz/straycatokinawa.eth/orz4h4Q-XbKC-NH8n4mdAyLp2QFD21Dsq5ewL05qoMk&lt;/p&gt;&#34;&gt;&#xA;        &lt;img&#xA;            class=&#34;lazyload&#34;&#xA;            src=&#34;http://localhost:53466/svg/loading.min.svg&#34;&#xA;            data-src=&#34;http://localhost:53466/img/web3-app.jpg&#34;&#xA;            data-srcset=&#34;http://localhost:53466/img/web3-app.jpg, http://localhost:53466/img/web3-app.jpg 1.5x, http://localhost:53466/img/web3-app.jpg 2x&#34;&#xA;            data-sizes=&#34;auto&#34;&#xA;            alt=&#34;/img/web3-app.jpg&#34; /&gt;&#xA;    &lt;/a&gt;&lt;figcaption class=&#34;image-caption&#34;&gt;The Architecture of a Web3 application&lt;/figcaption&gt;&#xA;    &lt;/figure&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决。 —《程序员的自我修养》&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;上述名言概括了计算机系统软件体系结构的设计要点，整个计算机体系结构从上到下都是按照严格的层次结构设计的。不仅是计算机系统软件整个体系是这样的，体系里面的每个组件比如操作系统本身，应用程序、软件系统甚至很多硬件结构都是按照这种层次的结构组织和设计的。&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2022-06-05-blockchain-2/</guid>
+      <description>&lt;p&gt;&lt;figure&gt;&lt;a class=&#34;lightgallery&#34; href=&#34;http://localhost:1313/img/web3-app.jpg&#34; title=&#34;https://mirror.xyz/straycatokinawa.eth/orz4h4Q-XbKC-NH8n4mdAyLp2QFD21Dsq5ewL05qoMk&#34; data-thumbnail=&#34;/img/web3-app.jpg&#34; data-sub-html=&#34;&lt;h2&gt;The Architecture of a Web3 application&lt;/h2&gt;&lt;p&gt;https://mirror.xyz/straycatokinawa.eth/orz4h4Q-XbKC-NH8n4mdAyLp2QFD21Dsq5ewL05qoMk&lt;/p&gt;&#34;&gt;&#xA;        &lt;img&#xA;            class=&#34;lazyload&#34;&#xA;            src=&#34;http://localhost:1313/svg/loading.min.svg&#34;&#xA;            data-src=&#34;http://localhost:1313/img/web3-app.jpg&#34;&#xA;            data-srcset=&#34;http://localhost:1313/img/web3-app.jpg, http://localhost:1313/img/web3-app.jpg 1.5x, http://localhost:1313/img/web3-app.jpg 2x&#34;&#xA;            data-sizes=&#34;auto&#34;&#xA;            alt=&#34;/img/web3-app.jpg&#34; /&gt;&#xA;    &lt;/a&gt;&lt;figcaption class=&#34;image-caption&#34;&gt;The Architecture of a Web3 application&lt;/figcaption&gt;&#xA;    &lt;/figure&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决。 —《程序员的自我修养》&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;上述名言概括了计算机系统软件体系结构的设计要点，整个计算机体系结构从上到下都是按照严格的层次结构设计的。不仅是计算机系统软件整个体系是这样的，体系里面的每个组件比如操作系统本身，应用程序、软件系统甚至很多硬件结构都是按照这种层次的结构组织和设计的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>一些通用计算模型</title>
-      <link>http://localhost:53466/2021-01-30-tag-system/</link>
+      <link>http://localhost:1313/2021-01-30-tag-system/</link>
       <pubDate>Sat, 30 Jan 2021 10:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2021-01-30-tag-system/</guid>
+      <guid>http://localhost:1313/2021-01-30-tag-system/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;在可计算性理论中，如果一系列操作数据的规则(如指令集、编程语言、细胞自动机)可以用来模拟任何图灵机，则称该系统是「图灵完备」的或能做「通用计算」的。 &amp;ndash; wikipedia&lt;/p&gt;</description>
     </item>
     <item>
       <title>[译]元编程</title>
-      <link>http://localhost:53466/2021-01-21-meta-programs/</link>
+      <link>http://localhost:1313/2021-01-21-meta-programs/</link>
       <pubDate>Thu, 21 Jan 2021 16:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2021-01-21-meta-programs/</guid>
+      <guid>http://localhost:1313/2021-01-21-meta-programs/</guid>
       <description>&lt;p&gt;本文翻译自 stereobooster 的博客文章：&lt;a href=&#34;https://stereobooster.com/posts/metaprogramming/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;metaprogramming&lt;/a&gt;&#xA;，少量删改。完整内容参阅原文。&lt;/p&gt;&#xA;&lt;h2 id=&#34;什么是元编程&#34;&gt;什么是元编程&lt;/h2&gt;&#xA;&lt;p&gt;不好的是，没有一个达成共识的单一定义。让我们参阅一下：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;元编程是一种编程技术，指计算机程序具有将其他程序视为其数据的能力。 – &lt;a href=&#34;https://en.wikipedia.org/wiki/Metaprogramming&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;wikipedia&lt;/a&gt;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于 TCP, 我学到什么</title>
-      <link>http://localhost:53466/2021-01-08-tcp/</link>
+      <link>http://localhost:1313/2021-01-08-tcp/</link>
       <pubDate>Fri, 08 Jan 2021 10:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2021-01-08-tcp/</guid>
+      <guid>http://localhost:1313/2021-01-08-tcp/</guid>
       <description>&lt;p&gt;TCP 在不可靠的 IP 协议之上实现了可靠性，使得我们在开发上层应用时，不必关注网络传输的种种复杂性。可靠，指的是采用一系列技术来保障数据在发送方和接收方是一致的。我们了解下 TCP 如何实现可靠性。&lt;/p&gt;</description>
     </item>
     <item>
       <title>IO 和 Monad</title>
-      <link>http://localhost:53466/2020-12-28-monad/</link>
+      <link>http://localhost:1313/2020-12-28-monad/</link>
       <pubDate>Mon, 28 Dec 2020 17:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2020-12-28-monad/</guid>
+      <guid>http://localhost:1313/2020-12-28-monad/</guid>
       <description>&lt;p&gt;学习函数式编程总是给人一种学习哲学的错觉，Haskell 不仅定义了程序运算需要的类型，还给输入输出(IO)这样动作也定义了类型，并且把运行程序时的外部状态(RealWorld)当成函数的参数。&lt;/p&gt;</description>
     </item>
     <item>
       <title>程序解释与编译</title>
-      <link>http://localhost:53466/2020-12-10-lex-parse/</link>
+      <link>http://localhost:1313/2020-12-10-lex-parse/</link>
       <pubDate>Thu, 10 Dec 2020 09:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2020-12-10-lex-parse/</guid>
+      <guid>http://localhost:1313/2020-12-10-lex-parse/</guid>
       <description>&lt;p&gt;程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。&lt;/p&gt;&#xA;&lt;h2 id=&#34;前置知识&#34;&gt;前置知识&lt;/h2&gt;&#xA;&lt;p&gt;算术表达式根据运算符所在的位置可以分为三种表示方法：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;前缀表达式(波兰式)，如 &lt;code&gt;(- (+ 3 (* 2 4)) 1)&lt;/code&gt;，Lisp 语言就是使用这种表示方法&lt;/li&gt;&#xA;&lt;li&gt;中缀表达式，如 &lt;code&gt;3 + 2 * 4 - 1&lt;/code&gt;，最适合人阅读的表示方法&lt;/li&gt;&#xA;&lt;li&gt;后缀表达式(逆波兰式)，如 &lt;code&gt;3 2 4 * + 1 -&lt;/code&gt;，计算机处理起来比较方便&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;编译原理&#34;&gt;编译原理&lt;/h2&gt;&#xA;&lt;p&gt;为了讲清楚程序解释与编译，我们自定义一种类似 Lisp 的前缀表达式：&lt;/p&gt;</description>
     </item>
     <item>
       <title>λ 演算 — 程序从无到有</title>
-      <link>http://localhost:53466/2020-11-26-%CE%BB-calculus/</link>
+      <link>http://localhost:1313/2020-11-26-%CE%BB-calculus/</link>
       <pubDate>Thu, 26 Nov 2020 09:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2020-11-26-%CE%BB-calculus/</guid>
+      <guid>http://localhost:1313/2020-11-26-%CE%BB-calculus/</guid>
       <description>&lt;p&gt;由邱奇创造的 &lt;a href=&#34;https://en.wikipedia.org/wiki/Lambda_calculus&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;λ 演算(λ-calculus)&lt;/a&gt;&#xA; 是世界上最小的程序设计语言。λ 演算中没有数(number)，字符串(string)，布尔型(boolean) 或任何非函数的数据类型，它只用匿名单参函数就能模拟图灵机。&lt;/p&gt;</description>
     </item>
     <item>
       <title>图灵机的极简实现</title>
-      <link>http://localhost:53466/2020-11-17-brainfuck/</link>
+      <link>http://localhost:1313/2020-11-17-brainfuck/</link>
       <pubDate>Tue, 17 Nov 2020 22:00:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2020-11-17-brainfuck/</guid>
+      <guid>http://localhost:1313/2020-11-17-brainfuck/</guid>
       <description>&lt;p&gt;图灵机是英国数学家图灵于 1936 年提出的一种将人的计算行为抽象化的数学逻辑机，其更抽象的意义为一种计算模型，可以看作等价于任何有限逻辑数学过程的终极强大逻辑机器。&lt;/p&gt;</description>
     </item>
     <item>
       <title>自我指涉与数理逻辑</title>
-      <link>http://localhost:53466/2020-11-16-self-reference/</link>
+      <link>http://localhost:1313/2020-11-16-self-reference/</link>
       <pubDate>Mon, 16 Nov 2020 00:27:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2020-11-16-self-reference/</guid>
+      <guid>http://localhost:1313/2020-11-16-self-reference/</guid>
       <description>&lt;p&gt;“我是谁？”，这种对指代自身的疑问每个人都会有。在自然语言和形式语言中，如果一个句子直接或间接提及自身，就称为&lt;a href=&#34;https://en.wikipedia.org/wiki/Self-reference&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;自指&lt;/a&gt;&#xA;(Self-reference)，自指的语句常常会造成悖论。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -885,4 +885,6 @@
 
 **推荐阅读**
 
-- [The Next Stage is Death | U.G. Krishnamurti](https://www.youtube.com/watch?v=iAHmMRFjgaQ)
+- [是电脑，还是知识在毁灭我们？| 克里希那穆提](https://kfoundation.org/krishnamurti-is-the-computer-or-is-it-knowledge-thats-destroying-us-from-fire-in-the-mind/)
+
+<!-- - [天涯神贴：2025-2035人类面临大清洗，你能存活下来吗？](https://www.bilibili.com/video/BV1KFxJzLEMt/?share_source=copy_web&vd_source=d722d295f140d6b623084270372f1eda) -->

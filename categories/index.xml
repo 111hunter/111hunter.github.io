@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 氚的博客</title>
-    <link>http://localhost:53466/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on 氚的博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>1621209357@qq.com (氚)</managingEditor>
     <webMaster>1621209357@qq.com (氚)</webMaster>
-    <lastBuildDate>Thu, 18 Dec 2025 00:50:34 +0800</lastBuildDate>
-    <atom:link href="http://localhost:53466/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Mar 2026 13:50:34 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Thinking</title>
-      <link>http://localhost:53466/categories/thinking/</link>
-      <pubDate>Thu, 18 Dec 2025 00:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/categories/thinking/</guid>
+      <title>Theory</title>
+      <link>http://localhost:1313/categories/theory/</link>
+      <pubDate>Sun, 22 Mar 2026 13:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
+      <guid>http://localhost:1313/categories/theory/</guid>
       <description></description>
     </item>
     <item>
-      <title>Theory</title>
-      <link>http://localhost:53466/categories/theory/</link>
-      <pubDate>Tue, 11 Nov 2025 00:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/categories/theory/</guid>
+      <title>Thinking</title>
+      <link>http://localhost:1313/categories/thinking/</link>
+      <pubDate>Thu, 18 Dec 2025 00:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
+      <guid>http://localhost:1313/categories/thinking/</guid>
       <description></description>
     </item>
     <item>
       <title>Coding</title>
-      <link>http://localhost:53466/categories/coding/</link>
+      <link>http://localhost:1313/categories/coding/</link>
       <pubDate>Sat, 26 Apr 2025 01:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/categories/coding/</guid>
+      <guid>http://localhost:1313/categories/coding/</guid>
       <description></description>
     </item>
   </channel>

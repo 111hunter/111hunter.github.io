@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rust on 氚的博客</title>
-    <link>http://localhost:53466/tags/rust/</link>
+    <link>http://localhost:1313/tags/rust/</link>
     <description>Recent content in Rust on 氚的博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>1621209357@qq.com (氚)</managingEditor>
     <webMaster>1621209357@qq.com (氚)</webMaster>
     <lastBuildDate>Sat, 26 Apr 2025 01:50:34 +0800</lastBuildDate>
-    <atom:link href="http://localhost:53466/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sui, 从认识到理解</title>
-      <link>http://localhost:53466/2025-04-26-sui/</link>
+      <link>http://localhost:1313/2025-04-26-sui/</link>
       <pubDate>Sat, 26 Apr 2025 01:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2025-04-26-sui/</guid>
+      <guid>http://localhost:1313/2025-04-26-sui/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;不闻不若闻之，闻之不若见之，见之不若知之，知之不若行之。    -《荀子·儒效》&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;rust-所有权系统&#34;&gt;Rust: 所有权系统&lt;/h2&gt;&#xA;&lt;h3 id=&#34;属和种差&#34;&gt;属和种差&lt;/h3&gt;&#xA;&lt;p&gt;Rust是一种系统级编程语言，它通过&lt;strong&gt;所有权系统&lt;/strong&gt;和类型安全设计，实现了内存安全与高性能的平衡，无需垃圾回收即可防止内存错误和数据竞争。&lt;/p&gt;</description>
     </item>
   </channel>

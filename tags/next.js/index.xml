@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Next.js on 氚的博客</title>
-    <link>http://localhost:53466/tags/next.js/</link>
+    <link>http://localhost:1313/tags/next.js/</link>
     <description>Recent content in Next.js on 氚的博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>1621209357@qq.com (氚)</managingEditor>
     <webMaster>1621209357@qq.com (氚)</webMaster>
     <lastBuildDate>Thu, 07 Dec 2023 21:30:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:53466/tags/next.js/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/next.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Next.js 概览</title>
-      <link>http://localhost:53466/2020-09-29-next/</link>
+      <link>http://localhost:1313/2020-09-29-next/</link>
       <pubDate>Tue, 29 Sep 2020 23:30:00 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2020-09-29-next/</guid>
-      <description>&lt;p&gt;&lt;figure&gt;&lt;a class=&#34;lightgallery&#34; href=&#34;http://localhost:53466/img/nextjs-slug.webp&#34; title=&#34;https://www.reddit.com/r/nextjs/comments/17iy9sx/nextjs_server_action_is_crazy&#34; data-thumbnail=&#34;/img/nextjs-slug.webp&#34; data-sub-html=&#34;&lt;h2&gt;Next.js Reddit Meme&lt;/h2&gt;&lt;p&gt;https://www.reddit.com/r/nextjs/comments/17iy9sx/nextjs_server_action_is_crazy&lt;/p&gt;&#34;&gt;&#xA;        &lt;img&#xA;            class=&#34;lazyload&#34;&#xA;            src=&#34;http://localhost:53466/svg/loading.min.svg&#34;&#xA;            data-src=&#34;http://localhost:53466/img/nextjs-slug.webp&#34;&#xA;            data-srcset=&#34;http://localhost:53466/img/nextjs-slug.webp, http://localhost:53466/img/nextjs-slug.webp 1.5x, http://localhost:53466/img/nextjs-slug.webp 2x&#34;&#xA;            data-sizes=&#34;auto&#34;&#xA;            alt=&#34;/img/nextjs-slug.webp&#34; /&gt;&#xA;    &lt;/a&gt;&lt;figcaption class=&#34;image-caption&#34;&gt;Next.js Reddit Meme&lt;/figcaption&gt;&#xA;    &lt;/figure&gt;&lt;/p&gt;&#xA;&lt;p&gt;我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next.js 是 React 的同构框架，它的页面由 React 组件构成。&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2020-09-29-next/</guid>
+      <description>&lt;p&gt;&lt;figure&gt;&lt;a class=&#34;lightgallery&#34; href=&#34;http://localhost:1313/img/nextjs-slug.webp&#34; title=&#34;https://www.reddit.com/r/nextjs/comments/17iy9sx/nextjs_server_action_is_crazy&#34; data-thumbnail=&#34;/img/nextjs-slug.webp&#34; data-sub-html=&#34;&lt;h2&gt;Next.js Reddit Meme&lt;/h2&gt;&lt;p&gt;https://www.reddit.com/r/nextjs/comments/17iy9sx/nextjs_server_action_is_crazy&lt;/p&gt;&#34;&gt;&#xA;        &lt;img&#xA;            class=&#34;lazyload&#34;&#xA;            src=&#34;http://localhost:1313/svg/loading.min.svg&#34;&#xA;            data-src=&#34;http://localhost:1313/img/nextjs-slug.webp&#34;&#xA;            data-srcset=&#34;http://localhost:1313/img/nextjs-slug.webp, http://localhost:1313/img/nextjs-slug.webp 1.5x, http://localhost:1313/img/nextjs-slug.webp 2x&#34;&#xA;            data-sizes=&#34;auto&#34;&#xA;            alt=&#34;/img/nextjs-slug.webp&#34; /&gt;&#xA;    &lt;/a&gt;&lt;figcaption class=&#34;image-caption&#34;&gt;Next.js Reddit Meme&lt;/figcaption&gt;&#xA;    &lt;/figure&gt;&lt;/p&gt;&#xA;&lt;p&gt;我们知道，如今流行的前端框架都是 SPA(单页应用)，在投入生产时会出现中首屏加载慢，不利于 SEO 等问题。于是，现代前端同构框架应运而生。Next.js 是 React 的同构框架，它的页面由 React 组件构成。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

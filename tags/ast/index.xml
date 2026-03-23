@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AST on 氚的博客</title>
-    <link>http://localhost:53466/tags/ast/</link>
+    <link>http://localhost:1313/tags/ast/</link>
     <description>Recent content in AST on 氚的博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>1621209357@qq.com (氚)</managingEditor>
     <webMaster>1621209357@qq.com (氚)</webMaster>
     <lastBuildDate>Wed, 26 Mar 2025 17:50:34 +0800</lastBuildDate>
-    <atom:link href="http://localhost:53466/tags/ast/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ast/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>从符号到括号，什么是S-表达式？</title>
-      <link>http://localhost:53466/2025-03-26-symbolic-expression/</link>
+      <link>http://localhost:1313/2025-03-26-symbolic-expression/</link>
       <pubDate>Wed, 26 Mar 2025 17:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2025-03-26-symbolic-expression/</guid>
+      <guid>http://localhost:1313/2025-03-26-symbolic-expression/</guid>
       <description>&lt;p&gt;S-表达式（S-expression，全称Symbolic Expression，符号表达式）是一种由约翰·麦卡锡（John McCarthy）在设计Lisp编程语言时引入的数据表示方法。它以简洁的语法和强大的表达能力著称，不仅是Lisp及其变种（如Scheme、Common Lisp）的核心，还广泛应用于符号计算、人工智能和数据结构的表示。S-表达式的核心思想是通过符号和括号构建一种既能表示数据又能表示程序的结构，具有“代码即数据”的特性。&lt;/p&gt;</description>
     </item>
     <item>
       <title>[译]元编程</title>
-      <link>http://localhost:53466/2021-01-21-meta-programs/</link>
+      <link>http://localhost:1313/2021-01-21-meta-programs/</link>
       <pubDate>Thu, 21 Jan 2021 16:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2021-01-21-meta-programs/</guid>
+      <guid>http://localhost:1313/2021-01-21-meta-programs/</guid>
       <description>&lt;p&gt;本文翻译自 stereobooster 的博客文章：&lt;a href=&#34;https://stereobooster.com/posts/metaprogramming/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;metaprogramming&lt;/a&gt;&#xA;，少量删改。完整内容参阅原文。&lt;/p&gt;&#xA;&lt;h2 id=&#34;什么是元编程&#34;&gt;什么是元编程&lt;/h2&gt;&#xA;&lt;p&gt;不好的是，没有一个达成共识的单一定义。让我们参阅一下：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;元编程是一种编程技术，指计算机程序具有将其他程序视为其数据的能力。 – &lt;a href=&#34;https://en.wikipedia.org/wiki/Metaprogramming&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;wikipedia&lt;/a&gt;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>实现 λ 演算解释器</title>
-      <link>http://localhost:53466/2020-12-13-%CE%BB-interpreter/</link>
+      <link>http://localhost:1313/2020-12-13-%CE%BB-interpreter/</link>
       <pubDate>Sun, 13 Dec 2020 09:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2020-12-13-%CE%BB-interpreter/</guid>
+      <guid>http://localhost:1313/2020-12-13-%CE%BB-interpreter/</guid>
       <description>&lt;p&gt;如果你没有听说过 λ 演算，可以阅读我的这篇&lt;a href=&#34;https://111hunter.github.io/2020-11-26-%CE%BB-calculus/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;文章&lt;/a&gt;&#xA;。如果你没有编译原理相关知识，可以阅读我的这篇&lt;a href=&#34;https://111hunter.github.io/2020-12-10-lex-parse&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;文章&lt;/a&gt;&#xA;。首先介绍调度场算法，后面的实现中会用到。&lt;/p&gt;</description>
     </item>
     <item>
       <title>程序解释与编译</title>
-      <link>http://localhost:53466/2020-12-10-lex-parse/</link>
+      <link>http://localhost:1313/2020-12-10-lex-parse/</link>
       <pubDate>Thu, 10 Dec 2020 09:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2020-12-10-lex-parse/</guid>
+      <guid>http://localhost:1313/2020-12-10-lex-parse/</guid>
       <description>&lt;p&gt;程序的解释和编译通常需要经过词法分析，语法分析和生成抽象语法树等阶段。&lt;/p&gt;&#xA;&lt;h2 id=&#34;前置知识&#34;&gt;前置知识&lt;/h2&gt;&#xA;&lt;p&gt;算术表达式根据运算符所在的位置可以分为三种表示方法：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;前缀表达式(波兰式)，如 &lt;code&gt;(- (+ 3 (* 2 4)) 1)&lt;/code&gt;，Lisp 语言就是使用这种表示方法&lt;/li&gt;&#xA;&lt;li&gt;中缀表达式，如 &lt;code&gt;3 + 2 * 4 - 1&lt;/code&gt;，最适合人阅读的表示方法&lt;/li&gt;&#xA;&lt;li&gt;后缀表达式(逆波兰式)，如 &lt;code&gt;3 2 4 * + 1 -&lt;/code&gt;，计算机处理起来比较方便&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;编译原理&#34;&gt;编译原理&lt;/h2&gt;&#xA;&lt;p&gt;为了讲清楚程序解释与编译，我们自定义一种类似 Lisp 的前缀表达式：&lt;/p&gt;</description>
     </item>
     <item>
       <title>入门 AST 抽象语法树</title>
-      <link>http://localhost:53466/2020-08-23-ast/</link>
+      <link>http://localhost:1313/2020-08-23-ast/</link>
       <pubDate>Sun, 23 Aug 2020 00:30:00 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:53466/2020-08-23-ast/</guid>
+      <guid>http://localhost:1313/2020-08-23-ast/</guid>
       <description>&lt;p&gt;如果你想了解 Javascript 的编译原理，那么你就得了解 AST(Abstract Syntax Tree)，目前前端常用的一些插件或者工具，比如 JS 转译、代码压缩、CSS 预处理器、ESLint、Prettier 等功能的实现，都是建立在 AST 的基础之上的。&lt;/p&gt;</description>
     </item>
   </channel>
