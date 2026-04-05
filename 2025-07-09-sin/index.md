@@ -75,7 +75,7 @@
 
 - [人性是惩罚驯化出来的？|《尼采与身体》](https://book.douban.com/subject/36455716/)
 
-- [是时代“枭雄”还是迟暮的狂想家？| 对话中国第一代企业家牟其中](https://www.youtube.com/watch?v=3QDrVkT--bY)
+<!-- - [是时代“枭雄”还是迟暮的狂想家？| 对话中国第一代企业家牟其中](https://www.youtube.com/watch?v=3QDrVkT--bY) -->
 
 - [财富从思想而来 | 牟其中](https://www.bilibili.com/video/BV14aFHehEMc/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=21db84374de3d6785c04b0329b69e5e5)
 

@@ -43,7 +43,7 @@
 
 - [16 personalities 2025 test results](https://www.16personalities.com/ch/%E7%BB%93%E6%9E%9C/infj-a/x/hdqud6bme)
 
-<!-- - [MBTI人格每天都在干什么‼️和你一样吗？](https://mp.weixin.qq.com/s/KVsHWNhmJzacrTUL1qkSIQ) -->
+<!-- - [16 personalities 2026 test results](https://www.16personalities.com/ch/%E7%BB%93%E6%9E%9C/infj-a/x/k80f3bo9r) -->
 
 - [悟性高的人往往不太合群，更喜欢独处，这种性格特征背后的深层原因是什么？| Syeri的知乎回答](https://www.zhihu.com/question/1929199723807498709/answer/1929582220294729765)
 

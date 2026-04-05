@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ni 人口占比 · 荣格认知功能分布</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --color-background-primary: #ffffff;
+    --color-background-secondary: #f5f4f0;
+    --color-background-tertiary: #eeede8;
+    --color-text-primary: #1a1a18;
+    --color-text-secondary: #5f5e5a;
+    --color-text-tertiary: #9c9a92;
+    --color-border-tertiary: rgba(0,0,0,0.12);
+    --color-border-secondary: rgba(0,0,0,0.22);
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background-primary: #1c1c1a;
+      --color-background-secondary: #242422;
+      --color-background-tertiary: #2c2c2a;
+      --color-text-primary: #e8e6de;
+      --color-text-secondary: #9c9a92;
+      --color-text-tertiary: #6a6862;
+      --color-border-tertiary: rgba(255,255,255,0.10);
+      --color-border-secondary: rgba(255,255,255,0.18);
+    }
+  }
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: var(--color-background-tertiary);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  header {
+    margin-bottom: 2rem;
+  }
+
+  header h1 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  header p {
+    font-size: 14px;
+    color: var(--color-text-tertiary);
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .bar-label {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    width: 52px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .bar-track {
+    flex: 1;
+    background: var(--color-background-secondary);
+    border-radius: 4px;
+    height: 22px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    width: 0;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .bar-pct {
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+    width: 36px;
+    flex-shrink: 0;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    margin: 20px 0 10px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 0.5px solid var(--color-border-tertiary);
+    margin: 20px 0;
+  }
+
+  .summary-box {
+    margin-top: 20px;
+    padding: 14px 16px;
+    background: var(--color-background-secondary);
+    border-left: 2px solid #7F77DD;
+    border-radius: 0;
+  }
+
+  .summary-box p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .hi-purple { color: #534AB7; font-weight: 500; }
+  .hi { font-weight: 500; color: var(--color-text-primary); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Ni 人口占比</h1>
+    <p>荣格八维认知功能分布 · 基于 MBTI 大规模样本数据</p>
+  </header>
+
+  <div class="section-label">Ni 主导（INFJ + INTJ）— 合计约 3.6%</div>
+
+  <div class="bar-row">
+    <span class="bar-label">INFJ</span>
+    <div class="bar-track">
+      <div class="bar-fill" data-width="10.7" style="background:#AFA9EC;color:#26215C">1.5%</div>
+    </div>
+    <span class="bar-pct">1.5%</span>
+  </div>
+
+  <div class="bar-row">
+    <span class="bar-label">INTJ</span>
+    <div class="bar-track">
+      <div class="bar-fill" data-width="15" style="background:#7F77DD;color:#EEEDFE">2.1%</div>
+    </div>
+    <span class="bar-pct">2.1%</span>
+  </div>
+
+  <div class="section-label">Ni 辅助（ENFJ + ENTJ）— 合计约 4.3%</div>
+
+  <div class="bar-row">
+    <span class="bar-label">ENFJ</span>
+    <div class="bar-track">
+      <div class="bar-fill" data-width="17.8" style="background:#CECBF6;color:#3C3489">2.5%</div>
+    </div>
+    <span class="bar-pct">2.5%</span>
+  </div>
+
+  <div class="bar-row">
+    <span class="bar-label">ENTJ</span>
+    <div class="bar-track">
+      <div class="bar-fill" data-width="12.8" style="background:#CECBF6;color:#3C3489">1.8%</div>
+    </div>
+    <span class="bar-pct">1.8%</span>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">对比：Ne 主导（ENFP + ENTP）— 合计约 11.3%</div>
+
+  <div class="bar-row">
+    <span class="bar-label">ENFP</span>
+    <div class="bar-track">
+      <div class="bar-fill" data-width="57.8" style="background:#9FE1CB;color:#04342C">8.1%</div>
+    </div>
+    <span class="bar-pct">8.1%</span>
+  </div>
+
+  <div class="bar-row">
+    <span class="bar-label">ENTP</span>
+    <div class="bar-track">
+      <div class="bar-fill" data-width="22.8" style="background:#5DCAA5;color:#04342C">3.2%</div>
+    </div>
+    <span class="bar-pct">3.2%</span>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">直觉 vs 感知 总维度</div>
+
+  <div class="bar-row">
+    <span class="bar-label" style="width:72px">N（直觉）</span>
+    <div class="bar-track">
+      <div class="bar-fill" data-width="26.9" style="background:#B5D4F4;color:#042C53">26.9%</div>
+    </div>
+    <span class="bar-pct">26.9%</span>
+  </div>
+
+  <div class="bar-row">
+    <span class="bar-label" style="width:72px">S（感知）</span>
+    <div class="bar-track">
+      <div class="bar-fill" data-width="73.1" style="background:#D3D1C7;color:#2C2C2A">73.1%</div>
+    </div>
+    <span class="bar-pct">73.1%</span>
+  </div>
+
+  <div class="summary-box">
+    <p>Ni 主导者仅占全球约 <span class="hi-purple">3.6%</span>，是所有主导功能中占比最低的。Ne 主导者是 Ni 的 <span class="hi">3 倍以上</span>。四个 Ni 类型（NJ）合计约 7.9%，依然是所有功能对中最稀少的族群。</p>
+  </div>
+
+</div>
+
+<script>
+  const fills = document.querySelectorAll('.bar-fill');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const w = el.getAttribute('data-width');
+        setTimeout(() => { el.style.width = w + '%'; }, 100);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fills.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
