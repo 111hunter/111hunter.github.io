@@ -2,215 +2,215 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 氚的博客</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://111hunter.github.io/tags/</link>
     <description>Recent content in Tags on 氚的博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>1621209357@qq.com (氚)</managingEditor>
     <webMaster>1621209357@qq.com (氚)</webMaster>
-    <lastBuildDate>Sun, 05 Apr 2026 09:50:34 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Maya</title>
-      <link>http://localhost:1313/tags/maya/</link>
-      <pubDate>Sun, 05 Apr 2026 09:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/maya/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Sun, 31 May 2026 09:50:34 +0800</lastBuildDate>
+    <atom:link href="https://111hunter.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recursion</title>
-      <link>http://localhost:1313/tags/recursion/</link>
-      <pubDate>Sun, 05 Apr 2026 09:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/recursion/</guid>
+      <link>https://111hunter.github.io/tags/recursion/</link>
+      <pubDate>Sun, 31 May 2026 09:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
+      <guid>https://111hunter.github.io/tags/recursion/</guid>
       <description></description>
     </item>
     <item>
       <title>Time</title>
-      <link>http://localhost:1313/tags/time/</link>
+      <link>https://111hunter.github.io/tags/time/</link>
+      <pubDate>Sun, 31 May 2026 09:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
+      <guid>https://111hunter.github.io/tags/time/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Maya</title>
+      <link>https://111hunter.github.io/tags/maya/</link>
       <pubDate>Sun, 05 Apr 2026 09:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/time/</guid>
+      <guid>https://111hunter.github.io/tags/maya/</guid>
       <description></description>
     </item>
     <item>
       <title>Network</title>
-      <link>http://localhost:1313/tags/network/</link>
+      <link>https://111hunter.github.io/tags/network/</link>
       <pubDate>Sat, 19 Jul 2025 13:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/network/</guid>
+      <guid>https://111hunter.github.io/tags/network/</guid>
       <description></description>
     </item>
     <item>
       <title>Turing Machine</title>
-      <link>http://localhost:1313/tags/turing-machine/</link>
+      <link>https://111hunter.github.io/tags/turing-machine/</link>
       <pubDate>Wed, 11 Jun 2025 13:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/turing-machine/</guid>
+      <guid>https://111hunter.github.io/tags/turing-machine/</guid>
       <description></description>
     </item>
     <item>
       <title>Advaita</title>
-      <link>http://localhost:1313/tags/advaita/</link>
+      <link>https://111hunter.github.io/tags/advaita/</link>
       <pubDate>Tue, 06 May 2025 17:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/advaita/</guid>
+      <guid>https://111hunter.github.io/tags/advaita/</guid>
       <description></description>
     </item>
     <item>
       <title>Samadhi</title>
-      <link>http://localhost:1313/tags/samadhi/</link>
+      <link>https://111hunter.github.io/tags/samadhi/</link>
       <pubDate>Tue, 06 May 2025 17:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/samadhi/</guid>
+      <guid>https://111hunter.github.io/tags/samadhi/</guid>
       <description></description>
     </item>
     <item>
       <title>Blockchain</title>
-      <link>http://localhost:1313/tags/blockchain/</link>
+      <link>https://111hunter.github.io/tags/blockchain/</link>
       <pubDate>Sat, 26 Apr 2025 01:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/blockchain/</guid>
+      <guid>https://111hunter.github.io/tags/blockchain/</guid>
       <description></description>
     </item>
     <item>
       <title>Rust</title>
-      <link>http://localhost:1313/tags/rust/</link>
+      <link>https://111hunter.github.io/tags/rust/</link>
       <pubDate>Sat, 26 Apr 2025 01:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/rust/</guid>
+      <guid>https://111hunter.github.io/tags/rust/</guid>
       <description></description>
     </item>
     <item>
       <title>AST</title>
-      <link>http://localhost:1313/tags/ast/</link>
+      <link>https://111hunter.github.io/tags/ast/</link>
       <pubDate>Wed, 26 Mar 2025 17:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/ast/</guid>
+      <guid>https://111hunter.github.io/tags/ast/</guid>
       <description></description>
     </item>
     <item>
       <title>Lisp</title>
-      <link>http://localhost:1313/tags/lisp/</link>
+      <link>https://111hunter.github.io/tags/lisp/</link>
       <pubDate>Wed, 26 Mar 2025 17:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/lisp/</guid>
+      <guid>https://111hunter.github.io/tags/lisp/</guid>
       <description></description>
     </item>
     <item>
       <title>React</title>
-      <link>http://localhost:1313/tags/react/</link>
+      <link>https://111hunter.github.io/tags/react/</link>
       <pubDate>Fri, 21 Mar 2025 11:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/react/</guid>
+      <guid>https://111hunter.github.io/tags/react/</guid>
       <description></description>
     </item>
     <item>
       <title>JavaScript</title>
-      <link>http://localhost:1313/tags/javascript/</link>
+      <link>https://111hunter.github.io/tags/javascript/</link>
       <pubDate>Fri, 21 Mar 2025 10:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/javascript/</guid>
+      <guid>https://111hunter.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Browser</title>
-      <link>http://localhost:1313/tags/browser/</link>
+      <link>https://111hunter.github.io/tags/browser/</link>
       <pubDate>Mon, 17 Mar 2025 17:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/browser/</guid>
+      <guid>https://111hunter.github.io/tags/browser/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>http://localhost:1313/tags/docker/</link>
+      <link>https://111hunter.github.io/tags/docker/</link>
       <pubDate>Sun, 02 May 2021 11:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/docker/</guid>
+      <guid>https://111hunter.github.io/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Haskell</title>
-      <link>http://localhost:1313/tags/haskell/</link>
+      <link>https://111hunter.github.io/tags/haskell/</link>
       <pubDate>Mon, 28 Dec 2020 17:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/haskell/</guid>
+      <guid>https://111hunter.github.io/tags/haskell/</guid>
       <description></description>
     </item>
     <item>
       <title>Lambda</title>
-      <link>http://localhost:1313/tags/lambda/</link>
+      <link>https://111hunter.github.io/tags/lambda/</link>
       <pubDate>Mon, 28 Dec 2020 17:50:34 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/lambda/</guid>
+      <guid>https://111hunter.github.io/tags/lambda/</guid>
       <description></description>
     </item>
     <item>
       <title>Recoil</title>
-      <link>http://localhost:1313/tags/recoil/</link>
+      <link>https://111hunter.github.io/tags/recoil/</link>
       <pubDate>Wed, 07 Oct 2020 19:40:00 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/recoil/</guid>
+      <guid>https://111hunter.github.io/tags/recoil/</guid>
       <description></description>
     </item>
     <item>
       <title>Next.js</title>
-      <link>http://localhost:1313/tags/next.js/</link>
+      <link>https://111hunter.github.io/tags/next.js/</link>
       <pubDate>Tue, 29 Sep 2020 23:30:00 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/next.js/</guid>
+      <guid>https://111hunter.github.io/tags/next.js/</guid>
       <description></description>
     </item>
     <item>
       <title>Webpack</title>
-      <link>http://localhost:1313/tags/webpack/</link>
+      <link>https://111hunter.github.io/tags/webpack/</link>
       <pubDate>Sun, 16 Aug 2020 19:51:00 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/webpack/</guid>
+      <guid>https://111hunter.github.io/tags/webpack/</guid>
       <description></description>
     </item>
     <item>
       <title>Node.js</title>
-      <link>http://localhost:1313/tags/node.js/</link>
+      <link>https://111hunter.github.io/tags/node.js/</link>
       <pubDate>Mon, 13 Jul 2020 17:45:00 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/node.js/</guid>
+      <guid>https://111hunter.github.io/tags/node.js/</guid>
       <description></description>
     </item>
     <item>
       <title>Spring Boot</title>
-      <link>http://localhost:1313/tags/spring-boot/</link>
+      <link>https://111hunter.github.io/tags/spring-boot/</link>
       <pubDate>Thu, 18 Jun 2020 12:00:00 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/spring-boot/</guid>
+      <guid>https://111hunter.github.io/tags/spring-boot/</guid>
       <description></description>
     </item>
     <item>
       <title>Angular</title>
-      <link>http://localhost:1313/tags/angular/</link>
+      <link>https://111hunter.github.io/tags/angular/</link>
       <pubDate>Sat, 25 Apr 2020 22:27:41 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/angular/</guid>
+      <guid>https://111hunter.github.io/tags/angular/</guid>
       <description></description>
     </item>
     <item>
       <title>Rx</title>
-      <link>http://localhost:1313/tags/rx/</link>
+      <link>https://111hunter.github.io/tags/rx/</link>
       <pubDate>Sat, 25 Apr 2020 22:27:41 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/rx/</guid>
+      <guid>https://111hunter.github.io/tags/rx/</guid>
       <description></description>
     </item>
     <item>
       <title>TypeORM</title>
-      <link>http://localhost:1313/tags/typeorm/</link>
+      <link>https://111hunter.github.io/tags/typeorm/</link>
       <pubDate>Fri, 10 Apr 2020 14:35:05 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/typeorm/</guid>
+      <guid>https://111hunter.github.io/tags/typeorm/</guid>
       <description></description>
     </item>
     <item>
       <title>Nest</title>
-      <link>http://localhost:1313/tags/nest/</link>
+      <link>https://111hunter.github.io/tags/nest/</link>
       <pubDate>Sun, 29 Mar 2020 10:24:40 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/nest/</guid>
+      <guid>https://111hunter.github.io/tags/nest/</guid>
       <description></description>
     </item>
     <item>
       <title>Passport</title>
-      <link>http://localhost:1313/tags/passport/</link>
+      <link>https://111hunter.github.io/tags/passport/</link>
       <pubDate>Sun, 29 Mar 2020 10:24:40 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/passport/</guid>
+      <guid>https://111hunter.github.io/tags/passport/</guid>
       <description></description>
     </item>
     <item>
       <title>Vue.js</title>
-      <link>http://localhost:1313/tags/vue.js/</link>
+      <link>https://111hunter.github.io/tags/vue.js/</link>
       <pubDate>Sat, 21 Mar 2020 17:59:51 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/vue.js/</guid>
+      <guid>https://111hunter.github.io/tags/vue.js/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>http://localhost:1313/tags/git/</link>
+      <link>https://111hunter.github.io/tags/git/</link>
       <pubDate>Fri, 13 Dec 2019 15:48:16 +0800</pubDate><author>1621209357@qq.com (氚)</author>
-      <guid>http://localhost:1313/tags/git/</guid>
+      <guid>https://111hunter.github.io/tags/git/</guid>
       <description></description>
     </item>
   </channel>
